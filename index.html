@@ -104,7 +104,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/07/hello-world/" data-id="cj7ak9mtz0000nkrsareas9w5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/07/hello-world/" data-id="cj7bjzeuj0001xkrsy47v88dj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,7 +143,7 @@
 <p>参考自：<a href="http://blog.csdn.net/include1224/article/details/53452824" title="原生Windows安装TensorFlow 0.12方法" target="_blank" rel="external">http://blog.csdn.net/include1224/article/details/53452824</a></p>
 <h2 id="二-cuda以及cudnn的安装"><a href="#二-cuda以及cudnn的安装" class="headerlink" title="二.cuda以及cudnn的安装"></a>二.cuda以及cudnn的安装</h2><p><code>TensorFlow</code>分为<code>CPU</code>版和<code>GPU</code>版，如果你打算安装<code>GPU</code>版，请先安装如下两个驱动：</p>
 <p>1、CUDA安装：<code>https://developer.nvidia.com/cuda-downloads</code></p>
-<p><img src="pic/cuda_download.png" alt="cuda截图"></p>
+<p><img src="/2016/10/11/TensorFlow安装说明/cuda_download.png" alt="cuda截图"></p>
 <p>2、CuDNN安装：<code>https://developer.nvidia.com/cudnn</code>（要注册Nvidia用户，并加入CuDNN开发组，填若干问卷就可以下载了）选择下载版本时要注意和Cuda版本匹配。</p>
 <p>我的账户是<strong>qq邮箱</strong>。</p>
 <p>解压后覆盖至CUDA的安装目录下<br>例如：</p>
@@ -155,7 +155,7 @@
 <p>下载完成后，打开cmd，切换到安装文件目录，输入: </p>
 <pre><code>pip install tensorflow_gpu-0.12.0rc0-cp35-cp35m-win_amd64.whl
 </code></pre><p>即可成功安装。</p>
-<p><img src="/pic/tensorflow_setup.png" alt="tensorflow安装"></p>
+<p><img src="/2016/10/11/TensorFlow安装说明/tensorflow_setup.png" alt="tensorflow安装"></p>
 <h4 id="2-输入pip命令"><a href="#2-输入pip命令" class="headerlink" title="2.输入pip命令"></a>2.输入pip命令</h4><pre><code>pip install --upgrade https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-win_amd64.whl
 </code></pre><p>参考自tensorflow官网：<a href="https://www.tensorflow.org/versions/r0.12/get_started/os_setup#pip_installation_on_windows" title="tensorflow官网" target="_blank" rel="external">https://www.tensorflow.org/versions/r0.12/get_started/os_setup#pip_installation_on_windows</a></p>
 <p>mac和linux可另行参考网上教程。</p>
@@ -163,19 +163,19 @@
 <h3 id="1-问题一"><a href="#1-问题一" class="headerlink" title="1.问题一"></a>1.问题一</h3><pre><code>import tensorflow as tf
 </code></pre><p>导入tensorflow时出现错误：</p>
 <pre><code>“Couldn&apos;t open CUDA library cudnn64_5.dll”
-</code></pre><p><img src="/pic/error_1.png" alt="测试"></p>
+</code></pre><p><img src="/2016/10/11/TensorFlow安装说明/error_1.png" alt="测试"></p>
 <p>找到解决方案：<br>安装时没有注意cudnn版本要求，下载安装了cudnnv6.0，安装完后自己查找文件，只有cudnn64_6.dll，没有cudnn64_5.dll。</p>
-<p><img src="/pic/error_1_1.png" alt="测试"></p>
+<p><img src="/2016/10/11/TensorFlow安装说明/error_1_1.png" alt="测试"></p>
 <p>解决方案为将cudnnV6.0替换为cudnnV5.1即可。</p>
 <p>即重新下载cudnn5.1版本。 <a href="https://developer.nvidia.com/rdp/cudnn-download" title="cudnn下载地址" target="_blank" rel="external">https://developer.nvidia.com/rdp/cudnn-download</a></p>
-<p><img src="/pic/error_1_2.png" alt="测试"></p>
+<p><img src="/2016/10/11/TensorFlow安装说明/error_1_2.png" alt="测试"></p>
 <p>解决方案来自：<a href="http://blog.csdn.net/suo_ivy/article/details/70445103" title="TensorFlow “Couldn&#39;t open CUDA library cudnn64_5.dll”" target="_blank" rel="external">http://blog.csdn.net/suo_ivy/article/details/70445103</a></p>
 <p>替换完成后，该错误消失。</p>
-<h3 id="2、问题二"><a href="#2、问题二" class="headerlink" title="2、问题二"></a>2、问题二</h3><p><img src="/pic/error_2.png" alt="测试"></p>
+<h3 id="2、问题二"><a href="#2、问题二" class="headerlink" title="2、问题二"></a>2、问题二</h3><p><img src="/2016/10/11/TensorFlow安装说明/error_2.png" alt="测试"></p>
 <p>执行<code>tf.Session()</code>的时候，出现如下提示：</p>
 <pre><code>Could not identify NUMA node of /job:localhost/replica:0/task:0/gpu:0, defaulting to 0.  Your kernel may not have been built with NUMA support.`
 </code></pre><p>不过这并不影响最终结果的执行。（只是个警告）</p>
-<p><img src="/pic/error_2_1.png" alt="测试"></p>
+<p><img src="/2016/10/11/TensorFlow安装说明/error_2_1.png" alt="测试"></p>
 <p>网上找到相关说明： <a href="http://blog.csdn.net/baixiaozhe/article/details/54598346" title="NUMA support" target="_blank" rel="external">http://blog.csdn.net/baixiaozhe/article/details/54598346</a><br>可供参考一下。<br>大体上的意思是：只要我们不是使用多GPU，这个警告应该是可以忽略的，所以我们目前也不需要担心了。</p>
 <p>至此，tensorflow 测试完成，并成功运行了测试样例。</p>
 <p>(optional) 测试程序源码</p>
@@ -183,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/11/TensorFlow安装说明/" data-id="cj7ak9mu40001nkrsxipp7ltr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/11/TensorFlow安装说明/" data-id="cj7bjzeud0000xkrsykigx2qg" class="article-share-link">Share</a>
       
       
     </footer>
