@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -95,16 +95,16 @@
 
 
 
-<meta name="description" content="描述在">
+<meta name="description" content="所谓王者，必卓然特立，争当人杰。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="王立杰的博客">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="描述在">
+<meta property="og:description" content="所谓王者，必卓然特立，争当人杰。">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="王立杰的博客">
-<meta name="twitter:description" content="描述在">
+<meta name="twitter:description" content="所谓王者，必卓然特立，争当人杰。">
 
 
 
@@ -112,7 +112,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.2',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -201,7 +201,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -267,7 +267,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-08T12:00:25+08:00">
                 2017-09-08
@@ -288,7 +288,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -331,179 +331,23 @@
       
         
           
-            <h2 id="一-准备工作"><a href="#一-准备工作" class="headerlink" title="一.准备工作"></a>一.准备工作</h2><p>1、安装 Node.js: <a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></p>
-<p>2、安装 Git: <a href="https://github.com/waylau/git-for-win" target="_blank" rel="external">https://github.com/waylau/git-for-win</a></p>
-<p>Git教程 <code>https://github.com/waylau/git-for-win</code>廖雪峰老师的教程，非常好。</p>
-<p>3、安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，名称和邮箱是Github上的。</p>
-<p><img src="/2017/09/08/blog_setup/git_1.png" alt="Git Bash界面与指令"></p>
-<p>4、安装 Hexo。所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
-<pre><code>$ npm install -g hexo-cli
-</code></pre><p>上述步骤参考自：<a href="https://zhangslob.github.io/2017/02/28/%E6%95%99%E4%BD%A0%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo-Github/" title="教你免费搭建个人博客，Hexo-Github" target="_blank" rel="external">Hexo-Github搭建个人博客</a></p>
-<p>4.1 安装hexo出错：<code>unable to verify the first certificate</code>（无法验证第一证书）</p>
-<p><img src="/2017/09/08/blog_setup/hexo_1.png" alt="安装hexo出错截图"></p>
-<p>查找到解决方案：</p>
-<p><img src="/2017/09/08/blog_setup/hexo_2.png" alt="解决方案截图-推荐方案一"></p>
-<p>参考网址：<a href="http://www.zhimengzhe.com/Javascriptjiaocheng/243010.html" title="npm报错" target="_blank" rel="external">npm报错</a></p>
-<p>输入命令：</p>
-<pre><code>npm config set strict-ssl false
-</code></pre><p>取消ssl验证。</p>
-<p>安装成功后，显示如下：</p>
-<p><img src="/2017/09/08/blog_setup/hexo_3.png" alt="hexo安装成功"></p>
-<h2 id="二、配置Github"><a href="#二、配置Github" class="headerlink" title="二、配置Github"></a>二、配置Github</h2><p>首先注册、登录 <a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></p>
-<p>记住自己的Username（很重要）</p>
-<p>然后右上角选择 Create a new repository <a href="https://github.com/new" target="_blank" rel="external">https://github.com/new</a></p>
-<p>Repository name（填自己的名字） yourname.github.io(yourname与你的注册用户名一致,这个就是你博客的域名了)</p>
-<p><img src="/2017/09/08/blog_setup/github_1.png" alt="githhub创建仓库截图"></p>
-<p>仓库创建完成后，开始生成添加秘钥。</p>
-<p>在终端（cmd）输入：</p>
-<pre><code>ssh-keygen -t rsa -C &quot;Github的注册邮箱地址&quot;
-</code></pre><p>一路Enter过来就好，待秘钥生成完毕，会得到两个文件id_rsa和id_rsa.pub，用带格式的记事本打开id_rsa.pub，Ctrl + a复制里面的所有内容，然后进入<a href="https://github.com/settings/ssh：" target="_blank" rel="external">https://github.com/settings/ssh：</a></p>
-<p><img src="/2017/09/08/blog_setup/github_2.png" alt="githhub输入秘钥"></p>
-<p>将复制的内容粘贴到Key的输入框，随便写好Title里面的内容，点击Add SSH key按钮即可。</p>
-<p>若没有配置GitHub，就执行第三步（初始化博客），会出现如下错误：</p>
-<p><img src="/2017/09/08/blog_setup/hexo_4.png" alt="初始化错误"></p>
-<h2 id="三、初始化博客"><a href="#三、初始化博客" class="headerlink" title="三、初始化博客"></a>三、初始化博客</h2><p>在电脑F盘（自己随意）目录下新建文件夹 test，进入test，按住Shift键点击鼠标右键，点击“在此处打开命令窗口”：</p>
-<p><img src="/2017/09/08/blog_setup/blog_1.png" alt="右键选择菜单"></p>
-<p>输入</p>
-<pre><code>hexo init blog
-</code></pre><p>稍微等待下，速度有点慢。成功提示：</p>
-<pre><code>INFO  Start blogging with Hexo!
-</code></pre><p>因为你初始化hexo 之后source目录下自带一篇<code>hello world</code>文章, 所以直接执行下方命令:</p>
-<pre><code>$ hexo generate
-# 启动本地服务器
-$ hexo server
-# 在浏览器输入 http://localhost:4000/就可以看见网页和模板了
-INFO  Start processing
-INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
-</code></pre><p>访问<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>，便可以看到网站初步的模样，不要激动，我们还要把网页发布到Github上去。</p>
-<p><img src="/2017/09/08/blog_setup/blog_local_server.png" alt="localhost上的网站初步形状"></p>
-<h2 id="四、配置博客"><a href="#四、配置博客" class="headerlink" title="四、配置博客"></a>四、配置博客</h2><p>在<code>blog</code>目录下，用<code>sublime/notepad++</code>等文本编辑器打开<code>_config.yml</code>文件，修改参数信息</p>
-<p>特别提醒，在每个参数的：后都要加一个空格</p>
-<h4 id="1-修改网站相关信息"><a href="#1-修改网站相关信息" class="headerlink" title="1.修改网站相关信息"></a>1.修改网站相关信息</h4><pre><code>title: wangwlj测试所用博客
-subtitle: 积跬步以至千里！
-description: 网页描述
-author: wangwlj
-language: zh-CN
-timezone: Asia/Shanghai
-</code></pre><p><code>language</code>和<code>timezone</code>都是有输入规范的，详细可参考 <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank" rel="external">语言规范</a>和<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="external">时区规范</a>。</p>
-<h4 id="2-配置部署（qwerty200696，修改成自己的）"><a href="#2-配置部署（qwerty200696，修改成自己的）" class="headerlink" title="2.配置部署（qwerty200696，修改成自己的）"></a>2.配置部署（qwerty200696，修改成自己的）</h4><pre><code>deploy:
-  type: git
-  repo: https://github.com/qwerty200696/qwerty200696.github.io
-  branch: master
-</code></pre><p>其中<code>repo</code>项是之前<code>Github</code>上创建好的仓库的地址，可以通过如下图所示的方式得到：</p>
-<p><img src="/2017/09/08/blog_setup/github_3.png" alt="repo地址"></p>
-<p>branch是项目的分支，我们默认用主分支<code>master</code>。</p>
-<h4 id="3-配置统一资源定位符（个人域名）"><a href="#3-配置统一资源定位符（个人域名）" class="headerlink" title="3.配置统一资源定位符（个人域名）"></a>3.配置统一资源定位符（个人域名）</h4><p>如果有个人域名的话可以设置，否则跳过即可。</p>
-<pre><code>url: http://inerdstack.com
-</code></pre><p>对于root（根目录）、permalink（永久链接）、permalink_defaults（默认永久链接）等其他信息保持默认。</p>
-<h2 id="五、发表文章"><a href="#五、发表文章" class="headerlink" title="五、发表文章"></a>五、发表文章</h2><p>1.新建一篇博文，在CMD中输入</p>
-<pre><code>$ hexo new &quot;我的测试文章&quot;
+          一.准备工作1、安装 Node.js: https://nodejs.org/en/
+2、安装 Git: https://github.com/waylau/git-for-win
+Git教程 https://github.com/waylau/git-for-win廖雪峰老师的教程，非常好。
+3、安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，名称和邮箱是Github上的。
 
-INFO  Created: F:\test\blog\source\_posts\我的测试文章.md
-</code></pre><p>2.找到该文章，打开，使用Markdown语法编辑文章，该语法介绍可以查看：<a href="https://zhangslob.github.io/2017/02/26/%E5%88%A9%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">markdown语法</a></p>
-<p>在文章的一开始处，可以按如下格式添加文章标题，日期，分类、标签以及描述等。</p>
-<pre><code>---
-title: title #文章標題
-date: 2017-09-08 23:47:44 #文章生成時間
-categories: &quot;Hexo教程&quot; #文章分類目錄 可以省略
-tags: #文章標籤 可以省略
-     - 标签1
-     - 标签2
- description: #你對本頁的描述 可以省略
----
-</code></pre><p>3.接着输入如下的一系列命令：</p>
-<pre><code>F:\test\blog
-$ hexo clean
-INFO  Deleted database.
-INFO  Deleted public folder.
-
-F:\test\blog
-$ hexo generate
-INFO  Start processing
-INFO  Files loaded in 1.48 s
-#省略
-INFO  29 files generated in 4.27 s
-
-$ hexo server
-INFO  Start processing
-INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
-</code></pre><p>我直接跑的server，也可以。</p>
-<p>最后一步，发布到网上，执行：</p>
-<pre><code>F:\test\blog
-$ hexo deploy
-INFO  Deploying: git
-INFO  Clearing .deploy_git folder...
-INFO  Copying files from public folder...
-#省略
-</code></pre><p>其中会跳出Github登录，直接登录，如果没有问题，在浏览器输入<code>qwerty200696（换成你的）.github.io/</code></p>
-<p>我的测试所用博客 <code>https://qwerty200696.github.io/</code></p>
-<p>然后就可以看到已经发布了。</p>
-<h3 id="4-错误记录一："><a href="#4-错误记录一：" class="headerlink" title="4.错误记录一："></a>4.错误记录一：</h3><pre><code>deploy not found： git
-</code></pre><p><img src="/2017/09/08/blog_setup/error_1.png" alt="deploy not found： git"></p>
-<p>解决方案</p>
-<p> npm install hexo-deployer-git –save 改了之后执行，然后再部署试试</p>
-<p>参考自：<a href="https://www.v2ex.com/t/175940" target="_blank" rel="external">https://www.v2ex.com/t/175940</a></p>
-<p><img src="/2017/09/08/blog_setup/error_1_done.png" alt="错误一修正"></p>
-<h3 id="5-错误记录二："><a href="#5-错误记录二：" class="headerlink" title="5.错误记录二："></a>5.错误记录二：</h3><p>今天运行：</p>
-<pre><code>hexo deploy
-</code></pre><p>同步文章到<code>github</code>时，出错：</p>
-<pre><code>fatal: unable to access &apos;https://username:password@github.com/username/username.github.io.git/&apos;: SSL certificate problem: unable to get local issuer certificate
-FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html
-Error: fatal: unable to access &apos;https://username:password@github.com/username/username.github.io.git/&apos;: SSL certificate problem: unable to get local issuer certificate
-
-    at ChildProcess.&lt;anonymous&gt; (D:\test\blog2\node_modules\hexo-util\lib\spawn.js:37:17)
-    at emitTwo (events.js:106:13)
-    at ChildProcess.emit (events.js:191:7)
-    at ChildProcess.cp.emit (D:\test\blog2\node_modules\cross-spawn\lib\enoent.js:40:29)
-    at maybeClose (internal/child_process.js:920:16)
-    at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
-</code></pre><p><img src="/2017/09/08/blog_setup/git_hexo_deploy_error.png" alt="SSL错误"></p>
-<p>尝试执行：</p>
-<pre><code>$ git config --global http.sslVerify false
-</code></pre><p>参考自：<a href="http://windigniter.com/itblog/detail/2015/06/git-ssl-certificate-problem" target="_blank" rel="external">git获取代码提示SSL certificate problem: unable to get local issuer certificate</a></p>
-<p>（optional）将<code>_config.yml</code>中的<code>repo</code>修改为了：</p>
-<pre><code>repo: https://用户名:密码@github.com/用户名/用户名.github.io.git
-</code></pre><p>参考自： <a href="http://blog.csdn.net/w20101310/article/details/52796721?locationNum=6&amp;fps=1" target="_blank" rel="external">hexo提交报错 unable to access</a></p>
-<p>之后再次运行：</p>
-<pre><code>hexo deploy
-</code></pre><p>果然可以了。</p>
-<p><img src="/2017/09/08/blog_setup/git_hexo_deploy_error_done.png" alt="SSL错误解决"></p>
-<h2 id="六、添加图片"><a href="#六、添加图片" class="headerlink" title="六、添加图片"></a>六、添加图片</h2><p>经过上面的配置后，发现上传的博客文章里面的本地图片居然显示不来（没有同步上传）。</p>
-<p>于是，找到解决方案：</p>
-<p>1 把主页配置文件<code>_config.yml</code> 里的<code>post_asset_folder:</code>这个选项设置为<code>true</code></p>
-<p>2 在你的hexo目录下执行这样一句话<code>npm install hexo-asset-image --save</code>，这是下载安装一个可以上传本地图片的插件</p>
-<p>3 等待一小段时间后，再运行<code>hexo n &quot;xxxx&quot;</code>来生成<code>md</code>博文时，<code>/source/_posts</code>文件夹内除了<code>xxxx.md</code>文件还有一个同名的文件夹</p>
-<p>4 最后在xxxx.md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx.md中按照markdown的格式引入图片：</p>
-<pre><code>![你想输入的替代文字](xxxx/图片名.jpg)
-</code></pre><p>注意： <code>xxxx</code>是这个md文件的名字，也是同名文件夹的名字。只需要有文件夹名字即可，不需要有什么绝对路径。你想引入的图片就只需要放入<code>xxxx</code>这个文件夹内就好了，很像引用相对路径。</p>
-<p>5 最后检查一下，<code>hexo g</code>生成页面后，进入<code>public\2017\02\26\index.html</code>文件中查看相关字段，可以发现，html标签内的语句是<code>&lt;img src=&quot;2017/02/26/xxxx/图片名.jpg&quot;&gt;</code>，而不是<code>&lt;img src=&quot;xxxx/图片名.jpg&gt;</code>。这很重要，关乎你的网页是否可以真正加载你想插入的图片。</p>
-<p>6.<code>hexo s</code>，运行本地服务器，打开<code>http://localhost:4000/</code>，可实时查看修改情况。</p>
-<p>7.<code>hexo g</code>，同步到github。</p>
-<p>参考自：<a href="http://blog.csdn.net/sugar_rainbow/article/details/57415705" target="_blank" rel="external">hexo生成博文插入图片</a></p>
-<h2 id="七、总结"><a href="#七、总结" class="headerlink" title="七、总结"></a>七、总结</h2><p>发布文章的步骤：</p>
-<p>1、<code>hexo new</code> 创建文章</p>
-<p>2、<code>Markdown</code>语法编辑文章</p>
-<p>3、部署（所有打开CMD都是在blog目录下）</p>
-<pre><code>hexo clean #清除缓存 网页正常情况下可以忽略此条命令
-hexo generate #生成
-hexo server #启动服务预览，非必要，可本地浏览网页
-hexo deploy #部署发布
-</code></pre><p>简写Tips：</p>
-<ol>
-<li><p>hexo n “我的博客” == hexo new “我的博客” #新建文章</p>
-</li>
-<li><p>hexo p == hexo publish</p>
-</li>
-<li><p>hexo g == hexo generate#生成</p>
-</li>
-<li><p>hexo s == hexo server #启动服务预览</p>
-</li>
-<li><p>hexo d == hexo deploy#部署</p>
-</li>
-</ol>
-<p>参考自：<a href="https://zhangslob.github.io/2017/02/28/%E6%95%99%E4%BD%A0%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo-Github/" target="_blank" rel="external">教你免费搭建个人博客，Hexo&amp;Github</a></p>
-
-          
+4、安装 Hexo。所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。
+$ npm install -g hexo-cli
+上述步骤参考自：Hexo-Github搭建个人博客
+4.1
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/08/blog_setup/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -579,7 +423,7 @@ hexo deploy #部署发布
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-07T17:27:57+08:00">
                 2017-09-07
@@ -621,51 +465,18 @@ hexo deploy #部署发布
       
         
           
-            <h2 id="一-安装python"><a href="#一-安装python" class="headerlink" title="一.安装python"></a>一.安装python</h2><h3 id="1、通过Pip在Windows上安装Python"><a href="#1、通过Pip在Windows上安装Python" class="headerlink" title="1、通过Pip在Windows上安装Python"></a>1、通过Pip在Windows上安装Python</h3><p><code>TensorFlow</code>在<code>Windows</code>上只支持64位<code>Python3.5</code>，可以通过<a href="https://www.python.org/downloads/release/python-352/" title="Python 3.5.2" target="_blank" rel="external">Python 3.5 from python.org</a> 下载并安装<code>Python3.5.2</code>（注意选择正确的操作系统）。</p>
-<p>或者通过<a href="https://www.python.org/downloads/" title="python下载" target="_blank" rel="external">https://www.python.org/downloads/</a>选择3.5的任意版本。</p>
-<h3 id="2、设置环境变量"><a href="#2、设置环境变量" class="headerlink" title="2、设置环境变量"></a>2、设置环境变量</h3><p>上一步安装时，如果勾选了“自动配置环境变量”操作，即：在<code>cmd</code>中输入<code>pip</code>，如果找到了该命令，则可省去该步骤。</p>
-<p>若在<code>cmd</code>中输入<code>pip</code>找不到该命令，则需要将<code>Python</code>安装路径下“<code>%安装路径%\Scripts</code>”添加到Path下；再到cmd中输入pip看到若干命令提示，则代表<code>python</code>安装成功（<code>Python</code>安装包自带<code>pip</code>）。“开始”-&gt;“所有程序”，也可以找到<code>Python</code>终端。</p>
-<p>参考自：<a href="http://blog.csdn.net/include1224/article/details/53452824" title="原生Windows安装TensorFlow 0.12方法" target="_blank" rel="external">http://blog.csdn.net/include1224/article/details/53452824</a></p>
-<h2 id="二-cuda以及cudnn的安装"><a href="#二-cuda以及cudnn的安装" class="headerlink" title="二.cuda以及cudnn的安装"></a>二.cuda以及cudnn的安装</h2><p><code>TensorFlow</code>分为<code>CPU</code>版和<code>GPU</code>版，如果你打算安装<code>GPU</code>版，请先安装如下两个驱动：</p>
-<p>1、CUDA安装：<code>https://developer.nvidia.com/cuda-downloads</code></p>
-<p><img src="/2017/09/07/TensorFlow_setup/cuda_download.png" alt="cuda截图"></p>
-<p>2、CuDNN安装：<code>https://developer.nvidia.com/cudnn</code>（要注册Nvidia用户，并加入CuDNN开发组，填若干问卷就可以下载了）选择下载版本时要注意和Cuda版本匹配。</p>
-<p>我的账户是<strong>qq邮箱</strong>。</p>
-<p>解压后覆盖至CUDA的安装目录下<br>例如：</p>
-<pre><code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\
-</code></pre><h2 id="三、安装tensorflow"><a href="#三、安装tensorflow" class="headerlink" title="三、安装tensorflow"></a>三、安装tensorflow</h2><p>我安装的是GPU版本。</p>
-<p><code>windows</code>不支持<code>pip</code>在线安装。即不支持：<code>pip install tensorflow-gpu</code>该命令。</p>
-<p>两种方法安装<code>tensorflow</code>：</p>
-<h4 id="1-手动下载tensorflow-gpu版本文件："><a href="#1-手动下载tensorflow-gpu版本文件：" class="headerlink" title="1.手动下载tensorflow gpu版本文件："></a>1.手动下载tensorflow gpu版本文件：</h4><p><code>tensorflow_gpu-0.12.0rc0-cp35-cp35m-win_amd64.whl</code><br>下载网址：<a href="https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-win_amd64.whl" title="tensorflow下载网址" target="_blank" rel="external">https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-win_amd64.whl</a></p>
-<p>下载完成后，打开cmd，切换到安装文件目录，输入: </p>
-<pre><code>pip install tensorflow_gpu-0.12.0rc0-cp35-cp35m-win_amd64.whl
-</code></pre><p>即可成功安装。</p>
-<p><img src="/2017/09/07/TensorFlow_setup/tensorflow_setup.png" alt="tensorflow安装"></p>
-<h4 id="2-输入pip命令"><a href="#2-输入pip命令" class="headerlink" title="2.输入pip命令"></a>2.输入pip命令</h4><pre><code>pip install --upgrade https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-win_amd64.whl
-</code></pre><p>参考自tensorflow官网：<a href="https://www.tensorflow.org/versions/r0.12/get_started/os_setup#pip_installation_on_windows" title="tensorflow官网" target="_blank" rel="external">https://www.tensorflow.org/versions/r0.12/get_started/os_setup#pip_installation_on_windows</a></p>
-<p>mac和linux可另行参考网上教程。</p>
-<h2 id="四、测试"><a href="#四、测试" class="headerlink" title="四、测试"></a>四、测试</h2><p>测试是否安装成功。</p>
-<h3 id="1-问题一"><a href="#1-问题一" class="headerlink" title="1.问题一"></a>1.问题一</h3><pre><code>import tensorflow as tf
-</code></pre><p>导入tensorflow时出现错误：</p>
-<pre><code>“Couldn&apos;t open CUDA library cudnn64_5.dll”
-</code></pre><p><img src="/2017/09/07/TensorFlow_setup/error_1.png" alt="测试"></p>
-<p>找到解决方案：<br>安装时没有注意cudnn版本要求，下载安装了cudnnv6.0，安装完后自己查找文件，只有cudnn64_6.dll，没有cudnn64_5.dll。</p>
-<p><img src="/2017/09/07/TensorFlow_setup/error_1_1.png" alt="测试"></p>
-<p>解决方案为将cudnnV6.0替换为cudnnV5.1即可。</p>
-<p>即重新下载cudnn5.1版本。 <a href="https://developer.nvidia.com/rdp/cudnn-download" title="cudnn下载地址" target="_blank" rel="external">https://developer.nvidia.com/rdp/cudnn-download</a></p>
-<p><img src="/2017/09/07/TensorFlow_setup/error_1_2.png" alt="测试"></p>
-<p>解决方案来自：<a href="http://blog.csdn.net/suo_ivy/article/details/70445103" title="TensorFlow “Couldn&#39;t open CUDA library cudnn64_5.dll”" target="_blank" rel="external">http://blog.csdn.net/suo_ivy/article/details/70445103</a></p>
-<p>替换完成后，该错误消失。</p>
-<h3 id="2、问题二"><a href="#2、问题二" class="headerlink" title="2、问题二"></a>2、问题二</h3><p><img src="/2017/09/07/TensorFlow_setup/error_2.png" alt="测试"></p>
-<p>执行<code>tf.Session()</code>的时候，出现如下提示：</p>
-<pre><code>Could not identify NUMA node of /job:localhost/replica:0/task:0/gpu:0, defaulting to 0.  Your kernel may not have been built with NUMA support.`
-</code></pre><p>不过这并不影响最终结果的执行。（只是个警告）</p>
-<p><img src="/2017/09/07/TensorFlow_setup/error_2_1.png" alt="测试"></p>
-<p>网上找到相关说明： <a href="http://blog.csdn.net/baixiaozhe/article/details/54598346" title="NUMA support" target="_blank" rel="external">http://blog.csdn.net/baixiaozhe/article/details/54598346</a><br>可供参考一下。<br>大体上的意思是：只要我们不是使用多GPU，这个警告应该是可以忽略的，所以我们目前也不需要担心了。</p>
-<p>至此，tensorflow 测试完成，并成功运行了测试样例。</p>
-<p>(optional) 测试程序源码</p>
-
-          
+          一.安装python1、通过Pip在Windows上安装PythonTensorFlow在Windows上只支持64位Python3.5，可以通过Python 3.5 from python.org 下载并安装Python3.5.2（注意选择正确的操作系统）。
+或者通过https://www.python.org/downloads/选择3.5的任意版本。
+2、设置环境变量上一步安装时，如果勾选了“自动配置环境变量”操作，即：在cmd中输入pip，如果找到了该命令，则可省去该步骤。
+若在cmd中输入pip找不到该命令，则需要将Python安装路径下“%安装路径%\Scripts”添加到Path
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/07/TensorFlow_setup/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -734,7 +545,7 @@ hexo deploy #部署发布
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <p class="site-author-name" itemprop="name">wangwlj</p>
-            <p class="site-description motion-element" itemprop="description">描述在</p>
+            <p class="site-description motion-element" itemprop="description">所谓王者，必卓然特立，争当人杰。</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -745,7 +556,7 @@ hexo deploy #部署发布
               <a href="/archives">
             
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -756,7 +567,7 @@ hexo deploy #部署发布
             <div class="site-state-item site-state-categories">
               
                 <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-name">Kategorien</span>
               
             </div>
           
@@ -767,7 +578,7 @@ hexo deploy #部署发布
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               
             </div>
           
@@ -777,6 +588,50 @@ hexo deploy #部署发布
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/qwerty200696" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                  
+                    <i class="fa fa-fw fa-google"></i>Google</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/yourname" target="_blank" title="FB Page">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://youtube.com/yourname" target="_blank" title="YouTube">
+                  
+                    <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://instagram.com/yourname" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+              </span>
+            
           
         </div>
 
@@ -818,11 +673,11 @@ hexo deploy #部署发布
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a></div>
 
   <span class="post-meta-divider">|</span>
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
 
 
         
@@ -906,6 +761,13 @@ hexo deploy #部署发布
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
@@ -933,6 +795,10 @@ hexo deploy #部署发布
 
 
 
+  
+    
+
+    
   
 
 
