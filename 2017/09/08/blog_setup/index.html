@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://yoursite.com/2017/09/08/blog_setup/error_1_done.png">
 <meta property="og:image" content="http://yoursite.com/2017/09/08/blog_setup/git_hexo_deploy_error.png">
 <meta property="og:image" content="http://yoursite.com/2017/09/08/blog_setup/git_hexo_deploy_error_done.png">
-<meta property="og:updated_time" content="2017-09-08T09:04:25.314Z">
+<meta property="og:updated_time" content="2017-09-08T09:21:57.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+GitHub博客搭建实战">
 <meta name="twitter:description" content="一.准备工作1、安装 Node.js: https://nodejs.org/en/ 2、安装 Git: https://github.com/waylau/git-for-win Git教程 https://github.com/waylau/git-for-win廖雪峰老师的教程，非常好。 3、安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，名称和邮箱是Github上的。">
@@ -109,35 +109,35 @@
 <p>2、安装 Git: <a href="https://github.com/waylau/git-for-win" target="_blank" rel="external">https://github.com/waylau/git-for-win</a></p>
 <p>Git教程 <code>https://github.com/waylau/git-for-win</code>廖雪峰老师的教程，非常好。</p>
 <p>3、安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，名称和邮箱是Github上的。</p>
-<p><img src="/2017/09/08/blog_setup/git_1.png" alt="git"></p>
+<p><img src="/2017/09/08/blog_setup/git_1.png" alt="Git Bash界面与指令"></p>
 <p>4、安装 Hexo。所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
 <pre><code>$ npm install -g hexo-cli
 </code></pre><p>上述步骤参考自：<a href="https://zhangslob.github.io/2017/02/28/%E6%95%99%E4%BD%A0%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo-Github/" title="教你免费搭建个人博客，Hexo-Github" target="_blank" rel="external">Hexo-Github搭建个人博客</a></p>
 <p>4.1 安装hexo出错：<code>unable to verify the first certificate</code>（无法验证第一证书）</p>
-<p><img src="/2017/09/08/blog_setup/hexo_1.png" alt="hexo"></p>
+<p><img src="/2017/09/08/blog_setup/hexo_1.png" alt="安装hexo出错截图"></p>
 <p>查找到解决方案：</p>
-<p><img src="/2017/09/08/blog_setup/hexo_2.png" alt="hexo"></p>
+<p><img src="/2017/09/08/blog_setup/hexo_2.png" alt="解决方案截图-推荐方案一"></p>
 <p>参考网址：<a href="http://www.zhimengzhe.com/Javascriptjiaocheng/243010.html" title="npm报错" target="_blank" rel="external">npm报错</a></p>
 <p>输入命令：</p>
 <pre><code>npm config set strict-ssl false
-</code></pre><p>取消了ssl验证即可。</p>
+</code></pre><p>取消ssl验证。</p>
 <p>安装成功后，显示如下：</p>
-<p><img src="/2017/09/08/blog_setup/hexo_3.png" alt="hexo"></p>
+<p><img src="/2017/09/08/blog_setup/hexo_3.png" alt="hexo安装成功"></p>
 <h2 id="二、配置Github"><a href="#二、配置Github" class="headerlink" title="二、配置Github"></a>二、配置Github</h2><p>首先注册、登录 <a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></p>
 <p>记住自己的Username（很重要）</p>
 <p>然后右上角选择 Create a new repository <a href="https://github.com/new" target="_blank" rel="external">https://github.com/new</a></p>
-<p>Repository name （填自己的名字） yourname.github.io(yourname与你的注册用户名一致,这个就是你博客的域名了)</p>
-<p><img src="/2017/09/08/blog_setup/github_1.png" alt="githhub"></p>
-<p>生成添加秘钥</p>
+<p>Repository name（填自己的名字） yourname.github.io(yourname与你的注册用户名一致,这个就是你博客的域名了)</p>
+<p><img src="/2017/09/08/blog_setup/github_1.png" alt="githhub创建仓库截图"></p>
+<p>仓库创建完成后，开始生成添加秘钥。</p>
 <p>在终端（cmd）输入：</p>
 <pre><code>ssh-keygen -t rsa -C &quot;Github的注册邮箱地址&quot;
 </code></pre><p>一路Enter过来就好，待秘钥生成完毕，会得到两个文件id_rsa和id_rsa.pub，用带格式的记事本打开id_rsa.pub，Ctrl + a复制里面的所有内容，然后进入<a href="https://github.com/settings/ssh：" target="_blank" rel="external">https://github.com/settings/ssh：</a></p>
-<p><img src="/2017/09/08/blog_setup/github_2.png" alt="githhub"></p>
+<p><img src="/2017/09/08/blog_setup/github_2.png" alt="githhub输入秘钥"></p>
 <p>将复制的内容粘贴到Key的输入框，随便写好Title里面的内容，点击Add SSH key按钮即可。</p>
-<p>若没有配置GitHub，就执行第三部，会出现如下错误：</p>
-<p><img src="/2017/09/08/blog_setup/hexo_4.png" alt="hexo"></p>
+<p>若没有配置GitHub，就执行第三步（初始化博客），会出现如下错误：</p>
+<p><img src="/2017/09/08/blog_setup/hexo_4.png" alt="初始化错误"></p>
 <h2 id="三、初始化博客"><a href="#三、初始化博客" class="headerlink" title="三、初始化博客"></a>三、初始化博客</h2><p>在电脑F盘（自己随意）目录下新建文件夹 test，进入test，按住Shift键点击鼠标右键，点击“在此处打开命令窗口”：</p>
-<p><img src="/2017/09/08/blog_setup/blog_1.png" alt="blog"></p>
+<p><img src="/2017/09/08/blog_setup/blog_1.png" alt="右键选择菜单"></p>
 <p>输入</p>
 <pre><code>hexo init blog
 </code></pre><p>稍微等待下，速度有点慢。成功提示：</p>
@@ -150,7 +150,7 @@ $ hexo server
 INFO  Start processing
 INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
 </code></pre><p>访问<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>，便可以看到网站初步的模样，不要激动，我们还要把网页发布到Github上去。</p>
-<p><img src="/2017/09/08/blog_setup/blog_local_server.png" alt="blog"></p>
+<p><img src="/2017/09/08/blog_setup/blog_local_server.png" alt="localhost上的网站初步形状"></p>
 <h2 id="四、配置博客"><a href="#四、配置博客" class="headerlink" title="四、配置博客"></a>四、配置博客</h2><p>在<code>blog</code>目录下，用<code>sublime/notepad++</code>等文本编辑器打开<code>_config.yml</code>文件，修改参数信息</p>
 <p>特别提醒，在每个参数的：后都要加一个空格</p>
 <h4 id="1-修改网站相关信息"><a href="#1-修改网站相关信息" class="headerlink" title="1.修改网站相关信息"></a>1.修改网站相关信息</h4><pre><code>title: wangwlj测试所用博客
@@ -165,7 +165,7 @@ timezone: Asia/Shanghai
   repo: https://github.com/qwerty200696/qwerty200696.github.io
   branch: master
 </code></pre><p>其中<code>repo</code>项是之前<code>Github</code>上创建好的仓库的地址，可以通过如下图所示的方式得到：</p>
-<p><img src="/2017/09/08/blog_setup/github_3.png" alt="github"></p>
+<p><img src="/2017/09/08/blog_setup/github_3.png" alt="repo地址"></p>
 <p>branch是项目的分支，我们默认用主分支<code>master</code>。</p>
 <h4 id="3-配置统一资源定位符（个人域名）"><a href="#3-配置统一资源定位符（个人域名）" class="headerlink" title="3.配置统一资源定位符（个人域名）"></a>3.配置统一资源定位符（个人域名）</h4><p>如果有个人域名的话可以设置，否则跳过即可。</p>
 <pre><code>url: http://inerdstack.com
@@ -203,11 +203,11 @@ INFO  Copying files from public folder...
 <p>我的测试所用博客 <code>https://qwerty200696.github.io/</code></p>
 <p>然后就可以看到已经发布了。</p>
 <h3 id="4-错误记录一："><a href="#4-错误记录一：" class="headerlink" title="4.错误记录一："></a>4.错误记录一：</h3><pre><code>deploy not found： git
-</code></pre><p><img src="/2017/09/08/blog_setup/error_1.png" alt="github"></p>
+</code></pre><p><img src="/2017/09/08/blog_setup/error_1.png" alt="deploy not found： git"></p>
 <p>解决方案</p>
 <p> npm install hexo-deployer-git –save 改了之后执行，然后再部署试试</p>
 <p>参考自：<a href="https://www.v2ex.com/t/175940" target="_blank" rel="external">https://www.v2ex.com/t/175940</a></p>
-<p><img src="/2017/09/08/blog_setup/error_1_done.png" alt="github"></p>
+<p><img src="/2017/09/08/blog_setup/error_1_done.png" alt="错误一修正"></p>
 <h3 id="5-错误记录二："><a href="#5-错误记录二：" class="headerlink" title="5.错误记录二："></a>5.错误记录二：</h3><p>今天运行：</p>
 <pre><code>hexo deploy
 </code></pre><p>同步文章到<code>github</code>时，出错：</p>
@@ -221,7 +221,7 @@ Error: fatal: unable to access &apos;https://username:password@github.com/userna
     at ChildProcess.cp.emit (D:\test\blog2\node_modules\cross-spawn\lib\enoent.js:40:29)
     at maybeClose (internal/child_process.js:920:16)
     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
-</code></pre><p><img src="/2017/09/08/blog_setup/git_hexo_deploy_error.png" alt="github"></p>
+</code></pre><p><img src="/2017/09/08/blog_setup/git_hexo_deploy_error.png" alt="SSL错误"></p>
 <p>尝试执行：</p>
 <pre><code>$ git config --global http.sslVerify false
 </code></pre><p>参考自：<a href="http://windigniter.com/itblog/detail/2015/06/git-ssl-certificate-problem" target="_blank" rel="external">git获取代码提示SSL certificate problem: unable to get local issuer certificate</a></p>
@@ -231,7 +231,7 @@ Error: fatal: unable to access &apos;https://username:password@github.com/userna
 <p>之后再次运行：</p>
 <pre><code>hexo deploy
 </code></pre><p>果然可以了。</p>
-<p><img src="/2017/09/08/blog_setup/git_hexo_deploy_error_done.png" alt="github"></p>
+<p><img src="/2017/09/08/blog_setup/git_hexo_deploy_error_done.png" alt="SSL错误解决"></p>
 <h2 id="六、添加图片"><a href="#六、添加图片" class="headerlink" title="六、添加图片"></a>六、添加图片</h2><p>经过上面的配置后，发现上传的博客文章里面的本地图片居然显示不来（没有同步上传）。</p>
 <p>于是，找到解决方案：</p>
 <p>1 把主页配置文件<code>_config.yml</code> 里的<code>post_asset_folder:</code>这个选项设置为<code>true</code></p>
@@ -270,7 +270,7 @@ hexo deploy #部署发布
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/08/blog_setup/" data-id="cj7bnu2il0001forsx2hwu91t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/08/blog_setup/" data-id="cj7bwcupg00019srsqe37e51r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -280,9 +280,9 @@ hexo deploy #部署发布
 <nav id="article-nav">
   
   
-    <a href="/2017/09/07/TensorFlow安装说明/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/09/07/TensorFlow_setup/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">TensorFlow安装</div>
+      <div class="article-nav-title">windows下TensorFlow完整安装流程及出错解决方案</div>
     </a>
   
 </nav>
@@ -298,9 +298,23 @@ hexo deploy #部署发布
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow-安装/">TensorFlow; 安装</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/TensorFlow-安装/" style="font-size: 10px;">TensorFlow; 安装</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -323,7 +337,7 @@ hexo deploy #部署发布
           </li>
         
           <li>
-            <a href="/2017/09/07/TensorFlow安装说明/">TensorFlow安装</a>
+            <a href="/2017/09/07/TensorFlow_setup/">windows下TensorFlow完整安装流程及出错解决方案</a>
           </li>
         
       </ul>
