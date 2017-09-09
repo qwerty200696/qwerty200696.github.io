@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="TensorFlow," />
+  <meta name="keywords" content="TensorFlow,deep learning," />
 
 
 
@@ -88,7 +88,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/web_icon.jpg?v=5.1.2" />
 
 
 
@@ -96,25 +96,25 @@
 
 
 <meta name="description" content="一.安装python1、通过Pip在Windows上安装PythonTensorFlow在Windows上只支持64位Python3.5，可以通过Python 3.5 from python.org 下载并安装Python3.5.2（注意选择正确的操作系统）。 或者通过https://www.python.org/downloads/选择3.5的任意版本。 2、设置环境变量上一步安装时，如果勾选了">
-<meta name="keywords" content="TensorFlow">
+<meta name="keywords" content="TensorFlow,deep learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="windows下TensorFlow完整安装流程及出错解决方案">
-<meta property="og:url" content="http://yoursite.com/2017/09/07/TensorFlow_setup/index.html">
+<meta property="og:url" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/index.html">
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="一.安装python1、通过Pip在Windows上安装PythonTensorFlow在Windows上只支持64位Python3.5，可以通过Python 3.5 from python.org 下载并安装Python3.5.2（注意选择正确的操作系统）。 或者通过https://www.python.org/downloads/选择3.5的任意版本。 2、设置环境变量上一步安装时，如果勾选了">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2017/09/07/TensorFlow_setup/cuda_download.png">
-<meta property="og:image" content="http://yoursite.com/2017/09/07/TensorFlow_setup/tensorflow_setup.png">
-<meta property="og:image" content="http://yoursite.com/2017/09/07/TensorFlow_setup/error_1.png">
-<meta property="og:image" content="http://yoursite.com/2017/09/07/TensorFlow_setup/error_1_1.png">
-<meta property="og:image" content="http://yoursite.com/2017/09/07/TensorFlow_setup/error_1_2.png">
-<meta property="og:image" content="http://yoursite.com/2017/09/07/TensorFlow_setup/error_2.png">
-<meta property="og:image" content="http://yoursite.com/2017/09/07/TensorFlow_setup/error_2_1.png">
-<meta property="og:updated_time" content="2017-09-08T13:12:00.632Z">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/cuda_download.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/tensorflow_setup.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/error_1.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/error_1_1.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/error_1_2.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/error_2.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/error_2_1.png">
+<meta property="og:updated_time" content="2017-09-09T08:40:03.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="windows下TensorFlow完整安装流程及出错解决方案">
 <meta name="twitter:description" content="一.安装python1、通过Pip在Windows上安装PythonTensorFlow在Windows上只支持64位Python3.5，可以通过Python 3.5 from python.org 下载并安装Python3.5.2（注意选择正确的操作系统）。 或者通过https://www.python.org/downloads/选择3.5的任意版本。 2、设置环境变量上一步安装时，如果勾选了">
-<meta name="twitter:image" content="http://yoursite.com/2017/09/07/TensorFlow_setup/cuda_download.png">
+<meta name="twitter:image" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/cuda_download.png">
 
 
 
@@ -124,13 +124,13 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -144,11 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/07/TensorFlow_setup/"/>
+  <link rel="canonical" href="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/"/>
 
 
 
 
+
+<link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
   <title>windows下TensorFlow完整安装流程及出错解决方案 | 王立杰的博客</title>
   
@@ -157,12 +159,22 @@
 
 
 
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?61acd986303bc926826d2eec81dbbdff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 
 
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -210,7 +222,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -220,7 +232,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            关于
           </a>
         </li>
       
@@ -230,7 +242,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -240,7 +252,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            分类
           </a>
         </li>
       
@@ -250,7 +262,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -287,12 +299,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/07/TensorFlow_setup/">
+    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wangwlj">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head_icon.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -314,9 +326,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-07T17:27:57+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-07T17:27:57+08:00">
                 2017-09-07
               </time>
             
@@ -326,6 +338,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TensorFlow系列/" itemprop="url" rel="index">
+                    <span itemprop="name">TensorFlow系列</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -340,7 +374,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Visitors&#58;</span>
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -427,6 +461,8 @@
           
             <a href="/tags/TensorFlow/" rel="tag"># TensorFlow</a>
           
+            <a href="/tags/deep-learning/" rel="tag"># deep learning</a>
+          
         </div>
       
 
@@ -502,16 +538,20 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            站点概览
           </li>
         </ul>
       
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/head_icon.jpg"
+              alt="wangwlj" />
           
             <p class="site-author-name" itemprop="name">wangwlj</p>
             <p class="site-description motion-element" itemprop="description">所谓王者，必卓然特立，争当人杰。</p>
@@ -524,8 +564,8 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
@@ -535,8 +575,8 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
               </a>
             </div>
           
@@ -546,8 +586,8 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
               </a>
             </div>
           
@@ -569,6 +609,18 @@
                 <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
                   
                     <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/LijieWang" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-gratipay"></i>知乎</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/3280603012" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>微博</a>
               </span>
             
               <span class="links-of-author-item">
@@ -634,6 +686,11 @@
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -658,11 +715,11 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
   <span class="post-meta-divider">|</span>
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
 
 
         
@@ -677,11 +734,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
   </div>
@@ -704,6 +756,8 @@
 
   
 
+
+  
 
 
 
@@ -732,6 +786,9 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
@@ -923,6 +980,21 @@
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
