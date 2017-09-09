@@ -95,13 +95,13 @@
 
 
 
-<meta name="description" content="一.安装python1、通过Pip在Windows上安装PythonTensorFlow在Windows上只支持64位Python3.5，可以通过Python 3.5 from python.org 下载并安装Python3.5.2（注意选择正确的操作系统）。 或者通过https://www.python.org/downloads/选择3.5的任意版本。 2、设置环境变量上一步安装时，如果勾选了">
+<meta name="description" content="安装python通过Pip在Windows上安装PythonTensorFlow在Windows上只支持64位Python3.5，可以通过Python 3.5 from python.org 下载并安装Python3.5.2（注意选择正确的操作系统）。 或者通过https://www.python.org/downloads/选择3.5的任意版本。 设置环境变量上一步安装时，如果勾选了“自动配置环">
 <meta name="keywords" content="TensorFlow,deep learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="windows下TensorFlow完整安装流程及出错解决方案">
 <meta property="og:url" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="一.安装python1、通过Pip在Windows上安装PythonTensorFlow在Windows上只支持64位Python3.5，可以通过Python 3.5 from python.org 下载并安装Python3.5.2（注意选择正确的操作系统）。 或者通过https://www.python.org/downloads/选择3.5的任意版本。 2、设置环境变量上一步安装时，如果勾选了">
+<meta property="og:description" content="安装python通过Pip在Windows上安装PythonTensorFlow在Windows上只支持64位Python3.5，可以通过Python 3.5 from python.org 下载并安装Python3.5.2（注意选择正确的操作系统）。 或者通过https://www.python.org/downloads/选择3.5的任意版本。 设置环境变量上一步安装时，如果勾选了“自动配置环">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/cuda_download.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/tensorflow_setup.png">
@@ -110,10 +110,10 @@
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/error_1_2.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/error_2.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/error_2_1.png">
-<meta property="og:updated_time" content="2017-09-09T08:40:03.242Z">
+<meta property="og:updated_time" content="2017-09-09T09:29:16.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="windows下TensorFlow完整安装流程及出错解决方案">
-<meta name="twitter:description" content="一.安装python1、通过Pip在Windows上安装PythonTensorFlow在Windows上只支持64位Python3.5，可以通过Python 3.5 from python.org 下载并安装Python3.5.2（注意选择正确的操作系统）。 或者通过https://www.python.org/downloads/选择3.5的任意版本。 2、设置环境变量上一步安装时，如果勾选了">
+<meta name="twitter:description" content="安装python通过Pip在Windows上安装PythonTensorFlow在Windows上只支持64位Python3.5，可以通过Python 3.5 from python.org 下载并安装Python3.5.2（注意选择正确的操作系统）。 或者通过https://www.python.org/downloads/选择3.5的任意版本。 设置环境变量上一步安装时，如果勾选了“自动配置环">
 <meta name="twitter:image" content="https://qwerty200696.github.io/2017/09/07/TensorFlow_setup/cuda_download.png">
 
 
@@ -399,31 +399,31 @@
       
 
       
-        <h2 id="一-安装python"><a href="#一-安装python" class="headerlink" title="一.安装python"></a>一.安装python</h2><h3 id="1、通过Pip在Windows上安装Python"><a href="#1、通过Pip在Windows上安装Python" class="headerlink" title="1、通过Pip在Windows上安装Python"></a>1、通过Pip在Windows上安装Python</h3><p><code>TensorFlow</code>在<code>Windows</code>上只支持64位<code>Python3.5</code>，可以通过<a href="https://www.python.org/downloads/release/python-352/" title="Python 3.5.2" target="_blank" rel="external">Python 3.5 from python.org</a> 下载并安装<code>Python3.5.2</code>（注意选择正确的操作系统）。</p>
+        <h2 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h2><h3 id="通过Pip在Windows上安装Python"><a href="#通过Pip在Windows上安装Python" class="headerlink" title="通过Pip在Windows上安装Python"></a>通过Pip在Windows上安装Python</h3><p><code>TensorFlow</code>在<code>Windows</code>上只支持64位<code>Python3.5</code>，可以通过<a href="https://www.python.org/downloads/release/python-352/" title="Python 3.5.2" target="_blank" rel="external">Python 3.5 from python.org</a> 下载并安装<code>Python3.5.2</code>（注意选择正确的操作系统）。</p>
 <p>或者通过<a href="https://www.python.org/downloads/" title="python下载" target="_blank" rel="external">https://www.python.org/downloads/</a>选择3.5的任意版本。</p>
-<h3 id="2、设置环境变量"><a href="#2、设置环境变量" class="headerlink" title="2、设置环境变量"></a>2、设置环境变量</h3><p>上一步安装时，如果勾选了“自动配置环境变量”操作，即：在<code>cmd</code>中输入<code>pip</code>，如果找到了该命令，则可省去该步骤。</p>
+<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><p>上一步安装时，如果勾选了“自动配置环境变量”操作，即：在<code>cmd</code>中输入<code>pip</code>，如果找到了该命令，则可省去该步骤。</p>
 <p>若在<code>cmd</code>中输入<code>pip</code>找不到该命令，则需要将<code>Python</code>安装路径下“<code>%安装路径%\Scripts</code>”添加到Path下；再到cmd中输入pip看到若干命令提示，则代表<code>python</code>安装成功（<code>Python</code>安装包自带<code>pip</code>）。“开始”-&gt;“所有程序”，也可以找到<code>Python</code>终端。</p>
 <p>参考自：<a href="http://blog.csdn.net/include1224/article/details/53452824" title="原生Windows安装TensorFlow 0.12方法" target="_blank" rel="external">http://blog.csdn.net/include1224/article/details/53452824</a></p>
-<h2 id="二-cuda以及cudnn的安装"><a href="#二-cuda以及cudnn的安装" class="headerlink" title="二.cuda以及cudnn的安装"></a>二.cuda以及cudnn的安装</h2><p><code>TensorFlow</code>分为<code>CPU</code>版和<code>GPU</code>版，如果你打算安装<code>GPU</code>版，请先安装如下两个驱动：</p>
+<h2 id="cuda以及cudnn的安装"><a href="#cuda以及cudnn的安装" class="headerlink" title="cuda以及cudnn的安装"></a>cuda以及cudnn的安装</h2><p><code>TensorFlow</code>分为<code>CPU</code>版和<code>GPU</code>版，如果你打算安装<code>GPU</code>版，请先安装如下两个驱动：</p>
 <p>1、CUDA安装：<code>https://developer.nvidia.com/cuda-downloads</code></p>
 <p><img src="/2017/09/07/TensorFlow_setup/cuda_download.png" alt="cuda截图"></p>
 <p>2、CuDNN安装：<code>https://developer.nvidia.com/cudnn</code>（要注册Nvidia用户，并加入CuDNN开发组，填若干问卷就可以下载了）选择下载版本时要注意和Cuda版本匹配。</p>
 <p>我的账户是<strong>qq邮箱</strong>。</p>
 <p>解压后覆盖至CUDA的安装目录下<br>例如：</p>
 <pre><code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\
-</code></pre><h2 id="三、安装tensorflow"><a href="#三、安装tensorflow" class="headerlink" title="三、安装tensorflow"></a>三、安装tensorflow</h2><p>我安装的是GPU版本。</p>
+</code></pre><h2 id="安装tensorflow"><a href="#安装tensorflow" class="headerlink" title="安装tensorflow"></a>安装tensorflow</h2><p>我安装的是GPU版本。</p>
 <p><code>windows</code>不支持<code>pip</code>在线安装。即不支持：<code>pip install tensorflow-gpu</code>该命令。</p>
 <p>两种方法安装<code>tensorflow</code>：</p>
-<h4 id="1-手动下载tensorflow-gpu版本文件："><a href="#1-手动下载tensorflow-gpu版本文件：" class="headerlink" title="1.手动下载tensorflow gpu版本文件："></a>1.手动下载tensorflow gpu版本文件：</h4><p><code>tensorflow_gpu-0.12.0rc0-cp35-cp35m-win_amd64.whl</code><br>下载网址：<a href="https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-win_amd64.whl" title="tensorflow下载网址" target="_blank" rel="external">https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-win_amd64.whl</a></p>
+<h3 id="手动下载tensorflow-gpu版本文件："><a href="#手动下载tensorflow-gpu版本文件：" class="headerlink" title="手动下载tensorflow gpu版本文件："></a>手动下载tensorflow gpu版本文件：</h3><p><code>tensorflow_gpu-0.12.0rc0-cp35-cp35m-win_amd64.whl</code><br>下载网址：<a href="https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-win_amd64.whl" title="tensorflow下载网址" target="_blank" rel="external">https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-win_amd64.whl</a></p>
 <p>下载完成后，打开cmd，切换到安装文件目录，输入: </p>
 <pre><code>pip install tensorflow_gpu-0.12.0rc0-cp35-cp35m-win_amd64.whl
 </code></pre><p>即可成功安装。</p>
 <p><img src="/2017/09/07/TensorFlow_setup/tensorflow_setup.png" alt="tensorflow安装"></p>
-<h4 id="2-输入pip命令"><a href="#2-输入pip命令" class="headerlink" title="2.输入pip命令"></a>2.输入pip命令</h4><pre><code>pip install --upgrade https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-win_amd64.whl
+<h3 id="输入pip命令"><a href="#输入pip命令" class="headerlink" title="输入pip命令"></a>输入pip命令</h3><pre><code>pip install --upgrade https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-win_amd64.whl
 </code></pre><p>参考自tensorflow官网：<a href="https://www.tensorflow.org/versions/r0.12/get_started/os_setup#pip_installation_on_windows" title="tensorflow官网" target="_blank" rel="external">https://www.tensorflow.org/versions/r0.12/get_started/os_setup#pip_installation_on_windows</a></p>
 <p>mac和linux可另行参考网上教程。</p>
-<h2 id="四、测试"><a href="#四、测试" class="headerlink" title="四、测试"></a>四、测试</h2><p>测试是否安装成功。</p>
-<h3 id="1-问题一"><a href="#1-问题一" class="headerlink" title="1.问题一"></a>1.问题一</h3><pre><code>import tensorflow as tf
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试是否安装成功。</p>
+<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><pre><code>import tensorflow as tf
 </code></pre><p>导入tensorflow时出现错误：</p>
 <pre><code>“Couldn&apos;t open CUDA library cudnn64_5.dll”
 </code></pre><p><img src="/2017/09/07/TensorFlow_setup/error_1.png" alt="测试"></p>
@@ -434,7 +434,7 @@
 <p><img src="/2017/09/07/TensorFlow_setup/error_1_2.png" alt="测试"></p>
 <p>解决方案来自：<a href="http://blog.csdn.net/suo_ivy/article/details/70445103" title="TensorFlow “Couldn&#39;t open CUDA library cudnn64_5.dll”" target="_blank" rel="external">http://blog.csdn.net/suo_ivy/article/details/70445103</a></p>
 <p>替换完成后，该错误消失。</p>
-<h3 id="2、问题二"><a href="#2、问题二" class="headerlink" title="2、问题二"></a>2、问题二</h3><p><img src="/2017/09/07/TensorFlow_setup/error_2.png" alt="测试"></p>
+<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p><img src="/2017/09/07/TensorFlow_setup/error_2.png" alt="测试"></p>
 <p>执行<code>tf.Session()</code>的时候，出现如下提示：</p>
 <pre><code>Could not identify NUMA node of /job:localhost/replica:0/task:0/gpu:0, defaulting to 0.  Your kernel may not have been built with NUMA support.`
 </code></pre><p>不过这并不影响最终结果的执行。（只是个警告）</p>
@@ -449,12 +449,26 @@
     
     
 
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束 ------</div>
+
+
+	  </div>
+	
+	
+	
     
 
     
 
     
+	
 
+	
     <footer class="post-footer">
       
         <div class="post-tags">
@@ -677,7 +691,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-安装python"><span class="nav-number">1.</span> <span class="nav-text">一.安装python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、通过Pip在Windows上安装Python"><span class="nav-number">1.1.</span> <span class="nav-text">1、通过Pip在Windows上安装Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、设置环境变量"><span class="nav-number">1.2.</span> <span class="nav-text">2、设置环境变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-cuda以及cudnn的安装"><span class="nav-number">2.</span> <span class="nav-text">二.cuda以及cudnn的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、安装tensorflow"><span class="nav-number">3.</span> <span class="nav-text">三、安装tensorflow</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-手动下载tensorflow-gpu版本文件："><span class="nav-number">3.0.1.</span> <span class="nav-text">1.手动下载tensorflow gpu版本文件：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-输入pip命令"><span class="nav-number">3.0.2.</span> <span class="nav-text">2.输入pip命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、测试"><span class="nav-number">4.</span> <span class="nav-text">四、测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-问题一"><span class="nav-number">4.1.</span> <span class="nav-text">1.问题一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、问题二"><span class="nav-number">4.2.</span> <span class="nav-text">2、问题二</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装python"><span class="nav-number">1.</span> <span class="nav-text">安装python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Pip在Windows上安装Python"><span class="nav-number">1.1.</span> <span class="nav-text">通过Pip在Windows上安装Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置环境变量"><span class="nav-number">1.2.</span> <span class="nav-text">设置环境变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cuda以及cudnn的安装"><span class="nav-number">2.</span> <span class="nav-text">cuda以及cudnn的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装tensorflow"><span class="nav-number">3.</span> <span class="nav-text">安装tensorflow</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手动下载tensorflow-gpu版本文件："><span class="nav-number">3.1.</span> <span class="nav-text">手动下载tensorflow gpu版本文件：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入pip命令"><span class="nav-number">3.2.</span> <span class="nav-text">输入pip命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">4.</span> <span class="nav-text">测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一"><span class="nav-number">4.1.</span> <span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二"><span class="nav-number">4.2.</span> <span class="nav-text">问题二</span></a></li></ol></li></ol></div>
             
 
           </div>

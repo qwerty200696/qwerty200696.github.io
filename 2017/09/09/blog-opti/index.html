@@ -103,13 +103,16 @@
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="搭建基本Hexo博客https://qwerty200696.github.io/2017/09/08/blog_setup/#more Hexo博客绑定域名http://www.jianshu.com/p/cea41e5c9b2a 以下基本上参考这篇文章：【干货】2个小时教你hexo博客添加评论、打赏、RSS等功能 更换Hexo主题git clone https://github.com/iis">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/LeanCloud_id_key.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/view_count.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/link_color.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/link_color_changed.png">
-<meta property="og:updated_time" content="2017-09-09T09:21:59.984Z">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/end_tag.png">
+<meta property="og:updated_time" content="2017-09-09T10:16:55.744Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建的Github博客之优化">
 <meta name="twitter:description" content="搭建基本Hexo博客https://qwerty200696.github.io/2017/09/08/blog_setup/#more Hexo博客绑定域名http://www.jianshu.com/p/cea41e5c9b2a 以下基本上参考这篇文章：【干货】2个小时教你hexo博客添加评论、打赏、RSS等功能 更换Hexo主题git clone https://github.com/iis">
-<meta name="twitter:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/link_color.png">
+<meta name="twitter:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/LeanCloud_id_key.png">
 
 
 
@@ -414,10 +417,23 @@ hexo deploy
 <h1 id="设置Hexo主题模式"><a href="#设置Hexo主题模式" class="headerlink" title="设置Hexo主题模式"></a>设置Hexo主题模式</h1><p>看到上图，读者可能会产生疑问，为什么自己的主题样式和笔者的不一样，这是因为在Hexo主题中，有三种不同的模式，通过切换模式，让NexT主题显示不一样的样式。</p>
 <p>在<code>NexT</code>根目录下有一个同样名称为<code>_config.yml</code>，为了区分<code>hexo</code>根目录下的<code>_config.yml</code>，将前者称为<strong>主题配置文件</strong>，在其中找到scheme属性，如下图所示：</p>
 <h1 id="设置预览摘要"><a href="#设置预览摘要" class="headerlink" title="设置预览摘要"></a>设置预览摘要</h1><p>设置完模式后，读者们会发现，尽管首页显示的是所有文章的列表，但是每一篇文章都显示了所有内容，这样感觉看起来不舒服，这时候可以启用预览摘要模式，在主题配置文件中找到<code>auto_excerpt</code>属性，将<code>enable</code>设置为<code>true</code> ，将<code>length</code>设置为想要预览到的字数，如下图所示：</p>
-<blockquote>
+<pre><code>auto_excerpt:
+enable: true #将原有的false改为true
+length: 300  #设置预览的字数
+</code></pre><blockquote>
 <p>这里说明一下：上述的部署指令中<code>hexo deploy</code>可以换成<code>hexo server</code>，两者的区别在于，前者是将博客部署到远程的Github上，而后者是运行在本地，通过<code>http://localhost:4000</code>在浏览器中访问。后者是为了调试配置方便而使用，但是最终本地博客还是需要<code>hexo deploy</code>指令将其部署至Github上。</p>
 </blockquote>
-<h1 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h1><h1 id="添加打赏功能"><a href="#添加打赏功能" class="headerlink" title="添加打赏功能"></a>添加打赏功能</h1><h1 id="设置侧边栏显示效果"><a href="#设置侧边栏显示效果" class="headerlink" title="设置侧边栏显示效果"></a>设置侧边栏显示效果</h1><h1 id="添加菜单选项"><a href="#添加菜单选项" class="headerlink" title="添加菜单选项"></a>添加菜单选项</h1><h1 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a>添加搜索功能</h1><h1 id="添加阅读次数统计"><a href="#添加阅读次数统计" class="headerlink" title="添加阅读次数统计"></a>添加阅读次数统计</h1><h1 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h1><h1 id="添加社交链接"><a href="#添加社交链接" class="headerlink" title="添加社交链接"></a>添加社交链接</h1><h1 id="添加友情链接功能"><a href="#添加友情链接功能" class="headerlink" title="添加友情链接功能"></a>添加友情链接功能</h1><h1 id="设置博文内链接为蓝色"><a href="#设置博文内链接为蓝色" class="headerlink" title="设置博文内链接为蓝色"></a>设置博文内链接为蓝色</h1><p>链接的默认颜色是白色的，和普通字体颜色相同，不容易区分，如下图所示：</p>
+<h1 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h1><h1 id="添加打赏功能"><a href="#添加打赏功能" class="headerlink" title="添加打赏功能"></a>添加打赏功能</h1><h1 id="设置侧边栏显示效果"><a href="#设置侧边栏显示效果" class="headerlink" title="设置侧边栏显示效果"></a>设置侧边栏显示效果</h1><h1 id="添加菜单选项"><a href="#添加菜单选项" class="headerlink" title="添加菜单选项"></a>添加菜单选项</h1><h1 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a>添加搜索功能</h1><h1 id="添加阅读次数统计"><a href="#添加阅读次数统计" class="headerlink" title="添加阅读次数统计"></a>添加阅读次数统计</h1><p>注册LeanCloud账号，完成激活；点击左上角的”应用”-“创建新应用”-点击“数据”右边的齿轮–点击创建类class，类名字叫做Counter。</p>
+<p>然后，修改主题配置文件，找到leancloud_visitors，添加修改：</p>
+<pre><code>leancloud_visitors:
+  enable: true #将原来的false改为true
+  app_id: #&lt;app_id&gt;
+  app_key: #&lt;app_key&gt;
+</code></pre><p>从设置中找到相应的id和key：</p>
+<p><img src="/2017/09/09/blog-opti/LeanCloud_id_key.png" alt="LeanCloud中的id和key"></p>
+<p>然后预览，如图：</p>
+<p><img src="/2017/09/09/blog-opti/view_count.png" alt="阅读次数统计效果图"></p>
+<h1 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h1><h1 id="添加社交链接"><a href="#添加社交链接" class="headerlink" title="添加社交链接"></a>添加社交链接</h1><h1 id="添加友情链接功能"><a href="#添加友情链接功能" class="headerlink" title="添加友情链接功能"></a>添加友情链接功能</h1><h1 id="设置博文内链接为蓝色"><a href="#设置博文内链接为蓝色" class="headerlink" title="设置博文内链接为蓝色"></a>设置博文内链接为蓝色</h1><p>链接的默认颜色是白色的，和普通字体颜色相同，不容易区分，如下图所示：</p>
 <p><img src="/2017/09/09/blog-opti/link_color.png" alt="链接的默认颜色"></p>
 <p>修改方法：</p>
 <p>通过路径：</p>
@@ -435,20 +451,48 @@ hexo deploy
 }
 </code></pre><p>最好将新添加的文件放在原文件内容的底部，便于查看；然后预览，效果如图：</p>
 <p><img src="/2017/09/09/blog-opti/link_color_changed.png" alt="链接颜色为蓝色"></p>
-<p>图中git的链接是鼠标悬停的效果。</p>
-
+<p>图中Git的链接是鼠标悬停的效果。</p>
+<h1 id="设置文章末尾”本文结束”标记"><a href="#设置文章末尾”本文结束”标记" class="headerlink" title="设置文章末尾”本文结束”标记"></a>设置文章末尾”本文结束”标记</h1><p>在路径<code>F:\Hexo\themes\next\layout\_macro</code>下，新建一个文件<code>passage-end-tag.swig</code>,文件内容中添加以下代码：</p>
+<p>```</p>
+<p>这里可以更改字体显示的颜色，大小，以及内容，例如我将自己就将本文结束用The Happy Ending代替，并将字体颜色设置为了自己喜欢的#CDBA96，你可以去<a href="http://tool.oschina.net/commons?type=3" target="_blank" rel="external">这里</a>选择自己喜欢的颜色对应的RGB值。</p>
+<p>然后在路径<code>\themes\next\layout\_macro\</code>下找到并打开<code>post.swig</code>文件，在 <code>post-body</code> 之后， <code>post-footer</code> 之前添加如下代码（post-footer之前两个DIV）：</p>
+<pre><code>{% if not is_index %}
+	  <div>
+		{% include 'passage-end-tag.swig' %}
+	  </div>
+	{% endif %}
+</code></pre><p>具体位置如下图所示：</p>
+<p><img src="/2017/09/09/blog-opti/end_tag.png" alt="post.swig文件中的具体位置"></p>
+<p>最后在主题配置文件中，在末尾添加如下语句：</p>
+<pre><code>passage_end_tag:
+  enabled: true
+</code></pre>
       
     </div>
     
     
     
 
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束 ------</div>
+
+
+	  </div>
+	
+	
+	
     
 
     
 
     
+	
 
+	
     <footer class="post-footer">
       
         <div class="post-tags">
@@ -673,7 +717,7 @@ hexo deploy
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建基本Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">搭建基本Hexo博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客绑定域名"><span class="nav-number">2.</span> <span class="nav-text">Hexo博客绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换Hexo主题"><span class="nav-number">3.</span> <span class="nav-text">更换Hexo主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置Hexo主题模式"><span class="nav-number">4.</span> <span class="nav-text">设置Hexo主题模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置预览摘要"><span class="nav-number">5.</span> <span class="nav-text">设置预览摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加评论功能"><span class="nav-number">6.</span> <span class="nav-text">添加评论功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加打赏功能"><span class="nav-number">7.</span> <span class="nav-text">添加打赏功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置侧边栏显示效果"><span class="nav-number">8.</span> <span class="nav-text">设置侧边栏显示效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加菜单选项"><span class="nav-number">9.</span> <span class="nav-text">添加菜单选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">10.</span> <span class="nav-text">添加搜索功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加阅读次数统计"><span class="nav-number">11.</span> <span class="nav-text">添加阅读次数统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加RSS"><span class="nav-number">12.</span> <span class="nav-text">添加RSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加社交链接"><span class="nav-number">13.</span> <span class="nav-text">添加社交链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加友情链接功能"><span class="nav-number">14.</span> <span class="nav-text">添加友情链接功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置博文内链接为蓝色"><span class="nav-number">15.</span> <span class="nav-text">设置博文内链接为蓝色</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建基本Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">搭建基本Hexo博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客绑定域名"><span class="nav-number">2.</span> <span class="nav-text">Hexo博客绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换Hexo主题"><span class="nav-number">3.</span> <span class="nav-text">更换Hexo主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置Hexo主题模式"><span class="nav-number">4.</span> <span class="nav-text">设置Hexo主题模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置预览摘要"><span class="nav-number">5.</span> <span class="nav-text">设置预览摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加评论功能"><span class="nav-number">6.</span> <span class="nav-text">添加评论功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加打赏功能"><span class="nav-number">7.</span> <span class="nav-text">添加打赏功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置侧边栏显示效果"><span class="nav-number">8.</span> <span class="nav-text">设置侧边栏显示效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加菜单选项"><span class="nav-number">9.</span> <span class="nav-text">添加菜单选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">10.</span> <span class="nav-text">添加搜索功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加阅读次数统计"><span class="nav-number">11.</span> <span class="nav-text">添加阅读次数统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加RSS"><span class="nav-number">12.</span> <span class="nav-text">添加RSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加社交链接"><span class="nav-number">13.</span> <span class="nav-text">添加社交链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加友情链接功能"><span class="nav-number">14.</span> <span class="nav-text">添加友情链接功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置博文内链接为蓝色"><span class="nav-number">15.</span> <span class="nav-text">设置博文内链接为蓝色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置文章末尾”本文结束”标记"><span class="nav-number">16.</span> <span class="nav-text">设置文章末尾”本文结束”标记</span></a></li></ol></div>
             
 
           </div>

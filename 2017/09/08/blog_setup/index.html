@@ -117,7 +117,7 @@
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/08/blog_setup/error_1_done.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/08/blog_setup/git_hexo_deploy_error.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/08/blog_setup/git_hexo_deploy_error_done.png">
-<meta property="og:updated_time" content="2017-09-09T08:38:56.373Z">
+<meta property="og:updated_time" content="2017-09-09T09:34:36.400Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+GitHub博客搭建实战">
 <meta name="twitter:description" content="准备工作1、安装 Node.js: https://nodejs.org/en/ 2、安装 Git: https://github.com/waylau/git-for-win Git教程 https://github.com/waylau/git-for-win廖雪峰老师的教程，非常好。 3、安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，名称和邮箱是Github上的。">
@@ -454,28 +454,30 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
 <p><img src="/2017/09/08/blog_setup/blog_local_server.png" alt="localhost上的网站初步形状"></p>
 <h2 id="配置博客"><a href="#配置博客" class="headerlink" title="配置博客"></a>配置博客</h2><p>在<code>blog</code>目录下，用<code>sublime/notepad++</code>等文本编辑器打开<code>_config.yml</code>文件，修改参数信息</p>
 <p>特别提醒，在每个参数的：后都要加一个空格</p>
-<h4 id="修改网站相关信息"><a href="#修改网站相关信息" class="headerlink" title="修改网站相关信息"></a>修改网站相关信息</h4><pre><code>title: wangwlj测试所用博客
+<h3 id="修改网站相关信息"><a href="#修改网站相关信息" class="headerlink" title="修改网站相关信息"></a>修改网站相关信息</h3><pre><code>title: wangwlj测试所用博客
 subtitle: 积跬步以至千里！
 description: 网页描述
 author: wangwlj
 language: zh-CN
 timezone: Asia/Shanghai
 </code></pre><p><code>language</code>和<code>timezone</code>都是有输入规范的，详细可参考 <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank" rel="external">语言规范</a>和<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="external">时区规范</a>。</p>
-<h3 id="配置部署（qwerty200696，修改成自己的）"><a href="#配置部署（qwerty200696，修改成自己的）" class="headerlink" title="配置部署（qwerty200696，修改成自己的）"></a>配置部署（qwerty200696，修改成自己的）</h3><pre><code>deploy:
+<h3 id="配置部署"><a href="#配置部署" class="headerlink" title="配置部署"></a>配置部署</h3><p>代码中的qwerty200696，修改成自己的。</p>
+<pre><code>deploy:
   type: git
   repo: https://github.com/qwerty200696/qwerty200696.github.io
   branch: master
 </code></pre><p>其中<code>repo</code>项是之前<code>Github</code>上创建好的仓库的地址，可以通过如下图所示的方式得到：</p>
 <p><img src="/2017/09/08/blog_setup/github_3.png" alt="repo地址"></p>
 <p>branch是项目的分支，我们默认用主分支<code>master</code>。</p>
-<h3 id="配置统一资源定位符（个人域名）"><a href="#配置统一资源定位符（个人域名）" class="headerlink" title="配置统一资源定位符（个人域名）"></a>配置统一资源定位符（个人域名）</h3><p>如果有个人域名的话可以设置，否则跳过即可。</p>
-<pre><code>url: http://inerdstack.com
+<h3 id="配置统一资源定位符"><a href="#配置统一资源定位符" class="headerlink" title="配置统一资源定位符"></a>配置统一资源定位符</h3><p>如果有个人域名的话可以设置，否则跳过即可。如果是github.io的网址，也是可以填上的。</p>
+<pre><code>url: https://qwerty200696.github.io
 </code></pre><p>对于root（根目录）、permalink（永久链接）、permalink_defaults（默认永久链接）等其他信息保持默认。</p>
 <h2 id="发表文章"><a href="#发表文章" class="headerlink" title="发表文章"></a>发表文章</h2><p>1.新建一篇博文，在CMD中输入:</p>
 <pre><code>$ hexo new &quot;我的测试文章&quot;
 
 INFO  Created: F:\test\blog\source\_posts\我的测试文章.md
-</code></pre><p>2.找到该文章，打开，使用Markdown语法编辑文章，该语法介绍可以查看：<a href="https://zhangslob.github.io/2017/02/26/%E5%88%A9%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">markdown语法</a></p>
+</code></pre><p>2.找到该文章，打开，使用Markdown语法编辑文章。</p>
+<p>该语法介绍可以查看：<a href="https://zhangslob.github.io/2017/02/26/%E5%88%A9%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">markdown语法</a></p>
 <p>在文章的一开始处，可以按如下格式添加文章标题，日期，分类、标签以及描述等。</p>
 <pre><code>---
 title: title #文章標題
@@ -584,12 +586,26 @@ hexo deploy #部署发布
     
     
 
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束 ------</div>
+
+
+	  </div>
+	
+	
+	
     
 
     
 
     
+	
 
+	
     <footer class="post-footer">
       
         <div class="post-tags">
@@ -818,7 +834,7 @@ hexo deploy #部署发布
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Github"><span class="nav-number">2.</span> <span class="nav-text">配置Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化博客"><span class="nav-number">3.</span> <span class="nav-text">初始化博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置博客"><span class="nav-number">4.</span> <span class="nav-text">配置博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改网站相关信息"><span class="nav-number">4.0.1.</span> <span class="nav-text">修改网站相关信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置部署（qwerty200696，修改成自己的）"><span class="nav-number">4.1.</span> <span class="nav-text">配置部署（qwerty200696，修改成自己的）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置统一资源定位符（个人域名）"><span class="nav-number">4.2.</span> <span class="nav-text">配置统一资源定位符（个人域名）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发表文章"><span class="nav-number">5.</span> <span class="nav-text">发表文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#错误记录一"><span class="nav-number">5.1.</span> <span class="nav-text">错误记录一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误记录二"><span class="nav-number">5.2.</span> <span class="nav-text">错误记录二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加图片"><span class="nav-number">6.</span> <span class="nav-text">添加图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Github"><span class="nav-number">2.</span> <span class="nav-text">配置Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化博客"><span class="nav-number">3.</span> <span class="nav-text">初始化博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置博客"><span class="nav-number">4.</span> <span class="nav-text">配置博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改网站相关信息"><span class="nav-number">4.1.</span> <span class="nav-text">修改网站相关信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置部署"><span class="nav-number">4.2.</span> <span class="nav-text">配置部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置统一资源定位符"><span class="nav-number">4.3.</span> <span class="nav-text">配置统一资源定位符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发表文章"><span class="nav-number">5.</span> <span class="nav-text">发表文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#错误记录一"><span class="nav-number">5.1.</span> <span class="nav-text">错误记录一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误记录二"><span class="nav-number">5.2.</span> <span class="nav-text">错误记录二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加图片"><span class="nav-number">6.</span> <span class="nav-text">添加图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
