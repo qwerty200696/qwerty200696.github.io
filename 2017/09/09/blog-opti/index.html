@@ -95,27 +95,33 @@
 
 
 
-<meta name="description" content="搭建基本Hexo博客https://qwerty200696.github.io/2017/09/08/blog_setup/#more Hexo博客绑定域名http://www.jianshu.com/p/cea41e5c9b2a 以下基本上参考这篇文章：【干货】2个小时教你hexo博客添加评论、打赏、RSS等功能 更换Hexo主题git clone https://github.com/iis">
+<meta name="description" content="本篇教程基于NexT主题的博客配置，实现更换主题、评论、打赏等功能，接下来根据这些功能进行分点描述，附上个人博客以供比对参考：链接。 搭建基本Hexo博客Hexo博客基本搭建参考：《hexo+GitHub博客搭建实战》一文，，笔者按照教程的顺序一步一步来，是没有出现错误的，如果读者们在搭建的时候遇到了问题不知如何解决，笔者会尽自己所能帮助读者，并将遇到的问题及解决方法附在文章下方。 Hexo博客绑">
 <meta name="keywords" content="GitHub,hexo,博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo搭建的Github博客之优化">
 <meta property="og:url" content="https://qwerty200696.github.io/2017/09/09/blog-opti/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="搭建基本Hexo博客https://qwerty200696.github.io/2017/09/08/blog_setup/#more Hexo博客绑定域名http://www.jianshu.com/p/cea41e5c9b2a 以下基本上参考这篇文章：【干货】2个小时教你hexo博客添加评论、打赏、RSS等功能 更换Hexo主题git clone https://github.com/iis">
+<meta property="og:description" content="本篇教程基于NexT主题的博客配置，实现更换主题、评论、打赏等功能，接下来根据这些功能进行分点描述，附上个人博客以供比对参考：链接。 搭建基本Hexo博客Hexo博客基本搭建参考：《hexo+GitHub博客搭建实战》一文，，笔者按照教程的顺序一步一步来，是没有出现错误的，如果读者们在搭建的时候遇到了问题不知如何解决，笔者会尽自己所能帮助读者，并将遇到的问题及解决方法附在文章下方。 Hexo博客绑">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/youyan.jpg">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/LeanCloud_id_key.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/view_count.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/social.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/friend_link.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/link_color.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/link_color_changed.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/end_tag.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/end_tag_view.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/word_count.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/total_count.png">
-<meta property="og:updated_time" content="2017-09-09T14:28:20.959Z">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/head_icon.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/web_icon.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/guestbook.png">
+<meta property="og:updated_time" content="2017-09-12T12:29:07.634Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建的Github博客之优化">
-<meta name="twitter:description" content="搭建基本Hexo博客https://qwerty200696.github.io/2017/09/08/blog_setup/#more Hexo博客绑定域名http://www.jianshu.com/p/cea41e5c9b2a 以下基本上参考这篇文章：【干货】2个小时教你hexo博客添加评论、打赏、RSS等功能 更换Hexo主题git clone https://github.com/iis">
-<meta name="twitter:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/LeanCloud_id_key.png">
+<meta name="twitter:description" content="本篇教程基于NexT主题的博客配置，实现更换主题、评论、打赏等功能，接下来根据这些功能进行分点描述，附上个人博客以供比对参考：链接。 搭建基本Hexo博客Hexo博客基本搭建参考：《hexo+GitHub博客搭建实战》一文，，笔者按照教程的顺序一步一步来，是没有出现错误的，如果读者们在搭建的时候遇到了问题不知如何解决，笔者会尽自己所能帮助读者，并将遇到的问题及解决方法附在文章下方。 Hexo博客绑">
+<meta name="twitter:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/youyan.jpg">
 
 
 
@@ -267,6 +273,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-留言板">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-newspaper-o"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -395,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,220
+                  3,322
                 </span>
               
 
@@ -420,11 +436,12 @@
       
 
       
-        <h1 id="搭建基本Hexo博客"><a href="#搭建基本Hexo博客" class="headerlink" title="搭建基本Hexo博客"></a>搭建基本Hexo博客</h1><p><a href="https://qwerty200696.github.io/2017/09/08/blog_setup/#more">https://qwerty200696.github.io/2017/09/08/blog_setup/#more</a></p>
-<h1 id="Hexo博客绑定域名"><a href="#Hexo博客绑定域名" class="headerlink" title="Hexo博客绑定域名"></a>Hexo博客绑定域名</h1><p><a href="http://www.jianshu.com/p/cea41e5c9b2a" target="_blank" rel="external">http://www.jianshu.com/p/cea41e5c9b2a</a></p>
-<p>以下基本上参考这篇文章：<br><a href="http://www.jianshu.com/p/5973c05d7100" target="_blank" rel="external">【干货】2个小时教你hexo博客添加评论、打赏、RSS等功能</a></p>
-<h1 id="更换Hexo主题"><a href="#更换Hexo主题" class="headerlink" title="更换Hexo主题"></a>更换Hexo主题</h1><pre><code>git clone https://github.com/iissnan/hexo-theme-next themes/next
-</code></pre><p>下载后，将压缩包解压缩，复制其中名称为<code>next</code>的文件夹到<code>Hexo</code>的主题目录下，主题目录的路径为：</p>
+        <p>本篇教程基于NexT主题的博客配置，实现更换主题、评论、打赏等功能，接下来根据这些功能进行分点描述，附上个人博客以供比对参考：<a href="https://qwerty200696.github.io">链接</a>。</p>
+<h1 id="搭建基本Hexo博客"><a href="#搭建基本Hexo博客" class="headerlink" title="搭建基本Hexo博客"></a>搭建基本Hexo博客</h1><p>Hexo博客基本搭建参考：《<a href="https://qwerty200696.github.io/2017/09/08/blog_setup/#more">hexo+GitHub博客搭建实战</a>》一文，，笔者按照教程的顺序一步一步来，是没有出现错误的，如果读者们在搭建的时候遇到了问题不知如何解决，笔者会尽自己所能帮助读者，并将遇到的问题及解决方法附在文章下方。</p>
+<h1 id="Hexo博客绑定域名"><a href="#Hexo博客绑定域名" class="headerlink" title="Hexo博客绑定域名"></a>Hexo博客绑定域名</h1><p>关于Hexo博客如何绑定自己的域名，详情可参阅《<a href="http://www.jianshu.com/p/cea41e5c9b2a" target="_blank" rel="external">hexo搭建的Github博客绑定域名</a>》一文。</p>
+<h1 id="更换Hexo主题"><a href="#更换Hexo主题" class="headerlink" title="更换Hexo主题"></a>更换Hexo主题</h1><p>笔者更换后的主题为NexT，其Github网址为：<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> 。首先将NexT的主题源文件下载到本地，使用Git克隆指令如下：</p>
+<pre><code>git clone https://github.com/iissnan/hexo-theme-next themes/next
+</code></pre><p>下载后，将压缩包解压缩(文件位于指令运行的当前目录)，复制其中名称为<code>next</code>的文件夹到<code>Hexo</code>的主题目录下，主题目录的路径为：</p>
 <blockquote>
 <p>Hexo博客根目录/themes/</p>
 </blockquote>
@@ -437,17 +454,78 @@ hexo generate
 // 部署
 hexo deploy
 </code></pre><p>便可以在远程的博客上看到修改主题后的样式了。</p>
-<h1 id="设置Hexo主题模式"><a href="#设置Hexo主题模式" class="headerlink" title="设置Hexo主题模式"></a>设置Hexo主题模式</h1><p>看到上图，读者可能会产生疑问，为什么自己的主题样式和笔者的不一样，这是因为在Hexo主题中，有三种不同的模式，通过切换模式，让NexT主题显示不一样的样式。</p>
+<h1 id="设置Hexo主题模式"><a href="#设置Hexo主题模式" class="headerlink" title="设置Hexo主题模式"></a>设置Hexo主题模式</h1><p>看到上图，读者可能会产生疑问，为什么自己的主题样式和笔者的不一样，这是因为在Hexo主题中，有四种不同的模式，通过切换模式，让NexT主题显示不一样的样式。</p>
 <p>在<code>NexT</code>根目录下有一个同样名称为<code>_config.yml</code>，为了区分<code>hexo</code>根目录下的<code>_config.yml</code>，将前者称为<strong>主题配置文件</strong>，在其中找到scheme属性，如下图所示：</p>
+<pre><code># Schemes
+#scheme: Muse
+#scheme: Mist
+scheme: Pisces
+#scheme: Gemini
+</code></pre><p>NexT主题默认使用Muse模式，笔者采用的是Pisces模式，读者可根据自己的喜好，选择其中一种模式。</p>
 <h1 id="设置预览摘要"><a href="#设置预览摘要" class="headerlink" title="设置预览摘要"></a>设置预览摘要</h1><p>设置完模式后，读者们会发现，尽管首页显示的是所有文章的列表，但是每一篇文章都显示了所有内容，这样感觉看起来不舒服，这时候可以启用预览摘要模式，在主题配置文件中找到<code>auto_excerpt</code>属性，将<code>enable</code>设置为<code>true</code> ，将<code>length</code>设置为想要预览到的字数，如下图所示：</p>
 <pre><code>auto_excerpt:
 enable: true #将原有的false改为true
 length: 300  #设置预览的字数
 </code></pre><blockquote>
-<p>这里说明一下：上述的部署指令中<code>hexo deploy</code>可以换成<code>hexo server</code>，两者的区别在于，前者是将博客部署到远程的Github上，而后者是运行在本地，通过<code>http://localhost:4000</code>在浏览器中访问。后者是为了调试配置方便而使用，但是最终本地博客还是需要<code>hexo deploy</code>指令将其部署至Github上。</p>
+<p>这里说明一下：上述的部署指令中<code>hexo deploy</code>可以换成<code>hexo server</code>，两者的区别在于，前者是将博客部署到<strong>远程</strong>的Github上，而后者是运行在<strong>本地</strong>，通过<code>http://localhost:4000</code>在浏览器中访问。后者是为了调试配置方便而使用，但是最终本地博客还是需要<code>hexo deploy</code>指令将其部署至Github上。</p>
 </blockquote>
-<h1 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h1><h1 id="添加打赏功能"><a href="#添加打赏功能" class="headerlink" title="添加打赏功能"></a>添加打赏功能</h1><h1 id="设置侧边栏显示效果"><a href="#设置侧边栏显示效果" class="headerlink" title="设置侧边栏显示效果"></a>设置侧边栏显示效果</h1><h1 id="添加菜单选项"><a href="#添加菜单选项" class="headerlink" title="添加菜单选项"></a>添加菜单选项</h1><h1 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a>添加搜索功能</h1><h1 id="添加阅读次数统计"><a href="#添加阅读次数统计" class="headerlink" title="添加阅读次数统计"></a>添加阅读次数统计</h1><p>注册LeanCloud账号，完成激活；点击左上角的”应用”-“创建新应用”-点击“数据”右边的齿轮–点击创建类class，类名字叫做Counter。</p>
-<p>然后，修改主题配置文件，找到leancloud_visitors，添加修改：</p>
+<h1 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h1><p>NexT目前出到5.1.0版本，功能模块已经相当的丰富。NexT主题集成了评论系统，只需要设置相关的属性即可实现功能，其目前支持<strong>多说、Disqus、Facebook评论、Hyper评论、网页云跟帖</strong>等，其中“多说”是NexT推荐的评论系统，但是多说评论系统不稳定，经常会出现服务异常的问题。</p>
+<p>笔者采用的是一款名为友言的评论系统，它也是NexT已经集成好的，可以直接拿来用的。下面对其操作进行讲解：</p>
+<ul>
+<li><strong>注册友言账号</strong></li>
+</ul>
+<p>打开<a href="http://www.uyan.cc/" target="_blank" rel="external">友言官网</a>，单击“注册”按钮后，按照套路可完成账号注册。</p>
+<ul>
+<li><strong>获取uid</strong></li>
+</ul>
+<p>注册完登录后，在首页单击“后台管理”按钮进入后台界面便可看到自己的用户ID，将其复制下来。</p>
+<ul>
+<li><strong>设置uid</strong></li>
+</ul>
+<p>打开<strong>主题配置文件</strong>，在其中找到属性<code>youyan_uid</code>，然后在: 后添加之前复制的uid。</p>
+<blockquote>
+<p>提醒一下，<strong>:</strong> 冒号后面一定要有一个空格</p>
+</blockquote>
+<p>然后部署一下Hexo，可以在本地或远程看到实现的评论功能，如下图所示：</p>
+<p><img src="/2017/09/09/blog-opti/youyan.jpg" alt="youyan评论界面"></p>
+<blockquote>
+<p>在笔者配置评论功能的时候，笔者遇到了一个问题：<em>本地博客有评论功能，而远程博客却没有</em> 。折腾了一下午，始终不知道其原因所在。后来，当笔者对博客绑定自己的域名后，发现远程的博客自动出现了评论功能。在此推测为域名的缘故。若没有绑定域名的读者们遇到这个情况，可以放放，先配置其他功能。</p>
+</blockquote>
+<h1 id="设置侧边栏显示效果"><a href="#设置侧边栏显示效果" class="headerlink" title="设置侧边栏显示效果"></a>设置侧边栏显示效果</h1><p>在<strong>主题配置文件</strong>中，找到<code>sidebar</code>的<code>display</code>属性，<code>display</code>属性有四种显示模式：分别为：</p>
+<pre><code>post    // 默认显示方式
+always  // 一直显示
+hide    // 初始隐藏
+remove  // 移除侧边栏
+</code></pre><p>笔者将其设置为hide模式，读者们可根据个人喜好进行设置。</p>
+<h1 id="添加菜单选项"><a href="#添加菜单选项" class="headerlink" title="添加菜单选项"></a>添加菜单选项</h1><p>默认情况下，菜单导航栏有首页、归档、关于三个选项，除此之外笔者还添加了分类、标签和关于。在<strong>主题配置文件</strong>中，找到menu属性，并去掉categories、 tags、about的的注释，如下图所示：</p>
+<p>然后在Hexo根目录执行指令如下：</p>
+<pre><code>// 添加分类页面
+hexo new page &quot;categories&quot;
+// 添加标签页面
+hexo new page “tags”
+// 添加关于页面
+hexo new page &quot;about&quot;
+</code></pre><p>执行完上述指令后，在Hexo根目录/source/文件夹下创建三个文件夹，命名分别为：categories、tags、about文件夹，在这些文件夹中分别会创建一个以index命名的Markdown文件，对这三个Markdown文件内容进行修改，使之分别为：</p>
+<pre><code>---
+title: categories
+date: 2017-03-12 22:06:24
+type: &quot;categories&quot;
+---
+
+---
+title: 标签
+date: 2017-03-12 17:27:16
+type: &quot;tags&quot;
+---
+
+---
+title: about
+date: 2017-03-12 22:07:26
+type: &quot;about&quot;
+---
+</code></pre><p>完成文件的修改，然后部署Hexo即可完成菜单选项的添加。</p>
+<h1 id="添加阅读次数统计"><a href="#添加阅读次数统计" class="headerlink" title="添加阅读次数统计"></a>添加阅读次数统计</h1><p>注册LeanCloud账号，完成激活；点击左上角的”应用”-“创建新应用”-点击“数据”右边的齿轮–点击创建类class，类名字叫做Counter。</p>
+<p>然后，修改<strong>主题配置文件</strong>，找到leancloud_visitors，添加修改：</p>
 <pre><code>leancloud_visitors:
   enable: true #将原来的false改为true
   app_id: #&lt;app_id&gt;
@@ -456,9 +534,56 @@ length: 300  #设置预览的字数
 <p><img src="/2017/09/09/blog-opti/LeanCloud_id_key.png" alt="LeanCloud中的id和key"></p>
 <p>然后预览，如图：</p>
 <p><img src="/2017/09/09/blog-opti/view_count.png" alt="阅读次数统计效果图"></p>
-<h1 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h1><h1 id="添加社交链接"><a href="#添加社交链接" class="headerlink" title="添加社交链接"></a>添加社交链接</h1><h1 id="添加友情链接功能"><a href="#添加友情链接功能" class="headerlink" title="添加友情链接功能"></a>添加友情链接功能</h1><h1 id="设置博文内链接为蓝色"><a href="#设置博文内链接为蓝色" class="headerlink" title="设置博文内链接为蓝色"></a>设置博文内链接为蓝色</h1><p>链接的默认颜色是白色的，和普通字体颜色相同，不容易区分，如下图所示：</p>
+<h1 id="添加社交链接"><a href="#添加社交链接" class="headerlink" title="添加社交链接"></a>添加社交链接</h1><p>笔者希望在个人博客中加入自己的微博、知乎和Github链接以提高访问量，接下来了解一下社交链接如何添加：</p>
+<ul>
+<li><strong>添加链接及图标</strong></li>
+</ul>
+<p>在<strong>主题配置文件</strong>中找到<code>social</code>属性，在其下方添加社交链接及图标，其格式为：</p>
+<pre><code>社交平台名称：链接 || 图标
+</code></pre><p>链接的图标全部来自于<a href="http://fontawesome.io/icons/" target="_blank" rel="external">Font Awesome</a></p>
+<ul>
+<li><strong>个人配置</strong></li>
+</ul>
+<p>笔者社交链接添加情况如以下代码所示：</p>
+<pre><code>social:
+  GitHub: https://github.com/qwerty200696 || github
+  E-Mail: mailto:yourname@gmail.com || envelope
+  知乎: https://www.zhihu.com/people/LijieWang || gratipay 
+  微博: https://weibo.com/3280603012 || weibo
+  Google: https://plus.google.com/yourname || google
+  Twitter: https://twitter.com/yourname || twitter
+  FB Page: https://www.facebook.com/yourname || facebook
+  #VK Group: https://vk.com/yourname || vk
+  #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
+  YouTube: https://youtube.com/yourname || youtube
+  Instagram: https://instagram.com/yourname || instagram
+</code></pre><p>其中，微博有其对应的图标，而知乎在图标库中却没有找到，笔者找了一款<code>gratipay</code>的图标来代替知乎图标。</p>
+<blockquote>
+<p>如果没有找到指定的图标，将会启用默认的图标。</p>
+</blockquote>
+<ul>
+<li><strong>效果展示</strong></li>
+</ul>
+<p>配置完成后，具体效果显示如下：</p>
+<p><img src="/2017/09/09/blog-opti/social.png" alt="社交链接效果图"></p>
+<h1 id="添加友情链接功能"><a href="#添加友情链接功能" class="headerlink" title="添加友情链接功能"></a>添加友情链接功能</h1><p>在<strong>主题配置文件</strong>中找到<code>links</code>属性，修改<code>links_title</code>属性的值为“友情链接”（也可以是其他文案），取消注释<code>links:</code>，然后添加上好友的博客名称和博客地址，其格式如下：</p>
+<pre><code># Blog rolls
+links_title: 友情链接 #修改名称
+#links_layout: block
+#links_layout: inline
+links: #该行取消注释
+  小草莓: http://my.csdn.net/qq_31196849
+  qingkong: http://my.csdn.net/qingkong1994
+</code></pre><p>笔者友情链接出现位置在社交链接的下方，效果如下图所示：</p>
+<p><img src="/2017/09/09/blog-opti/friend_link.png" alt="友情链接示意图"></p>
+<h1 id="设置博文内链接为蓝色"><a href="#设置博文内链接为蓝色" class="headerlink" title="设置博文内链接为蓝色"></a>设置博文内链接为蓝色</h1><ul>
+<li><strong>修改原因</strong></li>
+</ul>
+<p>链接的默认颜色是白色的，和普通字体颜色相同，不容易区分，如下图所示：</p>
 <p><img src="/2017/09/09/blog-opti/link_color.png" alt="链接的默认颜色"></p>
-<p>修改方法：</p>
+<ul>
+<li><strong>修改方法</strong></li>
+</ul>
 <p>通过路径：</p>
 <blockquote>
 <p><code>F:Hexo\themes\next\source\css\_common\components\post\</code></p>
@@ -472,15 +597,19 @@ length: 300  #设置预览的字数
     text-decoration: underline;
   }
 }
-</code></pre><p>最好将新添加的文件放在原文件内容的底部，便于查看；然后预览，效果如图：</p>
+</code></pre><p>最好将新添加的内容放在原文件内容的底部，便于查看。</p>
+<ul>
+<li><strong>效果预览</strong></li>
+</ul>
+<p>设置完成后部署一下，预览效果如图：</p>
 <p><img src="/2017/09/09/blog-opti/link_color_changed.png" alt="链接颜色为蓝色"></p>
-<p>图中Git的链接是鼠标悬停的效果。</p>
+<p>图中Git的链接出现的下划线是鼠标悬停时的效果。</p>
 <h1 id="设置文章末尾”本文结束”标记"><a href="#设置文章末尾”本文结束”标记" class="headerlink" title="设置文章末尾”本文结束”标记"></a>设置文章末尾”本文结束”标记</h1><p>在路径<code>F:\Hexo\themes\next\layout\_macro</code>下，新建一个文件<code>passage-end-tag.swig</code>,文件内容中添加以下代码：</p>
 <pre><code>{% if theme.passage_end_tag.enabled %}
 	<div style="text-align:center;color: #ccc;font-size:14px;">
 		------ 本文结束 ------</div>
 	{% endif %}
-</code></pre><p>这里可以更改字体显示的颜色，大小，以及内容，例如我将自己就将本文结束用The Happy Ending代替，并将字体颜色设置为了自己喜欢的#CDBA96，你可以去<a href="http://tool.oschina.net/commons?type=3" target="_blank" rel="external">这里</a>选择自己喜欢的颜色对应的RGB值。</p>
+</code></pre><p>这里可以更改字体显示的颜色，大小，以及内容，例如可将本文结束用The Happy Ending代替，并将字体颜色设置为了自己喜欢的#CDBA96，你可以去<a href="http://tool.oschina.net/commons?type=3" target="_blank" rel="external">这里</a>选择自己喜欢的颜色对应的RGB值。</p>
 <p>然后在路径<code>\themes\next\layout\_macro\</code>下找到并打开<code>post.swig</code>文件，在 <code>post-body</code> 之后， <code>post-footer</code> 之前添加如下代码（post-footer之前两个DIV）：</p>
 <pre><code>{% if not is_index %}
 	  <div>
@@ -489,22 +618,67 @@ length: 300  #设置预览的字数
 	{% endif %}
 </code></pre><p>具体位置如下图所示：</p>
 <p><img src="/2017/09/09/blog-opti/end_tag.png" alt="post.swig文件中的具体位置"></p>
-<p>最后在主题配置文件中，在末尾添加如下语句：</p>
+<p>最后在<strong>主题配置文件</strong>中，在末尾添加如下语句：</p>
 <pre><code>passage_end_tag:
   enabled: true
 </code></pre><p>最终实现效果如下：</p>
 <p><img src="/2017/09/09/blog-opti/end_tag_view.png" alt="效果图"></p>
 <h1 id="显示每篇文章字数"><a href="#显示每篇文章字数" class="headerlink" title="显示每篇文章字数"></a>显示每篇文章字数</h1><p>首先安装插件，执行以下命令：</p>
 <pre><code>npm install hexo-wordcount --save
-</code></pre><p>然后修改主题配置文件，定位到<code>post_wordcount</code>，将<code>wordcount</code>由<code>false</code>改为<code>true</code>即可。</p>
+</code></pre><p>然后修改<strong>主题配置文件</strong>，定位到<code>post_wordcount</code>，将<code>wordcount</code>由<code>false</code>改为<code>true</code>即可。</p>
 <p>在每篇文章标题下会有如下效果：</p>
 <p><img src="/2017/09/09/blog-opti/word_count.png" alt="字数统计效果图"></p>
 <h1 id="显示站点文章总字数"><a href="#显示站点文章总字数" class="headerlink" title="显示站点文章总字数"></a>显示站点文章总字数</h1><p>首先安装插件，插件安装同上（已经“显示每篇文章字数”则忽略这步）。</p>
-<p>然后修改主题配置文件，定位到<code>post_wordcount</code>，将<code>totalcount</code>由<code>false</code>改为<code>true</code>即可。</p>
+<p>然后修改<strong>主题配置文件</strong>，定位到<code>post_wordcount</code>，将<code>totalcount</code>由<code>false</code>改为<code>true</code>即可。</p>
 <p>在页面最底部会有如下效果：</p>
 <p><img src="/2017/09/09/blog-opti/total_count.png" alt="字数统计效果图"></p>
-<h1 id="文章末尾添加版权说明"><a href="#文章末尾添加版权说明" class="headerlink" title="文章末尾添加版权说明"></a>文章末尾添加版权说明</h1><p>直接修改主题配置文件，定位到<code>post_wordcount</code>，将<code>totalcount</code>由<code>false</code>改为<code>true</code>即可。</p>
-<p>#</p>
+<h1 id="文章末尾添加版权说明"><a href="#文章末尾添加版权说明" class="headerlink" title="文章末尾添加版权说明"></a>文章末尾添加版权说明</h1><p>直接修改<strong>主题配置文件</strong>，定位到<code>post_wordcount</code>，将<code>totalcount</code>由<code>false</code>改为<code>true</code>即可。</p>
+<p>#设置个人头像</p>
+<p>通过上面切换到Pisces发现，自己的头像还是属于匿名状态，因此，我们有必要设置一下自己的头像。在<strong>主题配置文件</strong>中找到<code>avatar</code>字段,进行修改:</p>
+<pre><code># Sidebar Avatar
+# in theme directory(source/images): /images/avatar.gif
+# in site  directory(source/uploads): /uploads/avatar.gif
+avatar: /images/head_icon.jpg
+</code></pre><p>先将<code>avatar</code>字段前的#删除，然后粘贴上头像的目录位置或者链接。</p>
+<p>笔者将突破保存在了主题目录下的<code>source/images</code>文件夹，也可以存放在站点目录下的<code>source/uploads</code>文件夹。也可以将自己的头像图片，保存在百度网盘或者新浪微盘的某个地方，然后将对应的<code>url</code>地址复制过来，添加在<code>avatar</code>字段后即可。</p>
+<p>其效果如下图所示：</p>
+<p><img src="/2017/09/09/blog-opti/head_icon.png" alt="头像效果展示"></p>
+<p>达到效果后即可部署至远程。</p>
+<h1 id="设置头像动态特效"><a href="#设置头像动态特效" class="headerlink" title="设置头像动态特效"></a>设置头像动态特效</h1><p>在路径<code>F:\Hexo\themes\next\layout\_partials</code>找到<code>head.swig</code>文件并打开，在其末尾添加，如下字段：</p>
+<pre><code>&lt;link href=&quot;//cdn.bootcss.com/animate.css/3.5.0/animate.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</code></pre><p>并在路径<code>themes\next\source\css\_common\components\sidebar\</code>下找到<code>sidebar-author.styl</code>文件并打开，添加如下语句：</p>
+<pre><code>.site-author-image:hover {
+  -webkit-animation: jello 1s;
+  animation: jello 1s;
+};
+</code></pre><p>其中<code>jello</code>是我选择的动态效果，你可以在<a href="https://daneden.github.io/animate.css/" target="_blank" rel="external">这里</a>找到你喜欢的特效;然后更换上述代码中的<code>jello</code>字段，达到预期效果后，即可部署至远程。</p>
+<h1 id="设置网站图标"><a href="#设置网站图标" class="headerlink" title="设置网站图标"></a>设置网站图标</h1><p>打开主题配置文件，找到以下字段，进行相应的修改：</p>
+<pre><code># Put your favicon.ico into `hexo-site/source/` directory.
+favicon: /web_icon.jpg
+</code></pre><p>然后预览，在自己的博客网站上有这样的图标：</p>
+<p><img src="/2017/09/09/blog-opti/web_icon.png" alt="网站图标展示"></p>
+<p>因为我使用了与头像一样的图片，所以图标与头像一样。达到效果后即可部署至远程。</p>
+<h1 id="添加留言版块"><a href="#添加留言版块" class="headerlink" title="添加留言版块"></a>添加留言版块</h1><p>我们还可以在菜单栏增加一个”留言板”,让他人可以通过留言板直接给我们留言。<br>在博客目录中，执行以下命令，新建一个页面：</p>
+<pre><code>hexo n page guestbook
+</code></pre><p>然后通过路径<code>F:\Hexo\source\guestbook</code>找到并打开<code>guestbook</code>文件夹下的<code>index.md</code>文件，然后再文件中添加以下代码:</p>
+<pre><code>&lt;div class=&quot;ds-recent-visitors&quot; data-num-items=&quot;28&quot; data-avatar-size=&quot;42&quot; id=&quot;ds-recent-visitors&quot;&gt;&lt;/div&gt;
+</code></pre><p>然后打开主题配置文件，在menu字段下，添加如下字段：</p>
+<pre><code>menu:
+  home: / || home
+  about: /about/ || user
+  tags: /tags/ || tags
+  categories: /categories/ || th
+  archives: /archives/ || archive
+  留言板: /guestbook || newspaper-o #自己添加的字段
+</code></pre><p><code>newspaper-o</code>是留言板的图标，可以在<a href="http://fontawesome.io/icons/" target="_blank" rel="external">这里</a>找到自己喜欢的图标。</p>
+<p>笔者采用的youyan评论系统，默认在新建页面上会产生评论板块。效果如下：</p>
+<p><img src="/2017/09/09/blog-opti/guestbook.png" alt="留言板效果图"></p>
+<h1 id="Hexo博客提交百度和Google收录"><a href="#Hexo博客提交百度和Google收录" class="headerlink" title="Hexo博客提交百度和Google收录"></a>Hexo博客提交百度和Google收录</h1><h1 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h1><h1 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a>添加搜索功能</h1><h1 id="添加打赏功能"><a href="#添加打赏功能" class="headerlink" title="添加打赏功能"></a>添加打赏功能</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
+<li><p><a href="http://www.jianshu.com/p/5973c05d7100" target="_blank" rel="external">【干货】2个小时教你hexo博客添加评论、打赏、RSS等功能</a></p>
+</li>
+<li><p><a href="https://tzkang.github.io/2016/10/17/2016-10-17/#more" target="_blank" rel="external">GitHub+Hexo+NexT搭建个人博客</a></p>
+</li>
+</ol>
 
       
     </div>
@@ -758,6 +932,24 @@ length: 300  #设置预览的字数
 
         
         
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qq_31196849" title="小草莓" target="_blank">小草莓</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qingkong1994" title="qingkong" target="_blank">qingkong</a>
+                </li>
+              
+            </ul>
+          </div>
+        
 
         
 
@@ -774,7 +966,7 @@ length: 300  #设置预览的字数
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建基本Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">搭建基本Hexo博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客绑定域名"><span class="nav-number">2.</span> <span class="nav-text">Hexo博客绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换Hexo主题"><span class="nav-number">3.</span> <span class="nav-text">更换Hexo主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置Hexo主题模式"><span class="nav-number">4.</span> <span class="nav-text">设置Hexo主题模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置预览摘要"><span class="nav-number">5.</span> <span class="nav-text">设置预览摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加评论功能"><span class="nav-number">6.</span> <span class="nav-text">添加评论功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加打赏功能"><span class="nav-number">7.</span> <span class="nav-text">添加打赏功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置侧边栏显示效果"><span class="nav-number">8.</span> <span class="nav-text">设置侧边栏显示效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加菜单选项"><span class="nav-number">9.</span> <span class="nav-text">添加菜单选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">10.</span> <span class="nav-text">添加搜索功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加阅读次数统计"><span class="nav-number">11.</span> <span class="nav-text">添加阅读次数统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加RSS"><span class="nav-number">12.</span> <span class="nav-text">添加RSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加社交链接"><span class="nav-number">13.</span> <span class="nav-text">添加社交链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加友情链接功能"><span class="nav-number">14.</span> <span class="nav-text">添加友情链接功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置博文内链接为蓝色"><span class="nav-number">15.</span> <span class="nav-text">设置博文内链接为蓝色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置文章末尾”本文结束”标记"><span class="nav-number">16.</span> <span class="nav-text">设置文章末尾”本文结束”标记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示每篇文章字数"><span class="nav-number">17.</span> <span class="nav-text">显示每篇文章字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示站点文章总字数"><span class="nav-number">18.</span> <span class="nav-text">显示站点文章总字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章末尾添加版权说明"><span class="nav-number">19.</span> <span class="nav-text">文章末尾添加版权说明</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建基本Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">搭建基本Hexo博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客绑定域名"><span class="nav-number">2.</span> <span class="nav-text">Hexo博客绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换Hexo主题"><span class="nav-number">3.</span> <span class="nav-text">更换Hexo主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置Hexo主题模式"><span class="nav-number">4.</span> <span class="nav-text">设置Hexo主题模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置预览摘要"><span class="nav-number">5.</span> <span class="nav-text">设置预览摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加评论功能"><span class="nav-number">6.</span> <span class="nav-text">添加评论功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置侧边栏显示效果"><span class="nav-number">7.</span> <span class="nav-text">设置侧边栏显示效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加菜单选项"><span class="nav-number">8.</span> <span class="nav-text">添加菜单选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加阅读次数统计"><span class="nav-number">9.</span> <span class="nav-text">添加阅读次数统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加社交链接"><span class="nav-number">10.</span> <span class="nav-text">添加社交链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加友情链接功能"><span class="nav-number">11.</span> <span class="nav-text">添加友情链接功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置博文内链接为蓝色"><span class="nav-number">12.</span> <span class="nav-text">设置博文内链接为蓝色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置文章末尾”本文结束”标记"><span class="nav-number">13.</span> <span class="nav-text">设置文章末尾”本文结束”标记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示每篇文章字数"><span class="nav-number">14.</span> <span class="nav-text">显示每篇文章字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示站点文章总字数"><span class="nav-number">15.</span> <span class="nav-text">显示站点文章总字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章末尾添加版权说明"><span class="nav-number">16.</span> <span class="nav-text">文章末尾添加版权说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置头像动态特效"><span class="nav-number">17.</span> <span class="nav-text">设置头像动态特效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置网站图标"><span class="nav-number">18.</span> <span class="nav-text">设置网站图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加留言版块"><span class="nav-number">19.</span> <span class="nav-text">添加留言版块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客提交百度和Google收录"><span class="nav-number">20.</span> <span class="nav-text">Hexo博客提交百度和Google收录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加RSS"><span class="nav-number">21.</span> <span class="nav-text">添加RSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">22.</span> <span class="nav-text">添加搜索功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加打赏功能"><span class="nav-number">23.</span> <span class="nav-text">添加打赏功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">24.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
@@ -817,7 +1009,7 @@ length: 300  #设置预览的字数
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      4.0k
+      6.1k
     </span>
   
 </div>
