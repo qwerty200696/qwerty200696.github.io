@@ -117,7 +117,7 @@
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/08/blog_setup/error_1_done.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/08/blog_setup/git_hexo_deploy_error.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/08/blog_setup/git_hexo_deploy_error_done.png">
-<meta property="og:updated_time" content="2017-09-09T09:34:36.400Z">
+<meta property="og:updated_time" content="2017-09-12T01:35:26.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+GitHub博客搭建实战">
 <meta name="twitter:description" content="准备工作1、安装 Node.js: https://nodejs.org/en/ 2、安装 Git: https://github.com/waylau/git-for-win Git教程 https://github.com/waylau/git-for-win廖雪峰老师的教程，非常好。 3、安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，名称和邮箱是Github上的。">
@@ -369,6 +369,7 @@
             </span>
           
 
+	  
           
             
           
@@ -389,6 +390,25 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,016
+                </span>
+              
+
+              
+
+              
+            </div>
           
 
           
@@ -413,16 +433,14 @@
 <p><img src="/2017/09/08/blog_setup/git_1.png" alt="Git Bash界面与指令"></p>
 <p>4、安装 Hexo。所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
 <pre><code>$ npm install -g hexo-cli
-</code></pre><p>上述步骤参考自：<a href="https://zhangslob.github.io/2017/02/28/%E6%95%99%E4%BD%A0%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo-Github/" title="教你免费搭建个人博客，Hexo-Github" target="_blank" rel="external">Hexo-Github搭建个人博客</a></p>
-<p>4.1 安装hexo出错：<code>unable to verify the first certificate</code>（无法验证第一证书）</p>
+</code></pre><p>5、安装hexo出错：<code>unable to verify the first certificate</code>（无法验证第一证书）</p>
 <p><img src="/2017/09/08/blog_setup/hexo_1.png" alt="安装hexo出错截图"></p>
 <p>查找到解决方案：</p>
 <p><img src="/2017/09/08/blog_setup/hexo_2.png" alt="解决方案截图-推荐方案一"></p>
 <p>参考网址：<a href="http://www.zhimengzhe.com/Javascriptjiaocheng/243010.html" title="npm报错" target="_blank" rel="external">npm报错</a></p>
-<p>输入命令：</p>
+<p>依据解决方案所述，在命令行输入如下命令，来取消ssl验证：</p>
 <pre><code>npm config set strict-ssl false
-</code></pre><p>取消ssl验证。</p>
-<p>安装成功后，显示如下：</p>
+</code></pre><p>之后安装就会成功了，显示如下：</p>
 <p><img src="/2017/09/08/blog_setup/hexo_3.png" alt="hexo安装成功"></p>
 <h2 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h2><p>首先注册、登录 <a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></p>
 <p>记住自己的Username（很重要）</p>
@@ -517,9 +535,9 @@ INFO  Copying files from public folder...
 <p>然后就可以看到已经发布了。</p>
 <h3 id="错误记录一"><a href="#错误记录一" class="headerlink" title="错误记录一"></a>错误记录一</h3><pre><code>deploy not found： git
 </code></pre><p><img src="/2017/09/08/blog_setup/error_1.png" alt="deploy not found： git"></p>
-<p>解决方案</p>
-<p> npm install hexo-deployer-git –save 改了之后执行，然后再部署试试</p>
-<p>参考自：<a href="https://www.v2ex.com/t/175940" target="_blank" rel="external">https://www.v2ex.com/t/175940</a></p>
+<p>解决方案：执行如下语句后， 再部署即可：</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre><p>参考自：<a href="https://www.v2ex.com/t/175940" target="_blank" rel="external">https://www.v2ex.com/t/175940</a></p>
 <p><img src="/2017/09/08/blog_setup/error_1_done.png" alt="错误一修正"></p>
 <h3 id="错误记录二"><a href="#错误记录二" class="headerlink" title="错误记录二"></a>错误记录二</h3><p>今天运行：</p>
 <pre><code>hexo deploy
@@ -535,16 +553,15 @@ Error: fatal: unable to access &apos;https://username:password@github.com/userna
     at maybeClose (internal/child_process.js:920:16)
     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
 </code></pre><p><img src="/2017/09/08/blog_setup/git_hexo_deploy_error.png" alt="SSL错误"></p>
-<p>尝试执行：</p>
+<p>解决方法：执行如下语句：</p>
 <pre><code>$ git config --global http.sslVerify false
 </code></pre><p>参考自：<a href="http://windigniter.com/itblog/detail/2015/06/git-ssl-certificate-problem" target="_blank" rel="external">git获取代码提示SSL certificate problem: unable to get local issuer certificate</a></p>
-<p>（optional）将<code>_config.yml</code>中的<code>repo</code>修改为了：</p>
+<p>（optional）另外，可将<code>_config.yml</code>中的<code>repo</code>修改为如下标准格式：</p>
 <pre><code>repo: https://用户名:密码@github.com/用户名/用户名.github.io.git
 </code></pre><p>参考自： <a href="http://blog.csdn.net/w20101310/article/details/52796721?locationNum=6&amp;fps=1" target="_blank" rel="external">hexo提交报错 unable to access</a></p>
-<p>之后再次运行：</p>
+<p>之后再次运行发布指令，终于成功：</p>
 <pre><code>hexo deploy
-</code></pre><p>果然可以了。</p>
-<p><img src="/2017/09/08/blog_setup/git_hexo_deploy_error_done.png" alt="SSL错误解决"></p>
+</code></pre><p><img src="/2017/09/08/blog_setup/git_hexo_deploy_error_done.png" alt="SSL错误解决"></p>
 <h2 id="添加图片"><a href="#添加图片" class="headerlink" title="添加图片"></a>添加图片</h2><p>经过上面的配置后，发现上传的博客文章里面的本地图片居然显示不来（没有同步上传）。</p>
 <p>于是，找到解决方案：</p>
 <p>1 把主页配置文件<code>_config.yml</code> 里的<code>post_asset_folder:</code>这个选项设置为<code>true</code></p>
@@ -578,7 +595,11 @@ hexo deploy #部署发布
 <li><p>hexo d == hexo deploy#部署</p>
 </li>
 </ol>
-<p>参考自：<a href="https://zhangslob.github.io/2017/02/28/%E6%95%99%E4%BD%A0%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo-Github/" target="_blank" rel="external">教你免费搭建个人博客，Hexo&amp;Github</a></p>
+<p>参考文献：</p>
+<ol>
+<li><a href="https://zhangslob.github.io/2017/02/28/%E6%95%99%E4%BD%A0%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo-Github/" target="_blank" rel="external">教你免费搭建个人博客，Hexo&amp;Github</a></li>
+<li><a href="http://blog.csdn.net/sugar_rainbow/article/details/57415705" target="_blank" rel="external">hexo生成博文插入图片</a></li>
+</ol>
 
       
     </div>
@@ -602,6 +623,24 @@ hexo deploy #部署发布
 
     
 
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://qwerty200696.github.io/2017/09/08/blog_setup/" title="hexo+GitHub博客搭建实战">https://qwerty200696.github.io/2017/09/08/blog_setup/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
     
 	
 
@@ -868,6 +907,17 @@ hexo deploy #部署发布
   </span>
   <span class="author" itemprop="copyrightHolder">wangwlj</span>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      4.0k
+    </span>
   
 </div>
 

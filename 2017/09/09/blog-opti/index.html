@@ -108,7 +108,10 @@
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/link_color.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/link_color_changed.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/end_tag.png">
-<meta property="og:updated_time" content="2017-09-09T10:16:55.744Z">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/end_tag_view.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/word_count.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/total_count.png">
+<meta property="og:updated_time" content="2017-09-09T14:28:20.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建的Github博客之优化">
 <meta name="twitter:description" content="搭建基本Hexo博客https://qwerty200696.github.io/2017/09/08/blog_setup/#more Hexo博客绑定域名http://www.jianshu.com/p/cea41e5c9b2a 以下基本上参考这篇文章：【干货】2个小时教你hexo博客添加评论、打赏、RSS等功能 更换Hexo主题git clone https://github.com/iis">
@@ -360,6 +363,7 @@
             </span>
           
 
+	  
           
             
           
@@ -380,6 +384,25 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,220
+                </span>
+              
+
+              
+
+              
+            </div>
           
 
           
@@ -453,8 +476,11 @@ length: 300  #设置预览的字数
 <p><img src="/2017/09/09/blog-opti/link_color_changed.png" alt="链接颜色为蓝色"></p>
 <p>图中Git的链接是鼠标悬停的效果。</p>
 <h1 id="设置文章末尾”本文结束”标记"><a href="#设置文章末尾”本文结束”标记" class="headerlink" title="设置文章末尾”本文结束”标记"></a>设置文章末尾”本文结束”标记</h1><p>在路径<code>F:\Hexo\themes\next\layout\_macro</code>下，新建一个文件<code>passage-end-tag.swig</code>,文件内容中添加以下代码：</p>
-<p>```</p>
-<p>这里可以更改字体显示的颜色，大小，以及内容，例如我将自己就将本文结束用The Happy Ending代替，并将字体颜色设置为了自己喜欢的#CDBA96，你可以去<a href="http://tool.oschina.net/commons?type=3" target="_blank" rel="external">这里</a>选择自己喜欢的颜色对应的RGB值。</p>
+<pre><code>{% if theme.passage_end_tag.enabled %}
+	<div style="text-align:center;color: #ccc;font-size:14px;">
+		------ 本文结束 ------</div>
+	{% endif %}
+</code></pre><p>这里可以更改字体显示的颜色，大小，以及内容，例如我将自己就将本文结束用The Happy Ending代替，并将字体颜色设置为了自己喜欢的#CDBA96，你可以去<a href="http://tool.oschina.net/commons?type=3" target="_blank" rel="external">这里</a>选择自己喜欢的颜色对应的RGB值。</p>
 <p>然后在路径<code>\themes\next\layout\_macro\</code>下找到并打开<code>post.swig</code>文件，在 <code>post-body</code> 之后， <code>post-footer</code> 之前添加如下代码（post-footer之前两个DIV）：</p>
 <pre><code>{% if not is_index %}
 	  <div>
@@ -466,7 +492,20 @@ length: 300  #设置预览的字数
 <p>最后在主题配置文件中，在末尾添加如下语句：</p>
 <pre><code>passage_end_tag:
   enabled: true
-</code></pre>
+</code></pre><p>最终实现效果如下：</p>
+<p><img src="/2017/09/09/blog-opti/end_tag_view.png" alt="效果图"></p>
+<h1 id="显示每篇文章字数"><a href="#显示每篇文章字数" class="headerlink" title="显示每篇文章字数"></a>显示每篇文章字数</h1><p>首先安装插件，执行以下命令：</p>
+<pre><code>npm install hexo-wordcount --save
+</code></pre><p>然后修改主题配置文件，定位到<code>post_wordcount</code>，将<code>wordcount</code>由<code>false</code>改为<code>true</code>即可。</p>
+<p>在每篇文章标题下会有如下效果：</p>
+<p><img src="/2017/09/09/blog-opti/word_count.png" alt="字数统计效果图"></p>
+<h1 id="显示站点文章总字数"><a href="#显示站点文章总字数" class="headerlink" title="显示站点文章总字数"></a>显示站点文章总字数</h1><p>首先安装插件，插件安装同上（已经“显示每篇文章字数”则忽略这步）。</p>
+<p>然后修改主题配置文件，定位到<code>post_wordcount</code>，将<code>totalcount</code>由<code>false</code>改为<code>true</code>即可。</p>
+<p>在页面最底部会有如下效果：</p>
+<p><img src="/2017/09/09/blog-opti/total_count.png" alt="字数统计效果图"></p>
+<h1 id="文章末尾添加版权说明"><a href="#文章末尾添加版权说明" class="headerlink" title="文章末尾添加版权说明"></a>文章末尾添加版权说明</h1><p>直接修改主题配置文件，定位到<code>post_wordcount</code>，将<code>totalcount</code>由<code>false</code>改为<code>true</code>即可。</p>
+<p>#</p>
+
       
     </div>
     
@@ -489,6 +528,24 @@ length: 300  #设置预览的字数
 
     
 
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://qwerty200696.github.io/2017/09/09/blog-opti/" title="hexo搭建的Github博客之优化">https://qwerty200696.github.io/2017/09/09/blog-opti/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
     
 	
 
@@ -717,7 +774,7 @@ length: 300  #设置预览的字数
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建基本Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">搭建基本Hexo博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客绑定域名"><span class="nav-number">2.</span> <span class="nav-text">Hexo博客绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换Hexo主题"><span class="nav-number">3.</span> <span class="nav-text">更换Hexo主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置Hexo主题模式"><span class="nav-number">4.</span> <span class="nav-text">设置Hexo主题模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置预览摘要"><span class="nav-number">5.</span> <span class="nav-text">设置预览摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加评论功能"><span class="nav-number">6.</span> <span class="nav-text">添加评论功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加打赏功能"><span class="nav-number">7.</span> <span class="nav-text">添加打赏功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置侧边栏显示效果"><span class="nav-number">8.</span> <span class="nav-text">设置侧边栏显示效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加菜单选项"><span class="nav-number">9.</span> <span class="nav-text">添加菜单选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">10.</span> <span class="nav-text">添加搜索功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加阅读次数统计"><span class="nav-number">11.</span> <span class="nav-text">添加阅读次数统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加RSS"><span class="nav-number">12.</span> <span class="nav-text">添加RSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加社交链接"><span class="nav-number">13.</span> <span class="nav-text">添加社交链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加友情链接功能"><span class="nav-number">14.</span> <span class="nav-text">添加友情链接功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置博文内链接为蓝色"><span class="nav-number">15.</span> <span class="nav-text">设置博文内链接为蓝色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置文章末尾”本文结束”标记"><span class="nav-number">16.</span> <span class="nav-text">设置文章末尾”本文结束”标记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建基本Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">搭建基本Hexo博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客绑定域名"><span class="nav-number">2.</span> <span class="nav-text">Hexo博客绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换Hexo主题"><span class="nav-number">3.</span> <span class="nav-text">更换Hexo主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置Hexo主题模式"><span class="nav-number">4.</span> <span class="nav-text">设置Hexo主题模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置预览摘要"><span class="nav-number">5.</span> <span class="nav-text">设置预览摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加评论功能"><span class="nav-number">6.</span> <span class="nav-text">添加评论功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加打赏功能"><span class="nav-number">7.</span> <span class="nav-text">添加打赏功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置侧边栏显示效果"><span class="nav-number">8.</span> <span class="nav-text">设置侧边栏显示效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加菜单选项"><span class="nav-number">9.</span> <span class="nav-text">添加菜单选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">10.</span> <span class="nav-text">添加搜索功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加阅读次数统计"><span class="nav-number">11.</span> <span class="nav-text">添加阅读次数统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加RSS"><span class="nav-number">12.</span> <span class="nav-text">添加RSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加社交链接"><span class="nav-number">13.</span> <span class="nav-text">添加社交链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加友情链接功能"><span class="nav-number">14.</span> <span class="nav-text">添加友情链接功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置博文内链接为蓝色"><span class="nav-number">15.</span> <span class="nav-text">设置博文内链接为蓝色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置文章末尾”本文结束”标记"><span class="nav-number">16.</span> <span class="nav-text">设置文章末尾”本文结束”标记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示每篇文章字数"><span class="nav-number">17.</span> <span class="nav-text">显示每篇文章字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示站点文章总字数"><span class="nav-number">18.</span> <span class="nav-text">显示站点文章总字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章末尾添加版权说明"><span class="nav-number">19.</span> <span class="nav-text">文章末尾添加版权说明</span></a></li></ol></div>
             
 
           </div>
@@ -751,6 +808,17 @@ length: 300  #设置预览的字数
   </span>
   <span class="author" itemprop="copyrightHolder">wangwlj</span>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      4.0k
+    </span>
   
 </div>
 
