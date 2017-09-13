@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="deep learning,神经网络," />
 
 
 
@@ -95,16 +95,20 @@
 
 
 
-<meta name="description" content="所谓王者，必卓然特立，争当人杰。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="王立杰的博客">
-<meta property="og:url" content="https://qwerty200696.github.io/tags/GitHub/index.html">
+<meta name="description" content="github插入公式尝试在文章一开始插入如下代码： &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 就可以在Markdown中添加MathJax引擎。 然后，再使">
+<meta name="keywords" content="deep learning,神经网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BP神经网络部分具体的推导">
+<meta property="og:url" content="https://qwerty200696.github.io/2017/09/12/BP_derivation/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="所谓王者，必卓然特立，争当人杰。">
+<meta property="og:description" content="github插入公式尝试在文章一开始插入如下代码： &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 就可以在Markdown中添加MathJax引擎。 然后，再使">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/12/BP_derivation/bp_net.png">
+<meta property="og:updated_time" content="2017-09-13T14:59:09.538Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王立杰的博客">
-<meta name="twitter:description" content="所谓王者，必卓然特立，争当人杰。">
+<meta name="twitter:title" content="BP神经网络部分具体的推导">
+<meta name="twitter:description" content="github插入公式尝试在文章一开始插入如下代码： &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 就可以在Markdown中添加MathJax引擎。 然后，再使">
+<meta name="twitter:image" content="https://qwerty200696.github.io/2017/09/12/BP_derivation/bp_net.png">
 
 
 
@@ -134,7 +138,7 @@
 
 
 
-  <link rel="canonical" href="https://qwerty200696.github.io/tags/GitHub/"/>
+  <link rel="canonical" href="https://qwerty200696.github.io/2017/09/12/BP_derivation/"/>
 
 
 
@@ -142,7 +146,7 @@
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>标签: GitHub | 王立杰的博客</title>
+  <title>BP神经网络部分具体的推导 | 王立杰的博客</title>
   
 
 
@@ -171,7 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	
 	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
@@ -287,82 +291,303 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>GitHub<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/09/12/BP_derivation/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王立杰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/09/09/blog-opti/" itemprop="url">
-              
-                <span itemprop="name">hexo搭建的Github博客之优化</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">BP神经网络部分具体的推导</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-09T10:27:20+08:00"
-              content="2017-09-09" >
-          09-09
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-12T22:18:23+08:00">
+                2017-09-12
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/深度学习/" itemprop="url" rel="index">
+                    <span itemprop="name">深度学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+	  
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/12/BP_derivation/" class="leancloud_visitors" data-flag-title="BP神经网络部分具体的推导">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  501
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h1 id="github插入公式尝试"><a href="#github插入公式尝试" class="headerlink" title="github插入公式尝试"></a>github插入公式尝试</h1><p>在文章一开始插入如下代码：</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;
+</code></pre><p>就可以在Markdown中添加MathJax引擎。</p>
+<p>然后，再使用Tex写公式。<code>$$公式$$</code>表示行间公式，本来Tex中使用<code>\(公式\)</code>表示行内公式，但因为<code>Markdown</code>中<code>\</code>是转义字符，所以在Markdown中输入行内公式使用<code>\\(公式\\)</code>，如下代码：</p>
+<pre><code>$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
+</code></pre><script type="text/javascript" <src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/08/blog_setup/" itemprop="url">
-              
-                <span itemprop="name">hexo+GitHub博客搭建实战</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-08T12:00:25+08:00"
-              content="2017-09-08" >
-          09-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+<p>分别显示结果（行间公式）：</p>
+<p>$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$</p>
+<p>行内公式：</p>
+<p>\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\)</p>
+<p>但是一些复杂的公式就不能显示了。输入如下代码：</p>
+<pre><code>\\(\[ H_j^1 = f(\sum^n_i\]\\)
+\\(\[ H_j^1 = f(\sum^n_{i=1}\]\\)
+</code></pre><p>显示为：</p>
+<p>\([ H_j^1 = f(\sum^n_i]\)<br>\([ H<em>j^1 = f(\sum^n</em>{i=1}]\)</p>
+<blockquote>
+<p>第二个不能显示，原因是下标多于一个，所以不能显示。不知道为啥就不行。</p>
+</blockquote>
+<p><strong>BP神经网络示意图</strong></p>
+<p><img src="/2017/09/12/BP_derivation/bp_net.png" alt="BP神经网络示意图"></p>
+<p><strong>网络结构</strong> </p>
+<p>一个输入层，两个隐含层，一个输出层。</p>
+<p><strong>参数标记</strong></p>
+<ul>
+<li>输入层神经元个数n、输出层神经元个数m【其中有m=n，每一帧都有对应的输出】</li>
+</ul>
+<ul>
+<li>两个隐含层神经元个数均为100</li>
+</ul>
+<ul>
+<li>权值：输入层与第一个隐含层之间的权值为wij，两个隐含层之间的权值为wjk，第二个隐含层与输出层之间的权值为wkl</li>
+</ul>
+<ul>
+<li>阈值：两个隐含层\(a^1_j,a^2_k \) 输出层\(b_l\) </li>
+</ul>
+<p>其中，<em>i</em>=1,2,…,n，<em>j</em>,<em>k</em>=1,2,…,100，<em>l</em>=1,2,…,m<br>凡是下标含有<em>i</em>，<em>j</em>，<em>k</em>，<em>l</em>的，均表示单个神经元。</p>
+<p>\(\sum_{i=0}^Ng(t,i)\text{d}t \int_a^b\)<br>推导：<br>两个隐含层及输出层的输出：</p>
+<p>$$H^1<em>j = w\</em>{ij}$$<br>$H^1<em>j = w\</em>{ij}$</p>
+<h5 id="test"><a href="#test" class="headerlink" title="test"></a>test</h5><p>$ \Gamma, G$</p>
+<p>$A<em>G A</em>\Gamma$</p>
+<p>$ \sum^n_{ij} $</p>
+<p>$$<br>\begin{equation}\begin{split}<br>H(Y|X)&amp;=\sum<em>{x\in X} p(x)H(Y|X)\<br>&amp;=-\sum</em>{x\in X} p(x)\sum<em>{y\in Y}p(y|x)\log p(y|x)\<br>&amp;=-\sum</em>{x\in X} \sum_{y\in Y}p(y,x)\log p(y|x)<br>\end{split}\end{equation}<br>$$</p>
 
       
     </div>
+    
+    
+    
 
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://qwerty200696.github.io/2017/09/12/BP_derivation/" title="BP神经网络部分具体的推导">https://qwerty200696.github.io/2017/09/12/BP_derivation/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/deep-learning/" rel="tag"><i class="fa fa-tag"></i> deep learning</a>
+          
+            <a href="/tags/神经网络/" rel="tag"><i class="fa fa-tag"></i> 神经网络</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/09/blog-opti/" rel="next" title="hexo搭建的Github博客之优化">
+                <i class="fa fa-chevron-left"></i> hexo搭建的Github博客之优化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -370,6 +595,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -390,8 +621,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -530,6 +770,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#github插入公式尝试"><span class="nav-number">1.</span> <span class="nav-text">github插入公式尝试</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#test"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">test</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -673,6 +929,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -698,6 +958,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143521"></script>
+      <!-- UY END -->
     
   
 

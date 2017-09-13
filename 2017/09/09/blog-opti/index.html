@@ -110,6 +110,7 @@
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/friend_link.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/link_color.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/link_color_changed.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/code_end_tag.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/end_tag.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/end_tag_view.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/word_count.png">
@@ -117,7 +118,19 @@
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/head_icon.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/web_icon.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/guestbook.png">
-<meta property="og:updated_time" content="2017-09-12T12:29:07.634Z">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/readme.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/fork_ex.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/fork_place.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/fork_me.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/love.gif">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/tag_new.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/canvas_nest.gif">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/code_block.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/add_password_1.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/add_password_2.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/add_password_3.gif">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/jia_this.png">
+<meta property="og:updated_time" content="2017-09-12T14:15:31.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建的Github博客之优化">
 <meta name="twitter:description" content="本篇教程基于NexT主题的博客配置，实现更换主题、评论、打赏等功能，接下来根据这些功能进行分点描述，附上个人博客以供比对参考：链接。 搭建基本Hexo博客Hexo博客基本搭建参考：《hexo+GitHub博客搭建实战》一文，，笔者按照教程的顺序一步一步来，是没有出现错误的，如果读者们在搭建的时候遇到了问题不知如何解决，笔者会尽自己所能帮助读者，并将遇到的问题及解决方法附在文章下方。 Hexo博客绑">
@@ -190,8 +203,10 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+	
+	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    
+	<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -411,7 +426,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,322
+                  4,332
                 </span>
               
 
@@ -445,7 +460,7 @@
 <blockquote>
 <p>Hexo博客根目录/themes/</p>
 </blockquote>
-<p>在Hexo根目录下有一个以<code>_config.yml</code>命名的文件（下称<strong>站点配置文件</strong>），用<code>Sublime</code>等文本编辑器打开，在其中找到<code>theme</code>属性，将其由<code>landscape</code>改为<code>next</code>。</p>
+<p>在Hexo根目录下有一个以<code>_config.yml</code>命名的文件（下称<strong>站点配置文件</strong>），用<code>Sublime/NotePad++</code>等文本编辑器打开，在其中找到<code>theme</code>属性，将其由<code>landscape</code>改为<code>next</code>。</p>
 <p>然后在Hexo根目录执行部署Hexo指令：</p>
 <pre><code>// 清理缓存
 hexo clean
@@ -497,7 +512,7 @@ always  // 一直显示
 hide    // 初始隐藏
 remove  // 移除侧边栏
 </code></pre><p>笔者将其设置为hide模式，读者们可根据个人喜好进行设置。</p>
-<h1 id="添加菜单选项"><a href="#添加菜单选项" class="headerlink" title="添加菜单选项"></a>添加菜单选项</h1><p>默认情况下，菜单导航栏有首页、归档、关于三个选项，除此之外笔者还添加了分类、标签和关于。在<strong>主题配置文件</strong>中，找到menu属性，并去掉categories、 tags、about的的注释，如下图所示：</p>
+<h1 id="添加菜单选项"><a href="#添加菜单选项" class="headerlink" title="添加菜单选项"></a>添加菜单选项</h1><p>默认情况下，菜单导航栏有首页、归档、关于三个选项，除此之外笔者还添加了分类、标签和关于。在<strong>主题配置文件</strong>中，找到<code>menu</code>属性，并去掉<code>categories、 tags、about</code>的的注释，如下图所示：</p>
 <p>然后在Hexo根目录执行指令如下：</p>
 <pre><code>// 添加分类页面
 hexo new page &quot;categories&quot;
@@ -505,7 +520,7 @@ hexo new page &quot;categories&quot;
 hexo new page “tags”
 // 添加关于页面
 hexo new page &quot;about&quot;
-</code></pre><p>执行完上述指令后，在Hexo根目录/source/文件夹下创建三个文件夹，命名分别为：categories、tags、about文件夹，在这些文件夹中分别会创建一个以index命名的Markdown文件，对这三个Markdown文件内容进行修改，使之分别为：</p>
+</code></pre><p>执行完上述指令后，在Hexo根目录<code>/source/</code>文件夹下创建三个文件夹，命名分别为：<code>categories、tags、about</code>文件夹，在这些文件夹中分别会创建一个以<code>index</code>命名的Markdown文件，对这三个Markdown文件内容进行修改，使之分别为：</p>
 <pre><code>---
 title: categories
 date: 2017-03-12 22:06:24
@@ -524,8 +539,8 @@ date: 2017-03-12 22:07:26
 type: &quot;about&quot;
 ---
 </code></pre><p>完成文件的修改，然后部署Hexo即可完成菜单选项的添加。</p>
-<h1 id="添加阅读次数统计"><a href="#添加阅读次数统计" class="headerlink" title="添加阅读次数统计"></a>添加阅读次数统计</h1><p>注册LeanCloud账号，完成激活；点击左上角的”应用”-“创建新应用”-点击“数据”右边的齿轮–点击创建类class，类名字叫做Counter。</p>
-<p>然后，修改<strong>主题配置文件</strong>，找到leancloud_visitors，添加修改：</p>
+<h1 id="添加阅读次数统计"><a href="#添加阅读次数统计" class="headerlink" title="添加阅读次数统计"></a>添加阅读次数统计</h1><p>注册<code>LeanCloud</code>账号，完成激活；点击左上角的”应用”-“创建新应用”-点击“数据”右边的齿轮–点击创建类class，类名字叫做<code>Counter</code>。</p>
+<p>然后，修改<strong>主题配置文件</strong>，找到<code>leancloud_visitors</code>，添加修改：</p>
 <pre><code>leancloud_visitors:
   enable: true #将原来的false改为true
   app_id: #&lt;app_id&gt;
@@ -604,12 +619,15 @@ links: #该行取消注释
 <p>设置完成后部署一下，预览效果如图：</p>
 <p><img src="/2017/09/09/blog-opti/link_color_changed.png" alt="链接颜色为蓝色"></p>
 <p>图中Git的链接出现的下划线是鼠标悬停时的效果。</p>
-<h1 id="设置文章末尾”本文结束”标记"><a href="#设置文章末尾”本文结束”标记" class="headerlink" title="设置文章末尾”本文结束”标记"></a>设置文章末尾”本文结束”标记</h1><p>在路径<code>F:\Hexo\themes\next\layout\_macro</code>下，新建一个文件<code>passage-end-tag.swig</code>,文件内容中添加以下代码：</p>
+<h1 id="设置文章末尾”本文结束”标记"><a href="#设置文章末尾”本文结束”标记" class="headerlink" title="设置文章末尾”本文结束”标记"></a>设置文章末尾”本文结束”标记</h1><p><strong>实现方法</strong></p>
+<p>在路径<code>F:\Hexo\themes\next\layout\_macro</code>下，新建一个文件<code>passage-end-tag.swig</code>,文件内容中添加以下代码：</p>
 <pre><code>{% if theme.passage_end_tag.enabled %}
 	<div style="text-align:center;color: #ccc;font-size:14px;">
-		------ 本文结束 ------</div>
+		------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
 	{% endif %}
-</code></pre><p>这里可以更改字体显示的颜色，大小，以及内容，例如可将本文结束用The Happy Ending代替，并将字体颜色设置为了自己喜欢的#CDBA96，你可以去<a href="http://tool.oschina.net/commons?type=3" target="_blank" rel="external">这里</a>选择自己喜欢的颜色对应的RGB值。</p>
+</code></pre><p>代码截图如下(在网站中看到的div标签生效消失了，故此截图)：</p>
+<p><img src="/2017/09/09/blog-opti/code_end_tag.png" alt="passage-end-tag"></p>
+<p>这里可以更改字体显示的颜色，大小，以及内容，例如可将本文结束用The Happy Ending代替，并将字体颜色设置为了自己喜欢的#CDBA96，你可以去<a href="http://tool.oschina.net/commons?type=3" target="_blank" rel="external">这里</a>选择自己喜欢的颜色对应的RGB值。</p>
 <p>然后在路径<code>\themes\next\layout\_macro\</code>下找到并打开<code>post.swig</code>文件，在 <code>post-body</code> 之后， <code>post-footer</code> 之前添加如下代码（post-footer之前两个DIV）：</p>
 <pre><code>{% if not is_index %}
 	  <div>
@@ -621,26 +639,33 @@ links: #该行取消注释
 <p>最后在<strong>主题配置文件</strong>中，在末尾添加如下语句：</p>
 <pre><code>passage_end_tag:
   enabled: true
-</code></pre><p>最终实现效果如下：</p>
+</code></pre><p><strong>实现效果图</strong></p>
+<p>最终实现效果如下：</p>
 <p><img src="/2017/09/09/blog-opti/end_tag_view.png" alt="效果图"></p>
-<h1 id="显示每篇文章字数"><a href="#显示每篇文章字数" class="headerlink" title="显示每篇文章字数"></a>显示每篇文章字数</h1><p>首先安装插件，执行以下命令：</p>
+<h1 id="显示每篇文章字数"><a href="#显示每篇文章字数" class="headerlink" title="显示每篇文章字数"></a>显示每篇文章字数</h1><p><strong>实现方法</strong></p>
+<p>首先安装插件，执行以下命令：</p>
 <pre><code>npm install hexo-wordcount --save
 </code></pre><p>然后修改<strong>主题配置文件</strong>，定位到<code>post_wordcount</code>，将<code>wordcount</code>由<code>false</code>改为<code>true</code>即可。</p>
+<p><strong>实现效果图</strong></p>
 <p>在每篇文章标题下会有如下效果：</p>
 <p><img src="/2017/09/09/blog-opti/word_count.png" alt="字数统计效果图"></p>
-<h1 id="显示站点文章总字数"><a href="#显示站点文章总字数" class="headerlink" title="显示站点文章总字数"></a>显示站点文章总字数</h1><p>首先安装插件，插件安装同上（已经“显示每篇文章字数”则忽略这步）。</p>
+<h1 id="显示站点文章总字数"><a href="#显示站点文章总字数" class="headerlink" title="显示站点文章总字数"></a>显示站点文章总字数</h1><p><strong>实现方法</strong></p>
+<p>首先安装插件，插件安装同上（已经“显示每篇文章字数”则忽略这步）。</p>
 <p>然后修改<strong>主题配置文件</strong>，定位到<code>post_wordcount</code>，将<code>totalcount</code>由<code>false</code>改为<code>true</code>即可。</p>
+<p><strong>实现效果图</strong></p>
 <p>在页面最底部会有如下效果：</p>
 <p><img src="/2017/09/09/blog-opti/total_count.png" alt="字数统计效果图"></p>
 <h1 id="文章末尾添加版权说明"><a href="#文章末尾添加版权说明" class="headerlink" title="文章末尾添加版权说明"></a>文章末尾添加版权说明</h1><p>直接修改<strong>主题配置文件</strong>，定位到<code>post_wordcount</code>，将<code>totalcount</code>由<code>false</code>改为<code>true</code>即可。</p>
-<p>#设置个人头像</p>
-<p>通过上面切换到Pisces发现，自己的头像还是属于匿名状态，因此，我们有必要设置一下自己的头像。在<strong>主题配置文件</strong>中找到<code>avatar</code>字段,进行修改:</p>
+<h1 id="设置个人头像"><a href="#设置个人头像" class="headerlink" title="设置个人头像"></a>设置个人头像</h1><p>通过上面切换到Pisces发现，自己的头像还是属于匿名状态，因此，我们有必要设置一下自己的头像。</p>
+<p><strong>实现方法</strong></p>
+<p>在<strong>主题配置文件</strong>中找到<code>avatar</code>字段,进行修改:</p>
 <pre><code># Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
 avatar: /images/head_icon.jpg
 </code></pre><p>先将<code>avatar</code>字段前的#删除，然后粘贴上头像的目录位置或者链接。</p>
 <p>笔者将突破保存在了主题目录下的<code>source/images</code>文件夹，也可以存放在站点目录下的<code>source/uploads</code>文件夹。也可以将自己的头像图片，保存在百度网盘或者新浪微盘的某个地方，然后将对应的<code>url</code>地址复制过来，添加在<code>avatar</code>字段后即可。</p>
+<p><strong>实现效果图</strong></p>
 <p>其效果如下图所示：</p>
 <p><img src="/2017/09/09/blog-opti/head_icon.png" alt="头像效果展示"></p>
 <p>达到效果后即可部署至远程。</p>
@@ -652,13 +677,16 @@ avatar: /images/head_icon.jpg
   animation: jello 1s;
 };
 </code></pre><p>其中<code>jello</code>是我选择的动态效果，你可以在<a href="https://daneden.github.io/animate.css/" target="_blank" rel="external">这里</a>找到你喜欢的特效;然后更换上述代码中的<code>jello</code>字段，达到预期效果后，即可部署至远程。</p>
-<h1 id="设置网站图标"><a href="#设置网站图标" class="headerlink" title="设置网站图标"></a>设置网站图标</h1><p>打开主题配置文件，找到以下字段，进行相应的修改：</p>
+<h1 id="设置网站图标"><a href="#设置网站图标" class="headerlink" title="设置网站图标"></a>设置网站图标</h1><p><strong>实现方法</strong></p>
+<p>打开主题配置文件，找到以下字段，进行相应的修改：</p>
 <pre><code># Put your favicon.ico into `hexo-site/source/` directory.
 favicon: /web_icon.jpg
 </code></pre><p>然后预览，在自己的博客网站上有这样的图标：</p>
 <p><img src="/2017/09/09/blog-opti/web_icon.png" alt="网站图标展示"></p>
 <p>因为我使用了与头像一样的图片，所以图标与头像一样。达到效果后即可部署至远程。</p>
-<h1 id="添加留言版块"><a href="#添加留言版块" class="headerlink" title="添加留言版块"></a>添加留言版块</h1><p>我们还可以在菜单栏增加一个”留言板”,让他人可以通过留言板直接给我们留言。<br>在博客目录中，执行以下命令，新建一个页面：</p>
+<h1 id="添加留言版块"><a href="#添加留言版块" class="headerlink" title="添加留言版块"></a>添加留言版块</h1><p>我们还可以在菜单栏增加一个”留言板”,让他人可以通过留言板直接给我们留言。</p>
+<p><strong>实现方法</strong></p>
+<p>在博客目录中，执行以下命令，新建一个页面：</p>
 <pre><code>hexo n page guestbook
 </code></pre><p>然后通过路径<code>F:\Hexo\source\guestbook</code>找到并打开<code>guestbook</code>文件夹下的<code>index.md</code>文件，然后再文件中添加以下代码:</p>
 <pre><code>&lt;div class=&quot;ds-recent-visitors&quot; data-num-items=&quot;28&quot; data-avatar-size=&quot;42&quot; id=&quot;ds-recent-visitors&quot;&gt;&lt;/div&gt;
@@ -673,10 +701,119 @@ favicon: /web_icon.jpg
 </code></pre><p><code>newspaper-o</code>是留言板的图标，可以在<a href="http://fontawesome.io/icons/" target="_blank" rel="external">这里</a>找到自己喜欢的图标。</p>
 <p>笔者采用的youyan评论系统，默认在新建页面上会产生评论板块。效果如下：</p>
 <p><img src="/2017/09/09/blog-opti/guestbook.png" alt="留言板效果图"></p>
-<h1 id="Hexo博客提交百度和Google收录"><a href="#Hexo博客提交百度和Google收录" class="headerlink" title="Hexo博客提交百度和Google收录"></a>Hexo博客提交百度和Google收录</h1><h1 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h1><h1 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a>添加搜索功能</h1><h1 id="添加打赏功能"><a href="#添加打赏功能" class="headerlink" title="添加打赏功能"></a>添加打赏功能</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
+<h1 id="项目主页添加README"><a href="#项目主页添加README" class="headerlink" title="项目主页添加README"></a>项目主页添加README</h1><p>在建立Github上建立自己的博客仓库的时候，没有生成<code>README</code>文件，这样使得其他人无法知道我们这个仓库是做什么，即我们的这个仓库缺少一个说明文件；但是如果直接使用命令<code>hexo n README</code>，再部署至远程的时候，hexo会将它解析为<code>html</code>文件，这不是我们想要的。</p>
+<p><strong>实现方法</strong></p>
+<p>因此，解决方式是在路径<code>F:\Hexo\source</code>下手动新建<code>README.mdown</code>注意这里的后缀是<code>.mdown</code>，<code>Mardownpad</code>可以将文件保存为<code>.mdown</code>后缀文件；然后再在这个新建文件中写<code>README</code>即可。再之后<code>hexo g</code>会把它复制到<code>public</code>文件夹，而不会被解析成<code>html</code>文件，发布在博客中。</p>
+<p><strong>实现效果图</strong></p>
+<p>预览效果，如图：</p>
+<p><img src="/2017/09/09/blog-opti/readme.png" alt="README效果图"></p>
+<h1 id="实现fork-me-on-github"><a href="#实现fork-me-on-github" class="headerlink" title="实现fork me on github"></a>实现fork me on github</h1><p>在右上角或者左上角实现fork me on github。</p>
+<p><strong>实现方法</strong></p>
+<p>点击<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">这里</a>挑选自己喜欢的样式，并复制代码。 例如，我是复制如下代码： </p>
+<p><img src="/2017/09/09/blog-opti/fork_ex.png" alt="fork me代码图"></p>
+<p>然后粘贴刚才复制的代码到<code>themes/next/layout/_layout.swig</code>文件中(放在<code>&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;</code>的下面)，并把<code>href</code>标签改为你的<code>github</code>地址：</p>
+<p><img src="/2017/09/09/blog-opti/fork_place.png" alt="fork me具体位置"></p>
+<p><strong>实现效果图</strong></p>
+<p>实现效果图如下（右上角）：</p>
+<p><img src="/2017/09/09/blog-opti/fork_me.png" alt="fork me效果图"></p>
+<h1 id="实现点击出现桃心效果"><a href="#实现点击出现桃心效果" class="headerlink" title="实现点击出现桃心效果"></a>实现点击出现桃心效果</h1><p><strong>实现方法</strong></p>
+<p>打开浏览器，输入如下网址</p>
+<blockquote>
+<p><a href="http://7u2ss1.com1.z0.glb.clouddn.com/love.js" target="_blank" rel="external">http://7u2ss1.com1.z0.glb.clouddn.com/love.js</a></p>
+</blockquote>
+<p>然后将里面的代码copy一下，新建<code>love.js</code>文件并且将代码复制进去，然后保存。将<code>love.js</code>文件放到路径<code>/themes/next/source/js/src</code>里面，然后打开<code>\themes\next\layout\_layout.swig</code>文件,在末尾（在前面引用会出现找不到的bug）添加以下代码：</p>
+<pre><code>&lt;!-- 页面点击小红心 --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/love.js&quot;&gt;&lt;/script&gt;
+</code></pre><p><strong>实现效果图</strong></p>
+<p><img src="/2017/09/09/blog-opti/love.gif" alt="love效果图"></p>
+<h1 id="修改文章底部的-号标签"><a href="#修改文章底部的-号标签" class="headerlink" title="修改文章底部的#号标签"></a>修改文章底部的#号标签</h1><p><strong>实现方法</strong></p>
+<p>修改模板<code>/themes/next/layout/_macro/post.swig</code>，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将其中的 <code>#</code> 换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code></p>
+<p><strong>实现效果图</strong></p>
+<p><img src="/2017/09/09/blog-opti/tag_new.png" alt="love效果图"></p>
+<h1 id="添加动态背景"><a href="#添加动态背景" class="headerlink" title="添加动态背景"></a>添加动态背景</h1><p><strong>实现方法</strong></p>
+<p>在主题配置文件中，定位到如下部分：</p>
+<pre><code># Canvas-nest
+canvas_nest: true
+
+# three_waves
+three_waves: false
+
+# canvas_lines
+canvas_lines: false
+
+# canvas_sphere
+canvas_sphere: false
+
+# Only fit scheme Pisces
+# Canvas-ribbon
+canvas_ribbon: false
+</code></pre><p>这是已经集成好的几个动态效果，笔者采用的是canvas_nest，读者可依次体验(将false改为true)，选择最喜欢的动态背景。</p>
+<p><strong>实现效果图</strong></p>
+<p><img src="/2017/09/09/blog-opti/canvas_nest.gif" alt="动态背景效果图"></p>
+<h1 id="代码块样式自定义"><a href="#代码块样式自定义" class="headerlink" title="代码块样式自定义"></a>代码块样式自定义</h1><p><strong>实现方法</strong></p>
+<p>打开\themes\next\source\css_custom\custom.styl,向里面加入：(颜色可以自己定义)</p>
+<pre><code>// Custom styles.
+code {
+    color: #ff7600;
+    background: #fbf7f8;
+    margin: 2px;
+}
+// 大代码块的自定义样式
+.highlight, pre {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 3px;
+}
+.highlight, code, pre {
+    border: 1px solid #d6d6d6;
+}
+</code></pre><p><strong>实现效果图</strong></p>
+<p><img src="/2017/09/09/blog-opti/code_block.png" alt="代码块样式效果图"></p>
+<h1 id="文章加密访问"><a href="#文章加密访问" class="headerlink" title="文章加密访问"></a>文章加密访问</h1><p><strong>实现方法</strong></p>
+<p>打开themes-&gt;next-&gt;layout-&gt;_partials-&gt;head.swig文件,在以下位置插入这样一段代码：</p>
+<p><img src="/2017/09/09/blog-opti/add_password_1.png" alt="文章加密访问"></p>
+<p>代码如下：</p>
+<pre><code>&lt;script&gt;
+    (function(){
+        if(&apos;{{ page.password }}&apos;){
+            if (prompt(&apos;请输入文章密码&apos;) !== &apos;{{ page.password }}&apos;){
+                alert(&apos;密码错误！&apos;);
+                history.back();
+            }
+        }
+    })();
+&lt;/script&gt;
+</code></pre><p>然后在文章上写成类似这样：</p>
+<p><img src="/2017/09/09/blog-opti/add_password_2.png" alt="文章加密访问"></p>
+<p><strong>实现效果图</strong></p>
+<p><img src="/2017/09/09/blog-opti/add_password_3.gif" alt="文章加密访问"></p>
+<h1 id="添加jiathis分享"><a href="#添加jiathis分享" class="headerlink" title="添加jiathis分享"></a>添加jiathis分享</h1><p><strong>实现方法</strong></p>
+<p>在<strong>主题配置文件</strong>中，jiathis为true，就行了，代码如下：</p>
+<pre><code># Share
+# This plugin is more useful in China, make sure you known how to use it.
+# And you can find the use guide at official webiste: http://www.jiathis.com/.
+# Warning: JiaThis does not support https.
+jiathis: true
+  ##uid: Get this uid from http://www.jiathis.com/
+#add_this_id:
+</code></pre><p><strong>实现效果图</strong></p>
+<p><img src="/2017/09/09/blog-opti/jia_this.png" alt="分享效果图"></p>
+<h1 id="自定义鼠标样式"><a href="#自定义鼠标样式" class="headerlink" title="自定义鼠标样式"></a>自定义鼠标样式</h1><p><strong>实现方法</strong></p>
+<p>打开themes/next/source/css/_custom/custom.styl,在里面写下如下代码</p>
+<pre><code>// 鼠标样式
+  * {
+      cursor: url(&quot;http://om8u46rmb.bkt.clouddn.com/sword2.ico&quot;),auto!important
+  }
+  :active {
+      cursor: url(&quot;http://om8u46rmb.bkt.clouddn.com/sword1.ico&quot;),auto!important
+  }
+</code></pre><p>其中 <code>url</code> 里面必须是 <code>ico</code> 图片，<code>ic</code>o 图片可以上传到网上（我是使用七牛云图床），然后获取外链，复制到 <code>url</code> 里就行了</p>
+<h1 id="Hexo博客提交百度和Google收录"><a href="#Hexo博客提交百度和Google收录" class="headerlink" title="Hexo博客提交百度和Google收录"></a>Hexo博客提交百度和Google收录</h1><h1 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h1><h1 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a>添加搜索功能</h1><h1 id="添加打赏功能"><a href="#添加打赏功能" class="headerlink" title="添加打赏功能"></a>添加打赏功能</h1><h1 id="博文置顶"><a href="#博文置顶" class="headerlink" title="博文置顶"></a>博文置顶</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
 <li><p><a href="http://www.jianshu.com/p/5973c05d7100" target="_blank" rel="external">【干货】2个小时教你hexo博客添加评论、打赏、RSS等功能</a></p>
 </li>
 <li><p><a href="https://tzkang.github.io/2016/10/17/2016-10-17/#more" target="_blank" rel="external">GitHub+Hexo+NexT搭建个人博客</a></p>
+</li>
+<li><p><a href="http://blog.csdn.net/com_ma/article/details/76039859" target="_blank" rel="external">hexo博客的背景设置</a></p>
 </li>
 </ol>
 
@@ -691,7 +828,7 @@ favicon: /web_icon.jpg
 	  <div>
 		
 <div style="text-align:center;color:#ccc;font-size:14px;">
------- 本文结束 ------</div>
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
 
 
 	  </div>
@@ -728,11 +865,11 @@ favicon: /web_icon.jpg
       
         <div class="post-tags">
           
-            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+            <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
           
-            <a href="/tags/博客/" rel="tag"># 博客</a>
+            <a href="/tags/博客/" rel="tag"><i class="fa fa-tag"></i> 博客</a>
           
         </div>
       
@@ -755,6 +892,10 @@ favicon: /web_icon.jpg
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/09/12/BP_derivation/" rel="prev" title="BP神经网络部分具体的推导">
+                BP神经网络部分具体的推导 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -771,6 +912,32 @@ favicon: /web_icon.jpg
 
 
     <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
       
     </div>
   </div>
@@ -835,7 +1002,7 @@ favicon: /web_icon.jpg
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -846,7 +1013,7 @@ favicon: /web_icon.jpg
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -857,7 +1024,7 @@ favicon: /web_icon.jpg
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -966,7 +1133,7 @@ favicon: /web_icon.jpg
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建基本Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">搭建基本Hexo博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客绑定域名"><span class="nav-number">2.</span> <span class="nav-text">Hexo博客绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换Hexo主题"><span class="nav-number">3.</span> <span class="nav-text">更换Hexo主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置Hexo主题模式"><span class="nav-number">4.</span> <span class="nav-text">设置Hexo主题模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置预览摘要"><span class="nav-number">5.</span> <span class="nav-text">设置预览摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加评论功能"><span class="nav-number">6.</span> <span class="nav-text">添加评论功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置侧边栏显示效果"><span class="nav-number">7.</span> <span class="nav-text">设置侧边栏显示效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加菜单选项"><span class="nav-number">8.</span> <span class="nav-text">添加菜单选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加阅读次数统计"><span class="nav-number">9.</span> <span class="nav-text">添加阅读次数统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加社交链接"><span class="nav-number">10.</span> <span class="nav-text">添加社交链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加友情链接功能"><span class="nav-number">11.</span> <span class="nav-text">添加友情链接功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置博文内链接为蓝色"><span class="nav-number">12.</span> <span class="nav-text">设置博文内链接为蓝色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置文章末尾”本文结束”标记"><span class="nav-number">13.</span> <span class="nav-text">设置文章末尾”本文结束”标记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示每篇文章字数"><span class="nav-number">14.</span> <span class="nav-text">显示每篇文章字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示站点文章总字数"><span class="nav-number">15.</span> <span class="nav-text">显示站点文章总字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章末尾添加版权说明"><span class="nav-number">16.</span> <span class="nav-text">文章末尾添加版权说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置头像动态特效"><span class="nav-number">17.</span> <span class="nav-text">设置头像动态特效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置网站图标"><span class="nav-number">18.</span> <span class="nav-text">设置网站图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加留言版块"><span class="nav-number">19.</span> <span class="nav-text">添加留言版块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客提交百度和Google收录"><span class="nav-number">20.</span> <span class="nav-text">Hexo博客提交百度和Google收录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加RSS"><span class="nav-number">21.</span> <span class="nav-text">添加RSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">22.</span> <span class="nav-text">添加搜索功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加打赏功能"><span class="nav-number">23.</span> <span class="nav-text">添加打赏功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">24.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建基本Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">搭建基本Hexo博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客绑定域名"><span class="nav-number">2.</span> <span class="nav-text">Hexo博客绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换Hexo主题"><span class="nav-number">3.</span> <span class="nav-text">更换Hexo主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置Hexo主题模式"><span class="nav-number">4.</span> <span class="nav-text">设置Hexo主题模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置预览摘要"><span class="nav-number">5.</span> <span class="nav-text">设置预览摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加评论功能"><span class="nav-number">6.</span> <span class="nav-text">添加评论功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置侧边栏显示效果"><span class="nav-number">7.</span> <span class="nav-text">设置侧边栏显示效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加菜单选项"><span class="nav-number">8.</span> <span class="nav-text">添加菜单选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加阅读次数统计"><span class="nav-number">9.</span> <span class="nav-text">添加阅读次数统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加社交链接"><span class="nav-number">10.</span> <span class="nav-text">添加社交链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加友情链接功能"><span class="nav-number">11.</span> <span class="nav-text">添加友情链接功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置博文内链接为蓝色"><span class="nav-number">12.</span> <span class="nav-text">设置博文内链接为蓝色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置文章末尾”本文结束”标记"><span class="nav-number">13.</span> <span class="nav-text">设置文章末尾”本文结束”标记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示每篇文章字数"><span class="nav-number">14.</span> <span class="nav-text">显示每篇文章字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示站点文章总字数"><span class="nav-number">15.</span> <span class="nav-text">显示站点文章总字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章末尾添加版权说明"><span class="nav-number">16.</span> <span class="nav-text">文章末尾添加版权说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置个人头像"><span class="nav-number">17.</span> <span class="nav-text">设置个人头像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置头像动态特效"><span class="nav-number">18.</span> <span class="nav-text">设置头像动态特效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置网站图标"><span class="nav-number">19.</span> <span class="nav-text">设置网站图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加留言版块"><span class="nav-number">20.</span> <span class="nav-text">添加留言版块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目主页添加README"><span class="nav-number">21.</span> <span class="nav-text">项目主页添加README</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现fork-me-on-github"><span class="nav-number">22.</span> <span class="nav-text">实现fork me on github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现点击出现桃心效果"><span class="nav-number">23.</span> <span class="nav-text">实现点击出现桃心效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改文章底部的-号标签"><span class="nav-number">24.</span> <span class="nav-text">修改文章底部的#号标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加动态背景"><span class="nav-number">25.</span> <span class="nav-text">添加动态背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码块样式自定义"><span class="nav-number">26.</span> <span class="nav-text">代码块样式自定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章加密访问"><span class="nav-number">27.</span> <span class="nav-text">文章加密访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加jiathis分享"><span class="nav-number">28.</span> <span class="nav-text">添加jiathis分享</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义鼠标样式"><span class="nav-number">29.</span> <span class="nav-text">自定义鼠标样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客提交百度和Google收录"><span class="nav-number">30.</span> <span class="nav-text">Hexo博客提交百度和Google收录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加RSS"><span class="nav-number">31.</span> <span class="nav-text">添加RSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">32.</span> <span class="nav-text">添加搜索功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加打赏功能"><span class="nav-number">33.</span> <span class="nav-text">添加打赏功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#博文置顶"><span class="nav-number">34.</span> <span class="nav-text">博文置顶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">35.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
@@ -1009,7 +1176,7 @@ favicon: /web_icon.jpg
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      6.1k
+      7.6k
     </span>
   
 </div>
@@ -1306,3 +1473,6 @@ favicon: /web_icon.jpg
 
 </body>
 </html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
