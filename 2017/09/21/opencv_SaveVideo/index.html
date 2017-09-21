@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="opencv," />
 
 
 
@@ -95,16 +95,20 @@
 
 
 
-<meta name="description" content="所谓王者，必卓然特立，争当人杰。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="王立杰的博客">
-<meta property="og:url" content="https://qwerty200696.github.io/archives/2017/09/index.html">
+<meta name="description" content="Opencv视频保存视频保存流程与示例视频保存三步走： 一开始（循环外） VideoWriter outputVideo; outputVideo.open(&amp;quot;E:\\modeling\\视频\\compare3.avi&amp;quot;, -1, 30, cvSize(cur.rows, cur.cols * 2 + 10),true); 接着（循环中） outputVideo &amp;lt;&amp;l">
+<meta name="keywords" content="opencv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="opencv视频保存方法详解">
+<meta property="og:url" content="https://qwerty200696.github.io/2017/09/21/opencv_SaveVideo/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="所谓王者，必卓然特立，争当人杰。">
+<meta property="og:description" content="Opencv视频保存视频保存流程与示例视频保存三步走： 一开始（循环外） VideoWriter outputVideo; outputVideo.open(&amp;quot;E:\\modeling\\视频\\compare3.avi&amp;quot;, -1, 30, cvSize(cur.rows, cur.cols * 2 + 10),true); 接着（循环中） outputVideo &amp;lt;&amp;l">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/opencv_SaveVideo/video_save.png">
+<meta property="og:updated_time" content="2017-09-21T02:04:01.599Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王立杰的博客">
-<meta name="twitter:description" content="所谓王者，必卓然特立，争当人杰。">
+<meta name="twitter:title" content="opencv视频保存方法详解">
+<meta name="twitter:description" content="Opencv视频保存视频保存流程与示例视频保存三步走： 一开始（循环外） VideoWriter outputVideo; outputVideo.open(&amp;quot;E:\\modeling\\视频\\compare3.avi&amp;quot;, -1, 30, cvSize(cur.rows, cur.cols * 2 + 10),true); 接着（循环中） outputVideo &amp;lt;&amp;l">
+<meta name="twitter:image" content="https://qwerty200696.github.io/2017/09/21/opencv_SaveVideo/video_save.png">
 
 
 
@@ -134,14 +138,14 @@
 
 
 
-  <link rel="canonical" href="https://qwerty200696.github.io/archives/2017/09/"/>
+  <link rel="canonical" href="https://qwerty200696.github.io/2017/09/21/opencv_SaveVideo/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>归档 | 王立杰的博客</title>
+  <title>opencv视频保存方法详解 | 王立杰的博客</title>
   
 
 
@@ -170,7 +174,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-archive">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	
 	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
@@ -286,407 +290,298 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/09/21/opencv_SaveVideo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王立杰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">opencv视频保存方法详解</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-21T10:03:45+08:00">
+                2017-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 10 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/邂逅opencv/" itemprop="url" rel="index">
+                    <span itemprop="name">邂逅opencv</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
 
-        
+	  
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2017/09/21/opencv_SaveVideo/" class="leancloud_visitors" data-flag-title="opencv视频保存方法详解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/21/markdown_mathjax/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">hexo博客使用mathjax并解决markdown渲染冲突问题</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  629
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-21T19:03:45+08:00"
-              content="2017-09-21" >
-          09-21
-        </time>
-      </div>
+              
 
-    </header>
-  </article>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/21/optical_flow/" itemprop="url">
-              
-                <span itemprop="name">LK光流法分析及其源码</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-21T11:28:33+08:00"
-              content="2017-09-21" >
-          09-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/21/opencv_SaveVideo/" itemprop="url">
-              
-                <span itemprop="name">opencv视频保存方法详解</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-21T10:03:45+08:00"
-              content="2017-09-21" >
-          09-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h1 id="Opencv视频保存"><a href="#Opencv视频保存" class="headerlink" title="Opencv视频保存"></a>Opencv视频保存</h1><h2 id="视频保存流程与示例"><a href="#视频保存流程与示例" class="headerlink" title="视频保存流程与示例"></a>视频保存流程与示例</h2><p>视频保存三步走：</p>
+<p>一开始（循环外）</p>
+<pre><code>VideoWriter outputVideo;
+outputVideo.open(&quot;E:\\modeling\\视频\\compare3.avi&quot;, -1, 30, cvSize(cur.rows, cur.cols * 2 + 10),true);
+</code></pre><p>接着（循环中）</p>
+<pre><code>outputVideo &lt;&lt; canvas; //保存每帧图片到视频
+</code></pre><p>最后释放（循环外）</p>
+<pre><code>outputVideo.release(); //可以不要
+</code></pre><h2 id="视频保存详解"><a href="#视频保存详解" class="headerlink" title="视频保存详解"></a>视频保存详解</h2><p>第一步中：</p>
+<p>先定义VideoWriter对象，并指定输出文件。其中，open函数的定义为：</p>
+<pre><code>open ( const char* filename, int fourcc, double fps, CvSize frame_size, int is_color=1 );
+</code></pre><p>第一个参数filename为输出视频文件名。输出目录要存在，输出文件不存在时会自动创建。目录中注意使用<code>转义字符</code>。</p>
+<p>第二个参数fourcc为编码格式。四个字符来表示压缩帧的codec。例如：</p>
+<ol>
+<li>CV_FOURCC(‘P’,’I’,’M’,’1’) = MPEG-1 codec</li>
+<li>CV_FOURCC(‘M’,’J’,’P’,’G’) = motion-jpeg codec</li>
+<li>CV_FOURCC(‘M’, ‘P’, ‘4’, ‘2’) = MPEG-4.2 codec</li>
+<li>CV_FOURCC(‘D’, ‘I’, ‘V’, ‘3’) = MPEG-4.3 codec</li>
+<li>CV_FOURCC(‘D’, ‘I’, ‘V’, ‘X’) = MPEG-4 codec</li>
+<li>CV_FOURCC(‘U’, ‘2’, ‘6’, ‘3’) = H263 codec</li>
+<li>CV_FOURCC(‘I’, ‘2’, ‘6’, ‘3’) = H263I codec</li>
+<li>CV_FOURCC(‘F’, ‘L’, ‘V’, ‘1’) = FLV1 codec</li>
+</ol>
+<p><strong>若编码器代号为 -1，则运行时会弹出一个编码器选择框。</strong></p>
+<p>详细的视频编解码格式可参考：<a href="http://fourcc.org/codecs.php" target="_blank" rel="external">Video Codecs by FOURCC</a></p>
+<p>第三个参数fps 被创建视频流的帧率。</p>
+<p>第四个参数frame_size 视频流的大小。</p>
+<p>第五个参数is_color 如果非零(true)，编码器将希望得到彩色帧并进行编码；否则，是灰度帧（只有在Windows下支持这个标志）。</p>
+<h1 id="出错详解"><a href="#出错详解" class="headerlink" title="出错详解"></a>出错详解</h1><p>输出路径不对肯定就没有视频了。此外，容易出现的问题有保存的视频大小为0，保存的视频乱码或打不开。</p>
+<h2 id="保存的视频大小为0"><a href="#保存的视频大小为0" class="headerlink" title="保存的视频大小为0"></a>保存的视频大小为0</h2><p>可能的原因有： </p>
+<h3 id="编码格式不对"><a href="#编码格式不对" class="headerlink" title="编码格式不对"></a>编码格式不对</h3><p>在open函数中第二个参数是编码格式，一定按照提供的编码格式进行填写，在应用中最好的解决方法是为<strong>-1</strong>。当为-1时，程序对弹出如下对话框供你选择：</p>
+<p><img src="/2017/09/21/opencv_SaveVideo/video_save.png" alt=" "></p>
+<p>本人电脑上只有选择<code>全帧（非压缩的）</code>才能正常打开。</p>
+<h3 id="帧速率不匹配"><a href="#帧速率不匹配" class="headerlink" title="帧速率不匹配"></a>帧速率不匹配</h3><p>该项会导致视频时间不同。</p>
+<h3 id="后缀名不对"><a href="#后缀名不对" class="headerlink" title="后缀名不对"></a>后缀名不对</h3><p> 选择<code>.avi</code>格式没有问题，其它待定。</p>
+<h2 id="保存的视频乱码或打不开"><a href="#保存的视频乱码或打不开" class="headerlink" title="保存的视频乱码或打不开"></a>保存的视频乱码或打不开</h2><p>这个情况一般就是编码格式不对造成的，也就是open函数中第二个参数。最好的解决方法是设为<strong>-1</strong>，然后手动选择编解码器。</p>
+<p><a href="http://www.cnblogs.com/polly333/p/5165290.html" target="_blank" rel="external">http://www.cnblogs.com/polly333/p/5165290.html</a></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/20/数模回顾/" itemprop="url">
-              
-                <span itemprop="name">2017“华为杯”第十四届中国研究生数学建模竞赛回顾</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-20T22:50:43+08:00"
-              content="2017-09-20" >
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/20/BGSlibrary/" itemprop="url">
-              
-                <span itemprop="name">BGSLibrary编译安装与BGSlibrary GUI的下载与使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-20T21:53:43+08:00"
-              content="2017-09-20" >
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/15/test-mathjax/" itemprop="url">
-              
-                <span itemprop="name">test_mathjax</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-15T16:17:37+08:00"
-              content="2017-09-15" >
-          09-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/12/BP_derivation/" itemprop="url">
-              
-                <span itemprop="name">BP神经网络部分具体的推导</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-12T22:18:23+08:00"
-              content="2017-09-12" >
-          09-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/09/blog-opti/" itemprop="url">
-              
-                <span itemprop="name">hexo搭建的Github博客之优化</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-09T10:27:20+08:00"
-              content="2017-09-09" >
-          09-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/08/blog_setup/" itemprop="url">
-              
-                <span itemprop="name">hexo+GitHub博客搭建实战</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-08T12:00:25+08:00"
-              content="2017-09-08" >
-          09-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/07/TensorFlow_setup/" itemprop="url">
-              
-                <span itemprop="name">windows下TensorFlow完整安装流程及出错解决方案</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-07T17:27:57+08:00"
-              content="2017-09-07" >
-          09-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://qwerty200696.github.io/2017/09/21/opencv_SaveVideo/" title="opencv视频保存方法详解">https://qwerty200696.github.io/2017/09/21/opencv_SaveVideo/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/opencv/" rel="tag"><i class="fa fa-tag"></i> opencv</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/20/数模回顾/" rel="next" title="2017“华为杯”第十四届中国研究生数学建模竞赛回顾">
+                <i class="fa fa-chevron-left"></i> 2017“华为杯”第十四届中国研究生数学建模竞赛回顾
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/21/optical_flow/" rel="prev" title="LK光流法分析及其源码">
+                LK光流法分析及其源码 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -694,6 +589,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -714,8 +615,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -854,6 +764,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Opencv视频保存"><span class="nav-number">1.</span> <span class="nav-text">Opencv视频保存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#视频保存流程与示例"><span class="nav-number">1.1.</span> <span class="nav-text">视频保存流程与示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视频保存详解"><span class="nav-number">1.2.</span> <span class="nav-text">视频保存详解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#出错详解"><span class="nav-number">2.</span> <span class="nav-text">出错详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#保存的视频大小为0"><span class="nav-number">2.1.</span> <span class="nav-text">保存的视频大小为0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编码格式不对"><span class="nav-number">2.1.1.</span> <span class="nav-text">编码格式不对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#帧速率不匹配"><span class="nav-number">2.1.2.</span> <span class="nav-text">帧速率不匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后缀名不对"><span class="nav-number">2.1.3.</span> <span class="nav-text">后缀名不对</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保存的视频乱码或打不开"><span class="nav-number">2.2.</span> <span class="nav-text">保存的视频乱码或打不开</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -997,6 +923,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -1022,6 +952,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143521"></script>
+      <!-- UY END -->
     
   
 

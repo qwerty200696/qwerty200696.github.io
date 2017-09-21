@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="hexo,博客,mathjax," />
 
 
 
@@ -95,16 +95,18 @@
 
 
 
-<meta name="description" content="所谓王者，必卓然特立，争当人杰。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="王立杰的博客">
-<meta property="og:url" content="https://qwerty200696.github.io/archives/2017/09/index.html">
+<meta name="description" content="利用MathJax来渲染LaTeX数学公式hexo主题Next中已经集成了对mathjax的支持。在主题配置文件，blog\themes\next\_config.yml中定位到如下片段: # MathJax Support mathjax:   enable: true   per_page: false   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest">
+<meta name="keywords" content="hexo,博客,mathjax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo博客使用mathjax并解决markdown渲染冲突问题">
+<meta property="og:url" content="https://qwerty200696.github.io/2017/09/21/markdown_mathjax/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="所谓王者，必卓然特立，争当人杰。">
+<meta property="og:description" content="利用MathJax来渲染LaTeX数学公式hexo主题Next中已经集成了对mathjax的支持。在主题配置文件，blog\themes\next\_config.yml中定位到如下片段: # MathJax Support mathjax:   enable: true   per_page: false   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-21T11:09:02.344Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王立杰的博客">
-<meta name="twitter:description" content="所谓王者，必卓然特立，争当人杰。">
+<meta name="twitter:title" content="hexo博客使用mathjax并解决markdown渲染冲突问题">
+<meta name="twitter:description" content="利用MathJax来渲染LaTeX数学公式hexo主题Next中已经集成了对mathjax的支持。在主题配置文件，blog\themes\next\_config.yml中定位到如下片段: # MathJax Support mathjax:   enable: true   per_page: false   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest">
 
 
 
@@ -134,14 +136,14 @@
 
 
 
-  <link rel="canonical" href="https://qwerty200696.github.io/archives/2017/09/"/>
+  <link rel="canonical" href="https://qwerty200696.github.io/2017/09/21/markdown_mathjax/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>归档 | 王立杰的博客</title>
+  <title>hexo博客使用mathjax并解决markdown渲染冲突问题 | 王立杰的博客</title>
   
 
 
@@ -170,7 +172,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-archive">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	
 	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
@@ -286,407 +288,305 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/09/21/markdown_mathjax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王立杰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">hexo博客使用mathjax并解决markdown渲染冲突问题</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-21T19:03:45+08:00">
+                2017-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 10 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客搭建系列/" itemprop="url" rel="index">
+                    <span itemprop="name">博客搭建系列</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
 
-        
+	  
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2017/09/21/markdown_mathjax/" class="leancloud_visitors" data-flag-title="hexo博客使用mathjax并解决markdown渲染冲突问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/21/markdown_mathjax/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">hexo博客使用mathjax并解决markdown渲染冲突问题</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  606
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-21T19:03:45+08:00"
-              content="2017-09-21" >
-          09-21
-        </time>
-      </div>
+              
 
-    </header>
-  </article>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/21/optical_flow/" itemprop="url">
-              
-                <span itemprop="name">LK光流法分析及其源码</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-21T11:28:33+08:00"
-              content="2017-09-21" >
-          09-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/21/opencv_SaveVideo/" itemprop="url">
-              
-                <span itemprop="name">opencv视频保存方法详解</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-21T10:03:45+08:00"
-              content="2017-09-21" >
-          09-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="利用MathJax来渲染LaTeX数学公式"><a href="#利用MathJax来渲染LaTeX数学公式" class="headerlink" title="利用MathJax来渲染LaTeX数学公式"></a>利用MathJax来渲染LaTeX数学公式</h2><p>hexo主题Next中已经集成了对mathjax的支持。在<code>主题配置文件</code>，<code>blog\themes\next\_config.yml</code>中定位到如下片段:</p>
+<pre><code># MathJax Support
+mathjax:
+  enable: true
+  per_page: false
+  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+</code></pre><p>将enable中的false改为true即可。</p>
+<p>另外，再安装一个自动部署MathJax的<a href="http://catx.me/2014/03/09/hexo-mathjax-plugin/" target="_blank" rel="external">hexo插件</a> 。安装方式也很简单，在你的博客文件夹下执行：</p>
+<pre><code>npm install hexo-math --save
+hexo math install
+</code></pre><p>然后在新建的博文中写上一个麦克斯韦方程组查看LaTeX效果：</p>
+<pre><code>$$
+\begin{eqnarray}
+\nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \\
+\nabla\cdot\vec{B} &amp;=&amp; 0 \\
+\nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \\
+\nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)
+\end{eqnarray}
+$$
+</code></pre><p>$$<br>\begin{eqnarray}<br>\nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \\<br>\nabla\cdot\vec{B} &amp;=&amp; 0 \\<br>\nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \\<br>\nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)<br>\end{eqnarray}<br>$$</p>
+<p>这时如果你会发现出了一些问题，原因是hexo先用<code>marked.js</code>渲染，然后再交给<code>MathJax</code>渲染。在<code>marked.js</code>渲染的时候下划线_是被escape掉并且换成了<code>&lt;em&gt;</code>标签，即斜体字，另外LaTeX中的<code>\\</code>也会被转义成一个\，这样会导致<code>MathJax</code>渲染时不认为它是一个换行符了。</p>
+<h2 id="mathjax与markdown默认渲染冲突"><a href="#mathjax与markdown默认渲染冲突" class="headerlink" title="mathjax与markdown默认渲染冲突"></a>mathjax与markdown默认渲染冲突</h2><p>解决方案为：修改Hexo渲染源码。</p>
+<p>这个方法是我目前使用的，相对来说，通用性较高的一种方式。思路就是修改hexo的渲染源码: <code>nodes_modules/lib/marked/lib/marked.js</code>:</p>
+<ul>
+<li>去掉<code>\</code>的额外转义</li>
+</ul>
+<ul>
+<li>将em标签对应的符号中，去掉_,因为<code>markdown</code>中有<code>*</code>可以表示斜体，<code>—</code>就去掉了。</li>
+</ul>
+<p>具体思路参考了使Marked.js与MathJax共存, 打开<code>nodes_modules/marked/lib/marked.js</code>:<br>第一步: 找到下面的代码:</p>
+<pre><code>escape: /^\\([\\`*{}\[\]()# +\-.!_&gt;])/,
+</code></pre><p>改为:</p>
+<pre><code>escape: /^\\([`*{}\[\]()# +\-.!_&gt;])/,
+</code></pre><p>这样就会去掉\的转义了。<br>第二步: 找到em的符号:</p>
+<pre><code>em: /^\b_((?:[^_]|__)+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
+</code></pre><p>改为:</p>
+<pre><code>em:/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
+</code></pre><p>去掉_的斜体含义,这样就解决了。为什么说通用性很高，因为我们没有修改文章的内容，可以放到别的引擎下也会顺利渲染。</p>
+<blockquote>
+<p>这个困扰我许久的问题终于这么解决了。之前一直按照标准mathjax语法写公式，但是有的时候就会无法显示公式。</p>
+<p>按照上述修改后，markdown不再处理(公式中的)<code>_</code>以及<code>\</code>。mathjax语法畅行无阻。</p>
+</blockquote>
+<p>参考资料：</p>
+<p><a href="https://segmentfault.com/a/1190000007261752" target="_blank" rel="external">https://segmentfault.com/a/1190000007261752</a></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/20/数模回顾/" itemprop="url">
-              
-                <span itemprop="name">2017“华为杯”第十四届中国研究生数学建模竞赛回顾</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-20T22:50:43+08:00"
-              content="2017-09-20" >
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/20/BGSlibrary/" itemprop="url">
-              
-                <span itemprop="name">BGSLibrary编译安装与BGSlibrary GUI的下载与使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-20T21:53:43+08:00"
-              content="2017-09-20" >
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/15/test-mathjax/" itemprop="url">
-              
-                <span itemprop="name">test_mathjax</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-15T16:17:37+08:00"
-              content="2017-09-15" >
-          09-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/12/BP_derivation/" itemprop="url">
-              
-                <span itemprop="name">BP神经网络部分具体的推导</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-12T22:18:23+08:00"
-              content="2017-09-12" >
-          09-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/09/blog-opti/" itemprop="url">
-              
-                <span itemprop="name">hexo搭建的Github博客之优化</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-09T10:27:20+08:00"
-              content="2017-09-09" >
-          09-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/08/blog_setup/" itemprop="url">
-              
-                <span itemprop="name">hexo+GitHub博客搭建实战</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-08T12:00:25+08:00"
-              content="2017-09-08" >
-          09-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/07/TensorFlow_setup/" itemprop="url">
-              
-                <span itemprop="name">windows下TensorFlow完整安装流程及出错解决方案</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-07T17:27:57+08:00"
-              content="2017-09-07" >
-          09-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://qwerty200696.github.io/2017/09/21/markdown_mathjax/" title="hexo博客使用mathjax并解决markdown渲染冲突问题">https://qwerty200696.github.io/2017/09/21/markdown_mathjax/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+          
+            <a href="/tags/博客/" rel="tag"><i class="fa fa-tag"></i> 博客</a>
+          
+            <a href="/tags/mathjax/" rel="tag"><i class="fa fa-tag"></i> mathjax</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/21/optical_flow/" rel="next" title="LK光流法分析及其源码">
+                <i class="fa fa-chevron-left"></i> LK光流法分析及其源码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -694,6 +594,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -714,8 +620,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -854,6 +769,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用MathJax来渲染LaTeX数学公式"><span class="nav-number">1.</span> <span class="nav-text">利用MathJax来渲染LaTeX数学公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathjax与markdown默认渲染冲突"><span class="nav-number">2.</span> <span class="nav-text">mathjax与markdown默认渲染冲突</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -997,6 +928,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -1022,6 +957,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143521"></script>
+      <!-- UY END -->
     
   
 

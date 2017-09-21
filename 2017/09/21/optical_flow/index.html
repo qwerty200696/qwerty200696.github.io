@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="opencv,光流法," />
 
 
 
@@ -95,16 +95,27 @@
 
 
 
-<meta name="description" content="所谓王者，必卓然特立，争当人杰。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="王立杰的博客">
-<meta property="og:url" content="https://qwerty200696.github.io/archives/2017/09/index.html">
+<meta name="description" content="光流法简介光流的概念是Gibson在1950年首先提出来的。它是空间运动物体在观察成像平面上的像素运动的瞬时速度，是利用图像序列中像素在时间域上的变化以及相邻帧之间的相关性来找到上一帧跟当前帧之间存在的对应关系，从而计算出相邻帧之间物体的运动信息的一种方法。 光流法，是利用目标物体在监控场景中的空间运动，体现在视频图像序列中为不同图像颜色分布变化。导致目标物在监控场景中的空间运动场，在图像中转化为">
+<meta name="keywords" content="opencv,光流法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LK光流法分析及其源码">
+<meta property="og:url" content="https://qwerty200696.github.io/2017/09/21/optical_flow/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="所谓王者，必卓然特立，争当人杰。">
+<meta property="og:description" content="光流法简介光流的概念是Gibson在1950年首先提出来的。它是空间运动物体在观察成像平面上的像素运动的瞬时速度，是利用图像序列中像素在时间域上的变化以及相邻帧之间的相关性来找到上一帧跟当前帧之间存在的对应关系，从而计算出相邻帧之间物体的运动信息的一种方法。 光流法，是利用目标物体在监控场景中的空间运动，体现在视频图像序列中为不同图像颜色分布变化。导致目标物在监控场景中的空间运动场，在图像中转化为">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/optical_flow/equ_1.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/optical_flow/equ_2.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/optical_flow/equ_3.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/optical_flow/equ_4.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/optical_flow/equ_5.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/optical_flow/equ_6.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/optical_flow/equ_7.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/optical_flow/LK_ta.png">
+<meta property="og:updated_time" content="2017-09-21T03:34:34.583Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王立杰的博客">
-<meta name="twitter:description" content="所谓王者，必卓然特立，争当人杰。">
+<meta name="twitter:title" content="LK光流法分析及其源码">
+<meta name="twitter:description" content="光流法简介光流的概念是Gibson在1950年首先提出来的。它是空间运动物体在观察成像平面上的像素运动的瞬时速度，是利用图像序列中像素在时间域上的变化以及相邻帧之间的相关性来找到上一帧跟当前帧之间存在的对应关系，从而计算出相邻帧之间物体的运动信息的一种方法。 光流法，是利用目标物体在监控场景中的空间运动，体现在视频图像序列中为不同图像颜色分布变化。导致目标物在监控场景中的空间运动场，在图像中转化为">
+<meta name="twitter:image" content="https://qwerty200696.github.io/2017/09/21/optical_flow/equ_1.png">
 
 
 
@@ -134,14 +145,14 @@
 
 
 
-  <link rel="canonical" href="https://qwerty200696.github.io/archives/2017/09/"/>
+  <link rel="canonical" href="https://qwerty200696.github.io/2017/09/21/optical_flow/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>归档 | 王立杰的博客</title>
+  <title>LK光流法分析及其源码 | 王立杰的博客</title>
   
 
 
@@ -170,7 +181,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-archive">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	
 	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
@@ -286,407 +297,307 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/09/21/optical_flow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王立杰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">LK光流法分析及其源码</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-21T11:28:33+08:00">
+                2017-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 10 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/邂逅opencv/" itemprop="url" rel="index">
+                    <span itemprop="name">邂逅opencv</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
 
-        
+	  
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2017/09/21/optical_flow/" class="leancloud_visitors" data-flag-title="LK光流法分析及其源码">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/21/markdown_mathjax/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">hexo博客使用mathjax并解决markdown渲染冲突问题</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,039
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-21T19:03:45+08:00"
-              content="2017-09-21" >
-          09-21
-        </time>
-      </div>
+              
 
-    </header>
-  </article>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/21/optical_flow/" itemprop="url">
-              
-                <span itemprop="name">LK光流法分析及其源码</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-21T11:28:33+08:00"
-              content="2017-09-21" >
-          09-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/21/opencv_SaveVideo/" itemprop="url">
-              
-                <span itemprop="name">opencv视频保存方法详解</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-21T10:03:45+08:00"
-              content="2017-09-21" >
-          09-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="光流法简介"><a href="#光流法简介" class="headerlink" title="光流法简介"></a>光流法简介</h2><p>光流的概念是Gibson在1950年首先提出来的。它是空间运动物体在观察成像平面上的像素运动的瞬时速度，是利用图像序列中像素在时间域上的变化以及相邻帧之间的相关性来找到上一帧跟当前帧之间存在的对应关系，从而计算出相邻帧之间物体的运动信息的一种方法。</p>
+<p>光流法，是利用目标物体在监控场景中的空间运动，体现在视频图像序列中为不同图像颜色分布变化。导致目标物在监控场景中的空间运动场，在图像中转化为光流场，体现图像中每一个像素点的变化趋势。光流场可视为监控场景中的瞬时速度场。</p>
+<p>研究光流场的目的就是为了从图片序列中近似得到不能直接得到的运动场。运动场，其实就是物体在三维真实世界中的运动；光流场，是运动场在二维图像平面上（人的眼睛或者摄像头）的投影。</p>
+<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p>光流法的三种计算方法：LK，HS，最常用的还是LK。</p>
+<h3 id="Lucas–Kanade算法"><a href="#Lucas–Kanade算法" class="headerlink" title="Lucas–Kanade算法"></a>Lucas–Kanade算法</h3><p>这个算法是最常见，最流行的。它计算两帧在时间t到t+δt之间每个每个像素点位置的移动。由于它是基于图像信号的泰勒级数，这种方法称为差分，这就是对于空间和时间坐标使用偏导数。</p>
+<p>图像约束方程，也是光流法的基本方程，可以写为$I(x,y,z,t)=I(x +δx,y+δy,z+δz,t+δt)$</p>
+<p>$I(x,y,z,t)$ 为在$(x,y,z)$位置的体素。</p>
+<p>我们假设移动足够的小，那么对图像约束方程使用泰勒公式，我们可以得到：</p>
+<p><img src="/2017/09/21/optical_flow/equ_1.png" alt=""></p>
+<p>H.O.T.指更高阶，在移动足够小的情况下可以忽略。从这个方程中我们可以得到：</p>
+<p><img src="/2017/09/21/optical_flow/equ_2.png" alt=""></p>
+<p>或者</p>
+<p><img src="/2017/09/21/optical_flow/equ_3.png" alt=""></p>
+<p>我们得到：</p>
+<p><img src="/2017/09/21/optical_flow/equ_4.png" alt=""></p>
+<p>Vx ,Vy ,Vz 分别是$I(x,y,z,t)$的光流向量中x，y，z的组成。 $\frac{∂I}{∂x}$, $\frac{∂I}{∂y}$, $\frac{∂I}{∂z}$和 $\frac{∂I}{∂t}$则是图像在$(x,y,z,t)$这一点向相应方向的差分。<br>所以<br>$$I_x V_x + I_y V_y + I_z V_z = −I_t$$<br>写做：</p>
+<p><img src="/2017/09/21/optical_flow/equ_5.png" alt=""></p>
+<p>这个方程有三个未知量，尚不能被解决，这也就是所谓光流算法的光圈问题。那么要找到光流向量则需要另一套解决的方案。而Lucas-Kanade算法是一个非迭代的算法：<br>假设流(Vx,Vy,Vz)在一个大小为$m*m*m$(m&gt;1)的小窗中是一个常数，那么从像素 $1,2,…,n,n =m^3$ 中可以得到下列一组方程：</p>
+<p>$$I_{x1}  V_x + I_{y1}  V_y + I_{z1}  V_z = -I_{t_1}  $$</p>
+<p>$$I_{x2}  V_x + I_{y2}  V_y + I_{z2}  V_z = -I_{t_2}  $$</p>
+<p>$$ \vdots  $$</p>
+<p>$$I_{xn}  V_x + I_{yn}  V_y + I_{zn}  V_z = -I_{t_n}  $$</p>
+<p>三个未知数但是有多于三个的方程，这个方程组自然是个超定方程，也就是说方程组内有冗余，方程组可以表示为：</p>
+<p><img src="/2017/09/21/optical_flow/equ_6.png" alt=""></p>
+<p>记作：</p>
+<p>$$A \vec{v} = -b $$</p>
+<p>为了解决这个超定问题，我们采用最小二乘法：</p>
+<p>$$A^T A \vec{v} = A^T (-b) $$</p>
+<p>or</p>
+<p>$$ \vec{v} = (A^T A)^{-1}  A^T (-b) $$</p>
+<p>得到：</p>
+<p><img src="/2017/09/21/optical_flow/equ_7.png" alt=""></p>
+<p>其中的求和是从1到n。</p>
+<p>另外，由于LK算法假设是小位移，为了解决大位移问题，需要在多层图像缩放金字塔上求解，每一层的求解结果乘以2后加到下一层：</p>
+<p><img src="/2017/09/21/optical_flow/LK_ta.png" alt=""></p>
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><p>C++代码来自于：</p>
+<p><a href="http://download.csdn.net/download/crzy_sparrow/4183674" target="_blank" rel="external">http://download.csdn.net/download/crzy_sparrow/4183674</a></p>
+<p>有两点修改的地方：</p>
+<p>①void handleTrackedPoint(Mat &frame;,Mat &output;)声明过程中循环条件points[i]要改为<code>points[1]</code>；</p>
+<p>②新建项目时加上预编译头。</p>
+<p>如果出现这个：<br><code>warning:opening fiile(../../modules/highgui/src/cap_ffmpeg_impl.hpp:545)</code><br>注意要把avi格式的视频文件放在debug下，可以用格式工厂转，注意视频编码那里要换成avc</p>
+<p>效果：可以检测到运动目标。</p>
+<p>参考资料：</p>
+<p><a href="http://blog.csdn.net/crzy_sparrow/article/details/7407604" target="_blank" rel="external">http://blog.csdn.net/crzy_sparrow/article/details/7407604</a><br><a href="http://blog.csdn.net/u014568921/article/details/46638557" target="_blank" rel="external">http://blog.csdn.net/u014568921/article/details/46638557</a><br><a href="http://www.cnblogs.com/gnuhpc/archive/2012/12/04/2802124.html" target="_blank" rel="external">http://www.cnblogs.com/gnuhpc/archive/2012/12/04/2802124.html</a></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/20/数模回顾/" itemprop="url">
-              
-                <span itemprop="name">2017“华为杯”第十四届中国研究生数学建模竞赛回顾</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-20T22:50:43+08:00"
-              content="2017-09-20" >
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/20/BGSlibrary/" itemprop="url">
-              
-                <span itemprop="name">BGSLibrary编译安装与BGSlibrary GUI的下载与使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-20T21:53:43+08:00"
-              content="2017-09-20" >
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/15/test-mathjax/" itemprop="url">
-              
-                <span itemprop="name">test_mathjax</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-15T16:17:37+08:00"
-              content="2017-09-15" >
-          09-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/12/BP_derivation/" itemprop="url">
-              
-                <span itemprop="name">BP神经网络部分具体的推导</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-12T22:18:23+08:00"
-              content="2017-09-12" >
-          09-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/09/blog-opti/" itemprop="url">
-              
-                <span itemprop="name">hexo搭建的Github博客之优化</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-09T10:27:20+08:00"
-              content="2017-09-09" >
-          09-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/08/blog_setup/" itemprop="url">
-              
-                <span itemprop="name">hexo+GitHub博客搭建实战</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-08T12:00:25+08:00"
-              content="2017-09-08" >
-          09-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/07/TensorFlow_setup/" itemprop="url">
-              
-                <span itemprop="name">windows下TensorFlow完整安装流程及出错解决方案</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-07T17:27:57+08:00"
-              content="2017-09-07" >
-          09-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://qwerty200696.github.io/2017/09/21/optical_flow/" title="LK光流法分析及其源码">https://qwerty200696.github.io/2017/09/21/optical_flow/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/opencv/" rel="tag"><i class="fa fa-tag"></i> opencv</a>
+          
+            <a href="/tags/光流法/" rel="tag"><i class="fa fa-tag"></i> 光流法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/21/opencv_SaveVideo/" rel="next" title="opencv视频保存方法详解">
+                <i class="fa fa-chevron-left"></i> opencv视频保存方法详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/21/markdown_mathjax/" rel="prev" title="hexo博客使用mathjax并解决markdown渲染冲突问题">
+                hexo博客使用mathjax并解决markdown渲染冲突问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -694,6 +605,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -714,8 +631,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -854,6 +780,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#光流法简介"><span class="nav-number">1.</span> <span class="nav-text">光流法简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法原理"><span class="nav-number">2.</span> <span class="nav-text">算法原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lucas–Kanade算法"><span class="nav-number">2.1.</span> <span class="nav-text">Lucas–Kanade算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码示例"><span class="nav-number">3.</span> <span class="nav-text">代码示例</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -997,6 +939,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -1022,6 +968,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143521"></script>
+      <!-- UY END -->
     
   
 
