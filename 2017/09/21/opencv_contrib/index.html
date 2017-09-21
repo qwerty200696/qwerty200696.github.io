@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="opencv," />
 
 
 
@@ -96,21 +96,22 @@
 
 
 <meta name="description" content="在数模的时候，需要实现目标跟踪，因此需要安装opencv附加库，即opencv_contrib。 没有安装该附加库的时候，会提示如下错误：  opencv_contrib下载opencv_contrib的项目地址为：https://github.com/opencv/opencv_contrib 先将opencv_contrib下载下来，为后续安装做准备。 此外还需要的是opencv以及cmake">
+<meta name="keywords" content="opencv">
 <meta property="og:type" content="article">
 <meta property="og:title" content="opencv_contrib安装说明与错误解决方案">
 <meta property="og:url" content="https://qwerty200696.github.io/2017/09/21/opencv_contrib/index.html">
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="在数模的时候，需要实现目标跟踪，因此需要安装opencv附加库，即opencv_contrib。 没有安装该附加库的时候，会提示如下错误：  opencv_contrib下载opencv_contrib的项目地址为：https://github.com/opencv/opencv_contrib 先将opencv_contrib下载下来，为后续安装做准备。 此外还需要的是opencv以及cmake">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/opencv_contrib/opencv_SaveVideo/no_tracking.png">
-<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/opencv_contrib/opencv_SaveVideo/extra_path.jpg">
-<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/opencv_contrib/opencv_SaveVideo/cmake_error.png">
-<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/opencv_contrib/opencv_SaveVideo/cmake_ok.png">
-<meta property="og:updated_time" content="2017-09-21T14:19:57.173Z">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/opencv_contrib/no_tracking.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/opencv_contrib/extra_path.jpg">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/opencv_contrib/cmake_error.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/21/opencv_contrib/cmake_ok.png">
+<meta property="og:updated_time" content="2017-09-21T14:26:28.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="opencv_contrib安装说明与错误解决方案">
 <meta name="twitter:description" content="在数模的时候，需要实现目标跟踪，因此需要安装opencv附加库，即opencv_contrib。 没有安装该附加库的时候，会提示如下错误：  opencv_contrib下载opencv_contrib的项目地址为：https://github.com/opencv/opencv_contrib 先将opencv_contrib下载下来，为后续安装做准备。 此外还需要的是opencv以及cmake">
-<meta name="twitter:image" content="https://qwerty200696.github.io/2017/09/21/opencv_contrib/opencv_SaveVideo/no_tracking.png">
+<meta name="twitter:image" content="https://qwerty200696.github.io/2017/09/21/opencv_contrib/no_tracking.png">
 
 
 
@@ -346,6 +347,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/邂逅opencv/" itemprop="url" rel="index">
+                    <span itemprop="name">邂逅opencv</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
 	  
           
@@ -379,7 +402,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  818
+                  825
                 </span>
               
 
@@ -406,9 +429,9 @@
       
         <p>在数模的时候，需要实现目标跟踪，因此需要安装opencv附加库，即opencv_contrib。</p>
 <p>没有安装该附加库的时候，会提示如下错误：</p>
-<p><img src="/2017/09/21/opencv_contrib/opencv_SaveVideo/no_tracking.png" alt=""></p>
-<h2 id="opencv-contrib下载"><a href="#opencv-contrib下载" class="headerlink" title="opencv_contrib下载"></a>opencv_contrib下载</h2><p>opencv_contrib的项目地址为：<a href="https://github.com/opencv/opencv_contrib" target="_blank" rel="external">https://github.com/opencv/opencv_contrib</a></p>
-<p>先将opencv_contrib下载下来，为后续安装做准备。</p>
+<p><img src="/2017/09/21/opencv_contrib/no_tracking.png" alt=""></p>
+<h2 id="opencv-contrib下载"><a href="#opencv-contrib下载" class="headerlink" title="opencv_contrib下载"></a>opencv_contrib下载</h2><p><code>opencv_contrib</code>的项目地址为：<a href="https://github.com/opencv/opencv_contrib" target="_blank" rel="external">https://github.com/opencv/opencv_contrib</a></p>
+<p>先将<code>opencv_contrib</code>下载下来，为后续安装做准备。</p>
 <p>此外还需要的是<a href="https://github.com/opencv/opencv" target="_blank" rel="external">opencv</a>以及<a href="https://cmake.org/download/" target="_blank" rel="external">cmake</a>。</p>
 <h2 id="opencv-contrib安装步骤概述"><a href="#opencv-contrib安装步骤概述" class="headerlink" title="opencv_contrib安装步骤概述"></a>opencv_contrib安装步骤概述</h2><h3 id="windows控制台"><a href="#windows控制台" class="headerlink" title="windows控制台"></a>windows控制台</h3><p>依次输入如下命令：</p>
 <pre><code>$ cd &lt;opencv_build_directory&gt;
@@ -417,7 +440,7 @@ $ make -j5
 </code></pre><p>之后会在<code>&lt;opencv_build_directory&gt;</code>目录下生成<code>opencv_contrib</code>库的所有模块。如果不想安装所有的模块，则使用<code>cmake</code>命令的<code>BUILD_opencv_*</code>选项。示例程序如下：</p>
 <pre><code>$ cmake -DOPENCV_EXTRA_MODULES_PATH=&lt;opencv_contrib&gt;/modules -DBUILD_opencv_legacy=OFF &lt;opencv_source_directory&gt;
 </code></pre><h3 id="GUI图形界面安装"><a href="#GUI图形界面安装" class="headerlink" title="GUI图形界面安装"></a>GUI图形界面安装</h3><ul>
-<li>打开cmake-gui；</li>
+<li>打开<code>cmake-gui</code>；</li>
 </ul>
 <ul>
 <li>选择源码文件夹以及build文件夹；</li>
@@ -428,14 +451,14 @@ $ make -j5
 <ul>
 <li>浏览参数并找到<code>OPENCV_EXTRA_MODULES_PATH</code>，将其路径设为<code>&lt;opencv_contrib&gt;/modules</code>；</li>
 </ul>
-<p><img src="/2017/09/21/opencv_contrib/opencv_SaveVideo/extra_path.jpg" alt="extra_path"></p>
+<p><img src="/2017/09/21/opencv_contrib/extra_path.jpg" alt="extra_path"></p>
 <ul>
 <li>点击<code>configue</code>按钮，完成后再点击<code>generate</code>按钮。（第一次会询问Makefile的类型）</li>
 </ul>
 <ul>
 <li><p>点击open project，使用你选择的方法来生成<code>opencv core</code>。(上一步是Unix makfile，则相应的make，make install)</p>
 </li>
-<li><p>在自己的代码/IDE中添加相应模块的连接器标志（linker flags）。比如想使用aruco模块，则需要加上”-lopencv_aruco”。</p>
+<li><p>在自己的代码/IDE中添加相应模块的连接器标志（linker flags）。比如想使用aruco模块，则需要加上<code>&quot;-lopencv_aruco&quot;</code>。</p>
 </li>
 </ul>
 <blockquote>
@@ -446,13 +469,13 @@ $ make -j5
 <pre><code>wang@wang-PC MINGW64 /d/Program Files/opencv3/build
 $ cmake -DOPENCV_EXTRA_MODULES_PATH=&quot;D:\opencv_contrib-master\modules&quot; &quot;D:\Program Files\opencv3\sources&quot;
 </code></pre><p>时出现下载错误，如下图所示：</p>
-<p><img src="/2017/09/21/opencv_contrib/opencv_SaveVideo/cmake_error.png" alt=""></p>
+<p><img src="/2017/09/21/opencv_contrib/cmake_error.png" alt=""></p>
 <pre><code>CMake Error at D:/Program Files/opencv3/sources/cmake/OpenCVUtils.cmake:1047 (message):
   Failed to download .  Status=
 Call Stack (most recent call first):
   D:/opencv_contrib-master/modules/dnn_modern/CMakeLists.txt:18 (ocv_download)
 </code></pre><p>即：无法下载对应的模块。</p>
-<p>遇到此错误的解决方案为：将以下三处的<code>filename</code>改为<code>PACKAGE</code>。</p>
+<p>遇到此错误的解决方案为：将以下三处的<code>filename</code>改为<code>PACKAGE</code>。（代码中的<code>PACKAGE</code>原为<code>filename</code>）</p>
 <pre><code>D:\opencv\opencv_contrib\modules\dnn_modern\CMakeLists.txt
 20行改为
 ocv_download(PACKAGE &quot;v1.0.0a3.tar.gz&quot;
@@ -465,13 +488,13 @@ D:\opencv\opencv_contrib\modules\xfeatures2d\cmake\download_vgg.cmake
 16行改为
 ocv_download(PACKAGE ${name_${id}}
 </code></pre><p>修改后安装成功，可以在输出中查看具体的安装信息：</p>
-<p><img src="/2017/09/21/opencv_contrib/opencv_SaveVideo/cmake_ok.png" alt=""></p>
+<p><img src="/2017/09/21/opencv_contrib/cmake_ok.png" alt=""></p>
 <p>从图中可以发现，我所需要的tracking库也已经安装成功了。</p>
 <h3 id="没有make指令"><a href="#没有make指令" class="headerlink" title="没有make指令"></a>没有make指令</h3><p>在使用命令行界面安装时，没有最后一步的make指令。</p>
 <p>那么只能自己安装了。或者直接用cmake GUI安装。</p>
-<p>打开之前opencv_contrib的build文件夹，找到已经生成的opencv项目并打开。</p>
+<p>打开之前<code>opencv_contrib</code>的build文件夹，找到已经生成的opencv项目并打开。</p>
 <p>打开VS之后，可以看到完整的OpenCV项目。然后直接编译即可（看个人情况，可自行选择Release或者Debug）。时间相当长。。。</p>
-<p>编译成功后，在CMakeTargets中找到INSTALL，然后生成INSTALL，得到我们想要的最终文件。</p>
+<p>编译成功后，在<code>CMakeTargets</code>中找到<code>INSTALL</code>，然后生成INSTALL，得到我们想要的最终文件。</p>
 <h2 id="半永久配置"><a href="#半永久配置" class="headerlink" title="半永久配置"></a>半永久配置</h2><p>上述步骤的确很麻烦，并且非常容易出错。</p>
 <p>有热心网友给出了自己配置好的文件，可以半永久配置。读者感兴趣的可以自己尝试下：<a href="http://www.cnblogs.com/wjy-lulu/p/6605306.html" target="_blank" rel="external">http://www.cnblogs.com/wjy-lulu/p/6605306.html</a></p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
@@ -531,6 +554,12 @@ ocv_download(PACKAGE ${name_${id}}
 
 	
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/opencv/" rel="tag"><i class="fa fa-tag"></i> opencv</a>
+          
+        </div>
       
 
       
@@ -831,7 +860,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      12.6k
+      14.8k
     </span>
   
 </div>
