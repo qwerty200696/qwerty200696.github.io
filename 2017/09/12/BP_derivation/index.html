@@ -95,19 +95,23 @@
 
 
 
-<meta name="description" content="mathjax公式中不能有多余的{}  BP神经网络示意图  网络结构  一个输入层，两个隐含层，一个输出层。 参数标记  输入层神经元个数n、输出层神经元个数m【其中有m=n，每一帧都有对应的输出】   两个隐含层神经元个数均为100   权值：输入层与第一个隐含层之间的权值为$w_{ij}$，两个隐含层之间的权值为$w_{jk}$，第二个隐含层与输出层之间的权值为$w_{kl}$   阈值：">
+<meta name="description" content="mathjax公式中不能有多余的{}  网络结构参数说明BP神经网络示意图 网络结构一个输入层，两个隐含层，一个输出层。 参数标记 输入层神经元个数n、输出层神经元个数m【其中有m=n，每一帧都有对应的输出】   两个隐含层神经元个数均为100   权值：输入层与第一个隐含层之间的权值为$w_{ij}$，两个隐含层之间的权值为$w_{jk}$，第二个隐含层与输出层之间的权值为$w_{kl}$">
 <meta name="keywords" content="神经网络,deep learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BP神经网络部分具体的推导">
 <meta property="og:url" content="https://qwerty200696.github.io/2017/09/12/BP_derivation/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="mathjax公式中不能有多余的{}  BP神经网络示意图  网络结构  一个输入层，两个隐含层，一个输出层。 参数标记  输入层神经元个数n、输出层神经元个数m【其中有m=n，每一帧都有对应的输出】   两个隐含层神经元个数均为100   权值：输入层与第一个隐含层之间的权值为$w_{ij}$，两个隐含层之间的权值为$w_{jk}$，第二个隐含层与输出层之间的权值为$w_{kl}$   阈值：">
+<meta property="og:description" content="mathjax公式中不能有多余的{}  网络结构参数说明BP神经网络示意图 网络结构一个输入层，两个隐含层，一个输出层。 参数标记 输入层神经元个数n、输出层神经元个数m【其中有m=n，每一帧都有对应的输出】   两个隐含层神经元个数均为100   权值：输入层与第一个隐含层之间的权值为$w_{ij}$，两个隐含层之间的权值为$w_{jk}$，第二个隐含层与输出层之间的权值为$w_{kl}$">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/12/BP_derivation/bp_net.png">
-<meta property="og:updated_time" content="2017-09-21T11:56:14.190Z">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/12/BP_derivation/tanhx.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/12/BP_derivation/tanx_2.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/12/BP_derivation/tanhx_deri.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/09/12/BP_derivation/tanhx_deri_2.png">
+<meta property="og:updated_time" content="2017-09-23T10:46:40.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BP神经网络部分具体的推导">
-<meta name="twitter:description" content="mathjax公式中不能有多余的{}  BP神经网络示意图  网络结构  一个输入层，两个隐含层，一个输出层。 参数标记  输入层神经元个数n、输出层神经元个数m【其中有m=n，每一帧都有对应的输出】   两个隐含层神经元个数均为100   权值：输入层与第一个隐含层之间的权值为$w_{ij}$，两个隐含层之间的权值为$w_{jk}$，第二个隐含层与输出层之间的权值为$w_{kl}$   阈值：">
+<meta name="twitter:description" content="mathjax公式中不能有多余的{}  网络结构参数说明BP神经网络示意图 网络结构一个输入层，两个隐含层，一个输出层。 参数标记 输入层神经元个数n、输出层神经元个数m【其中有m=n，每一帧都有对应的输出】   两个隐含层神经元个数均为100   权值：输入层与第一个隐含层之间的权值为$w_{ij}$，两个隐含层之间的权值为$w_{jk}$，第二个隐含层与输出层之间的权值为$w_{kl}$">
 <meta name="twitter:image" content="https://qwerty200696.github.io/2017/09/12/BP_derivation/bp_net.png">
 
 
@@ -399,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  394
+                  1,019
                 </span>
               
 
@@ -427,12 +431,9 @@
         <blockquote>
 <p>mathjax公式中不能有多余的{}</p>
 </blockquote>
-<p><strong>BP神经网络示意图</strong></p>
-<p><img src="/2017/09/12/BP_derivation/bp_net.png" alt="BP神经网络示意图"></p>
-<p><strong>网络结构</strong> </p>
-<p>一个输入层，两个隐含层，一个输出层。</p>
-<p><strong>参数标记</strong></p>
-<ul>
+<h2 id="网络结构参数说明"><a href="#网络结构参数说明" class="headerlink" title="网络结构参数说明"></a>网络结构参数说明</h2><h3 id="BP神经网络示意图"><a href="#BP神经网络示意图" class="headerlink" title="BP神经网络示意图"></a><strong>BP神经网络示意图</strong></h3><p><img src="/2017/09/12/BP_derivation/bp_net.png" alt="BP神经网络示意图"></p>
+<h3 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a><strong>网络结构</strong></h3><p>一个输入层，两个隐含层，一个输出层。</p>
+<h3 id="参数标记"><a href="#参数标记" class="headerlink" title="参数标记"></a><strong>参数标记</strong></h3><ul>
 <li>输入层神经元个数n、输出层神经元个数m【其中有m=n，每一帧都有对应的输出】</li>
 </ul>
 <ul>
@@ -444,19 +445,37 @@
 <ul>
 <li>阈值：两个隐含层$a^1_j,a^2_k$,输出层$b_l$</li>
 </ul>
-<p>其中，<em>i</em>=1,2,…,n，<em>j</em>,<em>k</em>=1,2,…,100，<em>l</em>=1,2,…,m<br>凡是下标含有<em>i</em>，<em>j</em>，<em>k</em>，<em>l</em>的，均表示单个神经元。</p>
-<p>推导：<br>两个隐含层及输出层的输出：</p>
-<p>$$H_j^1 = f(\sum_{i=1}^n w_{ij} x_i - a_{j}^1 )\ \ \ j=1,2,…,100$$</p>
+<p>其中，$i=1,2,…,n$，$j,k=1,2,…,100$，$l=1,2,…,m$<br>凡是下标含有$i,j,k,l$的，均表示单个神经元。</p>
+<h2 id="BP网络推导"><a href="#BP网络推导" class="headerlink" title="BP网络推导"></a>BP网络推导</h2><h3 id="两个隐含层及输出层的输出"><a href="#两个隐含层及输出层的输出" class="headerlink" title="两个隐含层及输出层的输出"></a>两个隐含层及输出层的输出</h3><p>$$H_j^1 = f(\sum_{i=1}^n w_{ij} x_i - a_{j}^1 )\ \ \ j=1,2,…,100$$</p>
 <p>$$<br>H_{k}^2 = f(\sum^{100}_{j=1} w_{jk} H^1_{j} - a^2_{k} )\ \ \  k = 1,2, \cdots ,100<br>$$</p>
 <p>$$<br>O_l = \sum_{k = 1}^{100} w_{kl}H_{k}^2 - {b_l} \ \ \ l = 1,2, \cdots ,m<br>$$</p>
-<p>误差：</p>
-<p>$$e_l = y_l - O_l\ \ \  l = 1,2, \cdots ,m$$</p>
-<p>在说明反向传播的权值更新前，先说明一下<strong>sigmoid函数求导</strong>的一个性质：</p>
-<p>$$f(x) = \frac{1} { 1 +  e^{-x}  }$$</p>
+<h3 id="误差"><a href="#误差" class="headerlink" title="误差"></a>误差</h3><p>$$e_l = y_l - O_l\ \ \  l = 1,2, \cdots ,m$$</p>
+<h3 id="反向传播的权值更新"><a href="#反向传播的权值更新" class="headerlink" title="反向传播的权值更新"></a>反向传播的权值更新</h3><p>$$\begin{equation}\begin{split}<br>w_{kl} &amp;= w_{kl} - dw_{kl} \\<br>&amp;= w_{kl} - \eta \frac{\partial e_l}{\partial w_{kl}}\\<br>&amp;= w_{kl} + \eta H_k^2 e_l \ \ \ \ \ \  k = 1,2, \cdots ,100 \\<br>\end{split}\end{equation}$$</p>
+<p>$$\begin{equation}\begin{split}<br>{w_{jk}}  &amp;= {w_{jk}} - \eta \frac{\partial e_l}{\partial w_{jk}} \\<br>&amp;= {w_{jk}} - \eta \frac{\partial e_l}{\partial O_l} \frac{\partial O_l}{\partial H_{k}^2} \frac{\partial H_{k}^2}{\partial w_{jk}} \\<br>&amp;= {w_{jk}} - \eta (-e_l)(\sum_{l = 1}^m w_{kl}) (f’_{H_k^2} H_j^1) \\<br>&amp;= {w_{jk}} + \eta f’_{H_k^2} H_j^1 \sum_{l = 1}^m w_{kl}e_l \ \ \ \ \  j = 1,2, \cdots ,100 \\<br>\end{split}\end{equation}$$</p>
+<p>$$\begin{equation}\begin{split}<br>{w_{ij}}  &amp;= {w_{ij}} - \eta \frac{\partial e_l}{\partial w_{ij}} \\<br>&amp;= {w_{jk}} - \eta \frac{\partial e_l}{\partial O_l} \frac{\partial O_l}{\partial H_{k}^2} \frac{\partial H_{k}^2}{\partial H_{j}^1} \frac{\partial H_{j}^1}{\partial w_{ij}} \\<br>&amp;= {w_{jk}} - \eta (-e_l)(\sum_{l = 1}^m w_{kl}) (f’_{H_k^2} \sum_{k = 1}^{100} w_{jk}) (f’_{H_j^1} x_i) \\<br>&amp;= {w_{ij}} + \eta f’_{H_j^1}{x_i}\sum_{k = 1}^{100} [(\sum_{l = 1}^m w_{kl}e_l)w_{jk}f’_{H_k^2}] \\<br>\ \ \ \  &amp;其中 i = 1,2, \cdots ,n;j = 1,2, \cdots ,100 \\<br>\end{split}\end{equation}$$</p>
+<h2 id="关于激活函数的说明"><a href="#关于激活函数的说明" class="headerlink" title="关于激活函数的说明"></a>关于激活函数的说明</h2><p>上述公式中，$f’_{H_k^2}$, $f’_{H_j^1}$ 之所以没有代入具体值，是因为这取决与所采用的激活函数。<code>DeepLearnToolBox</code>之BP算法中可采用的激活函数有两种，一是sigmoid函数，二是双曲正切函数。</p>
+<h3 id="sigmoid函数"><a href="#sigmoid函数" class="headerlink" title="sigmoid函数"></a>sigmoid函数</h3><p>当激活函数为sigmoid函数$f(x) = \frac{1} { 1 +  e^{-x}  }$时，<strong>sigmoid函数的导数</strong>具有下面的一个性质：</p>
 <p>其导数为：</p>
 <p>$$\begin{equation}\begin{split}<br>f’(x) &amp;= \frac{e^{ - x}}{(1 + e^{ - x})^2} \\<br>&amp;= \frac{e^{ - x}}{(1 + e^{ - x})}\frac{1}{(1 + e^{ - x})}\\<br>&amp;= (1 - \frac{1}{(1 + e^{-x})})(\frac{1}{(1 + e^{ - x})}) \\<br>&amp;= (1-f(x))f(x)\\<br>\end{split}\end{equation}$$</p>
 <p>因此，比如说，在$H^2_K$中对$f$求导，结果为$f’_{H_k^2} = H_k^2(1-H_k^2)$，同理$f’_{H_k^1} = H_k^1(1-H_k^1)$</p>
-<p>反向传播的权值更新：</p>
+<h3 id="tanh函数"><a href="#tanh函数" class="headerlink" title="tanh函数"></a>tanh函数</h3><p>激活函数也可以是双曲正切函数$tanhx= \frac{sinhx}{coshx} = \frac{e^x-e^{-x}}{e^x+e^{-x}}$。</p>
+<p>双曲正切函数的图形夹在水平直线y=1及y=-1之间，且当x的绝对值很大时，它的图形在第一象限内接近于直线y=1，而在第三象限内接近于直线y=-1。[1]<br>即双曲正切函数的值域是(-1,1)。</p>
+<p><img src="/2017/09/12/BP_derivation/tanhx.png" alt="matlab作出的tanhx"></p>
+<p><img src="/2017/09/12/BP_derivation/tanx_2.png" alt="matlab作出的tanhx"></p>
+<p>tanh(4) = (exp(4)-exp(-4))/(exp(4)+exp(-4))  = 0.9993</p>
+<p>超过[-4,4]的范围已经可以看为1了。</p>
+<p>双曲正切函数的标准导数公式：</p>
+<p>$$ tanh(x) = \frac{1}{cosh(x)^2} = 1- tanh(x)^2 $$</p>
+<p>用如下命令作图，并画出导数图像：</p>
+<pre><code>plot(x,1-tanh(x).^2)
+plot(x,1./cosh(x).^2)
+</code></pre><p><img src="/2017/09/12/BP_derivation/tanhx_deri.png" alt="tanhx的真实导数"></p>
+<p>代码中给出的导数公式为：</p>
+<p>$$f’_{tanhx} = 1.7159 * \frac{2}{3}  (1 -\frac{1}{1.7159^2}tanhx^2) $$</p>
+<p>用如下命令<code>plot(x,1.7159*2/3*(1-1/1.7159^2*tanh(x).^2))</code>作图，画出导数图像：</p>
+<p><img src="/2017/09/12/BP_derivation/tanhx_deri_2.png" alt="tanhx的逼近导数"></p>
+<p>可以看到，总体形状是类似的，但是幅度上还是存在着较大差异。具体缩放的原因还不太清楚。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇文章只要是基于公式推导BP网络的整体流程。基于代码的实现请参阅： DeepLearnToolBox之BP算法。</p>
 
       
     </div>
@@ -531,8 +550,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/15/test-mathjax/" rel="prev" title="test_mathjax">
-                test_mathjax <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/20/BGSlibrary/" rel="prev" title="BGSLibrary编译安装与BGSlibrary GUI的下载与使用">
+                BGSLibrary编译安装与BGSlibrary GUI的下载与使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -613,8 +632,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -754,6 +782,22 @@ var jiathis_config={
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络结构参数说明"><span class="nav-number">1.</span> <span class="nav-text">网络结构参数说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BP神经网络示意图"><span class="nav-number">1.1.</span> <span class="nav-text">BP神经网络示意图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络结构"><span class="nav-number">1.2.</span> <span class="nav-text">网络结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数标记"><span class="nav-number">1.3.</span> <span class="nav-text">参数标记</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BP网络推导"><span class="nav-number">2.</span> <span class="nav-text">BP网络推导</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两个隐含层及输出层的输出"><span class="nav-number">2.1.</span> <span class="nav-text">两个隐含层及输出层的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误差"><span class="nav-number">2.2.</span> <span class="nav-text">误差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向传播的权值更新"><span class="nav-number">2.3.</span> <span class="nav-text">反向传播的权值更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于激活函数的说明"><span class="nav-number">3.</span> <span class="nav-text">关于激活函数的说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sigmoid函数"><span class="nav-number">3.1.</span> <span class="nav-text">sigmoid函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tanh函数"><span class="nav-number">3.2.</span> <span class="nav-text">tanh函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -790,7 +834,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      14.8k
+      16.7k
     </span>
   
 </div>
