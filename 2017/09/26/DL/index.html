@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,博客,mathjax," />
+  <meta name="keywords" content="deep learning," />
 
 
 
@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="利用MathJax来渲染LaTeX数学公式hexo主题Next中已经集成了对mathjax的支持。在主题配置文件，blog\themes\next\_config.yml中定位到如下片段: # MathJax Support mathjax:   enable: true   per_page: false   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest">
-<meta name="keywords" content="hexo,博客,mathjax">
+<meta name="description" content="5 机器学习基础5.8 无监督学习从不需要人为注释的样本中抽取信息。 通常与密度估计有关。 学习从分布中采样，学习从分布中去噪，寻找数据分布的流形 或是 将数据中相关的样本聚类。 一个经典的无监督学习任务：找到数据的“最佳”表示。 较简单表示主要有三种：低维表示、稀疏表示和独立表示。 表示的概念是深度学习的核心主题之一，也是本书的核心主题之一。 5.8.1 主成分分析通过线性变换W将数据从x投影到">
+<meta name="keywords" content="deep learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo博客使用mathjax并解决markdown渲染冲突问题">
-<meta property="og:url" content="https://qwerty200696.github.io/2017/09/21/markdown_mathjax/index.html">
+<meta property="og:title" content="深度学习">
+<meta property="og:url" content="https://qwerty200696.github.io/2017/09/26/DL/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="利用MathJax来渲染LaTeX数学公式hexo主题Next中已经集成了对mathjax的支持。在主题配置文件，blog\themes\next\_config.yml中定位到如下片段: # MathJax Support mathjax:   enable: true   per_page: false   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest">
+<meta property="og:description" content="5 机器学习基础5.8 无监督学习从不需要人为注释的样本中抽取信息。 通常与密度估计有关。 学习从分布中采样，学习从分布中去噪，寻找数据分布的流形 或是 将数据中相关的样本聚类。 一个经典的无监督学习任务：找到数据的“最佳”表示。 较简单表示主要有三种：低维表示、稀疏表示和独立表示。 表示的概念是深度学习的核心主题之一，也是本书的核心主题之一。 5.8.1 主成分分析通过线性变换W将数据从x投影到">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-21T11:09:02.344Z">
+<meta property="og:updated_time" content="2017-09-27T11:50:56.071Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo博客使用mathjax并解决markdown渲染冲突问题">
-<meta name="twitter:description" content="利用MathJax来渲染LaTeX数学公式hexo主题Next中已经集成了对mathjax的支持。在主题配置文件，blog\themes\next\_config.yml中定位到如下片段: # MathJax Support mathjax:   enable: true   per_page: false   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest">
+<meta name="twitter:title" content="深度学习">
+<meta name="twitter:description" content="5 机器学习基础5.8 无监督学习从不需要人为注释的样本中抽取信息。 通常与密度估计有关。 学习从分布中采样，学习从分布中去噪，寻找数据分布的流形 或是 将数据中相关的样本聚类。 一个经典的无监督学习任务：找到数据的“最佳”表示。 较简单表示主要有三种：低维表示、稀疏表示和独立表示。 表示的概念是深度学习的核心主题之一，也是本书的核心主题之一。 5.8.1 主成分分析通过线性变换W将数据从x投影到">
 
 
 
@@ -136,14 +136,14 @@
 
 
 
-  <link rel="canonical" href="https://qwerty200696.github.io/2017/09/21/markdown_mathjax/"/>
+  <link rel="canonical" href="https://qwerty200696.github.io/2017/09/26/DL/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>hexo博客使用mathjax并解决markdown渲染冲突问题 | 王立杰的博客</title>
+  <title>深度学习 | 王立杰的博客</title>
   
 
 
@@ -302,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/09/21/markdown_mathjax/">
+    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/09/26/DL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wangwlj">
@@ -319,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo博客使用mathjax并解决markdown渲染冲突问题</h1>
+          <h1 class="post-title" itemprop="name headline">深度学习</h1>
         
 
         <div class="post-meta">
@@ -331,8 +331,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-21T19:03:45+08:00">
-                2017-09-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-26T15:33:23+08:00">
+                2017-09-26
               </time>
             
 
@@ -354,8 +354,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客搭建系列/" itemprop="url" rel="index">
-                    <span itemprop="name">博客搭建系列</span>
+                  <a href="/categories/深度学习/" itemprop="url" rel="index">
+                    <span itemprop="name">深度学习</span>
                   </a>
                 </span>
 
@@ -372,7 +372,7 @@
 
           
           
-             <span id="/2017/09/21/markdown_mathjax/" class="leancloud_visitors" data-flag-title="hexo博客使用mathjax并解决markdown渲染冲突问题">
+             <span id="/2017/09/26/DL/" class="leancloud_visitors" data-flag-title="深度学习">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  606
+                  1,975
                 </span>
               
 
@@ -422,50 +422,66 @@
       
 
       
-        <h2 id="利用MathJax来渲染LaTeX数学公式"><a href="#利用MathJax来渲染LaTeX数学公式" class="headerlink" title="利用MathJax来渲染LaTeX数学公式"></a>利用MathJax来渲染LaTeX数学公式</h2><p>hexo主题Next中已经集成了对mathjax的支持。在<code>主题配置文件</code>，<code>blog\themes\next\_config.yml</code>中定位到如下片段:</p>
-<pre><code># MathJax Support
-mathjax:
-  enable: true
-  per_page: false
-  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
-</code></pre><p>将enable中的false改为true即可。</p>
-<p>另外，再安装一个自动部署MathJax的<a href="http://catx.me/2014/03/09/hexo-mathjax-plugin/" target="_blank" rel="external">hexo插件</a> 。安装方式也很简单，在你的博客文件夹下执行：</p>
-<pre><code>npm install hexo-math --save
-hexo math install
-</code></pre><p>然后在新建的博文中写上一个麦克斯韦方程组查看LaTeX效果：</p>
-<pre><code>$$
-\begin{eqnarray}
-\nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \\
-\nabla\cdot\vec{B} &amp;=&amp; 0 \\
-\nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \\
-\nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)
-\end{eqnarray}
-$$
-</code></pre><p>$$<br>\begin{eqnarray}<br>\nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \\<br>\nabla\cdot\vec{B} &amp;=&amp; 0 \\<br>\nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \\<br>\nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)<br>\end{eqnarray}<br>$$</p>
-<p>这时如果你会发现出了一些问题，原因是hexo先用<code>marked.js</code>渲染，然后再交给<code>MathJax</code>渲染。在<code>marked.js</code>渲染的时候下划线_是被escape掉并且换成了<code>&lt;em&gt;</code>标签，即斜体字，另外LaTeX中的<code>\\</code>也会被转义成一个\，这样会导致<code>MathJax</code>渲染时不认为它是一个换行符了。</p>
-<h2 id="mathjax与markdown默认渲染冲突"><a href="#mathjax与markdown默认渲染冲突" class="headerlink" title="mathjax与markdown默认渲染冲突"></a>mathjax与markdown默认渲染冲突</h2><p>解决方案为：修改Hexo渲染源码。</p>
-<p>这个方法是我目前使用的，相对来说，通用性较高的一种方式。思路就是修改hexo的渲染源码: <code>nodes_modules/lib/marked/lib/marked.js</code>:</p>
-<ul>
-<li>去掉<code>\</code>的额外转义</li>
-</ul>
-<ul>
-<li>将em标签对应的符号中，去掉_,因为<code>markdown</code>中有<code>*</code>可以表示斜体，<code>—</code>就去掉了。</li>
-</ul>
-<p>具体思路参考了使Marked.js与MathJax共存, 打开<code>nodes_modules/marked/lib/marked.js</code>:<br>第一步: 找到下面的代码:</p>
-<pre><code>escape: /^\\([\\`*{}\[\]()# +\-.!_&gt;])/,
-</code></pre><p>改为:</p>
-<pre><code>escape: /^\\([`*{}\[\]()# +\-.!_&gt;])/,
-</code></pre><p>这样就会去掉\的转义了。<br>第二步: 找到em的符号:</p>
-<pre><code>em: /^\b_((?:[^_]|__)+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
-</code></pre><p>改为:</p>
-<pre><code>em:/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
-</code></pre><p>去掉_的斜体含义,这样就解决了。为什么说通用性很高，因为我们没有修改文章的内容，可以放到别的引擎下也会顺利渲染。</p>
-<blockquote>
-<p>这个困扰我许久的问题终于这么解决了。之前一直按照标准mathjax语法写公式，但是有的时候就会无法显示公式。</p>
-<p>按照上述修改后，markdown不再处理(公式中的)<code>_</code>以及<code>\</code>。mathjax语法畅行无阻。</p>
-</blockquote>
-<p>参考资料：</p>
-<p><a href="https://segmentfault.com/a/1190000007261752" target="_blank" rel="external">https://segmentfault.com/a/1190000007261752</a></p>
+        <h1 id="5-机器学习基础"><a href="#5-机器学习基础" class="headerlink" title="5 机器学习基础"></a>5 机器学习基础</h1><h2 id="5-8-无监督学习"><a href="#5-8-无监督学习" class="headerlink" title="5.8 无监督学习"></a>5.8 无监督学习</h2><p>从不需要人为注释的样本中抽取信息。</p>
+<p>通常与密度估计有关。 学习从分布中采样，学习从分布中去噪，寻找数据分布的流形 或是 将数据中相关的样本聚类。</p>
+<p>一个经典的无监督学习任务：找到数据的“最佳”表示。</p>
+<p>较简单表示主要有三种：低维表示、稀疏表示和独立表示。</p>
+<p><strong>表示</strong>的概念是深度学习的核心主题之一，也是本书的核心主题之一。</p>
+<h3 id="5-8-1-主成分分析"><a href="#5-8-1-主成分分析" class="headerlink" title="5.8.1 主成分分析"></a>5.8.1 主成分分析</h3><p>通过线性变换W将数据从x投影到z时，得到的数据表示的协方差矩阵为<strong>对角</strong>的。即：z中的元素是<strong>彼此无关</strong>的。</p>
+<h3 id="5-8-2-k-均值聚类"><a href="#5-8-2-k-均值聚类" class="headerlink" title="5.8.2 k-均值聚类"></a>5.8.2 k-均值聚类</h3><p>k均值聚类的算法提供了k维的<strong>one-hot编码向量h</strong>以表示输入x。当x属于聚类i时，有$h_i=1$，h的其他项为零。</p>
+<p>one-hot编码是稀疏表示的极端示例，丢失了很多分布式表示的优点。</p>
+<p>k-均值聚类初始化k个不同的中心点$\mu^{(1)},\cdots ,\mu^{(k)}$，然后迭代交换两个不同的步骤直到收敛。</p>
+<p>步骤一，每个训练样本分配到最近的中心点$\mu^{(i)}$所代表的聚类i。<br>步骤二，每个中心点更新为聚类i中所有训练样本$x^{(i)}$的均值。</p>
+<p>聚类问题的本身是病态的。没有单一的标准去度量聚类的数据在真实世界中效果如何。</p>
+<p>因此，我们可能更偏好于<strong>分布式表示</strong>。分布式表示可以对每个车辆赋予两个属性——一个表示它的颜色，一个表示它是汽车还是卡车。</p>
+<p>5.9 随机梯度下降</p>
+<p>stochastic gradient descent,SGD</p>
+<p>机器学习中的代价函数通常可以分解为每个样本的代价函数的总和。</p>
+<p><em>训练数据的负条件对数似然</em> $\;$可以写为：</p>
+<p>$$J(\theta) = E_{x,\; y \sim \hat P_{data}}L(x,y,\theta ) = \frac 1m \sum_{i=1}^m  L(x^{(i)},y^{(i)},\theta )  $$</p>
+<p>其中，L是每个样本的损失函数。</p>
+<p>随机梯度下降的<strong>核心</strong>是，梯度是期望。期望可使用小规模的样本近似估计。</p>
+<h2 id="5-10-构建机器学习算法"><a href="#5-10-构建机器学习算法" class="headerlink" title="5.10 构建机器学习算法"></a>5.10 构建机器学习算法</h2><p>组合模型、代价和优化算法 来构建机器学习算法的配方。适用于监督学习以及非监督学习。</p>
+<h1 id="6-前馈神经网络"><a href="#6-前馈神经网络" class="headerlink" title="6 前馈神经网络"></a>6 前馈神经网络</h1><h2 id="6-1-实例：学习XOR"><a href="#6-1-实例：学习XOR" class="headerlink" title="6.1 实例：学习XOR"></a>6.1 实例：学习XOR</h2><p>采用一个简单的前馈神经网络，一个隐含层，隐含层包含两个单元。</p>
+<p>整个网络为：</p>
+<p>$$f(x;W,c,w,b) = w^Tmax(0,W^Tx+c)+b$$</p>
+<p>隐含层激活函数采用的是ReLU。</p>
+<p>给出一个解：<br>$$W=<br>  \begin{bmatrix}<br>  1 &amp; 1  \\<br>  1 &amp; 1  \\<br>  \end{bmatrix}<br>$$<br>$$c=<br>  \begin{bmatrix}<br>  0   \\<br>  -1   \\<br>  \end{bmatrix}<br>$$<br>$$w=<br>  \begin{bmatrix}<br>  1   \\<br>  -2   \\<br>  \end{bmatrix}<br>$$<br>以及：$$ b = 0 $$</p>
+<h2 id="6-2-基于梯度的学习"><a href="#6-2-基于梯度的学习" class="headerlink" title="6.2 基于梯度的学习"></a>6.2 基于梯度的学习</h2><p>对于前馈神经网络，将所有权重初始化为小的值是很重要的。偏置可以初始化为0或者小的正值。</p>
+<p>第8章介绍迭代的基于梯度的优化算法，<em>8.4节</em>为参数初始化，<br><em>4.3节</em>介绍了一些特别的算法，是对梯度下降思想的改进和提纯。<br>随机梯度下降将算法的改进在<em>5.9节</em>。</p>
+<h3 id="6-2-1-代价函数"><a href="#6-2-1-代价函数" class="headerlink" title="6.2.1 代价函数"></a>6.2.1 代价函数</h3><p>大多数情况下，参数模型定义了一个分布$p(y|x;\theta)$，并且简单地使用<strong>最大似然</strong>原理。<br>使用训练数据和模型预测间的交叉熵作为代价函数。</p>
+<p>完整的代价函数 = 基本代价函数 + 正则项。</p>
+<p>最流行的正则化策略：<strong>权重衰减</strong>（weight decay）。</p>
+<p><em>第7章</em>介绍更高级的正则化策略。</p>
+<h4 id="6-2-1-1-使用最大似然学习条件分布"><a href="#6-2-1-1-使用最大似然学习条件分布" class="headerlink" title="6.2.1.1 使用最大似然学习条件分布"></a>6.2.1.1 使用最大似然学习条件分布</h4><p>使用最大似然训练意味着代价函数就是负的对数似然。</p>
+<p>负的对数似然 = 训练数据和模型分布间的交叉熵 。</p>
+<p>代价函数为：</p>
+<p>$$J(\theta) = E_{x,\; y \sim \hat P_{data}} logP_{model}(y|x)  $$</p>
+<p>代价函数的具体形式取决于模型$logP_{model}$的具体形式。展开后的代价函数，可以舍去其中不依赖于模型的参数。</p>
+<p>如果有：$$P_{model}(y|x)  = N(y;f(x;\theta),I) $$</p>
+<p>就可以得到均方误差代价：</p>
+<p>$$J(\theta) = \frac{1}{2} E_{x,\; y \sim \hat P_{data}} || y-f(x;\theta )||^2 +\text{const}  $$</p>
+<p>代价函数的梯度必须足够大和具有足够的预测性，来为学习算法提供一个好的指引。</p>
+<p><strong>饱和</strong>（变得非常平）的函数破坏了这一目标，梯度非常小。该情况很常见是因为隐藏单元或输出单元的激活函数会饱和。</p>
+<h4 id="6-2-1-2-学习条件统计量"><a href="#6-2-1-2-学习条件统计量" class="headerlink" title="6.2.1.2 学习条件统计量"></a>6.2.1.2 学习条件统计量</h4><p>预测器$f(x;\theta)$，预测y的均值。</p>
+<p>代价泛函(可以表示一大类函数中的任何一个函数，仅仅被一些特征所限制，而不是具有特殊的参数形式)。 <strong>泛函是指函数到实数的映射</strong>。</p>
+<p>对函数求解问题需要用到<strong>变分法</strong>(19.4.2节)。</p>
+<p>变分法导出的第一个结果是解优化问题：<br>$$f^* =\underset{f}{\mathrm{argmin}} E_{x,\; y \sim  P_{data}}|| y-f(x)||^2$$</p>
+<p>得到：<br>$$f^*(x) = E_{ y \sim  P_{data}(y|x)}[y]$$</p>
+<p>最小化均方误差代价函数将得到一个函数，可以用来对每个x的值预测出y的<strong>均值</strong>。</p>
+<p>第二个使用变分法得到的结果是：</p>
+<p>$$f^* =  \underset{f}{\mathrm{argmin}} E_{x,\; y \sim  P_{data}}|| y-f(x)||_1$$</p>
+<p>将得到一个函数可以对每个x预测y取值的<strong>中位数</strong>，只要这个函数在我们要优化的函数族里。这个函数通常被称为<strong>平均绝对误差</strong>(mean absolute error)。最小化平均绝对误差代价函数。</p>
+<p><font color="#FF0000">交叉熵代价函数</font> 比均方误差或者平均绝对误差更受欢迎的原因也在此，饱和的输出单元当结合后两个代价函数时会产生非常小的梯度。</p>
+<h3 id="6-2-2-输出单元"><a href="#6-2-2-输出单元" class="headerlink" title="6.2.2 输出单元"></a>6.2.2 输出单元</h3><p>代价函数的选择：大多数情况下，简单使用数据分布和模型分布间的<font color="#FF0000">交叉熵</font>。</p>
+<p>本节中，假设前馈网络提供了一组定义为$h=f(x;\theta )$的<strong>隐藏特征</strong>。输出层的作用则是随后对这些特征进行额外的变换完成整个网络必须完成的任务。</p>
+<h4 id="6-2-2-1-用于Bernoulli输出分布的sigmoid单元"><a href="#6-2-2-1-用于Bernoulli输出分布的sigmoid单元" class="headerlink" title="6.2.2.1 用于Bernoulli输出分布的sigmoid单元"></a>6.2.2.1 用于Bernoulli输出分布的sigmoid单元</h4><p>两个类的分类问题，即预测二值型变量y。</p>
+<p>最大似然定义y在x条件下的Bernoulli分布。</p>
+<h4 id="6-2-2-2-用于Multinoulli输出分布的softmax单元"><a href="#6-2-2-2-用于Multinoulli输出分布的softmax单元" class="headerlink" title="6.2.2.2 用于Multinoulli输出分布的softmax单元"></a>6.2.2.2 用于Multinoulli输出分布的softmax单元</h4><p>任何时候，当我们想要表示一个具有<strong>n个可能取值的离散型随机变量的分布</strong>时，都可以使用<strong>softmax</strong>函数。</p>
+<p>softmax函数最常用作分类器的输出，来表示n个不同类上的概率分布。</p>
+<p>首先，线性层预测了未归一化的对数概率：<br>$$ z = W^Th+b$$<br>其中，$z_i = log \hat P (y=i|x)$，<code>softmax</code>函数然后对z指数化和归一化来获得需要的$\hat y$。最终，<code>softmax</code>函数的形式为：<br>$$ \text{softmax}(z)_i = \frac{\text{exp}(z_i)}{\sum_j \text{exp}(z_j)}$$</p>
+<p>$$\log \text{softmax(z)}_i = z_i -\log \sum_j \text{exp}(z_j)$$</p>
+<p>关于softmax的解释：这个函数更接近argmax函数而不是max函数。“soft”术语来源于softmax函数是连续可微的。“argmax”函数的结果表示为一个<strong>one-hot向量</strong>（<em>只有一个元素为1，其余元素都为0的向量</em>），不是连续可微的。softmax函数因此提供了argmax的“软化”版本，max函数相应的软化版本是$softmax(z)^Tz$。可能最好是把softmax函数称为“softargmax”，但当前名字已经是一个根深蒂固的习惯了。</p>
 
       
     </div>
@@ -498,7 +514,7 @@ $$
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://qwerty200696.github.io/2017/09/21/markdown_mathjax/" title="hexo博客使用mathjax并解决markdown渲染冲突问题">https://qwerty200696.github.io/2017/09/21/markdown_mathjax/</a>
+    <a href="https://qwerty200696.github.io/2017/09/26/DL/" title="深度学习">https://qwerty200696.github.io/2017/09/26/DL/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -515,11 +531,7 @@ $$
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
-          
-            <a href="/tags/博客/" rel="tag"><i class="fa fa-tag"></i> 博客</a>
-          
-            <a href="/tags/mathjax/" rel="tag"><i class="fa fa-tag"></i> mathjax</a>
+            <a href="/tags/deep-learning/" rel="tag"><i class="fa fa-tag"></i> deep learning</a>
           
         </div>
       
@@ -532,8 +544,8 @@ $$
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/21/optical_flow/" rel="next" title="LK光流法分析及其源码">
-                <i class="fa fa-chevron-left"></i> LK光流法分析及其源码
+              <a href="/2017/09/25/mathjax/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -541,10 +553,6 @@ $$
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/21/opencv_contrib/" rel="prev" title="opencv_contrib安装说明与错误解决方案">
-                opencv_contrib安装说明与错误解决方案 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -783,7 +791,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用MathJax来渲染LaTeX数学公式"><span class="nav-number">1.</span> <span class="nav-text">利用MathJax来渲染LaTeX数学公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathjax与markdown默认渲染冲突"><span class="nav-number">2.</span> <span class="nav-text">mathjax与markdown默认渲染冲突</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#5-机器学习基础"><span class="nav-number">1.</span> <span class="nav-text">5 机器学习基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-8-无监督学习"><span class="nav-number">1.1.</span> <span class="nav-text">5.8 无监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-8-1-主成分分析"><span class="nav-number">1.1.1.</span> <span class="nav-text">5.8.1 主成分分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-8-2-k-均值聚类"><span class="nav-number">1.1.2.</span> <span class="nav-text">5.8.2 k-均值聚类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-10-构建机器学习算法"><span class="nav-number">1.2.</span> <span class="nav-text">5.10 构建机器学习算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-前馈神经网络"><span class="nav-number">2.</span> <span class="nav-text">6 前馈神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-实例：学习XOR"><span class="nav-number">2.1.</span> <span class="nav-text">6.1 实例：学习XOR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-基于梯度的学习"><span class="nav-number">2.2.</span> <span class="nav-text">6.2 基于梯度的学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-1-代价函数"><span class="nav-number">2.2.1.</span> <span class="nav-text">6.2.1 代价函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-1-1-使用最大似然学习条件分布"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">6.2.1.1 使用最大似然学习条件分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-1-2-学习条件统计量"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">6.2.1.2 学习条件统计量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-2-输出单元"><span class="nav-number">2.2.2.</span> <span class="nav-text">6.2.2 输出单元</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-2-1-用于Bernoulli输出分布的sigmoid单元"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">6.2.2.1 用于Bernoulli输出分布的sigmoid单元</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-2-2-用于Multinoulli输出分布的softmax单元"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">6.2.2.2 用于Multinoulli输出分布的softmax单元</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
