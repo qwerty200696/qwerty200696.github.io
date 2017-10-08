@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="批处理," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web_icon.jpg?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="‎ 前言在这里，先解释什么是DOS？ DOS，即Disk Operation System，磁盘操作系统。 命令行就是在Windows操作系统中打开DOS窗口，以字符串的形式执行Windows管理程序。 那么，我们如何进入命令行窗口？ 开始–&amp;gt;运行–&amp;gt;键入”cmd”，回车即可。 阅读本文需要一定的dos基础概念，例如：盘符、文件、目录(文件夹)、子目录、根目录、当前目录 每个命令的完整">
+<meta name="keywords" content="批处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="批处理的常用命令及用法">
+<meta property="og:url" content="https://qwerty200696.github.io/2017/10/05/batch_file_usage/index.html">
+<meta property="og:site_name" content="王立杰的博客">
+<meta property="og:description" content="‎ 前言在这里，先解释什么是DOS？ DOS，即Disk Operation System，磁盘操作系统。 命令行就是在Windows操作系统中打开DOS窗口，以字符串的形式执行Windows管理程序。 那么，我们如何进入命令行窗口？ 开始–&amp;gt;运行–&amp;gt;键入”cmd”，回车即可。 阅读本文需要一定的dos基础概念，例如：盘符、文件、目录(文件夹)、子目录、根目录、当前目录 每个命令的完整">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-08T14:16:27.522Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="批处理的常用命令及用法">
+<meta name="twitter:description" content="‎ 前言在这里，先解释什么是DOS？ DOS，即Disk Operation System，磁盘操作系统。 命令行就是在Windows操作系统中打开DOS窗口，以字符串的形式执行Windows管理程序。 那么，我们如何进入命令行窗口？ 开始–&amp;gt;运行–&amp;gt;键入”cmd”，回车即可。 阅读本文需要一定的dos基础概念，例如：盘符、文件、目录(文件夹)、子目录、根目录、当前目录 每个命令的完整">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qwerty200696.github.io/2017/10/05/batch_file_usage/"/>
+
+
+
+
+<link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
+
+  <title>批处理的常用命令及用法 | 王立杰的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?61acd986303bc926826d2eec81dbbdff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    
+	<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王立杰的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">积跬步以至千里！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-留言板">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-newspaper-o"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/10/05/batch_file_usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王立杰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">批处理的常用命令及用法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-05T16:36:45+08:00">
+                2017-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/批处理/" itemprop="url" rel="index">
+                    <span itemprop="name">批处理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+	  
+          
+            
+          
+
+          
+          
+             <span id="/2017/10/05/batch_file_usage/" class="leancloud_visitors" data-flag-title="批处理的常用命令及用法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4,640
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>‎</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在这里，先解释什么是DOS？</p>
+<p>DOS，即Disk Operation System，磁盘操作系统。</p>
+<p>命令行就是在Windows操作系统中打开DOS窗口，以字符串的形式执行Windows管理程序。</p>
+<p>那么，我们如何进入命令行窗口？</p>
+<p>开始–&gt;运行–&gt;键入”cmd”，回车即可。</p>
+<p>阅读本文需要一定的dos基础概念，例如：盘符、文件、目录(文件夹)、子目录、根目录、当前目录</p>
+<p>每个命令的完整说明请加 /? 参数参考微软的帮助文档可以看到。</p>
+<p>注：如果对某一命令还不是很熟悉，可以在命令行窗口下输入：命令名/?的方式来获得帮助。</p>
+<p>例如：对dir命令的应用不熟悉，可以在命令行窗口下输入：</p>
+<p><code>dir /?</code></p>
+<h2 id="1-echo-和-回显控制命令"><a href="#1-echo-和-回显控制命令" class="headerlink" title="1 echo 和 @回显控制命令"></a>1 echo 和 @回显控制命令</h2><pre><code>@                    #关闭单行回显
+echo off             #从下一行开始关闭回显
+@echo off            #从本行开始关闭回显。一般批处理第一行都是这个
+echo on              #从下一行开始打开回显
+echo                 #显示当前是 echo off 状态还是 echo on 状态
+echo.                #输出一个&quot;回车换行&quot;，一般就是指空白行
+echo hello world     #输出hello world
+</code></pre><p>“关闭回显”是指运行批处理文件时，不显示文件里的每条命令，只显示运行结果。批处理开始和结束时，系统都会自动打开回显</p>
+<h2 id="2-errorlevel程序返回码"><a href="#2-errorlevel程序返回码" class="headerlink" title="2 errorlevel程序返回码"></a>2 errorlevel程序返回码</h2><pre><code>echo %errorlevel%
+</code></pre><p>每个命令运行结束，可以用这个命令行格式查看返回码用于判断刚才的命令是否执行成功默认值为0，</p>
+<p>一般命令执行出错会设 errorlevel 为1</p>
+<h2 id="3-dir显示目录中的文件和子目录列表"><a href="#3-dir显示目录中的文件和子目录列表" class="headerlink" title="3 dir显示目录中的文件和子目录列表"></a>3 dir显示目录中的文件和子目录列表</h2><pre><code>dir                 #显示当前目录中的文件和子目录
+dir /a              #显示当前目录中的文件和子目录，包括隐藏文件和系统文件
+dir c: /a:d         #显示 C 盘当前目录中的目录
+dir c:\ /a:-d       #显示 C 盘根目录中的文件
+dir d:\mp3 /b/p     #逐屏显示 d:\mp3 目录里的文件，只显示文件名，不显示时间和大小
+
+dir *.exe /s        #显示当前目录和子目录里所有的.exe文件。
+</code></pre><p>其中 <em> 是通配符，代表所有的文件名，还有一个通配符 ? 代表一个任意字母或汉字。如 `c</em>.*<code>代表以 c 开头的所有文件。</code>?.exe` 代表所有文件名是一个字母的.exe文件。</p>
+<p>如果指定的目录或文件不存在，将返回 <code>errorlevel</code> 为1;每个文件夹的 dir 输出都会有2个子目录<code>.</code>和<code>..</code>。<code>.</code> 代表当前目录， <code>..</code> 代表当前目录的上级目录。</p>
+<pre><code>dir .               #显示当前目录中的文件和子目录
+dir ..              #显示当前目录的上级目录中的文件和子目录
+</code></pre><p>其它参数可参考<code>dir /?</code></p>
+<h2 id="4-cd更改当前目录"><a href="#4-cd更改当前目录" class="headerlink" title="4 cd更改当前目录"></a>4 cd更改当前目录</h2><pre><code>cd mp3              #进入当前目录中的mp3 目录
+cd ..               #进入当前目录中的上级目录
+cd\                 #进入根目录
+cd                  #显示当前目录
+cd /d d:\mp3        #可以同时更改盘符和目录
+cd &quot;Documents and Settings&quot;\All users
+</code></pre><p>文件名带空格，路径前需要加上引号！！如果更改到的目录不存在，则出错返回 <code>errorlevel=1</code></p>
+<p><code>cd /d d:</code> 更改盘符需要加上/d参数。</p>
+<h2 id="5-md创建目录"><a href="#5-md创建目录" class="headerlink" title="5 md创建目录"></a>5 md创建目录</h2><pre><code>md abc              #在当前目录里建立子目录 abc
+md d:\a\b\c         #如果 d:\a 不存在，将会自动创建
+</code></pre><h2 id="6-rd删除目录"><a href="#6-rd删除目录" class="headerlink" title="6 rd删除目录"></a>6 rd删除目录</h2><pre><code>rd abc              #删除当前目录里的 abc 子目录，要求为空目录
+rd /s/q d:\temp     #删除 d:\temp 文件夹及其子文件夹和文件，不需要按 Y 确认
+</code></pre><h2 id="7-del删除文件"><a href="#7-del删除文件" class="headerlink" title="7 del删除文件"></a>7 del删除文件</h2><pre><code>del d:\test.txt     #删除指定文件，不能是隐藏、系统、只读文件
+del *.*删除当前目录里的所有文件，不包括隐藏、系统、只读文件，要求按 Y 确认
+del /q/a/f d:\temp\*.*删除 d:\temp 文件夹里面的所有文件，包括隐藏、只读、系统文件，不包括子目录
+del /q/a/f/s d:\temp\*.*删除 d:\temp 及子文件夹里面的所有文件，包括隐藏、只读、系统文件，不包括子目录
+</code></pre><h2 id="8-ren文件重命名"><a href="#8-ren文件重命名" class="headerlink" title="8 ren文件重命名"></a>8 ren文件重命名</h2><pre><code>ren 1.txt 2.bak     #把 1.txt 更名为 2.bak
+ren *.txt *.ini     #把当前目录里所有.txt文件改成.ini文件
+ren d:\temp tmp     #支持对文件夹的重命名
+</code></pre><h2 id="9-cls清屏"><a href="#9-cls清屏" class="headerlink" title="9 cls清屏"></a>9 cls清屏</h2><h2 id="10-type显示文件内容"><a href="#10-type显示文件内容" class="headerlink" title="10 type显示文件内容"></a>10 type显示文件内容</h2><pre><code>type c:\boot.ini    #显示指定文件的内容，程序文件一般会显示乱码
+type *.txt          #显示当前目录里所有.txt文件的内容
+</code></pre><h2 id="11-copy拷贝文件"><a href="#11-copy拷贝文件" class="headerlink" title="11 copy拷贝文件"></a>11 copy拷贝文件</h2><pre><code>copy c:\test.txt d:\         #复制 c:\test.txt 文件到 d:\
+copy c:\test.txt d:\test.bak #复制 c:\test.txt 文件到 d:\ ，并重命名为 test.bak
+copy c:\*.*                  #复制 c:\ 所有文件到当前目录，不包括隐藏文件和系统文件不指定目标路径，则默认目标路径为当前目录
+copy con test.txt            #从屏幕上等待输入，按 Ctrl+Z 结束输入，输入内容存为test.txt文件con代表屏幕，prn代表打印机，nul代表空设备
+copy 1.txt + 2.txt 3.txt     #合并 1.txt 和 2.txt 的内容，保存为 3.txt 文件如果不指定 3.txt ，则保存到 1.txt
+copy test.txt +              #复制文件到自己，实际上是修改了文件日期
+</code></pre><h2 id="12-title设置cmd窗口的标题"><a href="#12-title设置cmd窗口的标题" class="headerlink" title="12 title设置cmd窗口的标题"></a>12 title设置cmd窗口的标题</h2><pre><code>title 新标题        #可以看到cmd窗口的标题栏变了
+</code></pre><h2 id="13-ver显示系统版本"><a href="#13-ver显示系统版本" class="headerlink" title="13 ver显示系统版本"></a>13 ver显示系统版本</h2><h2 id="14-label-和-vol设置卷标"><a href="#14-label-和-vol设置卷标" class="headerlink" title="14 label 和 vol设置卷标"></a>14 label 和 vol设置卷标</h2><pre><code>vol                 #显示卷标
+label               #显示卷标，同时提示输入新卷标
+label c:system      #设置C盘的卷标为 system
+</code></pre><h2 id="15-pause暂停命令"><a href="#15-pause暂停命令" class="headerlink" title="15 pause暂停命令"></a>15 pause暂停命令</h2><p>运行该命令时，将显示下面的消息：请按任意键继续 . . .<br>一般用于看清楚屏幕上显示的内容</p>
+<h2 id="16-rem-和-注释命令"><a href="#16-rem-和-注释命令" class="headerlink" title="16 rem 和 ::注释命令"></a>16 rem 和 ::注释命令</h2><p>注释行，不执行操作</p>
+<h2 id="17-date-和-time日期和时间"><a href="#17-date-和-time日期和时间" class="headerlink" title="17 date 和 time日期和时间"></a>17 date 和 time日期和时间</h2><pre><code>date          #显示当前日期，并提示输入新日期，按&quot;回车&quot;略过输入
+date/t        #只显示当前日期，不提示输入新日期
+time          #显示当前时间，并提示输入新时间，按&quot;回车&quot;略过输入
+time/t        #只显示当前时间，不提示输入新时间
+</code></pre><h2 id="18-goto-和-跳转命令"><a href="#18-goto-和-跳转命令" class="headerlink" title="18 goto 和 :跳转命令"></a>18 goto 和 :跳转命令</h2><pre><code>:label        #行首为:表示该行是标签行，标签行不执行操作
+goto label    #跳转到指定的标签那一行
+</code></pre><h2 id="19-find-外部命令-查找命令"><a href="#19-find-外部命令-查找命令" class="headerlink" title="19 find (外部命令)查找命令"></a>19 find (外部命令)查找命令</h2><pre><code>find &quot;abc&quot; c:\test.txt在 c:\test.txt 文件里查找含 abc 字符串的行如果找不到，将设 errorlevel 返回码为1
+find /i &quot;abc&quot; c:\test.txt查找含 abc 的行，忽略大小写
+find /c &quot;abc&quot; c:\test.txt显示含 abc 的行的行数
+</code></pre><h2 id="20-more-外部命令-逐屏显示"><a href="#20-more-外部命令-逐屏显示" class="headerlink" title="20 more (外部命令)逐屏显示"></a>20 more (外部命令)逐屏显示</h2><pre><code>more c:\test.txt    #逐屏显示 c:\test.txt 的文件内容
+</code></pre><h2 id="21-tree显示目录结构"><a href="#21-tree显示目录结构" class="headerlink" title="21 tree显示目录结构"></a>21 tree显示目录结构</h2><pre><code>tree d:\            #显示D盘的文件目录结构
+</code></pre><h2 id="22-amp-顺序执行多条命令，而不管命令是否执行成功"><a href="#22-amp-顺序执行多条命令，而不管命令是否执行成功" class="headerlink" title="22 &amp;顺序执行多条命令，而不管命令是否执行成功"></a>22 &amp;顺序执行多条命令，而不管命令是否执行成功</h2><pre><code>c: &amp; cd\ &amp; dir /w   #相当于把下面3行命令写到1行去了c:cd\dir /w
+</code></pre><h2 id="23-amp-amp-顺序执行多条命令，当碰到执行出错的命令后将不执行后面的命令"><a href="#23-amp-amp-顺序执行多条命令，当碰到执行出错的命令后将不执行后面的命令" class="headerlink" title="23 &amp;&amp;顺序执行多条命令，当碰到执行出错的命令后将不执行后面的命令"></a>23 &amp;&amp;顺序执行多条命令，当碰到执行出错的命令后将不执行后面的命令</h2><pre><code>f: &amp;&amp; cd\ &amp;&amp; dir &gt;c:\test.txt #注意如果f盘不存在，那么后面2条命令将不会执行
+find &quot;ok&quot; c:\test.txt &amp;&amp; echo 成功  #如果找到了&quot;ok&quot;字样，就显示&quot;成功&quot;，找不到就不显示
+</code></pre><h2 id="24-顺序执行多条命令，当碰到执行正确的命令后将不执行后面的命令"><a href="#24-顺序执行多条命令，当碰到执行正确的命令后将不执行后面的命令" class="headerlink" title="24 ||顺序执行多条命令，当碰到执行正确的命令后将不执行后面的命令"></a>24 ||顺序执行多条命令，当碰到执行正确的命令后将不执行后面的命令</h2><pre><code>find &quot;ok&quot; c:\test.txt || echo 不成功  #如果找不到&quot;ok&quot;字样，就显示&quot;不成功&quot;，找到了就不显示
+</code></pre><h2 id="25-管道命令"><a href="#25-管道命令" class="headerlink" title="25 |管道命令"></a>25 |管道命令</h2><p>前一个命令的执行结果输出到后一个命令</p>
+<pre><code>dir *.* /s/a | find /c &quot;.exe&quot;
+</code></pre><p>管道命令表示先执行 dir 命令，对其输出的结果执行后面的 find 命令该命令行结果：输出当前文件夹及所有子文件夹里的.exe文件的个数</p>
+<pre><code>type c:\test.txt|more 这个和 more c:\test.txt 的效果是一样的
+</code></pre><h2 id="26-gt-和-gt-gt-输出重定向命令"><a href="#26-gt-和-gt-gt-输出重定向命令" class="headerlink" title="26 &gt; 和 &gt;&gt;输出重定向命令"></a>26 &gt; 和 &gt;&gt;输出重定向命令</h2><pre><code>&gt; 清除文件中原有的内容后再写入
+
+&gt;&gt; 追加内容到文件末尾，而不会清除原有的内容主要将本来显示在屏幕上的内容输出到指定文件中指定文件如果不存在，则自动生成该文件
+
+echo hello world&gt;c:\test.txt生成c:\test.txt文件，内容为hello world这个格式在批处理文件里用得很多，可以成 .reg .bat .vbs 等临时文件
+
+type c:\test.txt &gt;prn屏幕上不显示文件内容，转向输出到打印机
+echo hello world&gt;con在屏幕上显示hello world，实际上所有输出都是默认 &gt;con 的
+copy c:\test.txt f: &gt;nul拷贝文件，并且不显示&quot;文件复制成功&quot;的提示信息，但如果f盘不存在，还是会显示出错信息
+copy c:\test.txt f: &gt;nul 2&gt;nul不显示&quot;文件复制成功&quot;的提示信息，并且f盘不存在的话，也不显示错误提示信息
+echo ^^W ^&gt; ^W&gt;c:\test.txt生成的文件内容为 ^W &gt; W^ 和 &gt; 是控制命令，要把它们输出到文件，必须在前面加个 ^ 符号
+</code></pre><h2 id="27-lt-从文件中获得输入信息，而不是从屏幕上"><a href="#27-lt-从文件中获得输入信息，而不是从屏幕上" class="headerlink" title="27 &lt;从文件中获得输入信息，而不是从屏幕上"></a>27 &lt;从文件中获得输入信息，而不是从屏幕上</h2><p>一般用于 date time label 等需要等待输入的命令</p>
+<pre><code>@echo offecho 2005-05-01&gt;temp.txtdate &lt;temp.txtdel temp.txt这样就可以不等待输入直接修改当前日期
+</code></pre><h2 id="28-命令行传递给批处理参数"><a href="#28-命令行传递给批处理参数" class="headerlink" title="28 命令行传递给批处理参数"></a>28 命令行传递给批处理参数</h2><p>%0 %1 %2 %3 %4 %5 %6 %7 %8 %9 %<em>命令行传递给批处理的参数<br>%0 批处理文件本身%1 第一个参数%9 第九个参数%</em> 从第一个参数开始的所有参数在C盘根目录新建test.bat，内容如下：</p>
+<pre><code>@echo off
+echo %0
+echo %1
+echo %2
+echo %*
+</code></pre><p>运行cmd，输入 <code>c:\test.bat &quot;/a&quot; /b /c /d</code>可以看出每个参数的含意</p>
+<p>修改test.bat内容如下</p>
+<pre><code>@echo off
+echo %1
+echo %~1
+echo %0
+echo %~f0
+echo %~d0
+echo %~p0
+echo %~n0
+echo %~x0
+echo %~s0
+echo %~a0
+echo %~t0
+echo %~z0
+</code></pre><p>再运行cmd，输入 c:\test.bat “/a” /b /c /d可以参照 call/? 或 for/? 看出每个参数的含意。注意这里可以对文件进行日期比较和大小比较</p>
+<pre><code>echo load &quot;%%1&quot; &quot;%%2&quot;&gt;c:\test.txt
+</code></pre><p>生成的文件内容为 load “%1” “%2”<br>批处理文件里，用这个格式把命令行参数输出到文件</p>
+<h2 id="31-set设置变量"><a href="#31-set设置变量" class="headerlink" title="31 set设置变量"></a>31 set设置变量</h2><p>引用变量可在变量名前后加 % ，即 %变量名%</p>
+<pre><code>set                    #显示目前所有可用的变量，包括系统变量和自定义的变量
+echo %SystemDrive%     #显示系统盘盘符。系统变量可以直接引用
+set p                  #显示所有以p开头的变量，要是一个也没有就设errorlevel=1
+set p=aa1bb1aa2bb2     #设置变量p，并赋值为 = 后面的字符串，即aa1bb1aa2bb2
+echo %p%               #显示变量p代表的字符串，即aa1bb1aa2bb2
+echo %p:~6%            #显示变量p中第6个字符以后的所有字符，即aa2bb2
+echo %p:~6,3%          #显示第6个字符以后的3个字符，即aa2
+echo %p:~0,3%          #显示前3个字符，即aa1
+echo %p:~-2%           #显示最后面的2个字符，即b2
+echo %p:~0,-2%         #显示除了最后2个字符以外的其它字符，即aa1bb1aa2b
+echo %p:aa=c%          #用c替换变量p中所有的aa，即显示c1bb1c2bb2
+echo %p:aa=%           #将变量p中的所有aa字符串置换为空，即显示1bb12bb2
+echo %p:*bb=c%         #第一个bb及其之前的所有字符被替换为c，即显示c1aa2bb2
+set p=%p:*bb=c%        #设置变量p，赋值为 %p:*bb=c% ，即c1aa2bb2
+set /a p=39            #设置p为数值型变量，值为39
+set /a p=39/10         #支持运算符，有小数时用去尾法，39/10=3.9，去尾得3，p=3
+set /a p=p/10          #用 /a 参数时，在 = 后面的变量可以不加%直接引用
+set /a p=&quot;1&amp;0&quot;         #&quot;与&quot;运算，要加引号。其它支持的运算符参见set/?
+set p=                 #取消p变量
+set /p p=请输入         #屏幕上显示&quot;请输入&quot;，并会将输入的字符串赋值给变量p注意这条可以用来取代 choice 命令
+</code></pre><p>注意变量在 if 和 for 的复合语句里是一次性全部替换的，如</p>
+<pre><code>@echo off
+set p=aaa
+if %p%==aaa (    
+  echo %p%   
+  set p=bbb    
+  echo %p%    )
+</code></pre><p>结果将显示aaaaaa因为在读取 if 语句时已经将所有 %p% 替换为aaa这里的”替换”，在 /? 帮助里就是指”扩充”、”环境</p>
+<p>变量扩充”可以启用”延缓环境变量扩充”，用 ! 来引用变量，即 !变量名!</p>
+<pre><code>@echo off
+SETLOCAL ENABLEDELAYEDEXPANSION
+set p=aaaif %p%==aaa (  
+  echo %p%    
+set p=bbb    
+echo !p!    )
+ENDLOCAL
+</code></pre><p>结果将显示aaabbb<br>还有几个动态变量，运行 set 看不到<br>    %CD%                  #代表当前目录的字符串<br>    %DATE%                #当前日期<br>    %TIME%                #当前时间<br>    %RANDOM%              #随机整数，介于0~32767<br>    %ERRORLEVEL%          #当前ERRORLEVEL 值<br>    %CMDEXTVERSION%       #当前命令处理器扩展名版本号<br>    %CMDCMDLINE%          #调用命令处理器的原始命令行可以用echo命令查看每个变量值，如 echo %time%注意 %time% 精确到毫秒，在批处理需要延时处理时可以用到</p>
+<h2 id="32-start调用外部程序"><a href="#32-start调用外部程序" class="headerlink" title="32 start调用外部程序"></a>32 start调用外部程序</h2><p>批处理中调用外部程序的命令，否则等外部程序完成后才继续执行剩下的指令</p>
+<pre><code>start explorer d:\调用图形界面打开D盘
+@echo off cd /d %~dp0regedit /s 劲舞团.regstart patcher.exe
+</code></pre><p>不加 start 命令的话，”劲舞团”运行时，后面会有个黑乎乎的cmd窗口</p>
+<h2 id="33-call调用另外一个批处理"><a href="#33-call调用另外一个批处理" class="headerlink" title="33 call调用另外一个批处理"></a>33 call调用另外一个批处理</h2><p>批处理中调用另外一个批处理的命令，否则剩下的批处理指令将不会被执行有时有的应用程序用start调用出错的，也可以call调用</p>
+<h2 id="34-choice-外部命令"><a href="#34-choice-外部命令" class="headerlink" title="34 choice (外部命令)"></a>34 choice (外部命令)</h2><p>选择命令让用户输入一个字符，从而选择运行不同的命令，返回码errorlevel为1234……win98里</p>
+<p>是choice.com win2000pro里没有，可以从win98里拷过来win2003里是choice.exechoice /N /C y /T 5 /D y&gt;nul延时5秒</p>
+<p>下面是个 choice 语句的例子<br>    @echo off<br>    rem 以下在win2000pro运行通过，从win98里拷的chioce.com文件<br>    choice /c:abc aaa,bbb,ccc<br>    if errorlevel 3 goto ccc<br>    if %errorlevel%==2 goto bbb<br>    if errorlevel==1 goto aaa<br>rem 必须先判断数值高的返回码rem 可以看到 errorlevel 值的判断有3种写法，有时某种写法不好用，可以用另外的写法<br>rem 直接运行</p>
+<p>chioce相当于运行</p>
+<pre><code>choice /c:yn:aaa
+echo aaa
+goto end
+:bbb
+echo bbb
+goto end
+:ccc
+echo ccc
+goto end
+:end
+</code></pre><h2 id="35-assoc-和-ftype文件关联"><a href="#35-assoc-和-ftype文件关联" class="headerlink" title="35 assoc 和 ftype文件关联"></a>35 assoc 和 ftype文件关联</h2><p>assoc 设置’文件扩展名’关联，关联到’文件类型’ftype 设置’文件类型’关联，关联到’执行程序和参数’</p>
+<p>当你双击一个.txt文件时，windows并不是根据.txt直接判断用 notepad.exe 打开而是先判断.txt属于 txtfile ‘文件类型’再调用 txtfile 关联的命令行 txtfile=%SystemRoot%\system32\NOTEPAD.EXE %1</p>
+<p>可以在”文件夹选项”→”文件类型”里修改这2种关联</p>
+<pre><code>assoc           #显示所有&apos;文件扩展名&apos;关联
+assoc .txt      #显示.txt代表的&apos;文件类型&apos;，结果显示 .txt=txtfile
+assoc .doc      #显示.doc代表的&apos;文件类型&apos;，结果显示 .doc=Word.Document.8
+assoc .exe      #显示.exe代表的&apos;文件类型&apos;，结果显示 .exe=exefile
+ftype           #显示所有&apos;文件类型&apos;关联
+ftype exefile   #显示exefile类型关联的命令行，结果显示 exefile=&quot;%1&quot; %* assoc .txt=Word.Document.8设置.txt为word类型的文档，可以看到.txt文件的图标都变了
+assoc .txt=txtfile恢复.txt的正确关联 ftype exefile=&quot;%1&quot; %*恢复 exefile 的正确关联
+</code></pre><p>如果该关联已经被破坏，可以运行 command.com ，再输入这条命令</p>
+<h2 id="36-pushd-和-popd切换当前目录"><a href="#36-pushd-和-popd切换当前目录" class="headerlink" title="36 pushd 和 popd切换当前目录"></a>36 pushd 和 popd切换当前目录</h2><pre><code>@echo off
+c: &amp; cd\ &amp; md mp3       #在 C:\ 建立 mp3 文件夹
+md d:\mp4               #在 D:\ 建立 mp4 文件夹
+cd /d d:\mp4            #更改当前目录为 d:\mp4
+pushd c:\mp3            #保存当前目录，并切换当前目录为 c:\mp3
+popd                    #恢复当前目录为刚才保存的 d:\mp4一般用处不大，在当前目录名不确定时，会有点帮助
+</code></pre><h2 id="37-subst-外部命令-映射磁盘。"><a href="#37-subst-外部命令-映射磁盘。" class="headerlink" title="37 subst (外部命令)映射磁盘。"></a>37 subst (外部命令)映射磁盘。</h2><pre><code>subst z: \\server\d     #这样输入z:就可以访问\\server\d了
+subst z: /d             #取消该映射
+subst                   #显示目前所有的映射
+</code></pre><h2 id="38-xcopy-外部命令-文件拷贝"><a href="#38-xcopy-外部命令-文件拷贝" class="headerlink" title="38  xcopy (外部命令)文件拷贝"></a>38  xcopy (外部命令)文件拷贝</h2><pre><code>xcopy d:\mp3 e:\mp3 /s/e/i/y  #复制 d:\mp3 文件夹、所有子文件夹和文件到 e:\ ，覆盖已有文件。加 /i 表示如果 e:\ 没有 mp3 文件夹就自动新建一个，否则会有询问
+</code></pre><h2 id="39-一些不常用的内部命令"><a href="#39-一些不常用的内部命令" class="headerlink" title="39 一些不常用的内部命令"></a>39 一些不常用的内部命令</h2><pre><code>&gt;&amp; 将一个句柄的输出写入到另一个句柄的输入中
+&lt;&amp; 从一个句柄读取输入并将其写入到另一个句柄输出中shift 命令行传递给批处理的参数不止9个时，用以切换参数color 设置cmd窗口的显示颜色
+pormpt 更改命令提示符号，默认都是 盘符:\路径\&gt; ，如 c:\&gt;
+</code></pre><h2 id="40-format-外部命令-格式化硬盘"><a href="#40-format-外部命令-格式化硬盘" class="headerlink" title="40 format (外部命令)格式化硬盘"></a>40 format (外部命令)格式化硬盘</h2><pre><code>format c: /q/u/autotest/q表示快速格式化，/autotest表示自动格式化，不需要按 Y 确认/u表示每字节用 
+
+F6 覆盖硬盘数据，使其不可用软件恢复format c: /c格式化C盘，并检测坏道
+</code></pre><h2 id="41-fdisk-外部命令-硬盘分区win2000不带"><a href="#41-fdisk-外部命令-硬盘分区win2000不带" class="headerlink" title="41 fdisk (外部命令)硬盘分区win2000不带"></a>41 fdisk (外部命令)硬盘分区win2000不带</h2><p>该命令win98里的fdisk不支持80G以上大硬盘，winme里的支持fdisk/mbr重建硬盘分区表，一般用于清除引导区病毒、还原精灵注意使用该命令不能从硬盘启动，必须软驱或光驱启动后直接运行</p>
+<h2 id="42-ping-外部命令"><a href="#42-ping-外部命令" class="headerlink" title="42 ping (外部命令)"></a>42 ping (外部命令)</h2><pre><code>ping -l 65500 -t 192.168.1.200不停的向192.168.1.200计算机发送大小为65500byte的数据包
+ping -n 10 127.0.0.1&gt;nulping自己10次，可用于批处理延时10秒
+</code></pre><h2 id="43-SC-外部命令-服务控制命令"><a href="#43-SC-外部命令-服务控制命令" class="headerlink" title="43 SC (外部命令)服务控制命令"></a>43 SC (外部命令)服务控制命令</h2><pre><code>sc create aaa displayname= bbb start= auto binpath= &quot;C:\WINDOWS\System32\alg.exe&quot;创建服务，服务名称aaa，显示名称bbb，启动类型:自动可执行文件的路径&quot;C:\WINDOWS\System32\alg.exe&quot;
+sc description aaa &quot;ccc&quot;更改aaa的描述为ccc
+sc config aaa start= disabled binpath= &quot;C:\WINDOWS\System32\svchost.exe -k netsvcs&quot;更改aaa的启动类型:已禁用更改aaa的可执行文件的路径&quot;C:\WINDOWS\System32\svchost.exe -k netsvcs&quot;
+sc config aaa start= demand displayname= ddd更改aaa的启动类型:手动更改aaa的显示名称ddd
+sc start aaa启动aaa服务
+sc stop aaa停止aaa服务
+sc delete aaa删除aaa服务
+</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="http://bbs.bathome.net/thread-39-1-1.html" target="_blank" rel="external">http://bbs.bathome.net/thread-39-1-1.html</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://qwerty200696.github.io/2017/10/05/batch_file_usage/" title="批处理的常用命令及用法">https://qwerty200696.github.io/2017/10/05/batch_file_usage/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/批处理/" rel="tag"><i class="fa fa-tag"></i> 批处理</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/26/DL_chap_5/" rel="next" title="深度学习第五章：机器学习基础">
+                <i class="fa fa-chevron-left"></i> 深度学习第五章：机器学习基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/08/DL_chap_6/" rel="prev" title="深度学习第六章：前馈神经网络">
+                深度学习第六章：前馈神经网络 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/head_icon.jpg"
+              alt="wangwlj" />
+          
+            <p class="site-author-name" itemprop="name">wangwlj</p>
+            <p class="site-description motion-element" itemprop="description">所谓王者，必卓然特立，争当人杰。</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/qwerty200696" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/LijieWang" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-gratipay"></i>知乎</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/3280603012" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>微博</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                  
+                    <i class="fa fa-fw fa-google"></i>Google</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/yourname" target="_blank" title="FB Page">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://youtube.com/yourname" target="_blank" title="YouTube">
+                  
+                    <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://instagram.com/yourname" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qq_31196849" title="小草莓" target="_blank">小草莓</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qingkong1994" title="qingkong" target="_blank">qingkong</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-echo-和-回显控制命令"><span class="nav-number">2.</span> <span class="nav-text">1 echo 和 @回显控制命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-errorlevel程序返回码"><span class="nav-number">3.</span> <span class="nav-text">2 errorlevel程序返回码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-dir显示目录中的文件和子目录列表"><span class="nav-number">4.</span> <span class="nav-text">3 dir显示目录中的文件和子目录列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-cd更改当前目录"><span class="nav-number">5.</span> <span class="nav-text">4 cd更改当前目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-md创建目录"><span class="nav-number">6.</span> <span class="nav-text">5 md创建目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-rd删除目录"><span class="nav-number">7.</span> <span class="nav-text">6 rd删除目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-del删除文件"><span class="nav-number">8.</span> <span class="nav-text">7 del删除文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-ren文件重命名"><span class="nav-number">9.</span> <span class="nav-text">8 ren文件重命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-cls清屏"><span class="nav-number">10.</span> <span class="nav-text">9 cls清屏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-type显示文件内容"><span class="nav-number">11.</span> <span class="nav-text">10 type显示文件内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-copy拷贝文件"><span class="nav-number">12.</span> <span class="nav-text">11 copy拷贝文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-title设置cmd窗口的标题"><span class="nav-number">13.</span> <span class="nav-text">12 title设置cmd窗口的标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-ver显示系统版本"><span class="nav-number">14.</span> <span class="nav-text">13 ver显示系统版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-label-和-vol设置卷标"><span class="nav-number">15.</span> <span class="nav-text">14 label 和 vol设置卷标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-pause暂停命令"><span class="nav-number">16.</span> <span class="nav-text">15 pause暂停命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-rem-和-注释命令"><span class="nav-number">17.</span> <span class="nav-text">16 rem 和 ::注释命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-date-和-time日期和时间"><span class="nav-number">18.</span> <span class="nav-text">17 date 和 time日期和时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-goto-和-跳转命令"><span class="nav-number">19.</span> <span class="nav-text">18 goto 和 :跳转命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-find-外部命令-查找命令"><span class="nav-number">20.</span> <span class="nav-text">19 find (外部命令)查找命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20-more-外部命令-逐屏显示"><span class="nav-number">21.</span> <span class="nav-text">20 more (外部命令)逐屏显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21-tree显示目录结构"><span class="nav-number">22.</span> <span class="nav-text">21 tree显示目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#22-amp-顺序执行多条命令，而不管命令是否执行成功"><span class="nav-number">23.</span> <span class="nav-text">22 &顺序执行多条命令，而不管命令是否执行成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#23-amp-amp-顺序执行多条命令，当碰到执行出错的命令后将不执行后面的命令"><span class="nav-number">24.</span> <span class="nav-text">23 &&顺序执行多条命令，当碰到执行出错的命令后将不执行后面的命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#24-顺序执行多条命令，当碰到执行正确的命令后将不执行后面的命令"><span class="nav-number">25.</span> <span class="nav-text">24 ||顺序执行多条命令，当碰到执行正确的命令后将不执行后面的命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#25-管道命令"><span class="nav-number">26.</span> <span class="nav-text">25 |管道命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#26-gt-和-gt-gt-输出重定向命令"><span class="nav-number">27.</span> <span class="nav-text">26 > 和 >>输出重定向命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#27-lt-从文件中获得输入信息，而不是从屏幕上"><span class="nav-number">28.</span> <span class="nav-text">27 <从文件中获得输入信息，而不是从屏幕上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#28-命令行传递给批处理参数"><span class="nav-number">29.</span> <span class="nav-text">28 命令行传递给批处理参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#31-set设置变量"><span class="nav-number">30.</span> <span class="nav-text">31 set设置变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#32-start调用外部程序"><span class="nav-number">31.</span> <span class="nav-text">32 start调用外部程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#33-call调用另外一个批处理"><span class="nav-number">32.</span> <span class="nav-text">33 call调用另外一个批处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#34-choice-外部命令"><span class="nav-number">33.</span> <span class="nav-text">34 choice (外部命令)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#35-assoc-和-ftype文件关联"><span class="nav-number">34.</span> <span class="nav-text">35 assoc 和 ftype文件关联</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#36-pushd-和-popd切换当前目录"><span class="nav-number">35.</span> <span class="nav-text">36 pushd 和 popd切换当前目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#37-subst-外部命令-映射磁盘。"><span class="nav-number">36.</span> <span class="nav-text">37 subst (外部命令)映射磁盘。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#38-xcopy-外部命令-文件拷贝"><span class="nav-number">37.</span> <span class="nav-text">38  xcopy (外部命令)文件拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#39-一些不常用的内部命令"><span class="nav-number">38.</span> <span class="nav-text">39 一些不常用的内部命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#40-format-外部命令-格式化硬盘"><span class="nav-number">39.</span> <span class="nav-text">40 format (外部命令)格式化硬盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#41-fdisk-外部命令-硬盘分区win2000不带"><span class="nav-number">40.</span> <span class="nav-text">41 fdisk (外部命令)硬盘分区win2000不带</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#42-ping-外部命令"><span class="nav-number">41.</span> <span class="nav-text">42 ping (外部命令)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#43-SC-外部命令-服务控制命令"><span class="nav-number">42.</span> <span class="nav-text">43 SC (外部命令)服务控制命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">43.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangwlj</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      27.7k
+    </span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143521"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yrpmXJiSAy4frnKvqrxvNUSG-gzGzoHsz", "35GTu3Aq4E3uxua6GpER2XLp");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
