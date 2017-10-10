@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="opencv," />
+  <meta name="keywords" content="批处理,bat," />
 
 
 
@@ -95,22 +95,18 @@
 
 
 
-<meta name="description" content="安装前提：需要安装了opencv以及VS，可以参考这篇博文，写的很详细。  BGSLibrary简介BGSLibrary由Andrews Sobral开发，并提供了一个执行背景减除（BGS）的C++框架。该代码可以在Windows或Linux上运行。 目前，该库提供了35种BGS算法（PBAS算法从BGSLibrary中删除，因为它基于专利算法ViBE）。 几位作者提供了大量的算法。  源代码可">
-<meta name="keywords" content="opencv">
+<meta name="description" content="1、截取字符串截取字符串可以说是字符串处理功能中最常用的一个子功能了，能够实现截取字符串中的特定位置的一个或多个字符。举例说明其基本功能： @echo off set ifo=abcdefghijklmnopqrstuvwxyz0123456789 echo 原字符串（第二行为各字符的序号）： echo %ifo% echo 123456789012345678901234567890123456">
+<meta name="keywords" content="批处理,bat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BGSLibrary编译安装与BGSlibrary GUI的下载与使用">
-<meta property="og:url" content="https://qwerty200696.github.io/2017/09/20/BGSlibrary/index.html">
+<meta property="og:title" content="BAT批处理中的字符串处理(字符串截取等)">
+<meta property="og:url" content="https://qwerty200696.github.io/2017/10/10/batch_string_process/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="安装前提：需要安装了opencv以及VS，可以参考这篇博文，写的很详细。  BGSLibrary简介BGSLibrary由Andrews Sobral开发，并提供了一个执行背景减除（BGS）的C++框架。该代码可以在Windows或Linux上运行。 目前，该库提供了35种BGS算法（PBAS算法从BGSLibrary中删除，因为它基于专利算法ViBE）。 几位作者提供了大量的算法。  源代码可">
+<meta property="og:description" content="1、截取字符串截取字符串可以说是字符串处理功能中最常用的一个子功能了，能够实现截取字符串中的特定位置的一个或多个字符。举例说明其基本功能： @echo off set ifo=abcdefghijklmnopqrstuvwxyz0123456789 echo 原字符串（第二行为各字符的序号）： echo %ifo% echo 123456789012345678901234567890123456">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://qwerty200696.github.io/2017/09/20/BGSlibrary/cmake_success.png">
-<meta property="og:image" content="https://qwerty200696.github.io/2017/09/20/BGSlibrary/BGSLibrary_run.png">
-<meta property="og:image" content="https://qwerty200696.github.io/2017/09/20/BGSlibrary/GUI.png">
-<meta property="og:updated_time" content="2017-09-20T14:30:52.269Z">
+<meta property="og:updated_time" content="2017-10-10T05:40:21.773Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BGSLibrary编译安装与BGSlibrary GUI的下载与使用">
-<meta name="twitter:description" content="安装前提：需要安装了opencv以及VS，可以参考这篇博文，写的很详细。  BGSLibrary简介BGSLibrary由Andrews Sobral开发，并提供了一个执行背景减除（BGS）的C++框架。该代码可以在Windows或Linux上运行。 目前，该库提供了35种BGS算法（PBAS算法从BGSLibrary中删除，因为它基于专利算法ViBE）。 几位作者提供了大量的算法。  源代码可">
-<meta name="twitter:image" content="https://qwerty200696.github.io/2017/09/20/BGSlibrary/cmake_success.png">
+<meta name="twitter:title" content="BAT批处理中的字符串处理(字符串截取等)">
+<meta name="twitter:description" content="1、截取字符串截取字符串可以说是字符串处理功能中最常用的一个子功能了，能够实现截取字符串中的特定位置的一个或多个字符。举例说明其基本功能： @echo off set ifo=abcdefghijklmnopqrstuvwxyz0123456789 echo 原字符串（第二行为各字符的序号）： echo %ifo% echo 123456789012345678901234567890123456">
 
 
 
@@ -140,14 +136,14 @@
 
 
 
-  <link rel="canonical" href="https://qwerty200696.github.io/2017/09/20/BGSlibrary/"/>
+  <link rel="canonical" href="https://qwerty200696.github.io/2017/10/10/batch_string_process/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>BGSLibrary编译安装与BGSlibrary GUI的下载与使用 | 王立杰的博客</title>
+  <title>BAT批处理中的字符串处理(字符串截取等) | 王立杰的博客</title>
   
 
 
@@ -306,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/09/20/BGSlibrary/">
+    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/10/10/batch_string_process/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wangwlj">
@@ -323,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">BGSLibrary编译安装与BGSlibrary GUI的下载与使用</h1>
+          <h1 class="post-title" itemprop="name headline">BAT批处理中的字符串处理(字符串截取等)</h1>
         
 
         <div class="post-meta">
@@ -335,8 +331,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-20T21:53:43+08:00">
-                2017-09-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T13:40:58+08:00">
+                2017-10-10
               </time>
             
 
@@ -358,8 +354,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/邂逅opencv/" itemprop="url" rel="index">
-                    <span itemprop="name">邂逅opencv</span>
+                  <a href="/categories/批处理/" itemprop="url" rel="index">
+                    <span itemprop="name">批处理</span>
                   </a>
                 </span>
 
@@ -376,7 +372,7 @@
 
           
           
-             <span id="/2017/09/20/BGSlibrary/" class="leancloud_visitors" data-flag-title="BGSLibrary编译安装与BGSlibrary GUI的下载与使用">
+             <span id="/2017/10/10/batch_string_process/" class="leancloud_visitors" data-flag-title="BAT批处理中的字符串处理(字符串截取等)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -401,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,053
+                  2,488
                 </span>
               
 
@@ -426,86 +422,226 @@
       
 
       
-        <blockquote>
-<p>安装前提：需要安装了<code>opencv</code>以及<code>VS</code>，可以参考<a href="http://www.cnblogs.com/linshuhe/p/5764394.html" target="_blank" rel="external">这篇博文</a>，写的很详细。</p>
-</blockquote>
-<h1 id="BGSLibrary简介"><a href="#BGSLibrary简介" class="headerlink" title="BGSLibrary简介"></a>BGSLibrary简介</h1><p><code>BGSLibrary</code>由<code>Andrews Sobral</code>开发，并提供了一个执行背景减除（BGS）的<code>C++</code>框架。该代码可以在Windows或Linux上运行。</p>
-<p>目前，该库提供了35种BGS算法（PBAS算法从BGSLibrary中删除，因为它基于专利算法<code>ViBE</code>）。 几位作者提供了大量的算法。 </p>
-<p>源代码可以在<code>GNU GPL v3</code>许可证下获得，图书馆免费，学术目的开源。 任何用户都可以使用SVN客户端下载最新的项目源代码。</p>
-<h2 id="BGSLibrary地址"><a href="#BGSLibrary地址" class="headerlink" title="BGSLibrary地址"></a>BGSLibrary地址</h2><p>该项目的github主页地址为：<a href="https://github.com/andrewssobral/bgslibrary" target="_blank" rel="external">github地址</a></p>
-<h2 id="详细安装指南（官方修正版）"><a href="#详细安装指南（官方修正版）" class="headerlink" title="详细安装指南（官方修正版）"></a>详细安装指南（官方修正版）</h2><p>在该项目的github主页上可以看到安装指导。本人的电脑配置为VS2015，Opencv3.2.0，所以在github主页上依次点击：</p>
-<blockquote>
-<p>Installation instructions 中的<code>Windows installation</code> </p>
-<p>-&gt;  BGSLibrary with OpenCV 3.2.0 and Visual Studio 2015 from CMAKE (Recommended)</p>
-</blockquote>
-<p>该界面下，详细的安装步骤（及修正）为：</p>
-<ul>
-<li><strong>打开</strong><code>windows控制台（cmd）</code></li>
-</ul>
-<ul>
-<li><strong>克隆</strong><code>BGSLibrary库</code>到本地</li>
-</ul>
-<p>克隆指令为：</p>
-<pre><code>git clone https://github.com/andrewssobral/bgslibrary.git
-</code></pre><ul>
-<li><strong>切换</strong>到<code>bgslibrary/build</code><strong>目录</strong></li>
-</ul>
-<ul>
-<li>设置opencv路径</li>
-</ul>
-<blockquote>
-<pre><code>特别注意：windows环境下没有`setlocal`命令。
-</code></pre></blockquote>
-<p>所以跳过该步骤，直接进行下一步。</p>
-<ul>
-<li>调用<strong>cmake命令</strong>安装</li>
-</ul>
-<p>安装命令为：</p>
-<pre><code>cmake -DOpenCV_DIR=%OpenCV_DIR% -G &quot;Visual Studio 14 Win64&quot; ..
-</code></pre><p>注意：由于我们没有设置上一步的opencv路径，因此，上述cmake命令中的<code>%OpenCV_DIR%</code>需要用详细路径的形式替换，即直接指定opencv目录。笔者所用的命令为：</p>
-<pre><code>cmake -D OpenCV_DIR=&quot;D:\Program Files\opencv3\build&quot; -G &quot;Visual Studio 14 Win64&quot; ..
-</code></pre><blockquote>
-<p>命令中最后的两个点也是需要的。<code>-D</code>与<code>OpenCV_DIR</code>分开或者合在一起都可以。</p>
-<p>上述两步骤的变化是笔者花了不少时间尝试出来的。</p>
-</blockquote>
-<p><img src="/2017/09/20/BGSlibrary/cmake_success.png" alt="cmake成功截图"></p>
-<ul>
-<li>将opencv可执行文件目录添加到系统<strong>环境变量</strong>PATH中</li>
-</ul>
-<p>计算机上右键 – 属性 – 高级系统设置 – 环境变量 – 系统变量中的PATH –添加opencv目录。</p>
-<pre><code>D:\Program Files\opencv3\build\x64\vc14\bin;
-</code></pre><blockquote>
-<p>最后的是英文状态下的分号，表示不同路径间的分隔符。</p>
-</blockquote>
-<ul>
-<li>VS中打开<code>bgs.sln</code>解决方案文件，切换到“<code>RELEASE</code>”模式（并且要注意选择x64而不是x86模式）下，点击“<code>ALL_BUILD</code>”项目开始<strong>生成</strong>。</li>
-</ul>
-<ul>
-<li>安装完成，可以开始跑demo，跑BGSLibrary了。</li>
-</ul>
-<p>主要有两种方式运行<code>BGSLibrary</code>，第一种是在cmd命令行下，第二种是运行写好的脚本文件。</p>
-<h2 id="运行方法一：windows控制台"><a href="#运行方法一：windows控制台" class="headerlink" title="运行方法一：windows控制台"></a>运行方法一：windows控制台</h2><p>在windows控制台（cmd）下运行：</p>
-<p> ①用摄像头跑BGSLibrary </p>
-<pre><code>C:\bgslibrary&gt;  build\bgslibrary.exe --use_cam --camera=0
-</code></pre><p> ②运行dome程序</p>
-<pre><code>C:\bgslibrary&gt;  build\bgs_demo.exe dataset/video.avi
-</code></pre><p> ③运行demo2程序</p>
-<pre><code>C:\bgslibrary&gt;  build\bgs_demo2.exe
-</code></pre><blockquote>
-<p>注意：此时的目录为bgslibrary根目录。</p>
-</blockquote>
-<h2 id="运行方法二：直接运行脚本文件"><a href="#运行方法二：直接运行脚本文件" class="headerlink" title="运行方法二：直接运行脚本文件"></a>运行方法二：直接运行脚本文件</h2><p>经过上述的成功生成过程后，可在<code>bgslibrary根目录</code>下找到写好的脚本文件（<code>bat</code>或者<code>sh</code>），直接双击运行即可。如下图所示：</p>
-<p><img src="/2017/09/20/BGSlibrary/BGSLibrary_run.png" alt="脚本文件截图"></p>
-<h1 id="BGSlibrary-GUI的下载与使用"><a href="#BGSlibrary-GUI的下载与使用" class="headerlink" title="BGSlibrary GUI的下载与使用"></a>BGSlibrary GUI的下载与使用</h1><h2 id="BGSlibrary-GUI简介"><a href="#BGSlibrary-GUI简介" class="headerlink" title="BGSlibrary GUI简介"></a>BGSlibrary GUI简介</h2><p>是否还在为上述繁琐的安装过程而苦恼，那么就快来下载<code>BGSlibrary GUI</code>吧。</p>
-<p>BGSlibrary GUI是BGSLibrary的可执行版本，可用于Windows 32位和64位。 对于Linux和Mac用户，可以使用Makefile来编译所有文件并生成可执行示例。</p>
-<p>该GUI中集成了37种背景建模算法，可以显示输入视频/图像、基于背景建模得到的前景和背景建模得到的背景图像，还可以显示出每种算法的计算复杂度等等。并且，测试的可以是视频、图片序列以及摄像头输入视频。</p>
-<h2 id="下载方式一"><a href="#下载方式一" class="headerlink" title="下载方式一"></a>下载方式一</h2><p>文件名：<code>bgslibrary_x86_v1.9.2_with_mfc_gui_v1.4.2.7z</code></p>
-<p>下载地址：<a href="http://download.csdn.net/download/frd2009041510/8691475" target="_blank" rel="external">CSDN</a> (找的网上的，亲测可用)</p>
-<p>上传者设置了积分，没有积分的童鞋可以联系我，我私下发给你，或者我看情况可以上传百度云啥的。</p>
-<h2 id="下载方式二"><a href="#下载方式二" class="headerlink" title="下载方式二"></a>下载方式二</h2><p>最新版本：<code>BGSLibrary v1.9.1 with MFC GUI v1.4.1 (x86/x64)</code></p>
-<p>下载地址：<a href="https://github.com/andrewssobral/bgslibrary/blob/master/binaries/mfc_bgslibrary_x86_v1.4.1.zip" target="_blank" rel="external">GITHUB（bgslibrary/binaries/）</a></p>
-<h2 id="BGSlibrary-GUI的使用"><a href="#BGSlibrary-GUI的使用" class="headerlink" title="BGSlibrary GUI的使用"></a>BGSlibrary GUI的使用</h2><p>已经是GUI界面了，所以使用非常简单，在此不再赘述。基本上和编译完成后能实现的功能相同。</p>
-<p><img src="/2017/09/20/BGSlibrary/GUI.png" alt="GUI界面截图"></p>
+        <h1 id="1、截取字符串"><a href="#1、截取字符串" class="headerlink" title="1、截取字符串"></a>1、截取字符串</h1><p>截取字符串可以说是字符串处理功能中最常用的一个子功能了，能够实现截取字符串中的特定位置的一个或多个字符。举例说明其基本功能：</p>
+<pre><code>@echo off
+set ifo=abcdefghijklmnopqrstuvwxyz0123456789
+echo 原字符串（第二行为各字符的序号）：
+echo %ifo%
+echo 123456789012345678901234567890123456
+echo 截取前5个字符：
+echo %ifo:~0,5%
+echo 截取最后5个字符：
+echo %ifo:~-5%
+echo 截取第一个到倒数第6个字符：
+echo %ifo:~0,-5%
+echo 从第4个字符开始，截取5个字符：
+echo %ifo:~3,5%
+echo 从倒数第14个字符开始，截取5个字符：
+echo %ifo:~-14,5%
+pause
+</code></pre><p>当然，上面的例子只是将字符串处理的基本功能展示出来了，还看不出字符串处理具体有什么用处。下面这个例子是对时间进行处理。</p>
+<pre><code>@echo off
+echo 当前时间是：%time% 即 %time:~0,2%点%time:~3,2%分%time:~6,2%秒%time:~9,2%厘秒
+pause
+</code></pre><h1 id="2、替换字符串"><a href="#2、替换字符串" class="headerlink" title="2、替换字符串"></a>2、替换字符串</h1><p>替换字符串，即将某一字符串中的特定字符或字符串替换为给定的字符串。举例说明其功能：</p>
+<pre><code>@echo off
+set aa=伟大的中国！我为你自豪！
+echo 替换前：%aa%
+echo 替换后：%aa:中国=中华人民共和国%
+echo aa = %aa%
+set &quot;aa=%aa:中国=中华人民共和国%&quot;
+echo aa = %aa%
+pause
+</code></pre><p>对于上面的例子有一点说明，对比两个echo aa = %aa%可以发现，如果要修改变量aa的内容的话，就需要将修改结果“%aa:中国=中华人民共和国%”赋值给变量aa。上面的字符串截取也有着同样的特点。</p>
+<h1 id="3、字符串合并"><a href="#3、字符串合并" class="headerlink" title="3、字符串合并"></a>3、字符串合并</h1><p>其实，合并字符串就是将两个字符串放在一起就可以了。举例说明：</p>
+<pre><code>@echo off
+set aa=伟大的中国！
+set bb=我为你自豪！
+echo %aa%%bb%
+echo aa=%aa%
+echo bb=%bb%
+set &quot;aa=%aa%%bb%&quot;
+echo aa=%aa%
+pause
+</code></pre><p>同样，如果要改变变量aa的内容的话，就需要将合并结果“%aa%%bb%”赋值给变量aa。</p>
+<h1 id="4、扩充字符串"><a href="#4、扩充字符串" class="headerlink" title="4、扩充字符串"></a>4、扩充字符串</h1><p>　“扩充”这个词汇来自于微软自己的翻译，意思就是对表示文件路径的字符串进行特殊的处理，具体功能罗列如下：</p>
+<pre><code>=========================================
+~I - 删除任何引号(&quot;)，扩充 %I
+%~fI - 将 %I 扩充到一个完全合格的路径名
+%~dI - 仅将 %I 扩充到一个驱动器号
+%~pI - 仅将 %I 扩充到一个路径
+%~nI - 仅将 %I 扩充到一个文件名
+%~xI - 仅将 %I 扩充到一个文件扩展名
+%~sI - 扩充的路径只含有短名
+%~aI - 将 %I 扩充到文件的文件属性
+%~tI - 将 %I 扩充到文件的日期/时间
+%~zI - 将 %I 扩充到文件的大小
+%~$PATH:I - 查找列在路径环境变量的目录，并将 %I 扩充到找到的第一个完全合格的名称。如果环境变量名未被定义，或者没有找到文件，此组合键会扩充到空字符串可以组合修饰符来得到多重结果:
+%~dpI - 仅将 %I 扩充到一个驱动器号和路径
+%~nxI - 仅将 %I 扩充到一个文件名和扩展名
+%~fsI - 仅将 %I 扩充到一个带有短名的完整路径名
+%~dp$PATH:i - 查找列在路径环境变量的目录，并将 %I 扩充到找到的第一个驱动器号和路径。
+%~ftzaI - 将 %I 扩充到类似输出线路的 DIR
+=========================================
+</code></pre><p>以上内容引用于for /?帮助信息。其中的I代表变量I，不过需要说明的是，不是所有的变量都能够进行扩充的，有两个条件：1、该字符串代表一个文件路径；2、变量要用%x来表示，x可取a-z A-Z 0-9共62个字符中的任意一个。举例说明：</p>
+<pre><code>@echo off
+echo 正在运行的这个批处理：
+echo 完全路径：%0
+echo 去掉引号：%~0
+echo 所在分区：%~d0
+echo 所处路径：%~p0
+echo 文件名：%~n0
+echo 扩展名：%~x0
+echo 文件属性：%~a0
+echo 修改时间：%~t0
+echo 文件大小：%~z0
+pause
+</code></pre><p>其中的%0是批处理里面的参数，代表当前运行的批处理的完全路径。类似的还有%1-%9，分别代表传递来的第1-9个参数。例子如下：</p>
+<pre><code>@echo off
+set aa=C:\Windows\PPP\a.btx
+call :deal aaa %aa% &quot;c c&quot; ddd eee
+pause&gt;nul
+exit
+:deal
+echo %%0 = %0
+echo %%1 = %1
+echo %%2 = %2
+echo %%3 = %3
+echo %%4 = %4
+echo %%5 = %5
+</code></pre><p>其中，变量aa在之前是不可以扩充的，通过call命令并将aa作为参数传递给子函数:deal，将aa变量转换成了变量%1，即符合%x格式，从而可以进行字符串扩充。</p>
+<p>至于%x中x取a-z A-Z的形式，可以复习一下for语句，for语句里面的变量就是用%x来表示的，因而可以直接进行扩充。</p>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><h2 id="C语中的strcpy函数"><a href="#C语中的strcpy函数" class="headerlink" title="C语中的strcpy函数"></a>C语中的strcpy函数</h2><p>C语中的strcpy函数，将一个字符串复制到另一个字符型指针或字符数组，覆盖原来的字符串。</p>
+<p>C语言中的调用方法：strcpy(目标字符串,源字符串)</p>
+<p>在批处理中的实现方法：</p>
+<p>set 目标字符串=%源字符串%</p>
+<p>示例：</p>
+<pre><code>@echo off
+::关闭屏幕回显（可选）
+set str1=This is old string
+::设置str1中存储的字符串，注意没有双引号，这点与C语言等不同！
+set str2=This is new string
+::设置str2中存储的字符串
+echo 执行字符串拷贝以前：
+echo str1=%str1%
+echo str2=%str2%
+::先输出一次原有的字符串
+set str1=%str2%
+::字符串拷贝
+echo 执行字符串拷贝以后：
+echo str1=%str1%
+echo str2=%str2%
+::输出执行完字符串拷贝后的字符串
+echo 输出完毕，按任意键退出&amp;&amp;pause&gt;nul&amp;&amp;exit
+::输出信息，当用户按任意键时，结束该批处理。
+</code></pre><h2 id="2-C语中的strcat函数"><a href="#2-C语中的strcat函数" class="headerlink" title="2.C语中的strcat函数"></a>2.C语中的strcat函数</h2><p>C语中的strcat函数，将一个字符串连接到另一个字符型指针或字符数组的末尾。</p>
+<p>C语言中的调用方法：strcat(目标字符串,源字符串)</p>
+<p>在批处理中的实现方法：</p>
+<p>set 目标字符串=%目标字符串%%源字符串%</p>
+<p>示例：</p>
+<pre><code>@echo off
+set str1=This is string1
+set str2=This is string2
+::设置str1和str2中存储的字符串
+echo 连接字符串以前：
+echo str1=%str1%
+echo str2=%str2%
+::先输出一次原有的字符串
+set str1=%str1%%str2%
+::字符串连接
+echo 连接字符串以后：
+echo str1=%str1%
+echo str2=%str2%
+::输出执行完字符串连接后的两个字符串
+echo 输出完毕，按任意键退出&amp;&amp;pause&gt;nul&amp;&amp;exit
+</code></pre><h2 id="3、字符串截取"><a href="#3、字符串截取" class="headerlink" title="3、字符串截取"></a>3、字符串截取</h2><p>C中没有这种函数，不过可以通过语句实现，不再介绍，直接说批处理的。</p>
+<pre><code>set 目标字符串=%源字符串:~起始值,截取长度%
+</code></pre><p>注意，起始值从0开始！</p>
+<p>截取长度是可选的，如果省略逗号和截取长度，将会从起始值一直截取到字符串的结尾。</p>
+<p>示例：</p>
+<pre><code>@echo off
+set str1=This is string1
+::设置str1中存储的字符串
+set str2=%str1:~8,6%
+set str3=%str1:~0,4%
+set str4=%str1:~5%
+::字符串截取
+echo 原字符串：
+echo str1=%str1%
+echo 截取得到的字符串：
+echo str2=%str2%
+echo str3=%str3%
+echo str4=%str4%
+::输出执行结果
+echo 输出完毕，按任意键退出&amp;&amp;pause&gt;nul&amp;&amp;exit
+</code></pre><h2 id="4、C语中的strlen函数，取得字符串的长度。"><a href="#4、C语中的strlen函数，取得字符串的长度。" class="headerlink" title="4、C语中的strlen函数，取得字符串的长度。"></a>4、C语中的strlen函数，取得字符串的长度。</h2><p>C语言中的调用方法：strlen(字符串)</p>
+<p>在批处理中的实现方法是利用goto和标签，形成循环结构，不断将字符串截短1字符，并用变量记录截短的次数，直到字符串变成空串。</p>
+<p>示例：</p>
+<pre><code>@echo off
+set str1=This is a test string
+set str2=Hello World
+::设置两个字符串
+set str=%str1%
+::将str1复制到str
+:next1
+::标签，用于goto跳转
+::注意与注释语句的区别，注释用两个冒号开头，标签则为一个冒号
+if not &quot;%str%&quot;==&quot;&quot; (
+::判断str是不是空串，如果不是则执行下边的语句
+set /a num+=1
+::算术运算，使num的值自增1，相当于num++或者++num语句
+set &quot;str=%str:~1%&quot;
+::截取字符串，赋给自身
+goto next1
+::跳转到next1标签
+::这里利用goto和标签，构成循环结构
+)
+::当以上循环结构执行完毕时，会执行下边的语句
+echo str1=%str1%
+echo str1的长度为：%num%
+::输出结果
+set num=0
+::将记和用的环境变量num置0，以便开始下一次运算。
+set str=%str2%
+::将str2复制到str
+:next2
+::定义一个新的标签
+::注意不能与已有的标签同名，否则会出错！
+if not &quot;%str%&quot;==&quot;&quot; (
+set /a num+=1
+set &quot;str=%str:~1%&quot;
+goto next2
+)
+::和上一个循环相似，不再介绍
+echo str2=%str2%
+echo str2的长度为：%num%
+::输出结果
+echo 输出完毕，按任意键退出&amp;&amp;pause&gt;nul&amp;&amp;exit
+</code></pre><p>5、C语中的strchr函数，在一个字符串中查找一个字符的首次出现位置，找到时返回所在位置，找不到时返回0值。</p>
+<p>批处理中的思路：不断截短字符串，并取截短后字符串中的首字符，和要求的字符比较，如果相同就利用goto语句跳出循环，输出结果，如果没有相同的字符，执行到最后就输出0值。</p>
+<p>示例：</p>
+<pre><code>@echo off
+Setlocal ENABLEDELAYEDEXPANSION
+::启用命令扩展，参加setlocal /?命令
+set str1=This is a test string
+set ch1=t
+::注意，这里是区分大小写的！
+set str=%str1%
+::复制字符串，用来截短，而不影响源字符串
+:next
+if not &quot;%str%&quot;==&quot;&quot; (
+set /a num+=1
+if &quot;!str:~0,1!&quot;==&quot;%ch1%&quot; goto last
+::比较首字符是否为要求的字符，如果是则跳出循环
+set &quot;str=%str:~1%&quot;
+goto next
+)
+set /a num=0
+::没有找到字符时，将num置零
+:last
+echo 字符&apos;%ch1%&apos;在字符串&quot;%str1%&quot;中的首次出现位置为%num%
+echo 输出完毕，按任意键退出&amp;&amp;pause&gt;nul&amp;&amp;exit
+</code></pre><p><a href="http://www.jb51.net/article/52744.htm" target="_blank" rel="external">http://www.jb51.net/article/52744.htm</a></p>
 
       
     </div>
@@ -538,7 +674,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://qwerty200696.github.io/2017/09/20/BGSlibrary/" title="BGSLibrary编译安装与BGSlibrary GUI的下载与使用">https://qwerty200696.github.io/2017/09/20/BGSlibrary/</a>
+    <a href="https://qwerty200696.github.io/2017/10/10/batch_string_process/" title="BAT批处理中的字符串处理(字符串截取等)">https://qwerty200696.github.io/2017/10/10/batch_string_process/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -555,7 +691,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/opencv/" rel="tag"><i class="fa fa-tag"></i> opencv</a>
+            <a href="/tags/批处理/" rel="tag"><i class="fa fa-tag"></i> 批处理</a>
+          
+            <a href="/tags/bat/" rel="tag"><i class="fa fa-tag"></i> bat</a>
           
         </div>
       
@@ -568,8 +706,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/12/BP_derivation/" rel="next" title="BP神经网络部分具体的推导">
-                <i class="fa fa-chevron-left"></i> BP神经网络部分具体的推导
+              <a href="/2017/10/08/DL_chap_7/" rel="next" title="深度学习第七章：深度学习中的正则化">
+                <i class="fa fa-chevron-left"></i> 深度学习第七章：深度学习中的正则化
               </a>
             
           </div>
@@ -577,10 +715,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/21/opencv_SaveVideo/" rel="prev" title="opencv视频保存方法详解">
-                opencv视频保存方法详解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -819,7 +953,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BGSLibrary简介"><span class="nav-number">1.</span> <span class="nav-text">BGSLibrary简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BGSLibrary地址"><span class="nav-number">1.1.</span> <span class="nav-text">BGSLibrary地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细安装指南（官方修正版）"><span class="nav-number">1.2.</span> <span class="nav-text">详细安装指南（官方修正版）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行方法一：windows控制台"><span class="nav-number">1.3.</span> <span class="nav-text">运行方法一：windows控制台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行方法二：直接运行脚本文件"><span class="nav-number">1.4.</span> <span class="nav-text">运行方法二：直接运行脚本文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BGSlibrary-GUI的下载与使用"><span class="nav-number">2.</span> <span class="nav-text">BGSlibrary GUI的下载与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BGSlibrary-GUI简介"><span class="nav-number">2.1.</span> <span class="nav-text">BGSlibrary GUI简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载方式一"><span class="nav-number">2.2.</span> <span class="nav-text">下载方式一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载方式二"><span class="nav-number">2.3.</span> <span class="nav-text">下载方式二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BGSlibrary-GUI的使用"><span class="nav-number">2.4.</span> <span class="nav-text">BGSlibrary GUI的使用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、截取字符串"><span class="nav-number">1.</span> <span class="nav-text">1、截取字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、替换字符串"><span class="nav-number">2.</span> <span class="nav-text">2、替换字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、字符串合并"><span class="nav-number">3.</span> <span class="nav-text">3、字符串合并</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、扩充字符串"><span class="nav-number">4.</span> <span class="nav-text">4、扩充字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#补充"><span class="nav-number">5.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C语中的strcpy函数"><span class="nav-number">5.1.</span> <span class="nav-text">C语中的strcpy函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-C语中的strcat函数"><span class="nav-number">5.2.</span> <span class="nav-text">2.C语中的strcat函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、字符串截取"><span class="nav-number">5.3.</span> <span class="nav-text">3、字符串截取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、C语中的strlen函数，取得字符串的长度。"><span class="nav-number">5.4.</span> <span class="nav-text">4、C语中的strlen函数，取得字符串的长度。</span></a></li></ol></li></ol></div>
             
 
           </div>
