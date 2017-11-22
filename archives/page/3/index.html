@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="deep learning," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -95,18 +95,16 @@
 
 
 
-<meta name="description" content="7.1 参数范式惩罚对目标模型J添加一个参数范数惩罚$\Omega (\theta)$，限制模型 的学习能力。正则化后的目标函数记为：$$\tilde{J}(\theta ;X,y) = J(\theta ;X,y) +\alpha \Omega (\theta)$$ 我们通常只对权重做惩罚而不对偏置做正则惩罚。 神经网络情况下，有时候希望对网络的每一层使用单独的惩罚，并分配不同的$\alpha$">
-<meta name="keywords" content="deep learning">
-<meta property="og:type" content="article">
-<meta property="og:title" content="深度学习第七章：深度学习中的正则化">
-<meta property="og:url" content="https://qwerty200696.github.io/2017/10/08/DL_chap_7/index.html">
+<meta name="description" content="所谓王者，必卓然特立，争当人杰。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="王立杰的博客">
+<meta property="og:url" content="https://qwerty200696.github.io/archives/page/3/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="7.1 参数范式惩罚对目标模型J添加一个参数范数惩罚$\Omega (\theta)$，限制模型 的学习能力。正则化后的目标函数记为：$$\tilde{J}(\theta ;X,y) = J(\theta ;X,y) +\alpha \Omega (\theta)$$ 我们通常只对权重做惩罚而不对偏置做正则惩罚。 神经网络情况下，有时候希望对网络的每一层使用单独的惩罚，并分配不同的$\alpha$">
+<meta property="og:description" content="所谓王者，必卓然特立，争当人杰。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-10T14:06:57.718Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深度学习第七章：深度学习中的正则化">
-<meta name="twitter:description" content="7.1 参数范式惩罚对目标模型J添加一个参数范数惩罚$\Omega (\theta)$，限制模型 的学习能力。正则化后的目标函数记为：$$\tilde{J}(\theta ;X,y) = J(\theta ;X,y) +\alpha \Omega (\theta)$$ 我们通常只对权重做惩罚而不对偏置做正则惩罚。 神经网络情况下，有时候希望对网络的每一层使用单独的惩罚，并分配不同的$\alpha$">
+<meta name="twitter:title" content="王立杰的博客">
+<meta name="twitter:description" content="所谓王者，必卓然特立，争当人杰。">
 
 
 
@@ -136,14 +134,14 @@
 
 
 
-  <link rel="canonical" href="https://qwerty200696.github.io/2017/10/08/DL_chap_7/"/>
+  <link rel="canonical" href="https://qwerty200696.github.io/archives/page/3/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>深度学习第七章：深度学习中的正则化 | 王立杰的博客</title>
+  <title>归档 | 王立杰的博客</title>
   
 
 
@@ -172,7 +170,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-archive">
     <div class="headband"></div>
 	
 	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
@@ -288,270 +286,189 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        嗯..! 目前共计 24 篇日志。 继续努力。
+      </span>
 
-  
-  
-  
+      
+
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2017">2017</h1>
+          </div>
+        
+        
+
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/10/08/DL_chap_7/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wangwlj">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head_icon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="王立杰的博客">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/2017/09/12/BP_derivation/" itemprop="url">
+              
+                <span itemprop="name">BP神经网络部分具体的推导</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">深度学习第七章：深度学习中的正则化</h1>
-        
+      </h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-08T22:17:15+08:00">
-                2017-10-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/深度学习/" itemprop="url" rel="index">
-                    <span itemprop="name">深度学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-	  
-          
-            
-          
-
-          
-          
-             <span id="/2017/10/08/DL_chap_7/" class="leancloud_visitors" data-flag-title="深度学习第七章：深度学习中的正则化">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  496
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h2 id="7-1-参数范式惩罚"><a href="#7-1-参数范式惩罚" class="headerlink" title="7.1 参数范式惩罚"></a>7.1 参数范式惩罚</h2><p>对目标模型J添加一个参数范数惩罚$\Omega (\theta)$，限制模型 的学习能力。正则化后的目标函数记为：<br>$$\tilde{J}(\theta ;X,y) = J(\theta ;X,y) +\alpha \Omega (\theta)$$</p>
-<p>我们通常只对权重做惩罚而不对偏置做正则惩罚。</p>
-<p>神经网络情况下，有时候希望对网络的每一层使用单独的惩罚，并分配不同的$\alpha$系数。寻找合适的多个超参数的代价很大，因此为了减少搜索空间，我们会在所以层使用相同的权重衰减。</p>
-<p>符号约束说明：向量$w$表示所有应受范数惩罚影响的权重，而向量$\theta$表示所有参数（包括w和无须正则化的参数）。</p>
-<h3 id="7-1-1-L-2-参数正则化"><a href="#7-1-1-L-2-参数正则化" class="headerlink" title="7.1.1 $L^2$参数正则化"></a>7.1.1 $L^2$参数正则化</h3><p><em>5.2节</em>中已经见过最简单的、最常见的$L^2$参数范数惩罚。其正则项为：<br>$$\Omega (\theta) = \frac 12 ||w||^2_2$$</p>
-<p>令$w^\ast $为未正则化的目标函数取得最小训练误差时的权重向量，即$w^\ast =\text {argmin}_w J(w)$，并在$w^\ast $的邻域对目标函数做<strong>二次近似</strong>。</p>
-<p>近似的$\hat J (\theta)$如下：</p>
-<p>$$\hat J (\theta) = J (w^\ast) + \frac 12 (w-w^\ast)^TH(w-w^\ast) $$</p>
-<p>其中，$H$是$J$在$w^\ast $处计算的Hessian矩阵（关于$w$）。因为$w^\ast $被定义为最优，所以该二次近似中<strong>没有一阶项</strong>。同样地，因为$w^\ast $是$J$的一个最优点，可以得出$H$是<strong>半正定</strong>。</p>
-<h2 id="7-2-作为约束的范数惩罚"><a href="#7-2-作为约束的范数惩罚" class="headerlink" title="7.2 作为约束的范数惩罚"></a>7.2 作为约束的范数惩罚</h2><h2 id="7-3-正则化和欠约束问题"><a href="#7-3-正则化和欠约束问题" class="headerlink" title="7.3 正则化和欠约束问题"></a>7.3 正则化和欠约束问题</h2><h2 id="7-4-数据集增强"><a href="#7-4-数据集增强" class="headerlink" title="7.4 数据集增强"></a>7.4 数据集增强</h2><h2 id="7-5-噪声鲁棒性"><a href="#7-5-噪声鲁棒性" class="headerlink" title="7.5 噪声鲁棒性"></a>7.5 噪声鲁棒性</h2><h2 id="7-6-半监督学习"><a href="#7-6-半监督学习" class="headerlink" title="7.6 半监督学习"></a>7.6 半监督学习</h2><h2 id="7-7-多任务学习"><a href="#7-7-多任务学习" class="headerlink" title="7.7 多任务学习"></a>7.7 多任务学习</h2><h2 id="7-8-提前终止"><a href="#7-8-提前终止" class="headerlink" title="7.8 提前终止"></a>7.8 提前终止</h2><h2 id="7-9-参数绑定和参数共享"><a href="#7-9-参数绑定和参数共享" class="headerlink" title="7.9 参数绑定和参数共享"></a>7.9 参数绑定和参数共享</h2><h2 id="7-10-稀疏表示"><a href="#7-10-稀疏表示" class="headerlink" title="7.10 稀疏表示"></a>7.10 稀疏表示</h2><h2 id="7-13-Bagging和其他集成方法"><a href="#7-13-Bagging和其他集成方法" class="headerlink" title="7.13 Bagging和其他集成方法"></a>7.13 Bagging和其他集成方法</h2><h2 id="7-12-Dropout"><a href="#7-12-Dropout" class="headerlink" title="7.12 Dropout"></a>7.12 Dropout</h2><h2 id="7-13-对抗训练"><a href="#7-13-对抗训练" class="headerlink" title="7.13 对抗训练"></a>7.13 对抗训练</h2><h2 id="7-14-切面距离、正切传播和流形正切分类器"><a href="#7-14-切面距离、正切传播和流形正切分类器" class="headerlink" title="7.14 切面距离、正切传播和流形正切分类器"></a>7.14 切面距离、正切传播和流形正切分类器</h2>
-      
-    </div>
-    
-    
-    
-
-	
-	
-	  <div>
-		
-<div style="text-align:center;color:#ccc;font-size:14px;">
------- 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
-
-
-	  </div>
-	
-	
-	
-    
-
-    
-
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    wangwlj
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://qwerty200696.github.io/2017/10/08/DL_chap_7/" title="深度学习第七章：深度学习中的正则化">https://qwerty200696.github.io/2017/10/08/DL_chap_7/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-12T22:18:23+08:00"
+              content="2017-09-12" >
+          09-12
+        </time>
       </div>
-    
-	
 
-	
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/deep-learning/" rel="tag"><i class="fa fa-tag"></i> deep learning</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/10/08/DL_Precision_and_Recall/" rel="next" title="准确率，召回率与F1值">
-                <i class="fa fa-chevron-left"></i> 准确率，召回率与F1值
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/10/batch_string_process/" rel="prev" title="BAT批处理中的字符串处理(字符串截取等)">
-                BAT批处理中的字符串处理(字符串截取等) <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
       
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-<span class="jiathis_txt">分享到：</span>
-<a class="jiathis_button_fav">收藏夹</a>
-<a class="jiathis_button_copy">复制网址</a>
-<a class="jiathis_button_email">邮件</a>
-<a class="jiathis_button_weixin">微信</a>
-<a class="jiathis_button_qzone">QQ空间</a>
-<a class="jiathis_button_tqq">腾讯微博</a>
-<a class="jiathis_button_douban">豆瓣</a>
-<a class="jiathis_button_share">一键分享</a>
 
-<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-var jiathis_config={
-  data_track_clickback:true,
-  summary:"",
-  shortUrl:false,
-  hideMore:false
-}
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
-<!-- JiaThis Button END -->
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2017/09/09/blog-opti/" itemprop="url">
+              
+                <span itemprop="name">hexo搭建的Github博客之优化</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-09T10:27:20+08:00"
+              content="2017-09-09" >
+          09-09
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
       
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2017/09/08/blog_setup/" itemprop="url">
+              
+                <span itemprop="name">hexo+GitHub博客搭建实战</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-08T12:00:25+08:00"
+              content="2017-09-08" >
+          09-08
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2017/09/07/TensorFlow_setup/" itemprop="url">
+              
+                <span itemprop="name">windows下TensorFlow完整安装流程及出错解决方案</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-07T17:27:57+08:00"
+              content="2017-09-07" >
+          09-07
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
     </div>
   </div>
+  
+  
+  
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/archives/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+
 
 
           </div>
@@ -559,12 +476,6 @@ var jiathis_config={
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="uyan_frame"></div>
-    
-  </div>
-
 
         </div>
         
@@ -585,17 +496,8 @@ var jiathis_config={
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -613,7 +515,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -635,7 +537,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -735,22 +637,6 @@ var jiathis_config={
       </section>
 
       
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-参数范式惩罚"><span class="nav-number">1.</span> <span class="nav-text">7.1 参数范式惩罚</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-1-L-2-参数正则化"><span class="nav-number">1.1.</span> <span class="nav-text">7.1.1 $L^2$参数正则化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-作为约束的范数惩罚"><span class="nav-number">2.</span> <span class="nav-text">7.2 作为约束的范数惩罚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-正则化和欠约束问题"><span class="nav-number">3.</span> <span class="nav-text">7.3 正则化和欠约束问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-4-数据集增强"><span class="nav-number">4.</span> <span class="nav-text">7.4 数据集增强</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-5-噪声鲁棒性"><span class="nav-number">5.</span> <span class="nav-text">7.5 噪声鲁棒性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-6-半监督学习"><span class="nav-number">6.</span> <span class="nav-text">7.6 半监督学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-7-多任务学习"><span class="nav-number">7.</span> <span class="nav-text">7.7 多任务学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-8-提前终止"><span class="nav-number">8.</span> <span class="nav-text">7.8 提前终止</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-9-参数绑定和参数共享"><span class="nav-number">9.</span> <span class="nav-text">7.9 参数绑定和参数共享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-10-稀疏表示"><span class="nav-number">10.</span> <span class="nav-text">7.10 稀疏表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-13-Bagging和其他集成方法"><span class="nav-number">11.</span> <span class="nav-text">7.13 Bagging和其他集成方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-12-Dropout"><span class="nav-number">12.</span> <span class="nav-text">7.12 Dropout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-13-对抗训练"><span class="nav-number">13.</span> <span class="nav-text">7.13 对抗训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-14-切面距离、正切传播和流形正切分类器"><span class="nav-number">14.</span> <span class="nav-text">7.14 切面距离、正切传播和流形正切分类器</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
 
       
         <div class="back-to-top">
@@ -787,7 +673,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      31.5k
+      68.2k
     </span>
   
 </div>
@@ -893,10 +779,6 @@ var jiathis_config={
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
 
   
 
@@ -922,10 +804,6 @@ var jiathis_config={
   
     
 
-    
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143521"></script>
-      <!-- UY END -->
     
   
 
