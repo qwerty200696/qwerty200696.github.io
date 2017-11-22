@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="准确率,召回率," />
+  <meta name="keywords" content="deep learning," />
 
 
 
@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="下面有关分类算法的准确率，召回率，F1 值的描述，错误的是？A.准确率是检索出相关文档数与检索出的文档总数的比率，衡量的是检索系统的查准率B.召回率是指检索出的相关文档数和文档库中所有的相关文档数的比率，衡量的是检索系统的查全率C.正确率、召回率和 F 值取值都在0和1之间，数值越接近0，查准率或查全率就越高D.为了解决准确率和召回率冲突问题，引入了F1分数 TP——将正类预测为正类数 FN——将">
-<meta name="keywords" content="准确率,召回率">
+<meta name="description" content="9.1 卷积运算卷积的第一个参数： 输入，第二个参数： 核函数。输出有时被称为特征映射。 对于二维图像I，二维的核K。卷积可以写为： $$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)$$ 卷积是可交换的。可以等价地写为： $$S(i,j) = (K\times I )(i,j) = \sum_m \sum_n I(i-m,j">
+<meta name="keywords" content="deep learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="准确率，召回率与F1值">
-<meta property="og:url" content="https://qwerty200696.github.io/2017/10/08/DL_Precision_and_Recall/index.html">
+<meta property="og:title" content="深度学习第九章：卷机网络">
+<meta property="og:url" content="https://qwerty200696.github.io/2017/10/20/DL_chap_9/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="下面有关分类算法的准确率，召回率，F1 值的描述，错误的是？A.准确率是检索出相关文档数与检索出的文档总数的比率，衡量的是检索系统的查准率B.召回率是指检索出的相关文档数和文档库中所有的相关文档数的比率，衡量的是检索系统的查全率C.正确率、召回率和 F 值取值都在0和1之间，数值越接近0，查准率或查全率就越高D.为了解决准确率和召回率冲突问题，引入了F1分数 TP——将正类预测为正类数 FN——将">
+<meta property="og:description" content="9.1 卷积运算卷积的第一个参数： 输入，第二个参数： 核函数。输出有时被称为特征映射。 对于二维图像I，二维的核K。卷积可以写为： $$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)$$ 卷积是可交换的。可以等价地写为： $$S(i,j) = (K\times I )(i,j) = \sum_m \sum_n I(i-m,j">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-10T06:00:53.000Z">
+<meta property="og:updated_time" content="2017-11-22T12:49:21.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="准确率，召回率与F1值">
-<meta name="twitter:description" content="下面有关分类算法的准确率，召回率，F1 值的描述，错误的是？A.准确率是检索出相关文档数与检索出的文档总数的比率，衡量的是检索系统的查准率B.召回率是指检索出的相关文档数和文档库中所有的相关文档数的比率，衡量的是检索系统的查全率C.正确率、召回率和 F 值取值都在0和1之间，数值越接近0，查准率或查全率就越高D.为了解决准确率和召回率冲突问题，引入了F1分数 TP——将正类预测为正类数 FN——将">
+<meta name="twitter:title" content="深度学习第九章：卷机网络">
+<meta name="twitter:description" content="9.1 卷积运算卷积的第一个参数： 输入，第二个参数： 核函数。输出有时被称为特征映射。 对于二维图像I，二维的核K。卷积可以写为： $$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)$$ 卷积是可交换的。可以等价地写为： $$S(i,j) = (K\times I )(i,j) = \sum_m \sum_n I(i-m,j">
 
 
 
@@ -136,14 +136,14 @@
 
 
 
-  <link rel="canonical" href="https://qwerty200696.github.io/2017/10/08/DL_Precision_and_Recall/"/>
+  <link rel="canonical" href="https://qwerty200696.github.io/2017/10/20/DL_chap_9/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>准确率，召回率与F1值 | 王立杰的博客</title>
+  <title>深度学习第九章：卷机网络 | 王立杰的博客</title>
   
 
 
@@ -302,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/10/08/DL_Precision_and_Recall/">
+    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/10/20/DL_chap_9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wangwlj">
@@ -319,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">准确率，召回率与F1值</h1>
+          <h1 class="post-title" itemprop="name headline">深度学习第九章：卷机网络</h1>
         
 
         <div class="post-meta">
@@ -331,8 +331,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-08T17:17:46+08:00">
-                2017-10-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-20T10:43:10+08:00">
+                2017-10-20
               </time>
             
 
@@ -372,7 +372,7 @@
 
           
           
-             <span id="/2017/10/08/DL_Precision_and_Recall/" class="leancloud_visitors" data-flag-title="准确率，召回率与F1值">
+             <span id="/2017/10/20/DL_chap_9/" class="leancloud_visitors" data-flag-title="深度学习第九章：卷机网络">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -422,29 +422,27 @@
       
 
       
-        <p>下面有关分类算法的准确率，召回率，F1 值的描述，错误的是？<br>A.准确率是检索出相关文档数与检索出的文档总数的比率，衡量的是检索系统的查准率<br>B.召回率是指检索出的相关文档数和文档库中所有的相关文档数的比率，衡量的是检索系统的查全率<br>C.正确率、召回率和 F 值取值都在0和1之间，数值越接近0，查准率或查全率就越高<br>D.为了解决准确率和召回率冲突问题，引入了F1分数</p>
-<pre><code>TP——将正类预测为正类数
-FN——将正类预测为负类数
-FP——将负类预测为正类数
-TN——将负类预测为负类数
-</code></pre><h2 id="精确率（Precision）"><a href="#精确率（Precision）" class="headerlink" title="精确率（Precision）"></a>精确率（Precision）</h2><p>P = TP/(TP+FP)<br>反映了被分类器判定的正例中真正的正例样本的比重。</p>
-<p>精确率是针对我们<strong>预测结果</strong>而言的，它表示的是预测为正的样本中有多少是真正的正样本。那么预测为正就有两种可能了，一种就是把正类预测为正类(TP)，另一种就是把负类预测为正类(FP)。</p>
-<h2 id="准确率（Accuracy）："><a href="#准确率（Accuracy）：" class="headerlink" title="准确率（Accuracy）："></a>准确率（Accuracy）：</h2><p>A = （TP+TN）/ （P+N） = （TP+TN）/ （TP+FN+FP+TN）<br>准确率(正确率)：反映了分类器统对整个样本的判定能力——能将正的判定为正，负的判定为负。</p>
-<p>被分对的样本数除以所有的样本数，通常来说，正确率越高，分类器越好。</p>
-<h2 id="召回率（Recall）："><a href="#召回率（Recall）：" class="headerlink" title="召回率（Recall）："></a>召回率（Recall）：</h2><p>R = TP/（TP+FN）= 1-[FN/（TP+FN）]<br>反映了被正确判定的正例占总的正例的比重。</p>
-<p>而召回率是针对我们<strong>原来的样本</strong>而言的，它表示的是样本中的正例有多少被预测正确了。那也有两种可能，一种是把原来的正类预测成正类(TP)，另一种就是把原来的正类预测为负类(FN)。</p>
-<p>所有正例中被分对的比例，衡量了分类器对正例的识别能力。</p>
-<p>精确率和召回率，两者取值在0和1之间，数值越接近<code>1</code>，查准率或查全率就越高。</p>
-<h2 id="F1值"><a href="#F1值" class="headerlink" title="F1值"></a>F1值</h2><p>F1 = 2<em>（Recall </em> Precision）/（Recall + Precision）</p>
-<p>精准率和召回率和F1取值都在0和1之间，精准率和召回率高，F1值也会高，不存在数值越接近0越高的说法，应该是数值越接近1越高。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>一句话概括：精确率Precision是<strong>真正的正例</strong>里有多少预测正确的，召回率Recall是<strong>预测的正例</strong>里有多少是预测正确的。</p>
-<p>参考资料：</p>
-<ul>
-<li><p><a href="https://www.zhihu.com/question/19645541/answer/12502751" target="_blank" rel="external">https://www.zhihu.com/question/19645541/answer/12502751</a></p>
-</li>
-<li><p><a href="https://www.nowcoder.com/test/question/done?tid=11555865&amp;qid=14638#summary" target="_blank" rel="external">https://www.nowcoder.com/test/question/done?tid=11555865&amp;qid=14638#summary</a></p>
-</li>
-</ul>
+        <h2 id="9-1-卷积运算"><a href="#9-1-卷积运算" class="headerlink" title="9.1 卷积运算"></a>9.1 卷积运算</h2><p>卷积的第一个参数： 输入，第二个参数： 核函数。输出有时被称为特征映射。</p>
+<p>对于二维图像I，二维的核K。卷积可以写为：</p>
+<p>$$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)$$</p>
+<p>卷积是可交换的。可以等价地写为：</p>
+<p>$$S(i,j) = (K\times I )(i,j) = \sum_m \sum_n I(i-m,j-n)K(m,n)$$</p>
+<p>卷积运算可交换性的出现时因为我们将核相对输入进行了<strong>翻转</strong>(flip)，从m增大的角度来看，输入的索引在增大，但是核的索引在减小。</p>
+<p>互相关函数。和卷积一样，但是没有对核翻转</p>
+<p>$$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(i+m,j+n)K(m,n)$$</p>
+<h2 id="9-2-动机"><a href="#9-2-动机" class="headerlink" title="9.2 动机"></a>9.2 动机</h2><p>卷积运算的三个重要思想：</p>
+<p>参数共享–绑定的权重。在一个模型的多个函数中使用相同的参数。</p>
+<p>平移等变–输入改变，输出也以同样的方式改变。</p>
+<h2 id="9-3-池化"><a href="#9-3-池化" class="headerlink" title="9.3 池化"></a>9.3 池化</h2><p>池化函数：使用某一位置的相邻输出的总体统计特征来代替网络在该位置的输出。</p>
+<p>最大池化函数（Max pooling）：相邻矩形区域内的最大值</p>
+<p>其他常用的池化函数：相邻区域内的平均值，L2范数，基于距中心像素位置的加权平均函数。</p>
+<p>局部平移不变性。</p>
+<p>池化综合了全部邻居的反馈，这使得<strong>池化单元少于探测单元</strong>成为可能，我们可以通过综合池化区域的<strong>k个像素</strong>的统计特征而不是单个像素来实现。这种方式提高了网络的计算效率，因为<strong>下一层少了约k倍的输入</strong>。（downsampling）</p>
+<h2 id="9-4-卷积与池化作为一种无限强的先验"><a href="#9-4-卷积与池化作为一种无限强的先验" class="headerlink" title="9.4 卷积与池化作为一种无限强的先验"></a>9.4 卷积与池化作为一种无限强的先验</h2><p>先验概率分布（第5.2节）。弱先验具有较高的熵值，强先验具有较低的熵值。</p>
+<p>一个<strong>无限强的先验</strong>需要对一些参数的概率置零并且完全禁止对这些参数赋值。</p>
+<p>可以把<strong>卷机网络</strong>类比为全连接网络，但对于这个全连接网络的权重有一个无限强的先验。这个无限强的先验是说一个隐藏单元的权重必须和它邻居的权重相同，但可以在空间上移动。这个先验也要求除了那些处在隐藏单元的小的空间连续的接受域内的权重以外，其余的权重为零。 </p>
+<p>类似地，使用<strong>池化</strong>也是一个无限强的先验：每个单元都具有对少量平移的不变性。</p>
+<p><strong>卷积和池化可能导致欠拟合</strong>。</p>
 
       
     </div>
@@ -477,7 +475,7 @@ TN——将负类预测为负类数
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://qwerty200696.github.io/2017/10/08/DL_Precision_and_Recall/" title="准确率，召回率与F1值">https://qwerty200696.github.io/2017/10/08/DL_Precision_and_Recall/</a>
+    <a href="https://qwerty200696.github.io/2017/10/20/DL_chap_9/" title="深度学习第九章：卷机网络">https://qwerty200696.github.io/2017/10/20/DL_chap_9/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -494,9 +492,7 @@ TN——将负类预测为负类数
       
         <div class="post-tags">
           
-            <a href="/tags/准确率/" rel="tag"><i class="fa fa-tag"></i> 准确率</a>
-          
-            <a href="/tags/召回率/" rel="tag"><i class="fa fa-tag"></i> 召回率</a>
+            <a href="/tags/deep-learning/" rel="tag"><i class="fa fa-tag"></i> deep learning</a>
           
         </div>
       
@@ -509,8 +505,8 @@ TN——将负类预测为负类数
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/08/DL_chap_6/" rel="next" title="深度学习第六章：前馈神经网络">
-                <i class="fa fa-chevron-left"></i> 深度学习第六章：前馈神经网络
+              <a href="/2017/10/19/tensorflow_import_error/" rel="next" title="import TensorFlow出错解决方案">
+                <i class="fa fa-chevron-left"></i> import TensorFlow出错解决方案
               </a>
             
           </div>
@@ -519,8 +515,8 @@ TN——将负类预测为负类数
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/08/DL_chap_5/" rel="prev" title="深度学习第五章：机器学习基础">
-                深度学习第五章：机器学习基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/22/DL_chap_7/" rel="prev" title="深度学习第七章：深度学习中的正则化">
+                深度学习第七章：深度学习中的正则化 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -760,7 +756,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#精确率（Precision）"><span class="nav-number">1.</span> <span class="nav-text">精确率（Precision）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准确率（Accuracy）："><span class="nav-number">2.</span> <span class="nav-text">准确率（Accuracy）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#召回率（Recall）："><span class="nav-number">3.</span> <span class="nav-text">召回率（Recall）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F1值"><span class="nav-number">4.</span> <span class="nav-text">F1值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-1-卷积运算"><span class="nav-number">1.</span> <span class="nav-text">9.1 卷积运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-2-动机"><span class="nav-number">2.</span> <span class="nav-text">9.2 动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-3-池化"><span class="nav-number">3.</span> <span class="nav-text">9.3 池化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-4-卷积与池化作为一种无限强的先验"><span class="nav-number">4.</span> <span class="nav-text">9.4 卷积与池化作为一种无限强的先验</span></a></li></ol></div>
             
 
           </div>
