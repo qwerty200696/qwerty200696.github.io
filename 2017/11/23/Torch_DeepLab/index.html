@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="准确率,召回率," />
+  <meta name="keywords" content="deep learning,pytorch," />
 
 
 
@@ -95,18 +95,21 @@
 
 
 
-<meta name="description" content="下面有关分类算法的准确率，召回率，F1 值的描述，错误的是？A.准确率是检索出相关文档数与检索出的文档总数的比率，衡量的是检索系统的查准率B.召回率是指检索出的相关文档数和文档库中所有的相关文档数的比率，衡量的是检索系统的查全率C.正确率、召回率和 F 值取值都在0和1之间，数值越接近0，查准率或查全率就越高D.为了解决准确率和召回率冲突问题，引入了F1分数 TP——将正类预测为正类数 FN——将">
-<meta name="keywords" content="准确率,召回率">
+<meta name="description" content="pytorch实现DeepLab使用pytorch搭建DeepLab。 DeepLab简介DeepLab文章的下载地址：https://arxiv.org/abs/1606.00915 该文章的主要思想之一：提出了Atrous convolution（带孔卷积）。扩大视野但不增加计算量。 所谓的带孔卷积，就是在卷积核之间加上0。rate参数为2（torch中对应的参数为dilation）的示意图如">
+<meta name="keywords" content="deep learning,pytorch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="准确率，召回率与F1值">
-<meta property="og:url" content="https://qwerty200696.github.io/2017/10/08/DL_Precision_and_Recall/index.html">
+<meta property="og:title" content="DeepLab简介及其pytorch实现">
+<meta property="og:url" content="https://qwerty200696.github.io/2017/11/23/Torch_DeepLab/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="下面有关分类算法的准确率，召回率，F1 值的描述，错误的是？A.准确率是检索出相关文档数与检索出的文档总数的比率，衡量的是检索系统的查准率B.召回率是指检索出的相关文档数和文档库中所有的相关文档数的比率，衡量的是检索系统的查全率C.正确率、召回率和 F 值取值都在0和1之间，数值越接近0，查准率或查全率就越高D.为了解决准确率和召回率冲突问题，引入了F1分数 TP——将正类预测为正类数 FN——将">
+<meta property="og:description" content="pytorch实现DeepLab使用pytorch搭建DeepLab。 DeepLab简介DeepLab文章的下载地址：https://arxiv.org/abs/1606.00915 该文章的主要思想之一：提出了Atrous convolution（带孔卷积）。扩大视野但不增加计算量。 所谓的带孔卷积，就是在卷积核之间加上0。rate参数为2（torch中对应的参数为dilation）的示意图如">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-10T06:00:53.000Z">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/11/23/Torch_DeepLab/2.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/11/23/Torch_DeepLab/different_rate.png">
+<meta property="og:updated_time" content="2017-11-23T14:49:34.130Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="准确率，召回率与F1值">
-<meta name="twitter:description" content="下面有关分类算法的准确率，召回率，F1 值的描述，错误的是？A.准确率是检索出相关文档数与检索出的文档总数的比率，衡量的是检索系统的查准率B.召回率是指检索出的相关文档数和文档库中所有的相关文档数的比率，衡量的是检索系统的查全率C.正确率、召回率和 F 值取值都在0和1之间，数值越接近0，查准率或查全率就越高D.为了解决准确率和召回率冲突问题，引入了F1分数 TP——将正类预测为正类数 FN——将">
+<meta name="twitter:title" content="DeepLab简介及其pytorch实现">
+<meta name="twitter:description" content="pytorch实现DeepLab使用pytorch搭建DeepLab。 DeepLab简介DeepLab文章的下载地址：https://arxiv.org/abs/1606.00915 该文章的主要思想之一：提出了Atrous convolution（带孔卷积）。扩大视野但不增加计算量。 所谓的带孔卷积，就是在卷积核之间加上0。rate参数为2（torch中对应的参数为dilation）的示意图如">
+<meta name="twitter:image" content="https://qwerty200696.github.io/2017/11/23/Torch_DeepLab/2.png">
 
 
 
@@ -136,14 +139,14 @@
 
 
 
-  <link rel="canonical" href="https://qwerty200696.github.io/2017/10/08/DL_Precision_and_Recall/"/>
+  <link rel="canonical" href="https://qwerty200696.github.io/2017/11/23/Torch_DeepLab/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>准确率，召回率与F1值 | 王立杰的博客</title>
+  <title>DeepLab简介及其pytorch实现 | 王立杰的博客</title>
   
 
 
@@ -302,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/10/08/DL_Precision_and_Recall/">
+    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/11/23/Torch_DeepLab/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wangwlj">
@@ -319,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">准确率，召回率与F1值</h1>
+          <h1 class="post-title" itemprop="name headline">DeepLab简介及其pytorch实现</h1>
         
 
         <div class="post-meta">
@@ -331,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-08T17:17:46+08:00">
-                2017-10-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-23T22:48:10+08:00">
+                2017-11-23
               </time>
             
 
@@ -354,8 +357,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/深度学习/" itemprop="url" rel="index">
-                    <span itemprop="name">深度学习</span>
+                  <a href="/categories/PyTorch/" itemprop="url" rel="index">
+                    <span itemprop="name">PyTorch</span>
                   </a>
                 </span>
 
@@ -372,7 +375,7 @@
 
           
           
-             <span id="/2017/10/08/DL_Precision_and_Recall/" class="leancloud_visitors" data-flag-title="准确率，召回率与F1值">
+             <span id="/2017/11/23/Torch_DeepLab/" class="leancloud_visitors" data-flag-title="DeepLab简介及其pytorch实现">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -397,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  686
+                  841
                 </span>
               
 
@@ -422,29 +425,23 @@
       
 
       
-        <p>下面有关分类算法的准确率，召回率，F1 值的描述，错误的是？<br>A.准确率是检索出相关文档数与检索出的文档总数的比率，衡量的是检索系统的查准率<br>B.召回率是指检索出的相关文档数和文档库中所有的相关文档数的比率，衡量的是检索系统的查全率<br>C.正确率、召回率和 F 值取值都在0和1之间，数值越接近0，查准率或查全率就越高<br>D.为了解决准确率和召回率冲突问题，引入了F1分数</p>
-<pre><code>TP——将正类预测为正类数
-FN——将正类预测为负类数
-FP——将负类预测为正类数
-TN——将负类预测为负类数
-</code></pre><h2 id="精确率（Precision）"><a href="#精确率（Precision）" class="headerlink" title="精确率（Precision）"></a>精确率（Precision）</h2><p>P = TP/(TP+FP)<br>反映了被分类器判定的正例中真正的正例样本的比重。</p>
-<p>精确率是针对我们<strong>预测结果</strong>而言的，它表示的是预测为正的样本中有多少是真正的正样本。那么预测为正就有两种可能了，一种就是把正类预测为正类(TP)，另一种就是把负类预测为正类(FP)。</p>
-<h2 id="准确率（Accuracy）："><a href="#准确率（Accuracy）：" class="headerlink" title="准确率（Accuracy）："></a>准确率（Accuracy）：</h2><p>A = （TP+TN）/ （P+N） = （TP+TN）/ （TP+FN+FP+TN）<br>准确率(正确率)：反映了分类器统对整个样本的判定能力——能将正的判定为正，负的判定为负。</p>
-<p>被分对的样本数除以所有的样本数，通常来说，正确率越高，分类器越好。</p>
-<h2 id="召回率（Recall）："><a href="#召回率（Recall）：" class="headerlink" title="召回率（Recall）："></a>召回率（Recall）：</h2><p>R = TP/（TP+FN）= 1-[FN/（TP+FN）]<br>反映了被正确判定的正例占总的正例的比重。</p>
-<p>而召回率是针对我们<strong>原来的样本</strong>而言的，它表示的是样本中的正例有多少被预测正确了。那也有两种可能，一种是把原来的正类预测成正类(TP)，另一种就是把原来的正类预测为负类(FN)。</p>
-<p>所有正例中被分对的比例，衡量了分类器对正例的识别能力。</p>
-<p>精确率和召回率，两者取值在0和1之间，数值越接近<code>1</code>，查准率或查全率就越高。</p>
-<h2 id="F1值"><a href="#F1值" class="headerlink" title="F1值"></a>F1值</h2><p>F1 = 2<em>（Recall </em> Precision）/（Recall + Precision）</p>
-<p>精准率和召回率和F1取值都在0和1之间，精准率和召回率高，F1值也会高，不存在数值越接近0越高的说法，应该是数值越接近1越高。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>一句话概括：精确率Precision是<strong>真正的正例</strong>里有多少预测正确的，召回率Recall是<strong>预测的正例</strong>里有多少是预测正确的。</p>
-<p>参考资料：</p>
-<ul>
-<li><p><a href="https://www.zhihu.com/question/19645541/answer/12502751" target="_blank" rel="external">https://www.zhihu.com/question/19645541/answer/12502751</a></p>
-</li>
-<li><p><a href="https://www.nowcoder.com/test/question/done?tid=11555865&amp;qid=14638#summary" target="_blank" rel="external">https://www.nowcoder.com/test/question/done?tid=11555865&amp;qid=14638#summary</a></p>
-</li>
-</ul>
+        <h1 id="pytorch实现DeepLab"><a href="#pytorch实现DeepLab" class="headerlink" title="pytorch实现DeepLab"></a>pytorch实现DeepLab</h1><p>使用pytorch搭建DeepLab。</p>
+<h2 id="DeepLab简介"><a href="#DeepLab简介" class="headerlink" title="DeepLab简介"></a>DeepLab简介</h2><p>DeepLab文章的下载地址：<a href="https://arxiv.org/abs/1606.00915" target="_blank" rel="external">https://arxiv.org/abs/1606.00915</a></p>
+<p>该文章的主要思想之一：<br>提出了Atrous convolution（带孔卷积）。<br>扩大视野但不增加计算量。</p>
+<p>所谓的带孔卷积，就是在卷积核之间加上0。rate参数为2（torch中对应的参数为dilation）的示意图如下<br><img src="/2017/11/23/Torch_DeepLab/2.png" alt="Atrous convolution(rate=2)" title="Atrous convolution(rate=2)"></p>
+<p>rate = 2就是在原卷积核相邻两个元素之间补上一个0，假设原卷积核为3x3，rate = 2的带孔卷积核的大小就为<code>3+(3-1) × (rate-1)=5</code>。</p>
+<p>下图是不同rate的带孔卷积。</p>
+<p><img src="/2017/11/23/Torch_DeepLab/different_rate.png" alt="different_rate"></p>
+<p>以<code>rate = 12</code> 为例，带孔卷积的核的大小为：<code>3+(3-1)x(12-1)=25</code>，即新卷积核的大小为：<code>25*25</code>。</p>
+<p>总的来说，对于<code>rate=r</code>的带孔卷积，在连接着的卷积核元素间插入<code>r-1</code>个元素。因此，扩展后的卷积核大小为$k_{new}=k+(k-1)(r-1)$。</p>
+<h2 id="pytorch实现deeplab"><a href="#pytorch实现deeplab" class="headerlink" title="pytorch实现deeplab"></a>pytorch实现deeplab</h2><p>笔者主要目的是实现一下不同视野的concat过程。</p>
+<p>在torch中，卷积函数如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</div><div class="line">nn.Conv2d(in_channels, out_channels, kernel_size, stride=<span class="number">1</span>, padding=<span class="number">0</span>, dilation=<span class="number">1</span>, groups=<span class="number">1</span>, bias=<span class="keyword">True</span>)</div></pre></td></tr></table></figure></p>
+<p>其中的dilation参数就是带孔卷积的参数（也就是tensorFlow下的rate），默认情况下为1，就是普通的卷积，所以带孔卷积只需要修改这个参数就可以了。</p>
+<p>比如说，我们已经写好了不同的视野下的卷积，然后需要将他们的feature map叠加起来，torch中使用<code>torch.cat(inputs, dimension=0)</code>函数来进行叠加。torch的参数一般是四个维度的：<code>[n_batch_size, n_feature_map, height, weight]</code>，所以参数中的<code>dimension = 1</code>就是对<code>feature map</code>叠加。代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x = torch.cat([x2, x3, x4, x5], dim=<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<p>叠加的这一步非常容易出错，原因在于，要求叠加的所有图片大小是一样的。而视野不同导致的卷积核的大小不同，也会导致最终输出的图像大小的变化，因此，需要恰当的调整zero-padding的数目来使得最终输出图像的大小保持一致。</p>
+<p>另外稍微提一下，全连接层的输入向量大小的确定方法。全连接层是将上一步所得到的图像reshape为一个一维的向量之后，作为它的输入，因此，输入向量的长度为： <code>in_channels = nFeatureMap * height * weight</code>。</p>
+<p>网络整体代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Net</span><span class="params">(nn.Module)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        super(Net, self).__init__()</div><div class="line">        self.conv1 = nn.Conv2d(<span class="number">1</span>, <span class="number">10</span>, kernel_size=<span class="number">5</span>, padding=<span class="number">1</span>)</div><div class="line">        self.conv2 = nn.Conv2d(<span class="number">10</span>, <span class="number">10</span>, kernel_size=<span class="number">5</span>, padding=<span class="number">1</span>)</div><div class="line">        self.conv2_drop = nn.Dropout2d() </div><div class="line">        self.fc1 = nn.Linear(<span class="number">40</span> * <span class="number">4</span> * <span class="number">5</span> * <span class="number">5</span>, <span class="number">50</span>) </div><div class="line">        self.fc2 = nn.Linear(<span class="number">50</span>, <span class="number">10</span>)</div><div class="line"></div><div class="line">        self.conv_rate_1 = nn.Conv2d(<span class="number">10</span>, <span class="number">20</span>, kernel_size=<span class="number">3</span>, dilation=<span class="number">2</span>, padding=<span class="number">2</span>) </div><div class="line">        self.conv_rate_2 = nn.Conv2d(<span class="number">20</span>, <span class="number">40</span>, kernel_size=<span class="number">3</span>, dilation=<span class="number">3</span>, padding=<span class="number">3</span>) </div><div class="line">        self.conv_rate_3 = nn.Conv2d(<span class="number">20</span>, <span class="number">40</span>, kernel_size=<span class="number">3</span>, dilation=<span class="number">4</span>, padding=<span class="number">4</span>)</div><div class="line">        self.conv_rate_4 = nn.Conv2d(<span class="number">20</span>, <span class="number">40</span>, kernel_size=<span class="number">3</span>, dilation=<span class="number">5</span>, padding=<span class="number">5</span>)</div><div class="line">        self.conv_rate_5 = nn.Conv2d(<span class="number">20</span>, <span class="number">40</span>, kernel_size=<span class="number">1</span>, padding=<span class="number">0</span>)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span></div><div class="line">        x = F.max_pool2d(F.relu(self.conv1(x)), <span class="number">2</span>)</div><div class="line">        x = F.relu(F.max_pool2d(self.conv2_drop(self.conv2(x)), <span class="number">2</span>))</div><div class="line">        x = self.conv_rate_1(x)</div><div class="line">        x2 = self.conv_rate_2(x)</div><div class="line">        x3 = self.conv_rate_3(x)</div><div class="line">        x4 = self.conv_rate_4(x)</div><div class="line">        x5 = self.conv_rate_5(x)</div><div class="line">        <span class="comment"># print(x.data.shape)</span></div><div class="line">        <span class="comment"># print(x2.data.shape)</span></div><div class="line">        <span class="comment"># print(x3.data.shape)</span></div><div class="line">        <span class="comment"># print(x4.data.shape)</span></div><div class="line">        <span class="comment"># print(x5.data.shape)</span></div><div class="line">        x = torch.cat([x2, x3, x4, x5], dim=<span class="number">1</span>)</div><div class="line"></div><div class="line">        <span class="comment"># for FC</span></div><div class="line">        x = x.view(<span class="number">-1</span>, self.num_flat_features(x))  <span class="comment"># origin is 320</span></div><div class="line">        x = F.relu(self.fc1(x))  <span class="comment"># fc-&gt;relu</span></div><div class="line">        x = F.dropout(x, training=self.training)  <span class="comment"># dropout</span></div><div class="line">        x = self.fc2(x)</div><div class="line">        <span class="keyword">return</span> F.log_softmax(x)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">num_flat_features</span><span class="params">(self, x)</span>:</span></div><div class="line">        size = x.size()[<span class="number">1</span>:]  <span class="comment"># all dimensions except the batch dimension</span></div><div class="line">        num_features = <span class="number">1</span></div><div class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> size:</div><div class="line">            num_features *= s</div><div class="line">        <span class="keyword">return</span> num_features</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -477,7 +474,7 @@ TN——将负类预测为负类数
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://qwerty200696.github.io/2017/10/08/DL_Precision_and_Recall/" title="准确率，召回率与F1值">https://qwerty200696.github.io/2017/10/08/DL_Precision_and_Recall/</a>
+    <a href="https://qwerty200696.github.io/2017/11/23/Torch_DeepLab/" title="DeepLab简介及其pytorch实现">https://qwerty200696.github.io/2017/11/23/Torch_DeepLab/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -494,9 +491,9 @@ TN——将负类预测为负类数
       
         <div class="post-tags">
           
-            <a href="/tags/准确率/" rel="tag"><i class="fa fa-tag"></i> 准确率</a>
+            <a href="/tags/deep-learning/" rel="tag"><i class="fa fa-tag"></i> deep learning</a>
           
-            <a href="/tags/召回率/" rel="tag"><i class="fa fa-tag"></i> 召回率</a>
+            <a href="/tags/pytorch/" rel="tag"><i class="fa fa-tag"></i> pytorch</a>
           
         </div>
       
@@ -509,8 +506,8 @@ TN——将负类预测为负类数
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/08/DL_chap_6/" rel="next" title="深度学习第六章：前馈神经网络">
-                <i class="fa fa-chevron-left"></i> 深度学习第六章：前馈神经网络
+              <a href="/2017/10/22/DL_chap_7/" rel="next" title="深度学习第七章：深度学习中的正则化">
+                <i class="fa fa-chevron-left"></i> 深度学习第七章：深度学习中的正则化
               </a>
             
           </div>
@@ -518,10 +515,6 @@ TN——将负类预测为负类数
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/08/DL_chap_5/" rel="prev" title="深度学习第五章：机器学习基础">
-                深度学习第五章：机器学习基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -760,7 +753,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#精确率（Precision）"><span class="nav-number">1.</span> <span class="nav-text">精确率（Precision）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准确率（Accuracy）："><span class="nav-number">2.</span> <span class="nav-text">准确率（Accuracy）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#召回率（Recall）："><span class="nav-number">3.</span> <span class="nav-text">召回率（Recall）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F1值"><span class="nav-number">4.</span> <span class="nav-text">F1值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch实现DeepLab"><span class="nav-number">1.</span> <span class="nav-text">pytorch实现DeepLab</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DeepLab简介"><span class="nav-number">1.1.</span> <span class="nav-text">DeepLab简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytorch实现deeplab"><span class="nav-number">1.2.</span> <span class="nav-text">pytorch实现deeplab</span></a></li></ol></li></ol></div>
             
 
           </div>
