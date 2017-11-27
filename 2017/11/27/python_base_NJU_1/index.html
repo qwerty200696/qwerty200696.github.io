@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="python基础本文是学习南京大学Python玩转数据基础篇的笔记整理。 python类型基本类型 整型/长整型： 长度与机器有关。长整型：整型值后面加上L。 布尔型：True、False。 浮点型：数学中的实数。可以用科学计数法表示。 float 复数型：虚数部分用j。  x = 2.4+ 5j Out[9]: (2.4+5j) type(x) Out[10]: complex 复数可以对实数和">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-27T09:16:58.623Z">
+<meta property="og:updated_time" content="2017-11-27T13:19:23.776Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python-基础篇">
 <meta name="twitter:description" content="python基础本文是学习南京大学Python玩转数据基础篇的笔记整理。 python类型基本类型 整型/长整型： 长度与机器有关。长整型：整型值后面加上L。 布尔型：True、False。 浮点型：数学中的实数。可以用科学计数法表示。 float 复数型：虚数部分用j。  x = 2.4+ 5j Out[9]: (2.4+5j) type(x) Out[10]: complex 复数可以对实数和">
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,465
+                  1,467
                 </span>
               
 
@@ -442,13 +442,9 @@ Out[12]: 5.0
 x.conjugate()
 Out[13]: (2.4-5j)
 </code></pre><h3 id="序列类型"><a href="#序列类型" class="headerlink" title="序列类型"></a>序列类型</h3><p>字符串，列表[]，元组()</p>
-<pre><code>字符串：
-    三种类型：单引号，双引号，三引号。
-    可以使用索引操作符
-</code></pre><h3 id="映设类型"><a href="#映设类型" class="headerlink" title="映设类型"></a>映设类型</h3><pre><code>字典{}
-    大括号{}鉴别；
-    类似于哈希表的键值对。
-</code></pre><h2 id="python运算"><a href="#python运算" class="headerlink" title="python运算"></a>python运算</h2><h3 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h3><pre><code>+ - × /
+<p>字符串：<br>        三种表示方式：单引号，双引号，三引号。<br>        可以使用索引操作符。</p>
+<h3 id="映设类型"><a href="#映设类型" class="headerlink" title="映设类型"></a>映设类型</h3><p>字典：<br>        大括号{}鉴别；<br>        类似于哈希表的键值对。</p>
+<h2 id="python运算"><a href="#python运算" class="headerlink" title="python运算"></a>python运算</h2><h3 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h3><pre><code>+ - × /
 取余 %
 乘方 **
 整除 //  ----地板除
@@ -462,25 +458,25 @@ u / U
 <h3 id="内建函数"><a href="#内建函数" class="headerlink" title="内建函数"></a>内建函数</h3><p>如何查看python中自带的内建函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dir(__builtins__)</div></pre></td></tr></table></figure></p>
 <h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p>非内建函数如何使用呢？</p>
 <p>如floor()函数，不是内建函数，但包含在math的头文件中，因此只需要导入该模块即可，如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> math</div></pre></td></tr></table></figure></p>
-<p>什么是模块？<br>模块就是一个完整的python文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">文件：物理上的组织方式：math.py</div><div class="line">   模块：逻辑上的组织方式：math</div></pre></td></tr></table></figure></p>
+<p>什么是模块？<br>模块就是一个完整的python文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">文件：物理上的组织方式：math.py</div><div class="line">模块：逻辑上的组织方式：math</div></pre></td></tr></table></figure></p>
 <p>Python中通常用<code>import 模块</code>的方式将现成模块中的函数、类重用到其他代码块中。</p>
 <p>可以导入多个模快。可以从模块中导入指定的模块属性（把指定的名称导入）。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> ModuleName</div><div class="line"><span class="keyword">import</span> ModuleName1,ModuleName2,...</div><div class="line"><span class="keyword">from</span> Module1 <span class="keyword">import</span> ModuleElement</div></pre></td></tr></table></figure></p>
 <h3 id="包-package"><a href="#包-package" class="headerlink" title="包(package)"></a>包(package)</h3><p>包是有层次的文件目录结构。</p>
-<p>比如说如下的目录结构定义了一个由模块和子包组成的Python应用程序执行环境：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">AAA/</div><div class="line">	__init__.py</div><div class="line">    bbb.py</div><div class="line">    CCC/</div><div class="line">    	__init__.py</div><div class="line">        c1.py</div><div class="line">        c2.py</div><div class="line">    DDD/</div><div class="line">    	__init__.py</div><div class="line">        d1.py</div><div class="line">    EEE/</div><div class="line">    	...</div></pre></td></tr></table></figure></p>
+<p>比如说如下的目录结构定义了一个由模块和子包组成的Python应用程序执行环境：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">AAA/</div><div class="line">    __init__.py</div><div class="line">    bbb.py</div><div class="line">    CCC/</div><div class="line">    	__init__.py</div><div class="line">        c1.py</div><div class="line">        c2.py</div><div class="line">    DDD/</div><div class="line">    	__init__.py</div><div class="line">        d1.py</div><div class="line">    EEE/</div><div class="line">    	...</div></pre></td></tr></table></figure></p>
 <p>因此，我们可以这样使用该包：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> AAA.CCC.c1</div><div class="line">AAA.CCC.c1.func1(<span class="number">123</span>)</div></pre></td></tr></table></figure></p>
 <p>或者：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> AAA.CCC.c1 <span class="keyword">import</span> func1</div><div class="line">func1(<span class="number">123</span>)</div></pre></td></tr></table></figure></p>
 <h3 id="库（library）"><a href="#库（library）" class="headerlink" title="库（library）"></a>库（library）</h3><p>库是一组具有相关功能的模块的集合。<br>Python的一大特色就是具有强大的标准库、以及第三方库、以及自定义的模块。</p>
 <h2 id="条件、循环与中断语句"><a href="#条件、循环与中断语句" class="headerlink" title="条件、循环与中断语句"></a>条件、循环与中断语句</h2><h3 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h3><p>if语句<br>else语句<br>elif语句：多分支情况下使用</p>
 <p>其中，条件语句可以嵌套使用。</p>
-<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">for iter_var in interable_object:</div><div class="line">	suite_to_repeat</div></pre></td></tr></table></figure>
+<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">for iter_var in interable_object:</div><div class="line">    suite_to_repeat</div></pre></td></tr></table></figure>
 <p>可以明确循环的次数，一般用在：</p>
 <ul>
 <li>遍历一个数据集的成员</li>
 <li><p>在列表解析中使用</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">in</span>[<span class="number">4</span>]: [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)]</div><div class="line">      Out[<span class="number">4</span>]: [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</div><div class="line">      <span class="keyword">in</span>[<span class="number">5</span>]: [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)<span class="keyword">if</span> i%<span class="number">2</span>==<span class="number">0</span>]</div><div class="line">      Out[<span class="number">5</span>]: [<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>]</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">in</span>[<span class="number">4</span>]: [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)]</div><div class="line">Out[<span class="number">4</span>]: [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</div><div class="line"><span class="keyword">in</span>[<span class="number">5</span>]: [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)<span class="keyword">if</span> i%<span class="number">2</span>==<span class="number">0</span>]</div><div class="line">Out[<span class="number">5</span>]: [<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>]</div></pre></td></tr></table></figure>
 </li>
 <li><p>在生成器表达式中使用</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">in</span>[<span class="number">6</span>]: (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)<span class="keyword">if</span> i%<span class="number">2</span>==<span class="number">0</span>)</div><div class="line">   Out[<span class="number">6</span>]: &lt;generator object &lt;genexpr&gt; at <span class="number">0x7f44af56f570</span>&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">in</span>[<span class="number">6</span>]: (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)<span class="keyword">if</span> i%<span class="number">2</span>==<span class="number">0</span>)</div><div class="line">Out[<span class="number">6</span>]: &lt;generator object &lt;genexpr&gt; at <span class="number">0x7f44af56f570</span>&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>可用于迭代的对象（iterable object）有：String、 List、Tuple、Dictionary、File。</p>
@@ -489,7 +485,7 @@ u / U
 <p>其中，expression是条件表达式，当expression的值为    True的时候，执行suitr_to_repeat的代码块。</p>
 <h3 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a>break语句</h3><p>while循环中的break与for循环中的break。</p>
 <h3 id="循环中的else语句"><a href="#循环中的else语句" class="headerlink" title="循环中的else语句"></a>循环中的else语句</h3><p>循环中的else：<br>如果是正常结束，就执行else中的代码；break处中止，就不执行else。</p>
-<h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><h3 id="自定义函数的创建："><a href="#自定义函数的创建：" class="headerlink" title="自定义函数的创建："></a>自定义函数的创建：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">def function_name([arguments]):</div><div class="line">	&quot;optional documentation string&quot;</div><div class="line">    function_suite</div></pre></td></tr></table></figure>
+<h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><h3 id="自定义函数的创建："><a href="#自定义函数的创建：" class="headerlink" title="自定义函数的创建："></a>自定义函数的创建：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">def function_name([arguments]):</div><div class="line">    &quot;optional documentation string&quot;</div><div class="line">    function_suite</div></pre></td></tr></table></figure>
 <p>其中，def下一行可以是函数文档。～～～～～要学会使用函数文档！！</p>
 <h3 id="自定义函数的调用"><a href="#自定义函数的调用" class="headerlink" title="自定义函数的调用"></a>自定义函数的调用</h3><p>函数名加上函数运算符，一对小括号。</p>
 <p>括号之间是所有可选的参数，即使没有参数，小括号也不能省略。</p>
@@ -498,7 +494,7 @@ u / U
 <p>默认参数的值可以改变。</p>
 <p>默认参数一般需要放置在参数列表的最后。默认参数后面不能有非默认参数。</p>
 <h3 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h3><p>关键字参数是让调用者通过使用参数名区分参数。允许你改变参数列表中的参数顺序。</p>
-<h3 id="传递函数"><a href="#传递函数" class="headerlink" title="传递函数"></a>传递函数</h3><p>函数可以像参数一样传递给另外一个参数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">def addMe2Me(x):</div><div class="line">	return (x+x)</div><div class="line">def self(f,y):</div><div class="line">	print f(y)</div><div class="line"></div><div class="line">&gt;&gt;&gt; self(addMe2Me,2.2)</div><div class="line">4.4</div></pre></td></tr></table></figure></p>
+<h3 id="传递函数"><a href="#传递函数" class="headerlink" title="传递函数"></a>传递函数</h3><p>函数可以像参数一样传递给另外一个参数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">def addMe2Me(x):</div><div class="line">    return (x+x)</div><div class="line">def self(f,y):</div><div class="line">    print f(y)</div><div class="line"></div><div class="line">&gt;&gt;&gt; self(addMe2Me,2.2)</div><div class="line">4.4</div></pre></td></tr></table></figure></p>
 <h3 id="lambda函数"><a href="#lambda函数" class="headerlink" title="lambda函数"></a>lambda函数</h3><p>匿名函数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 普通的函数</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_add</span><span class="params">(x,y)</span>:</span> <span class="keyword">return</span> x+y</div><div class="line"><span class="comment"># 匿名函数</span></div><div class="line"><span class="keyword">lambda</span> x, y : x + y</div><div class="line">my_add = <span class="keyword">lambda</span> x, y : x + y</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>my_add(<span class="number">3</span>,<span class="number">5</span>)</div><div class="line"><span class="number">8</span></div></pre></td></tr></table></figure>
 <h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><h3 id="全局变量和局部变量"><a href="#全局变量和局部变量" class="headerlink" title="全局变量和局部变量"></a>全局变量和局部变量</h3><p>函数内部就是局部变量。</p>
