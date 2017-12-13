@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MathJax," />
+  <meta name="keywords" content="算法导论,algorithm,函数渐近," />
 
 
 
@@ -95,18 +95,22 @@
 
 
 
-<meta name="description" content="字体 使用\mathbb或\Bbb来显示黑板粗体字，$\mathbb{NQRZ}$ 使用\mathbf来显示粗体字，$\mathbf {ABCDabcd}$ 使用\mathtt来显示打印式字体，$\mathtt{ABCDabcd}$ 使用\mathrm来显示罗马字体，$\mathrm{ABCDabcd}$ 使用\mathcal来显示手写字体，$\mathcal{ABCDabcd}$ 使用\math">
-<meta name="keywords" content="MathJax">
+<meta name="description" content="3.1 渐近记号$\Theta、 \text{O}和\Omega $三种记号的图示： 先看第一幅图(a)——$\Theta$记号若存在正常量$c_1,c_2,n_0$，使得对所有$n\geqslant n_0$，有$0\leqslant c_1g(n)\leqslant f(n) \leqslant c_2g(n)$，则$f(n)$属于集合$\Theta(g(n))$，可以记为$f(n)\in \">
+<meta name="keywords" content="算法导论,algorithm,函数渐近">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MathJax的基本使用语法">
-<meta property="og:url" content="https://qwerty200696.github.io/2017/10/08/mathjax_basic/index.html">
+<meta property="og:title" content="算法导论详解(2) 第三章函数的增长">
+<meta property="og:url" content="https://qwerty200696.github.io/2017/12/13/algorithm_tutorial_chapter_3/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="字体 使用\mathbb或\Bbb来显示黑板粗体字，$\mathbb{NQRZ}$ 使用\mathbf来显示粗体字，$\mathbf {ABCDabcd}$ 使用\mathtt来显示打印式字体，$\mathtt{ABCDabcd}$ 使用\mathrm来显示罗马字体，$\mathrm{ABCDabcd}$ 使用\mathcal来显示手写字体，$\mathcal{ABCDabcd}$ 使用\math">
+<meta property="og:description" content="3.1 渐近记号$\Theta、 \text{O}和\Omega $三种记号的图示： 先看第一幅图(a)——$\Theta$记号若存在正常量$c_1,c_2,n_0$，使得对所有$n\geqslant n_0$，有$0\leqslant c_1g(n)\leqslant f(n) \leqslant c_2g(n)$，则$f(n)$属于集合$\Theta(g(n))$，可以记为$f(n)\in \">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-22T14:17:34.038Z">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/12/13/algorithm_tutorial_chapter_3/algorithm_chap_3_1.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/12/13/algorithm_tutorial_chapter_3/algorithm_chap_3_2.png">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/12/13/algorithm_tutorial_chapter_3/algorithm_chap_3_3.png">
+<meta property="og:updated_time" content="2017-12-13T14:52:32.880Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MathJax的基本使用语法">
-<meta name="twitter:description" content="字体 使用\mathbb或\Bbb来显示黑板粗体字，$\mathbb{NQRZ}$ 使用\mathbf来显示粗体字，$\mathbf {ABCDabcd}$ 使用\mathtt来显示打印式字体，$\mathtt{ABCDabcd}$ 使用\mathrm来显示罗马字体，$\mathrm{ABCDabcd}$ 使用\mathcal来显示手写字体，$\mathcal{ABCDabcd}$ 使用\math">
+<meta name="twitter:title" content="算法导论详解(2) 第三章函数的增长">
+<meta name="twitter:description" content="3.1 渐近记号$\Theta、 \text{O}和\Omega $三种记号的图示： 先看第一幅图(a)——$\Theta$记号若存在正常量$c_1,c_2,n_0$，使得对所有$n\geqslant n_0$，有$0\leqslant c_1g(n)\leqslant f(n) \leqslant c_2g(n)$，则$f(n)$属于集合$\Theta(g(n))$，可以记为$f(n)\in \">
+<meta name="twitter:image" content="https://qwerty200696.github.io/2017/12/13/algorithm_tutorial_chapter_3/algorithm_chap_3_1.png">
 
 
 
@@ -136,14 +140,14 @@
 
 
 
-  <link rel="canonical" href="https://qwerty200696.github.io/2017/10/08/mathjax_basic/"/>
+  <link rel="canonical" href="https://qwerty200696.github.io/2017/12/13/algorithm_tutorial_chapter_3/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>MathJax的基本使用语法 | 王立杰的博客</title>
+  <title>算法导论详解(2) 第三章函数的增长 | 王立杰的博客</title>
   
 
 
@@ -292,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/10/08/mathjax_basic/">
+    <link itemprop="mainEntityOfPage" href="https://qwerty200696.github.io/2017/12/13/algorithm_tutorial_chapter_3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wangwlj">
@@ -309,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MathJax的基本使用语法</h1>
+          <h1 class="post-title" itemprop="name headline">算法导论详解(2) 第三章函数的增长</h1>
         
 
         <div class="post-meta">
@@ -321,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-08T16:58:11+08:00">
-                2017-10-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-13T22:51:38+08:00">
+                2017-12-13
               </time>
             
 
@@ -344,8 +348,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客搭建系列/" itemprop="url" rel="index">
-                    <span itemprop="name">博客搭建系列</span>
+                  <a href="/categories/算法导论/" itemprop="url" rel="index">
+                    <span itemprop="name">算法导论</span>
                   </a>
                 </span>
 
@@ -362,7 +366,7 @@
 
           
           
-             <span id="/2017/10/08/mathjax_basic/" class="leancloud_visitors" data-flag-title="MathJax的基本使用语法">
+             <span id="/2017/12/13/algorithm_tutorial_chapter_3/" class="leancloud_visitors" data-flag-title="算法导论详解(2) 第三章函数的增长">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  866
+                  1,975
                 </span>
               
 
@@ -412,72 +416,63 @@
       
 
       
-        <h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><ul>
-<li>使用\mathbb或\Bbb来显示黑板粗体字，$\mathbb{NQRZ}$</li>
-<li>使用\mathbf来显示粗体字，$\mathbf {ABCDabcd}$</li>
-<li>使用\mathtt来显示打印式字体，$\mathtt{ABCDabcd}$</li>
-<li>使用\mathrm来显示罗马字体，$\mathrm{ABCDabcd}$</li>
-<li>使用\mathcal来显示手写字体，$\mathcal{ABCDabcd}$</li>
-<li>使用\mathscr来显示剧本字体，$\mathscr{ABCDabcd}$</li>
-<li>使用\mathfrak来显示Fraktur字母(一种旧的德国字体)，$\mathfrak{ABCDabcd}$</li>
+        <h2 id="3-1-渐近记号"><a href="#3-1-渐近记号" class="headerlink" title="3.1 渐近记号"></a>3.1 渐近记号</h2><p>$\Theta、 \text{O}和\Omega $三种记号的图示：<br><img src="/2017/12/13/algorithm_tutorial_chapter_3/algorithm_chap_3_1.png" alt="1"></p>
+<h3 id="先看第一幅图-a-——-Theta-记号"><a href="#先看第一幅图-a-——-Theta-记号" class="headerlink" title="先看第一幅图(a)——$\Theta$记号"></a>先看第一幅图(a)——$\Theta$记号</h3><p>若存在正常量$c_1,c_2,n_0$，使得对所有$n\geqslant n_0$，有$0\leqslant c_1g(n)\leqslant f(n) \leqslant c_2g(n)$，则$f(n)$属于集合$\Theta(g(n))$，<br>可以记为$f(n)\in \Theta(g(n))$，我们通常用$f(n)=\Theta(g(n))$表达相同的概念。</p>
+<p>上述公式的含义：函数f(n)能“夹入”$c_1g(n)$和$c_2g(n)$之间。换句话说，对所有的$n\geqslant n_0$，函数$f(n)$在一个常量因子内等于$g(n)$，我们称$g(n)$是$f(n)$的一个渐近紧确界(asymptotically tight bound)。</p>
+<p>实例：可以用上述的形式化定义来证明：$\frac{1}{2}n^2-3n =\Theta(n^2)$，以及$6n^3 \neq \Theta(n^2)$。</p>
+<p>渐近正函数就是对足够大的n均为正的函数。</p>
+<p>直觉上，一个渐近正函数的低阶项 在确定渐近确界时可以被忽略，因为对于大的n，它们是无足轻重的。</p>
+<p>一般来说，对任意多项式$p(n)=\sum_{i=0}^d a_i n^i$，其中$a_i$为常量且$a_d&gt;0$（最高阶的系数大于零），则有$p(n)=\Theta(n_d)$。</p>
+<h3 id="接着看图-b-——-text-O-记号"><a href="#接着看图-b-——-text-O-记号" class="headerlink" title="接着看图(b)——$\text{O}$记号"></a>接着看图(b)——$\text{O}$记号</h3><p>$\Theta$记号渐近地给出了一个函数的上界和下届。当只有一个<em>渐近上界</em>时，使用$\text{O}$记号。</p>
+<p>$\text{O}(g(n))={f(n)：$存在正常量$c,n_0$，使得对所有$n\geqslant n_0$，有$0\leqslant  f(n) \leqslant cg(n)}$</p>
+<p>我们记$f(n)=\text{O}(g(n))$表示$f(n)$是集合$\text{O}(g(n))$的成员。注意$f(n)=\Theta(g(n))$蕴含了$f(n)=\text{O}(g(n))$，因为$\Theta$记号是一个比$\text{O}$记号更强的概念。</p>
+<p>使用$\text{O}$记号，我们常常可以仅仅通过检查算法的总体结构来描述算法的运行时间。$\text{O}$记号描述上界，对插入排序算法的最坏情况运行时间的界$\text{O}(n^2)$也适合于该算法对每个输入的运行时间。该算法对每个输入的运行时间都有一个界，这就是综合性描述。</p>
+<h3 id="最后看图-c-——-Omega-记号"><a href="#最后看图-c-——-Omega-记号" class="headerlink" title="最后看图(c)——$\Omega$记号"></a>最后看图(c)——$\Omega$记号</h3><p>正如$\text{O}$记号提供了渐近上界，$\Omega$记号提供了渐进下界。</p>
+<p>$\Omega(g(n))={f(n)：$存在正常量$c,n_0$，使得对所有$n\geqslant n_0$，有$0\leqslant  cg(n) \leqslant f(n)}$</p>
+<p>于是，由此引出了定理3.1。</p>
+<h4 id="定理-3-1"><a href="#定理-3-1" class="headerlink" title="定理 3.1"></a>定理 3.1</h4><p>对任意两个函数$f(n)$和$g(n)$，我们有$f(n)=\Theta(g(n))$，当且仅当$f(n)=\text{O}(g(n))$且$f(n)=\Omega(g(n))$。</p>
+<p>当一个算法的运行时间为$\Omega(g(n))$时，我们意指不管n是什么规模，只要n足够大，对那个输入的运行时间至少是$g(n)$的常数倍。</p>
+<h3 id="等式和不等式中的渐近记号"><a href="#等式和不等式中的渐近记号" class="headerlink" title="等式和不等式中的渐近记号"></a>等式和不等式中的渐近记号</h3><p>当渐近记号出现在某个公式中时，我们将其解释为代表某个我们不关注名称的匿名函数。</p>
+<p>例如：$2n^2+3n+1 = 2n^2 +\Theta(n)$。</p>
+<p>按这种方式使用渐记号可以帮助消除一个等式中无关紧要的细节与混乱。</p>
+<p>例如：归并排序的最坏情况运行时间：<br>$$T(n) = 2T(n/2)+\Theta(n)$$<br>如果只对T(n)的渐近行为感兴趣，就没必要准确说明所以低阶项，它们都被理解为包含在由项$\Theta(n)$表示的匿名函数中。</p>
+<p>在某些例子中，渐近记号出现在等式的左边，如：<br>$$2n^2+\Theta(n) = \Theta(n^2) $$</p>
+<p>无论怎么选择等号左边的匿名函数，总有一种办法来选择等号右边的匿名函数使等式成立。</p>
+<h3 id="text-o-记号"><a href="#text-o-记号" class="headerlink" title="$\text{o}$记号"></a>$\text{o}$记号</h3><p>$\text{o}$记号，非渐近紧确的上界。</p>
+<p>$\text{o}(g(n))={f(n)：$对任意正常量$c&gt;0$，存在正常量$n_0&gt;0$，使得对所有$n\geqslant n_0$，有$0\leqslant  f(n) &lt; cg(n)}$。</p>
+<p>$\text{O}$记号与$\text{o}$记号类似，主要的区别 是在$f(n)=\text{O}(g(n))$中，界$0\leqslant  f(n) \leqslant cg(n)$对某个常量$c&gt;0$成立，但在$f(n)=\text{o}(g(n))$中，界$0\leqslant  f(n) &lt; cg(n)$对所有常量$c&gt;0$成立。</p>
+<p>直观上，在$\text{o}$记号中，当n趋向于无穷时，函数$f(n)$相对于$g(n)$来说变得微不足道了，即：<br>$$\lim_{n\rightarrow \infty} \frac{f(n)}{g(n)} = 0$$</p>
+<h3 id="omega-记号"><a href="#omega-记号" class="headerlink" title="$\omega$记号"></a>$\omega$记号</h3><p>非渐近紧确下界。</p>
+<p>$\omega (g(n))={f(n)：$对任意正常量$c&gt;0$，存在正常量$n_0&gt;0$，使得对所有$n\geqslant n_0$，有$0\leqslant cg(n) &lt;  f(n) }$。</p>
+<p>$$\lim_{n\rightarrow \infty} \frac{f(n)}{g(n)} = \infty $$</p>
+<h3 id="渐近运算的运算性质"><a href="#渐近运算的运算性质" class="headerlink" title="渐近运算的运算性质"></a>渐近运算的运算性质</h3><p>传递性、自反性、对称性与转置对称性：<br><img src="/2017/12/13/algorithm_tutorial_chapter_3/algorithm_chap_3_2.png" alt="2"><br><img src="/2017/12/13/algorithm_tutorial_chapter_3/algorithm_chap_3_3.png" alt="3"><br>而且：两个函数f和g的渐近比较关系可与实数a与b之间的比较做类比： </p>
+<ul>
+<li>f(n)=O(g(n)) 类似于a&lt;= b </li>
+<li>f(n)=Ω(g(n)) 类似于a&gt;= b </li>
+<li>f(n)=Θ(g(n)) 类似于a= b </li>
+<li>f(n)=o(g(n)) 类似于a&lt; b </li>
+<li>f(n)=w(g(n)) 类似于a&gt; b</li>
 </ul>
-<h1 id="插入公式"><a href="#插入公式" class="headerlink" title="插入公式"></a>插入公式</h1><p>如果是在文本中插入公式，则用<code>$...$</code>。</p>
-<p>如果公式自成段落，则使用<code>$$...$$</code>。</p>
-<h1 id="多行公式"><a href="#多行公式" class="headerlink" title="多行公式"></a>多行公式</h1><p>如果要写出多行公式，就使用</p>
-<pre><code>\begin{equation}\begin{split} 
-end{split}\end{equation}
-</code></pre><p>\\ 符号表示换行，再使用&amp;符号表示要对齐的位置，例子如下</p>
-<pre><code>\begin{equation}\begin{split}
-H(Y|X)&amp;=\sum_{x\in X} p(x)H(Y|X)\\
-&amp;=-\sum_{x\in X} p(x)\sum_{y\in Y}p(y|x)\log p(y|x)\\
-&amp;=-\sum_{x\in X} \sum_{y\in Y}p(y,x)\log p(y|x)
-\end{split}\end{equation}
-</code></pre><p>当然，再加上<code>$$...$$</code>之后，显示如下：<br>$$\begin{equation}\begin{split}<br>H(Y|X)&amp;=\sum_{x\in X} p(x)H(Y|X)\\<br>&amp;=-\sum_{x\in X} p(x)\sum_{y\in Y}p(y|x)\log p(y|x)\\<br>&amp;=-\sum_{x\in X} \sum_{y\in Y}p(y,x)\log p(y|x)<br>\end{split}\end{equation}$$</p>
-<h1 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h1><p>通过大括号<code>{}</code>将操作数与符号分割开，消除二义性。</p>
-<p>例如，若使用x^10，其效果为x10，这里就要用到大括号，x^{10}，最终效果为$x^{10}$。</p>
-<h1 id="空间"><a href="#空间" class="headerlink" title="空间"></a>空间</h1><p><code>MathJax</code>通常用自己的一套复杂策略来决定公式的空间距离。直接在两个元素之间加入空格是毫无用处的。</p>
-<p>因此为了增加空间距离，使用<code>\,</code>可以增加稍许空间；使用<code>\;</code>可以增加更多的空间；<code>\quad</code>和<code>\qquad</code>分别对应更大的空间。</p>
-<h1 id="数学符号"><a href="#数学符号" class="headerlink" title="数学符号"></a>数学符号</h1><h2 id="上标与下标"><a href="#上标与下标" class="headerlink" title="上标与下标"></a>上标与下标</h2><p>上标或下标只需在后面加上<code>^</code>或<code>_</code>。另外需要注意的是，如果上下标不止一个字符，就需要用大括号括起来，表示是一个整体<code>{...}</code>。</p>
-<h2 id="分式"><a href="#分式" class="headerlink" title="分式"></a>分式</h2><p>有两种方式做到这个效果。 </p>
-<ol>
-<li>使用\frac ab。如\frac {1+a}{4+b}，效果为$\frac{1+a}{4+b}$; </li>
-<li>使用a \over b。如{1+a} \over {4+b}，效果为${1+a}\over {4+b}$。 </li>
-</ol>
-<p>一般推荐使用<strong>第二种</strong>。</p>
-<h2 id="根式"><a href="#根式" class="headerlink" title="根式"></a>根式</h2><p>平方根： \sqrt{x^3}，效果为 $\sqrt{x^3} $。</p>
-<p>其余： \sqrt[4]{\frac xy}，效果为 $\sqrt[4]{\frac xy}$。</p>
-<h2 id="关系比较符号"><a href="#关系比较符号" class="headerlink" title="关系比较符号"></a>关系比较符号</h2><pre><code>&lt;    \lt
-&gt;    \gt
-≤    \le
-≥    \ge
-≠    \neq
-</code></pre><p>$$\begin{array}{c|lcr}<br>\text{符号} &amp; \text{\表示} \\<br>\hline<br>&lt; &amp; lt \\<br>> &amp; gt \\<br>≤ &amp; le \\<br>≥ &amp; ge \\<br>≠ &amp; neq \\<br>\end{array}$$</p>
-<h2 id="argmax"><a href="#argmax" class="headerlink" title="argmax"></a>argmax</h2><pre><code>\underset{f}{\mathrm{argmin}}
-</code></pre><p>效果如下：<br>$$\underset{f}{\mathrm{argmin}}$$</p>
-<h2 id="不显示斜体"><a href="#不显示斜体" class="headerlink" title="不显示斜体"></a>不显示斜体</h2><p>对于常量部分，有时候我们不想让他显示成斜体，而是正常的竖直显示，可加上<code>\text{...}</code>，就可以正常显示。</p>
-<h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><p>使用<code>$$\begin{matrix}…\end{matrix}$$</code>，每一行末用<code>\\</code>结束表示换行，用<code>&amp;</code>分隔矩阵元素。 </p>
-<pre><code>$$
-  \begin{matrix}
-  1 &amp; 0 &amp; 0 \\
-  0 &amp; 1 &amp; 0 \\
-  0 &amp; 0 &amp; 1 \\
-  \end{matrix}
-$$
-</code></pre><p>效果：<br>$$<br>\begin{matrix}<br>1 &amp; 0 &amp; 0 \\<br>0 &amp; 1 &amp; 0 \\<br>0 &amp; 0 &amp; 1 \\<br>\end{matrix}<br>$$</p>
-<p>如果要加括号，可以使用上面的括号符号。<br>除此之外，还可以直接将<code>matrix</code>替换为<code>pmatrix</code>(小括号)，或者<code>bmatrix</code>(中括号)，或者<code>Bmatrix</code>(大括号)，或者<code>vmatrix</code>(竖线)，或者<code>Vmatrix</code>(是双竖线)</p>
-<p>如果你想省略一些项，可以使用<code>\cdots</code>⋯，<code>\ddots</code>⋱，<code>\vdots</code>⋮。<br>如：</p>
-<pre><code>$$
-  \begin{pmatrix}
-  1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n\\
-  1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\
-  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\  
-  1 &amp; a_n &amp; a_n^2 &amp; \cdots &amp; a_n^n  \\
-  \end{pmatrix}
-$$
-</code></pre><p>效果：<br>$$<br>  \begin{pmatrix}<br>  1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n\\<br>  1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\<br>  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>  1 &amp; a_n &amp; a_n^2 &amp; \cdots &amp; a_n^n  \\<br>  \end{pmatrix}<br>$$</p>
-<h1 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h1><p>测试：<br>    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (condition)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>效果如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (condition)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>三分性：虽然实数具有三分性，即对于任意两个实数a、b，下列三种情况必须有一种成立：$a<b$，$a=b$或$a>b$。但是不是所有函数都可以渐近比较。</b$，$a=b$或$a></p>
+<h2 id="3-2-标准记号与常用函数"><a href="#3-2-标准记号与常用函数" class="headerlink" title="3.2 标准记号与常用函数"></a>3.2 标准记号与常用函数</h2><h3 id="单调性"><a href="#单调性" class="headerlink" title="单调性"></a>单调性</h3><p>单调递增/单调递减：包含等号；严格递增/严格递减：不包含等号。</p>
+<h3 id="向下取整与向上取整"><a href="#向下取整与向上取整" class="headerlink" title="向下取整与向上取整"></a>向下取整与向上取整</h3><p>x的向下取整：$\lfloor x \rfloor$；x的向上取整：$\lceil x \rceil$。</p>
+<h3 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h3><p>对任意整数a和正整数n，$a\ \text{mod}\ n$ 的值就是商a/n的余数。<br>$$a\ \text{mod}\ n = a-n\lfloor a/n\rfloor $$</p>
+<p>若$(a\ \text{mod}\ n)=(b\ \text{mod}\ n)$，则记$a\equiv b(\text{mod}n)$</p>
+<h3 id="多项式"><a href="#多项式" class="headerlink" title="多项式"></a>多项式</h3><p>给定一个非负整数d，n的d次多项式$p(n)$：<br>$$p(n)=\sum_{i=0}^d a_i n^i$$<br>其中，$a_d \neq 0 $。</p>
+<p>多项式为渐近正的当且仅当$a_d &gt; 0 $。对于一个d次渐近正的多项式$p(n)$，有$p(n)=\Theta(n^d)$</p>
+<p>若对于某个常量k，有$f(n)=\text{O}(n^k)$，则称函数$f(n)$是多项式有界的。</p>
+<h3 id="指数"><a href="#指数" class="headerlink" title="指数"></a>指数</h3><p>对所有使得$a&gt;1$的实常量a和b，有<br>$$\lim_{n\rightarrow \infty} \frac{n^b}{a^n} = 0$$<br>据此可得：<br>$$n^b = \text{o}(a^n)$$</p>
+<h3 id="对数"><a href="#对数" class="headerlink" title="对数"></a>对数</h3><p>以2为底的自然数：<br>$$\text{lg}n = \text{log}_2n$$<br>自然对数：<br>$$\text{ln}n = \text{log}_en$$<br>取幂：<br>$$\text{lg}^kn = (\text{lg}n)^k$$<br>复合：<br>$$\text{lg}\text{lg}n =\text{lg} (\text{lg}n)$$</p>
+<p>一个重要的记号约定：对数函数只适用于公式中的下一项，所以$\text{lg}n+k$意思是指$(\text{lg}n)+k$</p>
+<p>对于$a&gt;0,b&gt;0,c&gt;0$和n，有<br>$$a = b^{\text{log}_ba}$$<br>$$\text{log}_c(ab) = \text{log}_ca +\text{log}_cb$$<br>$$\text{log}_b(a^n) = n\text{log}_ba$$<br>$$\text{log}_ba =\frac{\text{log}_ca}{\text{log}_cb} $$<br>$$\text{log}_b(1/a) =- \text{log}_ba $$<br>$$\text{log}_ba =\frac{1}{\text{log}_ab} $$<br>$$a^{\text{log}_bc} = c^{\text{log}_ba}$$<br>其中，上述等式的对数底不为1。</p>
+<p>对任意常量a，有<br>$$\text{log}^bn = \text{o}(n^a)$$<br>表示任意正的多项式函数都比任意多对数函数增长得快。</p>
+<h3 id="阶乘"><a href="#阶乘" class="headerlink" title="阶乘"></a>阶乘</h3><p>$n!$，读作“n的阶乘”。其定义为对整数$n \geqslant 0$：<br>$$n! = \begin{cases}<br>1 &amp; 若n=0\\<br>n\cdot (n-1)! &amp; 若n&gt;0<br>\end{cases}$$</p>
+<p>阶乘函数的一个弱上界是$n! \leqslant n^n$，因为在阶乘中，n项的每项最多为n。</p>
+<h4 id="斯特林-Stirling-近似公式"><a href="#斯特林-Stirling-近似公式" class="headerlink" title="斯特林(Stirling)近似公式"></a>斯特林(Stirling)近似公式</h4><p>$$n!=\sqrt{2\pi n}(\frac{n}{e})^n(1+\Theta(\frac{1}{n})) $$</p>
+<p>由上述公式可以证明：<br>$$n! = o(n^n)$$<br>$$n! = \omega(2^n)$$<br>$$\text{lg}n! = \Theta(n\text{lg}n)$$</p>
+<h3 id="多重函数"><a href="#多重函数" class="headerlink" title="多重函数"></a>多重函数</h3><p>记号$f^{(i)}(n)$表示f(n)重复i次作用于一个初值n上。对非负整数i，我们递归地定义：<br>$$f^{(i)}(n)=\begin{cases}<br>n &amp; 若i=0 \\<br>f(f^{(i-1)}(n)) &amp; 若i&gt;0<br>\end{cases}$$</p>
+<h3 id="多重对数函数"><a href="#多重对数函数" class="headerlink" title="多重对数函数"></a>多重对数函数</h3><p>$\text{lg}^*n$表示多重对数，多重对数增长非常慢。</p>
+<h3 id="斐波那契数"><a href="#斐波那契数" class="headerlink" title="斐波那契数"></a>斐波那契数</h3><p>斐波那契数的递归定义：<br>$$F_0 = 0$$<br>$$F_1 = 1$$<br>$$F_i = F_{i-1}+F_{i-2}, i \geqslant 2$$</p>
 
       
     </div>
@@ -510,7 +505,7 @@ $$
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://qwerty200696.github.io/2017/10/08/mathjax_basic/" title="MathJax的基本使用语法">https://qwerty200696.github.io/2017/10/08/mathjax_basic/</a>
+    <a href="https://qwerty200696.github.io/2017/12/13/algorithm_tutorial_chapter_3/" title="算法导论详解(2) 第三章函数的增长">https://qwerty200696.github.io/2017/12/13/algorithm_tutorial_chapter_3/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -527,7 +522,11 @@ $$
       
         <div class="post-tags">
           
-            <a href="/tags/MathJax/" rel="tag"><i class="fa fa-tag"></i> MathJax</a>
+            <a href="/tags/算法导论/" rel="tag"><i class="fa fa-tag"></i> 算法导论</a>
+          
+            <a href="/tags/algorithm/" rel="tag"><i class="fa fa-tag"></i> algorithm</a>
+          
+            <a href="/tags/函数渐近/" rel="tag"><i class="fa fa-tag"></i> 函数渐近</a>
           
         </div>
       
@@ -540,8 +539,8 @@ $$
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/05/batch_basic_usage/" rel="next" title="批处理的常用命令及用法">
-                <i class="fa fa-chevron-left"></i> 批处理的常用命令及用法
+              <a href="/2017/12/12/algorithm_tutolrial_chapter_2/" rel="next" title="算法导论详解(1) 第二章算法基础">
+                <i class="fa fa-chevron-left"></i> 算法导论详解(1) 第二章算法基础
               </a>
             
           </div>
@@ -549,10 +548,6 @@ $$
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/08/DL_Precision_and_Recall/" rel="prev" title="准确率，召回率与F1值">
-                准确率，召回率与F1值 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -767,7 +762,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字体"><span class="nav-number">1.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入公式"><span class="nav-number">2.</span> <span class="nav-text">插入公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多行公式"><span class="nav-number">3.</span> <span class="nav-text">多行公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分组"><span class="nav-number">4.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#空间"><span class="nav-number">5.</span> <span class="nav-text">空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数学符号"><span class="nav-number">6.</span> <span class="nav-text">数学符号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#上标与下标"><span class="nav-number">6.1.</span> <span class="nav-text">上标与下标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分式"><span class="nav-number">6.2.</span> <span class="nav-text">分式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根式"><span class="nav-number">6.3.</span> <span class="nav-text">根式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系比较符号"><span class="nav-number">6.4.</span> <span class="nav-text">关系比较符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#argmax"><span class="nav-number">6.5.</span> <span class="nav-text">argmax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不显示斜体"><span class="nav-number">6.6.</span> <span class="nav-text">不显示斜体</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵"><span class="nav-number">7.</span> <span class="nav-text">矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码块"><span class="nav-number">8.</span> <span class="nav-text">代码块</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-渐近记号"><span class="nav-number">1.</span> <span class="nav-text">3.1 渐近记号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先看第一幅图-a-——-Theta-记号"><span class="nav-number">1.1.</span> <span class="nav-text">先看第一幅图(a)——$\Theta$记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接着看图-b-——-text-O-记号"><span class="nav-number">1.2.</span> <span class="nav-text">接着看图(b)——$\text{O}$记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后看图-c-——-Omega-记号"><span class="nav-number">1.3.</span> <span class="nav-text">最后看图(c)——$\Omega$记号</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定理-3-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">定理 3.1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#等式和不等式中的渐近记号"><span class="nav-number">1.4.</span> <span class="nav-text">等式和不等式中的渐近记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#text-o-记号"><span class="nav-number">1.5.</span> <span class="nav-text">$\text{o}$记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#omega-记号"><span class="nav-number">1.6.</span> <span class="nav-text">$\omega$记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渐近运算的运算性质"><span class="nav-number">1.7.</span> <span class="nav-text">渐近运算的运算性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-标准记号与常用函数"><span class="nav-number">2.</span> <span class="nav-text">3.2 标准记号与常用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单调性"><span class="nav-number">2.1.</span> <span class="nav-text">单调性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向下取整与向上取整"><span class="nav-number">2.2.</span> <span class="nav-text">向下取整与向上取整</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模运算"><span class="nav-number">2.3.</span> <span class="nav-text">模运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多项式"><span class="nav-number">2.4.</span> <span class="nav-text">多项式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指数"><span class="nav-number">2.5.</span> <span class="nav-text">指数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对数"><span class="nav-number">2.6.</span> <span class="nav-text">对数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阶乘"><span class="nav-number">2.7.</span> <span class="nav-text">阶乘</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#斯特林-Stirling-近似公式"><span class="nav-number">2.7.1.</span> <span class="nav-text">斯特林(Stirling)近似公式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多重函数"><span class="nav-number">2.8.</span> <span class="nav-text">多重函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多重对数函数"><span class="nav-number">2.9.</span> <span class="nav-text">多重对数函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#斐波那契数"><span class="nav-number">2.10.</span> <span class="nav-text">斐波那契数</span></a></li></ol></li></ol></div>
             
 
           </div>
