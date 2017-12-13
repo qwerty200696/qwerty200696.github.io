@@ -1,3 +1,7 @@
 my github blog.
 
 site:[https://qwerty200696.github.io/](https://qwerty200696.github.io/)
+
+how to build this blog:[https://qwerty200696.github.io/2017/09/08/blog_setup/](https://qwerty200696.github.io/2017/09/08/blog_setup/)
+
+how to optimize this blog:[https://qwerty200696.github.io/2017/09/09/blog-opti/](https://qwerty200696.github.io/2017/09/09/blog-opti/)
