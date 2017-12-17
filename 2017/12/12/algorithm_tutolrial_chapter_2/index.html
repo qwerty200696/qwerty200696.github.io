@@ -103,12 +103,12 @@
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="第二章 算法基础伪码说明 数组A[1,…,n]长度为n的待排序序列。注意，书中的下标都是从1开始的。python中是从0开始的。  伪码中，A的长度用A.length表示。python中使用len(A)表示。  缩进表示块结构。提高代码清晰度。 while, for, repeat-until 在循环结束后，循环计数器仍然保持其值。 符号“//”后面是注释。 数组元素通过“数组名[下标]”这样的形">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://qwerty200696.github.io/2017/12/12/algorithm_tutolrial_chapter_2/algorithm_tutolrial_charpter_2/merge_sort_complexity.png">
-<meta property="og:updated_time" content="2017-12-13T05:53:04.143Z">
+<meta property="og:image" content="https://qwerty200696.github.io/2017/12/12/algorithm_tutolrial_chapter_2/merge_sort_complexity.png">
+<meta property="og:updated_time" content="2017-12-17T10:52:55.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法导论详解(1) 第二章算法基础">
 <meta name="twitter:description" content="第二章 算法基础伪码说明 数组A[1,…,n]长度为n的待排序序列。注意，书中的下标都是从1开始的。python中是从0开始的。  伪码中，A的长度用A.length表示。python中使用len(A)表示。  缩进表示块结构。提高代码清晰度。 while, for, repeat-until 在循环结束后，循环计数器仍然保持其值。 符号“//”后面是注释。 数组元素通过“数组名[下标]”这样的形">
-<meta name="twitter:image" content="https://qwerty200696.github.io/2017/12/12/algorithm_tutolrial_chapter_2/algorithm_tutolrial_charpter_2/merge_sort_complexity.png">
+<meta name="twitter:image" content="https://qwerty200696.github.io/2017/12/12/algorithm_tutolrial_chapter_2/merge_sort_complexity.png">
 
 
 
@@ -474,7 +474,7 @@
 <p>$D(n)$和$C(n)$相加的和，仍然是n的线性复杂度，即$\Theta(n)$。再与“解决”步骤相加，为：<br>$$T(n) =<br> \begin{cases}<br>  \Theta(1) &amp; 若n=1 \\<br> 2T(n/2)+\Theta(n) &amp;  若n&gt;1\\<br>  \end{cases}<br>  $$</p>
 <p>在第四章，我们将看到“主定理”，可以用该定理来证明$T(n)$ 为$\Theta(n\text{lg}n)$。（即时间复杂度为nlgn）</p>
 <p>运行时间为$\Theta(n\text{lg}n)$的归并排序优于运行时间为$\Theta(n^2)$的插入排序。</p>
-<p>$T(n) =\Theta(n\text{lg}n)$的直观理解：<br><img src="/2017/12/12/algorithm_tutolrial_chapter_2/algorithm_tutolrial_charpter_2/merge_sort_complexity.png" alt="归并排序复杂度的直观理解"><br>由(d)图，每层对n等分，可以展开为lgn层(再加上原来的一层，一共lgn+1层)。每层的复杂度都是cn，所以总的复杂度为$cn\text{lg}n+cn = cn(\text{lg}n+1)$。</p>
+<p>$T(n) =\Theta(n\text{lg}n)$的直观理解：<br><img src="/2017/12/12/algorithm_tutolrial_chapter_2/merge_sort_complexity.png" alt="归并排序复杂度的直观理解"><br>由(d)图，每层对n等分，可以展开为lgn层(再加上原来的一层，一共lgn+1层)。每层的复杂度都是cn，所以总的复杂度为$cn\text{lg}n+cn = cn(\text{lg}n+1)$。</p>
 
       
     </div>
