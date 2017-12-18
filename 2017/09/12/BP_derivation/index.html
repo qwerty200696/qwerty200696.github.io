@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="deep learning,神经网络," />
+  <meta name="keywords" content="神经网络,deep learning," />
 
 
 
@@ -96,7 +96,7 @@
 
 
 <meta name="description" content="mathjax公式中不能有多余的{}  网络结构参数说明BP神经网络示意图 网络结构一个输入层，两个隐含层，一个输出层。 参数标记 输入层神经元个数n、输出层神经元个数m【其中有m=n，每一帧都有对应的输出】   两个隐含层神经元个数均为100   权值：输入层与第一个隐含层之间的权值为$w_{ij}$，两个隐含层之间的权值为$w_{jk}$，第二个隐含层与输出层之间的权值为$w_{kl}$">
-<meta name="keywords" content="deep learning,神经网络">
+<meta name="keywords" content="神经网络,deep learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BP神经网络部分具体的推导">
 <meta property="og:url" content="https://qwerty200696.github.io/2017/09/12/BP_derivation/index.html">
@@ -364,17 +364,6 @@
 	  
           
             
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2017/09/12/BP_derivation/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/09/12/BP_derivation/" itemprop="commentsCount"></span>
-                </a>
-              
-            
           
 
           
@@ -526,9 +515,9 @@ plot(x,1./cosh(x).^2)
       
         <div class="post-tags">
           
-            <a href="/tags/deep-learning/" rel="tag"><i class="fa fa-tag"></i> deep learning</a>
-          
             <a href="/tags/神经网络/" rel="tag"><i class="fa fa-tag"></i> 神经网络</a>
+          
+            <a href="/tags/deep-learning/" rel="tag"><i class="fa fa-tag"></i> deep learning</a>
           
         </div>
       
@@ -609,7 +598,7 @@ var jiathis_config={
           
   <div class="comments" id="comments">
     
-      <div id="uyan_frame"></div>
+      <div id="SOHUCS"></div>
     
   </div>
 
@@ -944,14 +933,6 @@ var jiathis_config={
 
 
   
-    
-
-    
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143521"></script>
-      <!-- UY END -->
-    
-  
 
 
 
@@ -962,22 +943,22 @@ var jiathis_config={
 
 
 
-  
-    <script type="text/javascript">
-    (function(){
-      var appid = 'cytn4XH60';
-      var conf = '1b2dbcb355d9394133bef757caf49207';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      if (width < 960) {
-      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
-        window.changyan.api.config({appid:appid,conf:conf})});
-      }
-    })();
-    </script>
-    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
-  
 
 
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine@1.1.4/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+    new Valine({
+        av: AV,
+        el: '#vcomments' ,
+        verify: false,
+        notify: false,
+        app_id: 'yrpmXJiSAy4frnKvqrxvNUSG-gzGzoHsz',
+        app_key: '35GTu3Aq4E3uxua6GpER2XLp',
+        placeholder: 'Comment input placeholder'
+    });
+  </script>
 
 
 
