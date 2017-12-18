@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="7.1 参数范式惩罚对目标模型J添加一个参数范数惩罚$\Omega (\theta)$，限制模型 的学习能力。正则化后的目标函数记为：$$\tilde{J}(\theta ;X,y) = J(\theta ;X,y) +\alpha \Omega (\theta)$$ 我们通常只对权重做惩罚而不对偏置做正则惩罚。 神经网络情况下，有时候希望对网络的每一层使用单独的惩罚，并分配不同的$\alpha$">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-10T14:23:20.774Z">
+<meta property="og:updated_time" content="2017-12-18T02:52:15.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习第七章：深度学习中的正则化">
 <meta name="twitter:description" content="7.1 参数范式惩罚对目标模型J添加一个参数范数惩罚$\Omega (\theta)$，限制模型 的学习能力。正则化后的目标函数记为：$$\tilde{J}(\theta ;X,y) = J(\theta ;X,y) +\alpha \Omega (\theta)$$ 我们通常只对权重做惩罚而不对偏置做正则惩罚。 神经网络情况下，有时候希望对网络的每一层使用单独的惩罚，并分配不同的$\alpha$">
@@ -428,7 +428,7 @@
 <p>网络输入层注入噪声，</p>
 <p>算法性能对比时，应确保算法使用同一 人工设计的数据集增强方案。</p>
 <h2 id="7-5-噪声鲁棒性"><a href="#7-5-噪声鲁棒性" class="headerlink" title="7.5 噪声鲁棒性"></a>7.5 噪声鲁棒性</h2><h2 id="7-6-半监督学习"><a href="#7-6-半监督学习" class="headerlink" title="7.6 半监督学习"></a>7.6 半监督学习</h2><p>在半监督学习的框架下，$P(x)$产生的未标记样本和$P(x,y)$中的标记样本都用于估计$P(y|x)$或者根据x预测y。</p>
-<p>半监督学习通常是学习一个表示：$h=f(x)$。学习表示的目的是<em>使相同类的样本有类似的表示</em>。</p>
+<p>半监督学习通常是学习一个表示：$h=f(x)$。学习表示的目的是<strong>使相同类的样本有类似的表示</strong>。</p>
 <p>无监督学习可以为如何在空间聚集样本提供有用的线索。</p>
 <p>模型的构建：生成模型$P(x)$或$P(x,y)$与判别模型$P(y|x)$共享参数，而不用分离无监督和监督部分。<br>权衡监督模型准则$-\text{log}P(y|x)$和无监督(或生成)模型准则$-\text{log}P(x)$或$-\text{log}P(x,y)$。</p>
 <p>生成模型准则表达了对 监督学习问题的特殊形式的先验知识，即$P(x)$的结构通过某种共享参宿的方式连接到$P(y|x)$。</p>
@@ -442,7 +442,7 @@
 <p>未完待续。</p>
 <h2 id="7-9-参数绑定和参数共享"><a href="#7-9-参数绑定和参数共享" class="headerlink" title="7.9 参数绑定和参数共享"></a>7.9 参数绑定和参数共享</h2><h2 id="7-10-稀疏表示"><a href="#7-10-稀疏表示" class="headerlink" title="7.10 稀疏表示"></a>7.10 稀疏表示</h2><h2 id="7-13-Bagging和其他集成方法"><a href="#7-13-Bagging和其他集成方法" class="headerlink" title="7.13 Bagging和其他集成方法"></a>7.13 Bagging和其他集成方法</h2><p>Bagging(bootstrap aggregating)是通过结合几个模型降低泛化误差的技术。</p>
 <p>主要想法是分别训练几个不同的模型，然后让所有模型表决测试样例的输出。</p>
-<p>这是机器学习的一项常规策略，被称为：<em>模型平均</em>（model averaging）。采用这种策略的技术被称为：<em>集成方法</em>。</p>
+<p>这是机器学习的一项常规策略，被称为：<strong>模型平均</strong>（model averaging）。采用这种策略的技术被称为：<strong>集成方法</strong>。</p>
 <h2 id="7-12-Dropout"><a href="#7-12-Dropout" class="headerlink" title="7.12 Dropout"></a>7.12 Dropout</h2><h2 id="7-13-对抗训练"><a href="#7-13-对抗训练" class="headerlink" title="7.13 对抗训练"></a>7.13 对抗训练</h2><h2 id="7-14-切面距离、正切传播和流形正切分类器"><a href="#7-14-切面距离、正切传播和流形正切分类器" class="headerlink" title="7.14 切面距离、正切传播和流形正切分类器"></a>7.14 切面距离、正切传播和流形正切分类器</h2>
       
     </div>
@@ -775,7 +775,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      78.8k
+      78.9k
     </span>
   
 </div>
