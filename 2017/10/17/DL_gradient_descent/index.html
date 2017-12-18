@@ -645,7 +645,8 @@ var jiathis_config={
           
   <div class="comments" id="comments">
     
-      <div id="uyan_frame"></div>
+      
+      <div id="gitment-container"></div>
     
   </div>
 
@@ -984,14 +985,6 @@ var jiathis_config={
 
 
   
-    
-
-    
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143521"></script>
-      <!-- UY END -->
-    
-  
 
 
 
@@ -1004,6 +997,28 @@ var jiathis_config={
 
 
 
+
+
+     
+     
+     
+     
+     <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+     <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+     
+         <script type="text/javascript">
+             var gitment = new Gitment({
+                id: document.location.href, 
+                 owner: 'qwerty200696',
+                 repo: 'qwerty200696.github.io',
+                 oauth: {
+                     client_id: '8d23c97b1550978b8ea4',
+                     client_secret: 'ec5f432f08ff02bdb1176de9f8f3dec112b52830',
+                 }});
+             gitment.render('gitment-container');
+         </script>
+     
+ 
 
 
   
