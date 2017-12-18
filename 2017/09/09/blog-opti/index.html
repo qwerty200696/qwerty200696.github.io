@@ -131,7 +131,7 @@
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/add_password_2.png">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/add_password_3.gif">
 <meta property="og:image" content="https://qwerty200696.github.io/2017/09/09/blog-opti/jia_this.png">
-<meta property="og:updated_time" content="2017-10-27T09:33:53.000Z">
+<meta property="og:updated_time" content="2017-12-18T11:25:19.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建的Github博客之优化">
 <meta name="twitter:description" content="本篇教程基于NexT主题的博客配置，实现更换主题、评论、打赏等36项功能，接下来根据这些功能进行分点描述，附上个人博客以供比对参考：链接。 搭建基本Hexo博客Hexo博客基本搭建参考：《hexo+GitHub博客搭建实战》一文，，笔者按照教程的顺序一步一步来，是没有出现错误的，如果读者们在搭建的时候遇到了问题不知如何解决，笔者会尽自己所能帮助读者，并将遇到的问题及解决方法附在文章下方。 Hexo">
@@ -416,7 +416,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4,911
+                  4,992
                 </span>
               
 
@@ -444,6 +444,7 @@
         <p>本篇教程基于NexT主题的博客配置，实现更换主题、评论、打赏等36项功能，接下来根据这些功能进行分点描述，附上个人博客以供比对参考：<a href="https://qwerty200696.github.io">链接</a>。</p>
 <h1 id="搭建基本Hexo博客"><a href="#搭建基本Hexo博客" class="headerlink" title="搭建基本Hexo博客"></a>搭建基本Hexo博客</h1><p>Hexo博客基本搭建参考：《<a href="https://qwerty200696.github.io/2017/09/08/blog_setup/#more">hexo+GitHub博客搭建实战</a>》一文，，笔者按照教程的顺序一步一步来，是没有出现错误的，如果读者们在搭建的时候遇到了问题不知如何解决，笔者会尽自己所能帮助读者，并将遇到的问题及解决方法附在文章下方。</p>
 <h1 id="Hexo博客绑定域名"><a href="#Hexo博客绑定域名" class="headerlink" title="Hexo博客绑定域名"></a>Hexo博客绑定域名</h1><p>关于Hexo博客如何绑定自己的域名，详情可参阅《<a href="http://www.jianshu.com/p/cea41e5c9b2a" target="_blank" rel="external">hexo搭建的Github博客绑定域名</a>》一文。</p>
+<p>博主按照上述教程，已经成功地绑定域名<a href="wangwlj.com">wangwlj.com</a>。</p>
 <h1 id="更换Hexo主题"><a href="#更换Hexo主题" class="headerlink" title="更换Hexo主题"></a>更换Hexo主题</h1><p>笔者更换后的主题为NexT，其Github网址为：<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> 。首先将NexT的主题源文件下载到本地，使用Git克隆指令如下：</p>
 <pre><code>git clone https://github.com/iissnan/hexo-theme-next themes/next
 </code></pre><p>下载后，将压缩包解压缩(文件位于指令运行的当前目录)，复制其中名称为<code>next</code>的文件夹到<code>Hexo</code>的主题目录下，主题目录的路径为：</p>
@@ -475,27 +476,19 @@ length: 300  #设置预览的字数
 <p>这里说明一下：上述的部署指令中<code>hexo deploy</code>可以换成<code>hexo server</code>，两者的区别在于，前者是将博客部署到<strong>远程</strong>的Github上，而后者是运行在<strong>本地</strong>，通过<code>http://localhost:4000</code>在浏览器中访问。后者是为了调试配置方便而使用，但是最终本地博客还是需要<code>hexo deploy</code>指令将其部署至Github上。</p>
 </blockquote>
 <h1 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h1><p>NexT目前出到5.1.0版本，功能模块已经相当的丰富。NexT主题集成了评论系统，只需要设置相关的属性即可实现功能，其目前支持<strong>多说、Disqus、Facebook评论、Hyper评论、网页云跟帖</strong>等，其中“多说”是NexT推荐的评论系统，但是多说评论系统不稳定，经常会出现服务异常的问题。</p>
-<p>笔者采用的是一款名为友言的评论系统，它也是NexT已经集成好的，可以直接拿来用的。下面对其操作进行讲解：</p>
-<ul>
-<li><strong>注册友言账号</strong></li>
-</ul>
-<p>打开<a href="http://www.uyan.cc/" target="_blank" rel="external">友言官网</a>，单击“注册”按钮后，按照套路可完成账号注册。</p>
-<ul>
-<li><strong>获取uid</strong></li>
-</ul>
-<p>注册完登录后，在首页单击“后台管理”按钮进入后台界面便可看到自己的用户ID，将其复制下来。</p>
-<ul>
-<li><strong>设置uid</strong></li>
-</ul>
-<p>打开<strong>主题配置文件</strong>，在其中找到属性<code>youyan_uid</code>，然后在: 后添加之前复制的uid。</p>
-<blockquote>
-<p>提醒一下，<strong>:</strong> 冒号后面一定要有一个空格</p>
-</blockquote>
-<p>然后部署一下Hexo，可以在本地或远程看到实现的评论功能，如下图所示：</p>
+<p>~~笔者采用的是一款名为友言的评论系统，它也是NexT已经集成好的，可以直接拿来用的。下面对其操作进行讲解：</p>
+<p>~~- <strong>注册友言账号</strong></p>
+<p>~~打开<a href="http://www.uyan.cc/" target="_blank" rel="external">友言官网</a>，单击“注册”按钮后，按照套路可完成账号注册。</p>
+<p>~~- <strong>获取uid</strong></p>
+<p>~~注册完登录后，在首页单击“后台管理”按钮进入后台界面便可看到自己的用户ID，将其复制下来。</p>
+<p>~~- <strong>设置uid</strong></p>
+<p>~~打开<strong>主题配置文件</strong>，在其中找到属性<code>youyan_uid</code>，然后在: 后添加之前复制的uid。</p>
+<p>~~&gt; 提醒一下，<strong>:</strong> 冒号后面一定要有一个空格</p>
+<p>~~然后部署一下Hexo，可以在本地或远程看到实现的评论功能，如下图所示：</p>
 <p><img src="/2017/09/09/blog-opti/youyan.jpg" alt="youyan评论界面"></p>
-<blockquote>
-<p>在笔者配置评论功能的时候，笔者遇到了一个问题：<em>本地博客有评论功能，而远程博客却没有</em> 。折腾了一下午，始终不知道其原因所在。后来，当笔者对博客绑定自己的域名后，发现远程的博客自动出现了评论功能。在此推测为域名的缘故。若没有绑定域名的读者们遇到这个情况，可以放放，先配置其他功能。</p>
-</blockquote>
+<p><del>&gt; 在笔者配置评论功能的时候，笔者遇到了一个问题：<em>本地博客有评论功能，而远程博客却没有</em> 。折腾了一下午，始终不知道其原因所在。后来，当笔者对博客绑定自己的域名后，发现远程的博客自动出现了评论功能。在此推测为域名的缘故。若没有绑定域名的读者们遇到这个情况，可以放放，先配置其他功能。</del></p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>目前的评论系统，友言，网易云跟帖都挂了。所以，我最终采用的是来必力。</p>
+<p>这边详细地介绍一下。我新写一篇文章简要介绍一下。会更新在<a href="http://wangwlj.com" target="_blank" rel="external">我的博客</a>上。</p>
 <h1 id="设置侧边栏显示效果"><a href="#设置侧边栏显示效果" class="headerlink" title="设置侧边栏显示效果"></a>设置侧边栏显示效果</h1><p>在<strong>主题配置文件</strong>中，找到<code>sidebar</code>的<code>display</code>属性，<code>display</code>属性有四种显示模式：分别为：</p>
 <pre><code>post    // 默认显示方式
 always  // 一直显示
@@ -1030,7 +1023,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1052,7 +1045,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1137,7 +1130,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建基本Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">搭建基本Hexo博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客绑定域名"><span class="nav-number">2.</span> <span class="nav-text">Hexo博客绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换Hexo主题"><span class="nav-number">3.</span> <span class="nav-text">更换Hexo主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置Hexo主题模式"><span class="nav-number">4.</span> <span class="nav-text">设置Hexo主题模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置预览摘要"><span class="nav-number">5.</span> <span class="nav-text">设置预览摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加评论功能"><span class="nav-number">6.</span> <span class="nav-text">添加评论功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置侧边栏显示效果"><span class="nav-number">7.</span> <span class="nav-text">设置侧边栏显示效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加菜单选项"><span class="nav-number">8.</span> <span class="nav-text">添加菜单选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加阅读次数统计"><span class="nav-number">9.</span> <span class="nav-text">添加阅读次数统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加社交链接"><span class="nav-number">10.</span> <span class="nav-text">添加社交链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加友情链接功能"><span class="nav-number">11.</span> <span class="nav-text">添加友情链接功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置博文内链接为蓝色"><span class="nav-number">12.</span> <span class="nav-text">设置博文内链接为蓝色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置文章末尾”本文结束”标记"><span class="nav-number">13.</span> <span class="nav-text">设置文章末尾”本文结束”标记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示每篇文章字数"><span class="nav-number">14.</span> <span class="nav-text">显示每篇文章字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示站点文章总字数"><span class="nav-number">15.</span> <span class="nav-text">显示站点文章总字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章末尾添加版权说明"><span class="nav-number">16.</span> <span class="nav-text">文章末尾添加版权说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置个人头像"><span class="nav-number">17.</span> <span class="nav-text">设置个人头像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置头像动态特效"><span class="nav-number">18.</span> <span class="nav-text">设置头像动态特效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置网站图标"><span class="nav-number">19.</span> <span class="nav-text">设置网站图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加留言版块"><span class="nav-number">20.</span> <span class="nav-text">添加留言版块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目主页添加README"><span class="nav-number">21.</span> <span class="nav-text">项目主页添加README</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现fork-me-on-github"><span class="nav-number">22.</span> <span class="nav-text">实现fork me on github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现点击出现桃心效果"><span class="nav-number">23.</span> <span class="nav-text">实现点击出现桃心效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改文章底部的-号标签"><span class="nav-number">24.</span> <span class="nav-text">修改文章底部的#号标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加动态背景"><span class="nav-number">25.</span> <span class="nav-text">添加动态背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码块样式自定义"><span class="nav-number">26.</span> <span class="nav-text">代码块样式自定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章加密访问"><span class="nav-number">27.</span> <span class="nav-text">文章加密访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加jiathis分享"><span class="nav-number">28.</span> <span class="nav-text">添加jiathis分享</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义鼠标样式"><span class="nav-number">29.</span> <span class="nav-text">自定义鼠标样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改部分字体的颜色，大小"><span class="nav-number">30.</span> <span class="nav-text">修改部分字体的颜色，大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现首行缩进"><span class="nav-number">31.</span> <span class="nav-text">实现首行缩进</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入表格"><span class="nav-number">32.</span> <span class="nav-text">插入表格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客提交百度和Google收录"><span class="nav-number">33.</span> <span class="nav-text">Hexo博客提交百度和Google收录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加RSS"><span class="nav-number">34.</span> <span class="nav-text">添加RSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">35.</span> <span class="nav-text">添加搜索功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加打赏功能"><span class="nav-number">36.</span> <span class="nav-text">添加打赏功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#博文置顶"><span class="nav-number">37.</span> <span class="nav-text">博文置顶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">38.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建基本Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">搭建基本Hexo博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客绑定域名"><span class="nav-number">2.</span> <span class="nav-text">Hexo博客绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换Hexo主题"><span class="nav-number">3.</span> <span class="nav-text">更换Hexo主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置Hexo主题模式"><span class="nav-number">4.</span> <span class="nav-text">设置Hexo主题模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置预览摘要"><span class="nav-number">5.</span> <span class="nav-text">设置预览摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加评论功能"><span class="nav-number">6.</span> <span class="nav-text">添加评论功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更新"><span class="nav-number">6.1.</span> <span class="nav-text">更新</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置侧边栏显示效果"><span class="nav-number">7.</span> <span class="nav-text">设置侧边栏显示效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加菜单选项"><span class="nav-number">8.</span> <span class="nav-text">添加菜单选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加阅读次数统计"><span class="nav-number">9.</span> <span class="nav-text">添加阅读次数统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加社交链接"><span class="nav-number">10.</span> <span class="nav-text">添加社交链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加友情链接功能"><span class="nav-number">11.</span> <span class="nav-text">添加友情链接功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置博文内链接为蓝色"><span class="nav-number">12.</span> <span class="nav-text">设置博文内链接为蓝色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置文章末尾”本文结束”标记"><span class="nav-number">13.</span> <span class="nav-text">设置文章末尾”本文结束”标记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示每篇文章字数"><span class="nav-number">14.</span> <span class="nav-text">显示每篇文章字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示站点文章总字数"><span class="nav-number">15.</span> <span class="nav-text">显示站点文章总字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章末尾添加版权说明"><span class="nav-number">16.</span> <span class="nav-text">文章末尾添加版权说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置个人头像"><span class="nav-number">17.</span> <span class="nav-text">设置个人头像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置头像动态特效"><span class="nav-number">18.</span> <span class="nav-text">设置头像动态特效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置网站图标"><span class="nav-number">19.</span> <span class="nav-text">设置网站图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加留言版块"><span class="nav-number">20.</span> <span class="nav-text">添加留言版块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目主页添加README"><span class="nav-number">21.</span> <span class="nav-text">项目主页添加README</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现fork-me-on-github"><span class="nav-number">22.</span> <span class="nav-text">实现fork me on github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现点击出现桃心效果"><span class="nav-number">23.</span> <span class="nav-text">实现点击出现桃心效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改文章底部的-号标签"><span class="nav-number">24.</span> <span class="nav-text">修改文章底部的#号标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加动态背景"><span class="nav-number">25.</span> <span class="nav-text">添加动态背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码块样式自定义"><span class="nav-number">26.</span> <span class="nav-text">代码块样式自定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章加密访问"><span class="nav-number">27.</span> <span class="nav-text">文章加密访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加jiathis分享"><span class="nav-number">28.</span> <span class="nav-text">添加jiathis分享</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义鼠标样式"><span class="nav-number">29.</span> <span class="nav-text">自定义鼠标样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改部分字体的颜色，大小"><span class="nav-number">30.</span> <span class="nav-text">修改部分字体的颜色，大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现首行缩进"><span class="nav-number">31.</span> <span class="nav-text">实现首行缩进</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入表格"><span class="nav-number">32.</span> <span class="nav-text">插入表格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客提交百度和Google收录"><span class="nav-number">33.</span> <span class="nav-text">Hexo博客提交百度和Google收录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加RSS"><span class="nav-number">34.</span> <span class="nav-text">添加RSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">35.</span> <span class="nav-text">添加搜索功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加打赏功能"><span class="nav-number">36.</span> <span class="nav-text">添加打赏功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#博文置顶"><span class="nav-number">37.</span> <span class="nav-text">博文置顶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">38.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
@@ -1180,7 +1173,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      78.9k
+      79.3k
     </span>
   
 </div>
