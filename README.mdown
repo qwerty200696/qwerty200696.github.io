@@ -1,7 +1,15 @@
-my github blog.
+**Welcome to my github blog.**
 
-site:[https://qwerty200696.github.io/](https://qwerty200696.github.io/)
+Site domain is: [wangwlj.com](wangwlj.com)
 
-how to build this blog:[https://qwerty200696.github.io/2017/09/08/blog_setup/](https://qwerty200696.github.io/2017/09/08/blog_setup/)
+Also available with github link:[https://qwerty200696.github.io/](https://qwerty200696.github.io/)
 
-how to optimize this blog:[https://qwerty200696.github.io/2017/09/09/blog-opti/](https://qwerty200696.github.io/2017/09/09/blog-opti/)
+How to **build** this blog:[https://qwerty200696.github.io/2017/09/08/blog_setup/](https://qwerty200696.github.io/2017/09/08/blog_setup/)
+
+How to **optimize** this blog:[https://qwerty200696.github.io/2017/09/09/blog-opti/](https://qwerty200696.github.io/2017/09/09/blog-opti/)
+
+How to solve markdown problem:[http://qwerty200696.github.io/2017/09/21/markdown_mathjax/](http://wangwlj.com/2017/09/21/markdown_mathjax/)
+
+Hope you have fun here!
+
+Edit by *wangwlj*.
