@@ -1,12 +1,12 @@
 **Welcome to my github blog.**
 
-Site domain is: [wangwlj.com](wangwlj.com)
+Site domain is: [wangwlj.com](http://wangwlj.com)
 
 Also available with github link:[https://qwerty200696.github.io/](https://qwerty200696.github.io/)
 
-How to **build** this blog:[https://wangwlj.com/2017/09/08/blog_setup/](https://wangwlj.com/2017/09/08/blog_setup/)
+How to **build** this blog:[http://wangwlj.com/2017/09/08/blog_setup/](http://wangwlj.com/2017/09/08/blog_setup/)
 
-How to **optimize** this blog:[https://wangwlj.com/2017/09/09/blog-opti/](https://wangwlj.com/2017/09/09/blog-opti/)
+How to **optimize** this blog:[http://wangwlj.com/2017/09/09/blog-opti/](http://wangwlj.com/2017/09/09/blog-opti/)
 
 How to solve markdown problem:[http://wangwlj.com/2017/09/21/markdown_mathjax/](http://wangwlj.com/2017/09/21/markdown_mathjax/)
 
