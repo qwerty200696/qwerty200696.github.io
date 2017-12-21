@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="9.1 卷积运算卷积的第一个参数： 输入，第二个参数： 核函数。输出有时被称为特征映射。 对于二维图像I，二维的核K。卷积可以写为： $$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)$$ 卷积是可交换的。可以等价地写为： $$S(i,j) = (K\times I )(i,j) = \sum_m \sum_n I(i-m,j">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-22T12:49:21.267Z">
+<meta property="og:updated_time" content="2017-12-21T13:50:02.088Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习第九章：卷机网络">
 <meta name="twitter:description" content="9.1 卷积运算卷积的第一个参数： 输入，第二个参数： 核函数。输出有时被称为特征映射。 对于二维图像I，二维的核K。卷积可以写为： $$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)$$ 卷积是可交换的。可以等价地写为： $$S(i,j) = (K\times I )(i,j) = \sum_m \sum_n I(i-m,j">
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  686
+                  902
                 </span>
               
 
@@ -480,6 +480,9 @@
 <p>可以把<strong>卷机网络</strong>类比为全连接网络，但对于这个全连接网络的权重有一个无限强的先验。这个无限强的先验是说一个隐藏单元的权重必须和它邻居的权重相同，但可以在空间上移动。这个先验也要求除了那些处在隐藏单元的小的空间连续的接受域内的权重以外，其余的权重为零。 </p>
 <p>类似地，使用<strong>池化</strong>也是一个无限强的先验：每个单元都具有对少量平移的不变性。</p>
 <p><strong>卷积和池化可能导致欠拟合</strong>。</p>
+<h2 id="9-5-基本卷积函数的变体"><a href="#9-5-基本卷积函数的变体" class="headerlink" title="9.5 基本卷积函数的变体"></a>9.5 基本卷积函数的变体</h2><p>神经网络中的卷积是由多个并行卷积组成的计算：单个核的卷积只能提取一种类型的特征。</p>
+<p>卷积的输入输出可以看作3维的张量，其中一个索引用于标明不同的通道，另外两个索引用于标明每一个通道上的空间坐标。</p>
+<p>$$<br>Z_{i,j,k}<br>= c(K,V,s)_{i,j,k}<br>= \sum\limits_{l,m,n}<br>[V_{l,(j - 1) \times s + m,(k - 1) \times s + m} K_{i,l,m,n}]<br>$$<br>输入是观测数据V，每个元素是$V_{i,j,k}$，表示通道i中第j行第k列的值。$K_{i,j,k,l}$输出通道i的一个单元和输入通道j中的一个单元的链接强度，并且在输出单元和输入单元之间有k行l列的偏置。</p>
 
       
     </div>
@@ -672,7 +675,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -683,7 +686,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -694,7 +697,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -786,7 +789,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-1-卷积运算"><span class="nav-number">1.</span> <span class="nav-text">9.1 卷积运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-2-动机"><span class="nav-number">2.</span> <span class="nav-text">9.2 动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-3-池化"><span class="nav-number">3.</span> <span class="nav-text">9.3 池化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-4-卷积与池化作为一种无限强的先验"><span class="nav-number">4.</span> <span class="nav-text">9.4 卷积与池化作为一种无限强的先验</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-1-卷积运算"><span class="nav-number">1.</span> <span class="nav-text">9.1 卷积运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-2-动机"><span class="nav-number">2.</span> <span class="nav-text">9.2 动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-3-池化"><span class="nav-number">3.</span> <span class="nav-text">9.3 池化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-4-卷积与池化作为一种无限强的先验"><span class="nav-number">4.</span> <span class="nav-text">9.4 卷积与池化作为一种无限强的先验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-5-基本卷积函数的变体"><span class="nav-number">5.</span> <span class="nav-text">9.5 基本卷积函数的变体</span></a></li></ol></div>
             
 
           </div>
@@ -829,7 +832,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      79.9k
+      80.4k
     </span>
   
 </div>
