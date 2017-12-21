@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[photoshop白色背景图片转换为透明背景]]></title>
     <url>%2F2017%2F12%2F21%2Fps_white2transparent%2F</url>
-    <content type="text"><![CDATA[]]></content>
+    <content type="text"><![CDATA[1.打开Adobe Photoshop以及待处理的图片，如果图层上有“锁”的标志，就双击进行解锁； 2.在图层上右击，选择最上方的“混合选项”； 3.在混合选项中的本图层中，拖动右侧的白色小三角，向左滑动至适当位置。 4.效果展示。滑动之前的效果：滑动之后的效果： 5.存储。选择“文件”中的“存储为”； 在弹出窗口中选择保存类型为“PNG”格式，保存即可。也可以根据需要，选择合适的格式。 最后附上全文的图片链接。]]></content>
       <categories>
         <category>Photoshop</category>
       </categories>
