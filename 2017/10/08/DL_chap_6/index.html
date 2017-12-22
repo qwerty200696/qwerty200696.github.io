@@ -12,7 +12,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
-
+<script>
+  (function(){
+    if(''){
+      if (prompt('请输入文章密码') !== ''){
+        alert('密码错误！');
+        history.back();
+      }
+    }
+  })();
+</script>
 
 
 
@@ -102,14 +111,14 @@
 <meta name="description" content="6.1 实例：学习XOR采用一个简单的前馈神经网络，一个隐含层，隐含层包含两个单元。 整个网络为： $$f(x;W,c,w,b) = w^T\text{max}(0,W^Tx+c)+b$$ 隐含层激活函数采用的是ReLU。 给出一个解：$$W=  \begin{bmatrix}  1 &amp;amp; 1  \\  1 &amp;amp; 1  \\  \end{bmatrix}$$$$c=  \begin{b">
 <meta name="keywords" content="deep learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深度学习第六章：前馈神经网络">
+<meta property="og:title" content="深度学习系列：（六）前馈神经网络">
 <meta property="og:url" content="https://wangwlj.com/2017/10/08/DL_chap_6/index.html">
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="6.1 实例：学习XOR采用一个简单的前馈神经网络，一个隐含层，隐含层包含两个单元。 整个网络为： $$f(x;W,c,w,b) = w^T\text{max}(0,W^Tx+c)+b$$ 隐含层激活函数采用的是ReLU。 给出一个解：$$W=  \begin{bmatrix}  1 &amp;amp; 1  \\  1 &amp;amp; 1  \\  \end{bmatrix}$$$$c=  \begin{b">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-08T09:21:46.000Z">
+<meta property="og:updated_time" content="2017-12-22T07:00:46.930Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深度学习第六章：前馈神经网络">
+<meta name="twitter:title" content="深度学习系列：（六）前馈神经网络">
 <meta name="twitter:description" content="6.1 实例：学习XOR采用一个简单的前馈神经网络，一个隐含层，隐含层包含两个单元。 整个网络为： $$f(x;W,c,w,b) = w^T\text{max}(0,W^Tx+c)+b$$ 隐含层激活函数采用的是ReLU。 给出一个解：$$W=  \begin{bmatrix}  1 &amp;amp; 1  \\  1 &amp;amp; 1  \\  \end{bmatrix}$$$$c=  \begin{b">
 
 
@@ -147,7 +156,7 @@
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>深度学习第六章：前馈神经网络 | 王立杰的博客</title>
+  <title>深度学习系列：（六）前馈神经网络 | 王立杰的博客</title>
   
 
 
@@ -356,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">深度学习第六章：前馈神经网络</h1>
+          <h1 class="post-title" itemprop="name headline">深度学习系列：（六）前馈神经网络</h1>
         
 
         <div class="post-meta">
@@ -409,7 +418,7 @@
 
           
           
-             <span id="/2017/10/08/DL_chap_6/" class="leancloud_visitors" data-flag-title="深度学习第六章：前馈神经网络">
+             <span id="/2017/10/08/DL_chap_6/" class="leancloud_visitors" data-flag-title="深度学习系列：（六）前馈神经网络">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -584,7 +593,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://wangwlj.com/2017/10/08/DL_chap_6/" title="深度学习第六章：前馈神经网络">https://wangwlj.com/2017/10/08/DL_chap_6/</a>
+    <a href="https://wangwlj.com/2017/10/08/DL_chap_6/" title="深度学习系列：（六）前馈神经网络">https://wangwlj.com/2017/10/08/DL_chap_6/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -624,8 +633,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/08/mathjax_basic/" rel="next" title="MathJax的基本使用语法">
-                <i class="fa fa-chevron-left"></i> MathJax的基本使用语法
+              <a href="/2017/10/08/DL_Precision_and_Recall/" rel="next" title="准确率，召回率与F1值">
+                <i class="fa fa-chevron-left"></i> 准确率，召回率与F1值
               </a>
             
           </div>
@@ -634,8 +643,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/08/DL_Precision_and_Recall/" rel="prev" title="准确率，召回率与F1值">
-                准确率，召回率与F1值 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/08/DL_chap_5/" rel="prev" title="深度学习系列：（五）机器学习基础">
+                深度学习系列：（五）机器学习基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -901,7 +910,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      80.6k
+      81.1k
     </span>
   
 </div>

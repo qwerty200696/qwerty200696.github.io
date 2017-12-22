@@ -12,7 +12,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
-
+<script>
+  (function(){
+    if(''){
+      if (prompt('请输入文章密码') !== ''){
+        alert('密码错误！');
+        history.back();
+      }
+    }
+  })();
+</script>
 
 
 
@@ -102,14 +111,14 @@
 <meta name="description" content="5.8 无监督学习从不需要人为注释的样本中抽取信息。 通常与密度估计有关。 学习从分布中采样，学习从分布中去噪，寻找数据分布的流形 或是 将数据中相关的样本聚类。 一个经典的无监督学习任务：找到数据的“最佳”表示。 较简单表示主要有三种：低维表示、稀疏表示和独立表示。 表示的概念是深度学习的核心主题之一，也是本书的核心主题之一。 5.8.1 主成分分析通过线性变换W将数据从x投影到z时，得到的数据">
 <meta name="keywords" content="deep learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深度学习第五章：机器学习基础">
+<meta property="og:title" content="深度学习系列：（五）机器学习基础">
 <meta property="og:url" content="https://wangwlj.com/2017/10/08/DL_chap_5/index.html">
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="5.8 无监督学习从不需要人为注释的样本中抽取信息。 通常与密度估计有关。 学习从分布中采样，学习从分布中去噪，寻找数据分布的流形 或是 将数据中相关的样本聚类。 一个经典的无监督学习任务：找到数据的“最佳”表示。 较简单表示主要有三种：低维表示、稀疏表示和独立表示。 表示的概念是深度学习的核心主题之一，也是本书的核心主题之一。 5.8.1 主成分分析通过线性变换W将数据从x投影到z时，得到的数据">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-22T12:54:19.387Z">
+<meta property="og:updated_time" content="2017-12-22T07:00:21.614Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深度学习第五章：机器学习基础">
+<meta name="twitter:title" content="深度学习系列：（五）机器学习基础">
 <meta name="twitter:description" content="5.8 无监督学习从不需要人为注释的样本中抽取信息。 通常与密度估计有关。 学习从分布中采样，学习从分布中去噪，寻找数据分布的流形 或是 将数据中相关的样本聚类。 一个经典的无监督学习任务：找到数据的“最佳”表示。 较简单表示主要有三种：低维表示、稀疏表示和独立表示。 表示的概念是深度学习的核心主题之一，也是本书的核心主题之一。 5.8.1 主成分分析通过线性变换W将数据从x投影到z时，得到的数据">
 
 
@@ -147,7 +156,7 @@
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>深度学习第五章：机器学习基础 | 王立杰的博客</title>
+  <title>深度学习系列：（五）机器学习基础 | 王立杰的博客</title>
   
 
 
@@ -356,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">深度学习第五章：机器学习基础</h1>
+          <h1 class="post-title" itemprop="name headline">深度学习系列：（五）机器学习基础</h1>
         
 
         <div class="post-meta">
@@ -409,7 +418,7 @@
 
           
           
-             <span id="/2017/10/08/DL_chap_5/" class="leancloud_visitors" data-flag-title="深度学习第五章：机器学习基础">
+             <span id="/2017/10/08/DL_chap_5/" class="leancloud_visitors" data-flag-title="深度学习系列：（五）机器学习基础">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -510,7 +519,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://wangwlj.com/2017/10/08/DL_chap_5/" title="深度学习第五章：机器学习基础">https://wangwlj.com/2017/10/08/DL_chap_5/</a>
+    <a href="https://wangwlj.com/2017/10/08/DL_chap_5/" title="深度学习系列：（五）机器学习基础">https://wangwlj.com/2017/10/08/DL_chap_5/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -550,8 +559,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/08/DL_Precision_and_Recall/" rel="next" title="准确率，召回率与F1值">
-                <i class="fa fa-chevron-left"></i> 准确率，召回率与F1值
+              <a href="/2017/10/08/DL_chap_6/" rel="next" title="深度学习系列：（六）前馈神经网络">
+                <i class="fa fa-chevron-left"></i> 深度学习系列：（六）前馈神经网络
               </a>
             
           </div>
@@ -827,7 +836,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      80.6k
+      81.1k
     </span>
   
 </div>

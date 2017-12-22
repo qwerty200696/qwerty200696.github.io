@@ -12,7 +12,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
-
+<script>
+  (function(){
+    if(''){
+      if (prompt('请输入文章密码') !== ''){
+        alert('密码错误！');
+        history.back();
+      }
+    }
+  })();
+</script>
 
 
 
@@ -85,8 +94,6 @@
 
 
 
-
-  
 
 
   <link rel="alternate" href="/rss2.xml" title="王立杰的博客" type="application/atom+xml" />
@@ -577,7 +584,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      80.6k
+      81.1k
     </span>
   
 </div>
