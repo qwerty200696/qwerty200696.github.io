@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+  (function(){
+    if(''){
+      if (prompt('请输入文章密码') !== ''){
+        alert('密码错误！');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="Zg8i3oTV3dBiFi2-eYpkWHuo1XYforgqvtiy1f6zTvs" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="C++," />
+
+
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="王立杰的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web_icon.jpg?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="第一章 开始include指令(P6,1.2)通常情况下#include指令必须在所有函数之外。include和它想包含的头文件名字必须在同一行里，不然会报错。 一般情况下我们把include指令放在源文件代码内容的最前面，当你在源文件中使用#include声明了一个头文件，效果相当于你把整个头文件黏贴到对应的那一行上。 编译器(P14,1.4)编译器的一部分工作是寻找程序文本中的错误。常见错误类">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++">
+<meta property="og:url" content="https://wangwlj.com/2016/10/05/CPP_01_02/index.html">
+<meta property="og:site_name" content="王立杰的博客">
+<meta property="og:description" content="第一章 开始include指令(P6,1.2)通常情况下#include指令必须在所有函数之外。include和它想包含的头文件名字必须在同一行里，不然会报错。 一般情况下我们把include指令放在源文件代码内容的最前面，当你在源文件中使用#include声明了一个头文件，效果相当于你把整个头文件黏贴到对应的那一行上。 编译器(P14,1.4)编译器的一部分工作是寻找程序文本中的错误。常见错误类">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-24T15:01:30.188Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++">
+<meta name="twitter:description" content="第一章 开始include指令(P6,1.2)通常情况下#include指令必须在所有函数之外。include和它想包含的头文件名字必须在同一行里，不然会报错。 一般情况下我们把include指令放在源文件代码内容的最前面，当你在源文件中使用#include声明了一个头文件，效果相当于你把整个头文件黏贴到对应的那一行上。 编译器(P14,1.4)编译器的一部分工作是寻找程序文本中的错误。常见错误类">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://wangwlj.com/2016/10/05/CPP_01_02/"/>
+
+
+
+
+<link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
+
+  <title>C++ | 王立杰的博客</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-111387754-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?61acd986303bc926826d2eec81dbbdff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    
+	<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王立杰的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">积跬步以至千里！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangwlj.com/2016/10/05/CPP_01_02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王立杰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C++</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-05T16:36:45+08:00">
+                2016-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+	  
+          
+            
+          
+
+          
+          
+             <span id="/2016/10/05/CPP_01_02/" class="leancloud_visitors" data-flag-title="C++">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4,861
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="第一章-开始"><a href="#第一章-开始" class="headerlink" title="第一章 开始"></a>第一章 开始</h1><h2 id="include指令-P6-1-2"><a href="#include指令-P6-1-2" class="headerlink" title="include指令(P6,1.2)"></a>include指令(P6,1.2)</h2><p>通常情况下<code>#include</code>指令必须在所有函数之外。include和它想包含的头文件名字必须在同一行里，不然会报错。</p>
+<p>一般情况下我们把include指令放在源文件代码内容的最前面，当你在源文件中使用#include声明了一个头文件，效果相当于你把整个头文件黏贴到对应的那一行上。</p>
+<h2 id="编译器-P14-1-4"><a href="#编译器-P14-1-4" class="headerlink" title="编译器(P14,1.4)"></a>编译器(P14,1.4)</h2><p>编译器的一部分工作是寻找程序文本中的错误。<br>常见错误类型：</p>
+<ul>
+<li>语法错误(syntax error)</li>
+<li>类型错误(type error)</li>
+<li>声明错误(declaration error)</li>
+</ul>
+<p><strong>“编辑-编译-调试”（edit-compile-debug）</strong>周期。</p>
+<h2 id="文件重定向-P19-1-5"><a href="#文件重定向-P19-1-5" class="headerlink" title="文件重定向(P19,1.5)"></a>文件重定向(P19,1.5)</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> addItems &lt;infile &gt;outfile</div></pre></td></tr></table></figure>
+<h2 id="专业术语-P23"><a href="#专业术语-P23" class="headerlink" title="专业术语(P23)"></a>专业术语(P23)</h2><ol>
+<li>花括号 curly brace</li>
+<li>内置类型 built-in type</li>
+<li>形参列表 parameter list</li>
+<li>字符串字面值常量 string literal</li>
+<li>操作符 manipulator</li>
+<li>变量 variable</li>
+<li>初始化 initialize</li>
+<li>注释 comments</li>
+<li>集成开发环境 Integrated Developed Environment,IDE</li>
+<li>条件 condition</li>
+<li>赋值 assignment</li>
+<li>表达式 expression</li>
+<li>语法错误 syntax error</li>
+<li>方法（类方法） method</li>
+</ol>
+<h1 id="第二章-变量和基本类型"><a href="#第二章-变量和基本类型" class="headerlink" title="第二章 变量和基本类型"></a>第二章 变量和基本类型</h1><h2 id="C-语言关于类型的规定-P30-2-1-1"><a href="#C-语言关于类型的规定-P30-2-1-1" class="headerlink" title="C++语言关于类型的规定(P30,2.1.1)"></a>C++语言关于类型的规定(P30,2.1.1)</h2><p>C++语言的基本类型的设定与硬件紧密相关，因此很多类型的内存尺寸也都只是给了一个范围，其实各家IDE（LLVM，GCC，Visaul C++）的实现都是在范围内，具体的实现细节都是不确定的。</p>
+<p>其中bool最小尺寸未定义，char最小尺寸是8位，wchar_t和char16_t的最小尺寸都是16位，char32_t的最小尺寸是32位，int的最小尺寸是16位，long和long long的最小尺寸分别是32位和64位，对于浮点型数据的表现尺寸是按照精度计算的，其中float的最小尺寸精度是小数点后6位(通常占内存32bytes)，double（通常占内存 64bytes）和long double(通常占内存 96~128bytes)的最小尺寸精度则是小数点后10位(实际可能比这个精度要大一些，比如float小数点后有效位为7，double为16)。</p>
+<p>int不得小于short,long不得小于int,long long不得小于long。float,double,long double也应该是精度递增（或者相同）的关系。</p>
+<p>要特别注意的是，扩展的字符类型(char16_t，char32_t，wchar_t)和布尔类型都没有带符号和无符号之分（尽管它们也确实属于算数类型）。</p>
+<h2 id="类型转换-P32-2-1-2"><a href="#类型转换-P32-2-1-2" class="headerlink" title="类型转换(P32,2.1.2)"></a>类型转换(P32,2.1.2)</h2><p>程序自动执行的类型转换操作发生在程序里IDE预期我们使用A类型但是实际上我们使用B类型的时候，B类型的对象会自动转换为A类型的，如果没法转换，程序就会报错。赋值操作中就可能发生这样的情况。</p>
+<p>我们先看赋值操作里表达式里面发生的自动转换，赋值操作A=B中，等号左边的A被叫做<strong>左值</strong>，B被叫做<strong>右值</strong>，程序期待事情是你给定的右值和左值类型完全相同。如果不相同，这里就会发生<strong>强制的类型转换</strong>，即把B的类型转化为A的类型。如果把一个超出左值类型表达范围的数赋值给左值，左值又是一个无符号类型，比如unsigned char c=-1;这时-1（整型，负的），右值会转化为无符号字符型，初始值对无符号类型表示数值总数取模，然后求余数，这个余数就是转化后的数。</p>
+<p>因为C++没有明确规定有符号类型的数应该如何表示，因此如果把一个超出左值类型表达范围的数赋值给左值，左值又是一个有符号类型，这种行为的结果是不一定的，因为C++标准委员会没有规定这样做之后到底会发生什么，因此各个IDE可能会有不同的实现。我们把这种不确定造成结果的行为叫做<strong>未定义行为</strong>。</p>
+<p><strong>建议：避免无法预知和依赖于环境的行为</strong>。</p>
+<p><strong>提示：切勿混用带符号类型和无符号类型</strong>。</p>
+<h2 id="转义序列-P36，2-1-3"><a href="#转义序列-P36，2-1-3" class="headerlink" title="转义序列(P36，2.1.3)"></a>转义序列(P36，2.1.3)</h2><p>字符的转义序列可以为<code>\</code>后面加上最多3个8进制数字（如果多于3个不会引发报错，多出的部分会被当成字符），或者<code>\x</code>后面加上最多两个16进制数字（多出会报错）。数字转换成10进制后的大小不得超过字符集的限定范围。一般的字面值转义无此限制，不过，一般的字面值的类型是不确定的。10进制数字类型字面值会被转换为能够容纳这个数的带符号整数类型，其他进制中它们则会被转换为能容纳它们的占内存最小的类型的值。</p>
+<p>在最新的C++14标准中，数字字面值里还允许以0b或者0B开头，后面加上二进制数成为二进制字面值。如0B101，代表数字5；0b11，代表数字3。</p>
+<p>指定字面值的常量：当使用一个长整型字面值时，请使用大写字母<code>L</code>来标记，因为小写字母<code>l</code>和数字<code>1</code>太容易混淆了。</p>
+<h2 id="变量-P38"><a href="#变量-P38" class="headerlink" title="变量(P38)"></a>变量(P38)</h2><h3 id="列表初始化"><a href="#列表初始化" class="headerlink" title="列表初始化"></a>列表初始化</h3><p>C++11标准：列表初始化(list initialization)，用一组花括号来初始化变量。下面的第三种：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> units_sold = <span class="number">0</span>;</div><div class="line"><span class="keyword">int</span> units_sold = &#123;<span class="number">0</span>&#125;;</div><div class="line"><span class="keyword">int</span> units_sold&#123;<span class="number">0</span>&#125;;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">units_sold</span><span class="params">(<span class="number">0</span>)</span></span>;</div></pre></td></tr></table></figure></p>
+<h3 id="变量声明和定义的关系"><a href="#变量声明和定义的关系" class="headerlink" title="变量声明和定义的关系"></a>变量声明和定义的关系</h3><p><strong>变量能且只能被定义一次，但是可以被多次声明。</strong>声明变量：在变量名前添加关键字<code>extern</code>，而且不要显示地初始化。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="keyword">int</span> i;        <span class="comment">// 仅仅是声明</span></div><div class="line"><span class="keyword">extern</span> <span class="keyword">int</span> i = <span class="number">0</span>;     <span class="comment">// 声明且定义</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> v;             <span class="comment">// 声明且定义</span></div><div class="line"><span class="keyword">int</span> a = <span class="number">0</span>;        <span class="comment">// 声明且定义</span></div></pre></td></tr></table></figure></p>
+<p>在函数体内部，如果试图初始化一个由extern关键字标记的变量，将引发错误。</p>
+<p>补：</p>
+<blockquote>
+<p>extern外部变量声明其实是在IDE进行编译的时候告诉IDE，这有一个外部变量你要去别的地方找。因此我们应该掌握编译链接这套流程才能够更加方便的会用extern。假设有一个头文件a.h，这个头文件里面定义了int aaa=0;还有一个源文件b.cpp。这个b.cpp里面使用了extern int aaa;这样的语句，那么这个b.cpp是编译不了的。因为头文件如果不被别的源文件引用，是不参与被编译为obj的过程的，一旦它不参与这个过程，它里面声明的aaa这个全局变量其实就不存在，因此在b.cpp里面外部生命一个不存在的变量自然就是非法的。另外，使用extern也要和static做区分并考量它在别的文件中会不会造成内存污染等问题。这里应该掌握分离式编译的编译和链接特性再使用extern比较好。</p>
+</blockquote>
+<p><strong>静态类型</strong>(P42)</p>
+<h3 id="指针与引用"><a href="#指针与引用" class="headerlink" title="指针与引用"></a>指针与引用</h3><p><strong>初始化所有指针</strong>： 初始化为nullptr或0。</p>
+<p><strong>void *指针</strong>(P50)：特殊的指针类型，可以存放任意对象的地址。我们对该指针中到底是个什么类型的对象并不了解。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> *p1,p2;</div></pre></td></tr></table></figure>
+<p>其中，p1是指向int的指针，p2是int。(强调变量具有的复合类型。)</p>
+<p><strong>指向指针的指针</strong>：通过<code>*</code>的个数可以区分指针的级别，即：<code>**</code>表示指向指针的指针，<code>***</code>表示指向指针的指针的指针。</p>
+<p><strong>指向指针的引用</strong>(P52)：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">42</span>;</div><div class="line"><span class="keyword">int</span> *p;</div><div class="line"><span class="keyword">int</span> *&amp;r = p; <span class="comment">//r是对指针p的引用</span></div><div class="line"></div><div class="line">r = &amp;i; <span class="comment">//r引用了一个指针，因此给r赋值&amp;i就是令p指向i</span></div><div class="line">*r = <span class="number">0</span>; <span class="comment">//解引用r得到i，也就是p指向的对象，将i的值改为0</span></div></pre></td></tr></table></figure></p>
+<p><strong>面对一条比较复杂的指针或者引用的声明语句时，从右向左阅读有助于弄清楚它的真实含义</strong>。<br>离变量名最近的符号（此例中是<code>&amp;r</code>的符号<code>&amp;</code>）对<strong>变量的类型有最直接的影响</strong>，因此<code>r</code>是一个引用。声明符的其余部分用以确定<code>r</code>引用的类型是是什么，此例中的符号<code>*</code>说明<code>r</code>引用的是一个指针。最后，声明的基本数据类型部分指出<code>r</code>引用的是一个<code>int</code>指针。</p>
+<h2 id="顶层const-P57-2-4-3"><a href="#顶层const-P57-2-4-3" class="headerlink" title="顶层const(P57,2.4.3)"></a>顶层const(P57,2.4.3)</h2><p>顶层const是对const而言的，“顶层”可以用来修饰<code>const</code>状态的形容词。一个<code>const</code>使对象本身的值固定，这个<code>const</code>就被称为顶层const;一个<code>const</code>是对象指向或引用的对象成为固定值，这个const就被称为底层const。</p>
+<p>顶层和底层const对拷贝来说密切相关，有相同底层const资格的两个对象才能够互相拷贝，而且顶层const声明变量之后不允许再次改变const的值。<br><code>int p,const int *a＝&amp;p;</code>这种语句中的const就是底层const。<br>像<code>int v1=9;const int *p=&amp;v1;int *p2=p;</code>这种语句如果能够通过编译，那么我们就可以使用p2的性质改变p1指向的常量的值，但是常量的值是不能够被改变的，因此这种变相改变常量的值的表达式都是错误的。可以通过分析const级别得到表达式中常量是否被更改，从而判断语句的正确性。</p>
+<p>说到底，顶层底层说的是对拷贝控制的约束。总的规则就是“不能改变常量的值”。因此“拷入和拷出的对象都要有相同的底层const资格，或者两个对象数据类型必须能转换”，例如，有<code>int *p1,const int *p2;</code>。p1没有底层const,p2有底层const。p1=p2;这时<code>const int*</code>不能转换成<code>int *</code>(如果转换，就违反了“不能改变常量的值这一约束条件”)，因此<code>p1=p2;</code>不合法。<code>p2=p1;``int *</code>能够转换成<code>const int *</code>,因此<code>p2=p1</code>合法。</p>
+<h2 id="constexpr-P58-2-4-4"><a href="#constexpr-P58-2-4-4" class="headerlink" title="constexpr(P58,2.4.4)"></a>constexpr(P58,2.4.4)</h2><p>我们在了解<code>constexpr</code>之前，应该先了解<strong>常量表达式</strong>。所谓常量就是固定的量，那么常量表达式就是值固定不变的表达式，这里“值固定不变”，指的是程序编译阶段，常量表达式的值就能被确定下来之后也不能对其进行任何种方式的修改。因此这个固定，是编译之后固定的。像<code>cout&lt;&lt;1234&lt;&lt;endl;</code>中的1234，就是常量表达式，显然，字面值是常量表达式。</p>
+<p><code>constexpr</code>的作用之一就是帮助程序员在IDE的提示下查看一个赋值语句是不是常量表达式。使用的方式包含在声明语句里面，形如<code>constexpr 变量类型 变量名=右值;</code>如果右值是一个常量，这条语句就是正确的。在所有函数体外声明的全局变量的地址就符合“在编译期间能确定，编译后值不被改变”这两个条件，因此也属于常量。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> mf = <span class="number">20</span>; <span class="comment">// 20是常量表达式</span></div><div class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> limit = mf + <span class="number">1</span>; <span class="comment">// mf+1是常量表达式</span></div><div class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> sz = size(); <span class="comment">//只有当size是一个constexpr函数时，才是一条正确的语句。</span></div></pre></td></tr></table></figure></p>
+<p>另外，用constexpr声明的指针(比如，<code>constexpr int *p=&amp;v1;</code>中的<code>*p</code>，相当于<code>int *const p=&amp;v1;</code>)都是顶层const，即指针本身值固定。但是指针指向的内容是可以变的。引用也一样。</p>
+<p><strong>定义于函数体之外的变量的地址是固定的，可以用来初始化constexpr指针</strong>。</p>
+<p>当你使用constexpr定义引用变量的时候，这个变量引用的对象只能是全局基本数据类型（引用类型除外的）变量（因为要求的内存地址必须是固定不变的）。constexpr引用的结果和正常的引用的结果是一致的，因为引用本身就是固定不变的，因此相当于顶层const修饰的constexpr对引用类型类说没有特殊的意义。 </p>
+<h2 id="类型别名-P61-2-4-4"><a href="#类型别名-P61-2-4-4" class="headerlink" title="类型别名(P61,2.4.4)"></a>类型别名(P61,2.4.4)</h2><p>使用<code>typedef int zhengxing;</code>这种对简单的类型名进行替换的方式无疑是非常直观并且好理解的，但是在涉及到复杂的类型名的时候往往会出现各种各样的问题。</p>
+<p>比如<code>typedef char *Pstring;</code>这条语句是不是就意味着我们看到<code>Pstring</code>就可以用<code>char *</code>替换呢。其实并不是，实际上类型别名不只是替换的规则，而是要复杂很多。</p>
+<p>比如我们遇到<code>const Pstring a;</code>的时候，按照替换的规则，这条语句就相当于<code>const char * a;</code>这里的const这种情况下是底层const，但是结果并不是这样的，这条语句正确的等同语句应该是<code>char *const a;</code>是一个顶层const，即指针本身是一个常量。让我们来分析一下为什么是这个样子，而不是简单的替换就行了。<code>typedef char *Pstring；</code>这条语句就是说<code>Pstring</code>是一个类型别名，它是什么类型的类型别名呢？Pstring是 指向char的指针的类型别名，也就是说，这个类型修饰的对象必须是一个指针，这个指针也必须指向char而不能指向别的什么东西，比如，不能指向<code>const char</code>。我们再看看<code>const Pstring a;</code>这个语句，首先a一定是指向char的指针。所以这个前面的const应该是用来修饰这个指针本身。也就是说，这个指针是<strong>常量指针</strong>而非指向常量的指针。这一点非常重要。</p>
+<p><code>const char * a</code>这个语句里面，实际上类型是<code>const char</code>，<code>*</code>是声明符的一部分。我们说过，定义一个变量由两部分组成，类型名和声明符，声明符可以是<code>*</code>或者<code>&amp;</code>加上变量名的形式。而类型别名只是给类型一个别名，至于声明符是怎样的，不在它修饰的范围内。因此在有const的情况下，就可以看出来这两者之间的区别还是很明显的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> *pstring;</div><div class="line"><span class="keyword">const</span> pstring cstr = <span class="number">0</span>; <span class="comment">//cstr是指向char的常量指针</span></div><div class="line"><span class="keyword">const</span> pstring *ps; <span class="comment">//ps是一个指针，它的对象是指向char的常量指针。</span></div></pre></td></tr></table></figure>
+<p>pstring实际上是指向char的指针，因此，const pstring就是指向char的常量指针。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const char *cstr = 0; //是对const pstring的错误理解</div></pre></td></tr></table></figure></p>
+<p>数据类型就变成了<code>char</code>，<code>*</code>成为了声明符的一部分。这样改写的结果是，<code>const char</code>成了基本数据类型。cstr是一个指针，指向了常量字符。</p>
+<h2 id="auto类型声明符-P61-2-5-2"><a href="#auto类型声明符-P61-2-5-2" class="headerlink" title="auto类型声明符(P61,2.5.2)"></a>auto类型声明符(P61,2.5.2)</h2><p>C++11中引入的auto主要有两种用途：自动类型推断和返回值占位。auto在C++98中的标识临时变量的语义，由于使用极少且多余，在C++11中已被删除。前后两个标准的auto，完全是两个概念。</p>
+<p><code>auto</code>变量通过初始化语句，计算出右值的类型，并推导出左值的类型。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i=<span class="number">0</span>, &amp;r = i;</div><div class="line"><span class="keyword">auto</span> a = r; <span class="comment">// a是一个整数（r是i的别名，而i是一个整数）</span></div></pre></td></tr></table></figure></p>
+<p>这个过程中auto将会忽视顶层const和引用类型，可用<code>const auto &amp;a=i;</code>这种方式显式地指出了：指出要推导的结果是带顶层指针属性的或者是引用属性的。</p>
+<p>auto推导多个值时，这些值的类型必须是一样的。因为auto是利用初始化赋值，因此它的行为基本上也和初始化有关。</p>
+<p>关于auto的更多用法：<a href="http://blog.csdn.net/zxh2075/article/details/9235591" target="_blank" rel="external">【C++11】新特性——auto的使用</a></p>
+<h2 id="decltype类型指示符-P62-2-5-3"><a href="#decltype类型指示符-P62-2-5-3" class="headerlink" title="decltype类型指示符(P62,2.5.3)"></a>decltype类型指示符(P62,2.5.3)</h2><p>有时候会遇到这种情况：希望从表达式的类型推断出要定义的变量的类型，但是不想用该表达式的值初始化变量。为此，C++11新标准引入第二种类型说明符<code>decltype</code>。</p>
+<p><code>decltype</code>不通过计算，只通过推算出变量应有的值，表达式本身应有的值和函数的返回值来<strong>推导类型</strong>。</p>
+<p>对于变量类型，<code>decltype</code>保留顶层const和引用的属性。对于表达式，<strong>解引用表达式(如:<code>int i=1; int *p=&amp;i; decltype (*p) a=i;</code>中的<code>*p</code>,对p解引用是<code>int &amp;</code>类型的)和带括号的表达式，（如：<code>decltype ((a+1)) c=i;</code>）的结果都将是引用类型</strong>。因为decltype通过处理表达式得到结果，因此更详细的内容在<em>第四章</em>将会被提到。有的表达式返回左值，有的表达式返回右值，返回左值的表达式在decltype类型推导下得到的将是引用的结果。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">42</span>,*p = &amp;i, &amp;r = i;</div><div class="line"><span class="keyword">decltype</span>(r + <span class="number">0</span>) b; <span class="comment">//正确，加法结果为int，因此b是一个（未初始化的）int</span></div><div class="line"><span class="keyword">decltype</span>(*p) c; <span class="comment">//错误，c是int&amp;，必须初始化</span></div><div class="line"><span class="keyword">decltype</span>((i)) d; <span class="comment">//错误，c是int&amp;，必须初始化</span></div><div class="line"><span class="keyword">decltype</span>(i) e; <span class="comment">//正确，e是一个（未初始化的）int</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>decltype((variable)) (注意是双层括号)的结果永远是引用</strong>，而decltype(variable)结果只有当variable本身就是一个引用时才是引用。</p>
+</blockquote>
+<p>补：</p>
+<ol>
+<li><p>一般情况下，出现数组名的表达式时会把数组名转换为<strong>指针</strong>，而用decltype一个数组名时，其返回类型是<strong>该数组的类型</strong>，如有int ia[10]，则<code>decltype(ia) da</code>，此时da也为包含10个int元素的数组。用于函数时也一样，不会自动把函数名转换为指针，而是返回该函数类型。</p>
+</li>
+<li><p>如果作用于一个取地址运算符，则为指向指针的指针，如有int p，则<code>decltype(&amp;p)</code>的结果是<code>int **</code>类型。</p>
+</li>
+</ol>
+<h2 id="用关键字struct自定义数据结构"><a href="#用关键字struct自定义数据结构" class="headerlink" title="用关键字struct自定义数据结构"></a>用关键字struct自定义数据结构</h2><p>使用struct关键字定义类的形式如<code>struct 类名｛数据成员类型1 数据成员名1；数据成员类型2 数据成员名2;｝;</code>，C++11规定可以给类内成员提供类内初始值用于初始化用我们自定义类创建的对象实例中的成员的值。形式如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MyClass</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line"><span class="keyword">int</span> student=<span class="number">0</span>;</div><div class="line"><span class="keyword">float</span> numbers=<span class="number">1</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p> 很多新手程序员忘记在类定义的最后加上分号。</p>
+</blockquote>
+<h2 id="头文件保护符"><a href="#头文件保护符" class="headerlink" title="头文件保护符"></a>头文件保护符</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> SALES_DATA_H</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SALES_DATA_H</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Sales_data</span>&#123;</span></div><div class="line">	<span class="built_in">std</span>::<span class="built_in">string</span> bookNo;</div><div class="line">    <span class="keyword">unsigned</span> units_sold = <span class="number">0</span>;</div><div class="line">    <span class="keyword">double</span> revenue = <span class="number">0.0</span>;</div><div class="line">&#125;;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
+<p>头文件保护符依赖于预处理变量。如<code>#define DEBUG</code>，此时<code>DEBUG</code>就是预处理器变量。预处理变量无视C++语言中关于作用域的规则。</p>
+<blockquote>
+<p>头文件保护符很简单， 程序员只要<strong>习惯性加上</strong>就可以了，没必要太在乎你的程序到底需不需要。</p>
+</blockquote>
+<h2 id="专业术语"><a href="#专业术语" class="headerlink" title="专业术语"></a>专业术语</h2><p>1.算数类型 arithmetic type<br>2.整型 integral type<br>3.转换 convert<br>4.不可打印 nonprintable<br>5.转义序列 escape sequence<br>6.类型说明符 type specifier<br>7.分离式编译 separate compilation<br>8.声明 declaration<br>9.声明符 declarator<br>10.静态类型 statically typed<br>11.类型检查 type checking<br>12.标识符 identifier<br>13.内层作用域 inner scope<br>14.复合类型 compound type<br>15.左值引用 lvalue reference<br>16.预处理 preprocessor<br>17.临时量 temporary<br>18.指向常量的指针 pointer to const<br>19.常量指针 const pointer<br>20.字面值类型 literal type<br>21.类型别名 type alias<br>22.类内初始值 in-class initializer<br>23.预处理器 preprocessor<br>24.头文件保护符 header guard</p>
+
+      
+    </div>
+    
+    
+    
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://wangwlj.com/2016/10/05/CPP_01_02/" title="C++">https://wangwlj.com/2016/10/05/CPP_01_02/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/05/cPP_03/" rel="prev" title="C++03">
+                C++03 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjUyMi85MDgz"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/head_icon.jpg"
+              alt="wangwlj" />
+          
+            <p class="site-author-name" itemprop="name">wangwlj</p>
+            <p class="site-description motion-element" itemprop="description">所谓王者，必卓然特立，争当人杰。</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/qwerty200696" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:wanglijie1994@126.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/LijieWang" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-gratipay"></i>知乎</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/3280603012" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>微博</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/qwerty200696" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-codiepie"></i>CSDN</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qq_31196849" title="小草莓" target="_blank">小草莓</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qingkong1994" title="qingkong" target="_blank">qingkong</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-开始"><span class="nav-number">1.</span> <span class="nav-text">第一章 开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#include指令-P6-1-2"><span class="nav-number">1.1.</span> <span class="nav-text">include指令(P6,1.2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译器-P14-1-4"><span class="nav-number">1.2.</span> <span class="nav-text">编译器(P14,1.4)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件重定向-P19-1-5"><span class="nav-number">1.3.</span> <span class="nav-text">文件重定向(P19,1.5)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#专业术语-P23"><span class="nav-number">1.4.</span> <span class="nav-text">专业术语(P23)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-变量和基本类型"><span class="nav-number">2.</span> <span class="nav-text">第二章 变量和基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-语言关于类型的规定-P30-2-1-1"><span class="nav-number">2.1.</span> <span class="nav-text">C++语言关于类型的规定(P30,2.1.1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换-P32-2-1-2"><span class="nav-number">2.2.</span> <span class="nav-text">类型转换(P32,2.1.2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义序列-P36，2-1-3"><span class="nav-number">2.3.</span> <span class="nav-text">转义序列(P36，2.1.3)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量-P38"><span class="nav-number">2.4.</span> <span class="nav-text">变量(P38)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#列表初始化"><span class="nav-number">2.4.1.</span> <span class="nav-text">列表初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明和定义的关系"><span class="nav-number">2.4.2.</span> <span class="nav-text">变量声明和定义的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针与引用"><span class="nav-number">2.4.3.</span> <span class="nav-text">指针与引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顶层const-P57-2-4-3"><span class="nav-number">2.5.</span> <span class="nav-text">顶层const(P57,2.4.3)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#constexpr-P58-2-4-4"><span class="nav-number">2.6.</span> <span class="nav-text">constexpr(P58,2.4.4)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型别名-P61-2-4-4"><span class="nav-number">2.7.</span> <span class="nav-text">类型别名(P61,2.4.4)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#auto类型声明符-P61-2-5-2"><span class="nav-number">2.8.</span> <span class="nav-text">auto类型声明符(P61,2.5.2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#decltype类型指示符-P62-2-5-3"><span class="nav-number">2.9.</span> <span class="nav-text">decltype类型指示符(P62,2.5.3)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用关键字struct自定义数据结构"><span class="nav-number">2.10.</span> <span class="nav-text">用关键字struct自定义数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件保护符"><span class="nav-number">2.11.</span> <span class="nav-text">头文件保护符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#专业术语"><span class="nav-number">2.12.</span> <span class="nav-text">专业术语</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangwlj</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      87.2k
+    </span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=64793620";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yrpmXJiSAy4frnKvqrxvNUSG-gzGzoHsz", "35GTu3Aq4E3uxua6GpER2XLp");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 8596,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
