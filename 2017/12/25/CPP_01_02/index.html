@@ -90,7 +90,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="C++," />
 
 
 
@@ -108,23 +108,18 @@
 
 
 
-<meta name="description" content="试题下载地址中国研究生数模竞赛官网：http://gmcm.seu.edu.cn/01/49/c12a329/page.htm 我们组选择了D题。 D题题目基于监控视频的前景目标提取视频监控是中国安防产业中最为重要的信息获取手段。随着“平安城市”建设的顺利开展，各地普遍安装监控摄像头，利用大范围监控视频的信息，应对安防等领域存在的问题。近年来，中国各省市县乡的摄像头数目呈现井喷式增长，大量企业、部">
+<meta name="description" content="第一章 开始include指令(P6,1.2)通常情况下#include指令必须在所有函数之外。include和它想包含的头文件名字必须在同一行里，不然会报错。 一般情况下我们把include指令放在源文件代码内容的最前面，当你在源文件中使用#include声明了一个头文件，效果相当于你把整个头文件黏贴到对应的那一行上。 编译器(P14,1.4)编译器的一部分工作是寻找程序文本中的错误。常见错误类">
+<meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017“华为杯”第十四届中国研究生数学建模竞赛回顾">
-<meta property="og:url" content="https://wangwlj.com/2017/09/22/review_of_MathModel/index.html">
+<meta property="og:title" content="C++ Primer学习笔记：(1&#x2F;2)开始、变量与基本类型">
+<meta property="og:url" content="https://wangwlj.com/2017/12/25/CPP_01_02/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="试题下载地址中国研究生数模竞赛官网：http://gmcm.seu.edu.cn/01/49/c12a329/page.htm 我们组选择了D题。 D题题目基于监控视频的前景目标提取视频监控是中国安防产业中最为重要的信息获取手段。随着“平安城市”建设的顺利开展，各地普遍安装监控摄像头，利用大范围监控视频的信息，应对安防等领域存在的问题。近年来，中国各省市县乡的摄像头数目呈现井喷式增长，大量企业、部">
+<meta property="og:description" content="第一章 开始include指令(P6,1.2)通常情况下#include指令必须在所有函数之外。include和它想包含的头文件名字必须在同一行里，不然会报错。 一般情况下我们把include指令放在源文件代码内容的最前面，当你在源文件中使用#include声明了一个头文件，效果相当于你把整个头文件黏贴到对应的那一行上。 编译器(P14,1.4)编译器的一部分工作是寻找程序文本中的错误。常见错误类">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://wangwlj.com/2017/09/22/review_of_MathModel/pic_1.png">
-<meta property="og:image" content="https://wangwlj.com/2017/09/22/review_of_MathModel/pic_2.png">
-<meta property="og:image" content="https://wangwlj.com/2017/09/22/review_of_MathModel/pic_3.png">
-<meta property="og:image" content="https://wangwlj.com/2017/09/22/review_of_MathModel/UCF.jpg">
-<meta property="og:image" content="https://wangwlj.com/2017/09/22/review_of_MathModel/UMN.jpg">
-<meta property="og:updated_time" content="2017-09-25T08:26:10.000Z">
+<meta property="og:updated_time" content="2017-12-25T02:38:47.723Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2017“华为杯”第十四届中国研究生数学建模竞赛回顾">
-<meta name="twitter:description" content="试题下载地址中国研究生数模竞赛官网：http://gmcm.seu.edu.cn/01/49/c12a329/page.htm 我们组选择了D题。 D题题目基于监控视频的前景目标提取视频监控是中国安防产业中最为重要的信息获取手段。随着“平安城市”建设的顺利开展，各地普遍安装监控摄像头，利用大范围监控视频的信息，应对安防等领域存在的问题。近年来，中国各省市县乡的摄像头数目呈现井喷式增长，大量企业、部">
-<meta name="twitter:image" content="https://wangwlj.com/2017/09/22/review_of_MathModel/pic_1.png">
+<meta name="twitter:title" content="C++ Primer学习笔记：(1&#x2F;2)开始、变量与基本类型">
+<meta name="twitter:description" content="第一章 开始include指令(P6,1.2)通常情况下#include指令必须在所有函数之外。include和它想包含的头文件名字必须在同一行里，不然会报错。 一般情况下我们把include指令放在源文件代码内容的最前面，当你在源文件中使用#include声明了一个头文件，效果相当于你把整个头文件黏贴到对应的那一行上。 编译器(P14,1.4)编译器的一部分工作是寻找程序文本中的错误。常见错误类">
 
 
 
@@ -154,14 +149,14 @@
 
 
 
-  <link rel="canonical" href="https://wangwlj.com/2017/09/22/review_of_MathModel/"/>
+  <link rel="canonical" href="https://wangwlj.com/2017/12/25/CPP_01_02/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>2017“华为杯”第十四届中国研究生数学建模竞赛回顾 | 王立杰的博客</title>
+  <title>C++ Primer学习笔记：(1/2)开始、变量与基本类型 | 王立杰的博客</title>
   
 
 
@@ -353,7 +348,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangwlj.com/2017/09/22/review_of_MathModel/">
+    <link itemprop="mainEntityOfPage" href="https://wangwlj.com/2017/12/25/CPP_01_02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wangwlj">
@@ -370,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2017“华为杯”第十四届中国研究生数学建模竞赛回顾</h1>
+          <h1 class="post-title" itemprop="name headline">C++ Primer学习笔记：(1/2)开始、变量与基本类型</h1>
         
 
         <div class="post-meta">
@@ -382,8 +377,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-22T22:50:43+08:00">
-                2017-09-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-25T10:31:35+08:00">
+                2017-12-25
               </time>
             
 
@@ -393,6 +388,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-Primer/" itemprop="url" rel="index">
+                    <span itemprop="name">C++ Primer</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
 	  
           
@@ -401,7 +418,7 @@
 
           
           
-             <span id="/2017/09/22/review_of_MathModel/" class="leancloud_visitors" data-flag-title="2017“华为杯”第十四届中国研究生数学建模竞赛回顾">
+             <span id="/2017/12/25/CPP_01_02/" class="leancloud_visitors" data-flag-title="C++ Primer学习笔记：(1/2)开始、变量与基本类型">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -426,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,653
+                  4,861
                 </span>
               
 
@@ -451,66 +468,102 @@
       
 
       
-        <h1 id="试题下载地址"><a href="#试题下载地址" class="headerlink" title="试题下载地址"></a>试题下载地址</h1><p>中国研究生数模竞赛官网：<a href="http://gmcm.seu.edu.cn/01/49/c12a329/page.htm" title="2017年研究生数模竞赛试题公布" target="_blank" rel="external">http://gmcm.seu.edu.cn/01/49/c12a329/page.htm</a></p>
-<p>我们组选择了D题。</p>
-<h2 id="D题题目"><a href="#D题题目" class="headerlink" title="D题题目"></a>D题题目</h2><h3 id="基于监控视频的前景目标提取"><a href="#基于监控视频的前景目标提取" class="headerlink" title="基于监控视频的前景目标提取"></a>基于监控视频的前景目标提取</h3><p>视频监控是中国安防产业中最为重要的信息获取手段。随着“平安城市”建设的顺利开展，各地普遍安装监控摄像头，利用大范围监控视频的信息，应对安防等领域存在的问题。近年来，中国各省市县乡的摄像头数目呈现井喷式增长，大量企业、部门甚至实现了监控视频的全方位覆盖。如北京、上海、杭州监控摄像头分布密度约分别为71、158、130个/平方公里，摄像头数量分别达到115万、100万、40万，为我们提供了丰富、海量的监控视频信息。</p>
-<p>目前，监控视频信息的自动处理与预测在信息科学、计算机视觉、机器学习、模式识别等多个领域中受到极大的关注。而如何有效、快速抽取出监控视频中的前景目标信息，是其中非常重要而基础的问题[1-6]。这一问题的难度在于，需要有效分离出移动前景目标的视频往往具有复杂、多变、动态的背景[7，8]。这一技术往往能够对一般的视频处理任务提供有效的辅助。以筛选与跟踪夜晚时罪犯这一应用为例：若能够预先提取视频前景目标，判断出哪些视频并未包含移动前景目标，并事先从公安人员的辨识范围中排除；而对于剩下包含了移动目标的视频，只需辨识排除了背景干扰的纯粹前景，对比度显著，肉眼更易辨识。因此，这一技术已被广泛应用于视频目标追踪，城市交通检测，长时场景监测，视频动作捕捉，视频压缩等应用中。</p>
-<p>下面简单介绍一下视频的存储格式与基本操作方法。一个视频由很多帧的图片构成，当逐帧播放这些图片时，类似放电影形成连续动态的视频效果。从数学表达上来看，存储于计算机中的视频，可理解为一个3维数据，其中代表视频帧的长，宽，代表视频帧的帧数。视频也可等价理解为逐帧图片的集合，即，其中为一张长宽分别为的图片。3维矩阵的每个元素（代表各帧灰度图上每个像素的明暗程度）为0到255之间的某一个值，越接近0，像素越黑暗；越接近255，像素越明亮。通常对灰度值预先进行归一化处理（即将矩阵所有元素除以255），可将其近似认为[0,1]区间的某一实数取值，从而方便数据处理。一张彩色图片由R（红），G（绿），B（蓝）三个通道信息构成，每个通道均为同样长宽的一张灰度图。由彩色图片构成的视频即为彩色视频。本问题中，可仅考虑黑白图片构成的视频。在Matlab环境下，视频的读取、播放及相应基本操作程序见附件1。如采用其他编程环境，也可查阅相关资料获得相应操作程序。</p>
-<p>题目的监控视频主要由固定位置监控摄像头拍摄，要解决的问题为提取视频前景目标。请研究生通过设计有效的模型与方法，自动从视频中分离前景目标。注意此类视频的特点是相对于前景目标，背景结构较稳定，变化幅度较小，可充分利用该信息实现模型与算法设计。</p>
-<p>请你们查阅相关资料和数据，结合视频数据特点，回答下列问题：</p>
-<h3 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a><strong>问题1</strong></h3><p>对一个不包含动态背景、摄像头稳定拍摄时间大约5秒的监控视频，构造提取前景目标（如人、车、动物等）的数学模型，并对该模型设计有效的求解方法，从而实现类似图1的应用效果。（附件2提供了一些符合此类特征的监控视频）</p>
-<p><img src="/2017/09/22/review_of_MathModel/pic_1.png" alt=""></p>
-<h3 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a><strong>问题2</strong></h3><p>对包含动态背景信息的监控视频（如图2所示），设计有效的前景目标提取方案。（附件2中提供了一些符合此类特征的典型监控视频）</p>
-<p><img src="/2017/09/22/review_of_MathModel/pic_2.png" alt=""></p>
-<h3 id="问题3"><a href="#问题3" class="headerlink" title="问题3"></a><strong>问题3</strong></h3><p>在监控视频中，当监控摄像头发生晃动或偏移时，视频也会发生短暂的抖动现象（该类视频变换在短时间内可近似视为一种线性仿射变换，如旋转、平移、尺度变化等）。对这种类型的视频，如何有效地提取前景目标？（附件2中提供了一些符合此类特征的典型监控视频，其它一些典型视频可从 <a href="http://wordpress-jodoin.dmi.usherb.ca/dataset2014/" target="_blank" rel="external">http://wordpress-jodoin.dmi.usherb.ca/dataset2014/</a> 下载）</p>
-<h3 id="问题4"><a href="#问题4" class="headerlink" title="问题4"></a><strong>问题4</strong></h3><p>在附件3中提供了8组视频（avi文件与mat文件内容相同）。请利用你们所构造的建模方法，从每组视频中选出包含显著前景目标的视频帧标号，并将其在建模论文正文中独立成段表示。务须注明前景目标是出现于哪一个视频（如Campus视频）的哪些帧（如241-250，421-432帧）。</p>
-<h3 id="问题5"><a href="#问题5" class="headerlink" title="问题5"></a><strong>问题5</strong></h3><p>如何通过从不同角度同时拍摄的近似同一地点的多个监控视频中（如图3所示）有效检测和提取视频前景目标？请充分考虑并利用多个角度视频的前景之间（或背景之间）相关性信息（一些典型视频可从<br><a href="http://cvlab.epfl.ch/research/surv/multi-people-tracking" target="_blank" rel="external">http://cvlab.epfl.ch/research/surv/multi-people-tracking</a> 下载）</p>
-<p><img src="/2017/09/22/review_of_MathModel/pic_3.png" alt=""></p>
-<h3 id="问题6"><a href="#问题6" class="headerlink" title="问题6"></a><strong>问题6</strong></h3><p>利用所获取前景目标信息，能否自动判断监控视频中有无人群短时聚集、人群惊慌逃散、群体规律性变化（如跳舞、列队排练等）、物体爆炸、建筑物倒塌等异常事件？可考虑的特征信息包括前景目标奔跑的线性变化形态特征、前景规律性变化的周期性特征等。尝试对更多的异常事件类型，设计相应的事件检测方案。（请从网络下载包含各种事件的监控视频进行算法验证）</p>
-<p>注：强烈建议深刻考虑问题内涵，建造合理、高效的数学模型和求解方法，鼓励进行具有开放思路与创新思维的探索性尝试。</p>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>[1] Andrews Sobral &amp; Antoine Vacavant, A comprehensive review of background subtraction algorithms evaluated with synthetic and real videos, Computer Vision and Image Understanding, Volume 122, May 2014, Pages 4-21</p>
-<p>[2] B. Lee and M. Hedley, “Background estimation for video surveillance,” IVCNZ02, pp. 315–320, 2002.</p>
-<p>[3] C. Stauffer and W. E. L. Grimson, “Adaptive background mixture models for real-time tracking,” in Computer Vision and Pattern Recognition, 1999. IEEE Computer Society Conference on., vol. 2. IEEE, 1999.</p>
-<p>[4] E. J. Cand`es, X. Li, Y. Ma, and J. Wright, “Robust principal component analysis?” Journal of the ACM (JACM), vol. 58, no. 3, p. 11, 2011.</p>
-<p>[5] D. Meng and F. De la Torre, “Robust matrix factorization with unknown noise,” in IEEE International Conference on Computer Vision, 2013, pp. 1337–1344.</p>
-<p>[6] Q. Zhao, D. Meng, Z. Xu,W. Zuo, and L. Zhang, “Robust principal component analysis with complex noise,” in Proceedings of the 31st International Conference on Machine Learning (ICML-14), 2014, pp. 55–63.</p>
-<p>[7] Y. Peng, A. Ganesh, J. Wright, W. Xu, and Y. Ma, “RASL: Robust alignment by sparse and low-rank decomposition for linearly correlated images,” Pattern Analysis and Machine Intelligence, IEEE Transactions on, vol. 34, no. 11, pp. 2233–2246, 2012.</p>
-<p>[8] M. Babaee, D. T. Dinh, and G. Rigoll, “A deep convolutional neural network for background subtraction,” arXiv preprint arXiv: 1702.01731, 2017.</p>
-<h1 id="思路流程"><a href="#思路流程" class="headerlink" title="思路流程"></a>思路流程</h1><p>不阐述为什么这么做（因为我也不知道为什么），只记录下我所做的工作历程。</p>
-<h2 id="BGSLibrary编译安装与BGSlibrary-GUI的下载与使用"><a href="#BGSLibrary编译安装与BGSlibrary-GUI的下载与使用" class="headerlink" title="BGSLibrary编译安装与BGSlibrary GUI的下载与使用"></a>BGSLibrary编译安装与BGSlibrary GUI的下载与使用</h2><p>这部分详情可参考我的博客：<a href="https://qwerty200696.github.io/2017/09/20/BGSlibrary/" target="_blank" rel="external">https://qwerty200696.github.io/2017/09/20/BGSlibrary/</a></p>
-<h2 id="ViBe算法"><a href="#ViBe算法" class="headerlink" title="ViBe算法"></a>ViBe算法</h2><p>一种像素级视频背景建模或前景检测的算法。</p>
-<p>详细地可参考ViBe算法官网主页：<a href="http://www.telecom.ulg.ac.be/research/vibe/" target="_blank" rel="external">ViBe官网链接</a></p>
-<p>该官网包含ViBe源码以及可在Windows和Linux中运行的程序。想了解该算法的童鞋可以详细探索该网站。</p>
-<p>这篇<a href="http://blog.csdn.net/zouxy09/article/details/9622285" target="_blank" rel="external">CSDN博客</a>介绍的也比较全面，可作参考。</p>
-<h2 id="光流法"><a href="#光流法" class="headerlink" title="光流法"></a>光流法</h2><p>LK光流法分析及其源码请参考我的这篇文章：<a href="https://qwerty200696.github.io/2017/09/21/optical_flow/" target="_blank" rel="external">https://qwerty200696.github.io/2017/09/21/optical_flow/</a></p>
-<h2 id="视频抗抖动算法"><a href="#视频抗抖动算法" class="headerlink" title="视频抗抖动算法"></a>视频抗抖动算法</h2><p>参考链接：<a href="http://nghiaho.com/?p=2093" target="_blank" rel="external">SIMPLE VIDEO STABILIZATION USING OPENCV</a></p>
-<p>采用的方法是基于optical flow 光流法。</p>
-<p>算法流程：</p>
-<p>&emsp;1 使用所有帧中的光流信息来查找从前一帧到当前帧的转换</p>
-<p>&emsp;2 累积变换以获得每个帧的x，y，a 的轨迹</p>
-<p>&emsp;3 使用滑动平均窗口对轨迹平滑处理</p>
-<p>&emsp;4 创建一个新的变换，使得$F_{new}$ = $F_{old}$ + ( $T_{smoothed}$ - $T_{before}$ )</p>
-<p>&emsp;5 将新的转换应用到视频中，得到去抖后的视频</p>
-<p>其中 dx、dy 为x 和y 方向的流向，da 为抖动中旋转角度的变化量; $F_{new}$、$F_{old}$分别为新的变换与原先的变换，$T_{smoothed}$、$T_{before}$分别为平滑前后的轨迹。</p>
-<p><font color="#FF0000"> Camera Jitter 相机抖动</font> 数据集下载：<br><a href="http://wordpress-jodoin.dmi.usherb.ca/dataset2014/" target="_blank" rel="external">http://wordpress-jodoin.dmi.usherb.ca/dataset2014/</a></p>
-<h2 id="opencv视频保存方法"><a href="#opencv视频保存方法" class="headerlink" title="opencv视频保存方法"></a>opencv视频保存方法</h2><p>视频保存方法请参考这篇博文：<a href="https://qwerty200696.github.io/2017/09/21/opencv_SaveVideo/" target="_blank" rel="external">https://qwerty200696.github.io/2017/09/21/opencv_SaveVideo/</a></p>
-<h2 id="opencv-contrib安装"><a href="#opencv-contrib安装" class="headerlink" title="opencv_contrib安装"></a>opencv_contrib安装</h2><p>opencv_contrib的安装说明可以参考这篇博文<a href="https://qwerty200696.github.io/2017/09/21/opencv_contrib/" target="_blank" rel="external">https://qwerty200696.github.io/2017/09/21/opencv_contrib/</a></p>
-<h2 id="杂七杂八"><a href="#杂七杂八" class="headerlink" title="杂七杂八"></a>杂七杂八</h2><h3 id="动目标检测"><a href="#动目标检测" class="headerlink" title="动目标检测"></a>动目标检测</h3><p><a href="http://wordpress-jodoin.dmi.usherb.ca/dataset2014/" target="_blank" rel="external">dataset 2014</a> 里面的视频分类详细，很好的数据集。</p>
-<h3 id="目标跟踪"><a href="#目标跟踪" class="headerlink" title="目标跟踪"></a>目标跟踪</h3><p><a href="http://www.learnopencv.com/object-tracking-using-opencv-cpp-python/" target="_blank" rel="external">Object Tracking using OpenCV (C++/Python)</a></p>
-<p>这个算是做的比较好的了，很有参考价值。</p>
-<p>D题问题五给出的网址：<a href="http://cvlab.epfl.ch/research/surv/multi-people-tracking" target="_blank" rel="external">http://cvlab.epfl.ch/research/surv/multi-people-tracking</a></p>
-<p>视频流跟踪目标<a href="https://github.com/gnebehay/OpenTLD" target="_blank" rel="external">OpenTLD</a></p>
-<p><a href="http://mha.cs.umn.edu/proj_tracking.shtml" target="_blank" rel="external">Real-Time Tracking</a></p>
-<h3 id="多角度多目标跟踪"><a href="#多角度多目标跟踪" class="headerlink" title="多角度多目标跟踪"></a>多角度多目标跟踪</h3><p><a href="http://www.pierrebaque.com/page-DeepOcclusion/" target="_blank" rel="external">Deep Occlusion Reasoning for Multi-Camera Multi-Target Detection</a></p>
-<p><a href="https://github.com/pierrebaque/DeepOcclusion" target="_blank" rel="external">DeepOcclusion</a></p>
-<h3 id="人群异常行为检测"><a href="#人群异常行为检测" class="headerlink" title="人群异常行为检测"></a>人群异常行为检测</h3><p><a href="http://groups.inf.ed.ac.uk/vision/BEHAVEDATA/INTERACTIONS/" target="_blank" rel="external">BEHAVE Interactions Test Case Scenarios</a></p>
-<p><a href="http://mha.cs.umn.edu/proj_events.shtml" target="_blank" rel="external">Detection of Events</a></p>
-<p>UCF数据集：<a href="http://crcv.ucf.edu/data/crowd.php" target="_blank" rel="external">Crowd Segmentation Data Set</a> 这是正常行为的，没找到不正常行为的。据说有的。</p>
-<p><img src="/2017/09/22/review_of_MathModel/UCF.jpg" alt=""></p>
-<p>UMN数据集：<a href="http://mha.cs.umn.edu/Movies/Crowd-Activity-All.avi" target="_blank" rel="external">Detection of Unusual Crowd Activity</a></p>
-<p><img src="/2017/09/22/review_of_MathModel/UMN.jpg" alt=""></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>至此，花了两天时间稍微记录了一下我自己做的工作吧，算是opencv小白入门记。（之后暂时应该不会研究了，毕竟不是学这个的）</p>
-<p>最后附上一个收录计算机视觉题材的地址：<a href="https://github.com/imistyrain/Way4CV" target="_blank" rel="external">百炼成金，计算机视觉修炼之道</a>，想要从事相关研究的童鞋不容错过。</p>
+        <h1 id="第一章-开始"><a href="#第一章-开始" class="headerlink" title="第一章 开始"></a>第一章 开始</h1><h2 id="include指令-P6-1-2"><a href="#include指令-P6-1-2" class="headerlink" title="include指令(P6,1.2)"></a>include指令(P6,1.2)</h2><p>通常情况下<code>#include</code>指令必须在所有函数之外。include和它想包含的头文件名字必须在同一行里，不然会报错。</p>
+<p>一般情况下我们把include指令放在源文件代码内容的最前面，当你在源文件中使用<code>#include</code>声明了一个头文件，效果相当于你把整个头文件黏贴到对应的那一行上。</p>
+<h2 id="编译器-P14-1-4"><a href="#编译器-P14-1-4" class="headerlink" title="编译器(P14,1.4)"></a>编译器(P14,1.4)</h2><p>编译器的一部分工作是寻找程序文本中的错误。<br>常见错误类型：</p>
+<ul>
+<li>语法错误(syntax error)</li>
+<li>类型错误(type error)</li>
+<li>声明错误(declaration error)</li>
+</ul>
+<p><strong>“编辑-编译-调试”（edit-compile-debug）</strong>周期。</p>
+<h2 id="文件重定向-P19-1-5"><a href="#文件重定向-P19-1-5" class="headerlink" title="文件重定向(P19,1.5)"></a>文件重定向(P19,1.5)</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> addItems &lt;infile &gt;outfile</div></pre></td></tr></table></figure>
+<h2 id="专业术语-P23"><a href="#专业术语-P23" class="headerlink" title="专业术语(P23)"></a>专业术语(P23)</h2><ol>
+<li>花括号 curly brace</li>
+<li>内置类型 built-in type</li>
+<li>形参列表 parameter list</li>
+<li>字符串字面值常量 string literal</li>
+<li>操作符 manipulator</li>
+<li>变量 variable</li>
+<li>初始化 initialize</li>
+<li>注释 comments</li>
+<li>集成开发环境 Integrated Developed Environment,IDE</li>
+<li>条件 condition</li>
+<li>赋值 assignment</li>
+<li>表达式 expression</li>
+<li>语法错误 syntax error</li>
+<li>方法（类方法） method</li>
+</ol>
+<h1 id="第二章-变量和基本类型"><a href="#第二章-变量和基本类型" class="headerlink" title="第二章 变量和基本类型"></a>第二章 变量和基本类型</h1><h2 id="C-语言关于类型的规定-P30-2-1-1"><a href="#C-语言关于类型的规定-P30-2-1-1" class="headerlink" title="C++语言关于类型的规定(P30,2.1.1)"></a>C++语言关于类型的规定(P30,2.1.1)</h2><p>C++语言的基本类型的设定与硬件紧密相关，因此很多类型的内存尺寸也都只是给了一个范围，其实各家IDE（LLVM，GCC，Visaul C++）的实现都是在范围内，具体的实现细节都是不确定的。</p>
+<p>其中bool最小尺寸未定义，char最小尺寸是8位，wchar_t和char16_t的最小尺寸都是16位，char32_t的最小尺寸是32位，int的最小尺寸是16位，long和long long的最小尺寸分别是32位和64位，对于浮点型数据的表现尺寸是按照精度计算的，其中float的最小尺寸精度是小数点后6位(通常占内存32bytes)，double（通常占内存 64bytes）和long double(通常占内存 96~128bytes)的最小尺寸精度则是小数点后10位(实际可能比这个精度要大一些，比如float小数点后有效位为7，double为16)。</p>
+<p>int不得小于short,long不得小于int,long long不得小于long。float,double,long double也应该是精度递增（或者相同）的关系。</p>
+<p>要特别注意的是，<strong>扩展的字符类型</strong>(char16_t，char32_t，wchar_t)<strong>和布尔类型都没有带符号和无符号之分</strong>（尽管它们也确实属于算数类型）。</p>
+<h2 id="类型转换-P32-2-1-2"><a href="#类型转换-P32-2-1-2" class="headerlink" title="类型转换(P32,2.1.2)"></a>类型转换(P32,2.1.2)</h2><p>程序自动执行的类型转换操作发生在程序里IDE预期我们使用A类型但是实际上我们使用B类型的时候，B类型的对象会自动转换为A类型的，如果没法转换，程序就会报错。赋值操作中就可能发生这样的情况。</p>
+<p>我们先看赋值操作里表达式里面发生的自动转换，赋值操作A=B中，等号左边的A被叫做<strong>左值</strong>，B被叫做<strong>右值</strong>，程序期待事情是你给定的右值和左值类型完全相同。如果不相同，这里就会发生<strong>强制的类型转换</strong>，即把B的类型转化为A的类型。如果把一个超出左值类型表达范围的数赋值给左值，左值又是一个无符号类型，比如<code>unsigned char c=-1;</code>这时-1（整型，负的），右值会转化为无符号字符型，初始值对无符号类型表示数值总数取模，然后求余数，这个余数就是转化后的数。</p>
+<p>因为C++没有明确规定有符号类型的数应该如何表示，因此如果把一个超出左值类型表达范围的数赋值给左值，左值又是一个有符号类型，这种行为的结果是不一定的，因为C++标准委员会没有规定这样做之后到底会发生什么，因此各个IDE可能会有不同的实现。我们把这种不确定造成结果的行为叫做<strong>未定义行为</strong>。</p>
+<p><strong>建议：避免无法预知和依赖于环境的行为</strong>。</p>
+<p><strong>提示：切勿混用带符号类型和无符号类型</strong>。</p>
+<h2 id="转义序列-P36，2-1-3"><a href="#转义序列-P36，2-1-3" class="headerlink" title="转义序列(P36，2.1.3)"></a>转义序列(P36，2.1.3)</h2><p>字符的转义序列可以为<code>\</code>后面加上最多3个8进制数字（如果多于3个不会引发报错，多出的部分会被当成字符），或者<code>\x</code>后面加上最多两个16进制数字（多出会报错）。数字转换成10进制后的大小不得超过字符集的限定范围。一般的字面值转义无此限制，不过，一般的字面值的类型是不确定的。10进制数字类型字面值会被转换为能够容纳这个数的带符号整数类型，其他进制中它们则会被转换为能容纳它们的占内存最小的类型的值。</p>
+<p>在最新的C++14标准中，数字字面值里还允许以0b或者0B开头，后面加上二进制数成为二进制字面值。如0B101，代表数字5；0b11，代表数字3。</p>
+<p>指定字面值的常量：当使用一个长整型字面值时，请使用大写字母<code>L</code>来标记，因为小写字母<code>l</code>和数字<code>1</code>太容易混淆了。</p>
+<h2 id="变量-P38"><a href="#变量-P38" class="headerlink" title="变量(P38)"></a>变量(P38)</h2><h3 id="列表初始化"><a href="#列表初始化" class="headerlink" title="列表初始化"></a>列表初始化</h3><p>C++11标准：列表初始化(list initialization)，用一组花括号来初始化变量。下面的第三种：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> units_sold = <span class="number">0</span>;</div><div class="line"><span class="keyword">int</span> units_sold = &#123;<span class="number">0</span>&#125;;</div><div class="line"><span class="keyword">int</span> units_sold&#123;<span class="number">0</span>&#125;;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">units_sold</span><span class="params">(<span class="number">0</span>)</span></span>;</div></pre></td></tr></table></figure></p>
+<h3 id="变量声明和定义的关系"><a href="#变量声明和定义的关系" class="headerlink" title="变量声明和定义的关系"></a>变量声明和定义的关系</h3><p><strong>变量能且只能被定义一次，但是可以被多次声明。</strong>声明变量：在变量名前添加关键字<code>extern</code>，而且不要显示地初始化。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="keyword">int</span> i;        <span class="comment">// 仅仅是声明</span></div><div class="line"><span class="keyword">extern</span> <span class="keyword">int</span> i = <span class="number">0</span>;     <span class="comment">// 声明且定义</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> v;             <span class="comment">// 声明且定义</span></div><div class="line"><span class="keyword">int</span> a = <span class="number">0</span>;        <span class="comment">// 声明且定义</span></div></pre></td></tr></table></figure></p>
+<p>在函数体内部，如果试图初始化一个由extern关键字标记的变量，将引发错误。</p>
+<p>补：</p>
+<blockquote>
+<p>extern外部变量声明其实是在IDE进行编译的时候告诉IDE，这有一个外部变量你要去别的地方找。因此我们应该掌握编译链接这套流程才能够更加方便的会用extern。假设有一个头文件a.h，这个头文件里面定义了int aaa=0;还有一个源文件b.cpp。这个b.cpp里面使用了extern int aaa;这样的语句，那么这个b.cpp是编译不了的。因为头文件如果不被别的源文件引用，是不参与被编译为obj的过程的，一旦它不参与这个过程，它里面声明的aaa这个全局变量其实就不存在，因此在b.cpp里面外部生命一个不存在的变量自然就是非法的。另外，使用extern也要和static做区分并考量它在别的文件中会不会造成内存污染等问题。这里应该掌握分离式编译的编译和链接特性再使用extern比较好。</p>
+</blockquote>
+<p><strong>静态类型</strong>(P42)</p>
+<h3 id="指针与引用"><a href="#指针与引用" class="headerlink" title="指针与引用"></a>指针与引用</h3><p><strong>初始化所有指针</strong>： 初始化为nullptr或0。</p>
+<p><strong>void *指针</strong>(P50)：特殊的指针类型，可以存放任意对象的地址。我们对该指针中到底是个什么类型的对象并不了解。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> *p1,p2;</div></pre></td></tr></table></figure>
+<p>其中，p1是指向int的指针，p2是int。(强调变量具有的复合类型。)</p>
+<p><strong>指向指针的指针</strong>：通过<code>*</code>的个数可以区分指针的级别，即：<code>**</code>表示指向指针的指针，<code>***</code>表示指向指针的指针的指针。</p>
+<p><strong>指向指针的引用</strong>(P52)：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">42</span>;</div><div class="line"><span class="keyword">int</span> *p;</div><div class="line"><span class="keyword">int</span> *&amp;r = p; <span class="comment">//r是对指针p的引用</span></div><div class="line"></div><div class="line">r = &amp;i; <span class="comment">//r引用了一个指针，因此给r赋值&amp;i就是令p指向i</span></div><div class="line">*r = <span class="number">0</span>; <span class="comment">//解引用r得到i，也就是p指向的对象，将i的值改为0</span></div></pre></td></tr></table></figure></p>
+<p><font color="00cc00"><strong>面对一条比较复杂的指针或者引用的声明语句时，从右向左阅读有助于弄清楚它的真实含义</strong></font>。<br>离变量名最近的符号（此例中是<code>&amp;r</code>的符号<code>&amp;</code>）对<strong>变量的类型有最直接的影响</strong>，因此<code>r</code>是一个引用。声明符的其余部分用以确定<code>r</code>引用的类型是是什么，此例中的符号<code>*</code>说明<code>r</code>引用的是一个指针。最后，声明的基本数据类型部分指出<code>r</code>引用的是一个<code>int</code>指针。</p>
+<h2 id="顶层const-P57-2-4-3"><a href="#顶层const-P57-2-4-3" class="headerlink" title="顶层const(P57,2.4.3)"></a>顶层const(P57,2.4.3)</h2><p>顶层const是对const而言的，“顶层”可以用来修饰<code>const</code>状态的形容词。一个<code>const</code>使对象本身的值固定，这个<code>const</code>就被称为顶层const;一个<code>const</code>是对象指向或引用的对象成为固定值，这个const就被称为底层const。</p>
+<p>顶层和底层const对拷贝来说密切相关，有相同底层const资格的两个对象才能够互相拷贝，而且顶层const声明变量之后不允许再次改变const的值。<br><code>int p,const int *a＝&amp;p;</code>这种语句中的const就是底层const。<br>像<code>int v1=9;const int *p=&amp;v1;int *p2=p;</code>这种语句如果能够通过编译，那么我们就可以使用p2的性质改变p1指向的常量的值，但是常量的值是不能够被改变的，因此这种变相改变常量的值的表达式都是错误的。可以通过分析const级别得到表达式中常量是否被更改，从而判断语句的正确性。</p>
+<p>说到底，顶层底层说的是对拷贝控制的约束。总的规则就是“不能改变常量的值”。因此“拷入和拷出的对象都要有相同的底层const资格，或者两个对象数据类型必须能转换”，例如，有<code>int *p1,const int *p2;</code>。p1没有底层const,p2有底层const。p1=p2;这时<code>const int*</code>不能转换成<code>int *</code>(如果转换，就违反了“不能改变常量的值这一约束条件”)，因此<code>p1=p2;</code>不合法。<code>p2=p1;``int *</code>能够转换成<code>const int *</code>,因此<code>p2=p1</code>合法。</p>
+<h2 id="constexpr-P58-2-4-4"><a href="#constexpr-P58-2-4-4" class="headerlink" title="constexpr(P58,2.4.4)"></a>constexpr(P58,2.4.4)</h2><p>我们在了解<code>constexpr</code>之前，应该先了解<strong>常量表达式</strong>。所谓常量就是固定的量，那么常量表达式就是值固定不变的表达式，这里“值固定不变”，指的是程序编译阶段，常量表达式的值就能被确定下来之后也不能对其进行任何种方式的修改。因此这个固定，是编译之后固定的。像<code>cout&lt;&lt;1234&lt;&lt;endl;</code>中的1234，就是常量表达式，显然，字面值是常量表达式。</p>
+<p><code>constexpr</code>的作用之一就是帮助程序员在IDE的提示下查看一个赋值语句是不是常量表达式。使用的方式包含在声明语句里面，形如<code>constexpr 变量类型 变量名=右值;</code>如果右值是一个常量，这条语句就是正确的。在所有函数体外声明的全局变量的地址就符合“在编译期间能确定，编译后值不被改变”这两个条件，因此也属于常量。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> mf = <span class="number">20</span>; <span class="comment">// 20是常量表达式</span></div><div class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> limit = mf + <span class="number">1</span>; <span class="comment">// mf+1是常量表达式</span></div><div class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> sz = size(); <span class="comment">//只有当size是一个constexpr函数时，才是一条正确的语句。</span></div></pre></td></tr></table></figure></p>
+<p>另外，用constexpr声明的指针(比如，<code>constexpr int *p=&amp;v1;</code>中的<code>*p</code>，相当于<code>int *const p=&amp;v1;</code>)都是顶层const，即指针本身值固定。但是指针指向的内容是可以变的。引用也一样。</p>
+<p><strong>定义于函数体之外的变量的地址是固定的，可以用来初始化constexpr指针</strong>。</p>
+<p>当你使用constexpr定义引用变量的时候，这个变量引用的对象只能是全局基本数据类型（引用类型除外的）变量（因为要求的内存地址必须是固定不变的）。constexpr引用的结果和正常的引用的结果是一致的，因为引用本身就是固定不变的，因此相当于顶层const修饰的constexpr对引用类型类说没有特殊的意义。 </p>
+<h2 id="类型别名-P61-2-4-4"><a href="#类型别名-P61-2-4-4" class="headerlink" title="类型别名(P61,2.4.4)"></a>类型别名(P61,2.4.4)</h2><p>使用<code>typedef int zhengxing;</code>这种对简单的类型名进行替换的方式无疑是非常直观并且好理解的，但是在涉及到复杂的类型名的时候往往会出现各种各样的问题。</p>
+<p>比如<code>typedef char *Pstring;</code>这条语句是不是就意味着我们看到<code>Pstring</code>就可以用<code>char *</code>替换呢。其实并不是，实际上类型别名不只是替换的规则，而是要复杂很多。</p>
+<p>比如我们遇到<code>const Pstring a;</code>的时候，按照替换的规则，这条语句就相当于<code>const char * a;</code>这里的const这种情况下是底层const，但是结果并不是这样的，这条语句正确的等同语句应该是<code>char *const a;</code>是一个顶层const，即指针本身是一个常量。让我们来分析一下为什么是这个样子，而不是简单的替换就行了。<code>typedef char *Pstring；</code>这条语句就是说<code>Pstring</code>是一个类型别名，它是什么类型的类型别名呢？Pstring是 指向char的指针的类型别名，也就是说，这个类型修饰的对象必须是一个指针，这个指针也必须指向char而不能指向别的什么东西，比如，不能指向<code>const char</code>。我们再看看<code>const Pstring a;</code>这个语句，首先a一定是指向char的指针。所以这个前面的const应该是用来修饰这个指针本身。也就是说，这个指针是<strong>常量指针</strong>而非指向常量的指针。这一点非常重要。</p>
+<p><code>const char * a</code>这个语句里面，实际上类型是<code>const char</code>，<code>*</code>是声明符的一部分。我们说过，定义一个变量由两部分组成，类型名和声明符，声明符可以是<code>*</code>或者<code>&amp;</code>加上变量名的形式。而类型别名只是给类型一个别名，至于声明符是怎样的，不在它修饰的范围内。因此在有const的情况下，就可以看出来这两者之间的区别还是很明显的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> *pstring;</div><div class="line"><span class="keyword">const</span> pstring cstr = <span class="number">0</span>; <span class="comment">//cstr是指向char的常量指针</span></div><div class="line"><span class="keyword">const</span> pstring *ps; <span class="comment">//ps是一个指针，它的对象是指向char的常量指针。</span></div></pre></td></tr></table></figure>
+<p>pstring实际上是指向char的指针，因此，const pstring就是指向char的常量指针。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const char *cstr = 0; //是对const pstring的错误理解</div></pre></td></tr></table></figure></p>
+<p>数据类型就变成了<code>char</code>，<code>*</code>成为了声明符的一部分。这样改写的结果是，<code>const char</code>成了基本数据类型。cstr是一个指针，指向了常量字符。</p>
+<h2 id="auto类型声明符-P61-2-5-2"><a href="#auto类型声明符-P61-2-5-2" class="headerlink" title="auto类型声明符(P61,2.5.2)"></a>auto类型声明符(P61,2.5.2)</h2><p>C++11中引入的auto主要有两种用途：自动类型推断和返回值占位。auto在C++98中的标识临时变量的语义，由于使用极少且多余，在C++11中已被删除。前后两个标准的auto，完全是两个概念。</p>
+<p><code>auto</code>变量通过初始化语句，计算出右值的类型，并推导出左值的类型。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i=<span class="number">0</span>, &amp;r = i;</div><div class="line"><span class="keyword">auto</span> a = r; <span class="comment">// a是一个整数（r是i的别名，而i是一个整数）</span></div></pre></td></tr></table></figure></p>
+<p>这个过程中auto将会忽视顶层const和引用类型，可用<code>const auto &amp;a=i;</code>这种方式显式地指出了：指出要推导的结果是带顶层指针属性的或者是引用属性的。</p>
+<p>auto推导多个值时，这些值的类型必须是一样的。因为auto是利用初始化赋值，因此它的行为基本上也和初始化有关。</p>
+<p>关于auto的更多用法：<a href="http://blog.csdn.net/zxh2075/article/details/9235591" target="_blank" rel="external">【C++11】新特性——auto的使用</a></p>
+<h2 id="decltype类型指示符-P62-2-5-3"><a href="#decltype类型指示符-P62-2-5-3" class="headerlink" title="decltype类型指示符(P62,2.5.3)"></a>decltype类型指示符(P62,2.5.3)</h2><p>有时候会遇到这种情况：希望从表达式的类型推断出要定义的变量的类型，但是不想用该表达式的值初始化变量。为此，C++11新标准引入第二种类型说明符<code>decltype</code>。</p>
+<p><code>decltype</code>不通过计算，只通过推算出变量应有的值，表达式本身应有的值和函数的返回值来<strong>推导类型</strong>。</p>
+<p>对于变量类型，<code>decltype</code>保留顶层const和引用的属性。对于表达式，<strong>解引用表达式(如:<code>int i=1; int *p=&amp;i; decltype (*p) a=i;</code>中的<code>*p</code>,对p解引用是<code>int &amp;</code>类型的)和带括号的表达式，（如：<code>decltype ((a+1)) c=i;</code>）的结果都将是引用类型</strong>。因为decltype通过处理表达式得到结果，因此更详细的内容在<em>第四章</em>将会被提到。有的表达式返回左值，有的表达式返回右值，返回左值的表达式在decltype类型推导下得到的将是引用的结果。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">42</span>,*p = &amp;i, &amp;r = i;</div><div class="line"><span class="keyword">decltype</span>(r + <span class="number">0</span>) b; <span class="comment">//正确，加法结果为int，因此b是一个（未初始化的）int</span></div><div class="line"><span class="keyword">decltype</span>(*p) c; <span class="comment">//错误，c是int&amp;，必须初始化</span></div><div class="line"><span class="keyword">decltype</span>((i)) d; <span class="comment">//错误，c是int&amp;，必须初始化</span></div><div class="line"><span class="keyword">decltype</span>(i) e; <span class="comment">//正确，e是一个（未初始化的）int</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>decltype((variable)) (注意是双层括号)的结果永远是引用</strong>，而decltype(variable)结果只有当variable本身就是一个引用时才是引用。</p>
+</blockquote>
+<p>补：</p>
+<ol>
+<li><p>一般情况下，出现数组名的表达式时会把数组名转换为<strong>指针</strong>，而用decltype一个数组名时，其返回类型是<strong>该数组的类型</strong>，如有int ia[10]，则<code>decltype(ia) da</code>，此时da也为包含10个int元素的数组。用于函数时也一样，不会自动把函数名转换为指针，而是返回该函数类型。</p>
+</li>
+<li><p>如果作用于一个取地址运算符，则为指向指针的指针，如有int p，则<code>decltype(&amp;p)</code>的结果是<code>int **</code>类型。</p>
+</li>
+</ol>
+<h2 id="用关键字struct自定义数据结构"><a href="#用关键字struct自定义数据结构" class="headerlink" title="用关键字struct自定义数据结构"></a>用关键字struct自定义数据结构</h2><p>使用struct关键字定义类的形式如<code>struct 类名｛数据成员类型1 数据成员名1；数据成员类型2 数据成员名2;｝;</code>，C++11规定可以给类内成员提供类内初始值用于初始化用我们自定义类创建的对象实例中的成员的值。形式如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MyClass</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line">    <span class="keyword">int</span> student=<span class="number">0</span>;</div><div class="line">    <span class="keyword">float</span> numbers=<span class="number">1</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p> 很多新手程序员忘记在类定义的最后加上分号。</p>
+</blockquote>
+<h2 id="头文件保护符"><a href="#头文件保护符" class="headerlink" title="头文件保护符"></a>头文件保护符</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> SALES_DATA_H</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SALES_DATA_H</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Sales_data</span>&#123;</span></div><div class="line">    <span class="built_in">std</span>::<span class="built_in">string</span> bookNo;</div><div class="line">    <span class="keyword">unsigned</span> units_sold = <span class="number">0</span>;</div><div class="line">    <span class="keyword">double</span> revenue = <span class="number">0.0</span>;</div><div class="line">&#125;;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
+<p>头文件保护符依赖于预处理变量。如<code>#define DEBUG</code>，此时<code>DEBUG</code>就是预处理器变量。预处理变量无视C++语言中关于作用域的规则。</p>
+<blockquote>
+<p>头文件保护符很简单， 程序员只要<strong>习惯性加上</strong>就可以了，没必要太在乎你的程序到底需不需要。</p>
+</blockquote>
+<h2 id="专业术语"><a href="#专业术语" class="headerlink" title="专业术语"></a>专业术语</h2><p>1.算数类型 arithmetic type<br>2.整型 integral type<br>3.转换 convert<br>4.不可打印 nonprintable<br>5.转义序列 escape sequence<br>6.类型说明符 type specifier<br>7.分离式编译 separate compilation<br>8.声明 declaration<br>9.声明符 declarator<br>10.静态类型 statically typed<br>11.类型检查 type checking<br>12.标识符 identifier<br>13.内层作用域 inner scope<br>14.复合类型 compound type<br>15.左值引用 lvalue reference<br>16.预处理 preprocessor<br>17.临时量 temporary<br>18.指向常量的指针 pointer to const<br>19.常量指针 const pointer<br>20.字面值类型 literal type<br>21.类型别名 type alias<br>22.类内初始值 in-class initializer<br>23.预处理器 preprocessor<br>24.头文件保护符 header guard</p>
 
       
     </div>
@@ -543,7 +596,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://wangwlj.com/2017/09/22/review_of_MathModel/" title="2017“华为杯”第十四届中国研究生数学建模竞赛回顾">https://wangwlj.com/2017/09/22/review_of_MathModel/</a>
+    <a href="https://wangwlj.com/2017/12/25/CPP_01_02/" title="C++ Primer学习笔记：(1/2)开始、变量与基本类型">https://wangwlj.com/2017/12/25/CPP_01_02/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -557,6 +610,12 @@
 
 	
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
+          
+        </div>
       
 
       
@@ -577,8 +636,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/21/opencv_contrib/" rel="next" title="opencv_contrib安装说明与错误解决方案">
-                <i class="fa fa-chevron-left"></i> opencv_contrib安装说明与错误解决方案
+              <a href="/2017/12/21/ps_white2transparent/" rel="next" title="photoshop白色背景图片转换为透明背景">
+                <i class="fa fa-chevron-left"></i> photoshop白色背景图片转换为透明背景
               </a>
             
           </div>
@@ -586,10 +645,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/23/DeepLearnToolBox_BP/" rel="prev" title="DeepLearnToolBox之BP算法">
-                DeepLearnToolBox之BP算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -811,7 +866,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#试题下载地址"><span class="nav-number">1.</span> <span class="nav-text">试题下载地址</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#D题题目"><span class="nav-number">1.1.</span> <span class="nav-text">D题题目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于监控视频的前景目标提取"><span class="nav-number">1.1.1.</span> <span class="nav-text">基于监控视频的前景目标提取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题1"><span class="nav-number">1.1.2.</span> <span class="nav-text">问题1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题2"><span class="nav-number">1.1.3.</span> <span class="nav-text">问题2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题3"><span class="nav-number">1.1.4.</span> <span class="nav-text">问题3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题4"><span class="nav-number">1.1.5.</span> <span class="nav-text">问题4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题5"><span class="nav-number">1.1.6.</span> <span class="nav-text">问题5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题6"><span class="nav-number">1.1.7.</span> <span class="nav-text">问题6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献"><span class="nav-number">1.1.8.</span> <span class="nav-text">参考文献</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路流程"><span class="nav-number">2.</span> <span class="nav-text">思路流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BGSLibrary编译安装与BGSlibrary-GUI的下载与使用"><span class="nav-number">2.1.</span> <span class="nav-text">BGSLibrary编译安装与BGSlibrary GUI的下载与使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ViBe算法"><span class="nav-number">2.2.</span> <span class="nav-text">ViBe算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光流法"><span class="nav-number">2.3.</span> <span class="nav-text">光流法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视频抗抖动算法"><span class="nav-number">2.4.</span> <span class="nav-text">视频抗抖动算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#opencv视频保存方法"><span class="nav-number">2.5.</span> <span class="nav-text">opencv视频保存方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#opencv-contrib安装"><span class="nav-number">2.6.</span> <span class="nav-text">opencv_contrib安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#杂七杂八"><span class="nav-number">2.7.</span> <span class="nav-text">杂七杂八</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动目标检测"><span class="nav-number">2.7.1.</span> <span class="nav-text">动目标检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标跟踪"><span class="nav-number">2.7.2.</span> <span class="nav-text">目标跟踪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多角度多目标跟踪"><span class="nav-number">2.7.3.</span> <span class="nav-text">多角度多目标跟踪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#人群异常行为检测"><span class="nav-number">2.7.4.</span> <span class="nav-text">人群异常行为检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.8.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-开始"><span class="nav-number">1.</span> <span class="nav-text">第一章 开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#include指令-P6-1-2"><span class="nav-number">1.1.</span> <span class="nav-text">include指令(P6,1.2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译器-P14-1-4"><span class="nav-number">1.2.</span> <span class="nav-text">编译器(P14,1.4)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件重定向-P19-1-5"><span class="nav-number">1.3.</span> <span class="nav-text">文件重定向(P19,1.5)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#专业术语-P23"><span class="nav-number">1.4.</span> <span class="nav-text">专业术语(P23)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-变量和基本类型"><span class="nav-number">2.</span> <span class="nav-text">第二章 变量和基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-语言关于类型的规定-P30-2-1-1"><span class="nav-number">2.1.</span> <span class="nav-text">C++语言关于类型的规定(P30,2.1.1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换-P32-2-1-2"><span class="nav-number">2.2.</span> <span class="nav-text">类型转换(P32,2.1.2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义序列-P36，2-1-3"><span class="nav-number">2.3.</span> <span class="nav-text">转义序列(P36，2.1.3)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量-P38"><span class="nav-number">2.4.</span> <span class="nav-text">变量(P38)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#列表初始化"><span class="nav-number">2.4.1.</span> <span class="nav-text">列表初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明和定义的关系"><span class="nav-number">2.4.2.</span> <span class="nav-text">变量声明和定义的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针与引用"><span class="nav-number">2.4.3.</span> <span class="nav-text">指针与引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顶层const-P57-2-4-3"><span class="nav-number">2.5.</span> <span class="nav-text">顶层const(P57,2.4.3)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#constexpr-P58-2-4-4"><span class="nav-number">2.6.</span> <span class="nav-text">constexpr(P58,2.4.4)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型别名-P61-2-4-4"><span class="nav-number">2.7.</span> <span class="nav-text">类型别名(P61,2.4.4)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#auto类型声明符-P61-2-5-2"><span class="nav-number">2.8.</span> <span class="nav-text">auto类型声明符(P61,2.5.2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#decltype类型指示符-P62-2-5-3"><span class="nav-number">2.9.</span> <span class="nav-text">decltype类型指示符(P62,2.5.3)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用关键字struct自定义数据结构"><span class="nav-number">2.10.</span> <span class="nav-text">用关键字struct自定义数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件保护符"><span class="nav-number">2.11.</span> <span class="nav-text">头文件保护符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#专业术语"><span class="nav-number">2.12.</span> <span class="nav-text">专业术语</span></a></li></ol></li></ol></div>
             
 
           </div>
