@@ -8,11 +8,11 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>所谓王者，必卓然特立，争当人杰。</description>
-    <pubDate>Mon, 25 Dec 2017 02:38:47 GMT</pubDate>
+    <pubDate>Mon, 25 Dec 2017 02:49:43 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>C++ Primer学习笔记：(1/2)开始、变量与基本类型</title>
+      <title>C++ Primer学习笔记：(一/二)从基本类型开始</title>
       <link>https://wangwlj.com/2017/12/25/CPP_01_02/</link>
       <guid>https://wangwlj.com/2017/12/25/CPP_01_02/</guid>
       <pubDate>Mon, 25 Dec 2017 02:31:35 GMT</pubDate>

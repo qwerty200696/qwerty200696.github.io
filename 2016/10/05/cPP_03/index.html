@@ -111,14 +111,14 @@
 <meta name="description" content="第三章 字符串、向量和数组第三章主要讲这么五个概念： 1.using声明，我知道挺多同学写代码练手都要在源文件前几句直接加using namespace std;然而using语句并不是什么情况都这么使用的，稍后我们将会看到详细的用法。 2.标准库类型string,和C的字符数组有区别的string，到底是怎么个构造，这章将会讲述。 3.标准库类型vector，vector和数组区别很大，这里将会">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++03">
+<meta property="og:title" content="C++ Primer学习笔记：(三)字符串、向量和数组">
 <meta property="og:url" content="https://wangwlj.com/2016/10/05/cPP_03/index.html">
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="第三章 字符串、向量和数组第三章主要讲这么五个概念： 1.using声明，我知道挺多同学写代码练手都要在源文件前几句直接加using namespace std;然而using语句并不是什么情况都这么使用的，稍后我们将会看到详细的用法。 2.标准库类型string,和C的字符数组有区别的string，到底是怎么个构造，这章将会讲述。 3.标准库类型vector，vector和数组区别很大，这里将会">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-24T15:01:47.325Z">
+<meta property="og:updated_time" content="2017-12-25T02:48:44.090Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++03">
+<meta name="twitter:title" content="C++ Primer学习笔记：(三)字符串、向量和数组">
 <meta name="twitter:description" content="第三章 字符串、向量和数组第三章主要讲这么五个概念： 1.using声明，我知道挺多同学写代码练手都要在源文件前几句直接加using namespace std;然而using语句并不是什么情况都这么使用的，稍后我们将会看到详细的用法。 2.标准库类型string,和C的字符数组有区别的string，到底是怎么个构造，这章将会讲述。 3.标准库类型vector，vector和数组区别很大，这里将会">
 
 
@@ -156,7 +156,7 @@
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>C++03 | 王立杰的博客</title>
+  <title>C++ Primer学习笔记：(三)字符串、向量和数组 | 王立杰的博客</title>
   
 
 
@@ -365,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++03</h1>
+          <h1 class="post-title" itemprop="name headline">C++ Primer学习笔记：(三)字符串、向量和数组</h1>
         
 
         <div class="post-meta">
@@ -400,8 +400,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
+                  <a href="/categories/C-Primer/" itemprop="url" rel="index">
+                    <span itemprop="name">C++ Primer</span>
                   </a>
                 </span>
 
@@ -418,7 +418,7 @@
 
           
           
-             <span id="/2016/10/05/cPP_03/" class="leancloud_visitors" data-flag-title="C++03">
+             <span id="/2016/10/05/cPP_03/" class="leancloud_visitors" data-flag-title="C++ Primer学习笔记：(三)字符串、向量和数组">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,209
+                  1,210
                 </span>
               
 
@@ -488,9 +488,10 @@
 </blockquote>
 <h4 id="3-string对象与字符串字面值相加"><a href="#3-string对象与字符串字面值相加" class="headerlink" title="3.string对象与字符串字面值相加"></a>3.string对象与字符串字面值相加</h4><p>字符串字面值是字符数组类型，字符串字面值和string类型的对象在一起计算时会被自动转换为string类型。</p>
 <h4 id="4-其他支持的操作"><a href="#4-其他支持的操作" class="headerlink" title="4.其他支持的操作"></a>4.其他支持的操作</h4><p>包括下标运算符[ ]、重载的+、==、！=、&lt;、&gt;、&lt;=、&gt;=。</p>
-<h2 id="范围for（range-for）语句-P82，3-2-3"><a href="#范围for（range-for）语句-P82，3-2-3" class="headerlink" title="范围for（range for）语句(P82，3.2.3)"></a>范围for（range for）语句(P82，3.2.3)</h2><p>范围for语句用于遍历元素。形如：for(一个用于访问序列中基础元素的变量a : 被访问的序列对象b){statement….. blabla;}</p>
+<h3 id="范围for（range-for）语句-P82，3-2-3"><a href="#范围for（range-for）语句-P82，3-2-3" class="headerlink" title="范围for（range for）语句(P82，3.2.3)"></a>范围for（range for）语句(P82，3.2.3)</h3><p><strong>范围for语句用于遍历元素</strong>。形如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for(一个用于访问序列中基础元素的变量a : 被访问的序列对象b)&#123;</div><div class="line">    statement..... blabla;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>首次初始化，变量a的值会被初始化为对象b序列中的第一个元素，迭代之后每次访问下一个元素，直到序列被完全访问结束。</p>
-<p>可以使用auto &amp;a的方式声明变量a,使变量绑定到具体的序列元素上，从而进行更改。如在for(auto a : str){}中，每次把a初始化的行为实质上是使a获得str每个元素的副本（拷贝），而for(auto &amp;a ： str){}这样的语句则使a成为了str对应的每个元素的”别名”,从而可以修改str。</p>
+<p>可以使用<code>auto &amp;a</code>的方式声明变量a,使变量绑定到具体的序列元素上，从而进行更改。如在<code>for(auto a : str){}</code>中，每次把a初始化的行为实质上是使a获得str每个元素的副本（拷贝），而<code>for(auto &amp;a ： str){}</code>这样的语句则使a成为了str对应的每个元素的”别名”,从而可以修改str。</p>
 <p>使用范围for循环遍历多维数组，为了不手动打类名，也为了防止外层数组的名被auto类型转化成指针，要在对外层数组的访问上都加上&amp;绑定。</p>
 
       
@@ -524,7 +525,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://wangwlj.com/2016/10/05/cPP_03/" title="C++03">https://wangwlj.com/2016/10/05/cPP_03/</a>
+    <a href="https://wangwlj.com/2016/10/05/cPP_03/" title="C++ Primer学习笔记：(三)字符串、向量和数组">https://wangwlj.com/2016/10/05/cPP_03/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -691,7 +692,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -794,7 +795,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-字符串、向量和数组"><span class="nav-number">1.</span> <span class="nav-text">第三章 字符串、向量和数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名空间的using声明-P75-3-1"><span class="nav-number">1.1.</span> <span class="nav-text">命名空间的using声明(P75,3.1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准库类型string"><span class="nav-number">1.2.</span> <span class="nav-text">标准库类型string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义和初始化string对象-P76-3-2-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义和初始化string对象(P76,3.2.1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string支持的操作-P77-3-2-2"><span class="nav-number">1.2.2.</span> <span class="nav-text">string支持的操作(P77,3.2.2)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-输入流中获取字符串"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">1.输入流中获取字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-string-type-size"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">2.string::type_size</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-string对象与字符串字面值相加"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">3.string对象与字符串字面值相加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-其他支持的操作"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">4.其他支持的操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#范围for（range-for）语句-P82，3-2-3"><span class="nav-number">1.3.</span> <span class="nav-text">范围for（range for）语句(P82，3.2.3)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-字符串、向量和数组"><span class="nav-number">1.</span> <span class="nav-text">第三章 字符串、向量和数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名空间的using声明-P75-3-1"><span class="nav-number">1.1.</span> <span class="nav-text">命名空间的using声明(P75,3.1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准库类型string"><span class="nav-number">1.2.</span> <span class="nav-text">标准库类型string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义和初始化string对象-P76-3-2-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义和初始化string对象(P76,3.2.1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string支持的操作-P77-3-2-2"><span class="nav-number">1.2.2.</span> <span class="nav-text">string支持的操作(P77,3.2.2)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-输入流中获取字符串"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">1.输入流中获取字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-string-type-size"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">2.string::type_size</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-string对象与字符串字面值相加"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">3.string对象与字符串字面值相加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-其他支持的操作"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">4.其他支持的操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#范围for（range-for）语句-P82，3-2-3"><span class="nav-number">1.2.3.</span> <span class="nav-text">范围for（range for）语句(P82，3.2.3)</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
