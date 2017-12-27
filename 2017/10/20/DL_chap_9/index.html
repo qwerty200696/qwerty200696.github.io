@@ -111,14 +111,14 @@
 <meta name="description" content="9.1 卷积运算卷积的第一个参数： 输入，第二个参数： 核函数。输出有时被称为特征映射。 对于二维图像I，二维的核K。卷积可以写为： $$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)$$ 卷积是可交换的。可以等价地写为： $$S(i,j) = (K\times I )(i,j) = \sum_m \sum_n I(i-m,j">
 <meta name="keywords" content="deep learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深度学习系列：（九）卷机网络">
+<meta property="og:title" content="深度学习系列：（九）卷积网络">
 <meta property="og:url" content="https://wangwlj.com/2017/10/20/DL_chap_9/index.html">
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="9.1 卷积运算卷积的第一个参数： 输入，第二个参数： 核函数。输出有时被称为特征映射。 对于二维图像I，二维的核K。卷积可以写为： $$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)$$ 卷积是可交换的。可以等价地写为： $$S(i,j) = (K\times I )(i,j) = \sum_m \sum_n I(i-m,j">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-22T07:02:48.846Z">
+<meta property="og:updated_time" content="2017-12-26T11:42:47.114Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深度学习系列：（九）卷机网络">
+<meta name="twitter:title" content="深度学习系列：（九）卷积网络">
 <meta name="twitter:description" content="9.1 卷积运算卷积的第一个参数： 输入，第二个参数： 核函数。输出有时被称为特征映射。 对于二维图像I，二维的核K。卷积可以写为： $$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)$$ 卷积是可交换的。可以等价地写为： $$S(i,j) = (K\times I )(i,j) = \sum_m \sum_n I(i-m,j">
 
 
@@ -156,7 +156,7 @@
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>深度学习系列：（九）卷机网络 | 王立杰的博客</title>
+  <title>深度学习系列：（九）卷积网络 | 王立杰的博客</title>
   
 
 
@@ -365,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">深度学习系列：（九）卷机网络</h1>
+          <h1 class="post-title" itemprop="name headline">深度学习系列：（九）卷积网络</h1>
         
 
         <div class="post-meta">
@@ -418,7 +418,7 @@
 
           
           
-             <span id="/2017/10/20/DL_chap_9/" class="leancloud_visitors" data-flag-title="深度学习系列：（九）卷机网络">
+             <span id="/2017/10/20/DL_chap_9/" class="leancloud_visitors" data-flag-title="深度学习系列：（九）卷积网络">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,488
+                  1,498
                 </span>
               
 
@@ -474,7 +474,7 @@
 <p>卷积是可交换的。可以等价地写为：</p>
 <p>$$S(i,j) = (K\times I )(i,j) = \sum_m \sum_n I(i-m,j-n)K(m,n)$$</p>
 <p>卷积运算可交换性的出现时因为我们将核相对输入进行了<strong>翻转</strong>(flip)，从m增大的角度来看，输入的索引在增大，但是核的索引在减小。</p>
-<p>互相关函数。和卷积一样，但是没有对核翻转</p>
+<p>互相关函数：和卷积一样，但是没有对核翻转，互相关函数的公式如下：</p>
 <p>$$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(i+m,j+n)K(m,n)$$</p>
 <h2 id="9-2-动机"><a href="#9-2-动机" class="headerlink" title="9.2 动机"></a>9.2 动机</h2><p>卷积运算的三个重要思想：</p>
 <p>参数共享–绑定的权重。在一个模型的多个函数中使用相同的参数。</p>
@@ -555,7 +555,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://wangwlj.com/2017/10/20/DL_chap_9/" title="深度学习系列：（九）卷机网络">https://wangwlj.com/2017/10/20/DL_chap_9/</a>
+    <a href="https://wangwlj.com/2017/10/20/DL_chap_9/" title="深度学习系列：（九）卷积网络">https://wangwlj.com/2017/10/20/DL_chap_9/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -715,7 +715,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -726,7 +726,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -737,7 +737,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">40</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -872,7 +872,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      88.0k
+      88.2k
     </span>
   
 </div>

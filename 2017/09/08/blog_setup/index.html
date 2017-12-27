@@ -90,7 +90,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="博客,hexo,GitHub," />
+  <meta name="keywords" content="hexo,博客,GitHub," />
 
 
 
@@ -109,7 +109,7 @@
 
 
 <meta name="description" content="准备工作1、安装 Node.js: https://nodejs.org/en/ 2、安装 Git: https://github.com/waylau/git-for-win Git教程 https://github.com/waylau/git-for-win廖雪峰老师的教程，非常好。 3、安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，名称和邮箱是Github上的。">
-<meta name="keywords" content="博客,hexo,GitHub">
+<meta name="keywords" content="hexo,博客,GitHub">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo+GitHub博客搭建实战">
 <meta property="og:url" content="https://wangwlj.com/2017/09/08/blog_setup/index.html">
@@ -130,7 +130,7 @@
 <meta property="og:image" content="https://wangwlj.com/2017/09/08/blog_setup/error_1_done.png">
 <meta property="og:image" content="https://wangwlj.com/2017/09/08/blog_setup/git_hexo_deploy_error.png">
 <meta property="og:image" content="https://wangwlj.com/2017/09/08/blog_setup/git_hexo_deploy_error_done.png">
-<meta property="og:updated_time" content="2017-12-18T12:12:50.082Z">
+<meta property="og:updated_time" content="2017-12-27T06:42:47.915Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+GitHub博客搭建实战">
 <meta name="twitter:description" content="准备工作1、安装 Node.js: https://nodejs.org/en/ 2、安装 Git: https://github.com/waylau/git-for-win Git教程 https://github.com/waylau/git-for-win廖雪峰老师的教程，非常好。 3、安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，名称和邮箱是Github上的。">
@@ -458,7 +458,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,016
+                  2,009
                 </span>
               
 
@@ -518,24 +518,13 @@
 <pre><code>hexo init blog
 </code></pre><p>稍微等待下，速度有点慢。成功提示：</p>
 <pre><code>INFO  Start blogging with Hexo!
-</code></pre><p>因为你初始化hexo 之后source目录下自带一篇<code>hello world</code>文章, 所以直接执行下方命令:</p>
-<pre><code>$ hexo generate
-# 启动本地服务器
-$ hexo server
-# 在浏览器输入 http://localhost:4000/就可以看见网页和模板了
-INFO  Start processing
-INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
-</code></pre><p>访问<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>，便可以看到网站初步的模样，不要激动，我们还要把网页发布到Github上去。</p>
+</code></pre><p>因为你初始化hexo 之后source目录下自带一篇<code>hello world</code>文章, 所以直接执行下方命令:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> hexo generate</div><div class="line"><span class="meta">#</span> 启动本地服务器</div><div class="line"><span class="meta">$</span> hexo server</div><div class="line"><span class="meta">#</span> 在浏览器输入 http://localhost:4000/就可以看见网页和模板了</div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
+<p>访问<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>，便可以看到网站初步的模样，不要激动，我们还要把网页发布到Github上去。</p>
 <p><img src="/2017/09/08/blog_setup/blog_local_server.png" alt="localhost上的网站初步形状"></p>
 <h2 id="配置博客"><a href="#配置博客" class="headerlink" title="配置博客"></a>配置博客</h2><p>在<code>blog</code>目录下，用<code>sublime/notepad++</code>等文本编辑器打开<code>_config.yml</code>文件，修改参数信息</p>
 <p>特别提醒，在每个参数的：后都要加一个空格</p>
-<h3 id="修改网站相关信息"><a href="#修改网站相关信息" class="headerlink" title="修改网站相关信息"></a>修改网站相关信息</h3><pre><code>title: wangwlj测试所用博客
-subtitle: 积跬步以至千里！
-description: 网页描述
-author: wangwlj
-language: zh-CN
-timezone: Asia/Shanghai
-</code></pre><p><code>language</code>和<code>timezone</code>都是有输入规范的，详细可参考 <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank" rel="external">语言规范</a>和<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="external">时区规范</a>。</p>
+<h3 id="修改网站相关信息"><a href="#修改网站相关信息" class="headerlink" title="修改网站相关信息"></a>修改网站相关信息</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: wangwlj测试所用博客</div><div class="line">subtitle: 积跬步以至千里！</div><div class="line">description: 网页描述</div><div class="line">author: wangwlj</div><div class="line">language: zh-CN</div><div class="line">timezone: Asia/Shanghai</div></pre></td></tr></table></figure>
+<p><code>language</code>和<code>timezone</code>都是有输入规范的，详细可参考 <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank" rel="external">语言规范</a>和<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="external">时区规范</a>。</p>
 <h3 id="配置部署"><a href="#配置部署" class="headerlink" title="配置部署"></a>配置部署</h3><p>代码中的qwerty200696，修改成自己的。</p>
 <pre><code>deploy:
   type: git
@@ -563,31 +552,10 @@ tags: #文章標籤 可以省略
      - 标签2
  description: #你對本頁的描述 可以省略
 ---
-</code></pre><p>3.接着输入如下的一系列命令：</p>
-<pre><code>F:\test\blog
-$ hexo clean
-INFO  Deleted database.
-INFO  Deleted public folder.
-
-F:\test\blog
-$ hexo generate
-INFO  Start processing
-INFO  Files loaded in 1.48 s
-#省略
-INFO  29 files generated in 4.27 s
-
-$ hexo server
-INFO  Start processing
-INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
-</code></pre><p>我直接跑的server，也可以。</p>
-<p>最后一步，发布到网上，执行：</p>
-<pre><code>F:\test\blog
-$ hexo deploy
-INFO  Deploying: git
-INFO  Clearing .deploy_git folder...
-INFO  Copying files from public folder...
-#省略
-</code></pre><p>其中会跳出Github登录，直接登录，如果没有问题，在浏览器输入<code>qwerty200696（换成你的）.github.io/</code></p>
+</code></pre><p>3.接着输入如下的一系列命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">F:\test\blog</div><div class="line"><span class="meta">$</span> hexo clean</div><div class="line">INFO  Deleted database.</div><div class="line">INFO  Deleted public folder.</div><div class="line"></div><div class="line">F:\test\blog</div><div class="line"><span class="meta">$</span> hexo generate</div><div class="line">INFO  Start processing</div><div class="line">INFO  Files loaded in 1.48 s</div><div class="line"><span class="meta">#</span>省略</div><div class="line">INFO  29 files generated in 4.27 s</div><div class="line"></div><div class="line"><span class="meta">$</span> hexo server</div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
+<p>我直接跑的server，也可以。</p>
+<p>最后一步，发布到网上，执行：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">F:\test\blog</div><div class="line"><span class="meta">$</span> hexo deploy</div><div class="line">INFO  Deploying: git</div><div class="line">INFO  Clearing .deploy_git folder...</div><div class="line">INFO  Copying files from public folder...</div><div class="line"><span class="meta">#</span>省略</div></pre></td></tr></table></figure></p>
+<p>其中会跳出Github登录，直接登录，如果没有问题，在浏览器输入<code>qwerty200696（换成你的）.github.io/</code></p>
 <p>我的测试所用博客 <code>https://qwerty200696.github.io/</code></p>
 <p>然后就可以看到已经发布了。</p>
 <h3 id="错误记录一"><a href="#错误记录一" class="headerlink" title="错误记录一"></a>错误记录一</h3><pre><code>deploy not found： git
@@ -706,9 +674,9 @@ hexo deploy #部署发布
       
         <div class="post-tags">
           
-            <a href="/tags/博客/" rel="tag"><i class="fa fa-tag"></i> 博客</a>
-          
             <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+          
+            <a href="/tags/博客/" rel="tag"><i class="fa fa-tag"></i> 博客</a>
           
             <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
           
@@ -853,7 +821,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -864,7 +832,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -875,7 +843,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">40</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1010,7 +978,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      88.0k
+      88.2k
     </span>
   
 </div>

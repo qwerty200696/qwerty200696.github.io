@@ -120,7 +120,7 @@
 <meta property="og:image" content="https://wangwlj.com/2017/12/26/ML_taiwan_01/ML02.png">
 <meta property="og:image" content="https://wangwlj.com/2017/12/26/ML_taiwan_01/ML03.png">
 <meta property="og:image" content="https://wangwlj.com/2017/12/26/ML_taiwan_01/ML04.png">
-<meta property="og:updated_time" content="2017-12-26T02:24:29.698Z">
+<meta property="og:updated_time" content="2017-12-26T05:45:38.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习技法笔记01：最佳分类超平面">
 <meta name="twitter:description" content="Large-Margin Separating Hyperplane题目翻译为中文的意思大体上是 最大余量分类超平面。本节主要讲解如何确定该最佳分类超平面。 首先，我们回顾一下之前讲过的Linear Classfication ：有$\circ$和$\times$，我们用一条直线将$\circ$和$\times$分开，或者在高维空间中使用超平面将其分开。数学上，将资料拿来计算一个加权和，根据和的正">
@@ -489,7 +489,7 @@
 <p>robustness = fatness: distance to closest xn<br>比较胖的线是比较好的。</p>
 <p>goal: find fattest separating hyperplane<br>在分类正确的基础上，找出最胖、最强壮(鲁棒)的线。</p>
 </blockquote>
-<p><strong>目标</strong>是：<br>我们要找出一条线，首相这条线可以将$\circ$和$\times$分开(线性可分)，然后取最胖的一条线，即计算所有点到线的距离，取其中最小的距离。也就是下面的公式所描述的：<br><img src="/2017/12/26/ML_taiwan_01/ML04.png" alt=""></p>
+<p><strong>目标</strong>是：<br>我们要找出一条线，首先这条线可以将$\circ$和$\times$分开(线性可分)，然后取最胖的一条线，即计算所有点到线的距离，取其中最小的距离。也就是下面的公式所描述的：<br><img src="/2017/12/26/ML_taiwan_01/ML04.png" alt=""></p>
 <p><code>fatness: formally called margin</code>：<br>最胖的线，术语上叫“margin”，余量，留白的多少。</p>
 <p><code>correctness: yn = sign(w^T x_n)</code><br>算出来的分数是正的还是负的，相乘是同号(分类正确)就可以。</p>
 <p><code>goal: find largest-margin separating hyperplane</code>：寻找边界最宽，能够完全分开的线（超平面）。</p>
@@ -579,6 +579,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/27/CPP_VS2015_noPDB/" rel="prev" title="VS2015 设置调试时不加载符号">
+                VS2015 设置调试时不加载符号 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -686,7 +690,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -697,7 +701,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -708,7 +712,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">40</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -843,7 +847,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      88.0k
+      88.2k
     </span>
   
 </div>
