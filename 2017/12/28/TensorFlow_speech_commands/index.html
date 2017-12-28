@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="简单语音识别教程重要的是要知道，真正的语音和音频识别系统要复杂得多，但是像MNIST（入门级的CV数据集）一样，它应该会让你对所涉技术有一个基本的了解。 完成本教程后，你将可以尝试创建一个模型，将一秒钟的音频剪辑去噪，识别单词有“yes”，“no”，“up”，“down”，”left”，”right”，”on”，”off”，”stop”，or “go”。 你也可以在Android应用程序中运行该模">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-28T14:24:19.128Z">
+<meta property="og:updated_time" content="2017-12-28T14:45:15.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于TensorFlow的简单语音识别">
 <meta name="twitter:description" content="简单语音识别教程重要的是要知道，真正的语音和音频识别系统要复杂得多，但是像MNIST（入门级的CV数据集）一样，它应该会让你对所涉技术有一个基本的了解。 完成本教程后，你将可以尝试创建一个模型，将一秒钟的音频剪辑去噪，识别单词有“yes”，“no”，“up”，“down”，”left”，”right”，”on”，”off”，”stop”，or “go”。 你也可以在Android应用程序中运行该模">
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,352
+                  2,336
                 </span>
               
 
@@ -474,7 +474,7 @@
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>你要确保已经安装了TensorFlow，由于该版本下载了超过1GB的训练数据，因此你需要电脑有足够的内存，另外网速要快，训练过程可能需要几个小时。</p>
 <h2 id="出错与解决"><a href="#出错与解决" class="headerlink" title="出错与解决"></a>出错与解决</h2><h3 id="找不到audio-ops"><a href="#找不到audio-ops" class="headerlink" title="找不到audio_ops"></a>找不到audio_ops</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"train.py"</span>, line <span class="number">79</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">    <span class="keyword">import</span> input_data</div><div class="line">  File <span class="string">"/home/philglau/speech_commands/input_data.py"</span>, line <span class="number">35</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">    <span class="keyword">from</span> tensorflow.contrib.framework.python.ops <span class="keyword">import</span> audio_ops <span class="keyword">as</span> contrib_audio</div><div class="line">ImportError: cannot <span class="keyword">import</span> name <span class="string">'audio_ops'</span></div></pre></td></tr></table></figure>
 <h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>这个’audio_ops’只在TensorFlow1.4版本中有，所以，如果不是1.4的版本，一般都会有这个错误。</p>
-<p>此时的解决方案，一是更细TensorFlow版本，二是使用如下命令安装tf-nightly即可。</p>
+<p>此时的解决方案，一是更新TensorFlow版本，二是使用如下命令安装tf-nightly即可。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install tf-nightly</div></pre></td></tr></table></figure>
 <p>详见参考连接三。</p>
 <h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><p>要开始训练过程，请访问<a href="https://github.com/tensorflow/tensorflow" target="_blank" rel="external">TensorFlow源代码树</a>下载并运行：</p>
@@ -511,14 +511,14 @@
 <p>left (score = 0.81477)</p>
 <p>right (score = 0.14139)</p>
 <p>_unknown_ (score = 0.03808)</p>
-<p>跟多内容请查看论文：<a href="http://suo.im/3PW89b" target="_blank" rel="external">http://suo.im/3PW89b</a></p>
-<h2 id="在Android应用程序中运行模型"><a href="#在Android应用程序中运行模型" class="headerlink" title="在Android应用程序中运行模型"></a>在Android应用程序中运行模型</h2><p>查看此模型在真实应用程序中如何工作的最简单的方法是，下载预构建的Android演示应用程序并将其安装在手机上（<a href="http://suo.im/4n1pym）。" target="_blank" rel="external">http://suo.im/4n1pym）。</a></p>
+<p>更多内容请查看论文：<a href="http://suo.im/3PW89b" target="_blank" rel="external">http://suo.im/3PW89b</a></p>
+<h2 id="在Android应用程序中运行模型"><a href="#在Android应用程序中运行模型" class="headerlink" title="在Android应用程序中运行模型"></a>在Android应用程序中运行模型</h2><p>查看此模型在真实应用程序中如何工作的最简单的方法是，下载预构建的<a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/android#prebuilt-components" target="_blank" rel="external">Android演示应用程序</a>并将其安装在手机上。</p>
 <p>你会看到“TF Speech”出现在应用程序列表中，打开它将显示我们刚刚训练过单词列表，从“yes”和“no”开始。</p>
-<p>你还可以自己构建此应用程序，因为它是开源的， 并可作为github上TensorFlow存储库的一部分使用（<a href="http://suo.im/mfUa8）。默认情况下，它从tensorflow.org下载一个预先训练的模型，但你可以轻松地用自己训练的模型替换它。" target="_blank" rel="external">http://suo.im/mfUa8）。默认情况下，它从tensorflow.org下载一个预先训练的模型，但你可以轻松地用自己训练的模型替换它。</a></p>
-<p>如果你自己创建的话，你需要确保SpeechActivity Java源文件（<a href="http://suo.im/2fWbai）中的" target="_blank" rel="external">http://suo.im/2fWbai）中的</a> SAMPLE_RATE，SAMPLE_DURATION符合你训练时的默认设置所做的任何更改。</p>
-<p>你还会看到一个Java版本的Rec<br>ognizeCommands模块（<a href="http://suo.im/31vKvx）。" target="_blank" rel="external">http://suo.im/31vKvx）。</a></p>
-<p>这与本教程中的C ++版本非常相似。如果你调整了参数，还可以在SpeechActivity中进行更新，以获得与服务器测试相同的结果。</p>
-<p>演示应用程序，根据你在固定模型复制到模型中的标签文本文件，自动更新其用户界面列表，可以轻松地尝试不同的模型，而无需进行任何代码更改。如果你更改路径，需要updaye LABEL_FILENAME，MODEL_FILENAME添加到文件。</p>
+<p>你还可以自己构建此应用程序，因为它是开源的， 并可作为github上TensorFlow<a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/android#building-in-android-studio-using-the-tensorflow-aar-from-jcenter" target="_blank" rel="external">存储库的一部分使用</a>。<br>默认情况下，它从tensorflow.org下载一个预先训练的模型，但你可以轻松地用自己训练的模型替换它。</p>
+<p>如果你自己创建的话，你需要确保SpeechActivity Java<a href="http://suo.im/2fWbai" target="_blank" rel="external">源文件</a>中的 SAMPLE_RATE，SAMPLE_DURATION符合你训练时的默认设置所做的任何更改。</p>
+<p>你还会看到一个Java版本的<a href="http://suo.im/31vKvx" target="_blank" rel="external">Rec<br>ognizeCommands模块</a>。</p>
+<p>这与本教程中的C++版本非常相似。如果你调整了参数，还可以在SpeechActivity中进行更新，以获得与服务器测试相同的结果。</p>
+<p>演示应用程序，根据你在固定模型复制到模型中的标签文本文件，自动更新其用户界面列表，可以轻松地尝试不同的模型，而无需进行任何代码更改。如果你更改路径，需要update LABEL_FILENAME，MODEL_FILENAME添加到文件。</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="https://www.tensorflow.org/versions/master/tutorials/audio_recognition" target="_blank" rel="external">TensorFlow官网教程：Simple Audio Recognition</a></li>
 <li><a href="http://www.sohu.com/a/167209693_798050" target="_blank" rel="external">中文翻译参考</a></li>
@@ -609,6 +609,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/28/tensorflow_base/" rel="prev" title="TensorFlow基础篇与搭建深层神经网络">
+                TensorFlow基础篇与搭建深层神经网络 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -716,7 +720,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -873,7 +877,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      90.5k
+      93.7k
     </span>
   
 </div>
