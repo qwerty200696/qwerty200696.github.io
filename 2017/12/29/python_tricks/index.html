@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+  (function(){
+    if(''){
+      if (prompt('请输入文章密码') !== ''){
+        alert('密码错误！');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="Zg8i3oTV3dBiFi2-eYpkWHuo1XYforgqvtiy1f6zTvs" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python,pycharm," />
+
+
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="王立杰的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web_icon.jpg?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="本文整理了本人遇到的一些tricks。主要包括：  pycharm快捷键整理 爬虫中的日志记录(logging)、取消SSL警告、字符过滤(re.sub)与查找(find)、文件删除(os)与文件保存(pickle)、词云(wordcloud)的使用 图像处理的部分基本操作(PIL,numpy)。">
+<meta name="keywords" content="python,pycharm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python中的部分tricks整理">
+<meta property="og:url" content="https://wangwlj.com/2017/12/29/python_tricks/index.html">
+<meta property="og:site_name" content="王立杰的博客">
+<meta property="og:description" content="本文整理了本人遇到的一些tricks。主要包括：  pycharm快捷键整理 爬虫中的日志记录(logging)、取消SSL警告、字符过滤(re.sub)与查找(find)、文件删除(os)与文件保存(pickle)、词云(wordcloud)的使用 图像处理的部分基本操作(PIL,numpy)。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-29T06:07:09.328Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python中的部分tricks整理">
+<meta name="twitter:description" content="本文整理了本人遇到的一些tricks。主要包括：  pycharm快捷键整理 爬虫中的日志记录(logging)、取消SSL警告、字符过滤(re.sub)与查找(find)、文件删除(os)与文件保存(pickle)、词云(wordcloud)的使用 图像处理的部分基本操作(PIL,numpy)。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://wangwlj.com/2017/12/29/python_tricks/"/>
+
+
+
+
+<link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
+
+  <title>Python中的部分tricks整理 | 王立杰的博客</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-111387754-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?61acd986303bc926826d2eec81dbbdff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    
+	<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王立杰的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">积跬步以至千里！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangwlj.com/2017/12/29/python_tricks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王立杰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python中的部分tricks整理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-29T11:38:07+08:00">
+                2017-12-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+	  
+          
+            
+          
+
+          
+          
+             <span id="/2017/12/29/python_tricks/" class="leancloud_visitors" data-flag-title="Python中的部分tricks整理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,107
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文整理了本人遇到的一些tricks。主要包括：</p>
+<ul>
+<li>pycharm快捷键整理</li>
+<li>爬虫中的日志记录(logging)、取消SSL警告、字符过滤(re.sub)与查找(find)、文件删除(os)与文件保存(pickle)、词云(wordcloud)的使用</li>
+<li>图像处理的部分基本操作(PIL,numpy)。</li>
+</ul>
+<a id="more"></a>
+<h2 id="0-pycharm-快捷键"><a href="#0-pycharm-快捷键" class="headerlink" title="0 pycharm 快捷键"></a>0 pycharm 快捷键</h2><h3 id="注释-反注释"><a href="#注释-反注释" class="headerlink" title="注释/反注释"></a>注释/反注释</h3><p> <code>Ctrl+斜杠</code>，也就是 <code>Ctrl + /</code> 注释与反注释都是这个组合键。</p>
+<h3 id="块注释"><a href="#块注释" class="headerlink" title="块注释"></a>块注释</h3><p><code>Ctrl+Shift+斜杠</code></p>
+<h3 id="格式化代码"><a href="#格式化代码" class="headerlink" title="格式化代码"></a>格式化代码</h3><p><code>ctrl + alt + F</code>: 格式化代码(用了JetBrains的IDE之后就习惯性地格式化一下)，代码规范化。</p>
+<h3 id="复制当前行"><a href="#复制当前行" class="headerlink" title="复制当前行"></a>复制当前行</h3><p><code>Ctrl + D</code>复制当前行</p>
+<h3 id="另起一行"><a href="#另起一行" class="headerlink" title="另起一行"></a>另起一行</h3><p><code>shift + enter</code> : 向下另起一行，光标在行内任意位置都能另起一行，且不破坏当行结构<br><code>ctrl + alt + enter</code> : 向上另起一行</p>
+<h3 id="查看注释"><a href="#查看注释" class="headerlink" title="查看注释"></a>查看注释</h3><p><code>Ctrl + q</code>: help 查注释，查询documentation</p>
+<h3 id="搜索功能"><a href="#搜索功能" class="headerlink" title="搜索功能"></a>搜索功能</h3><p><code>ctrl + shift + a</code> : 搜索功能: 搜索IDE功能，比如想看看这个文件的历史，就键入history 可以找到 Local history</p>
+<h3 id="万能提示键"><a href="#万能提示键" class="headerlink" title="万能提示键"></a>万能提示键</h3><p><code>ctrl + alt + space</code>: 万能提示键(在Keymap中搜索basic可以找到并修改它)PyCharm的会根据上下文提供补全。</p>
+<h3 id="run相关的快捷键"><a href="#run相关的快捷键" class="headerlink" title="run相关的快捷键"></a>run相关的快捷键</h3><p>根据具体设置可能略有差异，笔者采用的是<br>VS风格（可在<code>File-&gt;Settings-&gt;Keymap</code>中设置）的快捷键。<br><code>ctrl + F9</code> : run the current file （跑当前页面的程序）<br><code>F9</code> :　resume the program (中断后)重新开始程序<br><code>ctrl + F5</code>: run the specific program(直接跑上一个程序)<br><code>F5</code>： debug（弹出debug目录，自行选择运行的文件）<br><code>alt + shift + F10</code> : 运行程序（弹出run目录）</p>
+<h3 id="其他技巧"><a href="#其他技巧" class="headerlink" title="其他技巧"></a>其他技巧</h3><p><code>ctrl + shift + 数字键</code> 与 <code>ctrl + 数字键</code> : 书签功能<br><code>Ctrl + 鼠标点击</code>  ： 查看内置函数啥的<br><code>alt + 上下箭头</code> : <code>preview/next method (def/class)</code><br>debug的时候可以在断点打开Python console然后改变量值<br><code>Ctrl+ B</code>和<code>shift + →</code>，查看源码时很方便，至少在vim下看库的源码没那么容易。对Python程序员而言，看源码很重要<br><code>shift + F6</code> : 重命名，这太重要了，vim没有吧。即使有，那它也没法重构Flask和Django的template下的指令吧。</p>
+<h2 id="1-python信息同时输出到控制台与文件"><a href="#1-python信息同时输出到控制台与文件" class="headerlink" title="1 python信息同时输出到控制台与文件"></a>1 python信息同时输出到控制台与文件</h2><h3 id="1-1-问题"><a href="#1-1-问题" class="headerlink" title="1.1 问题"></a>1.1 问题</h3><p>python编程中，往往需要将结果用print等输出，如果希望输出既可以显示到IDE的屏幕上，也能存到文件中（如txt）中，该怎么办呢？</p>
+<h3 id="1-2-解决方案"><a href="#1-2-解决方案" class="headerlink" title="1.2 解决方案"></a>1.2 解决方案</h3><p>可通过日志<code>logging</code>模块输出信息到文件或屏幕。但可能要设置log的level或输出端，对于同时需要记录<code>debug error</code>等信息的较为合适，官方教程推荐学习用更规范的logger来操作。<br>例如,可参考来自官网的这段代码。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> logging</div><div class="line">	logging.basicConfig(filename=<span class="string">'log_examp.log'</span>,level=logging.DEBUG)</div><div class="line">	logging.debug(<span class="string">'This message should go to the log file'</span>)</div><div class="line">	logging.info(<span class="string">'So should this'</span>)</div><div class="line">	logging.warning(<span class="string">'And this, too'</span>)</div></pre></td></tr></table></figure></p>
+<p>其中的<code>level=logging.DEBUG</code>会显示Debug调试信息，若想显示普通的输出信息，可以换成<code>level=logging.INFO</code>。</p>
+<table class="table table-bordered table-striped table-condensed"><br>    <tr><br>        <th>程度</th><br>        <th>使用场景</th><br>    </tr><br>    <tr><br>        <td>DEBUG</td><br>        <td>获得诊断问题是具体的信息</td><br>    </tr><br>    <tr><br>        <td>INFO</td><br>        <td>确认程序是否按正常工作</td><br>    </tr><br>    <tr><br>        <td>WARNING</td><br>        <td>在程序还正常运行时获取发生的意外的信息，这可能会在之后引发异常（例如磁盘空间不足）</td><br>    </tr><br>    <tr><br>        <td>ERROR</td><br>        <td>获取程序某些功能无法正常调用这类严重异常的信息</td><br>    </tr><br>    <tr><br>        <td>CRITICAL</td><br>        <td>获取程序无法继续运行的这类最严重异常信息</td><br>    </tr><br></table> 
+
+<h3 id="1-3-改变默认输出信息的格式"><a href="#1-3-改变默认输出信息的格式" class="headerlink" title="1.3 改变默认输出信息的格式"></a>1.3 改变默认输出信息的格式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> logging</div><div class="line"><span class="comment"># output format: output time - logging level - log messages</span></div><div class="line">logging.basicConfig(format=<span class="string">'%(asctime)s - %(levelname)s - %(message)s'</span>)</div><div class="line">logging.warning(<span class="string">'This message will appear in python console.'</span>)</div></pre></td></tr></table></figure>
+<p>在<code>python console</code>中直接打印以下输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2016-8-2 2:59:11, 510 - WARNING - This message will appear in python console</div></pre></td></tr></table></figure>
+<h2 id="2-Python中将打印输出导向日志文件"><a href="#2-Python中将打印输出导向日志文件" class="headerlink" title="2 Python中将打印输出导向日志文件"></a>2 Python中将打印输出导向日志文件</h2><p>利用<code>sys.stdout</code>将print行导向到你定义的日志文件中，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"><span class="comment"># make a copy of original stdout route</span></div><div class="line">stdout_backup = sys.stdout</div><div class="line"><span class="comment"># define the log file that receives your log info</span></div><div class="line">log_file = open(<span class="string">"message.log"</span>, <span class="string">"w"</span>)</div><div class="line"><span class="comment"># redirect print output to log file</span></div><div class="line">sys.stdout = log_file</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">"Now all print info will be written to message.log"</span></div><div class="line"><span class="comment"># any command line that you will execute</span></div><div class="line">...</div><div class="line"></div><div class="line">log_file.close()</div><div class="line"><span class="comment"># restore the output to initial pattern</span></div><div class="line">sys.stdout = stdout_backup</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">"Now this will be presented on screen"</span></div></pre></td></tr></table></figure>
+<p>这样子只会打印到日志文件，而控制台没有输出了，笔者一般不采用这种方法。</p>
+<h2 id="3-python3使用requests请求HTTPS取消SSL验证警告"><a href="#3-python3使用requests请求HTTPS取消SSL验证警告" class="headerlink" title="3 python3使用requests请求HTTPS取消SSL验证警告"></a>3 python3使用requests请求HTTPS取消SSL验证警告</h2><h3 id="3-1-问题描述"><a href="#3-1-问题描述" class="headerlink" title="3.1 问题描述"></a>3.1 问题描述</h3><p>使用<code>requests</code>库请求<code>HTTPS</code>时,因为忽略证书验证,导致每次运行时都会报错（警告）:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">D:\python\Python35\lib\site-packages\urllib3\connectionpool.py:858: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings</div><div class="line"> 	InsecureRequestWarning)</div></pre></td></tr></table></figure></p>
+<h3 id="3-2-解决方法"><a href="#3-2-解决方法" class="headerlink" title="3.2 解决方法"></a>3.2 解决方法</h3><blockquote>
+<p>虽然这并不影响结果的正确，但是这个提示一直存在，看着是真的别扭，尤其需要输出到报告或者是日志的时候。代码加入下面两行，取消这个警告。</p>
+</blockquote>
+<p>添加如下的这两行代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> requests.packages.urllib3.exceptions <span class="keyword">import</span> InsecureRequestWarning </div><div class="line"></div><div class="line">requests.packages.urllib3.disable_warnings(InsecureRequestWarning)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>python3也可以的。我的pycharm中会显示找不到该库，不过没问题，依旧可以跑，应该是pycharm本身的问题。</p>
+</blockquote>
+<h2 id="4-python过滤中文、英文标点特殊符号"><a href="#4-python过滤中文、英文标点特殊符号" class="headerlink" title="4. python过滤中文、英文标点特殊符号"></a>4. python过滤中文、英文标点特殊符号</h2><h3 id="4-1-垃圾邮件过滤实例"><a href="#4-1-垃圾邮件过滤实例" class="headerlink" title="4.1 垃圾邮件过滤实例"></a>4.1 垃圾邮件过滤实例</h3><p>下面是一封垃圾邮件的过滤实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;想做/ 兼_职/学生_/ 的 、加,我Q：  1 5.  8 0. ！！？？  8 6 。0.  2。 3     有,惊,喜,哦&quot;</div></pre></td></tr></table></figure>
+<p>邮件中的“<code>！？。、</code>”都是中文的，而“/.”是英文的</p>
+<p>下面是采用re正则项过滤方式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"></div><div class="line">temp = <span class="string">"想做/ 兼_职/学生_/ 的 、加,我Q：  1 5.  8 0. ！！？？  8 6 。0.  2。 3     有,惊,喜,哦"</span></div><div class="line">temp = temp.decode(<span class="string">"utf8"</span>) </div><div class="line">string = re.sub(<span class="string">"[\s+\.\!\/_,$%^*(+\"\']+|[+——！，。？、~@#￥%……&amp;*（）]+"</span>, <span class="string">""</span>, temp) <span class="comment"># 将temp中若存在的前面的这一长串替换为空的。</span></div><div class="line">print(string)</div></pre></td></tr></table></figure>
+<h3 id="4-2-目录名称过滤实例"><a href="#4-2-目录名称过滤实例" class="headerlink" title="4.2 目录名称过滤实例"></a>4.2 目录名称过滤实例</h3><p>此外，比如说目录命名时，也需要过滤掉<code>/|</code>等，如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dirName = re.sub(<span class="string">"[\s+\.\!\/_,$%^*(+\"\'?]+|[+——！，。？、~@#￥%……&amp;*（）]+"</span>, <span class="string">""</span>, dirName)</div><div class="line">os.mkdir(dirName)</div></pre></td></tr></table></figure></p>
+<h2 id="5-Markdown之表格table的处理"><a href="#5-Markdown之表格table的处理" class="headerlink" title="5. Markdown之表格table的处理"></a>5. Markdown之表格table的处理</h2><p>插入表格代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table table-bordered table-striped table-condensed"</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">td</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>雾霾<span class="tag">&lt;/<span class="name">td</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>深圳<span class="tag">&lt;/<span class="name">td</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>暴雨<span class="tag">&lt;/<span class="name">td</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>发现table加了个class属性，如果只是table标签 将不起作用。</p>
+<pre><code>table-bordered：带圆角边框和竖线
+table-striped：奇偶行颜色不同
+table-condensed：压缩行距
+</code></pre><p>除了以上另外还有其他可供选择：</p>
+<p>1、如果需要表头跟内容不一样，可以将<code>&lt;td&gt;</code>表头内容<code>&lt;/td&gt;</code>换成<code>&lt;th&gt;</code>表头内容<code>&lt;/th&gt;</code>。</p>
+<p>2、如果表格内文需要换行，可以在要换行的内容后加入<code>&lt;br&gt;</code>，后面的内容就会跑到下一行。</p>
+<p>3、如果内文中有代码，需要特别显示，可使用：<code>&lt;code&gt;代码&lt;/code&gt;</code>。</p>
+<p>4、如果表格中有需要设为斜体的内容，可使用：<code>&lt;I&gt;要设为斜体的内容&lt;/I&gt;</code>。</p>
+<p>5、如果有跨行或者跨列的单元格，可用<code>&lt;th colspan=&quot;跨列数&quot;&gt;内容&lt;/th&gt;</code>或<code>rowspan</code>。</p>
+<p>6、如果要调整某一列的宽度，可使用：<code>&lt;th width=&quot;宽度值或百分比&quot;&gt;表头内容&lt;/th&gt;</code>。</p>
+<h2 id="6-用numpy打开图像和保存图像"><a href="#6-用numpy打开图像和保存图像" class="headerlink" title="6. 用numpy打开图像和保存图像"></a>6. 用numpy打开图像和保存图像</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-    </span></div><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image    </div><div class="line"><span class="keyword">from</span> pylab <span class="keyword">import</span> *    </div><div class="line"><span class="keyword">from</span> PCV.tools <span class="keyword">import</span> imtools    </div><div class="line"><span class="keyword">import</span> numpy  </div><div class="line"></div><div class="line">im = array(Image.open(<span class="string">'C:/pic/train2/1.jpg'</span>).convert(<span class="string">'L'</span>))  <span class="comment"># 打开图像，并转成灰度图像    </span></div><div class="line">img11=Image.fromarray(uint8(im))  </div><div class="line">img11.save(<span class="string">"C:/pic/train2/10.jpg"</span>)<span class="comment"># 保存灰度图像</span></div></pre></td></tr></table></figure>
+<p>补充用opencv打开和保存图像：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding=utf-8    </span></div><div class="line"><span class="keyword">import</span> cv2    </div><div class="line"></div><div class="line">img = cv2.imread(<span class="string">"C:/pic/train1/2.jpg"</span>, <span class="number">0</span>)     </div><div class="line">cv2.imwrite(<span class="string">'C:/pic/1/5.jpg'</span>,img)</div></pre></td></tr></table></figure>
+<h2 id="7-PIL-Image转换为OpenCV支持的Image格式"><a href="#7-PIL-Image转换为OpenCV支持的Image格式" class="headerlink" title="7. PIL.Image转换为OpenCV支持的Image格式"></a>7. PIL.Image转换为OpenCV支持的Image格式</h2><p>可参考：<a href="http://www.mobibrw.com/2017/7381" target="_blank" rel="external">http://www.mobibrw.com/2017/7381</a></p>
+<p>后来放弃了。不太方便。</p>
+<h2 id="8-使用pickle把数据保存到文件"><a href="#8-使用pickle把数据保存到文件" class="headerlink" title="8. 使用pickle把数据保存到文件"></a>8. 使用pickle把数据保存到文件</h2><h3 id="8-1-实例一"><a href="#8-1-实例一" class="headerlink" title="8.1 实例一"></a>8.1 实例一</h3><p>使用pickle模块从文件中重构python对象。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pprint, pickle</div><div class="line"></div><div class="line">pkl_file = open(<span class="string">'data.pkl'</span>, <span class="string">'rb'</span>)</div><div class="line"></div><div class="line">data1 = pickle.load(pkl_file)</div><div class="line">pprint.pprint(data1)</div><div class="line"></div><div class="line">data2 = pickle.load(pkl_file)</div><div class="line">pprint.pprint(data2)</div><div class="line"></div><div class="line">pkl_file.close()</div></pre></td></tr></table></figure></p>
+<h3 id="8-2-实例二"><a href="#8-2-实例二" class="headerlink" title="8.2 实例二"></a>8.2 实例二</h3><p>其中，friend是从网页获得的数据，先保存下来，以备后续处理。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 获取好友列表</span></div><div class="line">friends = itchat.get_friends(update=<span class="keyword">True</span>)[<span class="number">0</span>:]</div><div class="line"></div><div class="line">output = open(<span class="string">'data.pkl'</span>, <span class="string">'wb'</span>)</div><div class="line"><span class="comment"># Pickle dictionary using protocol 0.</span></div><div class="line">pickle.dump(friends, output)</div><div class="line">output.close()</div></pre></td></tr></table></figure></p>
+<p>读取保存的文件，用于后续处理。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pickle, re</div><div class="line"></div><div class="line">pkl_file = open(<span class="string">'data.pkl'</span>, <span class="string">'rb'</span>)</div><div class="line">friends = pickle.load(pkl_file)</div></pre></td></tr></table></figure>
+<h2 id="9-解决Python词云库wordcloud不显示中文的问题"><a href="#9-解决Python词云库wordcloud不显示中文的问题" class="headerlink" title="9. 解决Python词云库wordcloud不显示中文的问题"></a>9. 解决Python词云库wordcloud不显示中文的问题</h2><h3 id="9-1-安装"><a href="#9-1-安装" class="headerlink" title="9.1 安装"></a>9.1 安装</h3><p>安装命令：</p>
+<blockquote>
+<p>pip install wordcloud</p>
+</blockquote>
+<h3 id="9-2-解决方案"><a href="#9-2-解决方案" class="headerlink" title="9.2 解决方案"></a>9.2 解决方案</h3><p>实例代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"></div><div class="line">text = <span class="string">'''文案 文案</span></div><div class="line"><span class="string">The  抱抱 Zen of LOVE 抱抱 Python, 快乐 by Tim Peters</span></div><div class="line"><span class="string">公众号 公众号 Python 最好的 语言 语言</span></div><div class="line"><span class="string">一辈子 is better LOVE than 一辈子.</span></div><div class="line"><span class="string">喵小姐 is 爱你 than  implicit.爱你 喵小姐</span></div><div class="line"><span class="string">蟹先生 is 爱你 than complex.</span></div><div class="line"><span class="string">一辈子 is 蟹先生  than complicated.</span></div><div class="line"><span class="string">二中 is 喵小姐 我想你了 than nested. 二中 蟹先生</span></div><div class="line"><span class="string">清湖 is 胜于 than 清湖.</span></div><div class="line"><span class="string">思旺 counts. 想你</span></div><div class="line"><span class="string">Special 喵小姐 我想你了 aren't special enough 思旺 break 思旺 rules.</span></div><div class="line"><span class="string">别生气 practicality beats 厨艺好.</span></div><div class="line"><span class="string">Errors should 我想你了 never pass 小龙虾 silently. 运营</span></div><div class="line"><span class="string">别生气 explicitly 好不好. LOVE</span></div><div class="line"><span class="string">In the face of ambiguity, 程序员 the 厨艺好 to guess.龙华 龙华</span></div><div class="line"><span class="string">There 快乐 should be one-- 我想你了 and preferably 红烧肉 only one 小龙虾--obvious way to do it.运营</span></div><div class="line"><span class="string">Although 共享单车 way may not 我想你了 be obvious at first unless you're Dutch. 新媒体 地铁</span></div><div class="line"><span class="string">Now is better 红烧肉 than never.</span></div><div class="line"><span class="string">程序员 Although 共享单车 is often 高铁 than 东莞 now. 高铁 地铁</span></div><div class="line"><span class="string">If the implementation 想你 is hard to explain, it's a bad idea. 想你了</span></div><div class="line"><span class="string">If 成都 implementation is 想你 easy to explain, it may be a good idea.</span></div><div class="line"><span class="string">Namespaces are 端午one 端午 honking great idea -- 成都 do more of those! 想你了</span></div><div class="line"><span class="string">深圳 晚安 深圳 新媒体</span></div><div class="line"><span class="string">'''</span></div><div class="line"></div><div class="line"><span class="comment"># the font from github: https://github.com/adobe-fonts</span></div><div class="line">font = <span class="string">r'C:\Windows\Fonts\simfang.ttf'</span></div><div class="line">wc = WordCloud(collocations=<span class="keyword">False</span>, font_path=font, width=<span class="number">1400</span>, height=<span class="number">1400</span>, margin=<span class="number">2</span>).generate(text.lower())</div><div class="line"></div><div class="line">plt.imshow(wc)</div><div class="line">plt.axis(<span class="string">"off"</span>)</div><div class="line">plt.show()</div><div class="line"></div><div class="line">wc.to_file(<span class="string">'show_Chinese.png'</span>)  <span class="comment"># 把词云保存下来</span></div></pre></td></tr></table></figure></p>
+<h2 id="10-PIL库图片基本操作"><a href="#10-PIL库图片基本操作" class="headerlink" title="10. PIL库图片基本操作"></a>10. PIL库图片基本操作</h2><p>1.打开图片<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Image</div><div class="line">img=Image.open(<span class="string">"code.jpg"</span>)</div></pre></td></tr></table></figure></p>
+<p>注：有些图片名称是包含中文的，就需要在“”前加上u，例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">img=Image.open(<span class="string">u"阿布.jpg"</span>)</div></pre></td></tr></table></figure></p>
+<p>2.展示图片</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">img.show()</div></pre></td></tr></table></figure>
+<p>3.保存图片<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">img.save(<span class="string">"img1.png"</span>,<span class="string">"png"</span>)</div></pre></td></tr></table></figure></p>
+<p>说明：img为一个图片，存为一个名叫img1的图片，格式为png。后面的png不写也可以，直接按照文件名的后缀.png存为相应格式了。</p>
+<p>4.旋转图片rotate</p>
+<pre><code>fixedIm=img.rotate(90)
+fixedIm.save(&quot;fixedIm.png&quot;,&quot;png&quot;)
+</code></pre><p>说明：<code>fixedIm=img.rotate(90)</code>，将图片img逆时针旋转90度，存到fixedIm中。</p>
+<p>更多操作可参考:<br><a href="http://www.cnblogs.com/meitian/p/3699223.html" target="_blank" rel="external">http://www.cnblogs.com/meitian/p/3699223.html</a></p>
+<h2 id="python删除文件"><a href="#python删除文件" class="headerlink" title="python删除文件"></a>python删除文件</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">   <span class="comment"># 删除文件： </span></div><div class="line">os.remove()</div><div class="line"><span class="comment">#删除空目录： </span></div><div class="line">os.rmdir()</div><div class="line">   <span class="comment"># 递归删除空目录： </span></div><div class="line">os.removedirs()</div></pre></td></tr></table></figure>
+<p>递归删除目录和文件（类似DOS命令DeleteTree）：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Delete everything reachable from the directory named in 'top',</span></div><div class="line"><span class="comment"># assuming there are no symbolic links.</span></div><div class="line"><span class="comment"># CAUTION:  This is dangerous!  For example, if top == '/', it</span></div><div class="line"><span class="comment"># could delete all your disk files.</span></div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(top, topdown=<span class="keyword">False</span>):</div><div class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> files:</div><div class="line">        os.remove(os.path.join(root, name))</div><div class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> dirs:</div><div class="line">        os.rmdir(os.path.join(root, name))</div></pre></td></tr></table></figure></p>
+<p>参考自：<a href="http://www.cnblogs.com/SophiaTang/archive/2012/01/16/2323467.html" target="_blank" rel="external">python 删除文件</a></p>
+<h2 id="Python3-find-方法"><a href="#Python3-find-方法" class="headerlink" title="Python3 find()方法"></a>Python3 find()方法</h2><h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p><code>find()</code>方法检测字符串中是否包含子字符串str，如果指定 beg（开始） 和 end（结束） 范围，则检查是否包含在指定范围内，如果指定范围内如果包含指定索引值，返回的是索引值在字符串中的起始位置。如果不包含索引值，返回-1。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>find()方法语法：</p>
+<blockquote>
+<p>str.find(str, beg=0, end=len(string))</p>
+</blockquote>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>str：指定检索的字符串<br>beg：开始索引，默认为0。<br>end：结束索引，默认为字符串的长度。</p>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>如果包含子字符串返回开始的索引值，否则返回-1。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>以下实例展示了find()方法的实例(Python 3.0+)：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python3</span></div><div class="line"> </div><div class="line">str1 = <span class="string">"Runoob example....wow!!!"</span></div><div class="line">str2 = <span class="string">"exam"</span>;</div><div class="line"> </div><div class="line"><span class="keyword">print</span> (str1.find(str2))</div><div class="line"><span class="keyword">print</span> (str1.find(str2, <span class="number">5</span>))</div><div class="line"><span class="keyword">print</span> (str1.find(str2, <span class="number">10</span>))</div></pre></td></tr></table></figure>
+<p>以上实例输出结果如下：</p>
+<blockquote>
+<p>7</p>
+<p>7</p>
+<p>-1</p>
+</blockquote>
+<p>实例(Python 3.0+)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;info = <span class="string">'abca'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(info.find(<span class="string">'a'</span>))      <span class="comment"># 从下标0开始，查找在字符串里第一个出现的子串，返回结果：0</span></div><div class="line"><span class="number">0</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(info.find(<span class="string">'a'</span>, <span class="number">1</span>))   <span class="comment"># 从下标1开始，查找在字符串里第一个出现的子串：返回结果3</span></div><div class="line"><span class="number">3</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(info.find(<span class="string">'3'</span>))      <span class="comment"># 查找不到返回-1</span></div><div class="line"><span class="number">-1</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="http://blog.csdn.net/woaik110/article/details/52444427" target="_blank" rel="external">python 信息同时输出到控制台与文件</a></li>
+<li><a href="http://www.cnblogs.com/arkenstone/p/5727883.html" target="_blank" rel="external">Python中将打印输出导向日志文件</a></li>
+<li><a href="http://blog.csdn.net/m1mory/article/details/56029638" target="_blank" rel="external">python requests报错InsecureRequestWarning的解决方案</a></li>
+<li><a href="http://blog.csdn.net/xie_0723/article/details/53424809" target="_blank" rel="external">Python requests移除SSL认证，控制台输出InsecureRequestWarning取消方法</a></li>
+<li><a href="http://blog.csdn.net/mach_learn/article/details/41744487" target="_blank" rel="external">python 过滤中文、英文标点特殊符号</a></li>
+<li><a href="http://blog.csdn.net/itmyhome1990/article/details/44085539" target="_blank" rel="external">Markdown之表格table的处理</a></li>
+<li><a href="http://blog.csdn.net/txiaomiao/article/details/50967223" target="_blank" rel="external">用numpy打开图像和保存图像</a></li>
+<li><a href="http://www.cnblogs.com/pzxbc/archive/2012/03/18/2404715.html" target="_blank" rel="external">pickle模块的基本使用</a></li>
+<li><a href="http://blog.csdn.net/xiemanr/article/details/72796739" target="_blank" rel="external">词云库wordcloud显示中文</a></li>
+<li><a href="http://www.runoob.com/python3/python3-string-find.html" target="_blank" rel="external">Python3 find()方法</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://wangwlj.com/2017/12/29/python_tricks/" title="Python中的部分tricks整理">https://wangwlj.com/2017/12/29/python_tricks/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+            <a href="/tags/pycharm/" rel="tag"><i class="fa fa-tag"></i> pycharm</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/28/TensorFlow_speech_commands/" rel="next" title="基于TensorFlow的简单语音识别">
+                <i class="fa fa-chevron-left"></i> 基于TensorFlow的简单语音识别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/29/practical_tricks/" rel="prev" title="windows下的部分小技巧整理">
+                windows下的部分小技巧整理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjUyMi85MDgz"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/head_icon.jpg"
+              alt="wangwlj" />
+          
+            <p class="site-author-name" itemprop="name">wangwlj</p>
+            <p class="site-description motion-element" itemprop="description">所谓王者，必卓然特立，争当人杰。</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/qwerty200696" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:wanglijie1994@126.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/LijieWang" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-gratipay"></i>知乎</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/3280603012" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>微博</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/qwerty200696" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-codiepie"></i>CSDN</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qq_31196849" title="小草莓" target="_blank">小草莓</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qingkong1994" title="qingkong" target="_blank">qingkong</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-pycharm-快捷键"><span class="nav-number">1.</span> <span class="nav-text">0 pycharm 快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注释-反注释"><span class="nav-number">1.1.</span> <span class="nav-text">注释/反注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块注释"><span class="nav-number">1.2.</span> <span class="nav-text">块注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化代码"><span class="nav-number">1.3.</span> <span class="nav-text">格式化代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制当前行"><span class="nav-number">1.4.</span> <span class="nav-text">复制当前行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#另起一行"><span class="nav-number">1.5.</span> <span class="nav-text">另起一行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看注释"><span class="nav-number">1.6.</span> <span class="nav-text">查看注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索功能"><span class="nav-number">1.7.</span> <span class="nav-text">搜索功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#万能提示键"><span class="nav-number">1.8.</span> <span class="nav-text">万能提示键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#run相关的快捷键"><span class="nav-number">1.9.</span> <span class="nav-text">run相关的快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他技巧"><span class="nav-number">1.10.</span> <span class="nav-text">其他技巧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-python信息同时输出到控制台与文件"><span class="nav-number">2.</span> <span class="nav-text">1 python信息同时输出到控制台与文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-问题"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-解决方案"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-改变默认输出信息的格式"><span class="nav-number">2.3.</span> <span class="nav-text">1.3 改变默认输出信息的格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Python中将打印输出导向日志文件"><span class="nav-number">3.</span> <span class="nav-text">2 Python中将打印输出导向日志文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-python3使用requests请求HTTPS取消SSL验证警告"><span class="nav-number">4.</span> <span class="nav-text">3 python3使用requests请求HTTPS取消SSL验证警告</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-问题描述"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-解决方法"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 解决方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-python过滤中文、英文标点特殊符号"><span class="nav-number">5.</span> <span class="nav-text">4. python过滤中文、英文标点特殊符号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-垃圾邮件过滤实例"><span class="nav-number">5.1.</span> <span class="nav-text">4.1 垃圾邮件过滤实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-目录名称过滤实例"><span class="nav-number">5.2.</span> <span class="nav-text">4.2 目录名称过滤实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Markdown之表格table的处理"><span class="nav-number">6.</span> <span class="nav-text">5. Markdown之表格table的处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-用numpy打开图像和保存图像"><span class="nav-number">7.</span> <span class="nav-text">6. 用numpy打开图像和保存图像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-PIL-Image转换为OpenCV支持的Image格式"><span class="nav-number">8.</span> <span class="nav-text">7. PIL.Image转换为OpenCV支持的Image格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-使用pickle把数据保存到文件"><span class="nav-number">9.</span> <span class="nav-text">8. 使用pickle把数据保存到文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-实例一"><span class="nav-number">9.1.</span> <span class="nav-text">8.1 实例一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-实例二"><span class="nav-number">9.2.</span> <span class="nav-text">8.2 实例二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-解决Python词云库wordcloud不显示中文的问题"><span class="nav-number">10.</span> <span class="nav-text">9. 解决Python词云库wordcloud不显示中文的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-安装"><span class="nav-number">10.1.</span> <span class="nav-text">9.1 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-解决方案"><span class="nav-number">10.2.</span> <span class="nav-text">9.2 解决方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-PIL库图片基本操作"><span class="nav-number">11.</span> <span class="nav-text">10. PIL库图片基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python删除文件"><span class="nav-number">12.</span> <span class="nav-text">python删除文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python3-find-方法"><span class="nav-number">13.</span> <span class="nav-text">Python3 find()方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述"><span class="nav-number">13.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">13.2.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数"><span class="nav-number">13.3.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回值"><span class="nav-number">13.4.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">13.5.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">14.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangwlj</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      97.8k
+    </span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=64793620";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yrpmXJiSAy4frnKvqrxvNUSG-gzGzoHsz", "35GTu3Aq4E3uxua6GpER2XLp");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 8596,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
