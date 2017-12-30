@@ -108,18 +108,18 @@
 
 
 
-<meta name="description" content="1、截取字符串截取字符串可以说是字符串处理功能中最常用的一个子功能了，能够实现截取字符串中的特定位置的一个或多个字符。举例说明其基本功能： @echo off set ifo=abcdefghijklmnopqrstuvwxyz0123456789 echo 原字符串（第二行为各字符的序号）： echo %ifo% echo 123456789012345678901234567890123456">
+<meta name="description" content="什么是批处理？在windows下，以cmd或者bat结尾的文件就是批处理文件；linux下，也有以sh结尾的shell脚本文件。 本文主要介绍了批处理在字符串处理中的一些方法：  字符串截取 字符串替换 字符串合并 字符串扩充">
 <meta name="keywords" content="批处理,bat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BAT批处理中的字符串处理(字符串截取等)">
 <meta property="og:url" content="https://wangwlj.com/2017/10/10/batch_string_process/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="1、截取字符串截取字符串可以说是字符串处理功能中最常用的一个子功能了，能够实现截取字符串中的特定位置的一个或多个字符。举例说明其基本功能： @echo off set ifo=abcdefghijklmnopqrstuvwxyz0123456789 echo 原字符串（第二行为各字符的序号）： echo %ifo% echo 123456789012345678901234567890123456">
+<meta property="og:description" content="什么是批处理？在windows下，以cmd或者bat结尾的文件就是批处理文件；linux下，也有以sh结尾的shell脚本文件。 本文主要介绍了批处理在字符串处理中的一些方法：  字符串截取 字符串替换 字符串合并 字符串扩充">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-10T05:40:21.000Z">
+<meta property="og:updated_time" content="2017-12-29T06:20:21.390Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BAT批处理中的字符串处理(字符串截取等)">
-<meta name="twitter:description" content="1、截取字符串截取字符串可以说是字符串处理功能中最常用的一个子功能了，能够实现截取字符串中的特定位置的一个或多个字符。举例说明其基本功能： @echo off set ifo=abcdefghijklmnopqrstuvwxyz0123456789 echo 原字符串（第二行为各字符的序号）： echo %ifo% echo 123456789012345678901234567890123456">
+<meta name="twitter:description" content="什么是批处理？在windows下，以cmd或者bat结尾的文件就是批处理文件；linux下，也有以sh结尾的shell脚本文件。 本文主要介绍了批处理在字符串处理中的一些方法：  字符串截取 字符串替换 字符串合并 字符串扩充">
 
 
 
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,488
+                  2,571
                 </span>
               
 
@@ -468,7 +468,16 @@
       
 
       
-        <h1 id="1、截取字符串"><a href="#1、截取字符串" class="headerlink" title="1、截取字符串"></a>1、截取字符串</h1><p>截取字符串可以说是字符串处理功能中最常用的一个子功能了，能够实现截取字符串中的特定位置的一个或多个字符。举例说明其基本功能：</p>
+        <p>什么是批处理？<br>在windows下，以<code>cmd</code>或者<code>bat</code>结尾的文件就是批处理文件；linux下，也有以<code>sh</code>结尾的shell脚本文件。</p>
+<p>本文主要介绍了批处理在字符串处理中的一些方法：</p>
+<ul>
+<li>字符串截取</li>
+<li>字符串替换</li>
+<li>字符串合并</li>
+<li>字符串扩充</li>
+</ul>
+<a id="more"></a>
+<h1 id="1、截取字符串"><a href="#1、截取字符串" class="headerlink" title="1、截取字符串"></a>1、截取字符串</h1><p>截取字符串可以说是字符串处理功能中最常用的一个子功能了，能够实现截取字符串中的特定位置的一个或多个字符。举例说明其基本功能：</p>
 <pre><code>@echo off
 set ifo=abcdefghijklmnopqrstuvwxyz0123456789
 echo 原字符串（第二行为各字符的序号）：
@@ -687,7 +696,7 @@ set /a num=0
 :last
 echo 字符&apos;%ch1%&apos;在字符串&quot;%str1%&quot;中的首次出现位置为%num%
 echo 输出完毕，按任意键退出&amp;&amp;pause&gt;nul&amp;&amp;exit
-</code></pre><p><a href="http://www.jb51.net/article/52744.htm" target="_blank" rel="external">http://www.jb51.net/article/52744.htm</a></p>
+</code></pre><p>参考自：<a href="http://www.jb51.net/article/52744.htm" target="_blank" rel="external">http://www.jb51.net/article/52744.htm</a></p>
 
       
     </div>
@@ -1039,7 +1048,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      97.8k
+      98.0k
     </span>
   
 </div>
