@@ -108,18 +108,18 @@
 
 
 
-<meta name="description" content="9.1 卷积运算卷积的第一个参数： 输入，第二个参数： 核函数。输出有时被称为特征映射。 对于二维图像I，二维的核K。卷积可以写为： $$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)$$ 卷积是可交换的。可以等价地写为： $$S(i,j) = (K\times I )(i,j) = \sum_m \sum_n I(i-m,j">
+<meta name="description" content="本文主要简单地介绍一下图像处理中必备的卷积网络。">
 <meta name="keywords" content="deep learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习系列：（九）卷积网络">
 <meta property="og:url" content="https://wangwlj.com/2017/10/20/DL_chap_9/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="9.1 卷积运算卷积的第一个参数： 输入，第二个参数： 核函数。输出有时被称为特征映射。 对于二维图像I，二维的核K。卷积可以写为： $$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)$$ 卷积是可交换的。可以等价地写为： $$S(i,j) = (K\times I )(i,j) = \sum_m \sum_n I(i-m,j">
+<meta property="og:description" content="本文主要简单地介绍一下图像处理中必备的卷积网络。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-26T11:42:47.114Z">
+<meta property="og:updated_time" content="2017-12-30T08:33:59.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习系列：（九）卷积网络">
-<meta name="twitter:description" content="9.1 卷积运算卷积的第一个参数： 输入，第二个参数： 核函数。输出有时被称为特征映射。 对于二维图像I，二维的核K。卷积可以写为： $$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)$$ 卷积是可交换的。可以等价地写为： $$S(i,j) = (K\times I )(i,j) = \sum_m \sum_n I(i-m,j">
+<meta name="twitter:description" content="本文主要简单地介绍一下图像处理中必备的卷积网络。">
 
 
 
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,498
+                  1,543
                 </span>
               
 
@@ -468,7 +468,9 @@
       
 
       
-        <h2 id="9-1-卷积运算"><a href="#9-1-卷积运算" class="headerlink" title="9.1 卷积运算"></a>9.1 卷积运算</h2><p>卷积的第一个参数： 输入，第二个参数： 核函数。输出有时被称为特征映射。</p>
+        <p>本文主要简单地介绍一下图像处理中必备的卷积网络。</p>
+<a id="more"></a>
+<h2 id="9-1-卷积运算"><a href="#9-1-卷积运算" class="headerlink" title="9.1 卷积运算"></a>9.1 卷积运算</h2><p>卷积的第一个参数： 输入，第二个参数： 核函数。输出有时被称为特征映射。</p>
 <p>对于二维图像I，二维的核K。卷积可以写为：</p>
 <p>$$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)$$</p>
 <p>卷积是可交换的。可以等价地写为：</p>
@@ -477,8 +479,12 @@
 <p>互相关函数：和卷积一样，但是没有对核翻转，互相关函数的公式如下：</p>
 <p>$$S(i,j) = (I\times K )(i,j) = \sum_m \sum_n I(i+m,j+n)K(m,n)$$</p>
 <h2 id="9-2-动机"><a href="#9-2-动机" class="headerlink" title="9.2 动机"></a>9.2 动机</h2><p>卷积运算的三个重要思想：</p>
-<p>参数共享–绑定的权重。在一个模型的多个函数中使用相同的参数。</p>
-<p>平移等变–输入改变，输出也以同样的方式改变。</p>
+<ul>
+<li><p>参数共享–绑定的权重。在一个模型的多个函数中使用相同的参数。</p>
+</li>
+<li><p>平移等变–输入改变，输出也以同样的方式改变。</p>
+</li>
+</ul>
 <h2 id="9-3-池化"><a href="#9-3-池化" class="headerlink" title="9.3 池化"></a>9.3 池化</h2><p>池化函数：使用某一位置的相邻输出的总体统计特征来代替网络在该位置的输出。</p>
 <p>最大池化函数（Max pooling）：相邻矩形区域内的最大值</p>
 <p>其他常用的池化函数：相邻区域内的平均值，L2范数，基于距中心像素位置的加权平均函数。</p>
@@ -489,7 +495,7 @@
 <p>可以把<strong>卷机网络</strong>类比为全连接网络，但对于这个全连接网络的权重有一个无限强的先验。这个无限强的先验是说一个隐藏单元的权重必须和它邻居的权重相同，但可以在空间上移动。这个先验也要求除了那些处在隐藏单元的小的空间连续的接受域内的权重以外，其余的权重为零。 </p>
 <p>类似地，使用<strong>池化</strong>也是一个无限强的先验：每个单元都具有对少量平移的不变性。</p>
 <p><strong>卷积和池化可能导致欠拟合</strong>。</p>
-<h2 id="9-5-基本卷积函数的变体"><a href="#9-5-基本卷积函数的变体" class="headerlink" title="9.5 基本卷积函数的变体"></a>9.5 基本卷积函数的变体</h2><p>神经网络中的卷积是由多个并行卷积组成的计算：单个核的卷积只能提取一种类型的特征。</p>
+<h2 id="9-5-基本卷积函数的变体"><a href="#9-5-基本卷积函数的变体" class="headerlink" title="9.5 基本卷积函数的变体"></a>9.5 基本卷积函数的变体</h2><p>神经网络中的卷积是由<strong>多个并行卷积组成</strong>的计算：单个核的卷积只能提取一种类型的特征。</p>
 <p>卷积的输入输出可以看作3维的张量，其中一个索引用于标明不同的通道，另外两个索引用于标明每一个通道上的空间坐标。</p>
 <p>$$<br>Z_{i,j,k}<br>= c(K,V,s)_{i,j,k}<br>= \sum\limits_{l,m,n}<br>[V_{l,(j - 1) \times s + m,(k - 1) \times s + m} K_{i,l,m,n}]<br>$$<br>输入是观测数据V，每个元素是$V_{i,j,k}$，表示通道i中第j行第k列的值。$K_{i,j,k,l}$输出通道i的一个单元和输入通道j中的一个单元的链接强度，并且在输出单元和输入单元之间有k行l列的偏置。</p>
 <p>三种零填充方式：</p>
@@ -508,6 +514,7 @@
 <li><p>标准卷积(standard convolution)：等效于t=1的平铺卷积。</p>
 </li>
 </ul>
+<p>我们采用的一般就是标准卷积，其他的了解一下即可。</p>
 <h2 id="9-6-结构化输出"><a href="#9-6-结构化输出" class="headerlink" title="9.6 结构化输出"></a>9.6 结构化输出</h2><p>卷积神经网络可以输出高维的结构化对象，通常这个对象只是一个张量，由标准卷积层产生。</p>
 <p>假设为$S$，其中$S_{i,j,k}$是网络的输入像素$(j,k)$属于类$i$的概率。这允许模型<strong>标记图像中的每个像素</strong>，并绘制沿着单个对象轮廓的精确掩膜。</p>
 <h2 id="9-7-数据类型"><a href="#9-7-数据类型" class="headerlink" title="9.7 数据类型"></a>9.7 数据类型</h2><p>卷积网络的优点：可以处理具有可变的空间尺度的输入。</p>
@@ -872,7 +879,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      98.0k
+      98.7k
     </span>
   
 </div>

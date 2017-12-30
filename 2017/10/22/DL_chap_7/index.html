@@ -108,18 +108,18 @@
 
 
 
-<meta name="description" content="7.1 参数范式惩罚对目标模型J添加一个参数范数惩罚$\Omega (\theta)$，限制模型 的学习能力。正则化后的目标函数记为：$$\tilde{J}(\theta ;X,y) = J(\theta ;X,y) +\alpha \Omega (\theta)$$ 我们通常只对权重做惩罚而不对偏置做正则惩罚。 神经网络情况下，有时候希望对网络的每一层使用单独的惩罚，并分配不同的$\alpha$">
+<meta name="description" content="本文是对《深度学习》的第七章，正则化方法的简单学习记录。 本文尚未完成。仅供参考。">
 <meta name="keywords" content="deep learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习系列：（七）深度学习中的正则化">
 <meta property="og:url" content="https://wangwlj.com/2017/10/22/DL_chap_7/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="7.1 参数范式惩罚对目标模型J添加一个参数范数惩罚$\Omega (\theta)$，限制模型 的学习能力。正则化后的目标函数记为：$$\tilde{J}(\theta ;X,y) = J(\theta ;X,y) +\alpha \Omega (\theta)$$ 我们通常只对权重做惩罚而不对偏置做正则惩罚。 神经网络情况下，有时候希望对网络的每一层使用单独的惩罚，并分配不同的$\alpha$">
+<meta property="og:description" content="本文是对《深度学习》的第七章，正则化方法的简单学习记录。 本文尚未完成。仅供参考。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-22T07:01:02.254Z">
+<meta property="og:updated_time" content="2017-12-30T08:27:45.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习系列：（七）深度学习中的正则化">
-<meta name="twitter:description" content="7.1 参数范式惩罚对目标模型J添加一个参数范数惩罚$\Omega (\theta)$，限制模型 的学习能力。正则化后的目标函数记为：$$\tilde{J}(\theta ;X,y) = J(\theta ;X,y) +\alpha \Omega (\theta)$$ 我们通常只对权重做惩罚而不对偏置做正则惩罚。 神经网络情况下，有时候希望对网络的每一层使用单独的惩罚，并分配不同的$\alpha$">
+<meta name="twitter:description" content="本文是对《深度学习》的第七章，正则化方法的简单学习记录。 本文尚未完成。仅供参考。">
 
 
 
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,203
+                  1,237
                 </span>
               
 
@@ -468,7 +468,9 @@
       
 
       
-        <h2 id="7-1-参数范式惩罚"><a href="#7-1-参数范式惩罚" class="headerlink" title="7.1 参数范式惩罚"></a>7.1 参数范式惩罚</h2><p>对目标模型J添加一个参数范数惩罚$\Omega (\theta)$，限制模型 的学习能力。正则化后的目标函数记为：<br>$$\tilde{J}(\theta ;X,y) = J(\theta ;X,y) +\alpha \Omega (\theta)$$</p>
+        <p>本文是对《深度学习》的第七章，正则化方法的简单学习记录。</p>
+<p>本文尚未完成。仅供参考。<br><a id="more"></a></p>
+<h2 id="7-1-参数范式惩罚"><a href="#7-1-参数范式惩罚" class="headerlink" title="7.1 参数范式惩罚"></a>7.1 参数范式惩罚</h2><p>对目标模型J添加一个参数范数惩罚$\Omega (\theta)$，限制模型 的学习能力。正则化后的目标函数记为：<br>$$\tilde{J}(\theta ;X,y) = J(\theta ;X,y) +\alpha \Omega (\theta)$$</p>
 <p>我们通常只对权重做惩罚而不对偏置做正则惩罚。</p>
 <p>神经网络情况下，有时候希望对网络的每一层使用单独的惩罚，并分配不同的$\alpha$系数。寻找合适的多个超参数的代价很大，因此为了减少搜索空间，我们会在所以层使用相同的权重衰减。</p>
 <p>符号约束说明：向量$w$表示所有应受范数惩罚影响的权重，而向量$\theta$表示所有参数（包括w和无须正则化的参数）。</p>
@@ -848,7 +850,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      98.0k
+      98.7k
     </span>
   
 </div>

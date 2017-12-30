@@ -108,18 +108,18 @@
 
 
 
-<meta name="description" content="利用MathJax来渲染LaTeX数学公式hexo主题Next中已经集成了对mathjax的支持。在主题配置文件，blog\themes\next\_config.yml中定位到如下片段: # MathJax Support mathjax:   enable: true   per_page: false   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest">
+<meta name="description" content="本文主要介绍如何在Hexo博客中使用Mathjax公式的基本配置方法，Mathjax的基本语法可参见：Mathjax基本语法。 并且解决了Hexo博客在使用过程中，Markdown语法默认渲染效果与Mathjax语法互相冲突的问题。">
 <meta name="keywords" content="hexo,博客,MathJax">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo博客使用MathJax并解决markdown渲染冲突问题">
 <meta property="og:url" content="https://wangwlj.com/2017/09/21/markdown_mathjax/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="利用MathJax来渲染LaTeX数学公式hexo主题Next中已经集成了对mathjax的支持。在主题配置文件，blog\themes\next\_config.yml中定位到如下片段: # MathJax Support mathjax:   enable: true   per_page: false   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest">
+<meta property="og:description" content="本文主要介绍如何在Hexo博客中使用Mathjax公式的基本配置方法，Mathjax的基本语法可参见：Mathjax基本语法。 并且解决了Hexo博客在使用过程中，Markdown语法默认渲染效果与Mathjax语法互相冲突的问题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-27T13:43:12.000Z">
+<meta property="og:updated_time" content="2017-12-30T14:48:16.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo博客使用MathJax并解决markdown渲染冲突问题">
-<meta name="twitter:description" content="利用MathJax来渲染LaTeX数学公式hexo主题Next中已经集成了对mathjax的支持。在主题配置文件，blog\themes\next\_config.yml中定位到如下片段: # MathJax Support mathjax:   enable: true   per_page: false   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest">
+<meta name="twitter:description" content="本文主要介绍如何在Hexo博客中使用Mathjax公式的基本配置方法，Mathjax的基本语法可参见：Mathjax基本语法。 并且解决了Hexo博客在使用过程中，Markdown语法默认渲染效果与Mathjax语法互相冲突的问题。">
 
 
 
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  606
+                  684
                 </span>
               
 
@@ -468,7 +468,10 @@
       
 
       
-        <h2 id="利用MathJax来渲染LaTeX数学公式"><a href="#利用MathJax来渲染LaTeX数学公式" class="headerlink" title="利用MathJax来渲染LaTeX数学公式"></a>利用MathJax来渲染LaTeX数学公式</h2><p>hexo主题Next中已经集成了对mathjax的支持。在<code>主题配置文件</code>，<code>blog\themes\next\_config.yml</code>中定位到如下片段:</p>
+        <p>本文主要介绍如何在Hexo博客中使用Mathjax公式的基本配置方法，Mathjax的基本语法可参见：<a href="http://wangwlj.com/2017/10/08/mathjax_basic/">Mathjax基本语法</a>。</p>
+<p>并且解决了Hexo博客在使用过程中，Markdown语法默认渲染效果与Mathjax语法互相冲突的问题。</p>
+<a id="more"></a>
+<h2 id="利用MathJax来渲染LaTeX数学公式"><a href="#利用MathJax来渲染LaTeX数学公式" class="headerlink" title="利用MathJax来渲染LaTeX数学公式"></a>利用MathJax来渲染LaTeX数学公式</h2><p>hexo主题Next中已经集成了对mathjax的支持。在<code>主题配置文件</code>，<code>blog\themes\next\_config.yml</code>中定位到如下片段:</p>
 <pre><code># MathJax Support
 mathjax:
   enable: true
@@ -488,14 +491,14 @@ hexo math install
 \end{eqnarray}
 $$
 </code></pre><p>$$<br>\begin{eqnarray}<br>\nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \\<br>\nabla\cdot\vec{B} &amp;=&amp; 0 \\<br>\nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \\<br>\nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)<br>\end{eqnarray}<br>$$</p>
-<p>这时如果你会发现出了一些问题，原因是hexo先用<code>marked.js</code>渲染，然后再交给<code>MathJax</code>渲染。在<code>marked.js</code>渲染的时候下划线_是被escape掉并且换成了<code>&lt;em&gt;</code>标签，即斜体字，另外LaTeX中的<code>\\</code>也会被转义成一个\，这样会导致<code>MathJax</code>渲染时不认为它是一个换行符了。</p>
-<h2 id="mathjax与markdown默认渲染冲突"><a href="#mathjax与markdown默认渲染冲突" class="headerlink" title="mathjax与markdown默认渲染冲突"></a>mathjax与markdown默认渲染冲突</h2><p>解决方案为：修改Hexo渲染源码。</p>
+<p>这时如果你会发现出了一些问题，原因是hexo先用<code>marked.js</code>渲染，然后再交给<code>MathJax</code>渲染。在<code>marked.js</code>渲染的时候下划线<code>_</code>是被escape掉并且换成了<code>&lt;em&gt;</code>标签，即斜体字，另外LaTeX中的<code>\\</code>也会被转义成一个<code>\</code>，这样会导致<code>MathJax</code>渲染时不认为它是一个换行符了。</p>
+<h2 id="mathjax与markdown默认渲染冲突的解决方案"><a href="#mathjax与markdown默认渲染冲突的解决方案" class="headerlink" title="mathjax与markdown默认渲染冲突的解决方案"></a>mathjax与markdown默认渲染冲突的解决方案</h2><p>解决方案为：修改Hexo渲染源码。</p>
 <p>这个方法是我目前使用的，相对来说，通用性较高的一种方式。思路就是修改hexo的渲染源码: <code>nodes_modules/lib/marked/lib/marked.js</code>:</p>
 <ul>
-<li>去掉<code>\</code>的额外转义</li>
-</ul>
-<ul>
-<li>将em标签对应的符号中，去掉_,因为<code>markdown</code>中有<code>*</code>可以表示斜体，<code>—</code>就去掉了。</li>
+<li><p>去掉<code>\</code>的额外转义</p>
+</li>
+<li><p>将em标签对应的符号中，去掉<code>_</code>,因为<code>markdown</code>中有<code>*</code>可以表示斜体，<code>——</code>完全可以去掉。</p>
+</li>
 </ul>
 <p>具体思路参考了使Marked.js与MathJax共存, 打开<code>nodes_modules/marked/lib/marked.js</code>:<br>第一步: 找到下面的代码:</p>
 <pre><code>escape: /^\\([\\`*{}\[\]()# +\-.!_&gt;])/,
@@ -505,7 +508,7 @@ $$
 <pre><code>em: /^\b_((?:[^_]|__)+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
 </code></pre><p>改为:</p>
 <pre><code>em:/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
-</code></pre><p>去掉_的斜体含义,这样就解决了。为什么说通用性很高，因为我们没有修改文章的内容，可以放到别的引擎下也会顺利渲染。</p>
+</code></pre><p>去掉<code>_</code>的斜体含义，这样就解决了。为什么说通用性很高，因为我们没有修改文章的内容，可以放到别的引擎下也会顺利渲染。</p>
 <blockquote>
 <p>这个困扰我许久的问题终于这么解决了。之前一直按照标准mathjax语法写公式，但是有的时候就会无法显示公式。</p>
 <p>按照上述修改后，markdown不再处理(公式中的)<code>_</code>以及<code>\</code>。mathjax语法畅行无阻。</p>
@@ -822,7 +825,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用MathJax来渲染LaTeX数学公式"><span class="nav-number">1.</span> <span class="nav-text">利用MathJax来渲染LaTeX数学公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathjax与markdown默认渲染冲突"><span class="nav-number">2.</span> <span class="nav-text">mathjax与markdown默认渲染冲突</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用MathJax来渲染LaTeX数学公式"><span class="nav-number">1.</span> <span class="nav-text">利用MathJax来渲染LaTeX数学公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathjax与markdown默认渲染冲突的解决方案"><span class="nav-number">2.</span> <span class="nav-text">mathjax与markdown默认渲染冲突的解决方案</span></a></li></ol></div>
             
 
           </div>
@@ -865,7 +868,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      98.0k
+      98.7k
     </span>
   
 </div>

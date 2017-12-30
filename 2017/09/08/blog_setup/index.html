@@ -108,13 +108,13 @@
 
 
 
-<meta name="description" content="准备工作1、安装 Node.js: https://nodejs.org/en/ 2、安装 Git: https://github.com/waylau/git-for-win Git教程 https://github.com/waylau/git-for-win廖雪峰老师的教程，非常好。 3、安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，名称和邮箱是Github上的。">
+<meta name="description" content="想要搭建类似的博客吗？ 如果是，那就赶快点进来吧～～ 手把手教学，现在开始！！">
 <meta name="keywords" content="hexo,博客,GitHub">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo+GitHub博客搭建实战">
 <meta property="og:url" content="https://wangwlj.com/2017/09/08/blog_setup/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="准备工作1、安装 Node.js: https://nodejs.org/en/ 2、安装 Git: https://github.com/waylau/git-for-win Git教程 https://github.com/waylau/git-for-win廖雪峰老师的教程，非常好。 3、安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，名称和邮箱是Github上的。">
+<meta property="og:description" content="想要搭建类似的博客吗？ 如果是，那就赶快点进来吧～～ 手把手教学，现在开始！！">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://wangwlj.com/2017/09/08/blog_setup/git_1.png">
 <meta property="og:image" content="https://wangwlj.com/2017/09/08/blog_setup/hexo_1.png">
@@ -130,10 +130,10 @@
 <meta property="og:image" content="https://wangwlj.com/2017/09/08/blog_setup/error_1_done.png">
 <meta property="og:image" content="https://wangwlj.com/2017/09/08/blog_setup/git_hexo_deploy_error.png">
 <meta property="og:image" content="https://wangwlj.com/2017/09/08/blog_setup/git_hexo_deploy_error_done.png">
-<meta property="og:updated_time" content="2017-12-27T06:42:47.915Z">
+<meta property="og:updated_time" content="2017-12-30T08:07:28.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+GitHub博客搭建实战">
-<meta name="twitter:description" content="准备工作1、安装 Node.js: https://nodejs.org/en/ 2、安装 Git: https://github.com/waylau/git-for-win Git教程 https://github.com/waylau/git-for-win廖雪峰老师的教程，非常好。 3、安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，名称和邮箱是Github上的。">
+<meta name="twitter:description" content="想要搭建类似的博客吗？ 如果是，那就赶快点进来吧～～ 手把手教学，现在开始！！">
 <meta name="twitter:image" content="https://wangwlj.com/2017/09/08/blog_setup/git_1.png">
 
 
@@ -458,7 +458,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,009
+                  2,089
                 </span>
               
 
@@ -483,14 +483,20 @@
       
 
       
-        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1、安装 Node.js: <a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></p>
+        <p>想要搭建类似的博客吗？</p>
+<p>如果是，那就赶快点进来吧～～</p>
+<p>手把手教学，现在开始！！</p>
+<a id="more"></a>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1、安装 Node.js: <a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></p>
 <p>2、安装 Git: <a href="https://github.com/waylau/git-for-win" target="_blank" rel="external">https://github.com/waylau/git-for-win</a></p>
-<p>Git教程 <code>https://github.com/waylau/git-for-win</code>廖雪峰老师的教程，非常好。</p>
+<p>Git教程 <code>https://github.com/waylau/git-for-win</code>廖雪峰老师的教程，非常好。（本篇教程中无须观看也可完成搭建）</p>
 <p>3、安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，名称和邮箱是Github上的。</p>
 <p><img src="/2017/09/08/blog_setup/git_1.png" alt="Git Bash界面与指令"></p>
-<p>4、安装 Hexo。所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
-<pre><code>$ npm install -g hexo-cli
-</code></pre><p>5、安装hexo出错：<code>unable to verify the first certificate</code>（无法验证第一证书）</p>
+<p>4、安装 Hexo。所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<p>5、安装hexo出错(上一步安装没有出错即可跳过)：</p>
+<blockquote>
+<p><code>unable to verify the first certificate</code>（无法验证第一证书）</p>
+</blockquote>
 <p><img src="/2017/09/08/blog_setup/hexo_1.png" alt="安装hexo出错截图"></p>
 <p>查找到解决方案：</p>
 <p><img src="/2017/09/08/blog_setup/hexo_2.png" alt="解决方案截图-推荐方案一"></p>
@@ -507,22 +513,25 @@
 <p>仓库创建完成后，开始生成添加秘钥。</p>
 <p>在终端（cmd）输入：</p>
 <pre><code>ssh-keygen -t rsa -C &quot;Github的注册邮箱地址&quot;
-</code></pre><p>一路Enter过来就好，待秘钥生成完毕，会得到两个文件id_rsa和id_rsa.pub，用带格式的记事本打开id_rsa.pub，Ctrl + a复制里面的所有内容，然后进入<a href="https://github.com/settings/ssh：" target="_blank" rel="external">https://github.com/settings/ssh：</a></p>
+</code></pre><p>一路Enter过来就好，待秘钥生成完毕，会得到两个文件id_rsa和id_rsa.pub，用带格式的记事本打开id_rsa.pub，Ctrl + a复制里面的所有内容，然后进入<br><a href="https://github.com/settings/ssh" target="_blank" rel="external">https://github.com/settings/ssh</a> </p>
 <p><img src="/2017/09/08/blog_setup/github_2.png" alt="githhub输入秘钥"></p>
 <p>将复制的内容粘贴到Key的输入框，随便写好Title里面的内容，点击Add SSH key按钮即可。</p>
 <p>若没有配置GitHub，就执行第三步（初始化博客），会出现如下错误：</p>
 <p><img src="/2017/09/08/blog_setup/hexo_4.png" alt="初始化错误"></p>
 <h2 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h2><p>在电脑F盘（自己随意）目录下新建文件夹 test，进入test，按住Shift键点击鼠标右键，点击“在此处打开命令窗口”：</p>
 <p><img src="/2017/09/08/blog_setup/blog_1.png" alt="右键选择菜单"></p>
-<p>输入</p>
-<pre><code>hexo init blog
-</code></pre><p>稍微等待下，速度有点慢。成功提示：</p>
-<pre><code>INFO  Start blogging with Hexo!
-</code></pre><p>因为你初始化hexo 之后source目录下自带一篇<code>hello world</code>文章, 所以直接执行下方命令:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> hexo generate</div><div class="line"><span class="meta">#</span> 启动本地服务器</div><div class="line"><span class="meta">$</span> hexo server</div><div class="line"><span class="meta">#</span> 在浏览器输入 http://localhost:4000/就可以看见网页和模板了</div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
+<p>输入：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init blog</div></pre></td></tr></table></figure></p>
+<p>稍微等待下，速度有点慢。成功提示：</p>
+<blockquote>
+<p>INFO  Start blogging with Hexo!</p>
+</blockquote>
+<p>因为你初始化hexo 之后source目录下自带一篇<code>hello world</code>文章, 所以直接执行下方命令:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> hexo generate</div><div class="line"><span class="meta">#</span> 启动本地服务器</div><div class="line"><span class="meta">$</span> hexo server</div><div class="line"><span class="meta">#</span> 在浏览器输入 http://localhost:4000/就可以看见网页和模板了</div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
 <p>访问<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>，便可以看到网站初步的模样，不要激动，我们还要把网页发布到Github上去。</p>
 <p><img src="/2017/09/08/blog_setup/blog_local_server.png" alt="localhost上的网站初步形状"></p>
 <h2 id="配置博客"><a href="#配置博客" class="headerlink" title="配置博客"></a>配置博客</h2><p>在<code>blog</code>目录下，用<code>sublime/notepad++</code>等文本编辑器打开<code>_config.yml</code>文件，修改参数信息</p>
-<p>特别提醒，在每个参数的：后都要加一个空格</p>
+<blockquote>
+<p>特别提醒，在每个参数的：后都需要有一个空格</p>
+</blockquote>
 <h3 id="修改网站相关信息"><a href="#修改网站相关信息" class="headerlink" title="修改网站相关信息"></a>修改网站相关信息</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: wangwlj测试所用博客</div><div class="line">subtitle: 积跬步以至千里！</div><div class="line">description: 网页描述</div><div class="line">author: wangwlj</div><div class="line">language: zh-CN</div><div class="line">timezone: Asia/Shanghai</div></pre></td></tr></table></figure>
 <p><code>language</code>和<code>timezone</code>都是有输入规范的，详细可参考 <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank" rel="external">语言规范</a>和<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="external">时区规范</a>。</p>
 <h3 id="配置部署"><a href="#配置部署" class="headerlink" title="配置部署"></a>配置部署</h3><p>代码中的qwerty200696，修改成自己的。</p>
@@ -540,7 +549,7 @@
 <pre><code>$ hexo new &quot;我的测试文章&quot;
 
 INFO  Created: F:\test\blog\source\_posts\我的测试文章.md
-</code></pre><p>2.找到该文章，打开，使用Markdown语法编辑文章。</p>
+</code></pre><p>2.根据上述路径找到该文章，打开，使用Markdown语法编辑文章。</p>
 <p>该语法介绍可以查看：<a href="https://zhangslob.github.io/2017/02/26/%E5%88%A9%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">markdown语法</a></p>
 <p>在文章的一开始处，可以按如下格式添加文章标题，日期，分类、标签以及描述等。</p>
 <pre><code>---
@@ -556,8 +565,8 @@ tags: #文章標籤 可以省略
 <p>我直接跑的server，也可以。</p>
 <p>最后一步，发布到网上，执行：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">F:\test\blog</div><div class="line"><span class="meta">$</span> hexo deploy</div><div class="line">INFO  Deploying: git</div><div class="line">INFO  Clearing .deploy_git folder...</div><div class="line">INFO  Copying files from public folder...</div><div class="line"><span class="meta">#</span>省略</div></pre></td></tr></table></figure></p>
 <p>其中会跳出Github登录，直接登录，如果没有问题，在浏览器输入<code>qwerty200696（换成你的）.github.io/</code></p>
-<p>我的测试所用博客 <code>https://qwerty200696.github.io/</code></p>
-<p>然后就可以看到已经发布了。</p>
+<p>我的博客 <code>https://qwerty200696.github.io/</code></p>
+<p>然后就可以看到已经发布了。（有可能稍有延迟）</p>
 <h3 id="错误记录一"><a href="#错误记录一" class="headerlink" title="错误记录一"></a>错误记录一</h3><pre><code>deploy not found： git
 </code></pre><p><img src="/2017/09/08/blog_setup/error_1.png" alt="deploy not found： git"></p>
 <p>解决方案：执行如下语句后， 再部署即可：</p>
@@ -592,32 +601,27 @@ Error: fatal: unable to access &apos;https://username:password@github.com/userna
 <p>1 把主页配置文件<code>_config.yml</code> 里的<code>post_asset_folder:</code>这个选项设置为<code>true</code></p>
 <p>2 在你的hexo目录下执行这样一句话<code>npm install hexo-asset-image --save</code>，这是下载安装一个可以上传本地图片的插件</p>
 <p>3 等待一小段时间后，再运行<code>hexo n &quot;xxxx&quot;</code>来生成<code>md</code>博文时，<code>/source/_posts</code>文件夹内除了<code>xxxx.md</code>文件还有一个同名的文件夹</p>
-<p>4 最后在xxxx.md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx.md中按照markdown的格式引入图片：</p>
-<pre><code>![你想输入的替代文字](xxxx/图片名.jpg)
-</code></pre><p>注意： <code>xxxx</code>是这个md文件的名字，也是同名文件夹的名字。只需要有文件夹名字即可，不需要有什么绝对路径。你想引入的图片就只需要放入<code>xxxx</code>这个文件夹内就好了，很像引用相对路径。</p>
+<p>4 最后在xxxx.md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx.md中按照markdown的格式引入图片：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![你想输入的替代文字](xxxx/图片名.jpg)</div></pre></td></tr></table></figure></p>
+<p>注意： <code>xxxx</code>是这个md文件的名字，也是同名文件夹的名字。只需要有文件夹名字即可，不需要有什么绝对路径。你想引入的图片就只需要放入<code>xxxx</code>这个文件夹内就好了，很像引用相对路径。</p>
 <p>5 最后检查一下，<code>hexo g</code>生成页面后，进入<code>public\2017\02\26\index.html</code>文件中查看相关字段，可以发现，html标签内的语句是<code>&lt;img src=&quot;2017/02/26/xxxx/图片名.jpg&quot;&gt;</code>，而不是<code>&lt;img src=&quot;xxxx/图片名.jpg&gt;</code>。这很重要，关乎你的网页是否可以真正加载你想插入的图片。</p>
 <p>6.<code>hexo s</code>，运行本地服务器，打开<code>http://localhost:4000/</code>，可实时查看修改情况。</p>
-<p>7.<code>hexo g</code>，同步到github。</p>
+<p>7.<code>hexo d</code>，同步到github。</p>
 <p>参考自：<a href="http://blog.csdn.net/sugar_rainbow/article/details/57415705" target="_blank" rel="external">hexo生成博文插入图片</a></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>发布文章的步骤：</p>
 <p>1、<code>hexo new</code> 创建文章</p>
 <p>2、<code>Markdown</code>语法编辑文章</p>
-<p>3、部署（所有打开CMD都是在blog目录下）</p>
-<pre><code>hexo clean #清除缓存 网页正常情况下可以忽略此条命令
-hexo generate #生成
-hexo server #启动服务预览，非必要，可本地浏览网页
-hexo deploy #部署发布
-</code></pre><p>简写Tips：</p>
+<p>3、部署（所有打开CMD都是在blog目录下）<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo clean #清除缓存 网页正常情况下可以忽略此条命令</div><div class="line">hexo generate #生成</div><div class="line">hexo server #启动服务预览，非必要，可本地浏览网页</div><div class="line">hexo deploy #部署发布</div></pre></td></tr></table></figure></p>
+<p>部分命令可以简写。简写Tips：</p>
 <ol>
 <li><p>hexo n “我的博客” == hexo new “我的博客” #新建文章</p>
 </li>
 <li><p>hexo p == hexo publish</p>
 </li>
-<li><p>hexo g == hexo generate#生成</p>
+<li><p>hexo g == hexo generate # 生成</p>
 </li>
-<li><p>hexo s == hexo server #启动服务预览</p>
+<li><p>hexo s == hexo server # 启动服务预览</p>
 </li>
-<li><p>hexo d == hexo deploy#部署</p>
+<li><p>hexo d == hexo deploy # 部署</p>
 </li>
 </ol>
 <p>参考文献：</p>
@@ -978,7 +982,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      98.0k
+      98.7k
     </span>
   
 </div>

@@ -803,7 +803,7 @@ $ cmake -DOPENCV_EXTRA
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  606
+                  684
                 </span>
               
 
@@ -829,16 +829,8 @@ $ cmake -DOPENCV_EXTRA
 
       
         
-          
-          利用MathJax来渲染LaTeX数学公式hexo主题Next中已经集成了对mathjax的支持。在主题配置文件，blog\themes\next\_config.yml中定位到如下片段:
-# MathJax Support
-mathjax:
-  enable: true
-  per_page: false
-  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
-将enable中的false改为true即可。
-另外，再安装一个自动部署MathJax的hexo插件 。安装方式也很简单，在你的博客文
-          ...
+          <p>本文主要介绍如何在Hexo博客中使用Mathjax公式的基本配置方法，Mathjax的基本语法可参见：<a href="http://wangwlj.com/2017/10/08/mathjax_basic/">Mathjax基本语法</a>。</p>
+<p>并且解决了Hexo博客在使用过程中，Markdown语法默认渲染效果与Mathjax语法互相冲突的问题。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/09/21/markdown_mathjax/#more" rel="contents">
@@ -1559,7 +1551,7 @@ outputVideo.release(); //可以不要
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,019
+                  1,139
                 </span>
               
 
@@ -1585,26 +1577,7 @@ outputVideo.release(); //可以不要
 
       
         
-          
-          
-mathjax公式中不能有多余的{}
-
-网络结构参数说明BP神经网络示意图
-网络结构一个输入层，两个隐含层，一个输出层。
-参数标记
-输入层神经元个数n、输出层神经元个数m【其中有m=n，每一帧都有对应的输出】
-
-
-两个隐含层神经元个数均为100
-
-
-权值：输入层与第一个隐含层之间的权值为$w_{ij}$，两个隐含层之间的权值为$w_{jk}$，第二个隐含层与输出层之间的权值为$w_{kl}$
-
-
-阈值：两个隐含层$a^1_j,a^2_k$,输出层$b_l$
-
-其中，$i=1,2,…,n$，$j,k=1,2,…,100$，$l=1,2,…,m$凡是下标含有$i,j,k,l$的，均表示单个神经元
-          ...
+          <p>本文介绍了BP网络中的前向传播和反向传播过程的公式与推导，读者可自行揣摩。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/09/12/BP_derivation/#more" rel="contents">
@@ -1761,7 +1734,7 @@ mathjax公式中不能有多余的{}
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5,329
+                  5,333
                 </span>
               
 
@@ -1787,13 +1760,7 @@ mathjax公式中不能有多余的{}
 
       
         
-          
-          本篇教程基于NexT主题的博客配置，实现更换主题、评论、打赏等36项功能，接下来根据这些功能进行分点描述，附上个人博客以供比对参考：链接。
-搭建基本Hexo博客Hexo博客基本搭建参考：《hexo+GitHub博客搭建实战》一文，，笔者按照教程的顺序一步一步来，是没有出现错误的，如果读者们在搭建的时候遇到了问题不知如何解决，笔者会尽自己所能帮助读者，并将遇到的问题及解决方法附在文章下方。
-Hexo博客绑定域名关于Hexo博客如何绑定自己的域名，详情可参阅《hexo搭建的Github博客绑定域名》一文。
-博主按照上述教程，已经成功地绑定域名wangwlj.com。
-更换Hexo主题笔者更换后的主
-          ...
+          <p>本篇教程基于NexT主题的博客配置，实现更换主题、评论、打赏等36项功能，接下来根据这些功能进行分点描述，附上个人博客以供比对参考：<a href="https://qwerty200696.github.io" target="_blank" rel="external">个人博客链接</a>。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/09/09/blog-opti/#more" rel="contents">
@@ -1950,7 +1917,7 @@ Hexo博客绑定域名关于Hexo博客如何绑定自己的域名，详情可参
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,009
+                  2,089
                 </span>
               
 
@@ -1976,16 +1943,9 @@ Hexo博客绑定域名关于Hexo博客如何绑定自己的域名，详情可参
 
       
         
-          
-          准备工作1、安装 Node.js: https://nodejs.org/en/
-2、安装 Git: https://github.com/waylau/git-for-win
-Git教程 https://github.com/waylau/git-for-win廖雪峰老师的教程，非常好。
-3、安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，名称和邮箱是Github上的。
-
-4、安装 Hexo。所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。
-$ npm install -g hexo-cli
-5、安装hexo出错：unable to verify the
-          ...
+          <p>想要搭建类似的博客吗？</p>
+<p>如果是，那就赶快点进来吧～～</p>
+<p>手把手教学，现在开始！！</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/09/08/blog_setup/#more" rel="contents">
@@ -2414,7 +2374,7 @@ $ npm install -g hexo-cli
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      98.0k
+      98.7k
     </span>
   
 </div>

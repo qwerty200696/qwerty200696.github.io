@@ -108,13 +108,13 @@
 
 
 
-<meta name="description" content="梯度下降法梯度下降是一个最优化算法，通俗的来讲也就是沿着梯度下降的方向来求出一个函数的极小值。 那么我们在高等数学中学过，对于一些我们了解的函数方程，我们可以对其求一阶导和二阶导，比如说二次函数。可是我们在处理问题的时候遇到的并不都是我们熟悉的函数，并且既然是机器学习就应该让机器自己去学习如何对其进行求解，显然我们需要换一个思路。因此我们采用梯度下降，不断迭代，沿着梯度下降的方向来移动，求出极小值">
+<meta name="description" content="“请简述梯度下降算法以及如何优化梯度下降算法？” 上述是机器学习中常见面试题之一，本文将稍作阐述，仅供参考。">
 <meta name="keywords" content="deep learning,gradient descent,梯度下降">
 <meta property="og:type" content="article">
 <meta property="og:title" content="梯度下降及其优化算法">
 <meta property="og:url" content="https://wangwlj.com/2017/10/17/DL_gradient_descent/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="梯度下降法梯度下降是一个最优化算法，通俗的来讲也就是沿着梯度下降的方向来求出一个函数的极小值。 那么我们在高等数学中学过，对于一些我们了解的函数方程，我们可以对其求一阶导和二阶导，比如说二次函数。可是我们在处理问题的时候遇到的并不都是我们熟悉的函数，并且既然是机器学习就应该让机器自己去学习如何对其进行求解，显然我们需要换一个思路。因此我们采用梯度下降，不断迭代，沿着梯度下降的方向来移动，求出极小值">
+<meta property="og:description" content="“请简述梯度下降算法以及如何优化梯度下降算法？” 上述是机器学习中常见面试题之一，本文将稍作阐述，仅供参考。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://wangwlj.com/2017/10/17/DL_gradient_descent/Saddle.png">
 <meta property="og:image" content="https://wangwlj.com/2017/10/17/DL_gradient_descent/SGD_momen.jpg">
@@ -126,10 +126,10 @@
 <meta property="og:image" content="https://wangwlj.com/2017/10/17/DL_gradient_descent/adam.png">
 <meta property="og:image" content="https://wangwlj.com/2017/10/17/DL_gradient_descent/gif_1.gif">
 <meta property="og:image" content="https://wangwlj.com/2017/10/17/DL_gradient_descent/gif_2.gif">
-<meta property="og:updated_time" content="2017-10-17T14:42:51.000Z">
+<meta property="og:updated_time" content="2017-12-30T14:11:45.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="梯度下降及其优化算法">
-<meta name="twitter:description" content="梯度下降法梯度下降是一个最优化算法，通俗的来讲也就是沿着梯度下降的方向来求出一个函数的极小值。 那么我们在高等数学中学过，对于一些我们了解的函数方程，我们可以对其求一阶导和二阶导，比如说二次函数。可是我们在处理问题的时候遇到的并不都是我们熟悉的函数，并且既然是机器学习就应该让机器自己去学习如何对其进行求解，显然我们需要换一个思路。因此我们采用梯度下降，不断迭代，沿着梯度下降的方向来移动，求出极小值">
+<meta name="twitter:description" content="“请简述梯度下降算法以及如何优化梯度下降算法？” 上述是机器学习中常见面试题之一，本文将稍作阐述，仅供参考。">
 <meta name="twitter:image" content="https://wangwlj.com/2017/10/17/DL_gradient_descent/Saddle.png">
 
 
@@ -454,7 +454,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,671
+                  2,718
                 </span>
               
 
@@ -479,7 +479,9 @@
       
 
       
-        <h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><p>梯度下降是一个最优化算法，通俗的来讲也就是沿着梯度下降的方向来求出一个函数的极小值。</p>
+        <p>“请简述梯度下降算法以及如何优化梯度下降算法？”</p>
+<p>上述是机器学习中常见面试题之一，本文将稍作阐述，仅供参考。<br><a id="more"></a></p>
+<h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><p>梯度下降是一个最优化算法，通俗的来讲也就是沿着梯度下降的方向来求出一个函数的极小值。</p>
 <p>那么我们在高等数学中学过，对于一些我们了解的函数方程，我们可以对其求一阶导和二阶导，比如说二次函数。可是我们在处理问题的时候遇到的并不都是我们熟悉的函数，并且既然是机器学习就应该让机器自己去学习如何对其进行求解，显然我们需要换一个思路。因此我们采用梯度下降，不断迭代，沿着梯度下降的方向来移动，求出极小值。</p>
 <h3 id="批量梯度下降（Batch-gradient-descent）"><a href="#批量梯度下降（Batch-gradient-descent）" class="headerlink" title="批量梯度下降（Batch gradient descent）"></a>批量梯度下降（Batch gradient descent）</h3><p>现在我们就要求出<code>J(θ)</code>取到极小值时的θT向量。之前已经说过了，沿着函数梯度的方向下降就能最快的找到极小值。</p>
 <p>$$\theta=\theta-\eta \nabla_\theta{J(\theta)}$$</p>
@@ -536,7 +538,7 @@
 <p><img src="/2017/10/17/DL_gradient_descent/Saddle.png" alt=""></p>
 <h2 id="梯度下降算法的改进"><a href="#梯度下降算法的改进" class="headerlink" title="梯度下降算法的改进"></a>梯度下降算法的改进</h2><h3 id="冲量-Momentum"><a href="#冲量-Momentum" class="headerlink" title="冲量(Momentum)"></a>冲量(Momentum)</h3><p>实际中，我们遇到的目标函数往往在不同的维度上梯度相差很大，比如在下面的函数等高线图中可以看出函数在纵向上要比横向陡峭得多。</p>
 <p><img src="/2017/10/17/DL_gradient_descent/SGD_momen.jpg" alt=""></p>
-<p>然而`SGD等基本梯度下降算法并不知道这些，因为y方向梯度大x方向梯度小所以它们会在y方向上不断摇摆而沿x方向缓慢移动，但是我们知道在y方向的震荡是无用的只有x方向的才在不断接近最优点。</p>
+<p>然而<code>SGD</code>等基本梯度下降算法并不知道这些，因为y方向梯度大x方向梯度小所以它们会在y方向上不断摇摆而沿x方向缓慢移动，但是我们知道在y方向的震荡是无用的只有x方向的才在不断接近最优点。</p>
 <p>冲量方法在<code>SGD</code>的基础上，加上了上一步的梯度：</p>
 <p><img src="/2017/10/17/DL_gradient_descent/equa_1.png" alt=""></p>
 <p>其中γ通常设为0.9。</p>
@@ -920,7 +922,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      98.0k
+      98.7k
     </span>
   
 </div>

@@ -108,23 +108,23 @@
 
 
 
-<meta name="description" content="mathjax公式中不能有多余的{}  网络结构参数说明BP神经网络示意图 网络结构一个输入层，两个隐含层，一个输出层。 参数标记 输入层神经元个数n、输出层神经元个数m【其中有m=n，每一帧都有对应的输出】   两个隐含层神经元个数均为100   权值：输入层与第一个隐含层之间的权值为$w_{ij}$，两个隐含层之间的权值为$w_{jk}$，第二个隐含层与输出层之间的权值为$w_{kl}$">
+<meta name="description" content="本文介绍了BP网络中的前向传播和反向传播过程的公式与推导，读者可自行揣摩。">
 <meta name="keywords" content="神经网络,deep learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BP神经网络部分具体的推导">
 <meta property="og:url" content="https://wangwlj.com/2017/09/12/BP_derivation/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="mathjax公式中不能有多余的{}  网络结构参数说明BP神经网络示意图 网络结构一个输入层，两个隐含层，一个输出层。 参数标记 输入层神经元个数n、输出层神经元个数m【其中有m=n，每一帧都有对应的输出】   两个隐含层神经元个数均为100   权值：输入层与第一个隐含层之间的权值为$w_{ij}$，两个隐含层之间的权值为$w_{jk}$，第二个隐含层与输出层之间的权值为$w_{kl}$">
+<meta property="og:description" content="本文介绍了BP网络中的前向传播和反向传播过程的公式与推导，读者可自行揣摩。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://wangwlj.com/2017/09/12/BP_derivation/bp_net.png">
 <meta property="og:image" content="https://wangwlj.com/2017/09/12/BP_derivation/tanhx.png">
 <meta property="og:image" content="https://wangwlj.com/2017/09/12/BP_derivation/tanx_2.png">
 <meta property="og:image" content="https://wangwlj.com/2017/09/12/BP_derivation/tanhx_deri.png">
 <meta property="og:image" content="https://wangwlj.com/2017/09/12/BP_derivation/tanhx_deri_2.png">
-<meta property="og:updated_time" content="2017-09-23T10:53:26.000Z">
+<meta property="og:updated_time" content="2017-12-30T08:15:58.423Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BP神经网络部分具体的推导">
-<meta name="twitter:description" content="mathjax公式中不能有多余的{}  网络结构参数说明BP神经网络示意图 网络结构一个输入层，两个隐含层，一个输出层。 参数标记 输入层神经元个数n、输出层神经元个数m【其中有m=n，每一帧都有对应的输出】   两个隐含层神经元个数均为100   权值：输入层与第一个隐含层之间的权值为$w_{ij}$，两个隐含层之间的权值为$w_{jk}$，第二个隐含层与输出层之间的权值为$w_{kl}$">
+<meta name="twitter:description" content="本文介绍了BP网络中的前向传播和反向传播过程的公式与推导，读者可自行揣摩。">
 <meta name="twitter:image" content="https://wangwlj.com/2017/09/12/BP_derivation/bp_net.png">
 
 
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,019
+                  1,139
                 </span>
               
 
@@ -474,31 +474,38 @@
       
 
       
-        <blockquote>
-<p>mathjax公式中不能有多余的{}</p>
+        <p>本文介绍了BP网络中的前向传播和反向传播过程的公式与推导，读者可自行揣摩。</p>
+<a id="more"></a>
+<blockquote>
+<p>mathjax公式中不能有多余的{}，否则<code>hexo deploy</code>的时候会出现错误。</p>
 </blockquote>
 <h2 id="网络结构参数说明"><a href="#网络结构参数说明" class="headerlink" title="网络结构参数说明"></a>网络结构参数说明</h2><h3 id="BP神经网络示意图"><a href="#BP神经网络示意图" class="headerlink" title="BP神经网络示意图"></a><strong>BP神经网络示意图</strong></h3><p><img src="/2017/09/12/BP_derivation/bp_net.png" alt="BP神经网络示意图"></p>
+<p>注意，上述层与层之间是全连接的，示意图并没有画全。</p>
 <h3 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a><strong>网络结构</strong></h3><p>一个输入层，两个隐含层，一个输出层。</p>
 <h3 id="参数标记"><a href="#参数标记" class="headerlink" title="参数标记"></a><strong>参数标记</strong></h3><ul>
-<li>输入层神经元个数n、输出层神经元个数m【其中有m=n，每一帧都有对应的输出】</li>
-</ul>
-<ul>
-<li>两个隐含层神经元个数均为100</li>
+<li><p>输入层神经元个数n、输出层神经元个数m</p>
+</li>
+<li><p>两个隐含层神经元个数均为100</p>
+</li>
 </ul>
 <ul>
 <li>权值：输入层与第一个隐含层之间的权值为$w_{ij}$，两个隐含层之间的权值为$w_{jk}$，第二个隐含层与输出层之间的权值为$w_{kl}$</li>
 </ul>
 <ul>
-<li>阈值：两个隐含层$a^1_j,a^2_k$,输出层$b_l$</li>
+<li>阈值：两个隐含层$a^1_j,a^2_k$，输出层$b_l$</li>
 </ul>
 <p>其中，$i=1,2,…,n$，$j,k=1,2,…,100$，$l=1,2,…,m$<br>凡是下标含有$i,j,k,l$的，均表示单个神经元。</p>
-<h2 id="BP网络推导"><a href="#BP网络推导" class="headerlink" title="BP网络推导"></a>BP网络推导</h2><h3 id="两个隐含层及输出层的输出"><a href="#两个隐含层及输出层的输出" class="headerlink" title="两个隐含层及输出层的输出"></a>两个隐含层及输出层的输出</h3><p>$$H_j^1 = f(\sum_{i=1}^n w_{ij} x_i - a_{j}^1 )\ \ \ j=1,2,…,100$$</p>
+<h2 id="BP网络推导"><a href="#BP网络推导" class="headerlink" title="BP网络推导"></a>BP网络推导</h2><h3 id="前向传播"><a href="#前向传播" class="headerlink" title="前向传播"></a>前向传播</h3><p>两个隐含层及输出层的输出：</p>
+<p>$$H_j^1 = f(\sum_{i=1}^n w_{ij} x_i - a_{j}^1 )\ \ \ j=1,2,…,100$$</p>
 <p>$$<br>H_{k}^2 = f(\sum^{100}_{j=1} w_{jk} H^1_{j} - a^2_{k} )\ \ \  k = 1,2, \cdots ,100<br>$$</p>
 <p>$$<br>O_l = \sum_{k = 1}^{100} w_{kl}H_{k}^2 - {b_l} \ \ \ l = 1,2, \cdots ,m<br>$$</p>
-<h3 id="误差"><a href="#误差" class="headerlink" title="误差"></a>误差</h3><p>$$e_l = y_l - O_l\ \ \  l = 1,2, \cdots ,m$$</p>
+<h3 id="误差"><a href="#误差" class="headerlink" title="误差"></a>误差</h3><p>此处仅仅是简单相减，可以使用MSE均方误差，有空改。</p>
+<p>$$e_l = y_l - O_l\ \ \  l = 1,2, \cdots ,m$$</p>
+<p>其中，$y_l$是真实的样本输出。</p>
 <h3 id="反向传播的权值更新"><a href="#反向传播的权值更新" class="headerlink" title="反向传播的权值更新"></a>反向传播的权值更新</h3><p>$$\begin{equation}\begin{split}<br>w_{kl} &amp;= w_{kl} - dw_{kl} \\<br>&amp;= w_{kl} - \eta \frac{\partial e_l}{\partial w_{kl}}\\<br>&amp;= w_{kl} + \eta H_k^2 e_l \ \ \ \ \ \  k = 1,2, \cdots ,100 \\<br>\end{split}\end{equation}$$</p>
 <p>$$\begin{equation}\begin{split}<br>{w_{jk}}  &amp;= {w_{jk}} - \eta \frac{\partial e_l}{\partial w_{jk}} \\<br>&amp;= {w_{jk}} - \eta \frac{\partial e_l}{\partial O_l} \frac{\partial O_l}{\partial H_{k}^2} \frac{\partial H_{k}^2}{\partial w_{jk}} \\<br>&amp;= {w_{jk}} - \eta (-e_l)(\sum_{l = 1}^m w_{kl}) (f’_{H_k^2} H_j^1) \\<br>&amp;= {w_{jk}} + \eta f’_{H_k^2} H_j^1 \sum_{l = 1}^m w_{kl}e_l \ \ \ \ \  j = 1,2, \cdots ,100 \\<br>\end{split}\end{equation}$$</p>
 <p>$$\begin{equation}\begin{split}<br>{w_{ij}}  &amp;= {w_{ij}} - \eta \frac{\partial e_l}{\partial w_{ij}} \\<br>&amp;= {w_{jk}} - \eta \frac{\partial e_l}{\partial O_l} \frac{\partial O_l}{\partial H_{k}^2} \frac{\partial H_{k}^2}{\partial H_{j}^1} \frac{\partial H_{j}^1}{\partial w_{ij}} \\<br>&amp;= {w_{jk}} - \eta (-e_l)(\sum_{l = 1}^m w_{kl}) (f’_{H_k^2} \sum_{k = 1}^{100} w_{jk}) (f’_{H_j^1} x_i) \\<br>&amp;= {w_{ij}} + \eta f’_{H_j^1}{x_i}\sum_{k = 1}^{100} [(\sum_{l = 1}^m w_{kl}e_l)w_{jk}f’_{H_k^2}] \\<br>\ \ \ \  &amp;其中 i = 1,2, \cdots ,n;j = 1,2, \cdots ,100 \\<br>\end{split}\end{equation}$$</p>
+<p>这边公式需要自己推一推啦，详细地说明暂时就不多说。<br>还可以简写。有空补。</p>
 <h2 id="关于激活函数的说明"><a href="#关于激活函数的说明" class="headerlink" title="关于激活函数的说明"></a>关于激活函数的说明</h2><p>上述公式中，$f’_{H_k^2}$, $f’_{H_j^1}$ 之所以没有代入具体值，是因为这取决与所采用的激活函数。<code>DeepLearnToolBox</code>之BP算法中可采用的激活函数有两种，一是sigmoid函数，二是双曲正切函数。</p>
 <h3 id="sigmoid函数"><a href="#sigmoid函数" class="headerlink" title="sigmoid函数"></a>sigmoid函数</h3><p>当激活函数为sigmoid函数$f(x) = \frac{1} { 1 +  e^{-x}  }$时，<strong>sigmoid函数的导数</strong>具有下面的一个性质：</p>
 <p>其导数为：</p>
@@ -830,7 +837,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络结构参数说明"><span class="nav-number">1.</span> <span class="nav-text">网络结构参数说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BP神经网络示意图"><span class="nav-number">1.1.</span> <span class="nav-text">BP神经网络示意图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络结构"><span class="nav-number">1.2.</span> <span class="nav-text">网络结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数标记"><span class="nav-number">1.3.</span> <span class="nav-text">参数标记</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BP网络推导"><span class="nav-number">2.</span> <span class="nav-text">BP网络推导</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两个隐含层及输出层的输出"><span class="nav-number">2.1.</span> <span class="nav-text">两个隐含层及输出层的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误差"><span class="nav-number">2.2.</span> <span class="nav-text">误差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向传播的权值更新"><span class="nav-number">2.3.</span> <span class="nav-text">反向传播的权值更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于激活函数的说明"><span class="nav-number">3.</span> <span class="nav-text">关于激活函数的说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sigmoid函数"><span class="nav-number">3.1.</span> <span class="nav-text">sigmoid函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tanh函数"><span class="nav-number">3.2.</span> <span class="nav-text">tanh函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络结构参数说明"><span class="nav-number">1.</span> <span class="nav-text">网络结构参数说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BP神经网络示意图"><span class="nav-number">1.1.</span> <span class="nav-text">BP神经网络示意图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络结构"><span class="nav-number">1.2.</span> <span class="nav-text">网络结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数标记"><span class="nav-number">1.3.</span> <span class="nav-text">参数标记</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BP网络推导"><span class="nav-number">2.</span> <span class="nav-text">BP网络推导</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前向传播"><span class="nav-number">2.1.</span> <span class="nav-text">前向传播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误差"><span class="nav-number">2.2.</span> <span class="nav-text">误差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向传播的权值更新"><span class="nav-number">2.3.</span> <span class="nav-text">反向传播的权值更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于激活函数的说明"><span class="nav-number">3.</span> <span class="nav-text">关于激活函数的说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sigmoid函数"><span class="nav-number">3.1.</span> <span class="nav-text">sigmoid函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tanh函数"><span class="nav-number">3.2.</span> <span class="nav-text">tanh函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -873,7 +880,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      98.0k
+      98.7k
     </span>
   
 </div>
