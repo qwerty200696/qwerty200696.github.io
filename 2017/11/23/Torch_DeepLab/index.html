@@ -108,21 +108,22 @@
 
 
 
-<meta name="description" content="pytorch实现DeepLab使用pytorch搭建DeepLab。 DeepLab简介DeepLab文章的下载地址：https://arxiv.org/abs/1606.00915 该文章的主要思想之一：提出了Atrous convolution（带孔卷积）。扩大视野但不增加计算量。 所谓的带孔卷积，就是在卷积核之间加上0。rate参数为2（torch中对应的参数为dilation）的示意图如">
+<meta name="description" content="本文实现了使用pytorch搭建DeepLab。算是第一批采用Pytorch的吧，到目前为止，网上还没有类似的实现。">
 <meta name="keywords" content="deep learning,pytorch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DeepLab简介及其pytorch实现">
 <meta property="og:url" content="http://wangwlj.com/2017/11/23/Torch_DeepLab/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="pytorch实现DeepLab使用pytorch搭建DeepLab。 DeepLab简介DeepLab文章的下载地址：https://arxiv.org/abs/1606.00915 该文章的主要思想之一：提出了Atrous convolution（带孔卷积）。扩大视野但不增加计算量。 所谓的带孔卷积，就是在卷积核之间加上0。rate参数为2（torch中对应的参数为dilation）的示意图如">
+<meta property="og:description" content="本文实现了使用pytorch搭建DeepLab。算是第一批采用Pytorch的吧，到目前为止，网上还没有类似的实现。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://wangwlj.com/2017/11/23/Torch_DeepLab/different_rate.png">
 <meta property="og:image" content="http://wangwlj.com/2017/11/23/Torch_DeepLab/2.png">
 <meta property="og:image" content="http://wangwlj.com/2017/11/23/Torch_DeepLab/different_rate.png">
-<meta property="og:updated_time" content="2017-11-23T14:49:34.130Z">
+<meta property="og:updated_time" content="2017-12-31T11:55:11.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DeepLab简介及其pytorch实现">
-<meta name="twitter:description" content="pytorch实现DeepLab使用pytorch搭建DeepLab。 DeepLab简介DeepLab文章的下载地址：https://arxiv.org/abs/1606.00915 该文章的主要思想之一：提出了Atrous convolution（带孔卷积）。扩大视野但不增加计算量。 所谓的带孔卷积，就是在卷积核之间加上0。rate参数为2（torch中对应的参数为dilation）的示意图如">
-<meta name="twitter:image" content="http://wangwlj.com/2017/11/23/Torch_DeepLab/2.png">
+<meta name="twitter:description" content="本文实现了使用pytorch搭建DeepLab。算是第一批采用Pytorch的吧，到目前为止，网上还没有类似的实现。">
+<meta name="twitter:image" content="http://wangwlj.com/2017/11/23/Torch_DeepLab/different_rate.png">
 
 
 
@@ -446,7 +447,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  841
+                  868
                 </span>
               
 
@@ -471,7 +472,9 @@
       
 
       
-        <h1 id="pytorch实现DeepLab"><a href="#pytorch实现DeepLab" class="headerlink" title="pytorch实现DeepLab"></a>pytorch实现DeepLab</h1><p>使用pytorch搭建DeepLab。</p>
+        <p><img src="/2017/11/23/Torch_DeepLab/different_rate.png" alt="different_rate"></p>
+<p>本文实现了使用pytorch搭建DeepLab。算是第一批采用Pytorch的吧，到目前为止，网上还没有类似的实现。</p>
+<a id="more"></a>
 <h2 id="DeepLab简介"><a href="#DeepLab简介" class="headerlink" title="DeepLab简介"></a>DeepLab简介</h2><p>DeepLab文章的下载地址：<a href="https://arxiv.org/abs/1606.00915" target="_blank" rel="external">https://arxiv.org/abs/1606.00915</a></p>
 <p>该文章的主要思想之一：<br>提出了Atrous convolution（带孔卷积）。<br>扩大视野但不增加计算量。</p>
 <p>所谓的带孔卷积，就是在卷积核之间加上0。rate参数为2（torch中对应的参数为dilation）的示意图如下<br><img src="/2017/11/23/Torch_DeepLab/2.png" alt="Atrous convolution(rate=2)" title="Atrous convolution(rate=2)"></p>
@@ -796,7 +799,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch实现DeepLab"><span class="nav-number">1.</span> <span class="nav-text">pytorch实现DeepLab</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DeepLab简介"><span class="nav-number">1.1.</span> <span class="nav-text">DeepLab简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytorch实现deeplab"><span class="nav-number">1.2.</span> <span class="nav-text">pytorch实现deeplab</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DeepLab简介"><span class="nav-number">1.</span> <span class="nav-text">DeepLab简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytorch实现deeplab"><span class="nav-number">2.</span> <span class="nav-text">pytorch实现deeplab</span></a></li></ol></div>
             
 
           </div>
@@ -839,7 +842,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      98.7k
+      98.9k
     </span>
   
 </div>

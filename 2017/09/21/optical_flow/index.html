@@ -108,13 +108,13 @@
 
 
 
-<meta name="description" content="光流法简介光流的概念是Gibson在1950年首先提出来的。它是空间运动物体在观察成像平面上的像素运动的瞬时速度，是利用图像序列中像素在时间域上的变化以及相邻帧之间的相关性来找到上一帧跟当前帧之间存在的对应关系，从而计算出相邻帧之间物体的运动信息的一种方法。 光流法，是利用目标物体在监控场景中的空间运动，体现在视频图像序列中为不同图像颜色分布变化。导致目标物在监控场景中的空间运动场，在图像中转化为">
+<meta name="description" content="光流法简介光流的概念是Gibson在1950年首先提出来的。它是空间运动物体在观察成像平面上的像素运动的瞬时速度，是利用图像序列中像素在时间域上的变化以及相邻帧之间的相关性来找到上一帧跟当前帧之间存在的对应关系，从而计算出相邻帧之间物体的运动信息的一种方法。">
 <meta name="keywords" content="opencv,光流法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LK光流法分析及其源码">
 <meta property="og:url" content="http://wangwlj.com/2017/09/21/optical_flow/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="光流法简介光流的概念是Gibson在1950年首先提出来的。它是空间运动物体在观察成像平面上的像素运动的瞬时速度，是利用图像序列中像素在时间域上的变化以及相邻帧之间的相关性来找到上一帧跟当前帧之间存在的对应关系，从而计算出相邻帧之间物体的运动信息的一种方法。 光流法，是利用目标物体在监控场景中的空间运动，体现在视频图像序列中为不同图像颜色分布变化。导致目标物在监控场景中的空间运动场，在图像中转化为">
+<meta property="og:description" content="光流法简介光流的概念是Gibson在1950年首先提出来的。它是空间运动物体在观察成像平面上的像素运动的瞬时速度，是利用图像序列中像素在时间域上的变化以及相邻帧之间的相关性来找到上一帧跟当前帧之间存在的对应关系，从而计算出相邻帧之间物体的运动信息的一种方法。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wangwlj.com/2017/09/21/optical_flow/equ_1.png">
 <meta property="og:image" content="http://wangwlj.com/2017/09/21/optical_flow/equ_2.png">
@@ -124,10 +124,10 @@
 <meta property="og:image" content="http://wangwlj.com/2017/09/21/optical_flow/equ_6.png">
 <meta property="og:image" content="http://wangwlj.com/2017/09/21/optical_flow/equ_7.png">
 <meta property="og:image" content="http://wangwlj.com/2017/09/21/optical_flow/LK_ta.png">
-<meta property="og:updated_time" content="2017-09-21T03:34:34.000Z">
+<meta property="og:updated_time" content="2017-12-31T12:13:41.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LK光流法分析及其源码">
-<meta name="twitter:description" content="光流法简介光流的概念是Gibson在1950年首先提出来的。它是空间运动物体在观察成像平面上的像素运动的瞬时速度，是利用图像序列中像素在时间域上的变化以及相邻帧之间的相关性来找到上一帧跟当前帧之间存在的对应关系，从而计算出相邻帧之间物体的运动信息的一种方法。 光流法，是利用目标物体在监控场景中的空间运动，体现在视频图像序列中为不同图像颜色分布变化。导致目标物在监控场景中的空间运动场，在图像中转化为">
+<meta name="twitter:description" content="光流法简介光流的概念是Gibson在1950年首先提出来的。它是空间运动物体在观察成像平面上的像素运动的瞬时速度，是利用图像序列中像素在时间域上的变化以及相邻帧之间的相关性来找到上一帧跟当前帧之间存在的对应关系，从而计算出相邻帧之间物体的运动信息的一种方法。">
 <meta name="twitter:image" content="http://wangwlj.com/2017/09/21/optical_flow/equ_1.png">
 
 
@@ -478,6 +478,7 @@
 
       
         <h2 id="光流法简介"><a href="#光流法简介" class="headerlink" title="光流法简介"></a>光流法简介</h2><p>光流的概念是Gibson在1950年首先提出来的。它是空间运动物体在观察成像平面上的像素运动的瞬时速度，是利用图像序列中像素在时间域上的变化以及相邻帧之间的相关性来找到上一帧跟当前帧之间存在的对应关系，从而计算出相邻帧之间物体的运动信息的一种方法。</p>
+<a id="more"></a>
 <p>光流法，是利用目标物体在监控场景中的空间运动，体现在视频图像序列中为不同图像颜色分布变化。导致目标物在监控场景中的空间运动场，在图像中转化为光流场，体现图像中每一个像素点的变化趋势。光流场可视为监控场景中的瞬时速度场。</p>
 <p>研究光流场的目的就是为了从图片序列中近似得到不能直接得到的运动场。运动场，其实就是物体在三维真实世界中的运动；光流场，是运动场在二维图像平面上（人的眼睛或者摄像头）的投影。</p>
 <h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p>光流法的三种计算方法：LK，HS，最常用的还是LK。</p>
@@ -872,7 +873,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      98.7k
+      98.9k
     </span>
   
 </div>
