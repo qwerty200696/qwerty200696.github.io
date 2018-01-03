@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="本文是 Tensorflow：实战Google深度学习框架的第三章与第四章。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-28T14:52:25.603Z">
+<meta property="og:updated_time" content="2018-01-01T02:09:31.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TensorFlow基础篇与搭建深层神经网络">
 <meta name="twitter:description" content="本文是 Tensorflow：实战Google深度学习框架的第三章与第四章。">
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,148
+                  3,153
                 </span>
               
 
@@ -480,123 +480,91 @@
 <h3 id="3-2-2-张量的使用"><a href="#3-2-2-张量的使用" class="headerlink" title="3.2.2 张量的使用"></a>3.2.2 张量的使用</h3><p>两大类。</p>
 <p>一是对中间结果的引用。</p>
 <p>二是用来获得计算的结果。tf.Session().run(result)</p>
-<h2 id="3-3-TensorFlow运行模型——会话"><a href="#3-3-TensorFlow运行模型——会话" class="headerlink" title="3.3 TensorFlow运行模型——会话"></a>3.3 TensorFlow运行模型——会话</h2><h3 id="3-3-1-创建和关闭会话"><a href="#3-3-1-创建和关闭会话" class="headerlink" title="3.3.1 创建和关闭会话"></a>3.3.1 创建和关闭会话</h3><pre><code># 创建一个会话。
-sess = tf.Session()
-
-# 使用会话得到之前计算的结果。
-print(sess.run(result))
-
-# 关闭会话使得本次运行中使用到的资源可以被释放。
-sess.close()
-</code></pre><h3 id="3-3-2-使用with-statement-来创建会话"><a href="#3-3-2-使用with-statement-来创建会话" class="headerlink" title="3.3.2 使用with statement 来创建会话"></a>3.3.2 使用with statement 来创建会话</h3><pre><code>with tf.Session() as sess:
-print(sess.run(result))
-
-
-# 下面的两个命令有相同的功能。
-print(sess.run(result))
-print(result.eval(session=sess))
-</code></pre><h3 id="3-3-3-指定默认会话"><a href="#3-3-3-指定默认会话" class="headerlink" title="3.3.3 指定默认会话"></a>3.3.3 指定默认会话</h3><pre><code>sess = tf.Session()
-
-# 下面的两个命令有相同的功能。
-print(sess.run(result))
-print(result.eval(session=sess))
-</code></pre><h3 id="3-3-4-通过ConfigProto配置会话"><a href="#3-3-4-通过ConfigProto配置会话" class="headerlink" title="3.3.4 通过ConfigProto配置会话"></a>3.3.4 通过ConfigProto配置会话</h3><pre><code>config=tf.ConfigProto(allow_soft_placement=True, log_device_placement=True)
-sess1 = tf.InteractiveSession(config=config)
-sess2 = tf.Session(config=config)
-</code></pre><h2 id="3-4-TensorFlow实现神经网络"><a href="#3-4-TensorFlow实现神经网络" class="headerlink" title="3.4 TensorFlow实现神经网络"></a>3.4 TensorFlow实现神经网络</h2><h3 id="3-4-2-前向传播算法简介"><a href="#3-4-2-前向传播算法简介" class="headerlink" title="3.4.2 前向传播算法简介"></a>3.4.2 前向传播算法简介</h3><p>tf.matmul 矩阵乘法</p>
-<h3 id="3-4-3-神经网络参数与tensorflow变量"><a href="#3-4-3-神经网络参数与tensorflow变量" class="headerlink" title="3.4.3 神经网络参数与tensorflow变量"></a>3.4.3 神经网络参数与tensorflow变量</h3><pre><code>weights = tf.Variable(tf.random_normal([2, 3], stddev=2))
-</code></pre><p>产生一个[2,3]的矩阵，矩阵中元素是均值为0，方差为2的随机数。</p>
+<h2 id="3-3-TensorFlow运行模型——会话"><a href="#3-3-TensorFlow运行模型——会话" class="headerlink" title="3.3 TensorFlow运行模型——会话"></a>3.3 TensorFlow运行模型——会话</h2><h3 id="3-3-1-创建和关闭会话"><a href="#3-3-1-创建和关闭会话" class="headerlink" title="3.3.1 创建和关闭会话"></a>3.3.1 创建和关闭会话</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 创建一个会话。</span></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line"><span class="comment"># 使用会话得到之前计算的结果。</span></div><div class="line">print(sess.run(result))</div><div class="line"></div><div class="line"><span class="comment"># 关闭会话使得本次运行中使用到的资源可以被释放。</span></div><div class="line">sess.close()</div></pre></td></tr></table></figure>
+<h3 id="3-3-2-使用with-statement-来创建会话"><a href="#3-3-2-使用with-statement-来创建会话" class="headerlink" title="3.3.2 使用with statement 来创建会话"></a>3.3.2 使用with statement 来创建会话</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</div><div class="line">   print(sess.run(result))</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 下面的两个命令有相同的功能。</span></div><div class="line">print(sess.run(result))</div><div class="line">print(result.eval(session=sess))</div></pre></td></tr></table></figure>
+<h3 id="3-3-3-指定默认会话"><a href="#3-3-3-指定默认会话" class="headerlink" title="3.3.3 指定默认会话"></a>3.3.3 指定默认会话</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line"><span class="comment"># 下面的两个命令有相同的功能。</span></div><div class="line">print(sess.run(result))</div><div class="line">print(result.eval(session=sess))</div></pre></td></tr></table></figure>
+<h3 id="3-3-4-通过ConfigProto配置会话"><a href="#3-3-4-通过ConfigProto配置会话" class="headerlink" title="3.3.4 通过ConfigProto配置会话"></a>3.3.4 通过ConfigProto配置会话</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">config=tf.ConfigProto(allow_soft_placement=<span class="keyword">True</span>, log_device_placement=<span class="keyword">True</span>)</div><div class="line">sess1 = tf.InteractiveSession(config=config)</div><div class="line">sess2 = tf.Session(config=config)</div></pre></td></tr></table></figure>
+<h2 id="3-4-TensorFlow实现神经网络"><a href="#3-4-TensorFlow实现神经网络" class="headerlink" title="3.4 TensorFlow实现神经网络"></a>3.4 TensorFlow实现神经网络</h2><h3 id="3-4-2-前向传播算法简介"><a href="#3-4-2-前向传播算法简介" class="headerlink" title="3.4.2 前向传播算法简介"></a>3.4.2 前向传播算法简介</h3><p>tf.matmul 矩阵乘法</p>
+<h3 id="3-4-3-神经网络参数与tensorflow变量"><a href="#3-4-3-神经网络参数与tensorflow变量" class="headerlink" title="3.4.3 神经网络参数与tensorflow变量"></a>3.4.3 神经网络参数与tensorflow变量</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">weights = tf.Variable(tf.random_normal([<span class="number">2</span>, <span class="number">3</span>], stddev=<span class="number">2</span>))</div></pre></td></tr></table></figure>
+<p>产生一个[2,3]的矩阵，矩阵中元素是均值为0，方差为2的随机数。</p>
 <p> <strong>1.TensorFlow随机数生成函数</strong></p>
-<table class="table table-bordered table-striped table-condensed"><br>    <tr><br>        <th>函数名称</th><br>        <th>随机数分布</th><br>        <th>主要参数</th><br>    </tr><br>    <tr><br>        <td>tf.random_normal</td><br>        <td>正态分布</td><br>        <td>平均值、标准差、取值类型</td><br>    </tr><br>    <tr><br>        <td>tf.truncated_normal</td><br>        <td>正太分布,但如果随机出来的值离平均值超过2个标准差，那么这个数将会被重新随机</td><br>        <td>平均值、标准差、取值类型</td><br>    </tr><br>    <tr><br>        <td>tf.random_uniform</td><br>        <td>平均分布</td><br>        <td>最小、最大取值、取值类型</td><br>    </tr><br>    <tr><br>        <td>tf.random_gramma</td><br>        <td>Gramma分布</td><br>        <td>形状参数alpha、尺度参数beta、取值类型</td><br>    </tr><br></table> 
-
-
-
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数名称</th>
+<th style="text-align:center">随机数分布</th>
+<th style="text-align:center">主要参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">tf.random_normal</td>
+<td style="text-align:center">正态分布</td>
+<td style="text-align:center">平均值、标准差、取值类型</td>
+</tr>
+<tr>
+<td style="text-align:center">tf.truncated_normal</td>
+<td style="text-align:center">正太分布,但如果随机出来的值离平均值超过2个标准差，那么这个数将会被重新随机</td>
+<td style="text-align:center">平均值、标准差、取值类型</td>
+</tr>
+<tr>
+<td style="text-align:center">tf.random_uniform</td>
+<td style="text-align:center">平均分布</td>
+<td style="text-align:center">最小、最大取值、取值类型</td>
+</tr>
+<tr>
+<td style="text-align:center">tf.random_gramma</td>
+<td style="text-align:center">Gramma分布</td>
+<td style="text-align:center">形状参数alpha、尺度参数beta、取值类型</td>
+</tr>
+</tbody>
+</table>
 <p> <strong>2.TensorFlow常数生成函数</strong></p>
-<table class="table table-bordered table-striped table-condensed"><br>    <tr><br>        <th>函数名称</th><br>        <th>功能</th><br>        <th>样例</th><br>    </tr><br>    <tr><br>        <td>tf.zeros/td&gt;<br>        </td><td>产生全0的数组</td><br>        <td>tf.zeros([2,3],int32)-&gt;[[0,0,0],[0,0,0]]</td><br>    </tr><br>    <tr><br>        <td>tf.ones</td><br>        <td>产生全1的数组</td><br>        <td>tf.ones([2,3],int32)-&gt;[[1,1,1],[1,1,1]]</td><br>    </tr><br>    <tr><br>        <td>tf.fill</td><br>        <td>产生一个全部为给定数字的数组</td><br>        <td>tf.fill([2,3],9)-&gt;[[9,9,9],[9,9,9]]</td><br>    </tr><br>    <tr><br>        <td>tf.constant</td><br>        <td>产生一个给定值的常量</td><br>        <td>tf.constant([1,2,3])-&gt;[1,2,3]</td><br>    </tr><br></table> 
-
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数名称</th>
+<th style="text-align:center">功能</th>
+<th style="text-align:center">样例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">tf.zeros</td>
+<td style="text-align:center">产生全0的数组</td>
+<td style="text-align:center">tf.zeros([2,3],int32)-&gt;[[0,0,0],[0,0,0]]</td>
+</tr>
+<tr>
+<td style="text-align:center">tf.ones</td>
+<td style="text-align:center">产生全1的数组</td>
+<td style="text-align:center">tf.ones([2,3],int32)-&gt;[[1,1,1],[1,1,1]]</td>
+</tr>
+<tr>
+<td style="text-align:center">tf.fill</td>
+<td style="text-align:center">产生一个全部为给定数字的数组</td>
+<td style="text-align:center">tf.fill([2,3],9)-&gt;[[9,9,9],[9,9,9]]</td>
+</tr>
+<tr>
+<td style="text-align:center">tf.constant</td>
+<td style="text-align:center">产生一个给定值的常量</td>
+<td style="text-align:center">tf.constant([1,2,3])-&gt;[1,2,3]</td>
+</tr>
+</tbody>
+</table>
 <p>声明了变量之后，程序的第二步会声明一个会话（session）。并通过会话计算结果。</p>
-<p>在真正开始计算之前，必须对变量进行初始化：</p>
-<pre><code>init_op = tf.global_variables_initializer()  
-sess.run(init_op)
-</code></pre><p>变量分为需要优化的参数（比如神经网络中的参数）和其他参数。<br>trainable = True，则该变量会加入GraphKeys.TRAINABLE_VARIABLES集合。</p>
+<p>在真正开始计算之前，必须对变量进行初始化：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">init_op = tf.global_variables_initializer()  </div><div class="line">sess.run(init_op)</div></pre></td></tr></table></figure></p>
+<p>变量分为需要优化的参数（比如神经网络中的参数）和其他参数。<br><code>trainable = True</code>，则该变量会加入<code>GraphKeys.TRAINABLE_VARIABLES</code>集合。</p>
 <p>维度（shape）和类型（type）是变量最重要的两个属性。</p>
 <h3 id="3-4-4-通过tensorflow训练神经网络模型"><a href="#3-4-4-通过tensorflow训练神经网络模型" class="headerlink" title="3.4.4 通过tensorflow训练神经网络模型"></a>3.4.4 通过tensorflow训练神经网络模型</h3><p>监督学习的思想。</p>
 <p>神经网络优化算法中，最常用的是反向传播算法。</p>
 <pre><code>x = tf.constant([[0.7, 0.9]])
 </code></pre><p>常量表示样例导致计算图特变大。使用<strong>placeholder机制</strong>提供输入数据。</p>
-<p>在placeholder定义的时候，这个位置上的数据类型是需要指定的。和其他张量一样，placeholder的类型不可以被改变。</p>
-<pre><code>x = tf.placeholder(tf.float32, shape=(1, 2), name=&quot;input&quot;)
-a = tf.matmul(x, w1)
-y = tf.matmul(a, w2)
-
-sess = tf.Session()
-
-init_op = tf.global_variables_initializer()
-sess.run(init_op)
-
-print(sess.run(y, feed_dict={x: [[0.7, 0.9]]}))
-</code></pre><p>feed_dict时一个字典（map），在字典中需要给出每个用到的placeholder的取值，否则运行会报错。</p>
-<p>输入的数据一般是一个batch，不止一个，placeholder也支持输入多个数据。</p>
-<pre><code>x = tf.placeholder(tf.float32, shape=(3, 2), name=&quot;input&quot;)
-a = tf.matmul(x, w1)
-y = tf.matmul(a, w2)
-
-sess = tf.Session()
-#使用tf.global_variables_initializer()来初始化所有的变量
-init_op = tf.global_variables_initializer()  
-sess.run(init_op)
-
-print(sess.run(y, feed_dict={x: [[0.7,0.9],[0.1,0.4],[0.5,0.8]]})) 
-</code></pre><p>在得到一个batch的前向传播结果之后，需要<strong>定义一个损失函数</strong>来刻画当前的预测值与真实答案之间的差距。然后通过反向传播算法来调整网络参数之间的取值使得差距可以被缩小。</p>
-<h3 id="3-4-5-完整的神经网络样例程序"><a href="#3-4-5-完整的神经网络样例程序" class="headerlink" title="3.4.5 完整的神经网络样例程序"></a>3.4.5 完整的神经网络样例程序</h3><pre><code>import tensorflow as tf
-from numpy.random import RandomState
-
-# 1. 定义神经网络的参数，输入和输出节点。
-batch_size = 8
-w1 = tf.Variable(tf.random_normal([2, 3], stddev=1, seed=1))
-w2 = tf.Variable(tf.random_normal([3, 1], stddev=1, seed=1))
-x = tf.placeholder(tf.float32, shape=(None, 2), name=&quot;x-input&quot;)
-y_ = tf.placeholder(tf.float32, shape=(None, 1), name=&apos;y-input&apos;)
-
-# 2. 定义前向传播过程，损失函数及反向传播算法。
-a = tf.matmul(x, w1)
-y = tf.matmul(a, w2)
-# tf.clip_by_value(A, min, max)：输入一个张量A，把A中的每一个元素的值都压缩在min和max之间。小于min的让它等于min，大于max的元素的值等于max。
-cross_entropy = -tf.reduce_mean(y_ * tf.log(tf.clip_by_value(y, 1e-10, 1.0)))
-train_step = tf.train.AdamOptimizer(0.001).minimize(cross_entropy)
-
-# 3. 生成模拟数据集。
-rdm = RandomState(1)
-dataset_size = 128
-X = rdm.rand(dataset_size, 2)
-Y = [[int(x1 + x2 &lt; 1)] for (x1, x2) in X]
-
-# 4. 创建一个会话来运行TensorFlow程序。
-
-with tf.Session() as sess:
-    init_op = tf.global_variables_initializer()
-    sess.run(init_op)
-
-    # 输出目前（未经训练）的参数取值。
-    print(&quot;w1:&quot;, sess.run(w1))
-    print(&quot;w2:&quot;, sess.run(w2))
-    print(&quot;\n&quot;)
-
-    # 训练模型。
-    STEPS = 5000  # 设定训练的轮数
-    for i in range(STEPS):
-        start = (i * batch_size) % 128
-        end = (i * batch_size) % 128 + batch_size
-        sess.run(train_step, feed_dict={x: X[start:end], y_: Y[start:end]})
-        if i % 1000 == 0:
-            total_cross_entropy = sess.run(cross_entropy, feed_dict={x: X, y_: Y})
-            print(&quot;After %d training step(s), cross entropy on all data is %g&quot; % (i, total_cross_entropy))
-
-    # 输出训练后的参数取值。
-    print(&quot;\n&quot;)
-    print(&quot;w1:&quot;, sess.run(w1))
-    print(&quot;w2:&quot;, sess.run(w2))
-</code></pre><p>输出为：</p>
+<p>在placeholder定义的时候，这个位置上的数据类型是需要指定的。和其他张量一样，placeholder的类型不可以被改变。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">x = tf.placeholder(tf.float32, shape=(<span class="number">1</span>, <span class="number">2</span>), name=<span class="string">"input"</span>)</div><div class="line">a = tf.matmul(x, w1)</div><div class="line">y = tf.matmul(a, w2)</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">init_op = tf.global_variables_initializer()</div><div class="line">sess.run(init_op)</div><div class="line"></div><div class="line">print(sess.run(y, feed_dict=&#123;x: [[<span class="number">0.7</span>, <span class="number">0.9</span>]]&#125;))</div></pre></td></tr></table></figure></p>
+<p>feed_dict时一个字典（map），在字典中需要给出每个用到的placeholder的取值，否则运行会报错。</p>
+<p>输入的数据一般是一个batch，不止一个，placeholder也支持输入多个数据。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">x = tf.placeholder(tf.float32, shape=(<span class="number">3</span>, <span class="number">2</span>), name=<span class="string">"input"</span>)</div><div class="line">a = tf.matmul(x, w1)</div><div class="line">y = tf.matmul(a, w2)</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"><span class="comment">#使用tf.global_variables_initializer()来初始化所有的变量</span></div><div class="line">init_op = tf.global_variables_initializer()  </div><div class="line">sess.run(init_op)</div><div class="line"></div><div class="line">print(sess.run(y, feed_dict=&#123;x: [[<span class="number">0.7</span>,<span class="number">0.9</span>],[<span class="number">0.1</span>,<span class="number">0.4</span>],[<span class="number">0.5</span>,<span class="number">0.8</span>]]&#125;))</div></pre></td></tr></table></figure></p>
+<p>在得到一个batch的前向传播结果之后，需要<strong>定义一个损失函数</strong>来刻画当前的预测值与真实答案之间的差距。然后通过反向传播算法来调整网络参数之间的取值使得差距可以被缩小。</p>
+<h3 id="3-4-5-完整的神经网络样例程序"><a href="#3-4-5-完整的神经网络样例程序" class="headerlink" title="3.4.5 完整的神经网络样例程序"></a>3.4.5 完整的神经网络样例程序</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="keyword">from</span> numpy.random <span class="keyword">import</span> RandomState</div><div class="line"></div><div class="line"><span class="comment"># 1. 定义神经网络的参数，输入和输出节点。</span></div><div class="line">batch_size = <span class="number">8</span></div><div class="line">w1 = tf.Variable(tf.random_normal([<span class="number">2</span>, <span class="number">3</span>], stddev=<span class="number">1</span>, seed=<span class="number">1</span>))</div><div class="line">w2 = tf.Variable(tf.random_normal([<span class="number">3</span>, <span class="number">1</span>], stddev=<span class="number">1</span>, seed=<span class="number">1</span>))</div><div class="line">x = tf.placeholder(tf.float32, shape=(<span class="keyword">None</span>, <span class="number">2</span>), name=<span class="string">"x-input"</span>)</div><div class="line">y_ = tf.placeholder(tf.float32, shape=(<span class="keyword">None</span>, <span class="number">1</span>), name=<span class="string">'y-input'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 2. 定义前向传播过程，损失函数及反向传播算法。</span></div><div class="line">a = tf.matmul(x, w1)</div><div class="line">y = tf.matmul(a, w2)</div><div class="line"><span class="comment"># tf.clip_by_value(A, min, max)：输入一个张量A，把A中的每一个元素的值都压缩在min和max之间。小于min的让它等于min，大于max的元素的值等于max。</span></div><div class="line">cross_entropy = -tf.reduce_mean(y_ * tf.log(tf.clip_by_value(y, <span class="number">1e-10</span>, <span class="number">1.0</span>)))</div><div class="line">train_step = tf.train.AdamOptimizer(<span class="number">0.001</span>).minimize(cross_entropy)</div><div class="line"></div><div class="line"><span class="comment"># 3. 生成模拟数据集。</span></div><div class="line">rdm = RandomState(<span class="number">1</span>)</div><div class="line">dataset_size = <span class="number">128</span></div><div class="line">X = rdm.rand(dataset_size, <span class="number">2</span>)</div><div class="line">Y = [[int(x1 + x2 &lt; <span class="number">1</span>)] <span class="keyword">for</span> (x1, x2) <span class="keyword">in</span> X]</div><div class="line"></div><div class="line"><span class="comment"># 4. 创建一个会话来运行TensorFlow程序。</span></div><div class="line"></div><div class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</div><div class="line">    init_op = tf.global_variables_initializer()</div><div class="line">    sess.run(init_op)</div><div class="line"></div><div class="line">    <span class="comment"># 输出目前（未经训练）的参数取值。</span></div><div class="line">    print(<span class="string">"w1:"</span>, sess.run(w1))</div><div class="line">    print(<span class="string">"w2:"</span>, sess.run(w2))</div><div class="line">    print(<span class="string">"\n"</span>)</div><div class="line"></div><div class="line">    <span class="comment"># 训练模型。</span></div><div class="line">    STEPS = <span class="number">5000</span>  <span class="comment"># 设定训练的轮数</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(STEPS):</div><div class="line">        start = (i * batch_size) % <span class="number">128</span></div><div class="line">        end = (i * batch_size) % <span class="number">128</span> + batch_size</div><div class="line">        sess.run(train_step, feed_dict=&#123;x: X[start:end], y_: Y[start:end]&#125;)</div><div class="line">        <span class="keyword">if</span> i % <span class="number">1000</span> == <span class="number">0</span>:</div><div class="line">            total_cross_entropy = sess.run(cross_entropy, feed_dict=&#123;x: X, y_: Y&#125;)</div><div class="line">            print(<span class="string">"After %d training step(s), cross entropy on all data is %g"</span> % (i, total_cross_entropy))</div><div class="line"></div><div class="line">    <span class="comment"># 输出训练后的参数取值。</span></div><div class="line">    print(<span class="string">"\n"</span>)</div><div class="line">    print(<span class="string">"w1:"</span>, sess.run(w1))</div><div class="line">    print(<span class="string">"w2:"</span>, sess.run(w2))</div></pre></td></tr></table></figure>
+<p>输出为：</p>
 <p>训练之前的神经网络的参数值：</p>
 <blockquote>
 <p>w1: [[-0.81131822  1.48459876  0.06532937]<br> [-2.4427042   0.0992484   0.59122431]]</p>
@@ -608,52 +576,8 @@ with tf.Session() as sess:
 <p>After 1000 training step(s), cross entropy on all data is 0.0163385</p>
 <p>After 2000 training step(s), cross entropy on all data is 0.00907547</p>
 <p>After 3000 training step(s), cross entropy on all data is 0.00714436</p>
-<p>After 4000 training step(s), cross entropy on all data is 0.00578471</p>
+<p>After 4000 training step(s), cross entropy on all data is 0.00578471<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div></pre></td><td class="code"><pre><div class="line">训练之后的神经网络的参数值：</div><div class="line">&gt; </div><div class="line">&gt; w1: [[-1.9618274   2.58235407  1.68203783]</div><div class="line">&gt;  [-3.46817183  1.06982327  2.11789012]]</div><div class="line">&gt;  </div><div class="line">&gt; w2: [[-1.82471502]</div><div class="line">&gt;  [ 2.68546653]</div><div class="line">&gt;  [ 1.41819513]]</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># 第4章 深层神经网络</div><div class="line"></div><div class="line">## 4.1 深度学习与深层神经网络</div><div class="line"></div><div class="line">### 4.1.1 线性模型的局限性</div><div class="line">### 4.1.2 激活函数实现去线性化</div><div class="line"></div><div class="line">激活函数：tf.nn.relu、tf.sigmoid和tf.tanh。</div><div class="line"></div><div class="line">### 4.1.3 多层网络解决异或运算</div><div class="line"></div><div class="line">单层感知机无法模拟异或运算。加入了隐含层之后，就可以解决异或问题。</div><div class="line"></div><div class="line">## 4.2损失函数的定义</div><div class="line"></div><div class="line">### 4.2.1 经典损失函数</div><div class="line"></div><div class="line">交叉熵(cross entropy)。用q来表示p的交叉熵为：</div><div class="line">$$H(p,q)=-\sum_x p(x)\text&#123;log&#125; q(x)$$</div><div class="line"></div><div class="line">p代表的是正确答案，q代表的是预测值。交叉熵刻画的是两个概率分布的距离，也就是说交叉熵越小，两个概率分布越接近。</div><div class="line"></div><div class="line">`softmax`回归：将神经网络的输出变成一个概率分布。</div><div class="line"></div><div class="line">交叉熵的代码实现：</div><div class="line"></div><div class="line">	cross_entropy = -tf.reduce_mean(y_ * tf.log(tf.clip_by_value(y, 1e-10, 1.0)))</div><div class="line"></div><div class="line"></div><div class="line">其中，`tf.clip_by_value`的用法</div><div class="line"></div><div class="line">`tf.clip_by_value(A, min, max)：`输入一个张量A，把A中的每一个元素的值都压缩在`min`和`max`之间。小于`min`的让它等于`min`，大于`max`的元素的值等于`max`。</div><div class="line"></div><div class="line">	import tensorflow as tf;  </div><div class="line">	import numpy as np;  </div><div class="line">	  </div><div class="line">	A = np.array([[1,1,2,4], [3,4,8,5]])  </div><div class="line">	  </div><div class="line">	with tf.Session() as sess:  </div><div class="line">	    print sess.run(tf.clip_by_value(A, 2, 5)) </div><div class="line"></div><div class="line">输出：</div><div class="line"></div><div class="line">&gt; [[2 2 2 4]</div><div class="line">&gt; </div><div class="line">&gt;  [3 4 5 5]]</div><div class="line"></div><div class="line">`tf.log`是对张量中所有元素依次求对数。</div><div class="line"></div><div class="line">`*`操作是元素之间直接相乘，矩阵乘法是`tf.matmul`。</div><div class="line"></div><div class="line">上面三个计算得到的结果是nxm的矩阵。</div><div class="line"></div><div class="line">`tf.reduce_mean`的用法。</div><div class="line"></div><div class="line">	v = tf.constant([[1.0, 2.0, 3.0, 4.0], [4.0, 5.0, 6.0, 7.0]])</div><div class="line">	sess = tf.Session()</div><div class="line">	init_op = tf.global_variables_initializer()</div><div class="line">	sess.run(init_op)</div><div class="line">	print(tf.reduce_mean(v).eval(session=sess))</div><div class="line">	# 程序输出为：4.0 = sum/8</div><div class="line"></div><div class="line">### 4.2.2 自定义损失函数</div><div class="line">当然tensorflow也支持自定义损失函数。</div><div class="line">## 4.3 神经网络优化算法</div><div class="line">假设用$\theta$表示神经网络中的参数，$J(\theta)$表示在给定的参数取值下，训练集上损失函数的大小，那么整个优化过程可以抽象为：寻找一个参数$\theta$，使得$J(\theta)$最小。</div><div class="line"></div><div class="line">对于参数$\theta$，其梯度为$\frac&#123;\partial&#125;&#123;\partial\theta&#125;J(\theta)$。有了梯度，还需要学习率$\eta $(learning rate)来控制每次参数更新的幅度。</div><div class="line">因此，参数更新的公式为：</div><div class="line">$$\theta_&#123;n+1&#125; = \theta_n -  \eta \frac&#123;\partial&#125;&#123;\partial\theta&#125;J(\theta)$$</div><div class="line"></div><div class="line">需要注意的是梯度下降算法并不能保证达到全局最优解，此外还存在计算时间过长的问题。</div><div class="line"></div><div class="line">为了加速训练过程，可以使用随机梯度下降(stochastic gradient descent)算法。每一轮迭代中随机优化某一条训练数据的损失函数。</div><div class="line"></div><div class="line">在实际应用中，采用折中的方法：**每次计算一小部分训练数据的损失函数**。这一小部分数据被称为&lt;font color=AA00AA&gt;**batch**&lt;/font&gt;。</div><div class="line"></div><div class="line">## 4.4 神经网络进一步优化</div><div class="line">### 4.4.1 学习率的设置</div><div class="line"></div><div class="line">假设我们要最小化函数  $y=x^2$, 选择初始点   $x_0=5$。</div><div class="line">#### 1. 学习率为1时</div><div class="line">```python</div><div class="line">import tensorflow as tf</div><div class="line">TRAINING_STEPS = 10</div><div class="line">LEARNING_RATE = 1</div><div class="line">x = tf.Variable(tf.constant(5, dtype=tf.float32), name=&quot;x&quot;)</div><div class="line">y = tf.square(x)</div><div class="line"></div><div class="line">train_op = tf.train.GradientDescentOptimizer(LEARNING_RATE).minimize(y)</div><div class="line"></div><div class="line">with tf.Session() as sess:</div><div class="line">    sess.run(tf.global_variables_initializer())</div><div class="line">    for i in range(TRAINING_STEPS):</div><div class="line">        sess.run(train_op)</div><div class="line">        x_value = sess.run(x)</div><div class="line">        print &quot;After %s iteration(s): x%s is %f.&quot;% (i+1, i+1, x_value)</div></pre></td></tr></table></figure></p>
 </blockquote>
-<p>训练之后的神经网络的参数值：</p>
-<blockquote>
-<p>w1: [[-1.9618274   2.58235407  1.68203783]<br> [-3.46817183  1.06982327  2.11789012]]</p>
-<p>w2: [[-1.82471502]<br> [ 2.68546653]<br> [ 1.41819513]]</p>
-</blockquote>
-<h1 id="第4章-深层神经网络"><a href="#第4章-深层神经网络" class="headerlink" title="第4章 深层神经网络"></a>第4章 深层神经网络</h1><h2 id="4-1-深度学习与深层神经网络"><a href="#4-1-深度学习与深层神经网络" class="headerlink" title="4.1 深度学习与深层神经网络"></a>4.1 深度学习与深层神经网络</h2><h3 id="4-1-1-线性模型的局限性"><a href="#4-1-1-线性模型的局限性" class="headerlink" title="4.1.1 线性模型的局限性"></a>4.1.1 线性模型的局限性</h3><h3 id="4-1-2-激活函数实现去线性化"><a href="#4-1-2-激活函数实现去线性化" class="headerlink" title="4.1.2 激活函数实现去线性化"></a>4.1.2 激活函数实现去线性化</h3><p>激活函数：tf.nn.relu、tf.sigmoid和tf.tanh。</p>
-<h3 id="4-1-3-多层网络解决异或运算"><a href="#4-1-3-多层网络解决异或运算" class="headerlink" title="4.1.3 多层网络解决异或运算"></a>4.1.3 多层网络解决异或运算</h3><p>单层感知机无法模拟异或运算。加入了隐含层之后，就可以解决异或问题。</p>
-<h2 id="4-2损失函数的定义"><a href="#4-2损失函数的定义" class="headerlink" title="4.2损失函数的定义"></a>4.2损失函数的定义</h2><h3 id="4-2-1-经典损失函数"><a href="#4-2-1-经典损失函数" class="headerlink" title="4.2.1 经典损失函数"></a>4.2.1 经典损失函数</h3><p>交叉熵(cross entropy)。用q来表示p的交叉熵为：<br>$$H(p,q)=-\sum_x p(x)\text{log} q(x)$$</p>
-<p>p代表的是正确答案，q代表的是预测值。交叉熵刻画的是两个概率分布的距离，也就是说交叉熵越小，两个概率分布越接近。</p>
-<p><code>softmax</code>回归：将神经网络的输出变成一个概率分布。</p>
-<p>交叉熵的代码实现：</p>
-<pre><code>cross_entropy = -tf.reduce_mean(y_ * tf.log(tf.clip_by_value(y, 1e-10, 1.0)))
-</code></pre><p>其中，<code>tf.clip_by_value</code>的用法</p>
-<p><code>tf.clip_by_value(A, min, max)：</code>输入一个张量A，把A中的每一个元素的值都压缩在<code>min</code>和<code>max</code>之间。小于<code>min</code>的让它等于<code>min</code>，大于<code>max</code>的元素的值等于<code>max</code>。</p>
-<pre><code>import tensorflow as tf;  
-import numpy as np;  
-
-A = np.array([[1,1,2,4], [3,4,8,5]])  
-
-with tf.Session() as sess:  
-    print sess.run(tf.clip_by_value(A, 2, 5)) 
-</code></pre><p>输出：</p>
-<blockquote>
-<p>[[2 2 2 4]</p>
-<p> [3 4 5 5]]</p>
-</blockquote>
-<p><code>tf.log</code>是对张量中所有元素依次求对数。</p>
-<p><code>*</code>操作是元素之间直接相乘，矩阵乘法是<code>tf.matmul</code>。</p>
-<p>上面三个计算得到的结果是nxm的矩阵。</p>
-<p><code>tf.reduce_mean</code>的用法。</p>
-<pre><code>v = tf.constant([[1.0, 2.0, 3.0, 4.0], [4.0, 5.0, 6.0, 7.0]])
-sess = tf.Session()
-init_op = tf.global_variables_initializer()
-sess.run(init_op)
-print(tf.reduce_mean(v).eval(session=sess))
-# 程序输出为：4.0 = sum/8
-</code></pre><h3 id="4-2-2-自定义损失函数"><a href="#4-2-2-自定义损失函数" class="headerlink" title="4.2.2 自定义损失函数"></a>4.2.2 自定义损失函数</h3><p>当然tensorflow也支持自定义损失函数。</p>
-<h2 id="4-3-神经网络优化算法"><a href="#4-3-神经网络优化算法" class="headerlink" title="4.3 神经网络优化算法"></a>4.3 神经网络优化算法</h2><p>假设用$\theta$表示神经网络中的参数，$J(\theta)$表示在给定的参数取值下，训练集上损失函数的大小，那么整个优化过程可以抽象为：寻找一个参数$\theta$，使得$J(\theta)$最小。</p>
-<p>对于参数$\theta$，其梯度为$\frac{\partial}{\partial\theta}J(\theta)$。有了梯度，还需要学习率$\eta $(learning rate)来控制每次参数更新的幅度。<br>因此，参数更新的公式为：<br>$$\theta_{n+1} = \theta_n -  \eta \frac{\partial}{\partial\theta}J(\theta)$$</p>
-<p>需要注意的是梯度下降算法并不能保证达到全局最优解，此外还存在计算时间过长的问题。</p>
-<p>为了加速训练过程，可以使用随机梯度下降(stochastic gradient descent)算法。每一轮迭代中随机优化某一条训练数据的损失函数。</p>
-<p>在实际应用中，采用折中的方法：<strong>每次计算一小部分训练数据的损失函数</strong>。这一小部分数据被称为<font color="AA00AA"><strong>batch</strong></font>。</p>
-<h2 id="4-4-神经网络进一步优化"><a href="#4-4-神经网络进一步优化" class="headerlink" title="4.4 神经网络进一步优化"></a>4.4 神经网络进一步优化</h2><h3 id="4-4-1-学习率的设置"><a href="#4-4-1-学习率的设置" class="headerlink" title="4.4.1 学习率的设置"></a>4.4.1 学习率的设置</h3><p>假设我们要最小化函数  $y=x^2$, 选择初始点   $x_0=5$。</p>
-<h4 id="1-学习率为1时"><a href="#1-学习率为1时" class="headerlink" title="1. 学习率为1时"></a>1. 学习率为1时</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line">TRAINING_STEPS = <span class="number">10</span></div><div class="line">LEARNING_RATE = <span class="number">1</span></div><div class="line">x = tf.Variable(tf.constant(<span class="number">5</span>, dtype=tf.float32), name=<span class="string">"x"</span>)</div><div class="line">y = tf.square(x)</div><div class="line"></div><div class="line">train_op = tf.train.GradientDescentOptimizer(LEARNING_RATE).minimize(y)</div><div class="line"></div><div class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</div><div class="line">    sess.run(tf.global_variables_initializer())</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(TRAINING_STEPS):</div><div class="line">        sess.run(train_op)</div><div class="line">        x_value = sess.run(x)</div><div class="line">        <span class="keyword">print</span> <span class="string">"After %s iteration(s): x%s is %f."</span>% (i+<span class="number">1</span>, i+<span class="number">1</span>, x_value)</div></pre></td></tr></table></figure>
 <p>结果是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">After 1 iteration(s): x1 is -5.000000.</div><div class="line">After 2 iteration(s): x2 is 5.000000.</div><div class="line">After 3 iteration(s): x3 is -5.000000.</div><div class="line">After 4 iteration(s): x4 is 5.000000.</div><div class="line">After 5 iteration(s): x5 is -5.000000.</div><div class="line">After 6 iteration(s): x6 is 5.000000.</div><div class="line">After 7 iteration(s): x7 is -5.000000.</div><div class="line">After 8 iteration(s): x8 is 5.000000.</div><div class="line">After 9 iteration(s): x9 is -5.000000.</div><div class="line">After 10 iteration(s): x10 is 5.000000.</div></pre></td></tr></table></figure></p>
 <p>学习率为1的时候，x在5和-5之间震荡。</p>
 <h4 id="2-学习率为0-001时"><a href="#2-学习率为0-001时" class="headerlink" title="2. 学习率为0.001时"></a>2. 学习率为0.001时</h4><p>将上述代码中的学习率设为0.001（很小），如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LEARNING_RATE = <span class="number">0.001</span></div></pre></td></tr></table></figure></p>
@@ -858,7 +782,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">42</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -972,7 +896,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第3章-TensorFlow入门"><span class="nav-number">1.</span> <span class="nav-text">第3章 TensorFlow入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-1-查看已安装tensorflow版本"><span class="nav-number">1.1.</span> <span class="nav-text">0.1 查看已安装tensorflow版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-2-Tensorflow：实战Google深度学习框架-源码下载"><span class="nav-number">1.2.</span> <span class="nav-text">0.2 Tensorflow：实战Google深度学习框架 源码下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-TensorFlow数据模型——张量"><span class="nav-number">1.3.</span> <span class="nav-text">3.2 TensorFlow数据模型——张量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-张量的概念"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.2.1 张量的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-张量的使用"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2.2 张量的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-TensorFlow运行模型——会话"><span class="nav-number">1.4.</span> <span class="nav-text">3.3 TensorFlow运行模型——会话</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1-创建和关闭会话"><span class="nav-number">1.4.1.</span> <span class="nav-text">3.3.1 创建和关闭会话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-2-使用with-statement-来创建会话"><span class="nav-number">1.4.2.</span> <span class="nav-text">3.3.2 使用with statement 来创建会话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-3-指定默认会话"><span class="nav-number">1.4.3.</span> <span class="nav-text">3.3.3 指定默认会话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-4-通过ConfigProto配置会话"><span class="nav-number">1.4.4.</span> <span class="nav-text">3.3.4 通过ConfigProto配置会话</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-TensorFlow实现神经网络"><span class="nav-number">1.5.</span> <span class="nav-text">3.4 TensorFlow实现神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-2-前向传播算法简介"><span class="nav-number">1.5.1.</span> <span class="nav-text">3.4.2 前向传播算法简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-3-神经网络参数与tensorflow变量"><span class="nav-number">1.5.2.</span> <span class="nav-text">3.4.3 神经网络参数与tensorflow变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-4-通过tensorflow训练神经网络模型"><span class="nav-number">1.5.3.</span> <span class="nav-text">3.4.4 通过tensorflow训练神经网络模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-5-完整的神经网络样例程序"><span class="nav-number">1.5.4.</span> <span class="nav-text">3.4.5 完整的神经网络样例程序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第4章-深层神经网络"><span class="nav-number">2.</span> <span class="nav-text">第4章 深层神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-深度学习与深层神经网络"><span class="nav-number">2.1.</span> <span class="nav-text">4.1 深度学习与深层神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-1-线性模型的局限性"><span class="nav-number">2.1.1.</span> <span class="nav-text">4.1.1 线性模型的局限性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-2-激活函数实现去线性化"><span class="nav-number">2.1.2.</span> <span class="nav-text">4.1.2 激活函数实现去线性化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-3-多层网络解决异或运算"><span class="nav-number">2.1.3.</span> <span class="nav-text">4.1.3 多层网络解决异或运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2损失函数的定义"><span class="nav-number">2.2.</span> <span class="nav-text">4.2损失函数的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-1-经典损失函数"><span class="nav-number">2.2.1.</span> <span class="nav-text">4.2.1 经典损失函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-2-自定义损失函数"><span class="nav-number">2.2.2.</span> <span class="nav-text">4.2.2 自定义损失函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-神经网络优化算法"><span class="nav-number">2.3.</span> <span class="nav-text">4.3 神经网络优化算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-神经网络进一步优化"><span class="nav-number">2.4.</span> <span class="nav-text">4.4 神经网络进一步优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-1-学习率的设置"><span class="nav-number">2.4.1.</span> <span class="nav-text">4.4.1 学习率的设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-学习率为1时"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">1. 学习率为1时</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-学习率为0-001时"><span class="nav-number">2.4.1.2.</span> <span class="nav-text">2. 学习率为0.001时</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-使用指数衰减的学习率"><span class="nav-number">2.4.1.3.</span> <span class="nav-text">3. 使用指数衰减的学习率</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-2-过拟合问题"><span class="nav-number">2.4.2.</span> <span class="nav-text">4.4.2 过拟合问题</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第3章-TensorFlow入门"><span class="nav-number">1.</span> <span class="nav-text">第3章 TensorFlow入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-1-查看已安装tensorflow版本"><span class="nav-number">1.1.</span> <span class="nav-text">0.1 查看已安装tensorflow版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-2-Tensorflow：实战Google深度学习框架-源码下载"><span class="nav-number">1.2.</span> <span class="nav-text">0.2 Tensorflow：实战Google深度学习框架 源码下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-TensorFlow数据模型——张量"><span class="nav-number">1.3.</span> <span class="nav-text">3.2 TensorFlow数据模型——张量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-张量的概念"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.2.1 张量的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-张量的使用"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2.2 张量的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-TensorFlow运行模型——会话"><span class="nav-number">1.4.</span> <span class="nav-text">3.3 TensorFlow运行模型——会话</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1-创建和关闭会话"><span class="nav-number">1.4.1.</span> <span class="nav-text">3.3.1 创建和关闭会话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-2-使用with-statement-来创建会话"><span class="nav-number">1.4.2.</span> <span class="nav-text">3.3.2 使用with statement 来创建会话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-3-指定默认会话"><span class="nav-number">1.4.3.</span> <span class="nav-text">3.3.3 指定默认会话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-4-通过ConfigProto配置会话"><span class="nav-number">1.4.4.</span> <span class="nav-text">3.3.4 通过ConfigProto配置会话</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-TensorFlow实现神经网络"><span class="nav-number">1.5.</span> <span class="nav-text">3.4 TensorFlow实现神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-2-前向传播算法简介"><span class="nav-number">1.5.1.</span> <span class="nav-text">3.4.2 前向传播算法简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-3-神经网络参数与tensorflow变量"><span class="nav-number">1.5.2.</span> <span class="nav-text">3.4.3 神经网络参数与tensorflow变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-4-通过tensorflow训练神经网络模型"><span class="nav-number">1.5.3.</span> <span class="nav-text">3.4.4 通过tensorflow训练神经网络模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-5-完整的神经网络样例程序"><span class="nav-number">1.5.4.</span> <span class="nav-text">3.4.5 完整的神经网络样例程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-学习率为0-001时"><span class="nav-number">1.5.4.1.</span> <span class="nav-text">2. 学习率为0.001时</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-使用指数衰减的学习率"><span class="nav-number">1.5.4.2.</span> <span class="nav-text">3. 使用指数衰减的学习率</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-2-过拟合问题"><span class="nav-number">1.5.5.</span> <span class="nav-text">4.4.2 过拟合问题</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -999,8 +923,8 @@ var jiathis_config={
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  &copy;  2017 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1015,7 +939,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      98.9k
+      100.7k
     </span>
   
 </div>
