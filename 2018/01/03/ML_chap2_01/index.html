@@ -120,11 +120,13 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn3iphjqzuj206w01fdfm.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn3mv5tkf5j20dw04zq3a.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn3j33r8v2j20c006v74f.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4csetqxzj20k009l0t5.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4d0hvlu2j20ak06w0sq.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn3ji8c6pjj20jh02baa9.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn3lfih9eaj20cs0260sl.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn3m2chlkwj20fo028glj.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn3jugpwecj20fc09jaak.jpg">
-<meta property="og:updated_time" content="2018-01-03T13:34:55.259Z">
+<meta property="og:updated_time" content="2018-01-04T02:23:43.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="西瓜书《机器学习》学习笔记(1)：评估方法与度量指标">
 <meta name="twitter:description" content="笔记直接跳过了第一章，从第二章开始。 本次笔记主要回顾评估方法与性能度量指标。">
@@ -452,7 +454,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,873
+                  2,029
                 </span>
               
 
@@ -521,20 +523,26 @@
 <h3 id="查准率、查全率与F1-2-3-2-P30"><a href="#查准率、查全率与F1-2-3-2-P30" class="headerlink" title="查准率、查全率与F1(2.3.2, P30)"></a>查准率、查全率与F1(2.3.2, P30)</h3><p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn3j33r8v2j20c006v74f.jpg" alt=""></p>
 <p>查准率就是准确率，查全率就是召回率。</p>
 <p>更具体的，可参考我的这篇文章：<a href="http://wangwlj.com/2017/10/08/DL_Precision_and_Recall/">准确率、召回率与F1值</a><br>【重点，单独列出】</p>
-<h3 id="ROC-与AUC-2-3-3-P33"><a href="#ROC-与AUC-2-3-3-P33" class="headerlink" title="ROC 与AUC(2.3.3, P33)"></a>ROC 与AUC(2.3.3, P33)</h3><p><strong>ROC：受试者工作特性(Receiver Operating Characteristic)。</strong></p>
-<p>ROC图的纵坐标为“真正例率”，横坐标为“假正例率”。</p>
-<p>现实中通常是有限个测试阳历来绘制ROC图。无法产生光滑的ROC曲线图。</p>
+<h3 id="ROC-与AUC-2-3-3-P33"><a href="#ROC-与AUC-2-3-3-P33" class="headerlink" title="ROC 与AUC(2.3.3, P33)"></a>ROC 与AUC(2.3.3, P33)</h3><p><strong>ROC：受试者工作特性(Receiver Operating Characteristic)。</strong><br><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn4csetqxzj20k009l0t5.jpg" alt=""><br>ROC图的纵坐标为“真正例率”，横坐标为“假正例率”。</p>
+<blockquote>
+<p>真正例率（TPR）：【真正例样本数】与【真实情况是正例的样本数】的比值。（查全率）</p>
+<p>假正例率（FPR）：【假正例样本数】与【真实情况是反例的样本数】的比值。</p>
+</blockquote>
+<p>如图，理想模型是真正例率为100%，假正例率为0%的一点。随机猜测模型则是真正例率与假正例率持平的直线。由此可知，在随机猜测模型左上方的曲线和在其右下方的曲线都代表了什么。（右下方的模型，还不如随机猜测准。）</p>
+<p>现实中通常是有限个测试样例来绘制ROC图。无法产生光滑的ROC曲线图。</p>
 <p>同样地，进行模型的性能比较时，若一个学习器A的ROC曲线被另一个学习器B的ROC曲线完全包住，则称B的性能优于A。若A和B的曲线发生了交叉，则不太好判断。此时，AUC应运而生。</p>
 <p>AUC(Area Under ROC Curve)：判断两个ROC曲线的性能，AUC计算的是ROC曲线下的面积。面积越大，性能越好。</p>
 <h3 id="代价敏感错误率与代价曲线-2-3-4-P35"><a href="#代价敏感错误率与代价曲线-2-3-4-P35" class="headerlink" title="代价敏感错误率与代价曲线(2.3.4, P35)"></a>代价敏感错误率与代价曲线(2.3.4, P35)</h3><p>上面的方法中，将学习器的犯错同等对待，但在现实生活中，将正例预测成假例与将假例预测成正例的代价常常是不一样的，例如：将无疾病–&gt;有疾病只是增多了检查，但有疾病–&gt;无疾病却是增加了生命危险。以二分类为例，由此引入了“代价矩阵”（cost matrix）。</p>
+<p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn4d0hvlu2j20ak06w0sq.jpg" alt="二分类代价矩阵"></p>
 <p>在非均等错误代价下，我们希望的是最小化“总体代价”，这样“代价敏感”(cost sensitive)的错误率为：<br><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn3ji8c6pjj20jh02baa9.jpg" alt=""></p>
-<p>同样对于ROC曲线，在非均等错误代价下，演变成了“代价曲线”，代价曲线横轴是取值在[0,1]之间的正例概率代价，式中p表示正例的概率，纵轴是取值为[0,1]的归一化代价。</p>
+<p>同样对于ROC曲线，在非均等错误代价下，性能度量的方法演变成了<strong>“代价曲线”</strong>，代价曲线横轴是取值在[0,1]之间的正例概率代价，式中p表示正例的概率，纵轴是取值为[0,1]的归一化代价。</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn3lfih9eaj20cs0260sl.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn3m2chlkwj20fo028glj.jpg" alt=""><br>代价曲线的绘制很简单：设ROC曲线上一点的坐标为(TPR，FPR) ，则可相应计算出FNR，然后在代价平面上绘制一条从(0，FPR) 到(1，FNR) 的线段，线段下的面积即表示了该条件下的期望总体代价；如此将ROC曲线上的每个点转化为代价平面上的一条线段，然后取<strong>所有线段的下界</strong>，围成的面积即为在所有条件下学习器的期望总体代价，如图所示：</p>
+<p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn3m2chlkwj20fo028glj.jpg" alt=""><br>代价曲线的绘制：设ROC曲线上一点的坐标为(TPR，FPR) ，则可相应计算出FNR，然后在代价平面上绘制一条从(0，FPR) 到(1，FNR) 的线段，线段下的面积即表示了该条件下的期望总体代价；如此将ROC曲线上的每个点转化为代价平面上的一条线段，然后取<strong>所有线段的下界</strong>，围成的面积即为在所有条件下学习器的期望总体代价，如图所示：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn3jugpwecj20fc09jaak.jpg" alt="代价曲线"></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>周志华《机器学习》</li>
 <li><a href="http://blog.csdn.net/u011826404/article/details/53229609" target="_blank" rel="external">http://blog.csdn.net/u011826404/article/details/53229609</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/29248751" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/29248751</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/28482121" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/28482121</a></li>
 </ul>
 
       
@@ -617,6 +625,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/04/ML_chap2_02/" rel="prev" title="西瓜书《机器学习》学习笔记(2)：比较检验与偏差方差">
+                西瓜书《机器学习》学习笔记(2)：比较检验与偏差方差 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -724,7 +736,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -881,7 +893,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      100.7k
+      104.4k
     </span>
   
 </div>

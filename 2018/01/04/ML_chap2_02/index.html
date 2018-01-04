@@ -90,7 +90,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Machine Learning," />
 
 
 
@@ -108,16 +108,24 @@
 
 
 
-<meta name="description" content="所谓王者，必卓然特立，争当人杰。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="王立杰的博客">
-<meta property="og:url" content="http://wangwlj.com/archives/2017/11/index.html">
+<meta name="description" content="比较检验(2.4, P37)在比较学习器泛化性能的过程中，统计假设检验（hypothesis test）为学习器性能比较提供了重要依据，即若A在某测试集上的性能优于B，那A学习器比B好的把握有多大。 假设检验(2.4.1, P38)假设检验(Hypothesis Testing)是数理统计学中根据一定假设条件由样本推断总体的一种方法。 “假设”指的是对学习器泛化错误率分布的某种判断或猜想，如“$\">
+<meta name="keywords" content="Machine Learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="西瓜书《机器学习》学习笔记(2)：比较检验与偏差方差">
+<meta property="og:url" content="http://wangwlj.com/2018/01/04/ML_chap2_02/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="所谓王者，必卓然特立，争当人杰。">
+<meta property="og:description" content="比较检验(2.4, P37)在比较学习器泛化性能的过程中，统计假设检验（hypothesis test）为学习器性能比较提供了重要依据，即若A在某测试集上的性能优于B，那A学习器比B好的把握有多大。 假设检验(2.4.1, P38)假设检验(Hypothesis Testing)是数理统计学中根据一定假设条件由样本推断总体的一种方法。 “假设”指的是对学习器泛化错误率分布的某种判断或猜想，如“$\">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn3pvrkvwjj20em09pjrr.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4g3oembgj20es08474e.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4gg36qwrj209902j3yb.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4o1uvti5j20h005yglo.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4m77isg5j20k00fvt8z.jpg">
+<meta property="og:updated_time" content="2018-01-04T10:46:58.291Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王立杰的博客">
-<meta name="twitter:description" content="所谓王者，必卓然特立，争当人杰。">
+<meta name="twitter:title" content="西瓜书《机器学习》学习笔记(2)：比较检验与偏差方差">
+<meta name="twitter:description" content="比较检验(2.4, P37)在比较学习器泛化性能的过程中，统计假设检验（hypothesis test）为学习器性能比较提供了重要依据，即若A在某测试集上的性能优于B，那A学习器比B好的把握有多大。 假设检验(2.4.1, P38)假设检验(Hypothesis Testing)是数理统计学中根据一定假设条件由样本推断总体的一种方法。 “假设”指的是对学习器泛化错误率分布的某种判断或猜想，如“$\">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn3pvrkvwjj20em09pjrr.jpg">
 
 
 
@@ -147,14 +155,14 @@
 
 
 
-  <link rel="canonical" href="http://wangwlj.com/archives/2017/11/"/>
+  <link rel="canonical" href="http://wangwlj.com/2018/01/04/ML_chap2_02/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>归档 | 王立杰的博客</title>
+  <title>西瓜书《机器学习》学习笔记(2)：比较检验与偏差方差 | 王立杰的博客</title>
   
 
 
@@ -192,7 +200,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-archive">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	
 	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
@@ -332,110 +340,376 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2018/01/04/ML_chap2_02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王立杰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h1 class="post-title" itemprop="name headline">西瓜书《机器学习》学习笔记(2)：比较检验与偏差方差</h1>
         
-        OK! 目前共计 43 篇日志。 继续努力。
-      </span>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-04T18:46:46+08:00">
+                2018-01-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+	  
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/04/ML_chap2_02/" class="leancloud_visitors" data-flag-title="西瓜书《机器学习》学习笔记(2)：比较检验与偏差方差">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,530
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
-        
-        
-        
+      
+        <h2 id="比较检验-2-4-P37"><a href="#比较检验-2-4-P37" class="headerlink" title="比较检验(2.4, P37)"></a>比较检验(2.4, P37)</h2><p>在比较学习器泛化性能的过程中，<strong>统计假设检验（hypothesis test）</strong>为学习器性能比较提供了重要依据，即若A在某测试集上的性能优于B，那A学习器比B好的把握有多大。</p>
+<h3 id="假设检验-2-4-1-P38"><a href="#假设检验-2-4-1-P38" class="headerlink" title="假设检验(2.4.1, P38)"></a>假设检验(2.4.1, P38)</h3><p>假设检验(Hypothesis Testing)是数理统计学中根据一定假设条件<strong>由样本推断总体</strong>的一种方法。</p>
+<p>“假设”指的是对学习器泛化错误率分布的某种判断或猜想，如“$\epsilon = \epsilon_0 $”，现实任务中，我们并不知道学习器的泛化错误率$\epsilon$，但是可以通过测试错误率$\hat \epsilon$推算。</p>
+<p>在包含了 m 个样本的测试集上，【泛化错误率为 $\epsilon$ 的学习器】被测得测试错误率为$ \hat \epsilon $的概率为：<br>$$P(\hat\epsilon;\epsilon) = \begin{pmatrix} m \\ \hat\epsilon\times m  \end{pmatrix} \epsilon^{\hat\epsilon\times m}(1-\epsilon)^{m-\hat\epsilon\times m}$$</p>
+<blockquote>
+<p>上式中的$\begin{pmatrix} m \\ \hat\epsilon\times m  \end{pmatrix} $表示$C_m^{m’}$，即从m个数中任取m’个数。</p>
+</blockquote>
+<p>这个概率，表达了【泛化错误率为 $\epsilon$ 的学习器】被测得【测试错误率】为 $\hat{\epsilon}$ 的可能性。 $\hat{\epsilon} $取0~100%。若以这个【可以测得的测试错误率$ \hat{\epsilon} $】作为自变量，以概率 $P(\hat{\epsilon};\epsilon) $为因变量，建立平面坐标图，则对于不同的测试错误率，有不同的可能性。在某点可能性越高，这个未知的【泛化错误率$ \epsilon $】和这个点代表的测试错误率的关系就越密切。</p>
+<p>现在要找其可能性最高的点，就要对概率$ P(\hat{\epsilon};\epsilon)$ 求 $\epsilon$ 的导数，导数为0时，存在极值。</p>
+<p>而对此概率函数求导并解出导函数等于0的式子之后，发现存在一个值 $\epsilon_0$ ，使得$P(\hat{\epsilon};\epsilon)$在$\epsilon=\epsilon_0$时最大，$|\epsilon-\epsilon_0|$ 增大时减小。整个图像其实是个山峰形状，符合二项分布。</p>
+<p>那么此时也可以反过来讲，如果这个泛化错误率 $\epsilon$ 已知为 $\epsilon_0$ ，则理论上，横坐标为 $\epsilon_0$的概率值$P(\hat{\epsilon};\epsilon)$是最大的。这也和书中图2.6的例子一致。</p>
+<p>即：<strong>若泛化错误率为$ \epsilon_0$ ，则测试错误率也为 $\epsilon_0$ 的概率最大（可能性最高）</strong>。</p>
+<p>此时，我们得到了泛化错误率为$ \epsilon_0$，我们可以用这个数值来进行假设，假设这个学习器的泛化错误率不会超过 $\epsilon_0$。</p>
+<p>即假设：“$ H_0:\epsilon≤\epsilon_0$ ”。</p>
+<p>到底要不要接受这个假设呢？</p>
+<p>我们需要检验一下。</p>
+<blockquote>
+<p>显著度（显著性水平）是估计总体参数落在某一区间内，可能犯错误的概率，用$\alpha$表示。$\alpha$的常用取值很小，如0.05，0.1等。<br>$1-\alpha$则表示置信度(confidence)。</p>
+</blockquote>
+<p>通过二项检验(binomial test)，我们得到结论：在$\alpha$的显著度下，假设$ H_0:\epsilon≤\epsilon_0$ 不能被拒绝，能<strong>以$1-\alpha$的置信度认为，学习器的泛化错误率不大于$\epsilon_0$</strong>；否则假设被拒绝，即在$\alpha$的显著度下可认为该学习器的泛化错误率大于$\epsilon_0$。</p>
+<hr>
+<p>现实中我们并非仅作出一次留出法估计，而是做多次，所以会得到不同的多个测试错误率，假定为k个测试错误率： $\hat \epsilon_1$、$\hat \epsilon_2、\cdots 、\hat \epsilon_k$，则平均错误率$ \mu  $和方差$ \sigma^{2}$为：<br>$$\mu = \frac 1k \sum_{i=1}^k\hat \epsilon_i $$<br>$$ \sigma^2 = \frac{1}{k-1} \sum_{i=1}^k (\hat \epsilon_i - \mu)^2$$</p>
+<blockquote>
+<p>假设X服从标准正态分布N（0,1），Y服从$ \chi^2$分布，那么$ T=X/\sqrt{Y/n}$  的分布称为自由度为n的t分布,记为$T \sim t(n)$。</p>
+<p>t分布这边需要一定的数学基础。默默记住吧。</p>
+</blockquote>
+<p>T 为自由度为 n 的 t 分布，变量 $\tau_{t}=(\sqrt{k}(\mu-\epsilon_0))/\sigma $服从自由度为 k-1 的 t 分布。（ $\mu-\epsilon_{0} $服从正态分布， $\sigma^{2} $服从自由度为 k-1 的$ \chi^2 $分布）</p>
+<p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn3pvrkvwjj20em09pjrr.jpg" alt=""></p>
+<p>由此图和 t 分布图的性质可知，最高点处就是测试错误率的最大值$\epsilon_0$ 。</p>
+<p>现在要重新假设了，“ $H_1:\mu=\epsilon_0 $”。</p>
+<p>接下来就是继续确定显著度 $\alpha$ ，确定门槛值（此处用双边假设），最后进行在置信度为 $1-\alpha$ 下的判断了。</p>
+<h3 id="交叉验证-t-检验-2-4-2-P40"><a href="#交叉验证-t-检验-2-4-2-P40" class="headerlink" title="交叉验证 t 检验(2.4.2, P40)"></a>交叉验证 t 检验(2.4.2, P40)</h3><p>回顾一下上一篇中的<strong>k折交叉验证</strong>：</p>
+<blockquote>
+<p>“k折交叉验证法”(cross validation)先将数据集D划分为k个大小相似的互斥子集，即$D=D_1\cup D_2 \cup \cdots\cup D_k,D_i \cap D_j =\oslash (i\neq j)$</p>
+</blockquote>
+<p>如果说前一种的<strong>假设检验是得到单个学习器的泛化错误率的大致范围假设</strong>，那么<strong>“交叉验证t检验”方法就是在比较A、B两学习器性能的优劣</strong>了（不过偏向于验证A、B性能是否相同）。</p>
+<p>现在有两个学习器A和B，使用 k 折交叉验证法得到测试错误率分别为 $\epsilon_{1}^{A},\epsilon_{2}^{A},\epsilon_{3}^{A},…\epsilon_{k}^{A}$ 和$\epsilon_{1}^{B},\epsilon_{2}^{B},\epsilon_{2}^{B},…\epsilon_{k}^{B} $。其中$ \epsilon_{i}^{A} $和 $\epsilon_{i}^{B} $是在相同的第 i 折训练/测试集上得到的结果。</p>
+<blockquote>
+<p>注意，此时的测试错误率和之前的假设检验那一节的测试错误率采用了不同的符号，此时由于没有提到泛化错误率，测试错误率被标记为$ \epsilon $，只不过增加了上下角标，请各位不要将其与上一节的泛化错误率混淆。</p>
+</blockquote>
+<p>基本思想：若两个学习器的性能相同，则它们使用的训练/测试集得到的测试错误率应相同，即 $\epsilon_{i}^{A}=\epsilon_{i}^{B} $。</p>
+<p>实际上却不会像理想状态一样，两个学习器的测试错误率并不完全相同，而是存在一定的微小差值。我们想要判断两个学习器的性能是否有显著差别，就要利用这个差值进行假设检验。</p>
+<p>若两个学习器性能相同，这个差值均值应该为0。因此可对这k个差值对“学习器A和B性能相同”这个假设做 t 检验。</p>
+<p>1、先对每一对结果求差，$ \Delta_i=\epsilon_{i}^{A}-\epsilon_{i}^{B}$</p>
+<p>2、计算出这$k$个差值的均值$ \mu $和方差 $\sigma^2$</p>
+<p>3、根据 t 检验的公式$ T=X/\sqrt{Y/n} $，得 $\tau_t=|\frac{\sqrt{k}\mu}{\sigma}|$ ，满足自由度为 k-1 的 t 分布，故在显著度$ \alpha $，若其小于临界值 $t_{\alpha/2,k-1} $，则假设不能被拒绝，即认为两个学习器性能没有显著的差别。反之则认为平均错误率小的性能更优。</p>
+<p>这里$t_{\alpha/2,k-1}$ 是分布上尾部累积分布为$\alpha/2$ 的临界值。</p>
+<p>但是这样使用 k 折交叉验证法，通常情况下会因为样本有限，使得不同轮次的训练集产生一定程度的重叠。这样训练出来的学习器，会让得出的这组测试错误率无法做到彼此完全独立。</p>
+<p>而进行有效的假设检验的一个重要的前提就是：测试错误率均为泛化错误率的独立采样。（例如 t 分布就需要随机变量X和Y相互独立。）</p>
+<p>所以为了缓解这个问题，可采用“5×2交叉验证”法。</p>
+<h4 id="5×2交叉验证-2-4-2-P41"><a href="#5×2交叉验证-2-4-2-P41" class="headerlink" title="5×2交叉验证(2.4.2, P41)"></a>5×2交叉验证(2.4.2, P41)</h4><p>待补。</p>
+<h3 id="McNemar检验-2-4-3-P41"><a href="#McNemar检验-2-4-3-P41" class="headerlink" title="McNemar检验(2.4.3, P41)"></a>McNemar检验(2.4.3, P41)</h3><p>McNemar检验适用于二分类问题，与成对t检验一样也是用于比较两个学习器的性能大小。通过联列，可以获得学习器A和B的分类结果的差别。下表即为两分类器分类差别列联表， e 为样本数。</p>
+<p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn4g3oembgj20es08474e.jpg" alt="列联表"></p>
+<p>主要思想是：若两学习器的性能相同，则A预测正确B预测错误数应等于B预测错误A预测正确数，即$e_{01}=e_{10}$，且$|e_{01}-e_{10}|$符合正态分布。</p>
+<blockquote>
+<p>$| e_{01}-e_{10}|$为什么符合正态分布？</p>
+<p>按理说，实际生活中，凡自然状态下的整体数据分布几乎都符合<strong>正态分布</strong>，那么当假设两学习器性能相同的时候，如果用大量不同的测试集进行测试，这个差值应该就可能符合正态分布。</p>
+</blockquote>
+<p>McNemar检验考虑变量：</p>
+<p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn4gg36qwrj209902j3yb.jpg" alt="McNemar检验变量"></p>
+<blockquote>
+<p>但上式中的“-1”并非因为$ |e_{01}-e_{10}| $的均值 $\mu$ 为1，实际上均值$ \mu $应近似为0，这里的“-1”，是为了<strong>连续性校正</strong>。</p>
+<p>什么是连续性校正？$2*2$列联表资料是分类资料,所以样本量较小时要进行连续性校正。。卡方检验要求：最好是大样本数据。一般每个个案最好出现一次，四分之一的个案至少出现五次。如果数据不符合要求，就要应用校正卡方。参见<a href="https://en.wikipedia.org/wiki/McNemar%27s_test#cite_note-Edwards1948-3" target="_blank" rel="external">维基百科</a></p>
+</blockquote>
+<p>上述变量$\tau_{\chi^2}$ 符合自由度为1 的$ \chi^2 $分布。</p>
+<blockquote>
+<p>$ \chi^2 $分布的定义：若k个独立的随机变量$Z_1,Z_2,⋯,Z_k$，且符合标准正态分布$N(0,1)$，则这k个随机变量的平方和 $X=∑_{i=1}^kZ^2_i$为服从自由度为k的卡方分布，记为： $X\sim \chi^2(k)$。<br>卡方分布的期望与方差分为为：<br>$E(\chi^2)=k，D(\chi^2)=2k$，其中k为卡方分布的自由度。</p>
+</blockquote>
+<p>给定显著度$\alpha $，当上述变量小于临界变量值的时候，不能拒绝假设，即认为两学习器的性能没有显著差别；否则拒绝假设，即认为两者性能有显著差别，平均错误率较小的学习器性能较好。这个过程也是自由度为1 的卡方检验。</p>
+<blockquote>
+<p>$\chi^2 $检验，中文名为<strong>卡方检验</strong>。卡方检验是一种用途很广的计数资料的假设检验方法。它属于非参数检验的范畴，主要是比较两个及两个以上样本率( 构成比）以及<strong>两个分类变量的关联性分析</strong>。其根本思想就是在于比较理论频数和实际频数的吻合程度或拟合优度问题。</p>
+</blockquote>
+<h3 id="Friedman检验与Nemenyi后续检验-2-4-4-P42"><a href="#Friedman检验与Nemenyi后续检验-2-4-4-P42" class="headerlink" title="Friedman检验与Nemenyi后续检验(2.4.4, P42)"></a>Friedman检验与Nemenyi后续检验(2.4.4, P42)</h3><p>上述的三种检验（假设检验、交叉验证t检验，McNemar检验）都只能在一组数据集上，Friedman检验则可以在多组数据集进行多个学习器性能的比较，基本思想是在同一组数据集上，根据测试结果（例：测试错误率）对学习器的性能进行排序，赋予<strong>序值1,2,3…</strong>，相同则平分序值，如下图所示：</p>
+<p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn4o1uvti5j20h005yglo.jpg" alt=""></p>
+<blockquote>
+<p>比如：D1数据集上，算法A的性能最好，其次算法B的性能，最差的是算法C的性能。<br>数字越小，代表该算法在该数据集上的表现越好。</p>
+</blockquote>
+<p><font color="000AA0">Friedman检验</font>：判断算法是否性能都相同。 检验变量$\tau_{\chi^2}$与F检验的临界值进行比较。</p>
+<p>若<strong>“H0：所有算法的性能相同”</strong>这个假设被拒绝，则需要进行后续检验(post-hoc test)，来得到具体的算法之间的差异。常用的就是<strong>Nemenyi后续检验</strong>。</p>
+<p>Nemenyi检验计算出平均序值差别的<strong>临界值域</strong>，<strong>若两个算法的平均序值差超出了临界值域CD，则相应的置信度1-α拒绝“两个算法性能相同”的假设</strong>。</p>
+<p>总结一下多学习器的比较：</p>
+<ul>
+<li>Friedman + Nemenyi</li>
+<li>Friedman 检验(基于序值，F检测，判断“是否都相同”)</li>
+<li>Nemenyi 后续检验 (基于序值，进一步判断两两差别)</li>
+</ul>
+<h2 id="偏差与方差-2-5-P44"><a href="#偏差与方差-2-5-P44" class="headerlink" title="偏差与方差(2.5, P44)"></a>偏差与方差(2.5, P44)</h2><p>“偏差-方差分解”(bias-variance decomposition)是解释学习算法泛化性能的重要工具。</p>
+<ul>
+<li>测试样本：x</li>
+<li>测试样本x在数据集中的标记： $y_D$</li>
+<li>测试样本x的真实标记： y</li>
+<li>训练集： D</li>
+<li>从训练集 D 上学得的模型f</li>
+<li>模型 f 在测试样本x上的预测输出$f(x;D) $</li>
+</ul>
+<p>从而可得：</p>
+<p>学习算法的期望预测：<br>$$\bar f(x) = \mathbb{E}_D [f(x;D)] $$<br>使用样本数相同的不同训练集产生的<font color="00AA00"><strong>方差</strong></font>为：度量了同样大小的训练集的变动所导致的学习性能的变化，也就是<strong>数据扰动所造成的影响</strong>。<br>$$var(x) = \mathbb{E}_D [(f(x;D)- \bar f (x) )^2] $$</p>
+<p><font color="00AA00"><strong>噪声</strong></font>(数据集标记和真实标记的方差)为：当前任务上任何学习算法所能达到的期望泛化误差的下界，即刻画了<strong>学习问题本身的难度</strong>。<br>$$ \varepsilon^2 =  \mathbb{E}_D [(y_D - y)^2]$$</p>
+<p><font color="00AA00"> <strong>Bias（偏差）</strong></font>：期望输出与真实标记的偏离程度，刻画了<strong>学习算法本身的拟合能力</strong>。<br>$$bias^2(x) = (\bar f (x) - y)^2 $$</p>
+<p>对回归任务，泛化误差可通过“偏差-方差分解”拆解为：<br>$$E(f;D) = bias^2(x) + var(x) + \varepsilon^2 $$</p>
+<p>也就是说，<strong>泛化误差可分解为 偏差、方差与噪声之和</strong>。<br>偏差-方差分解说明，<strong>泛化性能是由学习算法的能力、数据的充分性以及学习任务本身的难度所共同决定的</strong>。</p>
+<p>一般来说，偏差与方差是由冲突的，这称为“偏差-方差窘境”。<br><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn4m77isg5j20k00fvt8z.jpg" alt="偏差-方差窘境"></p>
+<p>随着训练程度的提升，期望预测值与真实值之间的差异越来越小，即偏差越来越小，但是另一方面，随着训练程度加大，学习算法对数据集的波动越来越敏感，方差值越来越大。换句话说：<strong>在欠拟合时，偏差主导泛化误差，而训练到一定程度后，偏差越来越小，方差主导了泛化误差</strong>。因此训练也不要贪杯，适度辄止。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>周志华《机器学习》</li>
+<li><a href="https://zhuanlan.zhihu.com/p/29248751" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/29248751</a></li>
+<li><a href="http://blog.csdn.net/bitcarmanlee/article/details/52279907" target="_blank" rel="external">卡方分布与卡方检验</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_4a0824490102v8tz.html" target="_blank" rel="external">卡方检验（Chi-square test）和费舍尔精确检验（Fisher exact test）</a></li>
+</ul>
 
-        
+      
+    </div>
+    
+    
+    
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://wangwlj.com/2018/01/04/ML_chap2_02/" title="西瓜书《机器学习》学习笔记(2)：比较检验与偏差方差">http://wangwlj.com/2018/01/04/ML_chap2_02/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
+            <a href="/tags/Machine-Learning/" rel="tag"><i class="fa fa-tag"></i> Machine Learning</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
           </div>
         
-        
 
         
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/27/python_base_NJU_1/" itemprop="url">
-              
-                <span itemprop="name">Python-基础篇</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-27T17:14:17+08:00"
-              content="2017-11-27" >
-          11-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/03/ML_chap2_01/" rel="next" title="西瓜书《机器学习》学习笔记(1)：评估方法与度量指标">
+                <i class="fa fa-chevron-left"></i> 西瓜书《机器学习》学习笔记(1)：评估方法与度量指标
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/23/Torch_DeepLab/" itemprop="url">
-              
-                <span itemprop="name">DeepLab简介及其pytorch实现</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-23T22:48:10+08:00"
-              content="2017-11-23" >
-          11-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-    </div>
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -443,6 +717,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjUyMi85MDgz"></div>
+    
+  </div>
+
 
         </div>
         
@@ -463,8 +743,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -586,6 +875,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#比较检验-2-4-P37"><span class="nav-number">1.</span> <span class="nav-text">比较检验(2.4, P37)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#假设检验-2-4-1-P38"><span class="nav-number">1.1.</span> <span class="nav-text">假设检验(2.4.1, P38)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉验证-t-检验-2-4-2-P40"><span class="nav-number">1.2.</span> <span class="nav-text">交叉验证 t 检验(2.4.2, P40)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5×2交叉验证-2-4-2-P41"><span class="nav-number">1.2.1.</span> <span class="nav-text">5×2交叉验证(2.4.2, P41)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#McNemar检验-2-4-3-P41"><span class="nav-number">1.3.</span> <span class="nav-text">McNemar检验(2.4.3, P41)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Friedman检验与Nemenyi后续检验-2-4-4-P42"><span class="nav-number">1.4.</span> <span class="nav-text">Friedman检验与Nemenyi后续检验(2.4.4, P42)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差与方差-2-5-P44"><span class="nav-number">2.</span> <span class="nav-text">偏差与方差(2.5, P44)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -738,6 +1043,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -766,6 +1075,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1225,6 +1545,23 @@
 
 
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 8596,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
   
