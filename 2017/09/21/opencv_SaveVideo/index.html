@@ -116,12 +116,12 @@
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="本文主要介绍Opencv视频保存的详细方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://wangwlj.com/2017/09/21/opencv_SaveVideo/video_save.png">
-<meta property="og:updated_time" content="2017-12-31T12:14:50.636Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4s7muulsj208604f3yp.jpg">
+<meta property="og:updated_time" content="2018-01-04T11:08:16.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="opencv视频保存方法详解">
 <meta name="twitter:description" content="本文主要介绍Opencv视频保存的详细方法。">
-<meta name="twitter:image" content="http://wangwlj.com/2017/09/21/opencv_SaveVideo/video_save.png">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4s7muulsj208604f3yp.jpg">
 
 
 
@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  640
+                  644
                 </span>
               
 
@@ -503,12 +503,12 @@ outputVideo.open(&quot;E:\\modeling\\视频\\compare3.avi&quot;, -1, 30, cvSize(
 <h1 id="出错详解"><a href="#出错详解" class="headerlink" title="出错详解"></a>出错详解</h1><p>输出路径不对肯定就没有视频了。此外，容易出现的问题有保存的视频大小为0，保存的视频乱码或打不开。</p>
 <h2 id="保存的视频大小为0"><a href="#保存的视频大小为0" class="headerlink" title="保存的视频大小为0"></a>保存的视频大小为0</h2><p>可能的原因有： </p>
 <h3 id="编码格式不对"><a href="#编码格式不对" class="headerlink" title="编码格式不对"></a>编码格式不对</h3><p>在open函数中第二个参数是编码格式，一定按照提供的编码格式进行填写，在应用中最好的解决方法是为<strong>-1</strong>。当为-1时，程序对弹出如下对话框供你选择：</p>
-<p><img src="/2017/09/21/opencv_SaveVideo/video_save.png" alt=" "></p>
+<p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn4s7muulsj208604f3yp.jpg" alt="video_save"></p>
 <p>本人电脑上只有选择<code>全帧（非压缩的）</code>才能正常打开。</p>
 <h3 id="帧速率不匹配"><a href="#帧速率不匹配" class="headerlink" title="帧速率不匹配"></a>帧速率不匹配</h3><p>该项会导致视频时间不同。</p>
 <h3 id="后缀名不对"><a href="#后缀名不对" class="headerlink" title="后缀名不对"></a>后缀名不对</h3><p> 选择<code>.avi</code>格式没有问题，其它待定。</p>
 <h2 id="保存的视频乱码或打不开"><a href="#保存的视频乱码或打不开" class="headerlink" title="保存的视频乱码或打不开"></a>保存的视频乱码或打不开</h2><p>这个情况一般就是编码格式不对造成的，也就是open函数中第二个参数。最好的解决方法是设为<strong>-1</strong>，然后手动选择编解码器。</p>
-<p><a href="http://www.cnblogs.com/polly333/p/5165290.html" target="_blank" rel="external">http://www.cnblogs.com/polly333/p/5165290.html</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.cnblogs.com/polly333/p/5165290.html" target="_blank" rel="external">http://www.cnblogs.com/polly333/p/5165290.html</a></p>
 
       
     </div>
@@ -723,7 +723,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -815,7 +815,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#视频保存流程与示例"><span class="nav-number">1.</span> <span class="nav-text">视频保存流程与示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视频保存详解"><span class="nav-number">2.</span> <span class="nav-text">视频保存详解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#出错详解"><span class="nav-number"></span> <span class="nav-text">出错详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#保存的视频大小为0"><span class="nav-number">1.</span> <span class="nav-text">保存的视频大小为0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编码格式不对"><span class="nav-number">1.1.</span> <span class="nav-text">编码格式不对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#帧速率不匹配"><span class="nav-number">1.2.</span> <span class="nav-text">帧速率不匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后缀名不对"><span class="nav-number">1.3.</span> <span class="nav-text">后缀名不对</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保存的视频乱码或打不开"><span class="nav-number">2.</span> <span class="nav-text">保存的视频乱码或打不开</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#视频保存流程与示例"><span class="nav-number">1.</span> <span class="nav-text">视频保存流程与示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视频保存详解"><span class="nav-number">2.</span> <span class="nav-text">视频保存详解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#出错详解"><span class="nav-number"></span> <span class="nav-text">出错详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#保存的视频大小为0"><span class="nav-number">1.</span> <span class="nav-text">保存的视频大小为0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编码格式不对"><span class="nav-number">1.1.</span> <span class="nav-text">编码格式不对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#帧速率不匹配"><span class="nav-number">1.2.</span> <span class="nav-text">帧速率不匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后缀名不对"><span class="nav-number">1.3.</span> <span class="nav-text">后缀名不对</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保存的视频乱码或打不开"><span class="nav-number">2.</span> <span class="nav-text">保存的视频乱码或打不开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -858,7 +858,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      104.5k
+      107.2k
     </span>
   
 </div>

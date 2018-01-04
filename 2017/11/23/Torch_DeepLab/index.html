@@ -116,14 +116,14 @@
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="本文实现了使用pytorch搭建DeepLab。算是第一批采用Pytorch的吧，到目前为止，网上还没有类似的实现。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://wangwlj.com/2017/11/23/Torch_DeepLab/different_rate.png">
-<meta property="og:image" content="http://wangwlj.com/2017/11/23/Torch_DeepLab/2.png">
-<meta property="og:image" content="http://wangwlj.com/2017/11/23/Torch_DeepLab/different_rate.png">
-<meta property="og:updated_time" content="2017-12-31T11:55:11.621Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4s5bcwnbj20my0bm0t5.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4s5vutk2j20kl0dngmq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4s5bcwnbj20my0bm0t5.jpg">
+<meta property="og:updated_time" content="2018-01-04T11:05:42.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DeepLab简介及其pytorch实现">
 <meta name="twitter:description" content="本文实现了使用pytorch搭建DeepLab。算是第一批采用Pytorch的吧，到目前为止，网上还没有类似的实现。">
-<meta name="twitter:image" content="http://wangwlj.com/2017/11/23/Torch_DeepLab/different_rate.png">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4s5bcwnbj20my0bm0t5.jpg">
 
 
 
@@ -472,15 +472,15 @@
       
 
       
-        <p><img src="/2017/11/23/Torch_DeepLab/different_rate.png" alt="different_rate"></p>
+        <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn4s5bcwnbj20my0bm0t5.jpg" alt="different_rate"></p>
 <p>本文实现了使用pytorch搭建DeepLab。算是第一批采用Pytorch的吧，到目前为止，网上还没有类似的实现。</p>
 <a id="more"></a>
 <h2 id="DeepLab简介"><a href="#DeepLab简介" class="headerlink" title="DeepLab简介"></a>DeepLab简介</h2><p>DeepLab文章的下载地址：<a href="https://arxiv.org/abs/1606.00915" target="_blank" rel="external">https://arxiv.org/abs/1606.00915</a></p>
 <p>该文章的主要思想之一：<br>提出了Atrous convolution（带孔卷积）。<br>扩大视野但不增加计算量。</p>
-<p>所谓的带孔卷积，就是在卷积核之间加上0。rate参数为2（torch中对应的参数为dilation）的示意图如下<br><img src="/2017/11/23/Torch_DeepLab/2.png" alt="Atrous convolution(rate=2)" title="Atrous convolution(rate=2)"></p>
+<p>所谓的带孔卷积，就是在卷积核之间加上0。rate参数为2（torch中对应的参数为dilation）的示意图如下<br><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn4s5vutk2j20kl0dngmq.jpg" alt="Atrous convolution(rate=2)" title="Atrous convolution(rate=2)"></p>
 <p>rate = 2就是在原卷积核相邻两个元素之间补上一个0，假设原卷积核为3x3，rate = 2的带孔卷积核的大小就为<code>3+(3-1) × (rate-1)=5</code>。</p>
 <p>下图是不同rate的带孔卷积。</p>
-<p><img src="/2017/11/23/Torch_DeepLab/different_rate.png" alt="different_rate"></p>
+<p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn4s5bcwnbj20my0bm0t5.jpg" alt="different_rate"></p>
 <p>以<code>rate = 12</code> 为例，带孔卷积的核的大小为：<code>3+(3-1)x(12-1)=25</code>，即新卷积核的大小为：<code>25*25</code>。</p>
 <p>总的来说，对于<code>rate=r</code>的带孔卷积，在连接着的卷积核元素间插入<code>r-1</code>个元素。因此，扩展后的卷积核大小为$k_{new}=k+(k-1)(r-1)$。</p>
 <h2 id="pytorch实现deeplab"><a href="#pytorch实现deeplab" class="headerlink" title="pytorch实现deeplab"></a>pytorch实现deeplab</h2><p>笔者主要目的是实现一下不同视野的concat过程。</p>
@@ -707,7 +707,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -842,7 +842,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      104.5k
+      107.2k
     </span>
   
 </div>

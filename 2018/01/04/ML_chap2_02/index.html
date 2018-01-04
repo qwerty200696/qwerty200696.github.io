@@ -121,7 +121,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4gg36qwrj209902j3yb.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4o1uvti5j20h005yglo.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4m77isg5j20k00fvt8z.jpg">
-<meta property="og:updated_time" content="2018-01-04T11:01:08.483Z">
+<meta property="og:updated_time" content="2018-01-04T11:35:56.531Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="西瓜书《机器学习》学习笔记(2)：比较检验与偏差方差">
 <meta name="twitter:description" content="本篇主要介绍比较检验、偏差与方差。其中，比较检验分为如下四类：  假设检验 交差验证t检验 McNeMar检验 FriedMan检验与Nemenyi后续检验">
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,579
+                  3,628
                 </span>
               
 
@@ -492,7 +492,7 @@
 <p>这个概率，表达了【泛化错误率为 $\epsilon$ 的学习器】被测得【测试错误率】为 $\hat{\epsilon}$ 的可能性。 $\hat{\epsilon} $取0~100%。若以这个【可以测得的测试错误率$ \hat{\epsilon} $】作为自变量，以概率 $P(\hat{\epsilon};\epsilon) $为因变量，建立平面坐标图，则对于不同的测试错误率，有不同的可能性。在某点可能性越高，这个未知的【泛化错误率$ \epsilon $】和这个点代表的测试错误率的关系就越密切。</p>
 <p>现在要找其可能性最高的点，就要对概率$ P(\hat{\epsilon};\epsilon)$ 求 $\epsilon$ 的导数，导数为0时，存在极值。</p>
 <p>而对此概率函数求导并解出导函数等于0的式子之后，发现存在一个值 $\epsilon_0$ ，使得$P(\hat{\epsilon};\epsilon)$在$\epsilon=\epsilon_0$时最大，$|\epsilon-\epsilon_0|$ 增大时减小。整个图像其实是个山峰形状，符合二项分布。</p>
-<p>那么此时也可以反过来讲，如果这个泛化错误率 $\epsilon$ 已知为 $\epsilon_0$ ，则理论上，横坐标为 $\epsilon_0$的概率值$P(\hat{\epsilon};\epsilon)$是最大的。这也和书中图2.6的例子一致。</p>
+<p>那么此时也可以反过来讲，如果这个泛化错误率 $\epsilon$ 已知为 $\epsilon_0$ ，则理论上，横坐标为 $\epsilon_0$的概率值$P(\hat{\epsilon};\epsilon)$是最大的。</p>
 <p>即：<strong>若泛化错误率为$ \epsilon_0$ ，则测试错误率也为 $\epsilon_0$ 的概率最大（可能性最高）</strong>。</p>
 <p>此时，我们得到了泛化错误率为$ \epsilon_0$，我们可以用这个数值来进行假设，假设这个学习器的泛化错误率不会超过 $\epsilon_0$。</p>
 <p>即假设：“$ H_0:\epsilon≤\epsilon_0$ ”。</p>
@@ -568,6 +568,9 @@
 <li>Friedman 检验(基于序值，F检测，判断“是否都相同”)</li>
 <li>Nemenyi 后续检验 (基于序值，进一步判断两两差别)</li>
 </ul>
+<blockquote>
+<p>关于读音：（音译，仅供参考）<br>McNemar：mac呢嘛儿（mac:[mæk]，中文名：麦克尼马尔）<br>Friedman：free的们（free:[fri]，中文名：弗里德曼）<br>Nemenyi：呢曼里(y貌似不发音)</p>
+</blockquote>
 <h2 id="偏差与方差-2-5-P44"><a href="#偏差与方差-2-5-P44" class="headerlink" title="偏差与方差(2.5, P44)"></a>偏差与方差(2.5, P44)</h2><p>“偏差-方差分解”(bias-variance decomposition)是解释学习算法泛化性能的重要工具。</p>
 <ul>
 <li>测试样本：x</li>
@@ -577,8 +580,7 @@
 <li>从训练集 D 上学得的模型f</li>
 <li>模型 f 在测试样本x上的预测输出$f(x;D) $</li>
 </ul>
-<p>从而可得：</p>
-<p>学习算法的期望预测：<br>$$\bar f(x) = \mathbb{E}_D [f(x;D)] $$<br>使用样本数相同的不同训练集产生的<font color="00AA00"><strong>方差</strong></font>为：度量了同样大小的训练集的变动所导致的学习性能的变化，也就是<strong>数据扰动所造成的影响</strong>。<br>$$var(x) = \mathbb{E}_D [(f(x;D)- \bar f (x) )^2] $$</p>
+<p>根据上述变量，推导出学习算法的期望预测：<br>$$\bar f(x) = \mathbb{E}_D [f(x;D)] $$<br>使用样本数相同的不同训练集产生的<font color="00AA00"><strong>方差</strong></font>为：度量了同样大小的训练集的变动所导致的学习性能的变化，也就是<strong>数据扰动所造成的影响</strong>。<br>$$var(x) = \mathbb{E}_D [(f(x;D)- \bar f (x) )^2] $$</p>
 <p><font color="00AA00"><strong>噪声</strong></font>(数据集标记和真实标记的方差)为：当前任务上任何学习算法所能达到的期望泛化误差的下界，即刻画了<strong>学习问题本身的难度</strong>。<br>$$ \varepsilon^2 =  \mathbb{E}_D [(y_D - y)^2]$$</p>
 <p><font color="00AA00"> <strong>Bias（偏差）</strong></font>：期望输出与真实标记的偏离程度，刻画了<strong>学习算法本身的拟合能力</strong>。<br>$$bias^2(x) = (\bar f (x) - y)^2 $$</p>
 <p>对回归任务，泛化误差可通过“偏差-方差分解”拆解为：<br>$$E(f;D) = bias^2(x) + var(x) + \varepsilon^2 $$</p>
@@ -587,7 +589,7 @@
 <p>随着训练程度的提升，期望预测值与真实值之间的差异越来越小，即偏差越来越小，但是另一方面，随着训练程度加大，学习算法对数据集的波动越来越敏感，方差值越来越大。换句话说：<strong>在欠拟合时，偏差主导泛化误差，而训练到一定程度后，偏差越来越小，方差主导了泛化误差</strong>。因此训练也不要贪杯，适度辄止。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li>周志华《机器学习》</li>
-<li><a href="https://zhuanlan.zhihu.com/p/29248751" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/29248751</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/29248751" target="_blank" rel="external">《机器学习》学习笔记与习题探讨（二）④</a></li>
 <li><a href="http://blog.csdn.net/bitcarmanlee/article/details/52279907" target="_blank" rel="external">卡方分布与卡方检验</a></li>
 <li><a href="http://blog.sina.com.cn/s/blog_4a0824490102v8tz.html" target="_blank" rel="external">卡方检验（Chi-square test）和费舍尔精确检验（Fisher exact test）</a></li>
 </ul>
@@ -672,6 +674,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/04/CPP_03/" rel="prev" title="C++ Primer学习笔记：(三)字符串、向量和数组">
+                C++ Primer学习笔记：(三)字符串、向量和数组 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -801,7 +807,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -936,7 +942,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      104.5k
+      107.2k
     </span>
   
 </div>
