@@ -108,23 +108,23 @@
 
 
 
-<meta name="description" content="本篇主要介绍比较检验、偏差与方差。其中，比较检验分为如下四类：  假设检验 交差验证t检验 McNeMar检验 FriedMan检验与Nemenyi后续检验  比较检验(2.4, P37)在比较学习器泛化性能的过程中，统计假设检验（hypothesis test）为学习器性能比较提供了重要依据，即若A在某测试集上的性能优于B，那A学习器比B好的把握有多大。 假设检验(2.4.1, P38)假设检验">
+<meta name="description" content="本篇主要介绍比较检验、偏差与方差。其中，比较检验分为如下四类：  假设检验 交差验证t检验 McNeMar检验 FriedMan检验与Nemenyi后续检验">
 <meta name="keywords" content="Machine Learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="西瓜书《机器学习》学习笔记(2)：比较检验与偏差方差">
 <meta property="og:url" content="http://wangwlj.com/2018/01/04/ML_chap2_02/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="本篇主要介绍比较检验、偏差与方差。其中，比较检验分为如下四类：  假设检验 交差验证t检验 McNeMar检验 FriedMan检验与Nemenyi后续检验  比较检验(2.4, P37)在比较学习器泛化性能的过程中，统计假设检验（hypothesis test）为学习器性能比较提供了重要依据，即若A在某测试集上的性能优于B，那A学习器比B好的把握有多大。 假设检验(2.4.1, P38)假设检验">
+<meta property="og:description" content="本篇主要介绍比较检验、偏差与方差。其中，比较检验分为如下四类：  假设检验 交差验证t检验 McNeMar检验 FriedMan检验与Nemenyi后续检验">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn3pvrkvwjj20em09pjrr.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4g3oembgj20es08474e.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4gg36qwrj209902j3yb.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4o1uvti5j20h005yglo.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn4m77isg5j20k00fvt8z.jpg">
-<meta property="og:updated_time" content="2018-01-04T11:00:05.282Z">
+<meta property="og:updated_time" content="2018-01-04T11:01:08.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="西瓜书《机器学习》学习笔记(2)：比较检验与偏差方差">
-<meta name="twitter:description" content="本篇主要介绍比较检验、偏差与方差。其中，比较检验分为如下四类：  假设检验 交差验证t检验 McNeMar检验 FriedMan检验与Nemenyi后续检验  比较检验(2.4, P37)在比较学习器泛化性能的过程中，统计假设检验（hypothesis test）为学习器性能比较提供了重要依据，即若A在某测试集上的性能优于B，那A学习器比B好的把握有多大。 假设检验(2.4.1, P38)假设检验">
+<meta name="twitter:description" content="本篇主要介绍比较检验、偏差与方差。其中，比较检验分为如下四类：  假设检验 交差验证t检验 McNeMar检验 FriedMan检验与Nemenyi后续检验">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn3pvrkvwjj20em09pjrr.jpg">
 
 
@@ -481,6 +481,7 @@
 <li>McNeMar检验</li>
 <li>FriedMan检验与Nemenyi后续检验</li>
 </ul>
+<a id="more"></a>
 <h2 id="比较检验-2-4-P37"><a href="#比较检验-2-4-P37" class="headerlink" title="比较检验(2.4, P37)"></a>比较检验(2.4, P37)</h2><p>在比较学习器泛化性能的过程中，<strong>统计假设检验（hypothesis test）</strong>为学习器性能比较提供了重要依据，即若A在某测试集上的性能优于B，那A学习器比B好的把握有多大。</p>
 <h3 id="假设检验-2-4-1-P38"><a href="#假设检验-2-4-1-P38" class="headerlink" title="假设检验(2.4.1, P38)"></a>假设检验(2.4.1, P38)</h3><p>假设检验(Hypothesis Testing)是数理统计学中根据一定假设条件<strong>由样本推断总体</strong>的一种方法。</p>
 <p>“假设”指的是对学习器泛化错误率分布的某种判断或猜想，如“$\epsilon = \epsilon_0 $”，现实任务中，我们并不知道学习器的泛化错误率$\epsilon$，但是可以通过测试错误率$\hat \epsilon$推算。</p>
