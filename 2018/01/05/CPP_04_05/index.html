@@ -90,7 +90,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="deep learning,gradient descent,梯度下降," />
+  <meta name="keywords" content="C++," />
 
 
 
@@ -108,29 +108,18 @@
 
 
 
-<meta name="description" content="“请简述梯度下降算法以及如何优化梯度下降算法？” 上述是机器学习中常见面试题之一，本文将稍作阐述，仅供参考。">
-<meta name="keywords" content="deep learning,gradient descent,梯度下降">
+<meta name="description" content="第四章是和表达式有关的知识，表达式是C++的基础设施，本章由三部分组成：  表达式概念基础，包括表达式的基本概念，左值和右值的概念，优先级结合律，求值顺序。 各种运算符,主要包括算数\关系\逻辑\赋值\递增递减\成员访问\条件\位运算\sizeof\逗号运算符 这10种运算符。 类型转换，包括隐式和显式两种转换的规则。  表达式基础表达式的基本概念(P120，4.1.1)表达式由一个或者多个运算对">
+<meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="梯度下降及其优化算法">
-<meta property="og:url" content="http://wangwlj.com/2017/10/17/DL_gradient_descent/index.html">
+<meta property="og:title" content="C++ Primer学习笔记：(四&#x2F;五)表达式和语句">
+<meta property="og:url" content="http://wangwlj.com/2018/01/05/CPP_04_05/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="“请简述梯度下降算法以及如何优化梯度下降算法？” 上述是机器学习中常见面试题之一，本文将稍作阐述，仅供参考。">
+<meta property="og:description" content="第四章是和表达式有关的知识，表达式是C++的基础设施，本章由三部分组成：  表达式概念基础，包括表达式的基本概念，左值和右值的概念，优先级结合律，求值顺序。 各种运算符,主要包括算数\关系\逻辑\赋值\递增递减\成员访问\条件\位运算\sizeof\逗号运算符 这10种运算符。 类型转换，包括隐式和显式两种转换的规则。  表达式基础表达式的基本概念(P120，4.1.1)表达式由一个或者多个运算对">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://wangwlj.com/2017/10/17/DL_gradient_descent/Saddle.png">
-<meta property="og:image" content="http://wangwlj.com/2017/10/17/DL_gradient_descent/SGD_momen.jpg">
-<meta property="og:image" content="http://wangwlj.com/2017/10/17/DL_gradient_descent/equa_1.png">
-<meta property="og:image" content="http://wangwlj.com/2017/10/17/DL_gradient_descent/equ_NAG.png">
-<meta property="og:image" content="http://wangwlj.com/2017/10/17/DL_gradient_descent/NAG.png">
-<meta property="og:image" content="http://wangwlj.com/2017/10/17/DL_gradient_descent/opt1_mom.png">
-<meta property="og:image" content="http://wangwlj.com/2017/10/17/DL_gradient_descent/opt2_NAG.png">
-<meta property="og:image" content="http://wangwlj.com/2017/10/17/DL_gradient_descent/adam.png">
-<meta property="og:image" content="http://wangwlj.com/2017/10/17/DL_gradient_descent/gif_1.gif">
-<meta property="og:image" content="http://wangwlj.com/2017/10/17/DL_gradient_descent/gif_2.gif">
-<meta property="og:updated_time" content="2017-12-30T14:11:45.479Z">
+<meta property="og:updated_time" content="2018-01-05T07:51:59.823Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="梯度下降及其优化算法">
-<meta name="twitter:description" content="“请简述梯度下降算法以及如何优化梯度下降算法？” 上述是机器学习中常见面试题之一，本文将稍作阐述，仅供参考。">
-<meta name="twitter:image" content="http://wangwlj.com/2017/10/17/DL_gradient_descent/Saddle.png">
+<meta name="twitter:title" content="C++ Primer学习笔记：(四&#x2F;五)表达式和语句">
+<meta name="twitter:description" content="第四章是和表达式有关的知识，表达式是C++的基础设施，本章由三部分组成：  表达式概念基础，包括表达式的基本概念，左值和右值的概念，优先级结合律，求值顺序。 各种运算符,主要包括算数\关系\逻辑\赋值\递增递减\成员访问\条件\位运算\sizeof\逗号运算符 这10种运算符。 类型转换，包括隐式和显式两种转换的规则。  表达式基础表达式的基本概念(P120，4.1.1)表达式由一个或者多个运算对">
 
 
 
@@ -160,14 +149,14 @@
 
 
 
-  <link rel="canonical" href="http://wangwlj.com/2017/10/17/DL_gradient_descent/"/>
+  <link rel="canonical" href="http://wangwlj.com/2018/01/05/CPP_04_05/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>梯度下降及其优化算法 | 王立杰的博客</title>
+  <title>C++ Primer学习笔记：(四/五)表达式和语句 | 王立杰的博客</title>
   
 
 
@@ -359,7 +348,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2017/10/17/DL_gradient_descent/">
+    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2018/01/05/CPP_04_05/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wangwlj">
@@ -376,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">梯度下降及其优化算法</h1>
+          <h1 class="post-title" itemprop="name headline">C++ Primer学习笔记：(四/五)表达式和语句</h1>
         
 
         <div class="post-meta">
@@ -388,8 +377,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-17T17:05:26+08:00">
-                2017-10-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-05T15:51:49+08:00">
+                2018-01-05
               </time>
             
 
@@ -411,8 +400,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/深度学习/" itemprop="url" rel="index">
-                    <span itemprop="name">深度学习</span>
+                  <a href="/categories/C-Primer/" itemprop="url" rel="index">
+                    <span itemprop="name">C++ Primer</span>
                   </a>
                 </span>
 
@@ -429,7 +418,7 @@
 
           
           
-             <span id="/2017/10/17/DL_gradient_descent/" class="leancloud_visitors" data-flag-title="梯度下降及其优化算法">
+             <span id="/2018/01/05/CPP_04_05/" class="leancloud_visitors" data-flag-title="C++ Primer学习笔记：(四/五)表达式和语句">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -454,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,718
+                  4,202
                 </span>
               
 
@@ -479,95 +468,161 @@
       
 
       
-        <p>“请简述梯度下降算法以及如何优化梯度下降算法？”</p>
-<p>上述是机器学习中常见面试题之一，本文将稍作阐述，仅供参考。<br><a id="more"></a></p>
-<h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><p>梯度下降是一个最优化算法，通俗的来讲也就是沿着梯度下降的方向来求出一个函数的极小值。</p>
-<p>那么我们在高等数学中学过，对于一些我们了解的函数方程，我们可以对其求一阶导和二阶导，比如说二次函数。可是我们在处理问题的时候遇到的并不都是我们熟悉的函数，并且既然是机器学习就应该让机器自己去学习如何对其进行求解，显然我们需要换一个思路。因此我们采用梯度下降，不断迭代，沿着梯度下降的方向来移动，求出极小值。</p>
-<h3 id="批量梯度下降（Batch-gradient-descent）"><a href="#批量梯度下降（Batch-gradient-descent）" class="headerlink" title="批量梯度下降（Batch gradient descent）"></a>批量梯度下降（Batch gradient descent）</h3><p>现在我们就要求出<code>J(θ)</code>取到极小值时的θT向量。之前已经说过了，沿着函数梯度的方向下降就能最快的找到极小值。</p>
-<p>$$\theta=\theta-\eta \nabla_\theta{J(\theta)}$$</p>
+        <p>第四章是和表达式有关的知识，表达式是C++的基础设施，本章由三部分组成：</p>
+<ol>
+<li>表达式概念基础，包括表达式的基本概念，左值和右值的概念，优先级结合律，求值顺序。</li>
+<li>各种运算符,主要包括算数\关系\逻辑\赋值\递增递减\成员访问\条件\位运算\sizeof\逗号运算符 这10种运算符。</li>
+<li>类型转换，包括隐式和显式两种转换的规则。</li>
+</ol>
+<h2 id="表达式基础"><a href="#表达式基础" class="headerlink" title="表达式基础"></a>表达式基础</h2><h3 id="表达式的基本概念-P120，4-1-1"><a href="#表达式的基本概念-P120，4-1-1" class="headerlink" title="表达式的基本概念(P120，4.1.1)"></a>表达式的基本概念(P120，4.1.1)</h3><p>表达式由一个或者多个运算对象组成，多个对象组成表达式时，对象之间用运算符连接形成复杂表达式。</p>
+<p>运算符中，需要两个对象和运算符连接形成表达式的这种运算符叫做二元（双目，二目）运算符。</p>
+<p>分析一个表达式，必须先了解运算对象的含义、运算符的优先级(precedence)、结合律(associativity)和运算符的求值顺序(order of evaluation)。</p>
+<ol>
+<li>对于含有子表达式的复杂表达式，应该按照求值顺序，看看应该先求哪一个子表达式的值。</li>
+<li>对于不那么复杂的子表达式，应该按照优先级，查看表达式中的每个操作数（对象）应该先跟那一个运算符在一起运算。</li>
+<li>如果有优先级相同的运算符同时在同一个运算对象左右，应该按照结合律选定结合顺序是从右向左还是从左向右计算表达式的值。</li>
+</ol>
+<h3 id="左值和右值-P121，4-1-1"><a href="#左值和右值-P121，4-1-1" class="headerlink" title="左值和右值(P121，4.1.1)"></a>左值和右值(P121，4.1.1)</h3><p><strong>起源</strong>：左值和右值原来是C语言中的概念，特指赋值运算符左右两段的表达式。C语言中，能放在赋值运算符左侧被赋值的对象就是左值，反过来在赋值运算符右侧的对象就是右值。C++中的这两个概念的词义发生了改变。</p>
+<p><strong>概述</strong>：可以暂时概述一下C++中左值和右值的概念。从性质上来看，当一个对象做右值时，我们使用的是这个对象的内容（值）；当一个对象做左值时，我们使用的是它对象的身份（在内存中的位置）。</p>
+<p><strong>应用</strong>：表达式中有的位置需要的是左值，有的位置需要的是右值。表达式的值本身也有左右的分别。<br><strong>赋值运算符</strong>中左侧操作数和表达式结果都是左值。<br><strong>取地址符</strong>的操作对象是左值，得到的是右值。<br><strong>解引用、下标运算符</strong>的求值结果是左值。<br><strong>decltype</strong>作用于表达式时，如果表达式的结果是一个左值，decltype会返回一个引用类型。</p>
+<h3 id="优先级和结合律（P122，4-1-2）"><a href="#优先级和结合律（P122，4-1-2）" class="headerlink" title="优先级和结合律（P122，4.1.2）"></a>优先级和结合律（P122，4.1.2）</h3><p>1.<font color="AA0AA0">优先级</font> 复杂表达式中一个运算对象连接多个不同运算符时，哪个运算符优先级高，就先计算哪个运算符和对象作用后的值。</p>
+<p>2.<font color="AA0AA0">结合律</font> 复杂表达式中一个运算对象连接多个优先级相同的运算符时，根据这一优先级对应的结合律，按从右至左或者从左至右的顺序计算表达式的值。</p>
+<p>如<code>3+2*4-7；</code>这个表达式是一个复杂表达式，因为表达式里<code>*</code>号优先级比较高，所以先计算<code>2*4</code>，得到<code>3+8-7</code>；得到的新表达式更简洁了，只剩下+-两个符号，这两个符号优先级相同，因此查看这个优先级对应的结合律可知这一级别的符号满足左结合性。因此从左向右计算，得到<code>11-7</code>；进一步得到结果<code>4</code>。</p>
+<blockquote>
+<p>括号无视优先级和结合律，可以考虑多使用括号。</p>
+</blockquote>
+<h3 id="求值顺序（P123，4-1-3）"><a href="#求值顺序（P123，4-1-3）" class="headerlink" title="求值顺序（P123，4.1.3）"></a>求值顺序（P123，4.1.3）</h3><p>一个表达式里如果运算对象都是函数返回的，都需要计算求值才知道对象的状态，函数调用符号优先级一致，中间隔着几个优先级低的其他符号连接操作对象，比如<code>int a=f()+g();</code>，这时候是函数f()先被调用还是g()先被调用呢？<font color="AA0AA0">答案是未定义。</font>C++语法没有规定这种情况应该谁先谁后。</p>
+<p>就像下面的表达式<code>++i+i++</code>这个表达式中，优先级最高的表达式<code>++i</code>和<code>i++</code>中间隔着优先级低的运算符<code>+</code>，关于<code>++i</code>先计算还是<code>i++</code>先计算，这是<strong>未定义</strong>的，而因为这个表达式先计算<code>++i</code>或先计算<code>i++</code>的结果不同，<strong>所以这条表达式是错误的</strong>。<font color="AA0AA0">一个变量如果在同一个表达式里被多次改变，这个表达式的求值顺序又不一定，就会出现二义性。应该避免这样的写法。</font></p>
+<p>目前只有四种运算符明确规定了求值顺序。</p>
+<ol>
+<li>逻辑运算符<code>&amp;&amp;</code>和<code>||</code>(P126)：这两个运算符先计算左边操作数的值。</li>
+<li>条件运算符<code>?:</code>(P137)：条件运算符先计算？前的表达式，并求值，之后对视情况对：左右侧的表达式求值。</li>
+<li>逗号运算符<code>，</code>(P140) ：这个运算符的求值顺序是从左至右。</li>
+</ol>
+<blockquote>
+<p>处理复合表达式的两点建议：<br>①拿不准的时候最好用括号来强制让表达式的组合关系复合程序逻辑的要求；<br>②如果改变了某个运算对象的值，在表达式的其他地方不要再使用这个运算对象。例外：当改变运算对象的子表达式本身就是另外一个子表达式的运算对象时该规则无效。</p>
+</blockquote>
+<h3 id="关于运算符，左值和右值的归纳"><a href="#关于运算符，左值和右值的归纳" class="headerlink" title="关于运算符，左值和右值的归纳"></a>关于运算符，左值和右值的归纳</h3><p>本章各种运算符形成的表达式所返回的值的属性和运算符需要的操作数的属性如下：</p>
 <ul>
-<li><p>计算<code>J(θ)</code>关于θT的<strong>偏导数</strong>,也就得到了向量中每一个θ的梯度。</p>
-</li>
-<li><p>沿着梯度的方向更新参数θ的值</p>
-</li>
-<li><p>迭代直到收敛。</p>
-</li>
+<li>算数/逻辑/位运算符： 操作对象和结果都是右值 </li>
+<li>赋值运算符：左侧的操作对象必须是可以修改的左值，右侧的操作对象是右值，返回一个左值。 </li>
+<li>递增/递减运算符： 前置版本的++/–返回左值，后置版本的++/–返回右值。操作对象都必须是左值。</li>
+<li>箭头成员访问运算符： 作用于指针，表达式结果是一个左值。</li>
+<li>点成员访问运算符: 这个成员所属的对象是左值，结果就是左值；这个成员所属的对象是右值，结果就是右值。 </li>
+<li>条件运算符： 条件运算符的三个表达式都是左值或者都能转化成左值类型时，结果为左值；否则是右值。</li>
 </ul>
-<p>批量梯度下降算法使用整个训练集计算目标函数的梯度并更新参数。代码如下：</p>
-<pre><code>for i in range(nb_epochs):
-    params_grad = evaluate_gradient(loss_function, data, params)
-    params = params - learning_rate * params_grad
-</code></pre><p>可以看到，批量梯度下降是用了训练集中的所有样本。因此在数据量很大的时候，每次迭代都要遍历训练集一遍，<strong>开销</strong>会很大，所以在数据量大的时候，可以采用随机梯度下降法。</p>
-<h3 id="随机梯度下降（Stochastic-gradient-descent）"><a href="#随机梯度下降（Stochastic-gradient-descent）" class="headerlink" title="随机梯度下降（Stochastic gradient descent）"></a>随机梯度下降（Stochastic gradient descent）</h3><p>和批量梯度有所不同的地方在于，每次迭代只选取一个样本的数据，一旦到达最大的迭代次数或是满足预期的精度，就停止。</p>
-<p>可以得出随机梯度下降法的θ更新表达式。</p>
-<p>$$\theta=\theta-\eta\nabla_\theta{J(\theta;x^{(i)},y^{(i)})}$$</p>
-<p>因为每次只计算<strong>一个样本</strong>，所以<code>SGD</code>计算非常快并且适合线上更新模型。但是，频繁地更新参数也使得<strong>目标函数抖动</strong>非常厉害。</p>
-<p><code>SGD</code>频繁地参数更新可以使算法跳出局部最优点，更可能寻找到接近全局最优的解。<br><code>SGD</code>代码如下：</p>
-<pre><code>for i in range(nb_epochs):
-  np.random.shuffle(data)
-  for example in data:
-    params_grad = evaluate_gradient(loss_function, example, params)
-    patams = params - learning_rate * params_grad
-</code></pre><p>注意，上面的代码在每个epoch都对训练数据进行了打乱操作，这样可以保证不同epoch学习到的特征和训练样本的出现顺序没有关系。</p>
-<h2 id="使用情况"><a href="#使用情况" class="headerlink" title="使用情况"></a>使用情况</h2><p>如果仅从测试误差出发，标准梯度下降的效果会比随机梯度下降要好。但是标准梯度下降的训练时间会比随机梯度下降要长。</p>
-<p>像线性回归这种简单的模型，训练时间的优先级不高，所以用标准梯度下降会比随机梯度下降要好。像神经网络这种复杂的模型，训练时间的优先级比较高，所以用随机梯度下降比较好。</p>
-<p>如果模型的损失函数是<strong>凸函数</strong>，那么使用标准梯度下降一定能达到全局最优。如果<strong>模型比较复杂</strong>，容易进入局部最优，那么使用随机梯度下降会发生震荡，容易从局部最优中跳出，进入全局最优。</p>
-<p>另外，神经网络模型使用标准梯度下降最重要的原因是神经网络容易过拟合，而不是训练时间。</p>
-<h2 id="小批量梯度下降-mini-batch-gradient-descent"><a href="#小批量梯度下降-mini-batch-gradient-descent" class="headerlink" title="小批量梯度下降(mini-batch gradient descent)"></a>小批量梯度下降(mini-batch gradient descent)</h2><p>小批量梯度下降结合了批量梯度下降和随机梯度下降的优点，它一次以小批量的训练数据计算目标函数的权重并更新参数。公式如下：</p>
-<p>$$\theta=\theta-\eta\nabla_\theta{J(\theta;x^{(i:i+n)};y^{(i:i+n)})}$$</p>
-<p>其中，n为每批训练集的数量，一般设为50到256。 </p>
-<pre><code>for i in range(nb_epochs):
-  np.random.shuffle(data)
-  for batch in get_batches(data, batch_size=50):
-    params_grad = evaluate_gradient(loss_function, batch, params)
-    params = params - learning_rate * params_grad
-</code></pre><p>这个算法有下面几个方面的优点： </p>
+<h2 id="算术运算符-P124-4-2"><a href="#算术运算符-P124-4-2" class="headerlink" title="算术运算符(P124, 4.2)"></a>算术运算符(P124, 4.2)</h2><h3 id="除法和取模的结果-（P125，4-2）"><a href="#除法和取模的结果-（P125，4-2）" class="headerlink" title="除法和取模的结果 （P125，4.2）"></a>除法和取模的结果 （P125，4.2）</h3><p>两个非浮点型变量/字面值相除，结果还是原来的类型，不会有原来操作数是整数，运算之后结果是小数的情况。<br>C++11中， 对于<strong>除运算符，结果向零取整（直接切掉小数部分，得到的数就是结果）</strong>。对于<strong>取模运算符，结果的符号和被除数的符号一致</strong>。（之前的语法标准里除法的结果可以选择是否向零取整，求模（模就是余数）运算可选符号）</p>
+<blockquote>
+<p>(-m)/n = -(m/n); m/(-n) = -(m/n);<br>m%(-n) = m%n; (-m)%n = -(m%n);</p>
+</blockquote>
+<h2 id="成员访问运算符-P133-4-6"><a href="#成员访问运算符-P133-4-6" class="headerlink" title="成员访问运算符(P133, 4.6)"></a>成员访问运算符(P133, 4.6)</h2><p>点运算符和箭头运算符都可以获取类对象的一个成员，<code>ptr-&gt;mem</code> 等价于 <code>(*ptr).mem</code>。</p>
+<p>解引用运算符的优先级低于点运算符，所以<code>(*ptr).mem</code>中的括号不能省略，否则出错。</p>
+<h2 id="条件运算符-P134-4-7"><a href="#条件运算符-P134-4-7" class="headerlink" title="条件运算符(P134, 4.7)"></a>条件运算符(P134, 4.7)</h2><p>条件运算符的格式：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cond?expr1:expr2</div></pre></td></tr></table></figure></p>
+<p>条件运算符允许嵌套。</p>
+<h2 id="位运算符（P136，4-8）"><a href="#位运算符（P136，4-8）" class="headerlink" title="位运算符（P136，4.8）"></a>位运算符（P136，4.8）</h2><p><code>bitset</code>的标准库类型可以表示任意大小的二进制位集合。</p>
+<blockquote>
+<p>关于符号位没有明确的规定，因此强烈建议仅将位运算符用于处理无符号类型。</p>
+</blockquote>
+<p>左移运算符移动二进制数后会在右侧插入零，右移运算符在处理有符号类型的操作数（尤其是带负号的）时具体行为由环境决定。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">～</td>
+<td>位求反</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&lt;</td>
+<td>左移</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;&gt;</td>
+<td>右移</td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;</td>
+<td>位与</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td>位异或</td>
+</tr>
+<tr>
+<td style="text-align:center">&#124;</td>
+<td>位或</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>【写博客相关】表格中竖号的打法：<code>&amp;#124;</code>，或者中文格式的<code>丨</code>（输入法输入“shu”查找）</p>
+</blockquote>
+<p>移位运算符（也叫IO运算符）满足左结合律。</p>
+<h2 id="sizeof运算符（P139，4-9）"><a href="#sizeof运算符（P139，4-9）" class="headerlink" title="sizeof运算符（P139，4.9）"></a>sizeof运算符（P139，4.9）</h2><p>sizeof运算符有两种用法：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">sizeof</span>(type)</div><div class="line"><span class="keyword">sizeof</span> expr</div></pre></td></tr></table></figure></p>
+<p>第一种是sizeof后面直接加一条表达式语句；第二种形如<code>sizeof (类型名)；</code>第二种形式后会得到该类对象所占空间的大小。<br>第一种形式中，如果表达式是指针类型，sizeof运算符会返回指针本身的大小。当有一个类名叫data，类中有一个成员叫做student时，可以使用作用域标识符和sizeof联动，使用<code>sizeof(data::student);</code>就可以计算出student占字节数。</p>
+<h3 id="隐式类型转换（P141，4-11）"><a href="#隐式类型转换（P141，4-11）" class="headerlink" title="隐式类型转换（P141，4.11）"></a>隐式类型转换（P141，4.11）</h3><p>概述：在C++中，一些类型可以按照一定规则互相转换，很多时候语境中需要使用两个或多个相同的类型才能继续运算。因此这时一种类型的值会被自动转换成另一个类型的值。这个过程就是隐式转换，其中算术隐式转换较为常见。</p>
+<p>主要的隐式转换发生的情况：</p>
 <ol>
-<li><p>相比较SGD增加了一次更新使用的训练数据量，使得目标函数收敛得更加平稳； </p>
-</li>
-<li><p>可以使用矩阵操作对每批数据进行计算，大大提升了算法的效率。</p>
-</li>
+<li>大多数表达式中，比int小的类型会被提升为int型。</li>
+<li>在条件中，非布尔值要转化成布尔值。</li>
+<li>在初始化和赋值语句中，赋值符号的右侧对象的类型转换成左侧对象的类型进行运算。</li>
+<li>算术/关系运算中对象有有多种类型的，转化成同一类型。</li>
+<li>形参转化为实参的类型（第六章）。</li>
+<li>数组名会被转换为指针。</li>
+<li>0，nullptr会转为任何类型的指针。任何类型的指针都可以转化为（const）void *类型。</li>
 </ol>
-<h2 id="梯度下降的优缺点"><a href="#梯度下降的优缺点" class="headerlink" title="梯度下降的优缺点"></a>梯度下降的优缺点</h2><p><code>mini-batch gradient descent</code>虽然相较于批量梯度下降和随机梯度下降方法效果有所改善但是任然存在许多挑战： </p>
+<p>算数转换时发生隐式转换的补充：<br>在算术运算符的作用下，不同的操作数要转换成同一个类型才能够进行计算。以<code>i+a；</code>这个表达式举例，了解算术转换的方式。</p>
 <ol>
-<li>难以选择合适的学习速率：如果学习速率选择过小会造成网络收敛太慢，但是设得太大可能使得损失函数在最小点周围不断摇摆而永远达不到最小点； </li>
-<li>可以在训练开始时设置一个较大地学习率然后每训练若干个周期后按比例降低学习率，虽然这个方法有一些作用，但是由于降低学习率的周期是人为事先设定的，所以它不能很好地适应数据内在的规律； </li>
-<li>另一方面，我们对特征向量中的所有的特征都采用了相同的学习率，如果训练数据十分稀疏并且不同特征的变化频率差别很大，这时候对变化频率慢得特征采用大的学习率而对变化频率快的特征采用小的学习率是更好的选择。 </li>
-<li>这些梯度下降方法难以逃脱”鞍点”, 如下图所示，鞍点既不是最大点也不是最小点，在这个点附近，所有方向上的梯度都接近于0，这些梯度下降算法很难逃离它。</li>
+<li>首先，当i和a的类型占字节比int小，如<code>char、short</code>，把他们转换为int型。如果他们原来类型的最大值在当前系统里大于int型最大值，则转化成<code>unsigned int</code>型。</li>
+<li>之后，如果i和a的类型相同，结束算数隐式转换，若i和a的类型不同，把占字节少的类型的对象转成占字节多的类型的对象。</li>
+<li>如果占字节多的带符号类型的最大值小于占字节少的带转换对象的最大值，带符号类型将被转换为无符号类型。</li>
 </ol>
-<p><img src="/2017/10/17/DL_gradient_descent/Saddle.png" alt=""></p>
-<h2 id="梯度下降算法的改进"><a href="#梯度下降算法的改进" class="headerlink" title="梯度下降算法的改进"></a>梯度下降算法的改进</h2><h3 id="冲量-Momentum"><a href="#冲量-Momentum" class="headerlink" title="冲量(Momentum)"></a>冲量(Momentum)</h3><p>实际中，我们遇到的目标函数往往在不同的维度上梯度相差很大，比如在下面的函数等高线图中可以看出函数在纵向上要比横向陡峭得多。</p>
-<p><img src="/2017/10/17/DL_gradient_descent/SGD_momen.jpg" alt=""></p>
-<p>然而<code>SGD</code>等基本梯度下降算法并不知道这些，因为y方向梯度大x方向梯度小所以它们会在y方向上不断摇摆而沿x方向缓慢移动，但是我们知道在y方向的震荡是无用的只有x方向的才在不断接近最优点。</p>
-<p>冲量方法在<code>SGD</code>的基础上，加上了上一步的梯度：</p>
-<p><img src="/2017/10/17/DL_gradient_descent/equa_1.png" alt=""></p>
-<p>其中γ通常设为0.9。</p>
-<p>由于目标函数在y方向上摇摆，所以前后两次计算的梯度在y方向上相反，所以相加后相互抵消，而x方向上梯度方向不变，所以x方向的梯度是累加的，其效果就是损失函数在y方向上的震荡减小了，而更加迅速地从x方向接近最优点。</p>
-<p>也可以把这个过程和在斜坡放一个球让其滚下类比：当从斜坡顶端释放一个小球时，由于重力的作用小球滚下的速度会越来越快；与此类似，冲量的作用会使相同方向的梯度不断累加，不同方向的梯度相互抵消，其效果就是逼近最优点的速度不断加快。</p>
-<h3 id="Nesterov-accelerated-gradient"><a href="#Nesterov-accelerated-gradient" class="headerlink" title="Nesterov accelerated gradient"></a>Nesterov accelerated gradient</h3><p>想象小球从山坡上滑落，它的速度沿着山坡不断加快，然而这并不是令我们满意的结果，当小球接近山谷(最优点)时，它已经有了很大的速度，很可能会再次冲向山谷的另一边，而错过了最优点。我们需要一颗更加“聪明”的小球，它能够感知坡度的变化，从而在它再次冲上山坡之前减速而避免错过山谷。</p>
-<p>Nesterov accelerated gradient(NAG)就是一种让小球变“聪明”的方法。NAG不但增加了动量项，并且计算参数的梯度时，在损失函数中减去了梯度项将其作为下一次参数所在位置的预估：</p>
-<p><img src="/2017/10/17/DL_gradient_descent/equ_NAG.png" alt=""></p>
-<p>同样，上式中的<code>γ</code> 一般设为0.9。 </p>
-<p>如下图所示，蓝色的是动量方法的更新路径，首先计算一次梯度更新一小步，然后在下一次累加上一次计算的梯度从而更新一大步。而NAG算法每一步更新过程由两个步骤组成：第一步($\gamma v_{t−1}$, 图中棕色)使用之前计算的梯度移动一大步，第二步在移动后的位置计算的梯度方向移动一小步(图中红色线)进行修正，经过这样的两步合成了最终的绿线部分。</p>
-<p><img src="/2017/10/17/DL_gradient_descent/NAG.png" alt=""></p>
-<p>分析上面的原理可知，当“小球”将要冲上山坡的另一面时，红色线表示的预测梯度方向发生改变，从而将棕色向量往回拉达到了“减速”的效果。</p>
-<p>通过NAG方法，我们使参数更新速率能够自适应“坡度”的变化，另一方面，我们希望每个单独的参数能够自适应各自的变化频率，比如，稀疏特征采用高的更新速率，其他特征采用相对较低的更新速率。下面介绍几种常用的方法。</p>
-<p>详细介绍可以参见<code>Ilya Sutskever</code>的<code>PhD</code>论文<br><code>Sutskever, I. (2013). Training Recurrent neural Networks. PhD Thesis.</code></p>
-<p><img src="/2017/10/17/DL_gradient_descent/opt1_mom.png" alt="梯度优化之Momentum"></p>
-<p><img src="/2017/10/17/DL_gradient_descent/opt2_NAG.png" alt="梯度优化之NAG"></p>
-<h3 id="Adagrad"><a href="#Adagrad" class="headerlink" title="Adagrad"></a>Adagrad</h3><h3 id="Adadelta"><a href="#Adadelta" class="headerlink" title="Adadelta"></a>Adadelta</h3><h3 id="RMSprop"><a href="#RMSprop" class="headerlink" title="RMSprop"></a>RMSprop</h3><h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><p><code>Adam</code>的全称是<code>Adaptive Moment Estimation</code>, 它也是一种自适应学习率方法，与Adadelta和RMSprop类似，它将每个参数的历史梯度平方均值存于$v_t$中，不同的是，<code>Adam</code>还使用了类似冲量的衰减项$m_t$:</p>
-<p><img src="/2017/10/17/DL_gradient_descent/adam.png" alt=""></p>
-<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>图a中，所有方法都从相同位置出发，经历不同的路径到达了最小点，其中<code>Adagrad</code>、<code>Adadelta</code>和<code>RMSprop</code>一开始就朝向正确的方向并且迅速收敛，而冲量、<code>NAG</code>则会冲向错误的方向，但是由于<code>NAG</code>会向前多“看”一步所以能很快找到正确的方向。</p>
-<p><img src="/2017/10/17/DL_gradient_descent/gif_1.gif" alt=""></p>
-<p>图b显示了这些方法逃离鞍点的能力，鞍点有部分方向有正梯度另一些方向有负梯度，<code>SGD</code>方法逃离能力最差，冲量和<code>NAG</code>方法也不尽如人意，而<code>Adagrad</code>、<code>RMSprop</code>、<code>Adadelta</code>很快就能从鞍点逃离出来。</p>
-<p><img src="/2017/10/17/DL_gradient_descent/gif_2.gif" alt=""></p>
+<h3 id="显式转换（P144，4-11-3）"><a href="#显式转换（P144，4-11-3）" class="headerlink" title="显式转换（P144，4.11.3）"></a>显式转换（P144，4.11.3）</h3><p>显式转换就是强制类型转换(cast)。</p>
+<p>一个命名的强制类型转换具有以下形式：<code>cast-name&lt;要转换成的类型&gt; （被转换的值）；</code>其中，cast-name是四种强制类型转换：<code>static_cast、dynamic_cast、const_cast</code>和<code>reinterpret_cast</code>之中的一种。</p>
+<ul>
+<li><code>static_cast</code>用于常见的强制类型转换。只要两个类型有关联，比如浮点数类型和整数类型，整数类型和布尔值类型，布尔值类型和指针类型，就可以使用static_cast。只是不能转换常量const到变量。</li>
+<li><code>const_cast</code>用于去掉（或者加上）对象的底层const，要转换的类型和转换的类型都必须是指针或者引用类型。常用于将在第六章介绍的函数重载。当然，这个重载只能针对指针或者引用类型。</li>
+<li><code>reinterpret_cast</code>依赖机器，是强行改变一个类型到另外一个不相干的类型。</li>
+<li><code>dynamic_cast</code>支持运行时类型识别，在19章(P730)将会提到。</li>
+</ul>
+<blockquote>
+<p>建议：避免强制类型转换。</p>
+</blockquote>
+<h2 id="运算符优先级列表的规律（P147-4-12）"><a href="#运算符优先级列表的规律（P147-4-12）" class="headerlink" title="运算符优先级列表的规律（P147,4.12）"></a>运算符优先级列表的规律（P147,4.12）</h2><p>优先级和结合性是第四章的重要内容，因此第四章之后给出了完整的优先级和结合性的参考表。这里是有一定的规律的。</p>
+<ol>
+<li>首先优先级最高的运算符都有这样的属性：单独拿出这个运算符左面的操作数和右面的操作数都没有意义。即运算符本身是连接两个名字组合一个概念的连接器。比如优先级最高的运算符::（作用域运算符），优先级比较高的点运算符（成员选择）下标运算符[]。</li>
+<li>比连接不同名字形成概念的这种运算符稍微低一级别的就是计算对象本身的运算符，比如++，–，类型转换，位求反，逻辑非，解引用，取地址，求类型占的字节数这些运算符大多都是单目元素符，他们的运算目的一般是根据操作数本身的属性进行计算或者改变操作数本身。</li>
+<li>算术运算符。</li>
+<li>逻辑运算符。</li>
+<li>条件运算符。</li>
+<li>赋值运算符 。</li>
+<li>复合赋值，抛出异常，逗号运算符等。</li>
+</ol>
+<h2 id="术语表-P149"><a href="#术语表-P149" class="headerlink" title="术语表(P149)"></a>术语表(P149)</h2><p>1.运算对象 operand<br>2.结果 result<br>3.一元运算符 unary operator<br>4.二元运算符 binary operator<br>5.优先级 precedence<br>6.结合律 associativity<br>7.求值顺序 order of evaluation<br>8.提升 promoted<br>9.重载运算符 overloaded operator<br>10.右值 rvalue<br>11.左值 lvalue<br>12.复合表达式 compound expression<br>13.短路求值 short-circuit evaluation<br>14.高位 high order position<br>15.逗号运算符 comma operator<br>16.相互转换 conversion<br>17.隐式转换 implicit conversion<br>18.算术转换 arithmetic conversion<br>19.整型提升 intergral promotion<br>20.运算对象 operand</p>
+<h2 id="语句简介"><a href="#语句简介" class="headerlink" title="语句简介"></a>语句简介</h2><p>第五章是和语句有关的知识，语句也是C++的重要组分，本章由三部分组成：</p>
+<ol>
+<li>语句的概念，包括简单语句和语句作用域的概念。</li>
+<li>条件/循环/跳转语句,条件语句主要包括if/else语句、switc语句和？：表达式条件语句；循环语句则是for语句和while语句；跳转语句包括continue、break和goto语句。</li>
+<li>try/throw和异常处理，包括异常处理的使用方法。</li>
+</ol>
+<h2 id="语句作用域（P155，5-2）"><a href="#语句作用域（P155，5-2）" class="headerlink" title="语句作用域（P155，5.2）"></a>语句作用域（P155，5.2）</h2><p>用花括号括起来的块就是作用域的标志。在作用域中定义的对象只在作用域中起作用。块之外是没法访问和控制块内部的变量的。</p>
+<p>尤其是在switch语句中，switch的执行过程可能跨过一些标签，当标签里声明并定义了一个对象，这个对象的作用域就延伸到了所有case标签里，如果case 1定义了int a；switch执行了case2，这时这个我们不想执行的语句却产生了自己的作用域，这显然是不行的。因此可以在case标签后使用大括号形成块，这样就不会出现作用域的问题。</p>
+<p>goto也一样不能向前（代码的后几行）跳过对象的定义。不允许跨过变量的定义到达变量的作用域内。但是goto语句可以向后（代码的前几行）跳过定义。</p>
+<blockquote>
+<p>不要在程序中使用goto语句，它会使得程序既难理解又难修改。</p>
+</blockquote>
+<h2 id="try语句块和异常处理（P172，5-6）"><a href="#try语句块和异常处理（P172，5-6）" class="headerlink" title="try语句块和异常处理（P172，5.6）"></a>try语句块和异常处理（P172，5.6）</h2><p>可以用try\throw和catch联动进行异常处理，形式如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span></div><div class="line">&#123;待检测块&#125; <span class="comment">//待检测块里面包括throw语句来抛出异常</span></div><div class="line"><span class="keyword">catch</span> (异常类型 异常对象的对象名)</div><div class="line">&#123;异常处理语句 &#125;</div><div class="line"><span class="keyword">catch</span> （同上，可以写很多<span class="keyword">catch</span>）</div><div class="line">&#123;另一组异常处理语句&#125;</div></pre></td></tr></table></figure></p>
+<p>throw抛出异常和catch处理异常的头文件都在<code>stdexcept</code>里定义。抛出异常的语句形如：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">throw</span> 异常类型（<span class="string">"异常文本"</span>）；</div></pre></td></tr></table></figure></p>
+<p>异常类型一般只支持赋值，初始化，调用成员函数.what之类的几种操作。</p>
+<h2 id="术语表"><a href="#术语表" class="headerlink" title="术语表"></a>术语表</h2><p>1.控制流 flow-of-control<br>2.表达式语句 expression statement<br>3.空语句 null statement<br>4.复合语句 compound statement<br>5.悬垂else dangling else<br>6.case标签 case label<br>7.引发（异常） raise<br>8.catch子句 catch clause<br>9.异常处理代码 exception handler<br>10.异常安全（这不是特别安全的意思，而是在异常情况下也能保证程序执行预期的正确行为） exception safe</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li><a href="http://www.cnblogs.com/Sinte-Beuve/p/6164689.html" target="_blank" rel="external">http://www.cnblogs.com/Sinte-Beuve/p/6164689.html</a></li>
-<li><a href="http://blog.csdn.net/ortyijing/article/details/54984058" target="_blank" rel="external">http://blog.csdn.net/ortyijing/article/details/54984058</a></li>
-<li><a href="http://blog.csdn.net/bupt_wx/article/details/52761751" target="_blank" rel="external">http://blog.csdn.net/bupt_wx/article/details/52761751</a></li>
-<li><a href="http://blog.csdn.net/heyongluoyao8/article/details/52478715" target="_blank" rel="external">http://blog.csdn.net/heyongluoyao8/article/details/52478715</a></li>
-<li><a href="http://cs231n.github.io/neural-networks-3/" target="_blank" rel="external">http://cs231n.github.io/neural-networks-3/</a></li>
-<li><a href="http://www.360doc.com/content/16/1010/08/36492363_597225745.shtml" target="_blank" rel="external">http://www.360doc.com/content/16/1010/08/36492363_597225745.shtml</a><br>其中，第四个文章写得不错。</li>
+<li>C++ Primer</li>
+<li><a href="https://zhuanlan.zhihu.com/p/23535827" target="_blank" rel="external">C++Primer第5版学习笔记（四、五）</a></li>
+<li><a href="https://www.zhihu.com/question/37542455" target="_blank" rel="external">用Markdown写Hexo博客时如何转义竖杠 | ？</a></li>
 </ul>
 
       
@@ -601,7 +656,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://wangwlj.com/2017/10/17/DL_gradient_descent/" title="梯度下降及其优化算法">http://wangwlj.com/2017/10/17/DL_gradient_descent/</a>
+    <a href="http://wangwlj.com/2018/01/05/CPP_04_05/" title="C++ Primer学习笔记：(四/五)表达式和语句">http://wangwlj.com/2018/01/05/CPP_04_05/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -618,11 +673,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/deep-learning/" rel="tag"><i class="fa fa-tag"></i> deep learning</a>
-          
-            <a href="/tags/gradient-descent/" rel="tag"><i class="fa fa-tag"></i> gradient descent</a>
-          
-            <a href="/tags/梯度下降/" rel="tag"><i class="fa fa-tag"></i> 梯度下降</a>
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
           
         </div>
       
@@ -645,8 +696,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/10/batch_string_process/" rel="next" title="BAT批处理中的字符串处理(字符串截取等)">
-                <i class="fa fa-chevron-left"></i> BAT批处理中的字符串处理(字符串截取等)
+              <a href="/2018/01/04/CPP_03/" rel="next" title="C++ Primer学习笔记：(三)字符串、向量和数组">
+                <i class="fa fa-chevron-left"></i> C++ Primer学习笔记：(三)字符串、向量和数组
               </a>
             
           </div>
@@ -654,10 +705,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/18/Opening_ceremony_19th_CPC/" rel="prev" title="党的十九大报告全文">
-                党的十九大报告全文 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -879,7 +926,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降法"><span class="nav-number">1.</span> <span class="nav-text">梯度下降法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#批量梯度下降（Batch-gradient-descent）"><span class="nav-number">1.1.</span> <span class="nav-text">批量梯度下降（Batch gradient descent）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机梯度下降（Stochastic-gradient-descent）"><span class="nav-number">1.2.</span> <span class="nav-text">随机梯度下降（Stochastic gradient descent）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用情况"><span class="nav-number">2.</span> <span class="nav-text">使用情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小批量梯度下降-mini-batch-gradient-descent"><span class="nav-number">3.</span> <span class="nav-text">小批量梯度下降(mini-batch gradient descent)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降的优缺点"><span class="nav-number">4.</span> <span class="nav-text">梯度下降的优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降算法的改进"><span class="nav-number">5.</span> <span class="nav-text">梯度下降算法的改进</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#冲量-Momentum"><span class="nav-number">5.1.</span> <span class="nav-text">冲量(Momentum)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nesterov-accelerated-gradient"><span class="nav-number">5.2.</span> <span class="nav-text">Nesterov accelerated gradient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adagrad"><span class="nav-number">5.3.</span> <span class="nav-text">Adagrad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adadelta"><span class="nav-number">5.4.</span> <span class="nav-text">Adadelta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RMSprop"><span class="nav-number">5.5.</span> <span class="nav-text">RMSprop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adam"><span class="nav-number">5.6.</span> <span class="nav-text">Adam</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">5.7.</span> <span class="nav-text">效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#表达式基础"><span class="nav-number">1.</span> <span class="nav-text">表达式基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#表达式的基本概念-P120，4-1-1"><span class="nav-number">1.1.</span> <span class="nav-text">表达式的基本概念(P120，4.1.1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#左值和右值-P121，4-1-1"><span class="nav-number">1.2.</span> <span class="nav-text">左值和右值(P121，4.1.1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优先级和结合律（P122，4-1-2）"><span class="nav-number">1.3.</span> <span class="nav-text">优先级和结合律（P122，4.1.2）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求值顺序（P123，4-1-3）"><span class="nav-number">1.4.</span> <span class="nav-text">求值顺序（P123，4.1.3）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于运算符，左值和右值的归纳"><span class="nav-number">1.5.</span> <span class="nav-text">关于运算符，左值和右值的归纳</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算术运算符-P124-4-2"><span class="nav-number">2.</span> <span class="nav-text">算术运算符(P124, 4.2)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#除法和取模的结果-（P125，4-2）"><span class="nav-number">2.1.</span> <span class="nav-text">除法和取模的结果 （P125，4.2）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成员访问运算符-P133-4-6"><span class="nav-number">3.</span> <span class="nav-text">成员访问运算符(P133, 4.6)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件运算符-P134-4-7"><span class="nav-number">4.</span> <span class="nav-text">条件运算符(P134, 4.7)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位运算符（P136，4-8）"><span class="nav-number">5.</span> <span class="nav-text">位运算符（P136，4.8）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sizeof运算符（P139，4-9）"><span class="nav-number">6.</span> <span class="nav-text">sizeof运算符（P139，4.9）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#隐式类型转换（P141，4-11）"><span class="nav-number">6.1.</span> <span class="nav-text">隐式类型转换（P141，4.11）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显式转换（P144，4-11-3）"><span class="nav-number">6.2.</span> <span class="nav-text">显式转换（P144，4.11.3）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符优先级列表的规律（P147-4-12）"><span class="nav-number">7.</span> <span class="nav-text">运算符优先级列表的规律（P147,4.12）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#术语表-P149"><span class="nav-number">8.</span> <span class="nav-text">术语表(P149)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语句简介"><span class="nav-number">9.</span> <span class="nav-text">语句简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语句作用域（P155，5-2）"><span class="nav-number">10.</span> <span class="nav-text">语句作用域（P155，5.2）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#try语句块和异常处理（P172，5-6）"><span class="nav-number">11.</span> <span class="nav-text">try语句块和异常处理（P172，5.6）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#术语表"><span class="nav-number">12.</span> <span class="nav-text">术语表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">13.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>

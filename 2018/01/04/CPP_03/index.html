@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="第三章主要讲这么五个概念： 1.using声明，我知道挺多同学写代码练手都要在源文件前几句直接加using namespace std;然而using语句并不是什么情况都这么使用的，稍后我们将会看到详细的用法。 2.标准库类型string,和C的字符数组有区别的string，到底是怎么个构造，这章将会讲述。 3.标准库类型vector，vector和数组区别很大，这里将会提到，并引入一个“容器”的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-04T13:37:30.687Z">
+<meta property="og:updated_time" content="2018-01-05T07:38:00.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ Primer学习笔记：(三)字符串、向量和数组">
 <meta name="twitter:description" content="第三章主要讲这么五个概念： 1.using声明，我知道挺多同学写代码练手都要在源文件前几句直接加using namespace std;然而using语句并不是什么情况都这么使用的，稍后我们将会看到详细的用法。 2.标准库类型string,和C的字符数组有区别的string，到底是怎么个构造，这章将会讲述。 3.标准库类型vector，vector和数组区别很大，这里将会提到，并引入一个“容器”的">
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,919
+                  3,935
                 </span>
               
 
@@ -557,7 +557,11 @@
 <p>建议： 尽量使用标准库类型而非数组</p>
 <p>使用指针和数组容易出错。现代的C++程序应当尽量使用vector和迭代器，避免使用内置数组和指针；应该尽量使用string，避免使用C风格的基于数组的字符串。</p>
 </blockquote>
-<h2 id="专业术语"><a href="#专业术语" class="headerlink" title="专业术语"></a>专业术语</h2><p>1.拷贝初始化 copy initialization<br>2.直接初始化 direct initialization<br>3.范围for range for<br>4.容器 container<br>5.类模板 class template<br>6.实例化 instantiation<br>7.值初始化 value-initialized<br>8.构造 construct<br>9.列表初始化 list initialize<br>10.迭代器 iterator<br>11.迭代器运算 iterator arithmetic<br>12.C风格字符串 C-style character string<br>13.空字符 null terminated<br>14.缓冲区溢出 buffer overflow<br>15.编译器扩展 complier extension</p>
+<h2 id="术语表"><a href="#术语表" class="headerlink" title="术语表"></a>术语表</h2><p>1.拷贝初始化 copy initialization<br>2.直接初始化 direct initialization<br>3.范围for range for<br>4.容器 container<br>5.类模板 class template<br>6.实例化 instantiation<br>7.值初始化 value-initialized<br>8.构造 construct<br>9.列表初始化 list initialize<br>10.迭代器 iterator<br>11.迭代器运算 iterator arithmetic<br>12.C风格字符串 C-style character string<br>13.空字符 null terminated<br>14.缓冲区溢出 buffer overflow<br>15.编译器扩展 complier extension</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li>C++ Primer第五版</li>
+<li><a href="https://zhuanlan.zhihu.com/p/23503699" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/23503699</a></li>
+</ol>
 
       
     </div>
@@ -643,6 +647,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/05/CPP_04_05/" rel="prev" title="C++ Primer学习笔记：(四/五)表达式和语句">
+                C++ Primer学习笔记：(四/五)表达式和语句 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -750,7 +758,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -864,7 +872,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名空间的using声明-P75-3-1"><span class="nav-number">1.</span> <span class="nav-text">命名空间的using声明(P75,3.1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准库类型string"><span class="nav-number">2.</span> <span class="nav-text">标准库类型string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义和初始化string对象-P76-3-2-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义和初始化string对象(P76,3.2.1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string支持的操作-P77-3-2-2"><span class="nav-number">2.2.</span> <span class="nav-text">string支持的操作(P77,3.2.2)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-输入流中获取字符串"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.输入流中获取字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-string-type-size-P79"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.string::type_size (P79)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-string对象与字符串字面值相加-P80"><span class="nav-number">2.2.3.</span> <span class="nav-text">3.string对象与字符串字面值相加 (P80)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-其他支持的操作"><span class="nav-number">2.2.4.</span> <span class="nav-text">4.其他支持的操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理每个字符的头文件cctype（P82-3-2-3）"><span class="nav-number">2.3.</span> <span class="nav-text">处理每个字符的头文件cctype（P82, 3.2.3）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#范围for（range-for）语句-P82，3-2-3"><span class="nav-number">2.4.</span> <span class="nav-text">范围for（range for）语句(P82，3.2.3)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准库类型vector-P86-3-3"><span class="nav-number">3.</span> <span class="nav-text">标准库类型vector(P86, 3.3)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板、容器和实例化-P87-3-3"><span class="nav-number">3.1.</span> <span class="nav-text">类模板、容器和实例化(P87, 3.3)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义和初始化vector对象-P87-3-3-1"><span class="nav-number">3.2.</span> <span class="nav-text">定义和初始化vector对象(P87,3.3.1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向vector对象添加元素-P90-3-3-2"><span class="nav-number">3.3.</span> <span class="nav-text">向vector对象添加元素(P90, 3.3.2)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector支持的操作-P91-3-3-3"><span class="nav-number">3.4.</span> <span class="nav-text">vector支持的操作(P91, 3.3.3)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器介绍-3-4"><span class="nav-number">4.</span> <span class="nav-text">迭代器介绍(3.4)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组-3-5-P101"><span class="nav-number">5.</span> <span class="nav-text">数组(3.5, P101)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一维数组的定义和初始化-3-5-1-P102"><span class="nav-number">5.1.</span> <span class="nav-text">一维数组的定义和初始化(3.5.1,P102)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用数组初始化vector对象和用string对象赋值字符数组-3-5-5-P111"><span class="nav-number">5.2.</span> <span class="nav-text">用数组初始化vector对象和用string对象赋值字符数组(3.5.5, P111)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#专业术语"><span class="nav-number">6.</span> <span class="nav-text">专业术语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名空间的using声明-P75-3-1"><span class="nav-number">1.</span> <span class="nav-text">命名空间的using声明(P75,3.1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准库类型string"><span class="nav-number">2.</span> <span class="nav-text">标准库类型string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义和初始化string对象-P76-3-2-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义和初始化string对象(P76,3.2.1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string支持的操作-P77-3-2-2"><span class="nav-number">2.2.</span> <span class="nav-text">string支持的操作(P77,3.2.2)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-输入流中获取字符串"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.输入流中获取字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-string-type-size-P79"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.string::type_size (P79)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-string对象与字符串字面值相加-P80"><span class="nav-number">2.2.3.</span> <span class="nav-text">3.string对象与字符串字面值相加 (P80)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-其他支持的操作"><span class="nav-number">2.2.4.</span> <span class="nav-text">4.其他支持的操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理每个字符的头文件cctype（P82-3-2-3）"><span class="nav-number">2.3.</span> <span class="nav-text">处理每个字符的头文件cctype（P82, 3.2.3）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#范围for（range-for）语句-P82，3-2-3"><span class="nav-number">2.4.</span> <span class="nav-text">范围for（range for）语句(P82，3.2.3)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准库类型vector-P86-3-3"><span class="nav-number">3.</span> <span class="nav-text">标准库类型vector(P86, 3.3)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板、容器和实例化-P87-3-3"><span class="nav-number">3.1.</span> <span class="nav-text">类模板、容器和实例化(P87, 3.3)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义和初始化vector对象-P87-3-3-1"><span class="nav-number">3.2.</span> <span class="nav-text">定义和初始化vector对象(P87,3.3.1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向vector对象添加元素-P90-3-3-2"><span class="nav-number">3.3.</span> <span class="nav-text">向vector对象添加元素(P90, 3.3.2)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector支持的操作-P91-3-3-3"><span class="nav-number">3.4.</span> <span class="nav-text">vector支持的操作(P91, 3.3.3)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器介绍-3-4"><span class="nav-number">4.</span> <span class="nav-text">迭代器介绍(3.4)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组-3-5-P101"><span class="nav-number">5.</span> <span class="nav-text">数组(3.5, P101)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一维数组的定义和初始化-3-5-1-P102"><span class="nav-number">5.1.</span> <span class="nav-text">一维数组的定义和初始化(3.5.1,P102)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用数组初始化vector对象和用string对象赋值字符数组-3-5-5-P111"><span class="nav-number">5.2.</span> <span class="nav-text">用数组初始化vector对象和用string对象赋值字符数组(3.5.5, P111)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#术语表"><span class="nav-number">6.</span> <span class="nav-text">术语表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -907,7 +915,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      107.2k
+      111.5k
     </span>
   
 </div>
