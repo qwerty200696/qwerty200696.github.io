@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+  (function(){
+    if(''){
+      if (prompt('请输入文章密码') !== ''){
+        alert('密码错误！');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="Zg8i3oTV3dBiFi2-eYpkWHuo1XYforgqvtiy1f6zTvs" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="C++," />
+
+
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="王立杰的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web_icon.jpg?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="第六章是和函数有关的知识，函数就是命名了的计算单元，对程序的结构化非常重要。本章内容包括：  函数的概念基础，包括函数的定义声明以及函数如何生成值和返回结果。 函数重载,重载可以使函数接受不同种类或者数量不同的参数。 函数指针，指向函数的一类特殊指针。">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Primer学习笔记：(四&#x2F;五)表达式和语句">
+<meta property="og:url" content="http://wangwlj.com/2018/01/06/CPP_06/index.html">
+<meta property="og:site_name" content="王立杰的博客">
+<meta property="og:description" content="第六章是和函数有关的知识，函数就是命名了的计算单元，对程序的结构化非常重要。本章内容包括：  函数的概念基础，包括函数的定义声明以及函数如何生成值和返回结果。 函数重载,重载可以使函数接受不同种类或者数量不同的参数。 函数指针，指向函数的一类特殊指针。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-06T08:55:41.693Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++ Primer学习笔记：(四&#x2F;五)表达式和语句">
+<meta name="twitter:description" content="第六章是和函数有关的知识，函数就是命名了的计算单元，对程序的结构化非常重要。本章内容包括：  函数的概念基础，包括函数的定义声明以及函数如何生成值和返回结果。 函数重载,重载可以使函数接受不同种类或者数量不同的参数。 函数指针，指向函数的一类特殊指针。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wangwlj.com/2018/01/06/CPP_06/"/>
+
+
+
+
+<link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
+
+  <title>C++ Primer学习笔记：(四/五)表达式和语句 | 王立杰的博客</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-111387754-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?61acd986303bc926826d2eec81dbbdff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    
+	<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王立杰的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">积跬步以至千里！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2018/01/06/CPP_06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王立杰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C++ Primer学习笔记：(四/五)表达式和语句</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-06T16:55:26+08:00">
+                2018-01-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-Primer/" itemprop="url" rel="index">
+                    <span itemprop="name">C++ Primer</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+	  
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/06/CPP_06/" class="leancloud_visitors" data-flag-title="C++ Primer学习笔记：(四/五)表达式和语句">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  8,039
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>第六章是和函数有关的知识，函数就是命名了的计算单元，对程序的结构化非常重要。<br>本章内容包括：</p>
+<ol>
+<li>函数的概念基础，包括函数的定义声明以及函数如何生成值和返回结果。</li>
+<li>函数重载,重载可以使函数接受不同种类或者数量不同的参数。</li>
+<li>函数指针，指向函数的一类特殊指针。</li>
+</ol>
+<a id="more"></a>
+<h2 id="函数基础（P182，6-1）"><a href="#函数基础（P182，6-1）" class="headerlink" title="函数基础（P182，6.1）"></a>函数基础（P182，6.1）</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">char</span> c)</span> <span class="comment">// 形参  </span></span></div><div class="line"><span class="function"></span>&#123;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></div><div class="line"><span class="function"></span>&#123;  </div><div class="line">    func(<span class="number">1</span>, <span class="string">'a'</span>); <span class="comment">// 实参，与形参的类型、数量相匹配  </span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在调用函数时，第一步编译器会隐式的定义并初始化它的形参。比如一个函数<code>void f(int a);</code>，形参<code>int a</code>会被用户传入的实参初始化，此时形参是实参的一个副本。当有多个形参时，形参对应的实参的求值顺序是不一定的。实参的类型必须和形参的类型一致或能转化为形参声明的类型。</p>
+<p>函数可以返回空值。返回函数指针和数组的特殊函数类型将在之后提到。</p>
+<h3 id="局部静态对象（P185，6-1-1）"><a href="#局部静态对象（P185，6-1-1）" class="headerlink" title="局部静态对象（P185，6.1.1）"></a>局部静态对象（P185，6.1.1）</h3><p>一个对象的名字有作用域，对象本身也有生命周期。名字的作用域是我们可以通过名字访问对象的的区间。相对的，生命周期是指对象的产生和销毁的过程。</p>
+<p>定义在所有函数外部的变量叫做<strong>全局变量</strong>，在整个程序的执行过程中一直存在。这种对象在程序启动时被创建，直到程序结束才会被销毁。</p>
+<p>定义在函数体内的对象或者函数的形参都是<strong>局部变量</strong>。当函数执行路径经过该对象的定义语句时才会自动开始创建该对象，在对应的块结束时，这个对象会被销毁。</p>
+<p>有时候我们有必要使局部变量的生命周期贯穿函数调用及之后的时间，所以我们可以将局部对象定义成static对象，定义语句形如<code>static int a=1;</code>，这样我们就可以在程序的别的地方（只要是在这个static对象的作用域内访问它）操作这个局部静态对象。</p>
+<p>在一个程序中多次定义局部静态对象仍然是不被允许的。但是当一个函数里的对象被定义为局部静态对象，<font color="00A00A">多次调用这个函数并不会重置这个局部静态对象的值</font>。它自己会记得上一次被函数调用之后的值并继承这个值，不被第二次函数调用的变量定义初始化，这就是它静态的特性。</p>
+<blockquote>
+<p>局部静态变量若没有显式的初始化，则执行值初始化，内置类型的局部静态变量初始化为0。</p>
+</blockquote>
+<h3 id="函数声明（P186，6-1-2）"><a href="#函数声明（P186，6-1-2）" class="headerlink" title="函数声明（P186，6.1.2）"></a>函数声明（P186，6.1.2）</h3><p>函数声明要在使用这个函数之前。规范的形式是通常放在头文件里。函数声明可以不写形参的名字，只写形参的类型。</p>
+<p>函数声明也称作函数原型(function prototype)。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 函数的声明，必须要写在函数第一次被调用之前。  </span></div><div class="line"> <span class="comment">// 这部分的代码可放到头文件中，用的时候include进来就可以了(分离式编译)  </span></div><div class="line"> <span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span>, <span class="keyword">int</span>)</span></span>;  </div><div class="line">  </div><div class="line"> <span class="comment">// 只要函数在被调用前声明了，那函数的定义可以写在声明之后的任意的位置，  </span></div><div class="line"> <span class="comment">// 如这里的func就可以在声明之后、main函数之前定义；  </span></div><div class="line"> <span class="comment">// 如果func没有在调用前声明，则必须要在被调用前定义(相当于把main函数后面的func那段代码放在这里实现)  </span></div><div class="line">  </div><div class="line"> <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;  </div><div class="line">     <span class="keyword">return</span> func(<span class="string">'a'</span>, <span class="string">'1'</span>); <span class="comment">// 函数的调用，虽然func在main后定义，但是因为之前对func进行了声明，所以编译器知道这个函数的三要素是啥  </span></div><div class="line"> &#125;  </div><div class="line">  </div><div class="line"> <span class="comment">/* </span></div><div class="line"><span class="comment">  * 函数的定义的参数列表中各参数的类型、数量以及位置等需要和声明时的相匹配 </span></div><div class="line"><span class="comment">  */</span>  </div><div class="line"> <span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span> c, <span class="keyword">int</span> i)</span>  </span></div><div class="line"><span class="function"> </span>&#123;  </div><div class="line">     <span class="comment">// do something  </span></div><div class="line">     <span class="keyword">return</span> <span class="number">0</span>;  </div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="传引用调用（P189，6-2-2）"><a href="#传引用调用（P189，6-2-2）" class="headerlink" title="传引用调用（P189，6.2.2）"></a>传引用调用（P189，6.2.2）</h3><p>当函数的形参是一个引用类型的时候，在使用函数时，这个函数的引用形参就绑定在了传入的实参上，这种函数调用就叫做<strong>传引用调用</strong>。在函数涉及到一些比较大的类型对象作为参数的时候，通常地我们使用传引用调用，这样就可以避免实参初始化形参带来的拷贝。在C语言里经常传入指针避免拷贝，在C++里，一般使用引用。</p>
+<p>大多数情况下函数只能有一个返回值，因此在我们需要的时候，我们可以<strong>传一个额外的引用的参数在函数里面。这样函数体内就可以改变引用的值进而改变函数外部被引用连接的对象的值，从而返回多个数值</strong>。</p>
+<h3 id="const形参和实参（-P190，6-2-2）"><a href="#const形参和实参（-P190，6-2-2）" class="headerlink" title="const形参和实参（ P190，6.2.2）"></a>const形参和实参（ P190，6.2.2）</h3><p>函数形参的类型也可以是带const的类型。</p>
+<blockquote>
+<p>顶层const作用于对象本身（离对象最近的const），实参初始化形参的时候会忽略掉顶层const。即<strong>形参的顶层const被忽略掉了</strong>。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fcn</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> i)</span></span>; <span class="comment">//fcn 能读取i，但不能向i写值。</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fcn</span><span class="params">(<span class="keyword">int</span> i)</span></span>; <span class="comment">//错误，重复定义了fcn(int)。</span></div></pre></td></tr></table></figure>
+<p>因为顶层const被忽略掉了，所以第二个fcn是错误的。</p>
+<p>形参的初始化方式与变量的初始化方式一样。先回顾一下变量的初始化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">int i  = 42;</div><div class="line">const int *cp = &amp;i; //正确，但是cp不能改变i</div><div class="line">const int &amp;r = i;   //正确，但是r不能改变i</div><div class="line">const int &amp;r2 = 42; //正确，参见P55。</div><div class="line"></div><div class="line">int *p = cp;        //错误，p的类型和cp的类型不匹配</div><div class="line">int &amp;r3 = r;        //r3的类型和r的类型不匹配</div><div class="line">int &amp;4 = 42;        //错误，不能用字面值常量初始化一个非常量引用（参见P45）</div></pre></td></tr></table></figure></p>
+<p>将同样的初始化规则应用到参数传递上：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> ci = i;</div><div class="line"><span class="built_in">string</span>::size_type ctr = <span class="number">0</span>;</div><div class="line">reset(&amp;i);  <span class="comment">//调用形参类型是int *的函数</span></div><div class="line">reset(&amp;ci);  <span class="comment">//错误：不能用指向const int对象的指针初始化int *</span></div><div class="line"></div><div class="line">reset(i);  <span class="comment">//调用形参类型是int &amp;的函数</span></div><div class="line">reset(ci);  <span class="comment">//错误：不能把普通引用绑定到const对象ci上</span></div><div class="line">reset(<span class="number">42</span>);  <span class="comment">//错误：不能把普通引用绑定到字面值上</span></div><div class="line">reset(ctr);  <span class="comment">//错误：类型不匹配，ctr是无符号类型</span></div></pre></td></tr></table></figure></p>
+<p><strong><font color="00A00A">我们不能把const对象、字面值或者需要类型转换的对象传递给普通的引用形参。</font></strong></p>
+<hr>
+<p><strong>当我们接受函数的参数是为了完成比较或者判断等操作，而不需要改变参数的值，我们应该使用带const的参数来确保参数不会被更改</strong>。另外，const类型的形参能比普通类型的形参接受更多种类的参数。比如<code>void fn(const string&amp;);</code>这个函数，字符串字面值是<code>const char [ ]</code>类型，因此fn这个函数接受字符串字面值。但是如果声明成了<code>void fn(string&amp;);</code>，那么这个函数就没有办法接受字符串字面值（类似：<code>“string”</code>这样的值就是字符串字面值）。另外，带const的形参也接受带底层const的对象。</p>
+<h3 id="传递数组作为参数（P193，6-2-4）"><a href="#传递数组作为参数（P193，6-2-4）" class="headerlink" title="传递数组作为参数（P193，6.2.4）"></a>传递数组作为参数（P193，6.2.4）</h3><p>又是我们想要向函数传递一个数组，但是数组是不可拷贝的，因此我们不能够通过值传递的方式传递一个数组到函数里，另外，如果数组的内容很大，传递数组的每个元素会带来不必要的拷贝。</p>
+<p>以下的方法都基于或类似<strong><font color="00A00A">传递数组的指针</font></strong>。一维数组的指针指向数组的第一个元素。我们可以声明类似如下的形式传递一个数组指针到函数:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pri</span><span class="params">(<span class="keyword">int</span>*)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pri</span><span class="params">(<span class="keyword">int</span> [])</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pri</span><span class="params">(<span class="keyword">int</span> [<span class="number">10</span>])</span></span>;</div></pre></td></tr></table></figure></p>
+<p>这三者是等价的。传递之后形参的类型都是<code>int *</code>类型。</p>
+<p>但是正因为数组的信息是以指针的形式传递给函数的，所以函数只得到一个地址，并不知道数组的大小，因此也就很容易访问到未定义的内存区域，因此在传递数组指针的基础上，我们可以通过手动标志数组大小等方法保证函数访问的内存是合法的不越界的。因此衍生出以下几种方法。</p>
+<ol>
+<li>第一种方法：<strong>在数组的末尾加标记。</strong>这种方法类似于C风格字符串，末尾会自动加’\0’来告诉大家这个字符串结束了。在数组末尾加特殊的标记来使数组不越界是简单易用的方法。</li>
+<li>第二种方法：<strong>使用标准库规范中的begin和end函数。</strong>头文件<code>iterator</code>里有针对数组的begin和end函数，返回数组的首指针和尾后指针，指针指向数组元素的类型，这种方法也可以检测越界。</li>
+<li>第三种方法：<strong>传递一个表示数组大小的参数。</strong>这样构建函数时就知道数组有多大了。如<code>print(j, end(j)-begin(j));</code></li>
+<li>第四种方法：<strong>传递数组的引用。</strong>除了使用指针，我们还可以使用引用来得到一个完整数组的引用（别名）。声明格式类似下面这种：<code>void fx(int (&amp;arr)[10]);</code>，这里形参的名字是<code>arr</code>，<code>arr</code>前面的<code>&amp;</code>符号代表它是引用类型，引用了一个实参数组，这个数组必须只有10个元素（因为arr后面的[10]也是构成引用声明的必要部分。）</li>
+</ol>
+<blockquote>
+<p>注意<code>void fx(int &amp;arr[10]);</code>这个去掉括号的写法是错误的，不存在引用的数组。</p>
+</blockquote>
+<hr>
+<p><strong>传递多维数组</strong>：有时我们也需要向一个函数传递多维数组。多维数组的实质是数组的数组，一维数组的名是指向数组元素的指针，二维数组是指向数组元素的指针的指针。因此想要一个函数传递多维数组的形参声明如下：<code>void fx(int (*arr)[10]);</code>这时arr指向有10个int型元素的数组。当我们把arr+1，它就又指向了新的10个元素，因此arr相当于二维数组的数组名（两者都是指向包含的一维数组首元素的指针）。</p>
+<p>也可以用<code>int arr[][10]</code>代替<code>int (*arr)[10]</code>，因为它们是等价的，都是二维数组名。用<code>int arr[][10]</code>这种方式定义形参时，要标出除了第一个维度以外的每个维度。（假设有一个数组<code>int b[2][3]</code>，就说明b有两列，每列3个元素，这里的2就是第一个维度。指向一维数组的指针不关心在这个维度上有几个元素，因此忽略）。</p>
+<h3 id="main函数的命令行选项（P196，6-2-5）"><a href="#main函数的命令行选项（P196，6-2-5）" class="headerlink" title="main函数的命令行选项（P196，6.2.5）"></a>main函数的命令行选项（P196，6.2.5）</h3><p>最开始我们使用<code>UNIX</code>或<code>LINUX</code>系统编程时经常使用没有图形界面的编译器来把写好的代码编译成obj文件，这时候我们使用命令行来编译一份源代码文件，我们需要在终端里输入类似“<code>prog -d -o oflie data0</code>”的命令行来进行命令行控制。</p>
+<p>现在我们看到的main函数一般都是<code>int main()</code>，括号里面什么也不写，我们也可以给main传递上述的那个命令行参数。形如：<code>int main(int argc,char *argv[])</code>。 main可以什么参数也不接受，也可以接受一个int和一个指向字符串的指针这两个参数。main没有第三种形式了。</p>
+<p><code>int argc</code>是表示后面的argv一共指向几个字符串用的。<code>char *argv[]</code>里面的每一个字符串都顺序对应着命令行的参数。这些参数的字符串数组的第一个元素应该是可执行文件的名字或者空参数，最后一个字符串的值必须为<code>0</code>。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//对于命令”prog -d -o oflie data0“：</span></div><div class="line">argc = <span class="number">5</span>;</div><div class="line">argv[<span class="number">0</span>] = <span class="string">"prog"</span>;</div><div class="line">argv[<span class="number">1</span>] = <span class="string">"-d"</span>;</div><div class="line">argv[<span class="number">2</span>] = <span class="string">"-o"</span>;</div><div class="line">argv[<span class="number">3</span>] = <span class="string">"0file"</span>;</div><div class="line">argv[<span class="number">4</span>] = <span class="string">"data0"</span>;</div><div class="line">argv[<span class="number">5</span>] = <span class="number">0</span>;</div></pre></td></tr></table></figure></p>
+<p>有关命令行的更多选项和argv参数的具体用法，可以参照对应的编译器文档。</p>
+<h3 id="含有可变形参的函数（P197，6-2-6）"><a href="#含有可变形参的函数（P197，6-2-6）" class="headerlink" title="含有可变形参的函数（P197，6.2.6）"></a>含有可变形参的函数（P197，6.2.6）</h3><p>到现在我们定义的函数都是固定参数的，但是有时候我们无法预知向函数传递几个参数，又想使用一个函数接受这种变化，我们就可以使用C++指定的两种方法来定义含有可变形参的函数。</p>
+<ul>
+<li>第一种方法是当参数个数不一定，但是<strong>参数类型都相同</strong>时，我们可以<strong>传递一个initializer_list参数</strong>。这是标准库设施中的一部分。</li>
+<li>第二种方法在当我们想传递不确定个数的<strong>不同类型的实参</strong>时要使用的技术：<strong>可变参数模板。</strong>这个16章才介绍。</li>
+</ul>
+<p>其实还有一种方法使函数接受多种形参，不过这种方法多用于和C语言旧代码对接时使用。<strong>这个方法用省略符来传递可变数量的形参</strong>。</p>
+<h3 id="initializer-list（P197，6-2-6）"><a href="#initializer-list（P197，6-2-6）" class="headerlink" title="initializer_list（P197，6.2.6）"></a>initializer_list（P197，6.2.6）</h3><p>下面是关于定义可变形参函数的第一种方法——<code>initializer_list</code>参数的介绍：</p>
+<p><code>initializer_list</code>类似<code>vector</code>，是一种容器，接纳一种同样类型的元素。initializer_list定义在同名的<code>&lt;initializer_list &gt;</code>中，我们可以把任意数量，同样类型的参数传递给这个容器使函数能够处理多个元素。</p>
+<p>initializer_list支持的操作包括：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">initializer_list&lt;容器内元素的类型名&gt; 容器名 //默认初始化一个 initializer_list空容器</div><div class="line">initializer_list&lt;容器内元素的类型名&gt; 容器名&#123;元素值1，元素值2，元素值2...&#125; //大括号初始化</div><div class="line">initializer_list 容器名1（已被定义的initializer_list 容器的容器名2 ）//使容器1的内容和容器二一致，两个容器共享容器二里面的元素。不会形成拷贝，（也可以用initializer_list 容器名1=initializer_list 容器名2）</div><div class="line">initializer_list 容器名.size() //元素数量</div><div class="line">initializer_list 容器名.begin() //指向首元素的迭代器</div><div class="line">initializer_list 容器名.end() //尾后迭代器</div></pre></td></tr></table></figure></p>
+<p>initializer_list里面元素的值永远是常量不能被更改，如果里面的元素是指针或引用，这个元素的属性将被自动加上底层const。<br>当我们声明一个接受 <code>initializer_list</code>类型的函数 <code>void fa(initializer_list&lt;int&gt; list1);</code>的时候，我们需要使用大括号来调用这个函数，形如fa({2,3,4});这样我们就向initializer_list传递了一个值的序列。<br>我们也可以声明<code>void fa(string b,initializer_list&lt;int&gt; list1);</code>这种函数。</p>
+<h3 id="省略符形参（P199，6-2-6）"><a href="#省略符形参（P199，6-2-6）" class="headerlink" title="省略符形参（P199，6.2.6）"></a>省略符形参（P199，6.2.6）</h3><p>下面是关于定义可变形参函数的第三种方法——省略符形参的介绍。</p>
+<p>省略符形参有下列两种形式：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span> <span class="params">( parm_list , ...)</span></span>; </div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span> <span class="params">( ... )</span></span>;</div></pre></td></tr></table></figure></p>
+<p>第一种形式为特定数目的形参提供了声明。在这种情况下，当函数被调用时，对于与显示声明的形参相对应的实参进行类型检查，而对于与省略符对应的实参则暂停类型检查。在第一种形式中，形参声明后面的逗号是可选的。如果没有逗号，相应地，就变成了第二种情况。</p>
+<blockquote>
+<p>省略符形参应该仅仅用于C和C++通用的类型。<br>特别注意的是，大多数类型的对象在传递给省略符形参时都无法正确拷贝。<br>（感慨：所以说有什么用？还是用<code>intializer_list</code>吧？）</p>
+</blockquote>
+<p>你可以传递任意数量的参数给省略符形参。要注意省略号的优先级别最低，所以在函数解析时，只有当其它所有的函数都无法调用时，编译器才会考虑调用省略号函数的。<br>(optional)首先，如果要用省略符的方式处理不定参数的函数要包含头文件：<code>#include &lt;stdarg.h&gt;</code> （C语言中）或者<code>#include &lt;cstdarg&gt;</code>（C++中）。 然后利用va_list类型和va_start、va_arg、va_end 3个宏读取传递到函数中的参数值。<br>用省略符处理不定参数的函数基于C语言的方法，在C++中不建议使用。（使用了C语言标准库功能varargs）。</p>
+<h2 id="返回值（P202，6-3）"><a href="#返回值（P202，6-3）" class="headerlink" title="返回值（P202，6.3）"></a>返回值（P202，6.3）</h2><p>在void返回值的语句最后会隐式地有<code>return;</code>语句，这时函数什么也不返回。</p>
+<blockquote>
+<p>不要返回局部对象的引用或指针。</p>
+</blockquote>
+<p>函数可以返回一个<strong>非常量引用</strong>作为左值。也可以返回一个花括号括起来的列表，来初始化vector等类型。</p>
+<p>main函数的return语句可以不写，编译器会带为隐式补充。</p>
+<blockquote>
+<p>main 函数不能调用自己。</p>
+</blockquote>
+<h3 id="返回数组指针（P205，6-3-3）"><a href="#返回数组指针（P205，6-3-3）" class="headerlink" title="返回数组指针（P205，6.3.3）"></a>返回数组指针（P205，6.3.3）</h3><p>虽然我们不能直接让函数返回一个数组，但是我们可以设定函数返回一个指针的类型。函数会返回数组的指针。返回数组指针的函数定义语句如下所示：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">数组元素类型 （*函数名 （参数列表））[ 数组大小 ]</div></pre></td></tr></table></figure></p>
+<p>当然，返回一个临时量或者局部对象的引用/指针都是错误的行为，如果你在函数里普通地定义了一个数组，那么这个数组的生命周期在函数返回时就结束了，会被内存中释放，因此可能需要用static使这个数组静态。静态对象只是延长了对象的生命周期，但是无论如何在函数内部定义的对象在外部都无法访问，除非使用返回指针的方法。</p>
+<p>一条<code>double (*func(int a))[10]</code>这种语句来说明函数接受一个<code>int a</code>形参并且返回一个带有10个元素的double数组，这种语句在写法上比较乱，因此<code>C++11</code>提供了<strong><font color="00A00A">尾置返回</font></strong>的方法让程序员不必要非要迁就编译器的理解能力，上一条语句等价于这样：<code>auto func(int a)-&gt;double(*)[10]</code>我们使用<code>-&gt;</code>符号把返回值类型的描述放在了参数列表后面并和函数声明分离开让函数看起来不那么乱。</p>
+<p>我们也可以使用<code>decltype</code>语句返回数组指针。<code>decltype</code>后面的括号可以括起一个现有的数组推导数组类型。我们再手动加<code>*</code>得到数组指针类型的返回值。在已有<code>int a[10];</code>的情况下，我们可以使用<code>decltype(a) *fn(int b)</code>这种形式定义一个返回指向数组的指针的返回值类型。</p>
+<h2 id="函数重载（P207，6-4）"><a href="#函数重载（P207，6-4）" class="headerlink" title="函数重载（P207，6.4）"></a>函数重载（P207，6.4）</h2><p>我们可以定义一组功能类似，函数名一致，但是接受的参数类型或数量不同的函数。定义多个这种函数就叫做<strong>函数重载</strong>。函数重载可以提供给我们用一个函数名处理多种参数形式的情况。</p>
+<p>定义重载函数要能重传入的参数里区别出实质不同的重载函数，如函数A的定义为<code>int fa(const int a);</code>和函数<code>B int fa(int b);</code>这两个函数函数名一样，形参类型不同，但仍然无法作为重载函数。因为我们传入一个int值时，fa不知道应该执行第一种还是第二种。所以<strong>只有参数顶层const属性不同的几个函数不是重载函数。</strong></p>
+<blockquote>
+<p>形参相同，但返回类型不同的函数也不能构成重载。</p>
+</blockquote>
+<p>当然，对于底层const，比如参数列表为<code>const int *a</code>的函数和参数列表为int a的函数能被看出不同，因为对于一个传入的const常量指针，这个实参只能初始化<code>const int *a</code>，不能被初始化<code>int a</code>。当同时有这两种形式的重载函数时，当传入一个非常量，IDE会优先选择为它匹配形参为<code>int a</code>版本的普通变量形参函数。</p>
+<blockquote>
+<p>形参是某种类型的引用或指针，则通过区分其指向的是常量对象还是非常量对象可以实现函数重载。（此时的const是底层的）</p>
+</blockquote>
+<h3 id="const-cast和函数（P209，6-4）"><a href="#const-cast和函数（P209，6-4）" class="headerlink" title="const_cast和函数（P209，6.4）"></a>const_cast和函数（P209，6.4）</h3><p>这里主要介绍<code>const_cast</code>类型强制转换是如何在函数中被使用的。在第四章(4.11.3, P145)第一次接触<code>const_cast</code>的时候我们提到过这个常被用于函数里。这里我们就看看怎么使用。</p>
+<p>之前说过，向函数传递参数时最好传递<code>const</code>型参数使其能够接受多种参数，这里我们可以在函数体内使用<code>const</code>再把参数变回普通的变量，这样就可以返回一个<code>非const</code>值了。</p>
+<h3 id="重载和作用域（P210，6-4）"><a href="#重载和作用域（P210，6-4）" class="headerlink" title="重载和作用域（P210，6.4）"></a>重载和作用域（P210，6.4）</h3><p>声明变量时，变量的作用域就在块里，声明函数也一样，而且里层的作用域会隐藏外部的作用域。例子如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	int a=0; //这里是a的外层作用域</div><div class="line">    &#123;</div><div class="line">    	double a=1.2; //外边已经有a了，这里又声明了一个a，因此这个a的作用域覆盖了前面的int a；</div><div class="line">    	cout&lt;&lt;a&lt;&lt;endl; //输出的会是1.2</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>函数声明也一样，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    int fa(int b); //这里是函数fa的外层作用域</div><div class="line">    double fa(double b); //重载了函数fa使它能够接受double</div><div class="line">    &#123;</div><div class="line">        double fa(string &amp; c); //外边已经有fa了，这里又声明了一个fa，因此这个fa的作用域覆盖了前面的;</div><div class="line">        fa(2.3); //错误，原型为double fa(double b)的函数声明作用域被double fa(string &amp; c);覆盖，匹配不到函数</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>C++中，名字查找发生在类型检查之前。</p>
+</blockquote>
+<h2 id="特殊用途语言特性（6-5）"><a href="#特殊用途语言特性（6-5）" class="headerlink" title="特殊用途语言特性（6.5）"></a>特殊用途语言特性（6.5）</h2><h3 id="默认实参（P211，6-5-1）"><a href="#默认实参（P211，6-5-1）" class="headerlink" title="默认实参（P211，6.5.1）"></a>默认实参（P211，6.5.1）</h3><p>有时候一些函数我们每次调用它总会向它传递一些特殊的值。我们可以声明带有默认实参的函数。默认实参如果没有明确说明，默认实参会被自动当做函数的初始值传递进去。<br>形如<code>int fn(int a,int b=2,double c=3.3)</code>这样定义函数头的方式就给了b和c默认的实参，注意，<strong>当一个形参被给了默认实参，它后面的所有参数都要有默认实参才行。</strong></p>
+<p>当我们想使用默认实参的时候，只要调用函数的时候使用这种对应的实参就行了，默认实参会用来填补缺少的尾部实参，上面的定义的函数如果这么调用：<code>fn(1,2);</code>，<code>double c</code>的值会被自动设为3.3。书写这种函数时要尽量保证要经常用到的默认实参放在参数列表的更后面一点，这样才合理。</p>
+<p>可以只在函数声明里标注默认实参不在函数定义里这样写，结果仍然将是正确的。<code>void fn(int = 1, int = 2, int =3);</code>这种函数声明语句省略了形参的名字，不过也是可以的。</p>
+<blockquote>
+<p>通常应该在函数声明中指定默认实参，并将该声明放在合适的头文件中。</p>
+</blockquote>
+<p>局部变量不能做默认实参，默认实参的定义在函数体之外。另外，<strong>默认实参是可以在名字的作用域内通过名字更改的</strong>。</p>
+<h3 id="内联函数（P213，6-5-2）"><a href="#内联函数（P213，6-5-2）" class="headerlink" title="内联函数（P213，6.5.2）"></a>内联函数（P213，6.5.2）</h3><p>有时我们要频繁调用一个优化规模小，流程直接，频繁被调用的函数，定义函数时我们可以在返回值类型前面加上关键字<code>inline</code>使它成为内联函数，减少运行时的开销。</p>
+<blockquote>
+<p>内联说明只是向编译器发出的一个请求，编译器可以选择忽略这个请求。</p>
+</blockquote>
+<h3 id="constexpr函数（P214，6-5-2）"><a href="#constexpr函数（P214，6-5-2）" class="headerlink" title="constexpr函数（P214，6.5.2）"></a>constexpr函数（P214，6.5.2）</h3><p>这是一种能够被用在常量表达式的函数，但是函数的返回值类型和形参类型必须都是字面值。函数体中必须有且只有一条<code>return</code>语句，<code>constexpr</code>函数被隐式的指定为内连函数。const函数中也可以有类型别名，使用作用域声明等不执行操作的其他语句。这里没有赋值，没有构建对象。同时<code>constexpr</code>可以返回计算后的结果。如<code>constexpr int fn(int a){return a+22;}</code>，这条定义是正确的，前提是调用函数这个函数fn时，传入的实参是一个常量。比如<code>fn(3);</code><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">constexpr</span> <span class="title">new_sz</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> <span class="number">42</span>; &#125;</div><div class="line"><span class="function"><span class="keyword">constexpr</span> size_t <span class="title">scale</span><span class="params">(<span class="keyword">size_t</span> cnt)</span> </span>&#123; <span class="keyword">return</span> new_sz() * cnt; &#125;</div><div class="line"></div><div class="line"><span class="keyword">int</span> arr[scale(<span class="number">2</span>)]; <span class="comment">//正确，scale(2)是常量表达式</span></div><div class="line"><span class="keyword">int</span> i=<span class="number">2</span>;</div><div class="line"><span class="keyword">int</span> a2[scale(i)]; <span class="comment">//错误，scale(i)不是常量表达式</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>内联函数和constexpr函数通常定义在头文件中。</p>
+</blockquote>
+<h3 id="调试帮助（P215，6-5-3）"><a href="#调试帮助（P215，6-5-3）" class="headerlink" title="调试帮助（P215，6.5.3）"></a>调试帮助（P215，6.5.3）</h3><p>程序员在写程序时可能涉及到一些调试中的代码，这些代码只在开发程序时使用，当即将发布程序的时候，要暂时屏蔽掉正在调试中的代码。C++提供了<code>assert</code>和<code>NDEBUG</code>两个预处理功能屏蔽测试代码。</p>
+<h4 id="assert预处理宏"><a href="#assert预处理宏" class="headerlink" title="assert预处理宏"></a>assert预处理宏</h4><p>assert这个宏定义在<code>cassert</code>头文件中，assert使用一个表达式作为它的条件，形如<code>assert(expr);</code>首先对expr或者表达式求值，如果结果为真（非0），那么assert什么都不做。如果结果为假(表达式值为0)，那么assert输出信息并且终止程序的执行。</p>
+<p>assert经常用于处理不能发生的条件，如果你写了一段代码，代码没测试越界，你就可以用assert，当它越界了我们就结束程序的执行。</p>
+<h4 id="NDEBUG预处理变量"><a href="#NDEBUG预处理变量" class="headerlink" title="NDEBUG预处理变量"></a>NDEBUG预处理变量</h4><p><code>NDEBUG</code>宏定义可以影响assert的行为，这个默认是没被定义的。当我们宏定义了<code>NDEBUG</code>，就屏蔽掉了assert的功能。</p>
+<p>可以使用<code>NDEBUG</code>编写自己的调试代码。</p>
+<p>此外，IDE还提供了<code>__FILE__</code>(这里是两个英文下划线，这个存放文件名) 、<code>__func__</code>（这个存放所在的函数名) 、 <code>__LINE__</code>（这个存放所在的行数) 、<code>__TIME__</code>（这个存放调试的时间) 、 <code>__DATE__</code>（这个存放调试的日期) 这五种静态数组来提供错误信息。</p>
+<h2 id="函数匹配（P217，6-6）"><a href="#函数匹配（P217，6-6）" class="headerlink" title="函数匹配（P217，6.6）"></a>函数匹配（P217，6.6）</h2><p>程序员定义重载函数之后就可以使用它们了，挑选到底使用哪个版本的函数是一个过程，这个过程叫做函数匹配。</p>
+<ol>
+<li>函数匹配的第一步是在调用时先找与与调用函数同名的函数名。且调用点在函数作用域内。这一步筛选出的函数叫做<strong>候选函数</strong>。</li>
+<li>函数匹配的第二步是从候选函数中选择出能够被本次函数调用的实参传入的函数，函数名一致的前提下还要求函数的形参个数和实参一致，实参能够转化成（或者就是）形参规定的类型。这一步筛选出的函数叫做<strong>可行函数</strong>。</li>
+<li><strong>寻找最佳匹配。</strong>当<code>有int fn(int a);</code>和<code>int fn(double a,double b=1.0)</code>时，我们调用函数fn形如<code>fn(3.4);</code>显然这两种函数都是可行函数，这是我们再寻找最佳的匹配，因为<code>fn(3.4);</code>对应<code>fn(double,double=1.0);</code>的话无需转化，因此是最佳匹配。当有多个最佳匹配的时候函数将停止调用。</li>
+</ol>
+<p>为了划分最佳匹配的各种情况，编译器将实参类型到形参类型的转换划分为几个等级，具体排序如下所示：</p>
+<ol>
+<li>精确匹配：<br>精确匹配可以包含以下情况：数组名转化成数组指针的匹配，函数类型转换成函数指针的匹配，实参类型与形参类型相同。另外，像实参添加顶层const或者忽略实参赋值给形参的顶层const也属于精确匹配。</li>
+<li>通过指针的转换把非常量指针转换成常量指针。</li>
+<li>通过类型提升实现的匹配。</li>
+<li>通过算数类型转换或指针转换实现的匹配</li>
+<li>通过类类型转换实现匹配（类类型转换还没有讲）</li>
+</ol>
+<p>要注意小整数字面值会被自动转换成int，而带小数点的字面值会被默认转换成doube。</p>
+<h2 id="函数指针（P221，6-7）"><a href="#函数指针（P221，6-7）" class="headerlink" title="函数指针（P221，6.7）"></a>函数指针（P221，6.7）</h2><p>声明一条函数指针的语句如下: <code>int (*PtrOfFunc)(参数列表)</code>，其中<code>PtrOfFunc</code>就是<strong><font color="00A00A">指向函数的指针</font></strong>。我们可以把函数名赋值给定义的函数指针的名字。</p>
+<blockquote>
+<p><code>*PtrOfFunc</code>两端 的括号不能少。</p>
+</blockquote>
+<p>返回函数指针的形参定义为<code>double(*fn(int a)) (int d,char b);</code>这里声明的函数是fn，函数的形参是<code>int a</code>，返回值是函数指针类型的，返回的函数指针对应的函数的返回类型是double，参数是int d,char b。</p>
+<p>和处理数组一样，我们也可以<strong>使用尾置</strong>返回来返回一个函数指针，尾置返回函数指针的声明是<code>auto fn(int a)-&gt;double (*)(int d,char b);</code>尾置返回适合用来返回复杂的类型比如数组，函数指针等等。</p>
+<p>遇到<code>double(*fn(int a)) (int d,char b);</code>这种复杂的表达式，应该以定义的变量名为中心，从里往外一层层往外扩展。这个函数的定义语句里面，fn就是其中的变量名，看它右侧，有<code>（int a）</code>,这（<code>int a）</code>是一个形参列表。因此得出结论fn的本质是一个函数，再看左侧，<code>*</code>代表这个函数返回一个指针，这个指针的类型在更外层<code>（double (*) (int d,char b)）</code>型。</p>
+<p>当然这种声明/定义容易让人心累，所以这种情况下使用<code>auto fn(int a)-&gt;double (*)(int d,char b)</code>是不错的选择。如果这样还是觉得太长了，可以使用typdef，USING等重命名语句加上decltype推导。比如<code>tpyedef double func (int d,char b);</code>这样的语句之后，func就是一个函数类型。</p>
+<p>也可以使用<code>tpyedef decltype(fn) func2;</code>这条语句等价于上面的语句。<br>对于using语句，<code>using Func2 = double (int d,char b);</code>即可。<br>可见typedef和using的替换原则是不同的，在涉及到复杂类型的时候，类似数组，函数指针，tpyedef的替换名要和被替换的类型一起被声明。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">using</span> F = <span class="keyword">int</span>(<span class="keyword">int</span>*, <span class="keyword">int</span>); <span class="comment">//F是函数类型，不是指针</span></div><div class="line"><span class="keyword">using</span> PF = <span class="keyword">int</span> (*) (<span class="keyword">int</span> *, <span class="keyword">int</span>); <span class="comment">// PF是指针类型</span></div><div class="line"></div><div class="line"><span class="function">PF <span class="title">f1</span><span class="params">(<span class="keyword">int</span>)</span></span>; <span class="comment">//正确，PF是指向函数的指针，f1返回指向函数的指针。</span></div><div class="line"><span class="function">F <span class="title">f1</span><span class="params">(<span class="keyword">int</span>)</span></span>;  <span class="comment">//错误，F是函数类型，f1不能返回一个函数</span></div><div class="line"><span class="function">F *<span class="title">f1</span><span class="params">(<span class="keyword">int</span>)</span></span>;  <span class="comment">//正确，显式地指定返回类型是指向函数的指针。</span></div><div class="line"></div><div class="line"><span class="comment">// 当然也可以使用下面的形式直接声明f1</span></div><div class="line"><span class="keyword">int</span> (*f1(<span class="keyword">int</span>))(<span class="keyword">int</span> *, <span class="keyword">int</span>);</div></pre></td></tr></table></figure>
+<h2 id="术语表-P225"><a href="#术语表-P225" class="headerlink" title="术语表(P225)"></a>术语表(P225)</h2><p>1.函数 function<br>2.形参 parameter<br>3.调用运算符（一个动作） call operator<br>4.实参 argument<br>5.主调函数 calling function<br>6.被调函数 called function<br>7.生命周期 lifetime<br>8.局部变量 local variable<br>9.自动对象 automatic object<br>10.局部静态对象 local static object<br>11.函数原型 function prototype<br>12.分离式编译 separate compilation<br>13.可执行文件 executable file<br>14.引用传递 passed by reference<br>15.传引用调用 called by reference<br>16.值传递 passed by value<br>17.传值调用 called by value<br>18.重载 overloaded<br>19.函数匹配 function matching<br>20.重载确定 overloaded resolution<br>21.最佳匹配 best match<br>22.二义性调用 ambiguous call<br>23.默认实参 default argument<br>24.预处理宏 preprocessor marco<br>25.候选函数 candidate function<br>26.可行函数 viable function<br>27.递归循环 recursion loop<br>28.递归函数 recursive function<br>29.尾置返回类型 trailing return type</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li>C++ Primer 中文版 第5版</li>
+<li><a href="http://blog.csdn.net/sunhero2010/article/details/49760521" target="_blank" rel="external">C++primer第五版第六章学习笔记</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/23536587" target="_blank" rel="external">C++Primer第5版学习笔记（六）</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://wangwlj.com/2018/01/06/CPP_06/" title="C++ Primer学习笔记：(四/五)表达式和语句">http://wangwlj.com/2018/01/06/CPP_06/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/05/CPP_04_05/" rel="next" title="C++ Primer学习笔记：(四/五)表达式和语句">
+                <i class="fa fa-chevron-left"></i> C++ Primer学习笔记：(四/五)表达式和语句
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjUyMi85MDgz"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/head_icon.jpg"
+              alt="wangwlj" />
+          
+            <p class="site-author-name" itemprop="name">wangwlj</p>
+            <p class="site-description motion-element" itemprop="description">所谓王者，必卓然特立，争当人杰。</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/qwerty200696" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:wanglijie1994@126.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/LijieWang" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-gratipay"></i>知乎</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/3280603012" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>微博</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/qwerty200696" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-codiepie"></i>CSDN</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qq_31196849" title="小草莓" target="_blank">小草莓</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qingkong1994" title="qingkong" target="_blank">qingkong</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数基础（P182，6-1）"><span class="nav-number">1.</span> <span class="nav-text">函数基础（P182，6.1）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#局部静态对象（P185，6-1-1）"><span class="nav-number">1.1.</span> <span class="nav-text">局部静态对象（P185，6.1.1）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数声明（P186，6-1-2）"><span class="nav-number">1.2.</span> <span class="nav-text">函数声明（P186，6.1.2）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传引用调用（P189，6-2-2）"><span class="nav-number">1.3.</span> <span class="nav-text">传引用调用（P189，6.2.2）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const形参和实参（-P190，6-2-2）"><span class="nav-number">1.4.</span> <span class="nav-text">const形参和实参（ P190，6.2.2）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传递数组作为参数（P193，6-2-4）"><span class="nav-number">1.5.</span> <span class="nav-text">传递数组作为参数（P193，6.2.4）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main函数的命令行选项（P196，6-2-5）"><span class="nav-number">1.6.</span> <span class="nav-text">main函数的命令行选项（P196，6.2.5）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#含有可变形参的函数（P197，6-2-6）"><span class="nav-number">1.7.</span> <span class="nav-text">含有可变形参的函数（P197，6.2.6）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initializer-list（P197，6-2-6）"><span class="nav-number">1.8.</span> <span class="nav-text">initializer_list（P197，6.2.6）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#省略符形参（P199，6-2-6）"><span class="nav-number">1.9.</span> <span class="nav-text">省略符形参（P199，6.2.6）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#返回值（P202，6-3）"><span class="nav-number">2.</span> <span class="nav-text">返回值（P202，6.3）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#返回数组指针（P205，6-3-3）"><span class="nav-number">2.1.</span> <span class="nav-text">返回数组指针（P205，6.3.3）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数重载（P207，6-4）"><span class="nav-number">3.</span> <span class="nav-text">函数重载（P207，6.4）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#const-cast和函数（P209，6-4）"><span class="nav-number">3.1.</span> <span class="nav-text">const_cast和函数（P209，6.4）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重载和作用域（P210，6-4）"><span class="nav-number">3.2.</span> <span class="nav-text">重载和作用域（P210，6.4）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊用途语言特性（6-5）"><span class="nav-number">4.</span> <span class="nav-text">特殊用途语言特性（6.5）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认实参（P211，6-5-1）"><span class="nav-number">4.1.</span> <span class="nav-text">默认实参（P211，6.5.1）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联函数（P213，6-5-2）"><span class="nav-number">4.2.</span> <span class="nav-text">内联函数（P213，6.5.2）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constexpr函数（P214，6-5-2）"><span class="nav-number">4.3.</span> <span class="nav-text">constexpr函数（P214，6.5.2）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调试帮助（P215，6-5-3）"><span class="nav-number">4.4.</span> <span class="nav-text">调试帮助（P215，6.5.3）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#assert预处理宏"><span class="nav-number">4.4.1.</span> <span class="nav-text">assert预处理宏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NDEBUG预处理变量"><span class="nav-number">4.4.2.</span> <span class="nav-text">NDEBUG预处理变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数匹配（P217，6-6）"><span class="nav-number">5.</span> <span class="nav-text">函数匹配（P217，6.6）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数指针（P221，6-7）"><span class="nav-number">6.</span> <span class="nav-text">函数指针（P221，6.7）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#术语表-P225"><span class="nav-number">7.</span> <span class="nav-text">术语表(P225)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangwlj</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      119.5k
+    </span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=64793620";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yrpmXJiSAy4frnKvqrxvNUSG-gzGzoHsz", "35GTu3Aq4E3uxua6GpER2XLp");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 8596,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
