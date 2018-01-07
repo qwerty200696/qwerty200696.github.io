@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="王立杰的博客">
 <meta property="og:description" content="第六章是和函数有关的知识，函数就是命名了的计算单元，对程序的结构化非常重要。本章内容包括：  函数的概念基础，包括函数的定义声明以及函数如何生成值和返回结果。 函数重载,重载可以使函数接受不同种类或者数量不同的参数。 函数指针，指向函数的一类特殊指针。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-06T08:58:29.709Z">
+<meta property="og:updated_time" content="2018-01-06T09:04:52.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ Primer学习笔记：(六)函数">
 <meta name="twitter:description" content="第六章是和函数有关的知识，函数就是命名了的计算单元，对程序的结构化非常重要。本章内容包括：  函数的概念基础，包括函数的定义声明以及函数如何生成值和返回结果。 函数重载,重载可以使函数接受不同种类或者数量不同的参数。 函数指针，指向函数的一类特殊指针。">
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  8,039
+                  8,058
                 </span>
               
 
@@ -481,7 +481,7 @@
 <h3 id="局部静态对象（P185，6-1-1）"><a href="#局部静态对象（P185，6-1-1）" class="headerlink" title="局部静态对象（P185，6.1.1）"></a>局部静态对象（P185，6.1.1）</h3><p>一个对象的名字有作用域，对象本身也有生命周期。名字的作用域是我们可以通过名字访问对象的的区间。相对的，生命周期是指对象的产生和销毁的过程。</p>
 <p>定义在所有函数外部的变量叫做<strong>全局变量</strong>，在整个程序的执行过程中一直存在。这种对象在程序启动时被创建，直到程序结束才会被销毁。</p>
 <p>定义在函数体内的对象或者函数的形参都是<strong>局部变量</strong>。当函数执行路径经过该对象的定义语句时才会自动开始创建该对象，在对应的块结束时，这个对象会被销毁。</p>
-<p>有时候我们有必要使局部变量的生命周期贯穿函数调用及之后的时间，所以我们可以将局部对象定义成static对象，定义语句形如<code>static int a=1;</code>，这样我们就可以在程序的别的地方（只要是在这个static对象的作用域内访问它）操作这个局部静态对象。</p>
+<p>有时候我们有必要使局部变量的生命周期贯穿函数调用及之后的时间，所以我们可以将局部对象定义成<code>static</code>对象，定义语句形如<code>static int a=1;</code>，这样我们就可以在程序的别的地方（只要是在这个static对象的作用域内访问它）操作这个局部静态对象。</p>
 <p>在一个程序中多次定义局部静态对象仍然是不被允许的。但是当一个函数里的对象被定义为局部静态对象，<font color="00A00A">多次调用这个函数并不会重置这个局部静态对象的值</font>。它自己会记得上一次被函数调用之后的值并继承这个值，不被第二次函数调用的变量定义初始化，这就是它静态的特性。</p>
 <blockquote>
 <p>局部静态变量若没有显式的初始化，则执行值初始化，内置类型的局部静态变量初始化为0。</p>
@@ -527,6 +527,9 @@
 <li>第二种方法在当我们想传递不确定个数的<strong>不同类型的实参</strong>时要使用的技术：<strong>可变参数模板。</strong>这个16章才介绍。</li>
 </ul>
 <p>其实还有一种方法使函数接受多种形参，不过这种方法多用于和C语言旧代码对接时使用。<strong>这个方法用省略符来传递可变数量的形参</strong>。</p>
+<blockquote>
+<p>常见的应用场景：日志的打印</p>
+</blockquote>
 <h3 id="initializer-list（P197，6-2-6）"><a href="#initializer-list（P197，6-2-6）" class="headerlink" title="initializer_list（P197，6.2.6）"></a>initializer_list（P197，6.2.6）</h3><p>下面是关于定义可变形参函数的第一种方法——<code>initializer_list</code>参数的介绍：</p>
 <p><code>initializer_list</code>类似<code>vector</code>，是一种容器，接纳一种同样类型的元素。initializer_list定义在同名的<code>&lt;initializer_list &gt;</code>中，我们可以把任意数量，同样类型的参数传递给这个容器使函数能够处理多个元素。</p>
 <p>initializer_list支持的操作包括：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">initializer_list&lt;容器内元素的类型名&gt; 容器名 //默认初始化一个 initializer_list空容器</div><div class="line">initializer_list&lt;容器内元素的类型名&gt; 容器名&#123;元素值1，元素值2，元素值2...&#125; //大括号初始化</div><div class="line">initializer_list 容器名1（已被定义的initializer_list 容器的容器名2 ）//使容器1的内容和容器二一致，两个容器共享容器二里面的元素。不会形成拷贝，（也可以用initializer_list 容器名1=initializer_list 容器名2）</div><div class="line">initializer_list 容器名.size() //元素数量</div><div class="line">initializer_list 容器名.begin() //指向首元素的迭代器</div><div class="line">initializer_list 容器名.end() //尾后迭代器</div></pre></td></tr></table></figure></p>
@@ -543,6 +546,7 @@
 <p>不要返回局部对象的引用或指针。</p>
 </blockquote>
 <p>函数可以返回一个<strong>非常量引用</strong>作为左值。也可以返回一个花括号括起来的列表，来初始化vector等类型。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; test()  </div><div class="line">&#123;  </div><div class="line">    <span class="keyword">return</span> &#123;<span class="string">"hello"</span>, <span class="string">"world"</span>&#125;;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>main函数的return语句可以不写，编译器会带为隐式补充。</p>
 <blockquote>
 <p>main 函数不能调用自己。</p>
@@ -578,7 +582,7 @@
 <blockquote>
 <p>内联说明只是向编译器发出的一个请求，编译器可以选择忽略这个请求。</p>
 </blockquote>
-<h3 id="constexpr函数（P214，6-5-2）"><a href="#constexpr函数（P214，6-5-2）" class="headerlink" title="constexpr函数（P214，6.5.2）"></a>constexpr函数（P214，6.5.2）</h3><p>这是一种能够被用在常量表达式的函数，但是函数的返回值类型和形参类型必须都是字面值。函数体中必须有且只有一条<code>return</code>语句，<code>constexpr</code>函数被隐式的指定为内连函数。const函数中也可以有类型别名，使用作用域声明等不执行操作的其他语句。这里没有赋值，没有构建对象。同时<code>constexpr</code>可以返回计算后的结果。如<code>constexpr int fn(int a){return a+22;}</code>，这条定义是正确的，前提是调用函数这个函数fn时，传入的实参是一个常量。比如<code>fn(3);</code><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">constexpr</span> <span class="title">new_sz</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> <span class="number">42</span>; &#125;</div><div class="line"><span class="function"><span class="keyword">constexpr</span> size_t <span class="title">scale</span><span class="params">(<span class="keyword">size_t</span> cnt)</span> </span>&#123; <span class="keyword">return</span> new_sz() * cnt; &#125;</div><div class="line"></div><div class="line"><span class="keyword">int</span> arr[scale(<span class="number">2</span>)]; <span class="comment">//正确，scale(2)是常量表达式</span></div><div class="line"><span class="keyword">int</span> i=<span class="number">2</span>;</div><div class="line"><span class="keyword">int</span> a2[scale(i)]; <span class="comment">//错误，scale(i)不是常量表达式</span></div></pre></td></tr></table></figure></p>
+<h3 id="constexpr函数（P214，6-5-2）"><a href="#constexpr函数（P214，6-5-2）" class="headerlink" title="constexpr函数（P214，6.5.2）"></a>constexpr函数（P214，6.5.2）</h3><p>这是一种能够被用在常量表达式的函数，但是函数的返回值类型和形参类型必须都是字面值。<strong>函数体中必须有且只有一条<code>return</code>语句，<code>constexpr</code>函数被隐式的指定为内联函数。</strong>const函数中也可以有类型别名，使用作用域声明等不执行操作的其他语句。这里没有赋值，没有构建对象。同时<code>constexpr</code>可以返回计算后的结果。如<code>constexpr int fn(int a){return a+22;}</code>，这条定义是正确的，前提是调用函数这个函数fn时，传入的实参是一个常量。比如<code>fn(3);</code><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">constexpr</span> <span class="title">new_sz</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> <span class="number">42</span>; &#125;</div><div class="line"><span class="function"><span class="keyword">constexpr</span> size_t <span class="title">scale</span><span class="params">(<span class="keyword">size_t</span> cnt)</span> </span>&#123; <span class="keyword">return</span> new_sz() * cnt; &#125;</div><div class="line"></div><div class="line"><span class="keyword">int</span> arr[scale(<span class="number">2</span>)]; <span class="comment">//正确，scale(2)是常量表达式</span></div><div class="line"><span class="keyword">int</span> i=<span class="number">2</span>;</div><div class="line"><span class="keyword">int</span> a2[scale(i)]; <span class="comment">//错误，scale(i)不是常量表达式</span></div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>内联函数和constexpr函数通常定义在头文件中。</p>
 </blockquote>
@@ -640,6 +644,35 @@
 	
     
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wangwlj 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="wangwlj 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
     
 
     
@@ -964,7 +997,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      119.5k
+      119.8k
     </span>
   
 </div>
