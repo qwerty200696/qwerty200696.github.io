@@ -147,7 +147,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn8d5gxm6fj207m0cajsb.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn8d605gtoj20ku112dgj.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn8d68a0c8j20ku112abz.jpg">
-<meta property="og:updated_time" content="2018-01-08T03:36:04.408Z">
+<meta property="og:updated_time" content="2018-01-08T04:51:18.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建的Github博客之优化">
 <meta name="twitter:description" content="本篇教程基于NexT主题的博客配置，实现更换主题、评论、打赏等36项功能，接下来根据这些功能进行分点描述，附上个人博客以供比对参考：个人博客链接。">
@@ -475,7 +475,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5,759
+                  5,775
                 </span>
               
 
@@ -638,7 +638,7 @@
 <p>在<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>中找到<code>avatar</code>字段,进行修改:</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Sidebar Avatar</span></div><div class="line"><span class="comment"># in theme directory(source/images): /images/avatar.gif</span></div><div class="line"><span class="comment"># in site  directory(source/uploads): /uploads/avatar.gif</span></div><div class="line"><span class="attr">avatar:</span> <span class="string">/images/head_icon.jpg</span></div></pre></td></tr></table></figure>
 <p>先将<code>avatar</code>字段前的#删除，然后粘贴上头像的目录位置或者链接。</p>
-<p>笔者将突破保存在了主题目录下的<code>source/images</code>文件夹，也可以存放在站点目录下的<code>source/uploads</code>文件夹。也可以将自己的头像图片，保存在百度网盘或者新浪微盘的某个地方，然后将对应的<code>url</code>地址复制过来，添加在<code>avatar</code>字段后即可。</p>
+<p>笔者将头像图片保存在了主题目录下的<code>source/images</code>文件夹，也可以存放在站点目录下的<code>source/uploads</code>文件夹。也可以将自己的头像图片，保存在百度网盘或者新浪微盘的某个地方，然后将对应的<code>url</code>地址复制过来，添加在<code>avatar</code>字段后即可。</p>
 <p><strong>实现效果图</strong></p>
 <p>其效果如下图所示：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cwfm5kzj206t07gq3n.jpg" alt="头像效果展示"></p>
@@ -651,6 +651,7 @@
 <h1 id="设置网站图标"><a href="#设置网站图标" class="headerlink" title="设置网站图标"></a>设置网站图标</h1><p><strong>实现方法</strong></p>
 <p>打开<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>，找到以下字段，进行相应的修改：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Put your favicon.ico into `hexo-site/source/` directory.</span></div><div class="line"><span class="attr">favicon:</span> <span class="string">/web_icon.jpg</span></div></pre></td></tr></table></figure>
+<p>其中，图片<code>web_icon.jpg</code>存放在<code>hexo-site/source/</code>目录下。</p>
 <p>然后预览，在自己的博客网站上有这样的图标：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cwvi77uj205a00vq2p.jpg" alt="网站图标展示"></p>
 <p>因为我使用了与头像一样的图片，所以图标与头像一样。达到效果后即可部署至远程。</p>
@@ -1021,7 +1022,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1032,7 +1033,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1043,7 +1044,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1178,7 +1179,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      120.1k
+      120.5k
     </span>
   
 </div>
