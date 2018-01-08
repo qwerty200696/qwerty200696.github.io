@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+  (function(){
+    if(''){
+      if (prompt('请输入文章密码') !== ''){
+        alert('密码错误！');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="Zg8i3oTV3dBiFi2-eYpkWHuo1XYforgqvtiy1f6zTvs" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="算法导论,Algorithm,最大子数组,矩阵乘法,分治," />
+
+
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="王立杰的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web_icon.jpg?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="本章讲解更多关于分治策略的算法。第一个算法是求解最大子数组的问题，然后是求解$n\times n$矩阵乘法问题的分治算法，最后介绍了主方法。">
+<meta name="keywords" content="算法导论,Algorithm,最大子数组,矩阵乘法,分治">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法导论详解(3) 第四章分治策略">
+<meta property="og:url" content="http://wangwlj.com/2018/01/08/algorithm_tutorial_chapter_4/index.html">
+<meta property="og:site_name" content="王立杰的博客">
+<meta property="og:description" content="本章讲解更多关于分治策略的算法。第一个算法是求解最大子数组的问题，然后是求解$n\times n$矩阵乘法问题的分治算法，最后介绍了主方法。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn945rgi23j20bx08575e.jpg">
+<meta property="og:updated_time" content="2018-01-08T08:57:55.134Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法导论详解(3) 第四章分治策略">
+<meta name="twitter:description" content="本章讲解更多关于分治策略的算法。第一个算法是求解最大子数组的问题，然后是求解$n\times n$矩阵乘法问题的分治算法，最后介绍了主方法。">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn945rgi23j20bx08575e.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wangwlj.com/2018/01/08/algorithm_tutorial_chapter_4/"/>
+
+
+
+
+<link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
+
+  <title>算法导论详解(3) 第四章分治策略 | 王立杰的博客</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-111387754-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?61acd986303bc926826d2eec81dbbdff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    
+	<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王立杰的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">积跬步以至千里！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2018/01/08/algorithm_tutorial_chapter_4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王立杰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法导论详解(3) 第四章分治策略</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-08T16:43:37+08:00">
+                2018-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法导论/" itemprop="url" rel="index">
+                    <span itemprop="name">算法导论</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+	  
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/08/algorithm_tutorial_chapter_4/" class="leancloud_visitors" data-flag-title="算法导论详解(3) 第四章分治策略">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,468
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本章讲解更多关于分治策略的算法。第一个算法是求解最大子数组的问题，然后是求解$n\times n$矩阵乘法问题的分治算法，最后介绍了主方法。</p>
+<a id="more"></a>
+<h2 id="分治策略简介"><a href="#分治策略简介" class="headerlink" title="分治策略简介"></a>分治策略简介</h2><p>分治策略在每层递归时都有三个步骤：</p>
+<ul>
+<li>分解原问题为若干子问题；子问题的形式与原问题一样，只是规模更小。</li>
+<li>解决这些子问题，递归地求解各子问题。如果子问题的规模足够小，则停止递归，直接求解。</li>
+<li>合并这些子问题的解成原问题的解。</li>
+</ul>
+<p>递归情况(recursive case)<br>基本情况(base case)：子问题足够小的时候，递归已经“触底”时。</p>
+<p>递归式：我们用递归式描述了MERGE-SORT过程的最坏情况运行时间$T(n)$：<br>$$T(n) =<br> \begin{cases}<br>  \Theta(1) &amp; 若n=1 \\<br> 2T(n/2)+f(n) &amp;  若n&gt;1\\<br>  \end{cases}<br>$$<br>求解递归式的方法：代入法（猜测）；递归树法；主方法。本书使用主方法。</p>
+<p>主方法可求解形如下面公式的递归式的界：<br>$$T(n) = aT(n/b)+f(n)$$<br>其中，$a\geqslant 1,b&gt;1,f(n)$是一个给定的函数。</p>
+<p>递归式的技术细节</p>
+<ul>
+<li>忽略递归式声明和求解的一些细节，如MERGE-SORT的最坏情况运行时间准确的递归式为：</li>
+</ul>
+<p>$$T(n) =<br> \begin{cases}<br>  \Theta(1) &amp; 若n=1 \\<br> T(\lceil n/2\rceil )+T(\lfloor n/2\rfloor )+\Theta(n) &amp;  若n&gt;1\\<br>  \end{cases}<br>$$</p>
+<ul>
+<li>边界条件是我们通常忽略的细节。</li>
+<li>当声明、求解递归式时，我们常常忽略向下取整、向上取整及边界条件。</li>
+</ul>
+<p>本章讲解更多关于分治策略的算法。第一个算法是求解最大子数组的问题，然后是求解$n\times n$矩阵乘法问题的分治算法。</p>
+<h2 id="4-1-最大子数组问题"><a href="#4-1-最大子数组问题" class="headerlink" title="4.1 最大子数组问题"></a>4.1 最大子数组问题</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>买股票（低价买入，高价卖出）。给定一段时间，选取最大收益。</p>
+<h3 id="问题变换"><a href="#问题变换" class="headerlink" title="问题变换"></a>问题变换</h3><p>不关注每天的价格，而是关注每日价格变化。<br>那么问题就转化为寻求价格变化数组A的最大非空连续子数组。<br>称这样的连续子数组为<strong>最大子数组</strong>。</p>
+<h3 id="使用分治策略的求解方法"><a href="#使用分治策略的求解方法" class="headerlink" title="使用分治策略的求解方法"></a>使用分治策略的求解方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python3</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="comment"># MAX = 1 &lt;&lt; 31</span></div><div class="line"><span class="keyword">import</span> math</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_max_crossing_subarray</span><span class="params">(A, low, mid, high)</span>:</span></div><div class="line">    max_left = mid</div><div class="line">    max_right = mid</div><div class="line">    left_sum = <span class="number">0</span>  <span class="comment"># original version init with -max, now is zero,because minimum is zero</span></div><div class="line">    all_sum = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(mid - <span class="number">1</span>, low - <span class="number">1</span>, <span class="number">-1</span>):  <span class="comment"># 左边不经过mid</span></div><div class="line">        all_sum += A[i]</div><div class="line">        <span class="keyword">if</span> all_sum &gt; left_sum:</div><div class="line">            left_sum = all_sum</div><div class="line">            max_left = i</div><div class="line">    right_sum = A[mid]  <span class="comment"># original version init with -max, now is A[mid],because A[mid] must be included.</span></div><div class="line">    all_sum = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(mid, high + <span class="number">1</span>):</div><div class="line">        all_sum += A[i]</div><div class="line">        <span class="keyword">if</span> all_sum &gt; right_sum:</div><div class="line">            right_sum = all_sum</div><div class="line">            max_right = i</div><div class="line">    <span class="comment"># print([low, mid, high], [max_left, max_right, left_sum + right_sum])</span></div><div class="line">    <span class="keyword">return</span> [max_left, max_right, left_sum + right_sum]</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_maximum_subarray</span><span class="params">(A, low, high)</span>:</span></div><div class="line">    <span class="keyword">if</span> high == low:</div><div class="line">        <span class="keyword">return</span> [low, high, A[low]]</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        mid = math.floor((low + high) / <span class="number">2</span>)</div><div class="line">        left_low, left_high, left_sum = find_maximum_subarray(A, low, mid)</div><div class="line">        right_low, right_high, right_sum = find_maximum_subarray(A, mid + <span class="number">1</span>, high)</div><div class="line">        cross_low, cross_high, cross_sum = find_max_crossing_subarray(A, low, mid, high)</div><div class="line">        <span class="keyword">if</span> left_sum &gt;= right_sum <span class="keyword">and</span> left_sum &gt;= cross_sum:</div><div class="line">            <span class="keyword">return</span> [left_low, left_high, left_sum]</div><div class="line">        <span class="keyword">elif</span> right_sum &gt;= left_sum <span class="keyword">and</span> right_sum &gt;= cross_sum:</div><div class="line">            <span class="keyword">return</span> [right_low, right_high, right_sum]</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> [cross_low, cross_high, cross_sum]</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    A = [<span class="number">1</span>, <span class="number">-3</span>, <span class="number">7</span>, <span class="number">-1</span>, <span class="number">4</span>, <span class="number">-1</span>, <span class="number">-5</span>, <span class="number">3</span>, <span class="number">-1</span>, <span class="number">3</span>, <span class="number">-5</span>, <span class="number">9</span>]</div><div class="line">    <span class="comment"># A = [1, -3, 7, -5, -4, -1, -9, -3, 1, -3, -5, -9]</span></div><div class="line">    <span class="comment"># print(find_max_crossing_subarray(A, 0, 6, len(A) - 1))</span></div><div class="line">    print(find_maximum_subarray(A, <span class="number">0</span>, len(A) - <span class="number">1</span>))</div></pre></td></tr></table></figure>
+<h3 id="分治算法的分析"><a href="#分治算法的分析" class="headerlink" title="分治算法的分析"></a>分治算法的分析</h3><p>假设问题规模为2的幂，这样所有问题的规模都是整数。</p>
+<p>在find_maximum_subarray函数中，需要求解两个子问题——左数组和右数组(分别为5/6行)，每个子问题的运行时间为$T(n/2)$，两个子问题加起来就是$2T(n/2)$。<br>第7行，find_max_crossing_subarray函数求解跨越中点的子数组，花费线性的时间，为$\Theta (n)$。</p>
+<p>总的运行时间递归式为：<br>$$T(n) = \begin{cases}<br>\Theta (1) &amp; if\ \ n=1\\<br>2T(n/2)+\Theta (n) &amp; if\ \  n&gt;1<br>\end{cases}<br>$$<br>与鬼归并排序的递归式相同。在4.5节用主方法求解该递归式，其解为$T(n) =\Theta (n\ \text{lg}n) $。</p>
+<h3 id="线性复杂度的解法–习题4-1-5-P42"><a href="#线性复杂度的解法–习题4-1-5-P42" class="headerlink" title="线性复杂度的解法–习题4.1-5(P42)"></a>线性复杂度的解法–习题4.1-5(P42)</h3><p>主要思想：从左到右处理，记录目前为止已经处理的最大子数组。非递归、线性复杂度。</p>
+<p>从左到右累加，如果当前子数组的累加和小于零，则意味着最大子数组(maximun subarray)肯定不包括该子数组，所以果断舍弃，重新开始累加。</p>
+<p>该解法的python实现：<br> <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_maximum_subarray</span><span class="params">(A)</span>:</span></div><div class="line">   j = <span class="number">0</span></div><div class="line">   max_sum = <span class="number">0</span></div><div class="line">   left = <span class="number">-1</span></div><div class="line">   cur_left = <span class="number">0</span></div><div class="line">   right = <span class="number">-1</span></div><div class="line">   sum = <span class="number">0</span></div><div class="line">   <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, len(A)):</div><div class="line">       sum = sum + A[j]</div><div class="line">       <span class="keyword">if</span> sum &gt; max_sum:</div><div class="line">           max_sum = sum</div><div class="line">           left = cur_left</div><div class="line">           right = j</div><div class="line">       <span class="keyword">elif</span> sum &lt; <span class="number">0</span>:</div><div class="line">           sum = <span class="number">0</span></div><div class="line">           cur_left = j + <span class="number">1</span></div><div class="line">   <span class="keyword">if</span> max_sum &gt; <span class="number">0</span>:</div><div class="line">       <span class="keyword">return</span> left, right, max_sum</div><div class="line">   <span class="keyword">return</span> <span class="keyword">None</span></div></pre></td></tr></table></figure></p>
+<h2 id="矩阵乘法的Strassen算法-4-2，P43"><a href="#矩阵乘法的Strassen算法-4-2，P43" class="headerlink" title="矩阵乘法的Strassen算法(4.2，P43)"></a>矩阵乘法的Strassen算法(4.2，P43)</h2><p>若$A=(a_{ij}),B=(b_{ij})$是$nxn$的方阵，则对$i,j=1,2,\cdots ,n$,定义矩阵乘积$C=A\cdot B$中的$c_{ij}$为：<br>$$c_{ij} = \sum_{k=1}^n a_{ik} b_{kj}$$</p>
+<p>写成程序，是一个三重循环，因此，复杂度为$\Theta (n^3)$。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">SQUARE_MATRIX_MULTIPLY</span><span class="params">(A, B)</span>:</span>  </div><div class="line">    <span class="keyword">assert</span>(len(A) == len(B))  </div><div class="line">    n = len(A)  </div><div class="line">    C = [[<span class="number">0</span> <span class="keyword">for</span> col <span class="keyword">in</span> range(n)] <span class="keyword">for</span> row <span class="keyword">in</span> range(n)]  </div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, n):  </div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, n):  </div><div class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">0</span>, n):  </div><div class="line">                C[i][j]= C[i][j] + A[i][k]*B[k][j]  </div><div class="line">    <span class="keyword">return</span> C</div></pre></td></tr></table></figure>
+<h3 id="一个简单的分治算法-4-2，P43"><a href="#一个简单的分治算法-4-2，P43" class="headerlink" title="一个简单的分治算法(4.2，P43)"></a>一个简单的分治算法(4.2，P43)</h3><p>假定三个矩阵均为$n\times n$矩阵，其中n为2的幂。在每个分解步骤中，$n\times n$矩阵都被划分为4个$n/2 \times n/2$的子矩阵，如下：<br>$$A = \begin{bmatrix}<br>A_{11} &amp; A_{12}\\A_{21} &amp; A_{22}<br>\end{bmatrix},<br>B = \begin{bmatrix}<br>B_{11} &amp; B_{12}\\B_{21} &amp; B_{22}<br>\end{bmatrix},<br>C = \begin{bmatrix}<br>C_{11} &amp; C_{12}\\C_{21} &amp; C_{22}<br>\end{bmatrix}<br>$$<br>因此，公式$C=A\cdot B$改写成：<br>$$\begin{bmatrix}<br>C_{11} &amp; C_{12}\\C_{21} &amp; C_{22}<br>\end{bmatrix}= \begin{bmatrix}<br>A_{11} &amp; A_{12}\\A_{21} &amp; A_{22}<br>\end{bmatrix} \cdot<br>\begin{bmatrix}<br>B_{11} &amp; B_{12}\\B_{21} &amp; B_{22}<br>\end{bmatrix}<br>$$<br>等价于：<br>$$\begin{matrix}<br>C_{11} = A_{11}\cdot B_{11} + A_{12}\cdot B_{21} \\<br>C_{12} = A_{11}\cdot B_{12} + A_{12}\cdot B_{22} \\<br>C_{21} = A_{21}\cdot B_{11} + A_{22}\cdot B_{21} \\<br>C_{22} = A_{21}\cdot B_{12} + A_{22}\cdot B_{22}<br>\end{matrix}$$</p>
+<p>该简单分治算法的总运行时间递归式为：<br>$$T(n) = \begin{cases}<br>\Theta (1) &amp; if\ \ n=1\\<br>8T(n/2)+\Theta (n^2) &amp; if\ \  n&gt;1<br>\end{cases}<br>$$</p>
+<h3 id="Strassen-方法-4-2，P45"><a href="#Strassen-方法-4-2，P45" class="headerlink" title="Strassen 方法(4.2，P45)"></a>Strassen 方法(4.2，P45)</h3><p>为减小时间复杂度，采用Strassen 法，其原理仍将讲矩阵A,B,C划分成n/2 x n/2 ,然后按如下计算：</p>
+<p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn945rgi23j20bx08575e.jpg" alt=""></p>
+<p>即：先创建10个矩阵$S_1,\cdots,S_{10} $，由于进行了10次$n/2\times n/2$矩阵的加减法，所以该步骤花费$\Theta(n^2)$时间。</p>
+<p>接着，递归地计算七次$n/2\times n/2$矩阵的乘法，即计算$P_1,\cdots,P_{7}$矩阵。</p>
+<p>最后计算结果矩阵C的子矩阵$C_{11},C_{12},C_{21},C_{22}$。</p>
+<p>其时间复杂度为：</p>
+<p>$$T(n)= \begin{cases}<br>\Theta (1) &amp; if\ \ n=1\\<br>7T(n/2)+\Theta (n^2) &amp; if\ \  n&gt;1<br>\end{cases}<br>$$</p>
+<p>利用4.5节的主方法，可以求出上述的解为：<br>$$T(n)= \Theta(n^{\text{lg}7}) $$</p>
+<h2 id="用主方法求解递归式-4-5，P53"><a href="#用主方法求解递归式-4-5，P53" class="headerlink" title="用主方法求解递归式(4.5，P53)"></a>用主方法求解递归式(4.5，P53)</h2><p>主方法依赖于主定理。</p>
+<h3 id="主定理"><a href="#主定理" class="headerlink" title="主定理"></a>主定理</h3><p>令$a\geqslant 1$和$b&gt;1$是常数，$f(n)$是一个函数，$T(n)$是定义在非负整数上的递归式：<br>$$T(n)= aT(n/b)+f(n)$$</p>
+<p>其中，我们将$n/b$解释为$\lfloor n/b \rfloor$或$\lceil n/b \rceil$。那么$T(n)$有如下的渐近界：</p>
+<ol>
+<li><p>若对某个常数$\epsilon &gt; 0$有$f(n) = \text{O}(n^{\text{log}_ba - \epsilon})$，则$T(n)=\Theta(n^{\text{log}_ba} )$</p>
+</li>
+<li><p>若$f(n) = \Theta(n^{\text{log}_ba})$，则$T(n)=\Theta(n^{\text{log}_ba} \text{lg}n)$</p>
+</li>
+<li>若对某个常数$\epsilon &gt; 0$有$f(n) = \Omega(n^{\text{log}_ba + \epsilon})$，且对某个常数$c&lt;1$和所有足够大的n有$aT(n/b)\leqslant cf(n)$，则$T(n)=\Theta(f(n) )$</li>
+</ol>
+<p>以上就是主定理的完整叙述。</p>
+<p>解释：我们将函数$f(n)$和$n^{\text{log}_ba}$进行比较。直觉上，两个函数较大者决定了递归式的解。<br>情况1表示：函数$n^{log_ba}$更大，则解为$T(n)=\Theta(n^{\text{log}_ba} )$；<br>情况3表示：函数$f(n)$更大，则解为$T(n)=\Theta(f(n) )$。<br>情况2表示：当两个函数大小相当，则乘上一个对数因子，解为$T(n)=\Theta(n^{\text{log}_ba} \text{lg}n)$。</p>
+<blockquote>
+<p>上述的大于/小于都是多项式意义上的，也就是渐近小于(大于)。每种情况之间都有一定的间隙。若$f(n)$落在间隙中，就不能使用主方法。</p>
+</blockquote>
+<h3 id="使用主方法"><a href="#使用主方法" class="headerlink" title="使用主方法"></a>使用主方法</h3><p>使用主方法，只需要确定主定理的哪种情况成立，即可以得到解。</p>
+<p>下面举几个例子。</p>
+<p>$$T(n)= 9T(n/3)+n$$<br>上式中，$a=9,b=3,f(n) = n$，因此，$n^{\text{log}_ba} =n^{\text{log}_39} = \Theta(n^2) $。由于$f(n) = \text{O}(n^{\text{log}_39 - \epsilon})$，其中$\epsilon = 1$，所以应用主定理的情况1，从而得到$T(n) = \Theta(n^2) $</p>
+<p>$$T(n)= T(2n/3)+1$$<br>上式中，$a=1,b=3/2,f(n) = 1$，因此，$n^{\text{log}_ba} =n^{\text{log}_{3/2}1} =n^0 = 1 $，由于$f(n) = \Theta(n^{\text{log}_ba}) = \Theta (1)$，所以，适用于情况二，从而得到最终解为$T(n) = \Theta(\text{lg} n ) $</p>
+<p>归并排序和最大子数组方法的运行时间的递归式：<br>$$ T(n)= 2T(n/2)+\Theta(n)$$<br>同理，$n^{\text{log}_ba} =n^{\text{log}_{2}2} =n $， 由于$f(n) = \Theta(n)$，所以应用情况2，得到解$T(n) = \Theta(n\text{lg} n ) $</p>
+<p>矩阵乘法的第一个分治算法的运行时间：<br>$$ T(n)= 8T(n/2)+\Theta(n^2)$$<br>上式，有：$n^{\text{log}_ba} =n^{\text{log}_{2}8} =n^3 $，$n^3$多项式意义上大于$f(n)$，因此应用情况1，解为$T(n) = \Theta(n^3) $</p>
+<p>矩阵乘法的Strassen算法运行时间：<br>$$ T(n)= 7T(n/2)+\Theta(n^2)$$<br>上式中，有$n^{\text{log}_ba} =n^{\text{log}_{2}7} = n^{\text{lg}7}$，由于$2.80&lt;lg7&lt;2.81$，对$\epsilon = 0.8$，有$f(n) = \text{O}(n^{\text{lg}7-\epsilon})$，故应用情况1，得到：$T(n) = \Theta(n^{\text{lg}7}) $</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li>算法导论 中文版 原书第三版</li>
+<li><a href="http://blog.csdn.net/u010183397/article/details/46866577" target="_blank" rel="external">算法导论 第四章：分治法(二)</a></li>
+<li><a href="http://blog.csdn.net/sushauai/article/details/50491477" target="_blank" rel="external">算法导论课后习题解析 第四章 上</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wangwlj 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="wangwlj 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://wangwlj.com/2018/01/08/algorithm_tutorial_chapter_4/" title="算法导论详解(3) 第四章分治策略">http://wangwlj.com/2018/01/08/algorithm_tutorial_chapter_4/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法导论/" rel="tag"><i class="fa fa-tag"></i> 算法导论</a>
+          
+            <a href="/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
+          
+            <a href="/tags/最大子数组/" rel="tag"><i class="fa fa-tag"></i> 最大子数组</a>
+          
+            <a href="/tags/矩阵乘法/" rel="tag"><i class="fa fa-tag"></i> 矩阵乘法</a>
+          
+            <a href="/tags/分治/" rel="tag"><i class="fa fa-tag"></i> 分治</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/08/Leetcode_9/" rel="next" title="Leetcode(9) 判断回文数（三种解法）">
+                <i class="fa fa-chevron-left"></i> Leetcode(9) 判断回文数（三种解法）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjUyMi85MDgz"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/head_icon.jpg"
+              alt="wangwlj" />
+          
+            <p class="site-author-name" itemprop="name">wangwlj</p>
+            <p class="site-description motion-element" itemprop="description">所谓王者，必卓然特立，争当人杰。</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">49</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/qwerty200696" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:wanglijie1994@126.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/LijieWang" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-gratipay"></i>知乎</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/3280603012" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>微博</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/qwerty200696" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-codiepie"></i>CSDN</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qq_31196849" title="小草莓" target="_blank">小草莓</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qingkong1994" title="qingkong" target="_blank">qingkong</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分治策略简介"><span class="nav-number">1.</span> <span class="nav-text">分治策略简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-最大子数组问题"><span class="nav-number">2.</span> <span class="nav-text">4.1 最大子数组问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">2.1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题变换"><span class="nav-number">2.2.</span> <span class="nav-text">问题变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用分治策略的求解方法"><span class="nav-number">2.3.</span> <span class="nav-text">使用分治策略的求解方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法的分析"><span class="nav-number">2.4.</span> <span class="nav-text">分治算法的分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性复杂度的解法–习题4-1-5-P42"><span class="nav-number">2.5.</span> <span class="nav-text">线性复杂度的解法–习题4.1-5(P42)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵乘法的Strassen算法-4-2，P43"><span class="nav-number">3.</span> <span class="nav-text">矩阵乘法的Strassen算法(4.2，P43)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个简单的分治算法-4-2，P43"><span class="nav-number">3.1.</span> <span class="nav-text">一个简单的分治算法(4.2，P43)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strassen-方法-4-2，P45"><span class="nav-number">3.2.</span> <span class="nav-text">Strassen 方法(4.2，P45)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用主方法求解递归式-4-5，P53"><span class="nav-number">4.</span> <span class="nav-text">用主方法求解递归式(4.5，P53)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主定理"><span class="nav-number">4.1.</span> <span class="nav-text">主定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用主方法"><span class="nav-number">4.2.</span> <span class="nav-text">使用主方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangwlj</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      123.0k
+    </span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=64793620";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yrpmXJiSAy4frnKvqrxvNUSG-gzGzoHsz", "35GTu3Aq4E3uxua6GpER2XLp");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 8596,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
