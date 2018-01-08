@@ -90,7 +90,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Algorithm,Leetcode,回文数," />
 
 
 
@@ -108,16 +108,18 @@
 
 
 
-<meta name="description" content="所谓王者，必卓然特立，争当人杰。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="王立杰的博客">
-<meta property="og:url" content="http://wangwlj.com/archives/2018/01/index.html">
+<meta name="description" content="Leetcode链接：9. Palindrome Number Palindrome Number，即判断是否为回文数，并且题目要求不能使用额外的空间。即，不能使用回文串的方法。 在本题中，负数不作为回文数考虑范围之内，但是输入依然可能为负，此时直接返回false即可。 首先，一种容易想到的方法是：将整个数取反后看和原来的数是否相同。 12345678910111213141516171819cl">
+<meta name="keywords" content="Algorithm,Leetcode,回文数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode(9) 判断回文数（三种解法）">
+<meta property="og:url" content="http://wangwlj.com/2018/01/08/Leetcode_9/index.html">
 <meta property="og:site_name" content="王立杰的博客">
-<meta property="og:description" content="所谓王者，必卓然特立，争当人杰。">
+<meta property="og:description" content="Leetcode链接：9. Palindrome Number Palindrome Number，即判断是否为回文数，并且题目要求不能使用额外的空间。即，不能使用回文串的方法。 在本题中，负数不作为回文数考虑范围之内，但是输入依然可能为负，此时直接返回false即可。 首先，一种容易想到的方法是：将整个数取反后看和原来的数是否相同。 12345678910111213141516171819cl">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-08T07:33:00.893Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王立杰的博客">
-<meta name="twitter:description" content="所谓王者，必卓然特立，争当人杰。">
+<meta name="twitter:title" content="Leetcode(9) 判断回文数（三种解法）">
+<meta name="twitter:description" content="Leetcode链接：9. Palindrome Number Palindrome Number，即判断是否为回文数，并且题目要求不能使用额外的空间。即，不能使用回文串的方法。 在本题中，负数不作为回文数考虑范围之内，但是输入依然可能为负，此时直接返回false即可。 首先，一种容易想到的方法是：将整个数取反后看和原来的数是否相同。 12345678910111213141516171819cl">
 
 
 
@@ -147,14 +149,14 @@
 
 
 
-  <link rel="canonical" href="http://wangwlj.com/archives/2018/01/"/>
+  <link rel="canonical" href="http://wangwlj.com/2018/01/08/Leetcode_9/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>归档 | 王立杰的博客</title>
+  <title>Leetcode(9) 判断回文数（三种解法） | 王立杰的博客</title>
   
 
 
@@ -192,7 +194,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-archive">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	
 	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
@@ -332,258 +334,314 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2018/01/08/Leetcode_9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王立杰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h1 class="post-title" itemprop="name headline">Leetcode(9) 判断回文数（三种解法）</h1>
         
-        OK! 目前共计 46 篇日志。 继续努力。
-      </span>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-08T15:32:05+08:00">
+                2018-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+	  
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/08/Leetcode_9/" class="leancloud_visitors" data-flag-title="Leetcode(9) 判断回文数（三种解法）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  409
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
-        
-        
-        
+      
+        <p>Leetcode链接：<a href="https://leetcode.com/problems/palindrome-number" target="_blank" rel="external">9. Palindrome Number</a></p>
+<p>Palindrome Number，即判断是否为回文数，并且题目要求不能使用额外的空间。<br>即，不能使用回文串的方法。</p>
+<p>在本题中，负数不作为回文数考虑范围之内，但是输入依然可能为负，此时直接返回false即可。</p>
+<p>首先，一种容易想到的方法是：将整个数取反后看和原来的数是否相同。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span>  </div><div class="line"><span class="keyword">public</span>:  </div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;  </div><div class="line">        <span class="keyword">if</span> (x&lt;<span class="number">0</span>)  </div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;  </div><div class="line">        <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> sum =<span class="number">0</span>;  </div><div class="line">        <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> origin = x;  </div><div class="line">        <span class="keyword">while</span>(x)  </div><div class="line">        &#123;  </div><div class="line">            <span class="keyword">int</span> num = x %<span class="number">10</span>;  </div><div class="line">            sum = sum*<span class="number">10</span> + num;  </div><div class="line">            x/=<span class="number">10</span>;  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">if</span>(sum == origin)  </div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;  </div><div class="line">        <span class="keyword">else</span>  </div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;  </div><div class="line">    &#125;  </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>我采用另外一种方法：根据回文数的特点，我们只需要判断左边一半和翻转后的右边一半是否相等即可。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">        <span class="comment">// 负数肯定不是，以及首尾不对称的非0数</span></div><div class="line">        <span class="keyword">if</span>(x &lt; <span class="number">0</span> || (x % <span class="number">10</span> == <span class="number">0</span> &amp;&amp; x != <span class="number">0</span>))</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">int</span> rev = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span> ( x &gt; rev)&#123;</div><div class="line">            rev = rev * <span class="number">10</span> + x % <span class="number">10</span>; <span class="comment">//将低位一半的数取反。</span></div><div class="line">            x = <span class="keyword">int</span> (x / <span class="number">10</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//有rev &gt;= x， 奇数情况下需要除去10</span></div><div class="line">        <span class="keyword">return</span> x == rev || x == <span class="keyword">int</span>(rev/<span class="number">10</span>); </div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>还有另外一种解法：<br>类似与采用两个指针。<br>在循环体中，不断地比较第i位和倒数第i位，直到遇到最中间的1个数字(输入为奇数个数字)或者遇到最中间的2个数字(输入为偶数个数字)时结束。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;  </div><div class="line">  <span class="keyword">if</span> (x &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;  </div><div class="line">  <span class="keyword">int</span> div = <span class="number">1</span>;  </div><div class="line">  <span class="keyword">while</span> (x / div &gt;= <span class="number">10</span>) &#123;  </div><div class="line">    div *= <span class="number">10</span>;  </div><div class="line">  &#125;          </div><div class="line">  <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;  </div><div class="line">    <span class="keyword">int</span> l = x / div;  </div><div class="line">    <span class="keyword">int</span> r = x % <span class="number">10</span>;  </div><div class="line">    <span class="keyword">if</span> (l != r) <span class="keyword">return</span> <span class="literal">false</span>;  </div><div class="line">    x = (x % div) / <span class="number">10</span>;  <span class="comment">//去掉两边的数</span></div><div class="line">    div /= <span class="number">100</span>;  </div><div class="line">  &#125;  </div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>参考链接：</p>
+<ul>
+<li><a href="http://blog.csdn.net/feliciafay/article/details/17134663" target="_blank" rel="external">LeetCode(9)PalindromeNumber</a></li>
+<li><a href="http://blog.csdn.net/zhangxiao93/article/details/48751493" target="_blank" rel="external">leetcode9</a></li>
+</ul>
 
-        
+      
+    </div>
+    
+    
+    
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wangwlj 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="wangwlj 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://wangwlj.com/2018/01/08/Leetcode_9/" title="Leetcode(9) 判断回文数（三种解法）">http://wangwlj.com/2018/01/08/Leetcode_9/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
+            <a href="/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
+          
+            <a href="/tags/Leetcode/" rel="tag"><i class="fa fa-tag"></i> Leetcode</a>
+          
+            <a href="/tags/回文数/" rel="tag"><i class="fa fa-tag"></i> 回文数</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
           </div>
         
-        
 
         
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/08/Leetcode_9/" itemprop="url">
-              
-                <span itemprop="name">Leetcode(9) 判断回文数（三种解法）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-08T15:32:05+08:00"
-              content="2018-01-08" >
-          01-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/06/CPP_06/" rel="next" title="C++ Primer学习笔记：(六)函数">
+                <i class="fa fa-chevron-left"></i> C++ Primer学习笔记：(六)函数
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/06/CPP_06/" itemprop="url">
-              
-                <span itemprop="name">C++ Primer学习笔记：(六)函数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-06T16:55:26+08:00"
-              content="2018-01-06" >
-          01-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/05/CPP_04_05/" itemprop="url">
-              
-                <span itemprop="name">C++ Primer学习笔记：(四/五)表达式和语句</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-05T15:51:49+08:00"
-              content="2018-01-05" >
-          01-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/04/CPP_03/" itemprop="url">
-              
-                <span itemprop="name">C++ Primer学习笔记：(三)字符串、向量和数组</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-04T21:36:47+08:00"
-              content="2018-01-04" >
-          01-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/04/ML_chap2_02/" itemprop="url">
-              
-                <span itemprop="name">西瓜书《机器学习》学习笔记(2)：比较检验与偏差方差</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-04T18:46:46+08:00"
-              content="2018-01-04" >
-          01-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/03/ML_chap2_01/" itemprop="url">
-              
-                <span itemprop="name">西瓜书《机器学习》学习笔记(1)：评估方法与度量指标</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-03T21:31:09+08:00"
-              content="2018-01-03" >
-          01-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -591,6 +649,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjUyMi85MDgz"></div>
+    
+  </div>
+
 
         </div>
         
@@ -886,6 +950,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -914,6 +982,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1373,6 +1452,23 @@
 
 
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 8596,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
   
