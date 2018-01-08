@@ -340,24 +340,140 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2017/11/23/Torch_DeepLab/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王立杰的博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">DeepLab简介及其pytorch实现</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn4s5bcwnbj20my0bm0t5.jpg" alt="different_rate"></p>
+          <h1 class="post-title" itemprop="name headline">DeepLab简介及其pytorch实现</h1>
+        
+
+        <div class="post-meta">
+          <font>置顶test</font>
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-23T22:48:10+08:00">
+                2017-11-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PyTorch/" itemprop="url" rel="index">
+                    <span itemprop="name">PyTorch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+	  
+          
+            
+          
+
+          
+          
+             <span id="/2017/11/23/Torch_DeepLab/" class="leancloud_visitors" data-flag-title="DeepLab简介及其pytorch实现">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  868
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn4s5bcwnbj20my0bm0t5.jpg" alt="different_rate"></p>
 <p>本文实现了使用pytorch搭建DeepLab。算是第一批采用Pytorch的吧，到目前为止，网上还没有类似的实现。</p>
 <a id="more"></a>
 <h2 id="DeepLab简介"><a href="#DeepLab简介" class="headerlink" title="DeepLab简介"></a>DeepLab简介</h2><p>DeepLab文章的下载地址：<a href="https://arxiv.org/abs/1606.00915" target="_blank" rel="external">https://arxiv.org/abs/1606.00915</a></p>
@@ -377,15 +493,166 @@
 <p>另外稍微提一下，全连接层的输入向量大小的确定方法。全连接层是将上一步所得到的图像reshape为一个一维的向量之后，作为它的输入，因此，输入向量的长度为： <code>in_channels = nFeatureMap * height * weight</code>。</p>
 <p>网络整体代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Net</span><span class="params">(nn.Module)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        super(Net, self).__init__()</div><div class="line">        self.conv1 = nn.Conv2d(<span class="number">1</span>, <span class="number">10</span>, kernel_size=<span class="number">5</span>, padding=<span class="number">1</span>)</div><div class="line">        self.conv2 = nn.Conv2d(<span class="number">10</span>, <span class="number">10</span>, kernel_size=<span class="number">5</span>, padding=<span class="number">1</span>)</div><div class="line">        self.conv2_drop = nn.Dropout2d() </div><div class="line">        self.fc1 = nn.Linear(<span class="number">40</span> * <span class="number">4</span> * <span class="number">5</span> * <span class="number">5</span>, <span class="number">50</span>) </div><div class="line">        self.fc2 = nn.Linear(<span class="number">50</span>, <span class="number">10</span>)</div><div class="line"></div><div class="line">        self.conv_rate_1 = nn.Conv2d(<span class="number">10</span>, <span class="number">20</span>, kernel_size=<span class="number">3</span>, dilation=<span class="number">2</span>, padding=<span class="number">2</span>) </div><div class="line">        self.conv_rate_2 = nn.Conv2d(<span class="number">20</span>, <span class="number">40</span>, kernel_size=<span class="number">3</span>, dilation=<span class="number">3</span>, padding=<span class="number">3</span>) </div><div class="line">        self.conv_rate_3 = nn.Conv2d(<span class="number">20</span>, <span class="number">40</span>, kernel_size=<span class="number">3</span>, dilation=<span class="number">4</span>, padding=<span class="number">4</span>)</div><div class="line">        self.conv_rate_4 = nn.Conv2d(<span class="number">20</span>, <span class="number">40</span>, kernel_size=<span class="number">3</span>, dilation=<span class="number">5</span>, padding=<span class="number">5</span>)</div><div class="line">        self.conv_rate_5 = nn.Conv2d(<span class="number">20</span>, <span class="number">40</span>, kernel_size=<span class="number">1</span>, padding=<span class="number">0</span>)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span></div><div class="line">        x = F.max_pool2d(F.relu(self.conv1(x)), <span class="number">2</span>)</div><div class="line">        x = F.relu(F.max_pool2d(self.conv2_drop(self.conv2(x)), <span class="number">2</span>))</div><div class="line">        x = self.conv_rate_1(x)</div><div class="line">        x2 = self.conv_rate_2(x)</div><div class="line">        x3 = self.conv_rate_3(x)</div><div class="line">        x4 = self.conv_rate_4(x)</div><div class="line">        x5 = self.conv_rate_5(x)</div><div class="line">        <span class="comment"># print(x.data.shape)</span></div><div class="line">        <span class="comment"># print(x2.data.shape)</span></div><div class="line">        <span class="comment"># print(x3.data.shape)</span></div><div class="line">        <span class="comment"># print(x4.data.shape)</span></div><div class="line">        <span class="comment"># print(x5.data.shape)</span></div><div class="line">        x = torch.cat([x2, x3, x4, x5], dim=<span class="number">1</span>)</div><div class="line"></div><div class="line">        <span class="comment"># for FC</span></div><div class="line">        x = x.view(<span class="number">-1</span>, self.num_flat_features(x))  <span class="comment"># origin is 320</span></div><div class="line">        x = F.relu(self.fc1(x))  <span class="comment"># fc-&gt;relu</span></div><div class="line">        x = F.dropout(x, training=self.training)  <span class="comment"># dropout</span></div><div class="line">        x = self.fc2(x)</div><div class="line">        <span class="keyword">return</span> F.log_softmax(x)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">num_flat_features</span><span class="params">(self, x)</span>:</span></div><div class="line">        size = x.size()[<span class="number">1</span>:]  <span class="comment"># all dimensions except the batch dimension</span></div><div class="line">        num_features = <span class="number">1</span></div><div class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> size:</div><div class="line">            num_features *= s</div><div class="line">        <span class="keyword">return</span> num_features</div></pre></td></tr></table></figure></p>
 
-        
-      </div>
-      
-      
       
     </div>
     
     
     
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wangwlj 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="wangwlj 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://wangwlj.com/2017/11/23/Torch_DeepLab/" title="DeepLab简介及其pytorch实现">http://wangwlj.com/2017/11/23/Torch_DeepLab/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/deep-learning/" rel="tag"><i class="fa fa-tag"></i> deep learning</a>
+          
+            <a href="/tags/pytorch/" rel="tag"><i class="fa fa-tag"></i> pytorch</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/22/DL_chap_7/" rel="next" title="深度学习系列：（七）深度学习中的正则化">
+                <i class="fa fa-chevron-left"></i> 深度学习系列：（七）深度学习中的正则化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/27/python_base_NJU_1/" rel="prev" title="Python-基础篇">
+                Python-基础篇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
@@ -720,6 +987,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
