@@ -90,7 +90,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="GitHub,hexo,博客," />
+  <meta name="keywords" content="hexo,博客,GitHub," />
 
 
 
@@ -109,7 +109,7 @@
 
 
 <meta name="description" content="本篇教程基于NexT主题的博客配置，实现更换主题、评论、打赏等36项功能，接下来根据这些功能进行分点描述，附上个人博客以供比对参考：个人博客链接。">
-<meta name="keywords" content="GitHub,hexo,博客">
+<meta name="keywords" content="hexo,博客,GitHub">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo搭建的Github博客之优化">
 <meta property="og:url" content="http://wangwlj.com/2017/09/09/blog-opti/index.html">
@@ -132,7 +132,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cwfm5kzj206t07gq3n.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cwvi77uj205a00vq2p.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cx96a8jj20rd0agdgc.jpg">
-<meta property="og:image" content="http://wangwlj.com/2017/09/09/blog-opti/readme.png">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn90mhdbfdj20fr05zdfr.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cxpybw2j20h305hgm2.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cxz9ckqj20p104sdg4.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cyazkhlj214d08ngmq.jpg">
@@ -147,7 +147,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn8d5gxm6fj207m0cajsb.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn8d605gtoj20ku112dgj.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fn8d68a0c8j20ku112abz.jpg">
-<meta property="og:updated_time" content="2018-01-08T02:53:29.687Z">
+<meta property="og:updated_time" content="2018-01-08T03:36:04.408Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建的Github博客之优化">
 <meta name="twitter:description" content="本篇教程基于NexT主题的博客配置，实现更换主题、评论、打赏等36项功能，接下来根据这些功能进行分点描述，附上个人博客以供比对参考：个人博客链接。">
@@ -475,7 +475,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5,616
+                  5,759
                 </span>
               
 
@@ -511,15 +511,15 @@
 <blockquote>
 <p>Hexo博客根目录/themes/</p>
 </blockquote>
-<p>在Hexo根目录下有一个以<code>_config.yml</code>命名的文件（下称<strong>站点配置文件</strong>），用<code>Sublime/NotePad++</code>等文本编辑器打开，在其中找到<code>theme</code>属性，将其由<code>landscape</code>改为<code>next</code>。</p>
+<p>在Hexo根目录下有一个以<code>_config.yml</code>命名的文件（下称<strong><font color="#000000"><span style="background-color: #ADFF2F;">站点配置文件 </span></font></strong>），用<code>Sublime/NotePad++</code>等文本编辑器打开，在其中找到<code>theme</code>属性，将其由<code>landscape</code>改为<code>next</code>。</p>
 <p>然后在Hexo根目录执行部署Hexo指令：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 清理缓存</span></div><div class="line">hexo clean</div><div class="line"><span class="comment">// 生成文件</span></div><div class="line">hexo generate</div><div class="line"><span class="comment">// 部署</span></div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
 <p>便可以在远程的博客上看到修改主题后的样式了。</p>
 <h1 id="设置Hexo主题模式"><a href="#设置Hexo主题模式" class="headerlink" title="设置Hexo主题模式"></a>设置Hexo主题模式</h1><p>看到上图，读者可能会产生疑问，为什么自己的主题样式和笔者的不一样，这是因为在Hexo主题中，有四种不同的模式，通过切换模式，让NexT主题显示不一样的样式。</p>
-<p>在<code>NexT</code>根目录下有一个同样名称为<code>_config.yml</code>，为了区分<code>hexo</code>根目录下的<code>_config.yml</code>，将前者称为<strong>主题配置文件</strong>，在其中找到scheme属性，如下图所示：</p>
+<p>在<code>NexT</code>根目录下有一个同样名称为<code>_config.yml</code>，为了区分<code>hexo</code>根目录下的<code>_config.yml</code>，将前者称为<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>，在其中找到scheme属性，如下图所示：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Schemes</span></div><div class="line"><span class="comment">#scheme: Muse</span></div><div class="line"><span class="comment">#scheme: Mist</span></div><div class="line"><span class="attr">scheme:</span> <span class="string">Pisces</span></div><div class="line"><span class="comment">#scheme: Gemini</span></div></pre></td></tr></table></figure>
 <p>NexT主题默认使用Muse模式，笔者采用的是Pisces模式，读者可根据自己的喜好，选择其中一种模式。</p>
-<h1 id="设置预览摘要"><a href="#设置预览摘要" class="headerlink" title="设置预览摘要"></a>设置预览摘要</h1><p>设置完模式后，读者们会发现，尽管首页显示的是所有文章的列表，但是每一篇文章都显示了所有内容，这样感觉看起来不舒服，这时候可以启用预览摘要模式，在主题配置文件中找到<code>auto_excerpt</code>属性，将<code>enable</code>设置为<code>true</code> ，将<code>length</code>设置为想要预览到的字数，如下图所示：</p>
+<h1 id="设置预览摘要"><a href="#设置预览摘要" class="headerlink" title="设置预览摘要"></a>设置预览摘要</h1><p>设置完模式后，读者们会发现，尽管首页显示的是所有文章的列表，但是每一篇文章都显示了所有内容，这样感觉看起来不舒服，这时候可以启用预览摘要模式，在<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>中找到<code>auto_excerpt</code>属性，将<code>enable</code>设置为<code>true</code> ，将<code>length</code>设置为想要预览到的字数，如下图所示：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">auto_excerpt:</span></div><div class="line"><span class="attr">enable:</span> <span class="literal">true</span> <span class="comment">#将原有的false改为true</span></div><div class="line"><span class="attr">length:</span> <span class="number">300</span>  <span class="comment">#设置预览的字数</span></div></pre></td></tr></table></figure>
 <blockquote>
 <p>这里说明一下：上述的部署指令中<code>hexo deploy</code>可以换成<code>hexo server</code>，两者的区别在于，前者是将博客部署到<strong>远程</strong>的Github上，而后者是运行在<strong>本地</strong>，通过<code>http://localhost:4000</code>在浏览器中访问。后者是为了调试配置方便而使用，但是最终本地博客还是需要<code>hexo deploy</code>指令将其部署至Github上。</p>
@@ -533,22 +533,22 @@
 <p><del>- <strong>获取uid</strong></del></p>
 <p><del>注册完登录后，在首页单击“后台管理”按钮进入后台界面便可看到自己的用户ID，将其复制下来。</del></p>
 <p><del>- <strong>设置uid</strong></del></p>
-<p><del>打开<strong>主题配置文件</strong>，在其中找到属性<code>youyan_uid</code>，然后在: 后添加之前复制的uid。</del></p>
+<p><del>打开<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>，在其中找到属性<code>youyan_uid</code>，然后在: 后添加之前复制的uid。</del></p>
 <p><del>&gt; 提醒一下，<strong>:</strong> 冒号后面一定要有一个空格</del></p>
 <p><del>然后部署一下Hexo，可以在本地或远程看到实现的评论功能，如下图所示：</del></p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cr4ov1fj20ik0dnaad.jpg" alt="youyan评论界面"></p>
 <p><del>&gt; 在笔者配置评论功能的时候，笔者遇到了一个问题：<em>本地博客有评论功能，而远程博客却没有</em> 。折腾了一下午，始终不知道其原因所在。后来，当笔者对博客绑定自己的域名后，发现远程的博客自动出现了评论功能。在此推测为域名的缘故。若没有绑定域名的读者们遇到这个情况，可以放放，先配置其他功能。</del></p>
-<h1 id="设置侧边栏显示效果"><a href="#设置侧边栏显示效果" class="headerlink" title="设置侧边栏显示效果"></a>设置侧边栏显示效果</h1><p>在<strong>主题配置文件</strong>中，找到<code>sidebar</code>的<code>display</code>属性，<code>display</code>属性有四种显示模式：分别为：</p>
+<h1 id="设置侧边栏显示效果"><a href="#设置侧边栏显示效果" class="headerlink" title="设置侧边栏显示效果"></a>设置侧边栏显示效果</h1><p>在<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>中，找到<code>sidebar</code>的<code>display</code>属性，<code>display</code>属性有四种显示模式：分别为：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">post    <span class="comment">// 默认显示方式</span></div><div class="line">always  <span class="comment">// 一直显示</span></div><div class="line">hide    <span class="comment">// 初始隐藏</span></div><div class="line">remove  <span class="comment">// 移除侧边栏</span></div></pre></td></tr></table></figure>
 <p>笔者将其设置为hide模式，读者们可根据个人喜好进行设置。</p>
-<h1 id="添加菜单选项"><a href="#添加菜单选项" class="headerlink" title="添加菜单选项"></a>添加菜单选项</h1><p>默认情况下，菜单导航栏有首页、归档、关于三个选项，除此之外笔者还添加了分类、标签和关于。在<strong>主题配置文件</strong>中，找到<code>menu</code>属性，并去掉<code>categories、 tags、about</code>的的注释，如下图所示：</p>
+<h1 id="添加菜单选项"><a href="#添加菜单选项" class="headerlink" title="添加菜单选项"></a>添加菜单选项</h1><p>默认情况下，菜单导航栏有首页、归档、关于三个选项，除此之外笔者还添加了分类、标签和关于。在<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>中，找到<code>menu</code>属性，并去掉<code>categories、 tags、about</code>的的注释，如下图所示：</p>
 <p>然后在Hexo根目录执行指令如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 添加分类页面</span></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"categories"</span></div><div class="line"><span class="comment">// 添加标签页面</span></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"tags"</span></div><div class="line"><span class="comment">// 添加关于页面</span></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"about"</span></div></pre></td></tr></table></figure>
 <p>执行完上述指令后，在Hexo根目录<code>/source/</code>文件夹下创建三个文件夹，命名分别为：<code>categories、tags、about</code>文件夹，在这些文件夹中分别会创建一个以<code>index</code>命名的Markdown文件，对这三个Markdown文件内容进行修改，使之分别为：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: categories</div><div class="line">date: <span class="number">2017</span>-<span class="number">03</span>-<span class="number">12</span> <span class="number">22</span>:<span class="number">06</span>:<span class="number">24</span></div><div class="line">type: <span class="string">"categories"</span></div><div class="line">---</div><div class="line"></div><div class="line">---</div><div class="line">title: 标签</div><div class="line">date: <span class="number">2017</span>-<span class="number">03</span>-<span class="number">12</span> <span class="number">17</span>:<span class="number">27</span>:<span class="number">16</span></div><div class="line">type: <span class="string">"tags"</span></div><div class="line">---</div><div class="line"></div><div class="line">---</div><div class="line">title: about</div><div class="line">date: <span class="number">2017</span>-<span class="number">03</span>-<span class="number">12</span> <span class="number">22</span>:<span class="number">07</span>:<span class="number">26</span></div><div class="line">type: <span class="string">"about"</span></div><div class="line">---</div></pre></td></tr></table></figure>
 <p>完成文件的修改，然后部署Hexo即可完成菜单选项的添加。</p>
 <h1 id="添加阅读次数统计"><a href="#添加阅读次数统计" class="headerlink" title="添加阅读次数统计"></a>添加阅读次数统计</h1><p>注册<code>LeanCloud</code>账号，完成激活；点击左上角的”应用”-“创建新应用”-点击“数据”右边的齿轮–点击创建类class，类名字叫做<code>Counter</code>。</p>
-<p>然后，修改<strong>主题配置文件</strong>，找到<code>leancloud_visitors</code>，添加修改：</p>
+<p>然后，修改<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>，找到<code>leancloud_visitors</code>，添加修改：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">leancloud_visitors:</span></div><div class="line"><span class="attr">  enable:</span> <span class="literal">true</span> <span class="comment">#将原来的false改为true</span></div><div class="line"><span class="attr">  app_id:</span> <span class="comment">#&lt;app_id&gt;</span></div><div class="line"><span class="attr">  app_key:</span> <span class="comment">#&lt;app_key&gt;</span></div></pre></td></tr></table></figure>
 <p>从设置中找到相应的id和key：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8crnajqgj21150brt9d.jpg" alt="LeanCloud中的id和key"></p>
@@ -558,7 +558,7 @@
 <ul>
 <li><strong>添加链接及图标</strong></li>
 </ul>
-<p>在<strong>主题配置文件</strong>中找到<code>social</code>属性，在其下方添加社交链接及图标，其格式为：</p>
+<p>在<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>中找到<code>social</code>属性，在其下方添加社交链接及图标，其格式为：</p>
 <pre><code>社交平台名称：链接 || 图标
 </code></pre><p>链接的图标全部来自于<a href="http://fontawesome.io/icons/" target="_blank" rel="external">Font Awesome</a></p>
 <ul>
@@ -575,7 +575,7 @@
 </ul>
 <p>配置完成后，具体效果显示如下：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8csbig53j206m06kglj.jpg" alt="社交链接效果图"></p>
-<h1 id="添加友情链接功能"><a href="#添加友情链接功能" class="headerlink" title="添加友情链接功能"></a>添加友情链接功能</h1><p>在<strong>主题配置文件</strong>中找到<code>links</code>属性，修改<code>links_title</code>属性的值为“友情链接”（也可以是其他文案），取消注释<code>links:</code>，然后添加上好友的博客名称和博客地址，其格式如下：</p>
+<h1 id="添加友情链接功能"><a href="#添加友情链接功能" class="headerlink" title="添加友情链接功能"></a>添加友情链接功能</h1><p>在<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>中找到<code>links</code>属性，修改<code>links_title</code>属性的值为“友情链接”（也可以是其他文案），取消注释<code>links:</code>，然后添加上好友的博客名称和博客地址，其格式如下：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Blog rolls</span></div><div class="line"><span class="attr">links_title:</span> <span class="string">友情链接</span> <span class="comment">#修改名称</span></div><div class="line"><span class="comment">#links_layout: block</span></div><div class="line"><span class="comment">#links_layout: inline</span></div><div class="line"><span class="attr">links:</span> <span class="comment">#该行取消注释</span></div><div class="line">  <span class="string">小草莓:</span> <span class="attr">http://my.csdn.net/qq_31196849</span></div><div class="line"><span class="attr">  qingkong:</span> <span class="attr">http://my.csdn.net/qingkong1994</span></div></pre></td></tr></table></figure>
 <p>笔者友情链接出现位置在社交链接的下方，效果如下图所示：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8csps0fsj206w02x3yb.jpg" alt="友情链接示意图"></p>
@@ -610,7 +610,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;% if not is_index %&#125;</div><div class="line">  &lt;div&gt;</div><div class="line">	&#123;% include &apos;passage-end-tag.swig&apos; %&#125;</div><div class="line">  &lt;/div&gt;</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
 <p>具体位置如下图所示：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cupy37bj20m80fbgml.jpg" alt="post.swig文件中的具体位置"></p>
-<p>最后在<strong>主题配置文件</strong>中，在末尾添加如下语句：</p>
+<p>最后在<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>中，在末尾添加如下语句：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">passage_end_tag:</span></div><div class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
 <p><strong>实现效果图</strong></p>
 <p>最终实现效果如下：</p>
@@ -618,24 +618,24 @@
 <h1 id="显示每篇文章字数"><a href="#显示每篇文章字数" class="headerlink" title="显示每篇文章字数"></a>显示每篇文章字数</h1><p><strong>实现方法</strong></p>
 <p>首先安装插件，执行以下命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-wordcount --save</div></pre></td></tr></table></figure>
-<p>然后修改<strong>主题配置文件</strong>，定位到<code>post_wordcount</code>，将<code>wordcount</code>由<code>false</code>改为<code>true</code>即可。</p>
+<p>然后修改<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>，定位到<code>post_wordcount</code>，将<code>wordcount</code>由<code>false</code>改为<code>true</code>即可。</p>
 <p><strong>实现效果图</strong></p>
 <p>在每篇文章标题下会有如下效果：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cvh9au0j20id04et8s.jpg" alt="字数统计效果图"></p>
 <h1 id="显示站点文章总字数"><a href="#显示站点文章总字数" class="headerlink" title="显示站点文章总字数"></a>显示站点文章总字数</h1><p><strong>实现方法</strong></p>
 <p>首先安装插件，插件安装同上（已经“显示每篇文章字数”则忽略这步）。</p>
-<p>然后修改<strong>主题配置文件</strong>，定位到<code>post_wordcount</code>，将<code>totalcount</code>由<code>false</code>改为<code>true</code>即可。</p>
+<p>然后修改<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>，定位到<code>post_wordcount</code>，将<code>totalcount</code>由<code>false</code>改为<code>true</code>即可。</p>
 <p><strong>实现效果图</strong></p>
 <p>在页面最底部会有如下效果：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cvva5exj20bn02bdfq.jpg" alt="字数统计效果图"></p>
-<h1 id="文章末尾添加版权说明"><a href="#文章末尾添加版权说明" class="headerlink" title="文章末尾添加版权说明"></a>文章末尾添加版权说明</h1><p>直接修改<strong>主题配置文件</strong>，定位到<code>post_copyright</code>，将<code>enable</code>由<code>false</code>改为<code>true</code>即可。</p>
+<h1 id="文章末尾添加版权说明"><a href="#文章末尾添加版权说明" class="headerlink" title="文章末尾添加版权说明"></a>文章末尾添加版权说明</h1><p>直接修改<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>，定位到<code>post_copyright</code>，将<code>enable</code>由<code>false</code>改为<code>true</code>即可。</p>
 <p>该字段如下：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Declare license on posts</span></div><div class="line"><span class="attr">post_copyright:</span></div><div class="line"><span class="attr">  enable:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  license:</span> <span class="string">CC</span> <span class="string">BY-NC-SA</span> <span class="number">3.0</span></div><div class="line"><span class="attr">  license_url:</span> <span class="attr">https://creativecommons.org/licenses/by-nc-sa/3.0/</span></div></pre></td></tr></table></figure>
 <p>实现效果如图所示：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cw6hx2jj20i304uaa7.jpg" alt="版权说明效果图"></p>
 <h1 id="设置个人头像"><a href="#设置个人头像" class="headerlink" title="设置个人头像"></a>设置个人头像</h1><p>通过上面切换到Pisces发现，自己的头像还是属于匿名状态，因此，我们有必要设置一下自己的头像。</p>
 <p><strong>实现方法</strong></p>
-<p>在<strong>主题配置文件</strong>中找到<code>avatar</code>字段,进行修改:</p>
+<p>在<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>中找到<code>avatar</code>字段,进行修改:</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Sidebar Avatar</span></div><div class="line"><span class="comment"># in theme directory(source/images): /images/avatar.gif</span></div><div class="line"><span class="comment"># in site  directory(source/uploads): /uploads/avatar.gif</span></div><div class="line"><span class="attr">avatar:</span> <span class="string">/images/head_icon.jpg</span></div></pre></td></tr></table></figure>
 <p>先将<code>avatar</code>字段前的#删除，然后粘贴上头像的目录位置或者链接。</p>
 <p>笔者将突破保存在了主题目录下的<code>source/images</code>文件夹，也可以存放在站点目录下的<code>source/uploads</code>文件夹。也可以将自己的头像图片，保存在百度网盘或者新浪微盘的某个地方，然后将对应的<code>url</code>地址复制过来，添加在<code>avatar</code>字段后即可。</p>
@@ -649,7 +649,7 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.site-author-image</span>:hover &#123;</div><div class="line">  -webkit-<span class="attribute">animation</span>: jello <span class="number">1s</span>;</div><div class="line">  <span class="attribute">animation</span>: jello <span class="number">1s</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>其中<code>jello</code>是我选择的动态效果，你可以在<a href="https://daneden.github.io/animate.css/" target="_blank" rel="external">这里</a>找到你喜欢的特效;然后更换上述代码中的<code>jello</code>字段，达到预期效果后，即可部署至远程。</p>
 <h1 id="设置网站图标"><a href="#设置网站图标" class="headerlink" title="设置网站图标"></a>设置网站图标</h1><p><strong>实现方法</strong></p>
-<p>打开主题配置文件，找到以下字段，进行相应的修改：</p>
+<p>打开<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>，找到以下字段，进行相应的修改：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Put your favicon.ico into `hexo-site/source/` directory.</span></div><div class="line"><span class="attr">favicon:</span> <span class="string">/web_icon.jpg</span></div></pre></td></tr></table></figure>
 <p>然后预览，在自己的博客网站上有这样的图标：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cwvi77uj205a00vq2p.jpg" alt="网站图标展示"></p>
@@ -660,15 +660,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo n page guestbook</div></pre></td></tr></table></figure>
 <p>然后通过路径<code>F:\Hexo\source\guestbook</code>找到并打开<code>guestbook</code>文件夹下的<code>index.md</code>文件，然后再文件中添加以下代码:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ds-recent-visitors"</span> <span class="attr">data-num-items</span>=<span class="string">"28"</span> <span class="attr">data-avatar-size</span>=<span class="string">"42"</span> <span class="attr">id</span>=<span class="string">"ds-recent-visitors"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>然后打开主题配置文件，在menu字段下，添加如下字段：</p>
-<pre><code>menu:
-  home: / || home
-  about: /about/ || user
-  tags: /tags/ || tags
-  categories: /categories/ || th
-  archives: /archives/ || archive
-  留言板: /guestbook || newspaper-o #自己添加的字段
-</code></pre><p><code>newspaper-o</code>是留言板的图标，可以在<a href="http://fontawesome.io/icons/" target="_blank" rel="external">这里</a>找到自己喜欢的图标。</p>
+<p>然后打开<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>，在menu字段下，添加如下字段：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="attr">menu:</span></div><div class="line"><span class="attr">  home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></div><div class="line"><span class="attr">  about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">user</span></div><div class="line"><span class="attr">  tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></div><div class="line"><span class="attr">  categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></div><div class="line"><span class="attr">  archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></div><div class="line">  <span class="string">留言板:</span> <span class="string">/guestbook</span> <span class="string">||</span> <span class="string">newspaper-o</span> <span class="comment">#自己添加的字段</span></div></pre></td></tr></table></figure>
+<p><code>newspaper-o</code>是留言板的图标，可以在<a href="http://fontawesome.io/icons/" target="_blank" rel="external">这里</a>找到自己喜欢的图标。</p>
 <p>笔者采用的youyan评论系统，默认在新建页面上会产生评论板块。效果如下：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cx96a8jj20rd0agdgc.jpg" alt="留言板效果图"></p>
 <blockquote>
@@ -679,7 +673,7 @@
 <p>因此，解决方式是在路径<code>F:\Hexo\source</code>下手动新建<code>README.mdown</code>注意这里的后缀是<code>.mdown</code>，<code>Mardownpad</code>可以将文件保存为<code>.mdown</code>后缀文件；然后再在这个新建文件中写<code>README</code>即可。再之后<code>hexo g</code>会把它复制到<code>public</code>文件夹，而不会被解析成<code>html</code>文件，发布在博客中。</p>
 <p><strong>实现效果图</strong></p>
 <p>预览效果，如图：</p>
-<p><img src="/2017/09/09/blog-opti/readme.png" alt="README效果图"></p>
+<p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn90mhdbfdj20fr05zdfr.jpg" alt="README效果图"></p>
 <h1 id="实现fork-me-on-github"><a href="#实现fork-me-on-github" class="headerlink" title="实现fork me on github"></a>实现fork me on github</h1><p>在右上角或者左上角实现fork me on github。</p>
 <p><strong>实现方法</strong></p>
 <p>点击<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">这里</a>挑选自己喜欢的样式，并复制代码。 例如，我是复制如下代码： </p>
@@ -694,7 +688,8 @@
 <blockquote>
 <p><a href="http://7u2ss1.com1.z0.glb.clouddn.com/love.js" target="_blank" rel="external">http://7u2ss1.com1.z0.glb.clouddn.com/love.js</a></p>
 </blockquote>
-<p>然后将里面的代码copy一下，新建<code>love.js</code>文件并且将代码复制进去，然后保存。将<code>love.js</code>文件放到路径<code>/themes/next/source/js/src</code>里面，然后打开<code>\themes\next\layout\_layout.swig</code>文件,在末尾（在前面引用会出现找不到的bug）添加以下代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 页面点击小红心 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/js/src/love.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>然后将里面的代码copy一下，新建<code>love.js</code>文件并且将代码复制进去，然后保存。将<code>love.js</code>文件放到路径<code>/themes/next/source/js/src</code>里面，然后打开<code>\themes\next\layout\_layout.swig</code>文件,在末尾（在前面引用会出现找不到的bug）添加以下代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 页面点击小红心 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/js/src/love.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><strong>实现效果图</strong></p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cyov4svg201u0363z5.gif" alt="love效果图"></p>
 <h1 id="修改文章底部的-号标签"><a href="#修改文章底部的-号标签" class="headerlink" title="修改文章底部的#号标签"></a>修改文章底部的#号标签</h1><p><strong>实现方法</strong></p>
@@ -702,7 +697,7 @@
 <p><strong>实现效果图</strong></p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8cz284l5j206b01kq2p.jpg" alt="新标签符号图"></p>
 <h1 id="添加动态背景"><a href="#添加动态背景" class="headerlink" title="添加动态背景"></a>添加动态背景</h1><p><strong>实现方法</strong></p>
-<p>在主题配置文件中，定位到如下部分：</p>
+<p>在<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>中，定位到如下部分：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Canvas-nest</span></div><div class="line"><span class="attr">canvas_nest:</span> <span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment"># three_waves</span></div><div class="line"><span class="attr">three_waves:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># canvas_lines</span></div><div class="line"><span class="attr">canvas_lines:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># canvas_sphere</span></div><div class="line"><span class="attr">canvas_sphere:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># Only fit scheme Pisces</span></div><div class="line"><span class="comment"># Canvas-ribbon</span></div><div class="line"><span class="attr">canvas_ribbon:</span> <span class="literal">false</span></div></pre></td></tr></table></figure>
 <p>这是已经集成好的几个动态效果，笔者采用的是canvas_nest，读者可依次体验(将false改为true)，选择最喜欢的动态背景。</p>
 <p><strong>实现效果图</strong></p>
@@ -720,7 +715,7 @@
 <p><strong>实现效果图</strong></p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8d0lzv0kg20we0ehnh7.gif" alt="文章加密访问"></p>
 <h1 id="添加jiathis分享"><a href="#添加jiathis分享" class="headerlink" title="添加jiathis分享"></a>添加jiathis分享</h1><p><strong>实现方法</strong></p>
-<p>在<strong>主题配置文件</strong>中，jiathis为true，就行了，代码如下：</p>
+<p>在<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>中，jiathis为true，就行了，代码如下：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Share</span></div><div class="line"><span class="comment"># This plugin is more useful in China, make sure you known how to use it.</span></div><div class="line"><span class="comment"># And you can find the use guide at official webiste: http://www.jiathis.com/.</span></div><div class="line"><span class="comment"># Warning: JiaThis does not support https.</span></div><div class="line"><span class="attr">jiathis:</span> <span class="literal">true</span></div><div class="line">  <span class="comment">##uid: Get this uid from http://www.jiathis.com/</span></div><div class="line"><span class="comment">#add_this_id:</span></div></pre></td></tr></table></figure>
 <p><strong>实现效果图</strong></p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8d0xekdpj20i60cut9b.jpg" alt="分享效果图"></p>
@@ -730,13 +725,18 @@
 <h1 id="支持mathjax公式"><a href="#支持mathjax公式" class="headerlink" title="支持mathjax公式"></a>支持mathjax公式</h1><p>看到网上说明安装hexo-math工具，或者其他的一系列教程，如<a href="http://cn.clanzd.com/mathjax-for-hexo.html" target="_blank" rel="external">这个</a>。</p>
 <p>其实在目前的hexo/NexT主题已经集成了mathjax，所以不需要那么麻烦的设置了。</p>
 <p><strong>实现方法</strong></p>
-<p>在<strong>主题配置文件</strong>中，定位到mathjax，将后面的选项为true，就行了。</p>
+<p>在<strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>中，定位到mathjax，将后面的选项为true，就行了。</p>
 <p>另外，虽然这样设置了，但是在编写的时候还会出现mathjax与markdown默认渲染不兼容的问题，导致有时候公式一复杂就显示不出来。</p>
 <p>解决上述问题的方法请参照我写的另一片博客：<a href="https://qwerty200696.github.io/2017/09/21/markdown_mathjax/" target="_blank" rel="external">https://qwerty200696.github.io/2017/09/21/markdown_mathjax/</a></p>
-<h1 id="修改部分字体的颜色，大小"><a href="#修改部分字体的颜色，大小" class="headerlink" title="修改部分字体的颜色，大小"></a>修改部分字体的颜色，大小</h1><p>比如说，想在文章中对某一部分的文字进行强调（改变大小，颜色），该操作具体说明如下：</p>
-<p>如果想自定义字体大小以及颜色，可以直接在 Markdown 文档中使用 html 语法：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">4</span> &gt;</span> 这里输入文字，自定义大小 <span class="tag">&lt;/<span class="name">font</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">"#FF0000"</span>&gt;</span> 这里输入文字，自定义颜色的字体 <span class="tag">&lt;/<span class="name">font</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="修改字体颜色-大小-背景色"><a href="#修改字体颜色-大小-背景色" class="headerlink" title="修改字体颜色/大小/背景色"></a>修改字体颜色/大小/背景色</h1><p>比如说，想在文章中对某一部分的文字进行强调（改变大小，颜色），该操作具体说明如下：</p>
+<p>如果想自定义字体大小以及颜色，可以直接在 Markdown 文档中使用 html 语法：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">4</span> &gt;</span> 这里输入文字，自定义字体大小 <span class="tag">&lt;/<span class="name">font</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">"#FF0000"</span>&gt;</span> 这里输入文字，自定义字体颜色<span class="tag">&lt;/<span class="name">font</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"background-color: #ff6600;"</span>&gt;</span>这里输入文字，自定义字体背景色<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">"#000000"</span> <span class="attr">size</span>=<span class="string">4</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"background-color: #ADFF2F;"</span>&gt;</span>这是综合起来的效果 <span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">font</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">"#FFFFFF"</span> <span class="attr">size</span>=<span class="string">4</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"background-color: #68228B;"</span>&gt;</span>这是综合起来的效果2 <span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">font</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>其中<code>#FF0000</code>为RGB颜色代码，读者可去<a href="http://www.114la.com/other/rgb.htm" target="_blank" rel="external">RGB颜色查询对照表网站</a>查找自己喜欢的颜色。</p>
 <p>若想在RGB颜色值与十六进制颜色码之间相互转化，可查看<a href="http://www.sioe.cn/yingyong/yanse-rgb-16/" target="_blank" rel="external">该网站</a>。</p>
+<p>效果如下：</p>
+<p><font size="4"> 这里输入文字，自定义字体大小 </font></p>
+<p><font color="#FF0000"> 这里输入文字，自定义字体颜色</font><br><span style="background-color: #ff6600;">这里输入文字，自定义字体背景色</span></p>
+<p><font color="#000000" size="4"><span style="background-color: #ADFF2F;">这是综合起来的效果 </span></font></p>
+<p><font color="#FFFFFF" size="4"><span style="background-color: #68228B;">这是综合起来的效果2 </span></font></p>
 <h1 id="实现首行缩进"><a href="#实现首行缩进" class="headerlink" title="实现首行缩进"></a>实现首行缩进</h1><p>由于markdown语法主要考虑的是英文，所以对于中文的首行缩进并不太友好，因此想要实现行缩进需要加上相应的代码，如下。</p>
 <p>在需要缩进行的开头处，先输入下面的代码，然后紧跟着输入文本即可。分号也不要漏掉。 </p>
 <p>直接写:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">半方大的空白`&amp;ensp;`或`&amp;#8194`;</div><div class="line">全方大的空白`&amp;emsp;`或`&amp;#8195`;</div><div class="line">不断行的空白格`&amp;nbsp;`或`&amp;#160`;</div></pre></td></tr></table></figure></p>
@@ -767,7 +767,7 @@
 </tbody>
 </table>
 <h1 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h1><h2 id="安装-hexo-generator-feed-插件"><a href="#安装-hexo-generator-feed-插件" class="headerlink" title="安装 hexo-generator-feed 插件"></a>安装 hexo-generator-feed 插件</h2><p>RSS需要有一个Feed链接，而这个链接需要靠<code>hexo-generator-feed</code>插件来生成，所以第一步需要添加插件，在<strong>Hexo根目录</strong>执行安装指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-feed --save</div></pre></td></tr></table></figure></p>
-<h2 id="配置feed信息"><a href="#配置feed信息" class="headerlink" title="配置feed信息"></a>配置feed信息</h2><p>在<strong>站点配置文件</strong>中追加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">feed:</div><div class="line">  type: rss2</div><div class="line">  path: rss2.xml</div><div class="line">  limit: 10</div><div class="line">  hub:</div><div class="line">  content: &apos;true&apos;</div></pre></td></tr></table></figure></p>
+<h2 id="配置feed信息"><a href="#配置feed信息" class="headerlink" title="配置feed信息"></a>配置feed信息</h2><p>在<strong><font color="#000000"><span style="background-color: #ADFF2F;">站点配置文件 </span></font></strong>中追加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">feed:</div><div class="line">  type: rss2</div><div class="line">  path: rss2.xml</div><div class="line">  limit: 10</div><div class="line">  hub:</div><div class="line">  content: &apos;true&apos;</div></pre></td></tr></table></figure></p>
 <p>feed属性下的各个子属性的含义借用feed官方英文解释如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">type - Feed type. (atom/rss2)</div><div class="line">path - Feed path. (Default: atom.xml/rss2.xml)</div><div class="line">limit - Maximum number of posts in the feed (Use 0 or false to show all posts)</div><div class="line">hub - URL of the PubSubHubbub hubs (Leave it empty if you don&apos;t use it)</div><div class="line">content - (optional) set to &apos;true&apos; to include the contents of the entire post in the feed.</div></pre></td></tr></table></figure></p>
 <p>至此RSS功能大功告成，部署至远程后，会发现RSS已经自动出现，效果图如下：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8d5gxm6fj207m0cajsb.jpg" alt=""></p>
@@ -775,8 +775,8 @@
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8d605gtoj20ku112dgj.jpg" alt=""></p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8d68a0c8j20ku112abz.jpg" alt=""></p>
 <h1 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a>添加搜索功能</h1><p>笔者采用的是local search。<br>安装 hexo-generator-searchdb，在站点的根目录下执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-searchdb --save</div></pre></td></tr></table></figure></p>
-<p>编辑 <strong>站点配置文件</strong>（站点根目录下），新增以下内容到任意位置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">search:</div><div class="line">  path: search.xml</div><div class="line">  field: post</div><div class="line">  format: html</div><div class="line">  limit: 10000</div></pre></td></tr></table></figure></p>
-<p>编辑 <strong>主题配置文件</strong>（主题目录下），启用本地搜索功能：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># Local search</div><div class="line">local_search:</div><div class="line">  enable: true</div></pre></td></tr></table></figure></p>
+<p>编辑 <strong><font color="#000000"><span style="background-color: #ADFF2F;">站点配置文件 </span></font></strong>（站点根目录下），新增以下内容到任意位置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">search:</div><div class="line">  path: search.xml</div><div class="line">  field: post</div><div class="line">  format: html</div><div class="line">  limit: 10000</div></pre></td></tr></table></figure></p>
+<p>编辑 <strong><font color="#FFFFFF"><span style="background-color: #68228B;">主题配置文件 </span></font></strong>（主题目录下），启用本地搜索功能：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># Local search</div><div class="line">local_search:</div><div class="line">  enable: true</div></pre></td></tr></table></figure></p>
 <p>之后部署到远程即可。</p>
 <h1 id="Hexo博客提交百度和Google收录"><a href="#Hexo博客提交百度和Google收录" class="headerlink" title="Hexo博客提交百度和Google收录"></a>Hexo博客提交百度和Google收录</h1><p>这篇文章写得很详细，我就不详细说了：<br><a href="https://www.jianshu.com/p/8c0707ce5da4" target="_blank" rel="external">Hexo博客收录百度和谷歌-基于Next主题</a></p>
 <h1 id="添加打赏功能"><a href="#添加打赏功能" class="headerlink" title="添加打赏功能"></a>添加打赏功能</h1><p>参考这篇文章：<a href="http://blog.csdn.net/lcyaiym/article/details/76796545" target="_blank" rel="external">hexo的next主题打赏</a></p>
@@ -792,6 +792,8 @@
 <li><p><a href="https://tzkang.github.io/2016/10/17/2016-10-17/#more" target="_blank" rel="external">GitHub+Hexo+NexT搭建个人博客</a></p>
 </li>
 <li><p><a href="http://blog.csdn.net/com_ma/article/details/76039859" target="_blank" rel="external">hexo博客的背景设置</a></p>
+</li>
+<li><p><a href="http://bbs.csdn.net/topics/310228143" target="_blank" rel="external">html设置字体背景色的标签或代码</a></p>
 </li>
 </ol>
 
@@ -872,11 +874,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
-          
             <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
           
             <a href="/tags/博客/" rel="tag"><i class="fa fa-tag"></i> 博客</a>
+          
+            <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
           
         </div>
       
@@ -1133,7 +1135,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建基本Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">搭建基本Hexo博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客绑定域名"><span class="nav-number">2.</span> <span class="nav-text">Hexo博客绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换Hexo主题"><span class="nav-number">3.</span> <span class="nav-text">更换Hexo主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置Hexo主题模式"><span class="nav-number">4.</span> <span class="nav-text">设置Hexo主题模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置预览摘要"><span class="nav-number">5.</span> <span class="nav-text">设置预览摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加评论功能"><span class="nav-number">6.</span> <span class="nav-text">添加评论功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更新"><span class="nav-number">6.1.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以下是原文"><span class="nav-number">6.2.</span> <span class="nav-text">以下是原文</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置侧边栏显示效果"><span class="nav-number">7.</span> <span class="nav-text">设置侧边栏显示效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加菜单选项"><span class="nav-number">8.</span> <span class="nav-text">添加菜单选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加阅读次数统计"><span class="nav-number">9.</span> <span class="nav-text">添加阅读次数统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加社交链接"><span class="nav-number">10.</span> <span class="nav-text">添加社交链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加友情链接功能"><span class="nav-number">11.</span> <span class="nav-text">添加友情链接功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置博文内链接为蓝色"><span class="nav-number">12.</span> <span class="nav-text">设置博文内链接为蓝色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置文章末尾”本文结束”标记"><span class="nav-number">13.</span> <span class="nav-text">设置文章末尾”本文结束”标记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示每篇文章字数"><span class="nav-number">14.</span> <span class="nav-text">显示每篇文章字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示站点文章总字数"><span class="nav-number">15.</span> <span class="nav-text">显示站点文章总字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章末尾添加版权说明"><span class="nav-number">16.</span> <span class="nav-text">文章末尾添加版权说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置个人头像"><span class="nav-number">17.</span> <span class="nav-text">设置个人头像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置头像动态特效"><span class="nav-number">18.</span> <span class="nav-text">设置头像动态特效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置网站图标"><span class="nav-number">19.</span> <span class="nav-text">设置网站图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加留言版块"><span class="nav-number">20.</span> <span class="nav-text">添加留言版块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目主页添加README"><span class="nav-number">21.</span> <span class="nav-text">项目主页添加README</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现fork-me-on-github"><span class="nav-number">22.</span> <span class="nav-text">实现fork me on github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现点击出现桃心效果"><span class="nav-number">23.</span> <span class="nav-text">实现点击出现桃心效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改文章底部的-号标签"><span class="nav-number">24.</span> <span class="nav-text">修改文章底部的#号标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加动态背景"><span class="nav-number">25.</span> <span class="nav-text">添加动态背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码块样式自定义"><span class="nav-number">26.</span> <span class="nav-text">代码块样式自定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章加密访问"><span class="nav-number">27.</span> <span class="nav-text">文章加密访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加jiathis分享"><span class="nav-number">28.</span> <span class="nav-text">添加jiathis分享</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义鼠标样式"><span class="nav-number">29.</span> <span class="nav-text">自定义鼠标样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#支持mathjax公式"><span class="nav-number">30.</span> <span class="nav-text">支持mathjax公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改部分字体的颜色，大小"><span class="nav-number">31.</span> <span class="nav-text">修改部分字体的颜色，大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现首行缩进"><span class="nav-number">32.</span> <span class="nav-text">实现首行缩进</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入表格"><span class="nav-number">33.</span> <span class="nav-text">插入表格</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法1：html代码"><span class="nav-number">33.1.</span> <span class="nav-text">方法1：html代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二：markdown代码"><span class="nav-number">33.2.</span> <span class="nav-text">方法二：markdown代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加RSS"><span class="nav-number">34.</span> <span class="nav-text">添加RSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-hexo-generator-feed-插件"><span class="nav-number">34.1.</span> <span class="nav-text">安装 hexo-generator-feed 插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置feed信息"><span class="nav-number">34.2.</span> <span class="nav-text">配置feed信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手机端订阅图"><span class="nav-number">34.3.</span> <span class="nav-text">手机端订阅图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">35.</span> <span class="nav-text">添加搜索功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客提交百度和Google收录"><span class="nav-number">36.</span> <span class="nav-text">Hexo博客提交百度和Google收录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加打赏功能"><span class="nav-number">37.</span> <span class="nav-text">添加打赏功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#博文置顶"><span class="nav-number">38.</span> <span class="nav-text">博文置顶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">39.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建基本Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">搭建基本Hexo博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客绑定域名"><span class="nav-number">2.</span> <span class="nav-text">Hexo博客绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换Hexo主题"><span class="nav-number">3.</span> <span class="nav-text">更换Hexo主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置Hexo主题模式"><span class="nav-number">4.</span> <span class="nav-text">设置Hexo主题模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置预览摘要"><span class="nav-number">5.</span> <span class="nav-text">设置预览摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加评论功能"><span class="nav-number">6.</span> <span class="nav-text">添加评论功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更新"><span class="nav-number">6.1.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以下是原文"><span class="nav-number">6.2.</span> <span class="nav-text">以下是原文</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置侧边栏显示效果"><span class="nav-number">7.</span> <span class="nav-text">设置侧边栏显示效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加菜单选项"><span class="nav-number">8.</span> <span class="nav-text">添加菜单选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加阅读次数统计"><span class="nav-number">9.</span> <span class="nav-text">添加阅读次数统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加社交链接"><span class="nav-number">10.</span> <span class="nav-text">添加社交链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加友情链接功能"><span class="nav-number">11.</span> <span class="nav-text">添加友情链接功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置博文内链接为蓝色"><span class="nav-number">12.</span> <span class="nav-text">设置博文内链接为蓝色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置文章末尾”本文结束”标记"><span class="nav-number">13.</span> <span class="nav-text">设置文章末尾”本文结束”标记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示每篇文章字数"><span class="nav-number">14.</span> <span class="nav-text">显示每篇文章字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示站点文章总字数"><span class="nav-number">15.</span> <span class="nav-text">显示站点文章总字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章末尾添加版权说明"><span class="nav-number">16.</span> <span class="nav-text">文章末尾添加版权说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置个人头像"><span class="nav-number">17.</span> <span class="nav-text">设置个人头像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置头像动态特效"><span class="nav-number">18.</span> <span class="nav-text">设置头像动态特效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置网站图标"><span class="nav-number">19.</span> <span class="nav-text">设置网站图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加留言版块"><span class="nav-number">20.</span> <span class="nav-text">添加留言版块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目主页添加README"><span class="nav-number">21.</span> <span class="nav-text">项目主页添加README</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现fork-me-on-github"><span class="nav-number">22.</span> <span class="nav-text">实现fork me on github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现点击出现桃心效果"><span class="nav-number">23.</span> <span class="nav-text">实现点击出现桃心效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改文章底部的-号标签"><span class="nav-number">24.</span> <span class="nav-text">修改文章底部的#号标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加动态背景"><span class="nav-number">25.</span> <span class="nav-text">添加动态背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码块样式自定义"><span class="nav-number">26.</span> <span class="nav-text">代码块样式自定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章加密访问"><span class="nav-number">27.</span> <span class="nav-text">文章加密访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加jiathis分享"><span class="nav-number">28.</span> <span class="nav-text">添加jiathis分享</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义鼠标样式"><span class="nav-number">29.</span> <span class="nav-text">自定义鼠标样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#支持mathjax公式"><span class="nav-number">30.</span> <span class="nav-text">支持mathjax公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改字体颜色-大小-背景色"><span class="nav-number">31.</span> <span class="nav-text">修改字体颜色/大小/背景色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现首行缩进"><span class="nav-number">32.</span> <span class="nav-text">实现首行缩进</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入表格"><span class="nav-number">33.</span> <span class="nav-text">插入表格</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法1：html代码"><span class="nav-number">33.1.</span> <span class="nav-text">方法1：html代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二：markdown代码"><span class="nav-number">33.2.</span> <span class="nav-text">方法二：markdown代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加RSS"><span class="nav-number">34.</span> <span class="nav-text">添加RSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-hexo-generator-feed-插件"><span class="nav-number">34.1.</span> <span class="nav-text">安装 hexo-generator-feed 插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置feed信息"><span class="nav-number">34.2.</span> <span class="nav-text">配置feed信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手机端订阅图"><span class="nav-number">34.3.</span> <span class="nav-text">手机端订阅图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">35.</span> <span class="nav-text">添加搜索功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客提交百度和Google收录"><span class="nav-number">36.</span> <span class="nav-text">Hexo博客提交百度和Google收录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加打赏功能"><span class="nav-number">37.</span> <span class="nav-text">添加打赏功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#博文置顶"><span class="nav-number">38.</span> <span class="nav-text">博文置顶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">39.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
@@ -1176,7 +1178,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      119.9k
+      120.1k
     </span>
   
 </div>
