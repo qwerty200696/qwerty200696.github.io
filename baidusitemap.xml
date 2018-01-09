@@ -1,0 +1,1107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/09/Algorithm_tutorial_charpter_6/</loc>
+    <lastmod>2018-01-09T13:28:16.262Z</lastmod>
+    <data>
+        <display>
+        <title>算法导论详解(5) 第六章堆排序</title>
+        <pubTime>2018-01-09T13:27:27.000Z</pubTime>
+        
+        <tag>算法导论</tag>
+         
+        <tag>Algorithm</tag>
+         
+        <tag>堆排序</tag>
+         
+        <tag>优先队列</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法导论" url="http://wangwlj.com/categories/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/09/leetcode_8/</loc>
+    <lastmod>2018-01-09T10:03:23.085Z</lastmod>
+    <data>
+        <display>
+        <title>动手实现atoi函数—— Leetcode(8)</title>
+        <pubTime>2018-01-09T07:32:05.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
+         
+        <tag>atoi</tag>
+         
+         
+           
+             
+              <breadCrumb title="Leetcode" url="http://wangwlj.com/categories/Leetcode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/08/Leetcode_9/</loc>
+    <lastmod>2018-01-09T08:58:52.550Z</lastmod>
+    <data>
+        <display>
+        <title>判断回文数（三种解法）—— Leetcode(9)</title>
+        <pubTime>2018-01-08T07:32:05.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
+         
+        <tag>回文数</tag>
+         
+         
+           
+             
+              <breadCrumb title="Leetcode" url="http://wangwlj.com/categories/Leetcode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/09/blog_pin_post/</loc>
+    <lastmod>2018-01-09T02:54:43.969Z</lastmod>
+    <data>
+        <display>
+        <title>hexo博客彻底解决置顶问题</title>
+        <pubTime>2018-01-09T02:53:54.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>博客</tag>
+         
+        <tag>置顶</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客搭建系列" url="http://wangwlj.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/08/algorithm_tutorial_chapter_4/</loc>
+    <lastmod>2018-01-08T10:24:08.951Z</lastmod>
+    <data>
+        <display>
+        <title>算法导论详解(3) 第四章分治策略</title>
+        <pubTime>2018-01-08T08:43:37.000Z</pubTime>
+        
+        <tag>算法导论</tag>
+         
+        <tag>Algorithm</tag>
+         
+        <tag>分治</tag>
+         
+        <tag>最大子数组</tag>
+         
+        <tag>矩阵乘法</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法导论" url="http://wangwlj.com/categories/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/12/13/algorithm_tutorial_chapter_3/</loc>
+    <lastmod>2018-01-08T07:29:56.409Z</lastmod>
+    <data>
+        <display>
+        <title>算法导论详解(2) 第三章函数的增长</title>
+        <pubTime>2017-12-13T14:51:38.000Z</pubTime>
+        
+        <tag>算法导论</tag>
+         
+        <tag>Algorithm</tag>
+         
+        <tag>函数渐近</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法导论" url="http://wangwlj.com/categories/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/12/12/algorithm_tutolrial_chapter_2/</loc>
+    <lastmod>2018-01-08T07:29:47.909Z</lastmod>
+    <data>
+        <display>
+        <title>算法导论详解(1) 第二章算法基础</title>
+        <pubTime>2017-12-12T13:43:10.000Z</pubTime>
+        
+        <tag>算法导论</tag>
+         
+        <tag>Algorithm</tag>
+         
+        <tag>插入排序</tag>
+         
+        <tag>归并排序</tag>
+         
+        <tag>分治</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法导论" url="http://wangwlj.com/categories/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/09/blog-opti/</loc>
+    <lastmod>2018-01-08T04:51:18.495Z</lastmod>
+    <data>
+        <display>
+        <title>hexo搭建的Github博客之优化</title>
+        <pubTime>2017-09-09T02:27:20.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>博客</tag>
+         
+        <tag>GitHub</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客搭建系列" url="http://wangwlj.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/12/09/HDHome_clawler_tutorial/</loc>
+    <lastmod>2018-01-07T14:33:46.529Z</lastmod>
+    <data>
+        <display>
+        <title>python爬虫实战--selenium模拟登录并自动点击</title>
+        <pubTime>2017-12-09T14:57:45.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>爬虫</tag>
+         
+        <tag>selenium</tag>
+         
+        <tag>HDHome</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://wangwlj.com/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/08/blog_setup/</loc>
+    <lastmod>2018-01-07T14:33:26.217Z</lastmod>
+    <data>
+        <display>
+        <title>hexo+GitHub博客搭建实战</title>
+        <pubTime>2017-09-08T04:00:25.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>博客</tag>
+         
+        <tag>GitHub</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客搭建系列" url="http://wangwlj.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/06/CPP_06/</loc>
+    <lastmod>2018-01-06T09:04:52.731Z</lastmod>
+    <data>
+        <display>
+        <title>C++ Primer学习笔记：(六)函数</title>
+        <pubTime>2018-01-06T08:55:26.000Z</pubTime>
+        
+        <tag>C++</tag>
+         
+         
+           
+             
+              <breadCrumb title="C++ Primer" url="http://wangwlj.com/categories/C-Primer/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/12/25/CPP_01_02/</loc>
+    <lastmod>2018-01-06T08:54:50.296Z</lastmod>
+    <data>
+        <display>
+        <title>C++ Primer学习笔记：(一/二)从基本类型开始</title>
+        <pubTime>2017-12-25T02:31:35.000Z</pubTime>
+        
+        <tag>C++</tag>
+         
+         
+           
+             
+              <breadCrumb title="C++ Primer" url="http://wangwlj.com/categories/C-Primer/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/04/CPP_03/</loc>
+    <lastmod>2018-01-06T08:54:38.640Z</lastmod>
+    <data>
+        <display>
+        <title>C++ Primer学习笔记：(三)字符串、向量和数组</title>
+        <pubTime>2018-01-04T13:36:47.000Z</pubTime>
+        
+        <tag>C++</tag>
+         
+        <tag>string</tag>
+         
+        <tag>vector</tag>
+         
+         
+           
+             
+              <breadCrumb title="C++ Primer" url="http://wangwlj.com/categories/C-Primer/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/05/CPP_04_05/</loc>
+    <lastmod>2018-01-06T08:54:25.688Z</lastmod>
+    <data>
+        <display>
+        <title>C++ Primer学习笔记：(四/五)表达式和语句</title>
+        <pubTime>2018-01-05T07:51:49.000Z</pubTime>
+        
+        <tag>C++</tag>
+         
+         
+           
+             
+              <breadCrumb title="C++ Primer" url="http://wangwlj.com/categories/C-Primer/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/04/ML_chap2_02/</loc>
+    <lastmod>2018-01-04T11:35:56.531Z</lastmod>
+    <data>
+        <display>
+        <title>西瓜书《机器学习》学习笔记(2)：比较检验与偏差方差</title>
+        <pubTime>2018-01-04T10:46:46.000Z</pubTime>
+        
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://wangwlj.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/21/opencv_SaveVideo/</loc>
+    <lastmod>2018-01-04T11:08:16.884Z</lastmod>
+    <data>
+        <display>
+        <title>opencv视频保存方法详解</title>
+        <pubTime>2017-09-21T02:03:45.000Z</pubTime>
+        
+        <tag>opencv</tag>
+         
+         
+           
+             
+              <breadCrumb title="邂逅opencv" url="http://wangwlj.com/categories/%E9%82%82%E9%80%85opencv/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/11/23/Torch_DeepLab/</loc>
+    <lastmod>2018-01-04T11:05:42.325Z</lastmod>
+    <data>
+        <display>
+        <title>DeepLab简介及其pytorch实现</title>
+        <pubTime>2017-11-23T14:48:10.000Z</pubTime>
+        
+        <tag>deep learning</tag>
+         
+        <tag>pytorch</tag>
+         
+         
+           
+             
+              <breadCrumb title="PyTorch" url="http://wangwlj.com/categories/PyTorch/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/03/ML_chap2_01/</loc>
+    <lastmod>2018-01-04T02:23:43.822Z</lastmod>
+    <data>
+        <display>
+        <title>西瓜书《机器学习》学习笔记(1)：评估方法与度量指标</title>
+        <pubTime>2018-01-03T13:31:09.000Z</pubTime>
+        
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://wangwlj.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/12/26/ML_taiwan_01/</loc>
+    <lastmod>2018-01-03T13:30:15.735Z</lastmod>
+    <data>
+        <display>
+        <title>机器学习技法笔记01：最佳分类超平面</title>
+        <pubTime>2017-12-26T02:24:06.000Z</pubTime>
+        
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://wangwlj.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/10/08/DL_Precision_and_Recall/</loc>
+    <lastmod>2018-01-03T06:59:12.953Z</lastmod>
+    <data>
+        <display>
+        <title>准确率、召回率与F1值</title>
+        <pubTime>2017-10-08T09:17:46.000Z</pubTime>
+        
+        <tag>准确率</tag>
+         
+        <tag>召回率</tag>
+         
+         
+           
+             
+              <breadCrumb title="深度学习" url="http://wangwlj.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/12/28/tensorflow_base/</loc>
+    <lastmod>2018-01-01T02:09:31.762Z</lastmod>
+    <data>
+        <display>
+        <title>TensorFlow基础篇与搭建深层神经网络</title>
+        <pubTime>2017-12-28T14:24:03.000Z</pubTime>
+        
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="TensorFlow系列" url="http://wangwlj.com/categories/TensorFlow%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/10/18/DL_overfitting/</loc>
+    <lastmod>2017-12-31T12:21:31.986Z</lastmod>
+    <data>
+        <display>
+        <title>深度学习中防止过拟合的方法</title>
+        <pubTime>2017-10-18T13:27:54.000Z</pubTime>
+        
+        <tag>overfitting</tag>
+         
+        <tag>过拟合</tag>
+         
+         
+           
+             
+              <breadCrumb title="深度学习" url="http://wangwlj.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/21/opencv_contrib/</loc>
+    <lastmod>2017-12-31T12:15:08.321Z</lastmod>
+    <data>
+        <display>
+        <title>opencv_contrib安装说明与错误解决方案</title>
+        <pubTime>2017-09-21T14:17:29.000Z</pubTime>
+        
+        <tag>opencv</tag>
+         
+         
+           
+             
+              <breadCrumb title="邂逅opencv" url="http://wangwlj.com/categories/%E9%82%82%E9%80%85opencv/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/21/optical_flow/</loc>
+    <lastmod>2017-12-31T12:13:41.627Z</lastmod>
+    <data>
+        <display>
+        <title>LK光流法分析及其源码</title>
+        <pubTime>2017-09-21T03:28:33.000Z</pubTime>
+        
+        <tag>opencv</tag>
+         
+        <tag>光流法</tag>
+         
+         
+           
+             
+              <breadCrumb title="邂逅opencv" url="http://wangwlj.com/categories/%E9%82%82%E9%80%85opencv/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/12/21/ps_white2transparent/</loc>
+    <lastmod>2017-12-31T12:13:15.300Z</lastmod>
+    <data>
+        <display>
+        <title>photoshop白色背景图片转换为透明背景</title>
+        <pubTime>2017-12-21T13:45:58.000Z</pubTime>
+        
+        <tag>Photoshop</tag>
+         
+         
+           
+             
+              <breadCrumb title="Photoshop" url="http://wangwlj.com/categories/Photoshop/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/10/18/Opening_ceremony_19th_CPC/</loc>
+    <lastmod>2017-12-31T12:12:50.969Z</lastmod>
+    <data>
+        <display>
+        <title>党的十九大报告全文</title>
+        <pubTime>2017-10-18T12:39:29.000Z</pubTime>
+        
+        <tag>十九大</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/12/28/TensorFlow_speech_commands/</loc>
+    <lastmod>2017-12-31T11:52:31.530Z</lastmod>
+    <data>
+        <display>
+        <title>基于TensorFlow的简单语音识别</title>
+        <pubTime>2017-12-28T14:24:03.000Z</pubTime>
+        
+        <tag>deep learning</tag>
+         
+        <tag>TensorFlow</tag>
+         
+        <tag>speech recognition</tag>
+         
+         
+           
+             
+              <breadCrumb title="TensorFlow系列" url="http://wangwlj.com/categories/TensorFlow%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/07/TensorFlow_setup/</loc>
+    <lastmod>2017-12-31T11:50:41.529Z</lastmod>
+    <data>
+        <display>
+        <title>windows下TensorFlow完整安装流程及出错解决方案</title>
+        <pubTime>2017-09-07T09:27:57.000Z</pubTime>
+        
+        <tag>deep learning</tag>
+         
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="TensorFlow系列" url="http://wangwlj.com/categories/TensorFlow%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/10/19/tensorflow_import_error/</loc>
+    <lastmod>2017-12-31T11:43:43.135Z</lastmod>
+    <data>
+        <display>
+        <title>import TensorFlow出错解决方案</title>
+        <pubTime>2017-10-19T05:48:42.000Z</pubTime>
+        
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="TensorFlow系列" url="http://wangwlj.com/categories/TensorFlow%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/12/12/Start_Machine_Learning_review/</loc>
+    <lastmod>2017-12-31T11:40:50.138Z</lastmod>
+    <data>
+        <display>
+        <title>一起开始机器学习吧——知乎live笔记</title>
+        <pubTime>2017-12-12T09:02:37.000Z</pubTime>
+        
+        <tag>deep learning</tag>
+         
+        <tag>机器学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="深度学习" url="http://wangwlj.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/25/samsara_documentary/</loc>
+    <lastmod>2017-12-31T11:39:48.312Z</lastmod>
+    <data>
+        <display>
+        <title>纪录片《轮回》观后记录</title>
+        <pubTime>2017-09-25T07:58:39.000Z</pubTime>
+        
+        <tag>轮回</tag>
+         
+        <tag>纪录片</tag>
+         
+        <tag>samsara</tag>
+         
+         
+           
+             
+              <breadCrumb title="观影指南" url="http://wangwlj.com/categories/%E8%A7%82%E5%BD%B1%E6%8C%87%E5%8D%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/22/review_of_MathModel/</loc>
+    <lastmod>2017-12-31T11:39:25.806Z</lastmod>
+    <data>
+        <display>
+        <title>2017“华为杯”第十四届中国研究生数学建模竞赛回顾</title>
+        <pubTime>2017-09-22T14:50:43.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/10/08/mathjax_basic/</loc>
+    <lastmod>2017-12-30T15:03:27.286Z</lastmod>
+    <data>
+        <display>
+        <title>MathJax的基本使用语法</title>
+        <pubTime>2017-10-08T08:58:11.000Z</pubTime>
+        
+        <tag>MathJax</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客搭建系列" url="http://wangwlj.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/21/markdown_mathjax/</loc>
+    <lastmod>2017-12-30T14:48:16.677Z</lastmod>
+    <data>
+        <display>
+        <title>hexo博客使用MathJax并解决markdown渲染冲突问题</title>
+        <pubTime>2017-09-21T11:03:45.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>博客</tag>
+         
+        <tag>MathJax</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客搭建系列" url="http://wangwlj.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/10/17/DL_gradient_descent/</loc>
+    <lastmod>2017-12-30T14:11:45.479Z</lastmod>
+    <data>
+        <display>
+        <title>梯度下降及其优化算法</title>
+        <pubTime>2017-10-17T09:05:26.000Z</pubTime>
+        
+        <tag>deep learning</tag>
+         
+        <tag>gradient descent</tag>
+         
+        <tag>梯度下降</tag>
+         
+         
+           
+             
+              <breadCrumb title="深度学习" url="http://wangwlj.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/10/20/DL_chap_9/</loc>
+    <lastmod>2017-12-30T08:33:59.822Z</lastmod>
+    <data>
+        <display>
+        <title>深度学习系列：（九）卷积网络</title>
+        <pubTime>2017-10-20T02:43:10.000Z</pubTime>
+        
+        <tag>deep learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="深度学习" url="http://wangwlj.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/10/22/DL_chap_7/</loc>
+    <lastmod>2017-12-30T08:27:45.993Z</lastmod>
+    <data>
+        <display>
+        <title>深度学习系列：（七）深度学习中的正则化</title>
+        <pubTime>2017-10-22T11:19:39.000Z</pubTime>
+        
+        <tag>deep learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="深度学习" url="http://wangwlj.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/10/08/DL_chap_6/</loc>
+    <lastmod>2017-12-30T08:26:35.922Z</lastmod>
+    <data>
+        <display>
+        <title>深度学习系列：（六）前馈神经网络</title>
+        <pubTime>2017-10-08T09:17:46.000Z</pubTime>
+        
+        <tag>deep learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="深度学习" url="http://wangwlj.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/10/08/DL_chap_5/</loc>
+    <lastmod>2017-12-30T08:23:09.838Z</lastmod>
+    <data>
+        <display>
+        <title>深度学习系列：（五）机器学习基础</title>
+        <pubTime>2017-10-08T09:24:14.000Z</pubTime>
+        
+        <tag>deep learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="深度学习" url="http://wangwlj.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/23/DeepLearnToolBox_BP/</loc>
+    <lastmod>2017-12-30T08:22:15.755Z</lastmod>
+    <data>
+        <display>
+        <title>DeepLearnToolBox之BP算法</title>
+        <pubTime>2017-09-23T06:45:43.000Z</pubTime>
+        
+        <tag>神经网络</tag>
+         
+        <tag>deep learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="深度学习" url="http://wangwlj.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/12/27/CPP_VS2015_noPDB/</loc>
+    <lastmod>2017-12-30T08:20:40.405Z</lastmod>
+    <data>
+        <display>
+        <title>VS2015 设置调试时不加载符号</title>
+        <pubTime>2017-12-27T13:53:16.000Z</pubTime>
+        
+        <tag>C++</tag>
+         
+        <tag>VS</tag>
+         
+         
+           
+             
+              <breadCrumb title="C++" url="http://wangwlj.com/categories/C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/12/BP_derivation/</loc>
+    <lastmod>2017-12-30T08:15:58.423Z</lastmod>
+    <data>
+        <display>
+        <title>BP神经网络部分具体的推导</title>
+        <pubTime>2017-09-12T14:18:23.000Z</pubTime>
+        
+        <tag>神经网络</tag>
+         
+        <tag>deep learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="深度学习" url="http://wangwlj.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/12/19/blog_domain_register/</loc>
+    <lastmod>2017-12-30T07:05:27.376Z</lastmod>
+    <data>
+        <display>
+        <title>万网域名注册、域名解析与备案流程</title>
+        <pubTime>2017-12-19T04:17:15.000Z</pubTime>
+        
+        <tag>博客</tag>
+         
+        <tag>域名</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客搭建系列" url="http://wangwlj.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/12/18/blog_comment/</loc>
+    <lastmod>2017-12-30T06:58:25.889Z</lastmod>
+    <data>
+        <display>
+        <title>hexo博客优化之实现来必力评论功能</title>
+        <pubTime>2017-12-18T12:11:50.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>博客</tag>
+         
+        <tag>来必力</tag>
+         
+        <tag>评论功能</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客搭建系列" url="http://wangwlj.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/20/BGSlibrary/</loc>
+    <lastmod>2017-12-29T08:14:30.865Z</lastmod>
+    <data>
+        <display>
+        <title>BGSLibrary编译安装与BGSlibrary GUI的下载与使用</title>
+        <pubTime>2017-09-20T13:53:43.000Z</pubTime>
+        
+        <tag>opencv</tag>
+         
+         
+           
+             
+              <breadCrumb title="邂逅opencv" url="http://wangwlj.com/categories/%E9%82%82%E9%80%85opencv/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/10/10/batch_string_process/</loc>
+    <lastmod>2017-12-29T06:20:21.390Z</lastmod>
+    <data>
+        <display>
+        <title>BAT批处理中的字符串处理(字符串截取等)</title>
+        <pubTime>2017-10-10T05:40:58.000Z</pubTime>
+        
+        <tag>批处理</tag>
+         
+        <tag>bat</tag>
+         
+         
+           
+             
+              <breadCrumb title="批处理" url="http://wangwlj.com/categories/%E6%89%B9%E5%A4%84%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/10/05/batch_basic_usage/</loc>
+    <lastmod>2017-12-29T06:15:58.233Z</lastmod>
+    <data>
+        <display>
+        <title>批处理的常用命令及用法</title>
+        <pubTime>2017-10-05T08:36:45.000Z</pubTime>
+        
+        <tag>批处理</tag>
+         
+        <tag>bat</tag>
+         
+         
+           
+             
+              <breadCrumb title="批处理" url="http://wangwlj.com/categories/%E6%89%B9%E5%A4%84%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/12/29/python_tricks/</loc>
+    <lastmod>2017-12-29T06:07:09.328Z</lastmod>
+    <data>
+        <display>
+        <title>Python中的部分tricks整理</title>
+        <pubTime>2017-12-29T03:38:07.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>pycharm</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://wangwlj.com/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/12/29/practical_tricks/</loc>
+    <lastmod>2017-12-29T05:53:37.329Z</lastmod>
+    <data>
+        <display>
+        <title>windows下的部分小技巧整理</title>
+        <pubTime>2017-12-29T05:33:25.000Z</pubTime>
+        
+        <tag>Photoshop</tag>
+         
+        <tag>VMbox</tag>
+         
+         
+           
+             
+              <breadCrumb title="Photoshop" url="http://wangwlj.com/categories/Photoshop/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/11/27/python_base_NJU_1/</loc>
+    <lastmod>2017-12-29T03:30:42.473Z</lastmod>
+    <data>
+        <display>
+        <title>Python-基础篇</title>
+        <pubTime>2017-11-27T09:14:17.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://wangwlj.com/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+</urlset>
