@@ -4,16 +4,42 @@
 
     
   <url>
-    <loc>http://wangwlj.com/2018/01/09/Algorithm_tutorial_charpter_6/</loc>
+    <loc>http://wangwlj.com/2018/01/11/algorithm_tutorial_charpter_7/</loc>
+    <lastmod>2018-01-11T13:55:04.428Z</lastmod>
+    <data>
+        <display>
+        <title>算法导论详解(6) 第七章快速排序</title>
+        <pubTime>2018-01-11T13:54:42.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+        <tag>算法导论</tag>
+         
+        <tag>快速排序</tag>
+         
+        <tag>quicksort</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法导论" url="http://wangwlj.com/categories/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/09/algorithm_tutorial_charpter_6/</loc>
     <lastmod>2018-01-09T13:28:16.262Z</lastmod>
     <data>
         <display>
         <title>算法导论详解(5) 第六章堆排序</title>
         <pubTime>2018-01-09T13:27:27.000Z</pubTime>
         
-        <tag>算法导论</tag>
-         
         <tag>Algorithm</tag>
+         
+        <tag>算法导论</tag>
          
         <tag>堆排序</tag>
          
@@ -110,15 +136,15 @@
         <title>算法导论详解(3) 第四章分治策略</title>
         <pubTime>2018-01-08T08:43:37.000Z</pubTime>
         
-        <tag>算法导论</tag>
-         
         <tag>Algorithm</tag>
          
-        <tag>分治</tag>
+        <tag>算法导论</tag>
          
         <tag>最大子数组</tag>
          
         <tag>矩阵乘法</tag>
+         
+        <tag>分治</tag>
          
          
            
@@ -138,9 +164,9 @@
         <title>算法导论详解(2) 第三章函数的增长</title>
         <pubTime>2017-12-13T14:51:38.000Z</pubTime>
         
-        <tag>算法导论</tag>
-         
         <tag>Algorithm</tag>
+         
+        <tag>算法导论</tag>
          
         <tag>函数渐近</tag>
          
@@ -162,15 +188,15 @@
         <title>算法导论详解(1) 第二章算法基础</title>
         <pubTime>2017-12-12T13:43:10.000Z</pubTime>
         
+        <tag>Algorithm</tag>
+         
         <tag>算法导论</tag>
          
-        <tag>Algorithm</tag>
+        <tag>分治</tag>
          
         <tag>插入排序</tag>
          
         <tag>归并排序</tag>
-         
-        <tag>分治</tag>
          
          
            
@@ -190,11 +216,11 @@
         <title>hexo搭建的Github博客之优化</title>
         <pubTime>2017-09-09T02:27:20.000Z</pubTime>
         
+        <tag>GitHub</tag>
+         
         <tag>hexo</tag>
          
         <tag>博客</tag>
-         
-        <tag>GitHub</tag>
          
          
            
@@ -240,11 +266,11 @@
         <title>hexo+GitHub博客搭建实战</title>
         <pubTime>2017-09-08T04:00:25.000Z</pubTime>
         
+        <tag>GitHub</tag>
+         
         <tag>hexo</tag>
          
         <tag>博客</tag>
-         
-        <tag>GitHub</tag>
          
          
            
@@ -868,9 +894,9 @@
         <title>DeepLearnToolBox之BP算法</title>
         <pubTime>2017-09-23T06:45:43.000Z</pubTime>
         
-        <tag>神经网络</tag>
-         
         <tag>deep learning</tag>
+         
+        <tag>神经网络</tag>
          
          
            
@@ -912,9 +938,9 @@
         <title>BP神经网络部分具体的推导</title>
         <pubTime>2017-09-12T14:18:23.000Z</pubTime>
         
-        <tag>神经网络</tag>
-         
         <tag>deep learning</tag>
+         
+        <tag>神经网络</tag>
          
          
            
