@@ -140,11 +140,11 @@
          
         <tag>算法导论</tag>
          
+        <tag>分治</tag>
+         
         <tag>最大子数组</tag>
          
         <tag>矩阵乘法</tag>
-         
-        <tag>分治</tag>
          
          
            
@@ -192,11 +192,11 @@
          
         <tag>算法导论</tag>
          
-        <tag>分治</tag>
-         
         <tag>插入排序</tag>
          
         <tag>归并排序</tag>
+         
+        <tag>分治</tag>
          
          
            
@@ -216,11 +216,11 @@
         <title>hexo搭建的Github博客之优化</title>
         <pubTime>2017-09-09T02:27:20.000Z</pubTime>
         
-        <tag>GitHub</tag>
-         
         <tag>hexo</tag>
          
         <tag>博客</tag>
+         
+        <tag>GitHub</tag>
          
          
            
@@ -266,11 +266,11 @@
         <title>hexo+GitHub博客搭建实战</title>
         <pubTime>2017-09-08T04:00:25.000Z</pubTime>
         
-        <tag>GitHub</tag>
-         
         <tag>hexo</tag>
          
         <tag>博客</tag>
+         
+        <tag>GitHub</tag>
          
          
            
@@ -894,9 +894,9 @@
         <title>DeepLearnToolBox之BP算法</title>
         <pubTime>2017-09-23T06:45:43.000Z</pubTime>
         
-        <tag>deep learning</tag>
-         
         <tag>神经网络</tag>
+         
+        <tag>deep learning</tag>
          
          
            
@@ -938,9 +938,9 @@
         <title>BP神经网络部分具体的推导</title>
         <pubTime>2017-09-12T14:18:23.000Z</pubTime>
         
-        <tag>deep learning</tag>
-         
         <tag>神经网络</tag>
+         
+        <tag>deep learning</tag>
          
          
            
