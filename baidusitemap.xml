@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://wangwlj.com/2018/01/13/leetcode_326_power_of_3/</loc>
-    <lastmod>2018-01-13T14:15:21.749Z</lastmod>
+    <lastmod>2018-01-13T14:23:59.282Z</lastmod>
     <data>
         <display>
         <title>判断int是否为3的幂—— Leetcode(326)</title>
@@ -26,12 +26,12 @@
 
     
   <url>
-    <loc>http://wangwlj.com/2018/01/13/leetcode_342_power_of_4/</loc>
-    <lastmod>2018-01-13T13:55:02.499Z</lastmod>
+    <loc>http://wangwlj.com/2018/01/13/leetcode_231_power_of_2/</loc>
+    <lastmod>2018-01-13T14:23:43.218Z</lastmod>
     <data>
         <display>
-        <title>判断int是否为4的幂—— Leetcode(342)</title>
-        <pubTime>2018-01-13T13:41:51.000Z</pubTime>
+        <title>判断int是否为2的幂—— Leetcode(231)</title>
+        <pubTime>2018-01-13T13:26:24.000Z</pubTime>
         
         <tag>Algorithm</tag>
          
@@ -48,12 +48,12 @@
 
     
   <url>
-    <loc>http://wangwlj.com/2018/01/13/leetcode_231_power_of_2/</loc>
-    <lastmod>2018-01-13T13:45:01.087Z</lastmod>
+    <loc>http://wangwlj.com/2018/01/13/leetcode_342_power_of_4/</loc>
+    <lastmod>2018-01-13T14:23:25.906Z</lastmod>
     <data>
         <display>
-        <title>判断int是否为2的幂—— Leetcode(231)</title>
-        <pubTime>2018-01-13T13:26:24.000Z</pubTime>
+        <title>判断int是否为4的幂—— Leetcode(342)</title>
+        <pubTime>2018-01-13T13:41:51.000Z</pubTime>
         
         <tag>Algorithm</tag>
          
@@ -199,11 +199,11 @@
         <title>hexo+GitHub博客搭建实战</title>
         <pubTime>2017-09-08T04:00:25.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>博客</tag>
          
         <tag>GitHub</tag>
+         
+        <tag>hexo</tag>
          
          
            
@@ -323,9 +323,9 @@
         <title>hexo博客彻底解决置顶问题</title>
         <pubTime>2018-01-09T02:53:54.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>博客</tag>
+         
+        <tag>hexo</tag>
          
         <tag>置顶</tag>
          
@@ -428,11 +428,11 @@
         <title>hexo搭建的Github博客之优化</title>
         <pubTime>2017-09-09T02:27:20.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>博客</tag>
          
         <tag>GitHub</tag>
+         
+        <tag>hexo</tag>
          
          
            
@@ -892,9 +892,9 @@
         <title>hexo博客使用MathJax并解决markdown渲染冲突问题</title>
         <pubTime>2017-09-21T11:03:45.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>博客</tag>
+         
+        <tag>hexo</tag>
          
         <tag>MathJax</tag>
          
@@ -1108,9 +1108,9 @@
         <title>hexo博客优化之实现来必力评论功能</title>
         <pubTime>2017-12-18T12:11:50.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>博客</tag>
+         
+        <tag>hexo</tag>
          
         <tag>来必力</tag>
          

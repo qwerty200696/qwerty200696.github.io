@@ -108,18 +108,18 @@
 
 
 
-<meta name="description" content="leetcode链接：326. Power of Three  Given an integer, write a function to determine if it is a power of three. Follow up:Could you do it without using any loop / recursion?  一般的通用解法：1234567891011class Sol">
+<meta name="description" content="leetcode链接：326. Power of Three  Given an integer, write a function to determine if it is a power of three. Follow up:Could you do it without using any loop / recursion?">
 <meta name="keywords" content="Algorithm,Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="判断int是否为3的幂—— Leetcode(326)">
 <meta property="og:url" content="http://wangwlj.com/2018/01/13/leetcode_326_power_of_3/index.html">
 <meta property="og:site_name" content="wangwlj&#39;s Blog">
-<meta property="og:description" content="leetcode链接：326. Power of Three  Given an integer, write a function to determine if it is a power of three. Follow up:Could you do it without using any loop / recursion?  一般的通用解法：1234567891011class Sol">
+<meta property="og:description" content="leetcode链接：326. Power of Three  Given an integer, write a function to determine if it is a power of three. Follow up:Could you do it without using any loop / recursion?">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-13T14:15:21.749Z">
+<meta property="og:updated_time" content="2018-01-13T14:23:59.282Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="判断int是否为3的幂—— Leetcode(326)">
-<meta name="twitter:description" content="leetcode链接：326. Power of Three  Given an integer, write a function to determine if it is a power of three. Follow up:Could you do it without using any loop / recursion?  一般的通用解法：1234567891011class Sol">
+<meta name="twitter:description" content="leetcode链接：326. Power of Three  Given an integer, write a function to determine if it is a power of three. Follow up:Could you do it without using any loop / recursion?">
 
 
 
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  230
+                  233
                 </span>
               
 
@@ -474,6 +474,7 @@
 <p>Given an integer, write a function to determine if it is a power of three.</p>
 <p>Follow up:<br>Could you do it without using any loop / recursion?</p>
 </blockquote>
+<a id="more"></a>
 <p>一般的通用解法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    bool isPowerOfThree(int n) &#123;</div><div class="line">        while (n &gt;= 3 )&#123;</div><div class="line">            if(n % 3 != 0)</div><div class="line">                return false;</div><div class="line">            n /= 3;   </div><div class="line">        &#125;</div><div class="line">        return n&gt;0 &amp;&amp; n != 2;     </div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>上述可以通过，但是题目说最好尝试一下非循环或者递归的解法。</p>
 <p>我感觉此类方法就是有点取巧了。如，找出<code>int</code>范围内最大的3的倍数，所以任何3的倍数<code>n</code>都可以被其整除。</p>
@@ -483,11 +484,11 @@
 <p><code>pow</code>函数在头文件<code>math.h</code>中。</p>
 </blockquote>
 <p>同类题：</p>
-<ul>
+<ol>
 <li><a href="https://leetcode.com/problems/power-of-two/description/" target="_blank" rel="external">231. Power of Two</a></li>
 <li><a href="https://leetcode.com/problems/power-of-three/description/" target="_blank" rel="external">326. Power of Three</a></li>
 <li><a href="https://leetcode.com/problems/power-of-four/description/" target="_blank" rel="external">342. Power of Four</a></li>
-</ul>
+</ol>
 
       
     </div>
