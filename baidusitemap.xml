@@ -4,6 +4,154 @@
 
     
   <url>
+    <loc>http://wangwlj.com/2018/01/13/leetcode_326_power_of_3/</loc>
+    <lastmod>2018-01-13T14:15:21.749Z</lastmod>
+    <data>
+        <display>
+        <title>判断int是否为3的幂—— Leetcode(326)</title>
+        <pubTime>2018-01-13T14:15:13.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
+         
+         
+           
+             
+              <breadCrumb title="Leetcode" url="http://wangwlj.com/categories/Leetcode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/13/leetcode_342_power_of_4/</loc>
+    <lastmod>2018-01-13T13:55:02.499Z</lastmod>
+    <data>
+        <display>
+        <title>判断int是否为4的幂—— Leetcode(342)</title>
+        <pubTime>2018-01-13T13:41:51.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
+         
+         
+           
+             
+              <breadCrumb title="Leetcode" url="http://wangwlj.com/categories/Leetcode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/13/leetcode_231_power_of_2/</loc>
+    <lastmod>2018-01-13T13:45:01.087Z</lastmod>
+    <data>
+        <display>
+        <title>判断int是否为2的幂—— Leetcode(231)</title>
+        <pubTime>2018-01-13T13:26:24.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
+         
+         
+           
+             
+              <breadCrumb title="Leetcode" url="http://wangwlj.com/categories/Leetcode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/20/BGSlibrary/</loc>
+    <lastmod>2018-01-13T12:36:25.040Z</lastmod>
+    <data>
+        <display>
+        <title>BGSLibrary编译安装与BGSlibrary GUI的下载与使用</title>
+        <pubTime>2017-09-20T13:53:43.000Z</pubTime>
+        
+        <tag>opencv</tag>
+         
+         
+           
+             
+              <breadCrumb title="C++" url="http://wangwlj.com/categories/C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/21/opencv_contrib/</loc>
+    <lastmod>2018-01-13T12:34:25.224Z</lastmod>
+    <data>
+        <display>
+        <title>opencv_contrib安装说明与错误解决方案</title>
+        <pubTime>2017-09-21T14:17:29.000Z</pubTime>
+        
+        <tag>opencv</tag>
+         
+         
+           
+             
+              <breadCrumb title="C++" url="http://wangwlj.com/categories/C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/21/opencv_SaveVideo/</loc>
+    <lastmod>2018-01-13T08:54:36.197Z</lastmod>
+    <data>
+        <display>
+        <title>opencv视频保存方法详解</title>
+        <pubTime>2017-09-21T02:03:45.000Z</pubTime>
+        
+        <tag>opencv</tag>
+         
+         
+           
+             
+              <breadCrumb title="C++" url="http://wangwlj.com/categories/C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2017/09/21/optical_flow/</loc>
+    <lastmod>2018-01-13T08:54:18.289Z</lastmod>
+    <data>
+        <display>
+        <title>LK光流法分析及其源码</title>
+        <pubTime>2017-09-21T03:28:33.000Z</pubTime>
+        
+        <tag>opencv</tag>
+         
+        <tag>光流法</tag>
+         
+         
+           
+             
+              <breadCrumb title="C++" url="http://wangwlj.com/categories/C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wangwlj.com/2018/01/13/Git_usage/</loc>
     <lastmod>2018-01-13T07:05:12.004Z</lastmod>
     <data>
@@ -51,11 +199,11 @@
         <title>hexo+GitHub博客搭建实战</title>
         <pubTime>2017-09-08T04:00:25.000Z</pubTime>
         
-        <tag>GitHub</tag>
-         
         <tag>hexo</tag>
          
         <tag>博客</tag>
+         
+        <tag>GitHub</tag>
          
          
            
@@ -280,11 +428,11 @@
         <title>hexo搭建的Github博客之优化</title>
         <pubTime>2017-09-09T02:27:20.000Z</pubTime>
         
-        <tag>GitHub</tag>
-         
         <tag>hexo</tag>
          
         <tag>博客</tag>
+         
+        <tag>GitHub</tag>
          
          
            
@@ -427,26 +575,6 @@
 
     
   <url>
-    <loc>http://wangwlj.com/2017/09/21/opencv_SaveVideo/</loc>
-    <lastmod>2018-01-04T11:08:16.884Z</lastmod>
-    <data>
-        <display>
-        <title>opencv视频保存方法详解</title>
-        <pubTime>2017-09-21T02:03:45.000Z</pubTime>
-        
-        <tag>opencv</tag>
-         
-         
-           
-             
-              <breadCrumb title="邂逅opencv" url="http://wangwlj.com/categories/%E9%82%82%E9%80%85opencv/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://wangwlj.com/2017/11/23/Torch_DeepLab/</loc>
     <lastmod>2018-01-04T11:05:42.325Z</lastmod>
     <data>
@@ -566,48 +694,6 @@
            
              
               <breadCrumb title="深度学习" url="http://wangwlj.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wangwlj.com/2017/09/21/opencv_contrib/</loc>
-    <lastmod>2017-12-31T12:15:08.321Z</lastmod>
-    <data>
-        <display>
-        <title>opencv_contrib安装说明与错误解决方案</title>
-        <pubTime>2017-09-21T14:17:29.000Z</pubTime>
-        
-        <tag>opencv</tag>
-         
-         
-           
-             
-              <breadCrumb title="邂逅opencv" url="http://wangwlj.com/categories/%E9%82%82%E9%80%85opencv/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wangwlj.com/2017/09/21/optical_flow/</loc>
-    <lastmod>2017-12-31T12:13:41.627Z</lastmod>
-    <data>
-        <display>
-        <title>LK光流法分析及其源码</title>
-        <pubTime>2017-09-21T03:28:33.000Z</pubTime>
-        
-        <tag>opencv</tag>
-         
-        <tag>光流法</tag>
-         
-         
-           
-             
-              <breadCrumb title="邂逅opencv" url="http://wangwlj.com/categories/%E9%82%82%E9%80%85opencv/"/>
           
         </display>
     </data>
@@ -1034,26 +1120,6 @@
            
              
               <breadCrumb title="博客搭建系列" url="http://wangwlj.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%B3%BB%E5%88%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wangwlj.com/2017/09/20/BGSlibrary/</loc>
-    <lastmod>2017-12-29T08:14:30.865Z</lastmod>
-    <data>
-        <display>
-        <title>BGSLibrary编译安装与BGSlibrary GUI的下载与使用</title>
-        <pubTime>2017-09-20T13:53:43.000Z</pubTime>
-        
-        <tag>opencv</tag>
-         
-         
-           
-             
-              <breadCrumb title="邂逅opencv" url="http://wangwlj.com/categories/%E9%82%82%E9%80%85opencv/"/>
           
         </display>
     </data>
