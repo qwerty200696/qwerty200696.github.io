@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+  (function(){
+    if(''){
+      if (prompt('请输入文章密码') !== ''){
+        alert('密码错误！');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="Zg8i3oTV3dBiFi2-eYpkWHuo1XYforgqvtiy1f6zTvs" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Ubuntu," />
+
+
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="wangwlj's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web_icon.jpg?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="安装ubuntu本文以Ubuntu 16.04为例。 制作U盘启动盘、安装Ubuntu系统。是装双系统还是只装linux。 安装时，需要注意的两点。一是手动/自动分区，若手动分区，最好将/home分区独立出来；二是系统语言选择中文还是英文，推荐中文。其他的就随意即可。">
+<meta name="keywords" content="Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu下必备软件及安装总结">
+<meta property="og:url" content="http://wangwlj.com/2018/01/13/ubuntu_software_summary/index.html">
+<meta property="og:site_name" content="wangwlj&#39;s Blog">
+<meta property="og:description" content="安装ubuntu本文以Ubuntu 16.04为例。 制作U盘启动盘、安装Ubuntu系统。是装双系统还是只装linux。 安装时，需要注意的两点。一是手动/自动分区，若手动分区，最好将/home分区独立出来；二是系统语言选择中文还是英文，推荐中文。其他的就随意即可。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fneyjbeucgj20gn0daabi.jpg">
+<meta property="og:updated_time" content="2018-01-13T06:31:16.143Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu下必备软件及安装总结">
+<meta name="twitter:description" content="安装ubuntu本文以Ubuntu 16.04为例。 制作U盘启动盘、安装Ubuntu系统。是装双系统还是只装linux。 安装时，需要注意的两点。一是手动/自动分区，若手动分区，最好将/home分区独立出来；二是系统语言选择中文还是英文，推荐中文。其他的就随意即可。">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fneyjbeucgj20gn0daabi.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wangwlj.com/2018/01/13/ubuntu_software_summary/"/>
+
+
+
+
+<link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
+
+  <title>ubuntu下必备软件及安装总结 | wangwlj's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-111387754-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?61acd986303bc926826d2eec81dbbdff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    
+	<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">wangwlj's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">积跬步以至千里！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2018/01/13/ubuntu_software_summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangwlj's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ubuntu下必备软件及安装总结</h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-13T13:51:37+08:00">
+                2018-01-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">Ubuntu</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+	  
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/13/ubuntu_software_summary/" class="leancloud_visitors" data-flag-title="ubuntu下必备软件及安装总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,936
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="安装ubuntu"><a href="#安装ubuntu" class="headerlink" title="安装ubuntu"></a>安装ubuntu</h2><p>本文以<code>Ubuntu 16.04</code>为例。</p>
+<p>制作U盘启动盘、安装Ubuntu系统。是装双系统还是只装linux。</p>
+<p>安装时，需要注意的两点。一是手动/自动分区，若手动分区，最好将<code>/home</code>分区独立出来；二是系统语言选择中文还是英文，推荐中文。其他的就随意即可。</p>
+<a id="more"></a>
+<p>给出几个参考链接：</p>
+<ul>
+<li><a href="http://blog.csdn.net/yaoyut/article/details/78003061" target="_blank" rel="external">用UltraISO制作Ubuntu16.04 U盘启动盘</a></li>
+<li><a href="https://www.zhihu.com/question/19867618" target="_blank" rel="external">怎样安装 Windows 7 与 Linux 的双系统？</a><br>双系统是比较特殊的，双系统可以，单系统也没问题。</li>
+</ul>
+<h2 id="软件安装前的设置"><a href="#软件安装前的设置" class="headerlink" title="软件安装前的设置"></a>软件安装前的设置</h2><p>假设现在已经有了一个全新的<code>Ubuntu</code>系统，此时你需要先换源。</p>
+<h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p>系统自带的源速度不快，因此考虑换成国内源。笔者采用的是阿里云的源，还是不错的。</p>
+<ul>
+<li><p><a href="http://blog.csdn.net/happywho250/article/details/52506321" target="_blank" rel="external">ubuntu16.04换源</a></p>
+</li>
+<li><p><a href="http://blog.csdn.net/u011557212/article/details/53233944" target="_blank" rel="external">Ubuntu16.04常用源</a></p>
+</li>
+</ul>
+<h3 id="主文件夹下的中文目录改为英文目录"><a href="#主文件夹下的中文目录改为英文目录" class="headerlink" title="主文件夹下的中文目录改为英文目录"></a>主文件夹下的中文目录改为英文目录</h3><blockquote>
+<p>可选项。主文件夹下的中文目录名其实也不错。</p>
+</blockquote>
+<p>Linux下使用命令行是很正常的事情，<code>cd ~/桌面</code> 需要切换输入法，可能会显得不那么流畅，因此，可以考虑将主文件夹下的中文目录设置为英文。</p>
+<p>参考这篇文章：<br><a href="http://blog.csdn.net/l0605020112/article/details/20285239" target="_blank" rel="external">将Ubuntu主文件夹里的中文文件夹名称改成英文</a></p>
+<p>我采用的是第一种方法。换了之后建议重启一下。</p>
+<p>笔者不是一开始就改的，所以导致换目录名后出现了一系列问题。一开始就换会比较好。</p>
+<h3 id="Updating"><a href="#Updating" class="headerlink" title="Updating"></a>Updating</h3><h2 id="安装必备软件"><a href="#安装必备软件" class="headerlink" title="安装必备软件"></a>安装必备软件</h2><p>在对Ubuntu换源之后，就可以开始安装一些必备而的软件了。Ubuntu下软件的安装都不难，可以根据需求选择安装相应的软件。</p>
+<h3 id="1-搜狗输入法"><a href="#1-搜狗输入法" class="headerlink" title="1. 搜狗输入法"></a>1. 搜狗输入法</h3><p>输入法必备，放在第一个吧。</p>
+<h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><p>官网下载linux版本的dev包：<a href="http://pinyin.sogou.com/linux/" target="_blank" rel="external">pinyin.sogou.com/linux</a><br>进入下载目录，在终端执行安装<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> sudo dpkg  -i   sogoupinyin_2.2.0.0102_amd64.deb</div></pre></td></tr></table></figure></p>
+<p>安装过程会出现 依赖关系问题（未安装成功，依赖库不全），不要担心，接着执行下面的命令就可以了：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span>sudo apt-get install -f</div></pre></td></tr></table></figure>
+<p>等待完成后，搜狗拼音输入法就安装好了。</p>
+<blockquote>
+<p>上述两条命令都是常用命令，需要记住。</p>
+</blockquote>
+<h4 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h4><p> 下面对输入法进行系统配置，具体流程如下：</p>
+<ul>
+<li>桌面右上角面板的<code>开关机的按钮</code>，选择<code>系统设置</code>；</li>
+<li>进入系统设置后，点击<code>语言支持</code>，键盘输入方式系统中选择 <code>fcitx</code>；</li>
+<li>注销系统用户，重新登陆进入桌面后看看，熟悉的搜狗输入法出现了吧。</li>
+</ul>
+<p>参考自：<a href="https://jingyan.baidu.com/article/a3aad71aa1abe7b1fa009641.html" target="_blank" rel="external">ubuntu安装配置搜狗拼音输入法</a></p>
+<h3 id="2-网易云音乐"><a href="#2-网易云音乐" class="headerlink" title="2. 网易云音乐"></a>2. 网易云音乐</h3><p>网易云音乐，大家都知道的，无需过多介绍，虽然现在由于版权问题好多歌曲都下架了，不过<code>Linux</code>下的网易云做得非常好。</p>
+<p>只需要简单地下载、安装即可。具体请参考：<a href="http://blog.csdn.net/u011557212/article/details/53234134" target="_blank" rel="external">ubuntu16.04安装网易云音乐</a></p>
+<blockquote>
+<p>别人写得很详细的教程，我就只放链接了。</p>
+</blockquote>
+<h3 id="3-chrome浏览器"><a href="#3-chrome浏览器" class="headerlink" title="3. chrome浏览器"></a>3. chrome浏览器</h3><p>Linux下谷歌浏览器是必备的。</p>
+<p>安装谷歌浏览器，只需要三行代码：<br>打开终端，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd /tmp</div></pre></td></tr></table></figure></p>
+<p>对于谷歌Chrome32位版本，使用如下链接：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb</div></pre></td></tr></table></figure></p>
+<p>对于64位版本可以使用如下链接下载：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</div></pre></td></tr></table></figure></p>
+<p>下载完后，运行如下命令安装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dpkg -i google-chrome*; sudo apt-get -f install</div></pre></td></tr></table></figure></p>
+<p>然后，就可以去搜索使用了。<br>是不是很方便？</p>
+<p>参考自：<a href="http://www.linuxidc.com/Linux/2013-10/91857.htm" target="_blank" rel="external">安装谷歌Chrome浏览器</a></p>
+<h3 id="4-Guake-Terminal-optional"><a href="#4-Guake-Terminal-optional" class="headerlink" title="4. Guake Terminal (optional)"></a>4. Guake Terminal (optional)</h3><h4 id="安装流程"><a href="#安装流程" class="headerlink" title="安装流程"></a>安装流程</h4><p><code>Guake Terminal</code>顾名思义，是一个终端。功能只有一个, 按 <code>F12</code> 时从屏幕顶部 嗖! 地下来一个。</p>
+<p>可到官网：<a href="http://guake-project.org/" target="_blank" rel="external">guake-project.org</a> 查看详细说明。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/Guake/guake.git</div><div class="line">$ cd guake</div><div class="line"></div><div class="line"># For Ubuntu user, we have a script that does all these steps for you. Use:</div><div class="line">$ ./dev.sh</div></pre></td></tr></table></figure>
+<p>如果上述第三条命令出错的话，请尝试以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./dev.sh --install</div></pre></td></tr></table></figure></p>
+<p>期间，会自动安装一些库，如<code>git</code>之类的。</p>
+<h4 id="设置与自启动"><a href="#设置与自启动" class="headerlink" title="设置与自启动"></a>设置与自启动</h4><p>安装完成后，可以在终端输入<code>guake</code>查看效果，输入<code>guake --preferences</code>进行相关的配置。<br><code>guake</code>启动后，按下<code>F12</code>显示终端，再按<code>F12</code>消失。可以设置焦点失去时隐藏，这样就不用反复点<code>F12</code>了。</p>
+<p>自启动设置：</p>
+<p>点击最左上角的<code>Dash</code>图标(用于查找文件与程序的nage)，输入<code>启动</code>二字查看搜索结果，点击“启动应用程序”，按下图设置：</p>
+<p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fneyjbeucgj20gn0daabi.jpg" alt=""></p>
+<h3 id="5-思维导图xmind"><a href="#5-思维导图xmind" class="headerlink" title="5. 思维导图xmind"></a>5. 思维导图xmind</h3><p><code>xmind</code>和<code>MindManager</code>都是优秀的思维导图软件，linux下只有<code>xmind</code>。</p>
+<p>具体的安装步骤：</p>
+<p>1、去官网下载<a href="http://www.xmind.net/download/linux/" target="_blank" rel="external">http://www.xmind.net/download/linux/</a></p>
+<p>2、下载完后解压，进入解压后目录，在命令行输入<code>sudo ./setup</code>，这个是用来安装软件相关的依赖；然后进入<code>xmind_amd64</code>（64位系统）或者<code>xmind_i386</code>(32位系统)</p>
+<p>3、在目录中直接双击<code>XMind</code>文件，或者在命令行中输入 <code>sudo ./XMind</code>。这样XMind就可以直接运行。由于XMInd8的ubuntu版本是用JAVA来开发的，所以可以直接打开，无需安装。</p>
+<p>参考自：<a href="http://blog.csdn.net/faryang/article/details/70238326" target="_blank" rel="external">ubuntu16.04安装xmind8</a></p>
+<h3 id="6-pycharm"><a href="#6-pycharm" class="headerlink" title="6. pycharm"></a>6. pycharm</h3><p>需要使用Python的话可以考虑安装Pycharm。</p>
+<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>打开<a href="https://www.jetbrains.com/pycharm/download/#section=linux" target="_blank" rel="external">pycharm官网</a></p>
+<p>下载linux版本的pycharm。</p>
+<h4 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h4><p>打开刚才下载的目录。右击文件，点击提取到此处（这与Windows的解压是一个意思）</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>解压完成后，打开刚才解压好的文件夹，然后再打开bin目录。</p>
+<p>在文件夹空白处右击，在此处打开终端然后输入：<code>sh ./pycharm.sh</code> 回车</p>
+<p>接着就打开了pycharm。</p>
+<p>如果你需要导入之前安装版本的设置的话，可以选择第一个选项；如果没有的话，默认不导入设置就可以了。</p>
+<p>点击同意，然后激活<code>pycharm</code>就可以使用了。</p>
+<p>详情可参考：<br><a href="https://jingyan.baidu.com/article/60ccbceb4e3b0e64cab19733.html" target="_blank" rel="external">Ubuntu系统安装PyCharm教程（详细图文）</a></p>
+<p>另附：学生可以免费注册pycharm，学生版也可以使用专业版的pycharm，没有什么区别。</p>
+<h3 id="7-WPS"><a href="#7-WPS" class="headerlink" title="7. WPS"></a>7. WPS</h3><h4 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h4><p>进入WPS官网下载deb包：<a href="http://linux.wps.cn/" target="_blank" rel="external">http://linux.wps.cn/</a></p>
+<p>安装，打开终端：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd 下载</div><div class="line">sudo dpkg -i wps-office_10.1.0.5672~a21_amd64.deb</div></pre></td></tr></table></figure>
+<h4 id="解决打开WPS时出现的系统缺失字体问题"><a href="#解决打开WPS时出现的系统缺失字体问题" class="headerlink" title="解决打开WPS时出现的系统缺失字体问题"></a>解决打开WPS时出现的系统缺失字体问题</h4><p>下载wps_symbol_fonts.zip: <a href="https://pan.baidu.com/s/1eS6xIzo" target="_blank" rel="external">https://pan.baidu.com/s/1eS6xIzo</a></p>
+<p>将<code>wps_symbol_fonts.zip</code>解压<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd wps_symbol_fontsls</div></pre></td></tr></table></figure></p>
+<p>将目录中所有文件复制到<code>/usr/share/fonts</code>下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cp mtextra.ttf  symbol.ttf  WEBDINGS.TTF  wingding.ttf  WINGDNG2.ttf  WINGDNG3.ttf  /usr/share/fonts</div></pre></td></tr></table></figure>
+<p>重新打开WPS，问题解决。</p>
+<h4 id="删除libreOffice-optional"><a href="#删除libreOffice-optional" class="headerlink" title="删除libreOffice (optional)"></a>删除libreOffice (optional)</h4><p>另外，安装完WPS后就没有必要保留<code>libreOffice</code></p>
+<p>卸载<code>libreOffice</code>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove libreoffice-common</div></pre></td></tr></table></figure></p>
+<p>顺便把Amazon链接删除了吧：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">    sudo apt-get remove unity-webapps-common</div><div class="line">    sudo apt autoremove</div><div class="line">```       </div><div class="line">参考自：[Ubuntu16.04安装wps并解决系统缺失字体问题](https://www.cnblogs.com/liutongqing/p/6388160.html)</div><div class="line"></div><div class="line">### 8. 图片编辑工具GIMP</div><div class="line"></div><div class="line">`GIMP`虽然不能完全替代`PS`，但是也能弥补一下。系统默认源中已经包含了GIMP，不需要使用PPA这些。</div><div class="line"></div><div class="line">安装：</div></pre></td></tr></table></figure></p>
+<pre><code>sudo apt-get install gimp
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">启动：</div><div class="line"></div><div class="line">通过Dash搜索`GIMP`即可。或者命令行输入GIMP也行。</div><div class="line"></div><div class="line">参考：</div><div class="line"></div><div class="line">- https://www.gimp.org/downloads/</div><div class="line">- https://www.cnblogs.com/EasonJim/p/7121885.html</div><div class="line"></div><div class="line"></div><div class="line">### 9. indicator-sysmonitor</div><div class="line"></div><div class="line">先看一下效果图：</div><div class="line">![1](http://ww1.sinaimg.cn/large/c38a0784ly1fndxu83315j20fr02zglt.jpg)</div><div class="line"></div><div class="line">图中的“CPU，温度，内存”部分就是该软件的作用了。</div><div class="line"></div><div class="line">想要安装可参考：[Ubuntu 16.04安装indicator-sysmonitor实现导航条显示上下行网速/CPU/内存使用率](http://www.cnblogs.com/EasonJim/p/7130171.html)</div><div class="line"></div><div class="line">### 10. 主题管理工具unity tweak tool</div><div class="line"></div><div class="line">主题管理工具`unity tweak tool`</div><div class="line"></div><div class="line">1,    添加源</div></pre></td></tr></table></figure>
+<p>sudo add-apt-repository ppa:freyja-dev/unity-tweak-tool-daily<br>sudo apt-get update<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2,安装</div></pre></td></tr></table></figure></p>
+<p>　　sudo apt-get install unity-tweak-tool<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3,卸载</div></pre></td></tr></table></figure></p>
+<p>　　sudo apt-get remove unity-tweak-tool<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">4,搜索`unity tweak tool`运行</div><div class="line"></div><div class="line">5,若出现以下问题，终端输入`sudo apt-get install unity-webapps-service `即可</div><div class="line"></div><div class="line">![](http://ww1.sinaimg.cn/large/c38a0784ly1fne74thxbkj20j006ojrk.jpg)</div><div class="line"></div><div class="line"></div><div class="line">### 11. docky</div><div class="line"></div><div class="line">经常使用Mac者的福音。实现效果如下图：</div><div class="line"></div><div class="line">![](http://ww1.sinaimg.cn/large/c38a0784ly1fne792nqnfj20jj032mzj.jpg)</div><div class="line"></div><div class="line">一句话安装：</div></pre></td></tr></table></figure></p>
+<p>sudo apt install ducky<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">使用方法：</div><div class="line"></div><div class="line">- 删除图标：拖到回收站上面就可以。</div><div class="line">- 添加图标：打开程序的时候会自动加载到docky中，此时右键选择锁定。</div><div class="line"></div><div class="line">图标模糊：下载高清图标，替换掉。具体可查看知乎问题“Docky中程序的图标太模糊，如何替换Docky中程序的图标？”的[回答](https://www.zhihu.com/question/22892627/answer/64026877)。</div><div class="line"></div><div class="line">### 12. teamviewer</div><div class="line"></div><div class="line">`teamviewer`的作用：与其他主机互传文件或者控制远程主机。</div><div class="line"></div><div class="line">安装过程如下：</div><div class="line"></div><div class="line">1、下载安装程序(32位和64位Ubuntu通用)</div><div class="line">https://www.teamviewer.com/zhcn/download/linux/</div><div class="line"></div><div class="line">选择下载对应版本。</div><div class="line"></div><div class="line">2、在终端中执行如下命令进行安装</div></pre></td></tr></table></figure></p>
+<pre><code>sudo dpkg -i teamviewer_i386.deb
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3、使用如下命令处理依赖问题</div></pre></td></tr></table></figure>
+<pre><code>sudo apt-get install –f 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">参考链接：[Ubuntu 16中如何安装TeamViewer 12](http://blog.csdn.net/zuochao_2013/article/details/53671245)</div><div class="line"></div><div class="line">使用部分不难，简单易上手。可以注册一个`teamview`账号，还是很方便的。</div><div class="line"></div><div class="line"></div><div class="line">### 13. 截图工具shutter</div><div class="line"></div><div class="line">`shutter`安装可参考：[ubuntu 安装截图工具 Shutter，并设置快捷键 Ctrl+Alt+A](http://blog.csdn.net/hanshileiai/article/details/46843713)</div><div class="line"></div><div class="line">其实`ubuntu`有自带的截图工具，不支持修改文件而已。</div></pre></td></tr></table></figure>
+<pre><code>printscreen -- 全屏
+alt + printscreen -- 当前活动截图
+shift + printscreen -- 自选矩形截图
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">自带的截图工具配合第八个软件GIMP一起使用，也还是不错的。</div><div class="line"></div><div class="line">### 14. Markdown编辑器 </div><div class="line"></div><div class="line">我选择的是[Moeditor](https://github.com/Moeditor/Moeditor)。</div><div class="line"></div><div class="line">类似的`markdown`编辑器还有：[Atom](https://atom.io/) (Github出品)，Vim+Markdown，[Remarkable - Linux](https://remarkableapp.github.io/linux.html) （据说有点小bug），[Haroopad - The Next Document processor based on Markdown](http://pad.haroopress.com/user.html) ，[typora.io](https://www.typora.io/#linux) ， SublimeText3+插件，[StackEdit](https://stackedit.io/)  (网页版)，[小书匠markdown编辑器](http://markdown.xiaoshujiang.com/) ，马克飞象，VS Code，reText等等。</div><div class="line"></div><div class="line"></div><div class="line">`Moeditor`下载地址：https://github.com/Moeditor/Moeditor/releases</div><div class="line"></div><div class="line">安装： `sudo dpkg -i xxxx.deb`</div><div class="line"></div><div class="line">使用： 简单易上手。简洁。右上角分别为：最小化和全屏。菜单在左下角（新建，保存，另存为之类的）和右下角（切换编辑模式）。</div><div class="line"></div><div class="line">### 15. shadowsocks</div><div class="line"></div><div class="line">算是必备的吧。科研(?)利器。</div><div class="line">#### 安装软件</div><div class="line"></div><div class="line">ubuntu16.04 直接一句话安装：</div></pre></td></tr></table></figure>
+<p>sudo apt install shadowsocks<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">提示需要安装一些依赖库，选择`yes`即可。</div><div class="line"></div><div class="line">我们可以在`/home/wangwlj/` 下新建个文件`shadowsocks.json`  (`wangwlj`是我在我电脑上的用户名，这里路径你自己看你的)。内容是这样：</div></pre></td></tr></table></figure></p>
+<p>{<br>    “server”:”11.22.33.44”,<br>    “server_port”:50003,<br>    “local_port”:1080,<br>    “password”:”123456”,<br>    “timeout”:600,<br>    “method”:”aes-256-cfb”<br>}</p>
+<p>上面的各项参数含义如下：<br>server  你服务端的IP<br>servier_port  你服务端的端口<br>local_port  本地端口，一般默认1080<br>passwd  ss服务端设置的密码<br>timeout  超时设置 和服务端一样<br>method  加密方法 和服务端一样<br>```</p>
+<p>确定上面的配置文件没有问题，然后我们就可以在终端输入<code>sslocal -c /home/wangwlj/shadowsocks.json</code> 回车运行。如果没有问题的话，下面会是这样…</p>
+<h4 id="chrome插件SwithyOmega配置"><a href="#chrome插件SwithyOmega配置" class="headerlink" title="chrome插件SwithyOmega配置"></a>chrome插件SwithyOmega配置</h4><p>这里就不详写了，看这篇，写的很详细：<a href="http://www.sundabao.com/ubuntu%E4%BD%BF%E7%94%A8shadowsocks/" target="_blank" rel="external">ubuntu使用shadowsocks</a></p>
+<p>还是简要附上几点吧。</p>
+<p>新建一个模式，代理服务器，代理协议<code>SOCKS5</code>，代理服务器<code>127.0.0.1</code>，端口<code>1080</code></p>
+<p><code>auto switch</code>中，上述模式对应的是：(按照规则列表匹配请求)使用shadowsocks访问的规则列表：<a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt" target="_blank" rel="external">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</a><br>，其余情况为直接访问。</p>
+<blockquote>
+<p>PS：windows下的chrome插件SwithyOmega的配置与Ubuntu一样。</p>
+</blockquote>
+<h3 id="Updating-1"><a href="#Updating-1" class="headerlink" title="Updating"></a>Updating</h3><p>将在个人博客中持续更新……</p>
+<p>为了查找安装方便，所有参考链接均在对应位置处，就不放在最后了。</p>
+
+      
+    </div>
+    
+    
+    
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wangwlj 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="wangwlj 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://wangwlj.com/2018/01/13/ubuntu_software_summary/" title="ubuntu下必备软件及安装总结">http://wangwlj.com/2018/01/13/ubuntu_software_summary/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ubuntu/" rel="tag"><i class="fa fa-tag"></i> Ubuntu</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/11/algorithm_tutorial_charpter_7/" rel="next" title="算法导论详解(6) 第七章快速排序">
+                <i class="fa fa-chevron-left"></i> 算法导论详解(6) 第七章快速排序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/13/Git_usage/" rel="prev" title="Git入门使用指南">
+                Git入门使用指南 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjUyMi85MDgz"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/head_icon.jpg"
+              alt="wangwlj" />
+          
+            <p class="site-author-name" itemprop="name">wangwlj</p>
+            <p class="site-description motion-element" itemprop="description">所谓王者，必卓然特立，争当人杰。</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/qwerty200696" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:wanglijie1994@126.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/LijieWang" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-gratipay"></i>知乎</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/3280603012" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>微博</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/qwerty200696" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-codiepie"></i>CSDN</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qq_31196849" title="小草莓" target="_blank">小草莓</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qingkong1994" title="qingkong" target="_blank">qingkong</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装ubuntu"><span class="nav-number">1.</span> <span class="nav-text">安装ubuntu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件安装前的设置"><span class="nav-number">2.</span> <span class="nav-text">软件安装前的设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#换源"><span class="nav-number">2.1.</span> <span class="nav-text">换源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主文件夹下的中文目录改为英文目录"><span class="nav-number">2.2.</span> <span class="nav-text">主文件夹下的中文目录改为英文目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Updating"><span class="nav-number">2.3.</span> <span class="nav-text">Updating</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装必备软件"><span class="nav-number">3.</span> <span class="nav-text">安装必备软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-搜狗输入法"><span class="nav-number">3.1.</span> <span class="nav-text">1. 搜狗输入法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载安装"><span class="nav-number">3.1.1.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统配置"><span class="nav-number">3.1.2.</span> <span class="nav-text">系统配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-网易云音乐"><span class="nav-number">3.2.</span> <span class="nav-text">2. 网易云音乐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-chrome浏览器"><span class="nav-number">3.3.</span> <span class="nav-text">3. chrome浏览器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Guake-Terminal-optional"><span class="nav-number">3.4.</span> <span class="nav-text">4. Guake Terminal (optional)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装流程"><span class="nav-number">3.4.1.</span> <span class="nav-text">安装流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置与自启动"><span class="nav-number">3.4.2.</span> <span class="nav-text">设置与自启动</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-思维导图xmind"><span class="nav-number">3.5.</span> <span class="nav-text">5. 思维导图xmind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-pycharm"><span class="nav-number">3.6.</span> <span class="nav-text">6. pycharm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载"><span class="nav-number">3.6.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解压"><span class="nav-number">3.6.2.</span> <span class="nav-text">解压</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">3.6.3.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-WPS"><span class="nav-number">3.7.</span> <span class="nav-text">7. WPS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载与安装"><span class="nav-number">3.7.1.</span> <span class="nav-text">下载与安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决打开WPS时出现的系统缺失字体问题"><span class="nav-number">3.7.2.</span> <span class="nav-text">解决打开WPS时出现的系统缺失字体问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除libreOffice-optional"><span class="nav-number">3.7.3.</span> <span class="nav-text">删除libreOffice (optional)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#chrome插件SwithyOmega配置"><span class="nav-number">3.7.4.</span> <span class="nav-text">chrome插件SwithyOmega配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Updating-1"><span class="nav-number">3.8.</span> <span class="nav-text">Updating</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangwlj</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      131.9k
+    </span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=64793620";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yrpmXJiSAy4frnKvqrxvNUSG-gzGzoHsz", "35GTu3Aq4E3uxua6GpER2XLp");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 8596,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
