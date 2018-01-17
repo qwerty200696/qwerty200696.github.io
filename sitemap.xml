@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wangwlj.com/2018/01/17/CPP_08/</loc>
+    
+    <lastmod>2018-01-17T05:19:12.017Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wangwlj.com/2018/01/16/CPP_07/</loc>
     
-    <lastmod>2018-01-16T14:24:10.151Z</lastmod>
+    <lastmod>2018-01-17T05:11:27.677Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/01/11/algorithm_tutorial_charpter_7/</loc>
+    
+    <lastmod>2018-01-17T04:18:29.463Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/01/13/leetcode_231_power_of_2/</loc>
+    
+    <lastmod>2018-01-16T14:28:01.047Z</lastmod>
     
   </url>
   
@@ -12,13 +33,6 @@
     <loc>http://wangwlj.com/2018/01/13/leetcode_326_power_of_3/</loc>
     
     <lastmod>2018-01-13T14:23:59.282Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangwlj.com/2018/01/13/leetcode_231_power_of_2/</loc>
-    
-    <lastmod>2018-01-13T14:23:43.218Z</lastmod>
     
   </url>
   
@@ -75,13 +89,6 @@
     <loc>http://wangwlj.com/2017/09/08/blog_setup/</loc>
     
     <lastmod>2018-01-12T05:33:19.538Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangwlj.com/2018/01/11/algorithm_tutorial_charpter_7/</loc>
-    
-    <lastmod>2018-01-11T13:55:04.428Z</lastmod>
     
   </url>
   

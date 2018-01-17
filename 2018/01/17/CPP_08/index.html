@@ -90,12 +90,10 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="C++," />
 
 
 
-
-  
 
 
   <link rel="alternate" href="/rss2.xml" title="wangwlj's Blog" type="application/atom+xml" />
@@ -110,17 +108,18 @@
 
 
 
-<meta name="description" content="个人简介 王立杰/男/90后 本科/南京理工大学/电子信息工程 硕士/东南大学/信息与通信工程 个人博客：http://www.wangwlj.com Github：http://github.com/qwerty200696 CSDN：http://blog.csdn.net/qwerty200696    大事记2017/12/18 绑定域名新域名为wangwlj.com，github地址依旧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="欢迎查看简介信息～">
-<meta property="og:url" content="http://wangwlj.com/about/index.html">
+<meta name="description" content="C++使用标准库类来处理面向流的输入和输出：  iostream处理控制台IO fstream处理命名文件IO stringstream完成内存string的IO  类fstream和stringstream都继承自iostream。">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Primer学习笔记：(八)IO类">
+<meta property="og:url" content="http://wangwlj.com/2018/01/17/CPP_08/index.html">
 <meta property="og:site_name" content="wangwlj&#39;s Blog">
-<meta property="og:description" content="个人简介 王立杰/男/90后 本科/南京理工大学/电子信息工程 硕士/东南大学/信息与通信工程 个人博客：http://www.wangwlj.com Github：http://github.com/qwerty200696 CSDN：http://blog.csdn.net/qwerty200696    大事记2017/12/18 绑定域名新域名为wangwlj.com，github地址依旧">
+<meta property="og:description" content="C++使用标准库类来处理面向流的输入和输出：  iostream处理控制台IO fstream处理命名文件IO stringstream完成内存string的IO  类fstream和stringstream都继承自iostream。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-08T14:17:26.913Z">
+<meta property="og:updated_time" content="2018-01-17T05:19:12.017Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="欢迎查看简介信息～">
-<meta name="twitter:description" content="个人简介 王立杰/男/90后 本科/南京理工大学/电子信息工程 硕士/东南大学/信息与通信工程 个人博客：http://www.wangwlj.com Github：http://github.com/qwerty200696 CSDN：http://blog.csdn.net/qwerty200696    大事记2017/12/18 绑定域名新域名为wangwlj.com，github地址依旧">
+<meta name="twitter:title" content="C++ Primer学习笔记：(八)IO类">
+<meta name="twitter:description" content="C++使用标准库类来处理面向流的输入和输出：  iostream处理控制台IO fstream处理命名文件IO stringstream完成内存string的IO  类fstream和stringstream都继承自iostream。">
 
 
 
@@ -150,14 +149,14 @@
 
 
 
-  <link rel="canonical" href="http://wangwlj.com/about/"/>
+  <link rel="canonical" href="http://wangwlj.com/2018/01/17/CPP_08/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>欢迎查看简介信息～ | wangwlj's Blog</title>
+  <title>C++ Primer学习笔记：(八)IO类 | wangwlj's Blog</title>
   
 
 
@@ -337,46 +336,411 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2018/01/17/CPP_08/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangwlj's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">欢迎查看简介信息～</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h2 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h2><ul>
-<li>王立杰/男/90后</li>
-<li>本科/南京理工大学/电子信息工程</li>
-<li>硕士/东南大学/信息与通信工程</li>
-<li>个人博客：<a href="http://www.wangwlj.com" target="_blank" rel="external">http://www.wangwlj.com</a></li>
-<li>Github：<a href="http://github.com/qwerty200696" target="_blank" rel="external">http://github.com/qwerty200696</a></li>
-<li>CSDN：<a href="http://blog.csdn.net/qwerty200696" target="_blank" rel="external">http://blog.csdn.net/qwerty200696</a></li>
+          <h1 class="post-title" itemprop="name headline">C++ Primer学习笔记：(八)IO类</h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-17T13:18:49+08:00">
+                2018-01-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-Primer/" itemprop="url" rel="index">
+                    <span itemprop="name">C++ Primer</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+	  
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/17/CPP_08/" class="leancloud_visitors" data-flag-title="C++ Primer学习笔记：(八)IO类">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  848
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>C++使用标准库类来处理面向流的输入和输出：</p>
+<ul>
+<li>iostream处理控制台IO</li>
+<li>fstream处理命名文件IO</li>
+<li>stringstream完成内存string的IO</li>
 </ul>
-<embed src="//music.163.com/style/swf/widget.swf?sid=506215964&type=0&auto=1&width=310&height=430" width="330" height="450" allownetworking="all">
+<p>类fstream和stringstream都继承自iostream。<br><a id="more"></a></p>
+<h2 id="IO类"><a href="#IO类" class="headerlink" title="IO类"></a>IO类</h2><p>头文件<code>iostream</code>包含所有<code>i/o</code>流所需的基本信息，并定义有四个标准<code>i/o</code>流对象：</p>
+<ul>
+<li>cin：标准输入流对象（与标准输入设备连接）</li>
+<li>cout ：标准输出流（与标准输出设备连接）</li>
+<li>cerr ：非缓冲的标准错误流（默认设备为显示器）</li>
+<li>clog ：经缓冲的标准错误流（默认设备为打印机）</li>
+</ul>
+<p>IO对象没有拷贝或者赋值。</p>
+<h3 id="条件状态-P8-1-1，P279"><a href="#条件状态-P8-1-1，P279" class="headerlink" title="条件状态(P8.1.1，P279)"></a>条件状态(P8.1.1，P279)</h3><p>IO类定义了一些函数和标志，可以帮助我们访问和操纵流的条件状态(<code>condition state</code>)。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">条件状态</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">strm::iostate</td>
+<td>由各个iostream类定义，用于定义条件状态</td>
+</tr>
+<tr>
+<td style="text-align:center">strm::badbit</td>
+<td>strm::iostate类型的值，用于指出被破坏的流</td>
+</tr>
+<tr>
+<td style="text-align:center">strm::failbit</td>
+<td>strm::iostate类型的值，用于指出失败的IO操作</td>
+</tr>
+<tr>
+<td style="text-align:center">strm::eofbit</td>
+<td>strm::iostate类型的值，用于指出流已经到达文件的结束符</td>
+</tr>
+<tr>
+<td style="text-align:center">s.eof()</td>
+<td>如果设置了流s的eofbit值，该函数返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">s.bad()</td>
+<td>如果设置了流s的badbit值，该函数返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">s.fail()</td>
+<td>如果设置了流s的failbit值，该函数返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">s.good()</td>
+<td>如果流s处于有效状态，该函数返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">s.clear()</td>
+<td>清空流s的所有状态，并设为true</td>
+</tr>
+<tr>
+<td style="text-align:center">s.clear(flag)</td>
+<td>给流s的某个条件状态位设置为true。flag，类型是strm::iostate</td>
+</tr>
+<tr>
+<td style="text-align:center">s.setstate(flag)</td>
+<td>给流s的添加指定条件。flag，类型是strm::iostate</td>
+</tr>
+<tr>
+<td style="text-align:center">s.rdstate()</td>
+<td>返回流s的当前条件，返回值类型是strm::iostate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="刷新输出缓冲区"><a href="#刷新输出缓冲区" class="headerlink" title="刷新输出缓冲区"></a>刷新输出缓冲区</h3><p><code>endl</code> 操纵符，用于输出一个换行符并刷新缓冲区。<br><code>flush</code>操纵符，用于刷新流，但不在输出中添加任何字符。<br><code>ends</code>操作符，这个操纵符在缓冲区中插入空字符<code>null</code>，然后刷新它。</p>
+<blockquote>
+<p>如果程序崩溃（异常终止），输出缓冲区不会刷新。</p>
+</blockquote>
+<h2 id="文件输入输出-8-2，P283"><a href="#文件输入输出-8-2，P283" class="headerlink" title="文件输入输出(8.2，P283)"></a>文件输入输出(8.2，P283)</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function">ifstream <span class="title">in</span><span class="params">(ifile)</span></span>; <span class="comment">//构建一个ifstream并打开给定文件</span></div><div class="line">ofstream out; <span class="comment">//输出文件流，没有与任何文件关联</span></div><div class="line">out.open(iflie +<span class="string">".copy"</span>); <span class="comment">//打开指定的文件</span></div><div class="line"></div><div class="line"><span class="keyword">if</span>(out)  <span class="comment">//检查open是否成功</span></div></pre></td></tr></table></figure>
+<h3 id="文件模式-8-2-2，P286"><a href="#文件模式-8-2-2，P286" class="headerlink" title="文件模式(8.2.2，P286)"></a>文件模式(8.2.2，P286)</h3><p>文件模式有：<code>in</code>,  <code>out</code>,  <code>app</code>（append的缩写，追加模式，写操作前定位到文件末尾）,  <code>ate</code>,  <code>trunk</code>（截断文件）,  <code>binary</code>。</p>
+<blockquote>
+<p>保留<code>ofstream</code>打开的文件中已有数据的唯一方法：显示指定<code>app</code>或<code>in</code>模式。</p>
+</blockquote>
+<h2 id="string流-8-3，P287"><a href="#string流-8-3，P287" class="headerlink" title="string流(8.3，P287)"></a>string流(8.3，P287)</h2><p>标准库定义了三种类型的字符串流：<br><code>istringstream</code>，由<code>istream</code>派生而来，提供读<code>string</code>的功能。<br><code>ostringstream</code>，由<code>ostream</code>派生而来，提供写<code>string</code>的功能。<br><code>stringstream</code>，由<code>iostream</code>派生而来，提供读写<code>string</code>的功能。</p>
+<p>stringstream 特定的操作：</p>
+<table>
+<thead>
+<tr>
+<th>stringstream 特有的操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sstream strm;</td>
+<td>strm是一个未绑定的stringstream对象。sstream是头文件sstream中定义的一个类型</td>
+</tr>
+<tr>
+<td>sstream strm(s);</td>
+<td>strm是一个sstream对象，保存string s的一个拷贝。此构造函数是explict的。</td>
+</tr>
+<tr>
+<td>strm.str()</td>
+<td>返回strm所保存的string的拷贝</td>
+</tr>
+<tr>
+<td>strm.str(s)</td>
+<td>将string s拷贝到strm中。返回void</td>
+</tr>
+</tbody>
+</table>
+<h2 id="术语表"><a href="#术语表" class="headerlink" title="术语表"></a>术语表</h2><p>继承： inheritance<br>条件状态： condition state<br>文件模式： file mode<br>文件流： file stream<br>字符串流： string stream</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li>C++ Primer 中文第五版</li>
+<li><a href="http://blog.csdn.net/sunhero2010/article/details/49799679" target="_blank" rel="external">C++primer第五版第八章学习笔记</a></li>
+<li><a href="http://blog.csdn.net/libin1105/article/details/48675765" target="_blank" rel="external">《C++primer(第五版)》学习之路-第八章：IO库</a></li>
+</ol>
 
-<h2 id="大事记"><a href="#大事记" class="headerlink" title="大事记"></a>大事记</h2><h3 id="2017-12-18-绑定域名"><a href="#2017-12-18-绑定域名" class="headerlink" title="2017/12/18 绑定域名"></a>2017/12/18 绑定域名</h3><p>新域名为<a href="http://wangwlj.com">wangwlj.com</a>，github地址依旧有效。</p>
-<h3 id="2017-09-07-博客诞生"><a href="#2017-09-07-博客诞生" class="headerlink" title="2017/09/07 博客诞生"></a>2017/09/07 博客诞生</h3><p>网址为Github地址：<a href="http://qwerty200696.github.io" target="_blank" rel="external">qwerty200696.github.io</a></p>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>感谢您花时间阅读我的简历，期待能有机会和您共事。</p>
-
-        
-      </div>
-      
-      
       
     </div>
     
     
     
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wangwlj 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="wangwlj 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://wangwlj.com/2018/01/17/CPP_08/" title="C++ Primer学习笔记：(八)IO类">http://wangwlj.com/2018/01/17/CPP_08/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/16/CPP_07/" rel="next" title="C++ Primer学习笔记：(七)类">
+                <i class="fa fa-chevron-left"></i> C++ Primer学习笔记：(七)类
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
@@ -553,7 +917,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#个人简介"><span class="nav-number">1.</span> <span class="nav-text">个人简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大事记"><span class="nav-number">2.</span> <span class="nav-text">大事记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2017-12-18-绑定域名"><span class="nav-number">2.1.</span> <span class="nav-text">2017/12/18 绑定域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2017-09-07-博客诞生"><span class="nav-number">2.2.</span> <span class="nav-text">2017/09/07 博客诞生</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#致谢"><span class="nav-number">3.</span> <span class="nav-text">致谢</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IO类"><span class="nav-number">1.</span> <span class="nav-text">IO类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#条件状态-P8-1-1，P279"><span class="nav-number">1.1.</span> <span class="nav-text">条件状态(P8.1.1，P279)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#刷新输出缓冲区"><span class="nav-number">1.2.</span> <span class="nav-text">刷新输出缓冲区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件输入输出-8-2，P283"><span class="nav-number">2.</span> <span class="nav-text">文件输入输出(8.2，P283)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件模式-8-2-2，P286"><span class="nav-number">2.1.</span> <span class="nav-text">文件模式(8.2.2，P286)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string流-8-3，P287"><span class="nav-number">3.</span> <span class="nav-text">string流(8.3，P287)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#术语表"><span class="nav-number">4.</span> <span class="nav-text">术语表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -711,6 +1075,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -1209,6 +1577,23 @@
 
 
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 8596,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
   

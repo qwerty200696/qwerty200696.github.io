@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="wangwlj&#39;s Blog">
 <meta property="og:description" content="类是数据的抽象(data abstraction)和封装(encapsulation)。数据抽象是一种将接口(interface)和实现(implemention)分离的设计技术。接口是指用户可以对类使用的操作集。实现包括类的数据成员和接口函数体。封装使得类的使用者不必关注类内部是如何实现的，因为这些是类的设计者需要关注的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-16T14:24:10.151Z">
+<meta property="og:updated_time" content="2018-01-17T05:11:27.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ Primer学习笔记：(七)类">
 <meta name="twitter:description" content="类是数据的抽象(data abstraction)和封装(encapsulation)。数据抽象是一种将接口(interface)和实现(implemention)分离的设计技术。接口是指用户可以对类使用的操作集。实现包括类的数据成员和接口函数体。封装使得类的使用者不必关注类内部是如何实现的，因为这些是类的设计者需要关注的。">
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,018
+                  2,106
                 </span>
               
 
@@ -501,30 +501,34 @@
 <p>构造函数在执行时会做类数据成员的初始化工作。从概念上讲，可以认为构造函数分两个阶段执行：（1）初始化阶段；（2）普通的计算阶段。计算阶段由构造函数函数体中的所有语句组成。</p>
 <p>不管成员是否在构造函数初始化列表中显式初始化，类类型的数据成员总是在初始化阶段初始化。初始化发生在计算阶段开始之前。</p>
 <h4 id="构造函数初始值列表"><a href="#构造函数初始值列表" class="headerlink" title="构造函数初始值列表"></a>构造函数初始值列表</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Sales_data&#123;</div><div class="line"><span class="comment">//新增的构造函数</span></div><div class="line">Sales_data() = <span class="keyword">default</span>;</div><div class="line">Sales_data(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;s): bookNo(s) &#123;&#125;</div><div class="line">Sales_data(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;s, unsighed n, <span class="keyword">double</span> p): bookNo(s), units_sold(n), revenue(p*n) &#123;&#125;</div><div class="line"></div><div class="line"><span class="comment">//之前已有的其他成员</span></div><div class="line"><span class="built_in">std</span>::<span class="function"><span class="built_in">string</span> <span class="title">isbn</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> bookNo; &#125;</div><div class="line"><span class="function">Sales_data&amp; <span class="title">combine</span><span class="params">(<span class="keyword">const</span> Sales_data&amp;)</span></span>;</div><div class="line"><span class="built_in">std</span>::<span class="built_in">string</span> bookNo;</div><div class="line"><span class="keyword">unsigned</span> units_old = <span class="number">0</span>;</div><div class="line"><span class="keyword">double</span> revenue = <span class="number">0.0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上述代码中，<code>= default</code>要求编译器生成默认构造函数。<br><code>Sales_data(const std::string &amp;s, unsighed n, double p): bookNo(s), units_sold(n), revenue(p*n) {}</code>中的冒号和花括号之间的部分叫做<font color="0AAA00"><strong>构造函数初始值列表(<code>constractor initialize list</code>)</strong></font>。</p>
+<p>上述代码中，<code>= default</code>要求编译器生成默认构造函数。<br><code>Sales_data(const std::string &amp;s, unsighed n, double p): bookNo(s), units_sold(n), revenue(p*n) {}</code>中的冒号和花括号之间的部分叫做<font color="0AAA00"><strong>构造函数初始值列表</strong>(<code>constractor initialize list</code>)</font>。</p>
 <blockquote>
 <p>如果编译器不支持类内初始值，那么所有构造函数都应该显式地初始化每个内置类型的成员。</p>
 </blockquote>
 <p>当然也可以在类外定义构造函数。</p>
-<h3 id="拷贝、赋值和析构-7-1-5，P239"><a href="#拷贝、赋值和析构-7-1-5，P239" class="headerlink" title="拷贝、赋值和析构(7.1.5，P239)"></a>拷贝、赋值和析构(7.1.5，P239)</h3><p>尽管编译器能为我们合成拷贝、赋值和析构的操作，但某些情况下可能无法正常工作。如分配和管理动态内存的类（13.1.4, P447）。</p>
+<h3 id="拷贝、赋值和析构-7-1-5，P239"><a href="#拷贝、赋值和析构-7-1-5，P239" class="headerlink" title="拷贝、赋值和析构(7.1.5，P239)"></a>拷贝、赋值和析构(7.1.5，P239)</h3><p>尽管编译器能为我们合成拷贝、赋值和析构的操作，但某些情况下可能无法正常工作。如分配和管理动态内存的类<code>（13.1.4, P447）</code>。</p>
 <h2 id="访问控制与封装-7-2，P240"><a href="#访问控制与封装-7-2，P240" class="headerlink" title="访问控制与封装(7.2，P240)"></a>访问控制与封装(7.2，P240)</h2><p>访问说明符(<code>access specifiers</code>)：加强类的封装性：</p>
 <ul>
 <li>public：在整个程序内可被访问；</li>
 <li>private：可以被类的成员函数访问。</li>
 </ul>
 <p><font color="0AAA00"><strong>使用class和struct唯一的区别就是默认的访问权限</strong></font>：<br><code>struct</code>默认是<code>public</code>，<code>class</code>默认是<code>private</code>。</p>
-<h3 id="友元-7-2-1，P241"><a href="#友元-7-2-1，P241" class="headerlink" title="友元(7.2.1，P241)"></a>友元(7.2.1，P241)</h3><p>友元(friend)：<code>friend</code>关键字，允许其他类或者函数访问类的私有成员。</p>
-<h2 id="类的其他特性-7-3，P243"><a href="#类的其他特性-7-3，P243" class="headerlink" title="类的其他特性(7.3，P243)"></a>类的其他特性(7.3，P243)</h2><p>可变数据成员(mutable data member)：永远不会是const，即使是const对象的成员。</p>
+<h3 id="友元-7-2-1，P241"><a href="#友元-7-2-1，P241" class="headerlink" title="友元(7.2.1，P241)"></a>友元(7.2.1，P241)</h3><p>友元(<code>friend</code>)：<code>friend</code>关键字，允许其他类或者函数访问类的私有成员。</p>
+<h2 id="类的其他特性-7-3，P243"><a href="#类的其他特性-7-3，P243" class="headerlink" title="类的其他特性(7.3，P243)"></a>类的其他特性(7.3，P243)</h2><p>可变数据成员(<code>mutable data member</code>)：永远不会是const，即使是const对象的成员。</p>
 <p>类内初始值：必须以符号=或者花括号。</p>
 <h3 id="返回-this的成员函数-7-3-2，P246"><a href="#返回-this的成员函数-7-3-2，P246" class="headerlink" title="返回*this的成员函数(7.3.2，P246)"></a>返回<code>*this</code>的成员函数(7.3.2，P246)</h3><p>返回值是调用对象的引用，返回引用的函数是左值的，意味着这些函数返回对象本身。</p>
 <p>如果返回类型不是引用，则返回的是<code>*this</code>的副本。</p>
 <h2 id="类的作用域-7-4，P253"><a href="#类的作用域-7-4，P253" class="headerlink" title="类的作用域(7.4，P253)"></a>类的作用域(7.4，P253)</h2><p>编译器处理完全部声明后，才会处理成员函数的定义。</p>
 <h2 id="构造函数再探-7-5，P257"><a href="#构造函数再探-7-5，P257" class="headerlink" title="构造函数再探(7.5，P257)"></a>构造函数再探(7.5，P257)</h2><p>成员是const、引用，或者属于某种未提供默认构造函数的类类型，我们必须通过<strong>构造函数初始值列表</strong>为这些成员提供初值。</p>
-<h3 id="委托构造函数-7-5-2，P261"><a href="#委托构造函数-7-5-2，P261" class="headerlink" title="委托构造函数(7.5.2，P261)"></a>委托构造函数(7.5.2，P261)</h3><p>委托构造函数(delegating constructor)：使用使用所属类的其他构造函数执行自己的初始化过程。成员初始值列表唯一，是类名本身。</p>
-<p>explicit：抑制构造函数定义的隐式转换，只对一个实参的构造函数有效。</p>
-<p>字面值常量类：constexpr</p>
-<h2 id="类的静态成员-7-6，P269"><a href="#类的静态成员-7-6，P269" class="headerlink" title="类的静态成员(7.6，P269)"></a>类的静态成员(7.6，P269)</h2><p>定义并且初始化一个静态成员：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> Account::interestRate = initRate();</div></pre></td></tr></table></figure></p>
-<p>定义静态数据成员的方式和在类外定义成员函数差不多。<br>如果类内部声明提供了初始值，则外部定义时不能提供初始值。<br>静态数据成员可以是不完全类型，如类类型；非静态成员只能是类的指针或者引用。</p>
+<h3 id="委托构造函数-7-5-2，P261"><a href="#委托构造函数-7-5-2，P261" class="headerlink" title="委托构造函数(7.5.2，P261)"></a>委托构造函数(7.5.2，P261)</h3><p>委托构造函数(<code>delegating constructor</code>)：使用使用所属类的其他构造函数执行自己的初始化过程。成员初始值列表唯一，是类名本身。</p>
+<p><code>explicit</code>：抑制构造函数定义的隐式转换，只对一个实参的构造函数有效。且只能在类内声明的时候采用<code>explicit</code>关键字。</p>
+<p>字面值常量类：<code>constexpr</code></p>
+<h2 id="类的静态成员-7-6，P269"><a href="#类的静态成员-7-6，P269" class="headerlink" title="类的静态成员(7.6，P269)"></a>类的静态成员(7.6，P269)</h2><p>一般来说，我们不能在类内初始化静态成员。相反，必须在类的外部定义和初始化每个静态成员。</p>
+<p>定义并且初始化一个静态成员：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> Account::interestRate = initRate();</div></pre></td></tr></table></figure></p>
+<p>定义静态数据成员的方式和在类外定义成员函数差不多。</p>
+<p>只有字面值常量类型<code>constexpr</code>的静态成员可以在类内，且初始值必须是常量表达式。</p>
+<p>如果类内部声明提供了初始值，则外部定义时不能提供初始值。</p>
+<p>静态数据成员可以是不完全类型，如类类型；非静态成员只能是类的指针或者引用。</p>
 <h2 id="术语表"><a href="#术语表" class="headerlink" title="术语表"></a>术语表</h2><p>class 关键字： class keyword<br>构造函数： constructor<br>构造函数初始值列表： constructor initializer list<br>类的作用域： class scope<br>委托构造函数： delegating constructor<br>显示构造函数： explicit constructor<br>接口：interface<br>数据抽象：data abstraction<br>可变数据成员： mutable data member<br>友元： friend</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li>C++ Primer 中文第五版</li>
@@ -641,6 +645,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/01/17/CPP_08/" rel="prev" title="C++ Primer学习笔记：(八)IO类">
+                C++ Primer学习笔记：(八)IO类 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -747,7 +755,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-count">58</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -904,7 +912,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      134.7k
+      135.6k
     </span>
   
 </div>
