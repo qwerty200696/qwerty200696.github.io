@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="wangwlj&#39;s Blog">
 <meta property="og:description" content="C++使用标准库类来处理面向流的输入和输出：  iostream处理控制台IO fstream处理命名文件IO stringstream完成内存string的IO  类fstream和stringstream都继承自iostream。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-17T05:19:12.017Z">
+<meta property="og:updated_time" content="2018-01-17T08:26:27.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ Primer学习笔记：(八)IO类">
 <meta name="twitter:description" content="C++使用标准库类来处理面向流的输入和输出：  iostream处理控制台IO fstream处理命名文件IO stringstream完成内存string的IO  类fstream和stringstream都继承自iostream。">
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  848
+                  849
                 </span>
               
 
@@ -550,7 +550,7 @@
 <h2 id="文件输入输出-8-2，P283"><a href="#文件输入输出-8-2，P283" class="headerlink" title="文件输入输出(8.2，P283)"></a>文件输入输出(8.2，P283)</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function">ifstream <span class="title">in</span><span class="params">(ifile)</span></span>; <span class="comment">//构建一个ifstream并打开给定文件</span></div><div class="line">ofstream out; <span class="comment">//输出文件流，没有与任何文件关联</span></div><div class="line">out.open(iflie +<span class="string">".copy"</span>); <span class="comment">//打开指定的文件</span></div><div class="line"></div><div class="line"><span class="keyword">if</span>(out)  <span class="comment">//检查open是否成功</span></div></pre></td></tr></table></figure>
 <h3 id="文件模式-8-2-2，P286"><a href="#文件模式-8-2-2，P286" class="headerlink" title="文件模式(8.2.2，P286)"></a>文件模式(8.2.2，P286)</h3><p>文件模式有：<code>in</code>,  <code>out</code>,  <code>app</code>（append的缩写，追加模式，写操作前定位到文件末尾）,  <code>ate</code>,  <code>trunk</code>（截断文件）,  <code>binary</code>。</p>
 <blockquote>
-<p>保留<code>ofstream</code>打开的文件中已有数据的唯一方法：显示指定<code>app</code>或<code>in</code>模式。</p>
+<p>保留<code>ofstream</code>打开的文件中已有数据的唯一方法：显式地指定<code>app</code>或<code>in</code>模式。</p>
 </blockquote>
 <h2 id="string流-8-3，P287"><a href="#string流-8-3，P287" class="headerlink" title="string流(8.3，P287)"></a>string流(8.3，P287)</h2><p>标准库定义了三种类型的字符串流：<br><code>istringstream</code>，由<code>istream</code>派生而来，提供读<code>string</code>的功能。<br><code>ostringstream</code>，由<code>ostream</code>派生而来，提供写<code>string</code>的功能。<br><code>stringstream</code>，由<code>iostream</code>派生而来，提供读写<code>string</code>的功能。</p>
 <p>stringstream 特定的操作：</p>
@@ -697,6 +697,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/01/18/CPP_09/" rel="prev" title="C++ Primer学习笔记：(九)顺序容器">
+                C++ Primer学习笔记：(九)顺序容器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -803,7 +807,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -960,7 +964,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      135.6k
+      141.8k
     </span>
   
 </div>

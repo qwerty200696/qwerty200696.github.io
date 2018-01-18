@@ -1,0 +1,2457 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+  (function(){
+    if(''){
+      if (prompt('请输入文章密码') !== ''){
+        alert('密码错误！');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="Zg8i3oTV3dBiFi2-eYpkWHuo1XYforgqvtiy1f6zTvs" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="C++," />
+
+
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="wangwlj's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web_icon.jpg?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="本章是第三章内容的扩展，完成本章的学习后，对标准库顺序容器知识的掌握就完整了。 元素在顺序容器中的位置与其加入容器时的位置相对应。 标准库还定义了几种关联容器（第11章），关联容器中元素的位置由元素相关联的关键字决定。 顺序容器有：vector、deque、list、forward_list、array与string。容器适配器有：stack、queue与priority_queue。">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Primer学习笔记：(九)顺序容器">
+<meta property="og:url" content="http://wangwlj.com/2018/01/18/CPP_09/index.html">
+<meta property="og:site_name" content="wangwlj&#39;s Blog">
+<meta property="og:description" content="本章是第三章内容的扩展，完成本章的学习后，对标准库顺序容器知识的掌握就完整了。 元素在顺序容器中的位置与其加入容器时的位置相对应。 标准库还定义了几种关联容器（第11章），关联容器中元素的位置由元素相关联的关键字决定。 顺序容器有：vector、deque、list、forward_list、array与string。容器适配器有：stack、queue与priority_queue。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-18T14:11:57.432Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++ Primer学习笔记：(九)顺序容器">
+<meta name="twitter:description" content="本章是第三章内容的扩展，完成本章的学习后，对标准库顺序容器知识的掌握就完整了。 元素在顺序容器中的位置与其加入容器时的位置相对应。 标准库还定义了几种关联容器（第11章），关联容器中元素的位置由元素相关联的关键字决定。 顺序容器有：vector、deque、list、forward_list、array与string。容器适配器有：stack、queue与priority_queue。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wangwlj.com/2018/01/18/CPP_09/"/>
+
+
+
+
+<link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
+
+  <title>C++ Primer学习笔记：(九)顺序容器 | wangwlj's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-111387754-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?61acd986303bc926826d2eec81dbbdff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    
+	<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">wangwlj's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">积跬步以至千里！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2018/01/18/CPP_09/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangwlj's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C++ Primer学习笔记：(九)顺序容器</h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T21:56:55+08:00">
+                2018-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-Primer/" itemprop="url" rel="index">
+                    <span itemprop="name">C++ Primer</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+	  
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/18/CPP_09/" class="leancloud_visitors" data-flag-title="C++ Primer学习笔记：(九)顺序容器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  6,186
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本章是第三章内容的扩展，完成本章的学习后，对标准库顺序容器知识的掌握就完整了。</p>
+<p>元素在顺序容器中的位置与其加入容器时的位置相对应。 标准库还定义了几种关联容器（第11章），关联容器中元素的位置由元素相关联的关键字决定。</p>
+<p>顺序容器有：<code>vector</code>、<code>deque</code>、<code>list</code>、<code>forward_list</code>、<code>array</code>与<code>string</code>。<br>容器适配器有：<code>stack</code>、<code>queue</code>与<code>priority_queue</code>。</p>
+<a id="more"></a>
+<h2 id="顺序容器概述（9-1，P292）"><a href="#顺序容器概述（9-1，P292）" class="headerlink" title="顺序容器概述（9.1，P292）"></a>顺序容器概述（9.1，P292）</h2><table>
+<thead>
+<tr>
+<th>顺序容器类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vector</td>
+<td>可变大小数组。支持快速随机访问。在尾部之外的位置插入或删除元素可能很慢</td>
+</tr>
+<tr>
+<td>deque</td>
+<td>双端队列。支持快速随机访问。在头尾位置插入/删除速度很快</td>
+</tr>
+<tr>
+<td>list</td>
+<td>双向链表。只支持双向顺序访问。在list中任何位置进行插入/删除操作速度都很快</td>
+</tr>
+<tr>
+<td>forward_list</td>
+<td>单向链表。只支持单向顺序访问。在链表任何位置进行插入/删除操作速度都很快</td>
+</tr>
+<tr>
+<td>array</td>
+<td>固定大小数组。支持快速随机访问。不能添加或删除元素。</td>
+</tr>
+<tr>
+<td>string</td>
+<td>与vector相似的容器，但专门用于保存字符。随机访问快。在尾部插入/删除速度快。</td>
+</tr>
+</tbody>
+</table>
+<p>以下是一些选择容器的基本原则：</p>
+<p>⑴.除非你有很好的理由选择其他容器，否则应使用<code>vector</code></p>
+<p>⑵.如果你的程序有很多小的元素，且额外开销很重要，则不要使用<code>list</code>或<code>forward_list</code></p>
+<p>⑶.如果程序要求随机访问元素，应使用<code>vector</code>或<code>deque</code></p>
+<p>⑷.如果程序需要<strong>在中间位置插入或删除元素</strong>，应使用<code>list</code>或<code>forward_list</code></p>
+<p>⑸.如果程序需要<strong>在头尾位置插入或删除元素</strong>，但不会在中间位置进行插入或删除操作，则使用<code>deque</code></p>
+<p>⑹.如果程序只有在读取输入时才需要再容器中间位置插入元素，随后需要随机访问元素，则</p>
+<p>–首先，确定是否真的需要再容器中间位置添加元素。当处理输入数据时，通常可以很容易地向<code>vector</code>追加数据，然后再调用标准库的<code>sort</code>函数来重排容器中的元素，从而避免在中间位置添加元素。</p>
+<p>–如果必须在中间位置插入元素，考虑在输入阶段使用<code>list</code>，一旦输入完成，将<code>list</code>中的内容拷贝到一个<code>vector</code>中。</p>
+<h2 id="容器库概览（9-2，P294）"><a href="#容器库概览（9-2，P294）" class="headerlink" title="容器库概览（9.2，P294）"></a>容器库概览（9.2，P294）</h2><p>本节介绍对所有容器都适用的操作。</p>
+<h3 id="容器操作表"><a href="#容器操作表" class="headerlink" title="容器操作表"></a>容器操作表</h3><table>
+<thead>
+<tr>
+<th>类型别名</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iterator</td>
+<td>此容器类型的迭代器类型</td>
+</tr>
+<tr>
+<td>const_iterator</td>
+<td>可以读取元素，但不能修改元素的迭代器类型</td>
+</tr>
+<tr>
+<td>size_type</td>
+<td>无符号整数类型，足够保存此种容器类型最大可能容器的大小</td>
+</tr>
+<tr>
+<td>different_type</td>
+<td>带符号整数类型，足够保存两个迭代器之间的距离</td>
+</tr>
+<tr>
+<td>value_type</td>
+<td>元素类型</td>
+</tr>
+<tr>
+<td>reference</td>
+<td>元素的左值类型；与value_type含义相同</td>
+</tr>
+<tr>
+<td>const_reference</td>
+<td>元素的const左值类型</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>构造函数</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C c;</td>
+<td>默认构造函数，构造空容器</td>
+</tr>
+<tr>
+<td>C c1(c2);</td>
+<td>构造c2的拷贝c1</td>
+</tr>
+<tr>
+<td>C c(b,e);</td>
+<td>构造c，将迭代器b和e指定范围内的元素拷贝到c(array不支持)</td>
+</tr>
+<tr>
+<td>C c{a,b,c…};</td>
+<td>列表初始化c</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>赋值与swap</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c1 = c2</td>
+<td>将c1中的元素替换为c2中元素</td>
+</tr>
+<tr>
+<td>c1 = {a,b,c..}</td>
+<td>将c1中的元素替换为列表中的元素</td>
+</tr>
+<tr>
+<td>a.swap(b)</td>
+<td>交换a和b的元素</td>
+</tr>
+<tr>
+<td>swap(a,b)</td>
+<td>与a.swap(b)等价</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>大小</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c.size()</td>
+<td>c中元素的数目（不支持forward_list）</td>
+</tr>
+<tr>
+<td>c.max_size()</td>
+<td>c可保存的的最大元素数目</td>
+</tr>
+<tr>
+<td>c.empty()</td>
+<td>若c中存储了元素，返回false，否则返回true</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>添加/删除元素（不适用于array）</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>注：在不同容器中，这些操作的接口都不同</td>
+</tr>
+<tr>
+<td>c.insert(args)</td>
+<td>将args中的元素拷贝进c</td>
+</tr>
+<tr>
+<td>c.emplace(inits)</td>
+<td>使用inits构造c中的一个元素</td>
+</tr>
+<tr>
+<td>c.erase(args)</td>
+<td>删除args指定的元素</td>
+</tr>
+<tr>
+<td>c.clear()</td>
+<td>删除c中的所有元素，返回void</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>关系运算符</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==,!=</td>
+<td>所有容器都支持相等（不等）操作</td>
+</tr>
+<tr>
+<td>&lt;,&lt;=,&gt;,&gt;=</td>
+<td>关系运算符(无序关联容器不支持)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>获取迭代器</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c.begin(),c.end()</td>
+<td>返回指向c的首元素和尾元素之后位置的迭代器</td>
+</tr>
+<tr>
+<td>c.cbegin(),c.cend()</td>
+<td>返回const_iterator</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>反向容器的额外成员</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reverse_iterator</td>
+<td>按逆序寻址元素的迭代器</td>
+</tr>
+<tr>
+<td>const_reverse_iterator</td>
+<td>不能修改元素的逆序迭代器</td>
+</tr>
+<tr>
+<td>c.rbegin(),c.rend()</td>
+<td>返回指向c的尾元素和首元素之前位置的迭代器</td>
+</tr>
+<tr>
+<td>c.crbegin(),c.crend()</td>
+<td>返回const_reverse_iterator</td>
+</tr>
+</tbody>
+</table>
+<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><p>迭代器范围(<code>iterator range</code>)：<code>[begin,end)</code>，左闭合区间(<code>left-inclusive interval</code>)</p>
+<p>迭代器的运算符（表3.6，P96）</p>
+<table>
+<thead>
+<tr>
+<th>迭代器的运算符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*iter</code></td>
+<td>返回迭代器所指元素的引用</td>
+</tr>
+<tr>
+<td>iter-&gt;mem</td>
+<td>解引用iter并获取该元素的名为mem的成员，等价于<code>(*iter).mem</code></td>
+</tr>
+<tr>
+<td>++iter</td>
+<td>令iter指示容器中的下一个元素</td>
+</tr>
+<tr>
+<td>++iter</td>
+<td>令iter指示容器中的上一个元素</td>
+</tr>
+<tr>
+<td>iter1 == iter2</td>
+<td>判断两个迭代器是否相等（指向同一个位置则相等，包括尾后）</td>
+</tr>
+<tr>
+<td>iter1 != iter2</td>
+<td>判断两个迭代器是否不相等（指向同一个位置则相等，包括尾后）</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(begin != end)&#123;</div><div class="line">	*begin = val;</div><div class="line">    ++begin;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果<code>begin</code>与<code>end</code>相等，则范围为空；如果<code>begin</code>与<code>end</code>不等，则范围至少包含一个元素，且<code>begin</code>指向该范围中的第一个元素；我们可以对<code>begin</code>递增若干次，使得<code>begin==end</code>。</p>
+<h3 id="容器类型成员"><a href="#容器类型成员" class="headerlink" title="容器类型成员"></a>容器类型成员</h3><h3 id="容器定义和初始化-9-2-4，P299"><a href="#容器定义和初始化-9-2-4，P299" class="headerlink" title="容器定义和初始化(9.2.4，P299)"></a>容器定义和初始化(9.2.4，P299)</h3><table>
+<thead>
+<tr>
+<th>容器定义和初始化</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C c</td>
+<td>默认构造函数。如果C是一个array，则c中元素按默认方式初始化，否则c为空</td>
+</tr>
+<tr>
+<td><code>C c1(c2)</code> 与 <code>C c1 = c2</code></td>
+<td>c1初始化为c2的拷贝。c1和c2必须是相同类型。</td>
+</tr>
+<tr>
+<td><code>C c{a,b,c...}</code>与<code>C c = {a,b,c..}</code></td>
+<td>c初始化为初始化列表中元素的拷贝。列表中元素的类型必须与C的元素类型相容。对于array类型，列表中元素数目必须等于或少于array的大小，任何遗漏的元素都进行值初始化。</td>
+</tr>
+<tr>
+<td>C c(b,e)</td>
+<td>c初始化为迭代器b和e指定范围中的元素的拷贝。范围中元素的类型必须与C的元素类型相容（对array不适用）</td>
+</tr>
+<tr>
+<td>C seq(n)</td>
+<td>seq包含n个元素，这些元素进行了值初始化；此构造函数是explicit的</td>
+</tr>
+<tr>
+<td>C seq(n,t)</td>
+<td>seq包含n个初始化为值t的元素</td>
+</tr>
+</tbody>
+</table>
+<p>$\color{red}{\heartsuit}$ <font color="0D54BD">只有顺序容器（不包括array）的构造函数才能接受大小参数。</font>关联容器并不支持。【上表中的倒数两个】</p>
+<p>$\color{red}{\heartsuit}$ <font color="0D54BD">当一个容器初始化为另一个容器的拷贝时，两个容器的容器类型必须相同。</font></p>
+<p>标准库array的大小也是类型的一部分。定义一个array时，除了指定元素类型，还需要指定容器大小。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">array</span>&lt;<span class="keyword">int</span>,42&gt;</div><div class="line"><span class="built_in">array</span>&lt;<span class="built_in">string</span>,10&gt;::size_type i;</div></pre></td></tr></table></figure></p>
+<h3 id="赋值与swap-9-2-5，P302"><a href="#赋值与swap-9-2-5，P302" class="headerlink" title="赋值与swap(9.2.5，P302)"></a>赋值与swap(9.2.5，P302)</h3><p>赋值、交换以及assign：</p>
+<table>
+<thead>
+<tr>
+<th>容器赋值运算</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c1 = c2</code></td>
+<td>将c1中的元素替换为c2中元素的拷贝。c1和c2必须具有相同的类型</td>
+</tr>
+<tr>
+<td><code>c = {a,b,c..}</code></td>
+<td>将c1中元素替换为初始化列表中元素的拷贝</td>
+</tr>
+<tr>
+<td><code>swap(c1,c2)</code>与<code>c1.swap(c2)</code>等价</td>
+<td>交换c1和c2中的元素。c1和c2必须具有相同的类型。swap通常比从c2向c1拷贝元素快得多。</td>
+</tr>
+<tr>
+<td><strong>assign操作不适用于关联容器和array</strong></td>
+</tr>
+<tr>
+<td>seq.assign(b,e)</td>
+<td>将seq中的元素替换为迭代器b和e所表示的范围中的元素。迭代器b和e不能指向seq中的元素</td>
+</tr>
+<tr>
+<td>seq.assign(il)</td>
+<td>将seq中的元素替换为初始化列表il中的元素</td>
+</tr>
+<tr>
+<td>seq.assign(n,t)</td>
+<td>将seq中的元素替换为n个值为t的元素 </td>
+</tr>
+</tbody>
+</table>
+<p>$\color{red}{\heartsuit}$ <font color="0D54BD">使用assign：允许我们使用不同但相容的类型赋值。</font></p>
+<p>除了array外，swap不对任何元素进行拷贝、删除或者插入操作，因此可以保证常数时间内完成。<br>与其它容器不同，swap两个array会真正交换它们的元素。指针和迭代器所绑定的元素保持不变，但元素值已经与另一个array中对应的元素的值进行了交换。</p>
+<p>除了string外，指向容器的迭代器、引用和指针在swap操作之后都不会失效。<br>特殊的，对一个string 调用swap会导致迭代器和指针失效。</p>
+<p>forward_list支持max_size和empty，但不支持size。其它每个容器都有三个有关大小的操作。</p>
+<h2 id="顺序容器操作-9-3，P305"><a href="#顺序容器操作-9-3，P305" class="headerlink" title="顺序容器操作(9.3，P305)"></a>顺序容器操作(9.3，P305)</h2><h3 id="向顺序容器中添加元素"><a href="#向顺序容器中添加元素" class="headerlink" title="向顺序容器中添加元素"></a>向顺序容器中添加元素</h3><table>
+<thead>
+<tr>
+<th>向顺序容器添加元素的操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c.push_back(t)</td>
+<td>在c的尾部创建一个值为t或由args创建的元素，返回void</td>
+</tr>
+<tr>
+<td>c.emplace_back(args)</td>
+</tr>
+<tr>
+<td>c.push_front(t)</td>
+<td>在c的头部创建一个值为t或由args创建的元素。返回void</td>
+</tr>
+<tr>
+<td>c.emplace_front(args)</td>
+</tr>
+<tr>
+<td>c.insert(p,t)</td>
+<td>在迭代器p指向的元素<strong>之前</strong>创建一个值为t或由args创建的元素。返回指向新添加元素的迭 </td>
+</tr>
+<tr>
+<td>c.emplace(p,args)</td>
+<td>代器。 </td>
+</tr>
+<tr>
+<td>c.insert(p,n,t)</td>
+<td>在迭代器p指向的元素<strong>之前</strong>插入n个值为t的元素。返回指向新添加的第一个元素的迭代器；若n为0，则返回p</td>
+</tr>
+<tr>
+<td>c.insert(p,b,e)</td>
+<td>将迭代器b和e指定的范围内的元素插入迭代器p指向的元素<strong>之前</strong>。b和e不能指向c中的元素。返回指向新添加的第一个元素的迭代器；若范围为空，则返回p</td>
+</tr>
+<tr>
+<td>c.insert(p,il)</td>
+<td>il是一个花括号包围的元素值列表。将这些给定值插入到迭代器p指向的元素<strong>之前</strong>。返回指向新添加的第一个元素的迭代器；若列表为空，则返回p</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>添加元素操作</th>
+<th>描述</th>
+<th>vector</th>
+<th>list</th>
+<th>forward_list</th>
+<th>array</th>
+<th>deque</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>push_back/emplace_back</td>
+<td>尾部添加元素</td>
+<td>ok</td>
+<td>ok</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>ok</td>
+</tr>
+<tr>
+<td>push_front/emplace_front</td>
+<td>首部添加元素</td>
+<td>不支持</td>
+<td>ok</td>
+<td>OK</td>
+<td>不支持</td>
+<td>ok</td>
+</tr>
+<tr>
+<td>insert(p, t)/insert(p, n, t)/insert(p, b, e)/insert(p, {…})</td>
+<td><strong>在指定p位置<font color="0D54BD">之前</font>插入元素</strong></td>
+<td>ok</td>
+<td>ok</td>
+<td>有自己专用版本</td>
+<td>不支持</td>
+<td>ok</td>
+</tr>
+<tr>
+<td>emplace</td>
+<td>插入元素</td>
+<td>ok</td>
+<td>ok</td>
+<td>有自己专用版本</td>
+<td>不支持</td>
+<td>ok</td>
+</tr>
+</tbody>
+</table>
+<p>添加元素会改变容器的大小，array不支持这些操作。forward_list有自己专有版本的insert和emplace。forward_list不支持push_back和emplace_back。</p>
+<p>vector和string不支持push_front和emplace_front。将元素insert插入到vector、deque和string中的任何位置都是合法的。然而，这样做可能很耗时。</p>
+<p>emplace函数直接在容器中构造函数，传递给emplace函数的参数必须与元素类型相匹配。</p>
+<h3 id="访问元素-9-3-2，P309"><a href="#访问元素-9-3-2，P309" class="headerlink" title="访问元素(9.3.2，P309)"></a>访问元素(9.3.2，P309)</h3><table>
+<thead>
+<tr>
+<th>访问元素的操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c.back()</td>
+<td>返回c中尾元素的引用。若c为空，函数行为未定义</td>
+</tr>
+<tr>
+<td>c.front()</td>
+<td>返回c中首元素的引用。若c为空，函数行为未定义</td>
+</tr>
+<tr>
+<td>c[n]</td>
+<td>返回c中下标为n的元素的引用，n是一个无符号的整数。若n&gt;=c.size()，则函数行为未定义。</td>
+</tr>
+<tr>
+<td>c.at(n)</td>
+<td>返回下标为n的元素的引用。如果下标越界，则抛出一out_of_range异常。</td>
+</tr>
+</tbody>
+</table>
+<p>at和下标操作只适用于string,vector,deque和array。<br>back不适用于forward_list。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(!c.empty())</div><div class="line">&#123;</div><div class="line">    c.front() = <span class="number">42</span>;</div><div class="line">    <span class="keyword">auto</span> &amp;v = c.back(); <span class="comment">// 获得指向最后一个元素的引用</span></div><div class="line">    v = <span class="number">1024</span>;</div><div class="line">    <span class="keyword">auto</span> v2 = c.back(); <span class="comment">// v2不是引用，只是c.back()的一个拷贝</span></div><div class="line">    v2 = <span class="number">0</span>; <span class="comment">// 没有改变c中的元素</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"v: "</span>&lt;&lt; v &lt;&lt;<span class="string">"  v2: "</span> &lt;&lt; v2 &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果希望下标是合法的，可以使用at函数；如果下标越界，则抛出一个out_of_range异常。</p>
+<h3 id="删除元素（9-3-3，P311）"><a href="#删除元素（9-3-3，P311）" class="headerlink" title="删除元素（9.3.3，P311）"></a>删除元素（9.3.3，P311）</h3><p>这些操作会改变容器大小，所以不适用于array；forward_list有特殊版本的erase；forward_list不支持pop_back；vector和string不支持pop_front。</p>
+<table>
+<thead>
+<tr>
+<th>删除元素操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c.pop_back()</td>
+<td>删除c中尾元素。若c为空，则函数行为未定义。函数返回void</td>
+</tr>
+<tr>
+<td>c.pop_front()</td>
+<td>删除c中首元素。若c为空，则函数行为未定义。函数返回void</td>
+</tr>
+<tr>
+<td>c.erase(p)</td>
+<td>删除迭代器p所指定的元素，返回一个指向被删元素之后元素的迭代器，若p指向尾元素，则返回尾后(off_the_end)迭代器。若p是尾后迭代器，则函数行为未定义。</td>
+</tr>
+<tr>
+<td>c.erase(b,e)</td>
+<td>删除迭代器b和e所指定范围内的元素。返回一个指向最后一个被删元素之后元素的迭代器，若e本身就是尾后迭代器，则函数也返回尾后迭代器</td>
+</tr>
+<tr>
+<td>c.clear()</td>
+<td>删除c中所有元素。返回void</td>
+</tr>
+</tbody>
+</table>
+<p>删除一个<code>list</code>中的所有奇数：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;list&gt;</span></span></div><div class="line"><span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; lst = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</div><div class="line"><span class="keyword">auto</span> it = lst.begin();</div><div class="line"><span class="keyword">while</span>(it != lst.end())</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(*it % <span class="number">2</span>)  <span class="comment">// 如果是奇数</span></div><div class="line">        it = lst.erase(it); <span class="comment">//删除此元素，返回下一个元素</span></div><div class="line">    <span class="keyword">else</span></div><div class="line">        ++it; <span class="comment">// 递增</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="特殊的forward-list操作"><a href="#特殊的forward-list操作" class="headerlink" title="特殊的forward_list操作"></a>特殊的forward_list操作</h3><table>
+<thead>
+<tr>
+<th>在forward_list中插入或删除元素的操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lst.before_begin()</td>
+<td>返回指向链表首元素之前不存在的元素的迭代器。此迭代器不能解引用。</td>
+</tr>
+<tr>
+<td>lst.cbefore_begin()</td>
+<td>cbefore_begin()返回一个const_iterator</td>
+</tr>
+<tr>
+<td>lst.insert_after(p,t)</td>
+<td>在迭代器p之后的位置插入元素，t是一个对象</td>
+</tr>
+<tr>
+<td>lst.insert_after(p,n,t)</td>
+<td>t是一个对象，n是数量</td>
+</tr>
+<tr>
+<td>lst.insert_after(p,b,e)</td>
+<td>b和e是表示范围的一对迭代器(b和e不能指向lst内)</td>
+</tr>
+<tr>
+<td>lst.insert_after(p,il)</td>
+<td>il是一个花括号列表。</td>
+</tr>
+<tr>
+<td>insert_after小结</td>
+<td>返回一个指向最后一个插入的元素的迭代器。如果范围为空，则返回p。若p为尾后迭代器，则函数行为未定义</td>
+</tr>
+<tr>
+<td>emplace_after(p,args)</td>
+<td>使用args在p指定的位置之后创建一个元素。返回一个指向这个新元素的迭代器。若p为尾后迭代器，则函数行为未定义。</td>
+</tr>
+<tr>
+<td>lst.earse_after(p)</td>
+<td>删除p指向的位置之后的元素，或删除从b之后直到(但不包含)e之间的元素。返回一个</td>
+</tr>
+<tr>
+<td>lst.earse_after(b,e)</td>
+<td>指向被删元素之后元素的迭代器，若不存在这样的元素，则返回尾后迭代器。如果p指向lst的尾元素或者是一个尾后迭代器，则函数行为未定义。</td>
+</tr>
+</tbody>
+</table>
+<p>删除一个<code>forward_list</code>中的所有奇数：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">forward_list&lt;<span class="keyword">int</span>&gt; flst = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</div><div class="line"><span class="keyword">auto</span> curr = flst.begin();</div><div class="line"><span class="keyword">auto</span> prev = flst.before_begin();</div><div class="line"><span class="keyword">while</span>(curr != flst.end())</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(*curr % <span class="number">2</span>)</div><div class="line">        curr = flst.erase_after(prev);</div><div class="line">    <span class="keyword">else</span> </div><div class="line">        prev = curr++; <span class="comment">//或者 prev=curr; curr++; //或者 prev++;curr++; </span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="改变容器大小（9-3-5，P314）"><a href="#改变容器大小（9-3-5，P314）" class="headerlink" title="改变容器大小（9.3.5，P314）"></a>改变容器大小（9.3.5，P314）</h3><table>
+<thead>
+<tr>
+<th>顺序容器大小操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c.resize(n)</td>
+<td>调整c的大小为n个元素。若<code>n&lt;c.size()</code>，则多出的元素被丢弃。若必须添加新元素，对新元素进行值初始化</td>
+</tr>
+<tr>
+<td>c.resize(n,t)</td>
+<td>调整c的大小为n个元素。任何新添加的元素都初始化为值t。</td>
+</tr>
+</tbody>
+</table>
+<p><code>resize</code>不适用于<code>array</code>。<code>resize</code>用来增大或者缩小容器。</p>
+<h3 id="容器操作可能使迭代器失效"><a href="#容器操作可能使迭代器失效" class="headerlink" title="容器操作可能使迭代器失效"></a>容器操作可能使迭代器失效</h3><p>向容器添加元素之后：</p>
+<p>⑴.如果容器是<code>vector</code>或<code>string</code>，且存储空间被重新分配，则指向容器的迭代器、指针和引用都会失效。如果存储空间未被重新分配，指向插入位置之前的元素的迭代器、指针和引用仍有效，但指向插入位置之后元素的迭代器、指针和引用将会失效。</p>
+<p>⑵.对于<code>deque</code>，插入到除首尾位置之外的任何位置都会导致迭代器、指针和引用失效。如果在首尾位置添加元素，迭代器会失效，但指向存在的元素的引用和指针不会失效。</p>
+<p>⑶.对于<code>list</code>和<code>forward_list</code>，指向容器的迭代器(包括尾后迭代器和首前迭代器)、指针和引用仍然有效。</p>
+<p>当我们删除一个元素后：</p>
+<p>⑴.对于<code>list</code>和<code>forward_list</code>，指向容器其他位置的迭代器(包括尾后迭代器和首前迭代器)、指针和引用仍然有效。</p>
+<p>⑵.对于<code>deque</code>，如果在首尾之外的任何位置删除元素，那么指向被删除元素之外其他元素的迭代器、引用或指针也会失效。如果是删除deque的尾元素，则尾后迭代器也会失效，但其他迭代器、引用和指针不受影响；如果是删除首元素，这些也不会受影响。</p>
+<p>⑶.对于<code>vector</code>和<code>string</code>，指向被删元素之前元素的迭代器、引用和指针仍然有效。</p>
+<p>注：当我们删除元素时，尾后迭代器总是会失效。</p>
+<p>$\color{red}{\heartsuit}$ <font color="0D54BD">由于向迭代器添加元素和从迭代器删除元素的代码可能会使得迭代器失效，因此必须保证每次改变容器的操作之后都能正确地重新定位迭代器。</font></p>
+<p>$\color{red}{\heartsuit}$ <font color="0D54BD">添加或删除元素的循环过程必须反复调用end，而不能在循环之前保存end返回的迭代器。</font></p>
+<h2 id="vector是如何增长的（9-4，P317）"><a href="#vector是如何增长的（9-4，P317）" class="headerlink" title="vector是如何增长的（9.4，P317）"></a>vector是如何增长的（9.4，P317）</h2><p>1.容器大小管理操作</p>
+<p><code>shrink_to_fit</code>只使用于<code>vector</code>、<code>string</code>和<code>deque</code>；<code>capacity</code>和<code>reserve</code>只适用于<code>vector</code>和<code>string</code></p>
+<table>
+<thead>
+<tr>
+<th>容器大小管理操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c.shrink_to_fit()</td>
+<td>请将capacity()减少为与size()相同大小</td>
+</tr>
+<tr>
+<td>c.capacity()</td>
+<td>不重新分配内存空间的话，c可以保存多少元素</td>
+</tr>
+<tr>
+<td>c.reserve(n)</td>
+<td>分配至少能容纳n个元素的内存空间</td>
+</tr>
+</tbody>
+</table>
+<p>2.当添加的数超出了<code>vector</code>原本分配的最大容量，<code>vector</code>的实现采用的策略是在每次需要分配新内存空间时将当前容量翻倍。</p>
+<p>程序测试：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">auto</span> i = <span class="number">0</span>; i &lt;= <span class="number">33</span>; ++i)&#123;</div><div class="line">       <span class="built_in">cout</span> &lt;&lt; <span class="string">"size: "</span>&lt;&lt; vec.size() &lt;&lt;<span class="string">"capacity: "</span>&lt;&lt; vec.capacity() &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">       vec.push_back(i);</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<h2 id="额外的string操作（9-5，P320）"><a href="#额外的string操作（9-5，P320）" class="headerlink" title="额外的string操作（9.5，P320）"></a>额外的string操作（9.5，P320）</h2><h3 id="构造string的其他方法"><a href="#构造string的其他方法" class="headerlink" title="构造string的其他方法"></a>构造string的其他方法</h3><table>
+<thead>
+<tr>
+<th>构造string的其他方法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string s(cp,n)</td>
+<td>s是cp指向的数组中前n个字符的拷贝。此数组至少应该包含n个字符。</td>
+</tr>
+<tr>
+<td>string s(s2,pos2)</td>
+<td>s是string s2从下标pos2开始的字符的拷贝。若pos2&gt;s2.size()，构造函数的行为未定义</td>
+</tr>
+<tr>
+<td>string s(s2,pos2,len2)</td>
+<td>s是string s2从下标pos2开始len2个字符的拷贝。若pos2&gt;s2.size()，构造函数的行为未定义。不管len2的值是多少，构造函数至多拷贝s2.size()-pos2个字符。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="子字符串操作"><a href="#子字符串操作" class="headerlink" title="子字符串操作"></a>子字符串操作</h3><p><code>s.substr(pos,n)</code>：返回一个<code>string</code>，包含s中从pos开始的n个字符的拷贝。<code>pos</code>的默认值为<code>0</code>。<code>n</code>的默认值为<code>s.size()-pos</code>，即拷贝从pos开始的所有字符。</p>
+<h3 id="改变string的其他方法"><a href="#改变string的其他方法" class="headerlink" title="改变string的其他方法"></a>改变string的其他方法</h3><table>
+<thead>
+<tr>
+<th>修改string的操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s.insert(pos,args)</td>
+<td>在pos之前插入args指定的字符。pos可以是一个下标或一个迭代器。接受下标的版本返回一个指向s的引用；接受迭代器的版本返回指向第一个插入字符的迭代器。</td>
+</tr>
+<tr>
+<td>s.earse(pos,len)</td>
+<td>删除从位置pos开始的len个字符。如果len被省略，则删除从pos开始直至s末尾的所有字符。返回一个指向s的引用。</td>
+</tr>
+<tr>
+<td>s.assign(args)</td>
+<td>将s中的字符替换为args指定的字符。返回一个指向s的引用</td>
+</tr>
+<tr>
+<td>s.append(args)</td>
+<td>将args追加到s。返回一个指向s的引用</td>
+</tr>
+<tr>
+<td>s.replace(range,args)</td>
+<td>删除s中范围range内的字符，替换为args指定的字符。range或者是一个下标和一个长度，或者是一对指向s的迭代器。返回一个指向s的引用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="string搜索操作（9-5-3，P325）"><a href="#string搜索操作（9-5-3，P325）" class="headerlink" title="string搜索操作（9.5.3，P325）"></a>string搜索操作（9.5.3，P325）</h3><p><code>string</code>类提供了6个不同的搜索函数，每个函数都有4个重载版本。</p>
+<p>每个搜索操作都会返回一个<code>string::size_type</code>值，表示匹配发生位置的下标。</p>
+<p>如果搜索失败，则返回一个名为<code>string::npos</code>的static成员。标准库将<code>npos</code>定义成一个<code>const string::size_type</code>类型，并初始化为<code>-1</code>。</p>
+<p><code>string</code>搜索函数返回<code>string::size_type</code>值，该类型时一个<code>unsigned</code>类型，因此我们应该尽量不要使用带符号类型来保存这些返回值。</p>
+<table>
+<thead>
+<tr>
+<th>string搜索操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s.find(args)</td>
+<td>查找s中args第一次出现的位置</td>
+</tr>
+<tr>
+<td>s.rfind(args)</td>
+<td>查找s中args最后一次出现的位置</td>
+</tr>
+<tr>
+<td>s.find_first_of(args)</td>
+<td>在s中查找args中任何一个字符第一次出现的位置</td>
+</tr>
+<tr>
+<td>s.find_last_of(args)</td>
+<td>　在s中查找args中任何一个字符最后第一次出现的位置</td>
+</tr>
+<tr>
+<td>s.find_first_not_of(args)</td>
+<td>在s中查找第一个不在args中的字符</td>
+</tr>
+<tr>
+<td>s.find_last_not_of(args)</td>
+<td>在s中查找最后一个不在args中的字符  </td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>args的形式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c,pos</td>
+<td>从s中位置pos开始查找字符c。pos默认为0</td>
+</tr>
+<tr>
+<td>s2,pos</td>
+<td>从s中位置pos开始查找字符串s2。pos默认为0</td>
+</tr>
+<tr>
+<td>cp,pos</td>
+<td>从s中位置pos开始查找指针cp指向的以空字符结尾的C风格字符串。pos默认为0</td>
+</tr>
+<tr>
+<td>cp,pos,n</td>
+<td>从s中位置pos开始查找指针cp指向的数组的前n个字符。pos和n无默认值</td>
+</tr>
+</tbody>
+</table>
+<h3 id="字符串比较函数-9-5-4，P327"><a href="#字符串比较函数-9-5-4，P327" class="headerlink" title="字符串比较函数(9.5.4，P327)"></a>字符串比较函数(9.5.4，P327)</h3><table>
+<thead>
+<tr>
+<th>s.compare(args)中args形式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s2</td>
+<td>比较s和s2</td>
+</tr>
+<tr>
+<td>pos1,n1,s2</td>
+<td>将s中从pos1开始的n1个字符与s2比较</td>
+</tr>
+<tr>
+<td>pos1,n1,s2,pos2,n2</td>
+<td>将s中从pos1开始的n1个字符与s2中从pos2开始的n2个字符进行比较</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>比较s与cp指向的以空字符结尾的字符数组</td>
+</tr>
+<tr>
+<td>pos1,n1,cp</td>
+<td>将s中从pos1开始的n1个字符与cp指向的以空字符结尾的字符数组进行比较</td>
+</tr>
+<tr>
+<td>pos1,n1,cp,n2</td>
+<td>将s中从pos1开始的n1个字符与cp指向的地址开始的n2个字符进行比较</td>
+</tr>
+</tbody>
+</table>
+<h3 id="string和数值之间的转换-9-5-5，P327"><a href="#string和数值之间的转换-9-5-5，P327" class="headerlink" title="string和数值之间的转换(9.5.5，P327)"></a>string和数值之间的转换(9.5.5，P327)</h3><p>string参数中第一个非空白符必须是符号(+或-)或数字。它可以以0x或0X开头来表示十六进制数。对那些将字符串转换为浮点值的函数，string参数也可以以小数点开头，并可有包含e或E来表示指数部分。对于那些将字符串转换为整型值的函数，根据基数不同，string参数可以包含字母字符，对应大于数字9的数</p>
+<p>如果string不能转换为一个数值，这些函数抛出一个invalid_argument异常。如果转换得到的数值无法用任何类型表示，则抛出一个out_of_range异常</p>
+<table>
+<thead>
+<tr>
+<th>string和数值之间的转换</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to_string(val)</td>
+<td>一组重载函数，返回数值val的string表示。val可以是任何算术类型。对每个浮点类型和int或更大的整型，都有相应版本的to_string。与往常一样，小整型会被提升。</td>
+</tr>
+<tr>
+<td>stoi(s,p,b)</td>
+<td>返回s的起始子串(表示整数内容)的数值，返回值类型分别是int,long,unsigned long,long long,</td>
+</tr>
+<tr>
+<td>stol(s,p,b)</td>
+<td>unsigned long long。b表示转换所用的基数，默认值是10。p是size_t指针，用来保存s中第一个</td>
+</tr>
+<tr>
+<td>stoul(s,p,b)</td>
+<td>非数值字符下标，p默认为0，即函数不保存下标。</td>
+</tr>
+<tr>
+<td>stoll(s,p,b) </td>
+</tr>
+<tr>
+<td>stoull(s,p,b) </td>
+</tr>
+<tr>
+<td>stof(s,p)</td>
+<td>返回s的起始子串(表示浮点数内容)的数值，返回值类型分别是float,double或long double。参数</td>
+</tr>
+<tr>
+<td>stod(s,p)</td>
+<td>p的作用于整数转换函数中一样</td>
+</tr>
+<tr>
+<td>stold(s,p)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="容器适配器（9-6，P329）"><a href="#容器适配器（9-6，P329）" class="headerlink" title="容器适配器（9.6，P329）"></a>容器适配器（9.6，P329）</h2><p>标准库定义了三个顺序容器适配器：<code>stack</code>、<code>queue</code>和<code>priority_queue</code>。一个容器适配器接受一种已有的容器类型，使其行为看起来像一种不同的类型。例如，stack适配器接受一个顺序容器（除array或forward_list）。</p>
+<p>所有容器适配器都支持的操作和类型：</p>
+<table>
+<thead>
+<tr>
+<th>容器适配器都支持的操作和类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size_type</td>
+<td>一种类型，足以保存当前类型的最大对象的大小</td>
+</tr>
+<tr>
+<td>value_type</td>
+<td>元素类型</td>
+</tr>
+<tr>
+<td>container_type</td>
+<td>实现适配器的底层容器类型</td>
+</tr>
+<tr>
+<td>A a;</td>
+<td>创建一个名为a的空适配器</td>
+</tr>
+<tr>
+<td>A a(c);</td>
+<td>创建一个名为a的适配器，带有容器c的一个拷贝</td>
+</tr>
+<tr>
+<td>关系运算符</td>
+<td>每个适配器都支持所有关系运算符:==,!=,&lt;,&lt;=,&gt;,&gt;=，这些运算符返回底层容器的比较结果</td>
+</tr>
+<tr>
+<td>a.empty()</td>
+<td>若a包含任何元素，返回false，否则返回true</td>
+</tr>
+<tr>
+<td>a.size()</td>
+<td>返回a中元素数目</td>
+</tr>
+<tr>
+<td>swap(a,b)</td>
+<td>交换a和b的内容，a和b必须有相同类型，包括底层容器类型也必须相同</td>
+</tr>
+<tr>
+<td>a.swap(b)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="栈适配器的其他操作"><a href="#栈适配器的其他操作" class="headerlink" title="栈适配器的其他操作"></a>栈适配器的其他操作</h3><table>
+<thead>
+<tr>
+<th>栈适配器的其他操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s.pop()</td>
+<td>删除栈顶元素，但不返回该元素值</td>
+</tr>
+<tr>
+<td>s.push(item)</td>
+<td>创建一个新元素压入栈顶，该元素通过拷贝或移动item而来，或者由args构造</td>
+</tr>
+<tr>
+<td>s.emplace(args)</td>
+</tr>
+<tr>
+<td>s.top()</td>
+<td>返回栈顶元素，但不将元素弹出栈</td>
+</tr>
+</tbody>
+</table>
+<h3 id="queue和priority-queue的其他操作"><a href="#queue和priority-queue的其他操作" class="headerlink" title="queue和priority_queue的其他操作"></a><code>queue</code>和<code>priority_queue</code>的其他操作</h3><table>
+<thead>
+<tr>
+<th><code>queue</code>和<code>priority_queue</code>的其他操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>q.pop()</td>
+<td>返回queue的首元素或priority_queue的最高优先级元素，但不删除此元素</td>
+</tr>
+<tr>
+<td>q.front()</td>
+<td>返回首元素，但不删除此元素</td>
+</tr>
+<tr>
+<td>q.back()</td>
+<td>返回尾元素，但不删除此元素，只适用于queue</td>
+</tr>
+<tr>
+<td>q.top()</td>
+<td>返回优先级最高的元素，但不删除此元素，只适用于priority_queue</td>
+</tr>
+<tr>
+<td>q.push(item)</td>
+<td>在queue末尾或priority_queue中器当的位置创建一个元素，其值为item，或者有args构造</td>
+</tr>
+<tr>
+<td>q.emplace(args)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li>C++ Primer 中文第五版</li>
+<li><a href="http://blog.csdn.net/sunhero2010/article/details/49800101" target="_blank" rel="external">C++primer第五版第九章学习笔记</a></li>
+<li><a href="http://blog.csdn.net/libin1105/article/details/48676235" target="_blank" rel="external">《C++primer(第五版)》学习之路-第九章：顺序容器</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wangwlj 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="wangwlj 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://wangwlj.com/2018/01/18/CPP_09/" title="C++ Primer学习笔记：(九)顺序容器">http://wangwlj.com/2018/01/18/CPP_09/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/17/CPP_08/" rel="next" title="C++ Primer学习笔记：(八)IO类">
+                <i class="fa fa-chevron-left"></i> C++ Primer学习笔记：(八)IO类
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjUyMi85MDgz"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/head_icon.jpg"
+              alt="wangwlj" />
+          
+            <p class="site-author-name" itemprop="name">wangwlj</p>
+            <p class="site-description motion-element" itemprop="description">所谓王者，必卓然特立，争当人杰。</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/qwerty200696" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:wanglijie1994@126.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/LijieWang" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-gratipay"></i>知乎</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/3280603012" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>微博</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/qwerty200696" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-codiepie"></i>CSDN</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qq_31196849" title="小草莓" target="_blank">小草莓</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://my.csdn.net/qingkong1994" title="qingkong" target="_blank">qingkong</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序容器概述（9-1，P292）"><span class="nav-number">1.</span> <span class="nav-text">顺序容器概述（9.1，P292）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器库概览（9-2，P294）"><span class="nav-number">2.</span> <span class="nav-text">容器库概览（9.2，P294）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#容器操作表"><span class="nav-number">2.1.</span> <span class="nav-text">容器操作表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代器"><span class="nav-number">2.2.</span> <span class="nav-text">迭代器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器类型成员"><span class="nav-number">2.3.</span> <span class="nav-text">容器类型成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器定义和初始化-9-2-4，P299"><span class="nav-number">2.4.</span> <span class="nav-text">容器定义和初始化(9.2.4，P299)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#赋值与swap-9-2-5，P302"><span class="nav-number">2.5.</span> <span class="nav-text">赋值与swap(9.2.5，P302)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序容器操作-9-3，P305"><span class="nav-number">3.</span> <span class="nav-text">顺序容器操作(9.3，P305)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向顺序容器中添加元素"><span class="nav-number">3.1.</span> <span class="nav-text">向顺序容器中添加元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问元素-9-3-2，P309"><span class="nav-number">3.2.</span> <span class="nav-text">访问元素(9.3.2，P309)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除元素（9-3-3，P311）"><span class="nav-number">3.3.</span> <span class="nav-text">删除元素（9.3.3，P311）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊的forward-list操作"><span class="nav-number">3.4.</span> <span class="nav-text">特殊的forward_list操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变容器大小（9-3-5，P314）"><span class="nav-number">3.5.</span> <span class="nav-text">改变容器大小（9.3.5，P314）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器操作可能使迭代器失效"><span class="nav-number">3.6.</span> <span class="nav-text">容器操作可能使迭代器失效</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vector是如何增长的（9-4，P317）"><span class="nav-number">4.</span> <span class="nav-text">vector是如何增长的（9.4，P317）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#额外的string操作（9-5，P320）"><span class="nav-number">5.</span> <span class="nav-text">额外的string操作（9.5，P320）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造string的其他方法"><span class="nav-number">5.1.</span> <span class="nav-text">构造string的其他方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子字符串操作"><span class="nav-number">5.2.</span> <span class="nav-text">子字符串操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变string的其他方法"><span class="nav-number">5.3.</span> <span class="nav-text">改变string的其他方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string搜索操作（9-5-3，P325）"><span class="nav-number">5.4.</span> <span class="nav-text">string搜索操作（9.5.3，P325）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串比较函数-9-5-4，P327"><span class="nav-number">5.5.</span> <span class="nav-text">字符串比较函数(9.5.4，P327)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string和数值之间的转换-9-5-5，P327"><span class="nav-number">5.6.</span> <span class="nav-text">string和数值之间的转换(9.5.5，P327)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器适配器（9-6，P329）"><span class="nav-number">6.</span> <span class="nav-text">容器适配器（9.6，P329）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#栈适配器的其他操作"><span class="nav-number">6.1.</span> <span class="nav-text">栈适配器的其他操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#queue和priority-queue的其他操作"><span class="nav-number">6.2.</span> <span class="nav-text">queue和priority_queue的其他操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangwlj</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      141.8k
+    </span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=64793620";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yrpmXJiSAy4frnKvqrxvNUSG-gzGzoHsz", "35GTu3Aq4E3uxua6GpER2XLp");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 8596,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
