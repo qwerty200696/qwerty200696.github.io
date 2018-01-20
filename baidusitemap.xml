@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://wangwlj.com/2018/01/20/CPP_10/</loc>
+    <lastmod>2018-01-20T15:00:52.724Z</lastmod>
+    <data>
+        <display>
+        <title>C++ Primer学习笔记：(十)泛型算法</title>
+        <pubTime>2018-01-20T15:00:35.000Z</pubTime>
+        
+        <tag>C++</tag>
+         
+         
+           
+             
+              <breadCrumb title="C++ Primer" url="http://wangwlj.com/categories/C-Primer/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wangwlj.com/2018/01/18/CPP_09/</loc>
-    <lastmod>2018-01-18T14:11:57.432Z</lastmod>
+    <lastmod>2018-01-19T07:15:32.137Z</lastmod>
     <data>
         <display>
         <title>C++ Primer学习笔记：(九)顺序容器</title>
