@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="wangwlj&#39;s Blog">
 <meta property="og:description" content="顺序容器只定义了很少的操作：在多数情况下，我们可以添加和删除元素、访问首尾元素、确定容器是否为空以及获得指向首元素或者尾元素之后位置的迭代器。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-20T15:00:52.724Z">
+<meta property="og:updated_time" content="2018-01-21T11:30:26.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ Primer学习笔记：(十)泛型算法">
 <meta name="twitter:description" content="顺序容器只定义了很少的操作：在多数情况下，我们可以添加和删除元素、访问首尾元素、确定容器是否为空以及获得指向首元素或者尾元素之后位置的迭代器。">
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,644
+                  3,208
                 </span>
               
 
@@ -540,7 +540,9 @@
 </tr>
 </tbody>
 </table>
-<h3 id="iostream迭代器"><a href="#iostream迭代器" class="headerlink" title="iostream迭代器"></a>iostream迭代器</h3><h4 id="istream-iterator操作"><a href="#istream-iterator操作" class="headerlink" title="istream_iterator操作"></a><code>istream_iterator</code>操作</h4><table>
+<p>练习10.28：分别使用上述三种插入迭代器将vector的内容拷贝到容器中。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i= <span class="number">1</span>; i&lt;=<span class="number">9</span>; ++i)</div><div class="line">&#123;</div><div class="line">	v.push_back(i);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; di, dbi, dfi;</div><div class="line">copy(v.begin(), v.end(), inserter(di, di.begin())); <span class="comment">// 接收两个参数</span></div><div class="line">copy(v.begin(), v.end(), back_inserter(dbi));</div><div class="line">copy(v.begin(), v.end(), front_inserter(dfi));</div></pre></td></tr></table></figure></p>
+<p>三个插入器的最终结果为：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">inserter:<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> </div><div class="line">back_inserter:<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> </div><div class="line">front_inserter:<span class="number">9</span> <span class="number">8</span> <span class="number">7</span> <span class="number">6</span> <span class="number">5</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span></div></pre></td></tr></table></figure></p>
+<h3 id="iostream迭代器"><a href="#iostream迭代器" class="headerlink" title="iostream迭代器"></a>iostream迭代器</h3><h4 id="istream-iterator操作"><a href="#istream-iterator操作" class="headerlink" title="istream_iterator操作"></a>istream_iterator操作</h4><table>
 <thead>
 <tr>
 <th><code>istream_iterator</code>操作</th>
@@ -554,7 +556,7 @@
 </tr>
 <tr>
 <td><code>istream_iterator&lt;T&gt; end;</code></td>
-<td>读取类型为T的值的istream_iterator迭代器，表示尾后位置</td>
+<td>读取类型为T的值的<code>istream_iterator</code>迭代器，表示尾后位置 （默认初始化）</td>
 </tr>
 <tr>
 <td><code>in1 == in2</code></td>
@@ -578,7 +580,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="ostream-iterator操作"><a href="#ostream-iterator操作" class="headerlink" title="ostream_iterator操作"></a><code>ostream_iterator</code>操作</h4><table>
+<p>计算从标准输入的值的和：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">istream_iterator&lt;<span class="keyword">int</span>&gt; in_iter(<span class="built_in">cin</span>), eof;</div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"sum is: "</span> &lt;&lt; accumulate(in_iter, eof, <span class="number">0</span>) &lt;&lt; <span class="built_in">endl</span>;</div></pre></td></tr></table></figure></p>
+<h4 id="ostream-iterator操作"><a href="#ostream-iterator操作" class="headerlink" title="ostream_iterator操作"></a>ostream_iterator操作</h4><table>
 <thead>
 <tr>
 <th><code>ostream_iterator</code>操作</th>
@@ -604,16 +607,51 @@
 </tr>
 </tbody>
 </table>
-<h2 id="泛型算法结构（10-5）"><a href="#泛型算法结构（10-5）" class="headerlink" title="泛型算法结构（10.5）"></a>泛型算法结构（10.5）</h2><h3 id="迭代器类别"><a href="#迭代器类别" class="headerlink" title="迭代器类别"></a>迭代器类别</h3><p>输入迭代器                只读，不写；单遍扫描，只能递增</p>
-<p>输出迭代器                只写，不读；单遍扫描，只能递增</p>
-<p>前向迭代器                可读写，多遍扫描，只能递增</p>
-<p>双向迭代器                可读写，多遍扫描，可递增递减</p>
-<p>随机访问迭代器         可读写，多遍扫描，支持全部迭代器运算</p>
+<p>使用流迭代器输出vector的内容：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</div><div class="line">ostream_iterator&lt;<span class="keyword">int</span>&gt; out_iter(<span class="built_in">cout</span>, <span class="string">" "</span>);</div><div class="line">copy(v.begin(),v.end(),out_iter);</div></pre></td></tr></table></figure></p>
+<h3 id="反向迭代器（10-4-3，P363）"><a href="#反向迭代器（10-4-3，P363）" class="headerlink" title="反向迭代器（10.4.3，P363）"></a>反向迭代器（10.4.3，P363）</h3><p>sort函数正向与逆序排序：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v&#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">8</span>&#125;;</div><div class="line"></div><div class="line">sort(v.begin(),v.end());</div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"After sort: "</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> i = v.begin(); i != v.end(); ++i)</div><div class="line">&#123;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; *i &lt;&lt; <span class="string">" "</span> ;</div><div class="line">&#125;</div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"></div><div class="line">sort(v.rbegin(),v.rend());</div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"After reverse sort: "</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> i = v.begin(); i != v.end(); ++i)</div><div class="line">&#123;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; *i &lt;&lt; <span class="string">" "</span> ;</div><div class="line">&#125;</div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div></pre></td></tr></table></figure></p>
+<p>输出结果为：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">After sort: <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> </div><div class="line">After reverse sort: <span class="number">9</span> <span class="number">8</span> <span class="number">7</span> <span class="number">6</span> <span class="number">5</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span></div></pre></td></tr></table></figure></p>
+<p>使用反向迭代器逆序打印一个vector(练习10.34)：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v&#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">8</span>&#125;;</div><div class="line"><span class="built_in">cout</span> &lt;&lt;<span class="string">"逆序打印："</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> i = v.crbegin(); i != v.crend(); ++i)</div><div class="line">&#123;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; *i &lt;&lt; <span class="string">" "</span> ;</div><div class="line">&#125;</div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div></pre></td></tr></table></figure></p>
+<p>输出结果为：</p>
+<blockquote>
+<p>逆序打印：8 9 2 6 4 7 1 5 3 </p>
+</blockquote>
+<p>使用<code>find</code>在一个int的<code>list</code>中查找最后一个值为<code>0</code>的元素（练习10.36）：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; v&#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">0</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">8</span>&#125;;</div><div class="line"></div><div class="line"><span class="keyword">auto</span> it = find(v.cbegin(),v.cend(),<span class="number">0</span>);</div><div class="line"><span class="keyword">auto</span> itr = find(v.crbegin(),v.crend(),<span class="number">0</span>);</div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"迭代器的指向位置： "</span> &lt;&lt; *it &lt;&lt; *itr &lt;&lt;*(itr.base()) &lt;&lt; <span class="built_in">endl</span>;	</div><div class="line"></div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"After find: "</span> ;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> i = it; i != v.cend(); ++i)</div><div class="line">&#123;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; *i &lt;&lt; <span class="string">" "</span> ;</div><div class="line">&#125;</div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"></div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"After reverse find: "</span> ;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> i = itr.base(); i != v.cend(); ++i)</div><div class="line">&#123;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; *i &lt;&lt; <span class="string">" "</span> ;</div><div class="line">&#125;</div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div></pre></td></tr></table></figure></p>
+<p>输出为：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">迭代器的指向位置： <span class="number">006</span></div><div class="line">After find: <span class="number">0</span> <span class="number">7</span> <span class="number">4</span> <span class="number">0</span> <span class="number">6</span> <span class="number">2</span> <span class="number">9</span> <span class="number">8</span> </div><div class="line">After reverse find: <span class="number">6</span> <span class="number">2</span> <span class="number">9</span> <span class="number">8</span></div></pre></td></tr></table></figure></p>
+<h2 id="泛型算法结构（10-5）"><a href="#泛型算法结构（10-5）" class="headerlink" title="泛型算法结构（10.5）"></a>泛型算法结构（10.5）</h2><h3 id="迭代器类别"><a href="#迭代器类别" class="headerlink" title="迭代器类别"></a>迭代器类别</h3><table>
+<thead>
+<tr>
+<th>迭代器类别</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入迭代器</td>
+<td>只读，不写；单遍扫描，只能递增</td>
+</tr>
+<tr>
+<td>输出迭代器</td>
+<td>只写，不读；单遍扫描，只能递增</td>
+</tr>
+<tr>
+<td>前向迭代器</td>
+<td>可读写，多遍扫描，只能递增</td>
+</tr>
+<tr>
+<td>双向迭代器</td>
+<td>可读写，多遍扫描，可递增递减</td>
+</tr>
+<tr>
+<td>随机访问迭代器</td>
+<td>可读写，多遍扫描，支持全部迭代器运算</td>
+</tr>
+</tbody>
+</table>
 <h3 id="算法形参模式"><a href="#算法形参模式" class="headerlink" title="算法形参模式"></a>算法形参模式</h3><p>4种算法形参模式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">alg(beg,end,other args);</div><div class="line">alg(beg,end,dest,other args);</div><div class="line">alg(beg,end,beg2,other args);</div><div class="line">alg(beg,end,beg2,end2,other args);</div></pre></td></tr></table></figure></p>
 <p>其中，<code>alg</code>是算法的名字，<code>beg</code>和<code>end</code>是算法所操作的输入范围。<code>dest</code>、<code>beg2</code>和<code>end2</code>，都是迭代器参数。<br><code>dest</code>参数表示算法可以写入的目的位置的迭代器，算法假定：不管写入多少个元素都是安全的。</p>
 <h3 id="算法命名规范"><a href="#算法命名规范" class="headerlink" title="算法命名规范"></a>算法命名规范</h3><p>一些算法使用重载参数形式传递一个谓词。</p>
-<p><code>_if</code>版本的算法：</p>
-<p>区分拷贝元素的版本和不拷贝元素的版本：</p>
+<p><code>_if</code>版本的算法：接受一个元素值的算法通常有一个接受谓词版本的算法，加上后缀<code>_if</code></p>
+<p>区分拷贝元素的版本和不拷贝元素的版本：重排元素的算法通常直接写回给定的输入序列，也可以将元素写到一个指定的输出目的的位置，此类算法在名字后面加上<code>_copy</code></p>
 <h2 id="特定容器算法（10-6）"><a href="#特定容器算法（10-6）" class="headerlink" title="特定容器算法（10.6）"></a>特定容器算法（10.6）</h2><h3 id="list和forward-list成员函数版本的算法"><a href="#list和forward-list成员函数版本的算法" class="headerlink" title="list和forward_list成员函数版本的算法"></a>list和forward_list成员函数版本的算法</h3><table>
 <thead>
 <tr>
@@ -623,14 +661,14 @@
 </thead>
 <tbody>
 <tr>
-<td>lst.merga(lst2)            </td>
+<td>lst.merga(lst2)   </td>
 </tr>
 <tr>
 <td>lst.megra(lst2,comp)</td>
 <td>将来自lst2的元素合并入lst。lst和lst2都必须是有序的。元素将从lst2中删除。在合并之后，lst2变成空。第一个版本使用&lt;运算符；第二个版本使用给定的比较操作。</td>
 </tr>
 <tr>
-<td>lst.remove(val)            </td>
+<td>lst.remove(val)</td>
 </tr>
 <tr>
 <td>lst.remove_if(pred)</td>
@@ -641,18 +679,18 @@
 <td>反转lst中元素的顺序</td>
 </tr>
 <tr>
-<td>lst.sort()                       </td>
+<td>lst.sort() </td>
 </tr>
 <tr>
 <td>lst.sort(comp)</td>
 <td>使用&lt;或给定比较操作排序元素</td>
 </tr>
 <tr>
-<td>lst.unique()        </td>
+<td>lst.unique()</td>
 </tr>
 <tr>
 <td>lst.unique(pred)</td>
-<td>调用erase删除统一个值的连续拷贝。第一个版本使用==；第二个版本使用给定的二元谓词</td>
+<td>调用erase删除同一个值的连续拷贝。第一个版本使用==；第二个版本使用给定的二元谓词</td>
 </tr>
 </tbody>
 </table>
@@ -1014,7 +1052,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述（10-1，P336）"><span class="nav-number">1.</span> <span class="nav-text">概述（10.1，P336）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初识泛型算法（10-2，P338）"><span class="nav-number">2.</span> <span class="nav-text">初识泛型算法（10.2，P338）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重排容器元素的算法"><span class="nav-number">2.1.</span> <span class="nav-text">重排容器元素的算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定制操作（10-3）"><span class="nav-number">3.</span> <span class="nav-text">定制操作（10.3）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向算法传递函数（10-3-1）"><span class="nav-number">3.1.</span> <span class="nav-text">向算法传递函数（10.3.1）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda表达式-10-3-2，P345"><span class="nav-number">3.2.</span> <span class="nav-text">lambda表达式(10.3.2，P345)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda捕获与返回（10-3-3，P349）"><span class="nav-number">3.3.</span> <span class="nav-text">lambda捕获与返回（10.3.3，P349）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数绑定（10-3-4，P354）"><span class="nav-number">3.4.</span> <span class="nav-text">参数绑定（10.3.4，P354）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再探迭代器（10-4）"><span class="nav-number">4.</span> <span class="nav-text">再探迭代器（10.4）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#插入迭代器（10-4-1，P358）"><span class="nav-number">4.1.</span> <span class="nav-text">插入迭代器（10.4.1，P358）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iostream迭代器"><span class="nav-number">4.2.</span> <span class="nav-text">iostream迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#istream-iterator操作"><span class="nav-number">4.2.1.</span> <span class="nav-text">istream_iterator操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ostream-iterator操作"><span class="nav-number">4.2.2.</span> <span class="nav-text">ostream_iterator操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型算法结构（10-5）"><span class="nav-number">5.</span> <span class="nav-text">泛型算法结构（10.5）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代器类别"><span class="nav-number">5.1.</span> <span class="nav-text">迭代器类别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法形参模式"><span class="nav-number">5.2.</span> <span class="nav-text">算法形参模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法命名规范"><span class="nav-number">5.3.</span> <span class="nav-text">算法命名规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特定容器算法（10-6）"><span class="nav-number">6.</span> <span class="nav-text">特定容器算法（10.6）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#list和forward-list成员函数版本的算法"><span class="nav-number">6.1.</span> <span class="nav-text">list和forward_list成员函数版本的算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list和forward-list的splice成员函数的参数"><span class="nav-number">6.2.</span> <span class="nav-text">list和forward_list的splice成员函数的参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述（10-1，P336）"><span class="nav-number">1.</span> <span class="nav-text">概述（10.1，P336）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初识泛型算法（10-2，P338）"><span class="nav-number">2.</span> <span class="nav-text">初识泛型算法（10.2，P338）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重排容器元素的算法"><span class="nav-number">2.1.</span> <span class="nav-text">重排容器元素的算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定制操作（10-3）"><span class="nav-number">3.</span> <span class="nav-text">定制操作（10.3）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向算法传递函数（10-3-1）"><span class="nav-number">3.1.</span> <span class="nav-text">向算法传递函数（10.3.1）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda表达式-10-3-2，P345"><span class="nav-number">3.2.</span> <span class="nav-text">lambda表达式(10.3.2，P345)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda捕获与返回（10-3-3，P349）"><span class="nav-number">3.3.</span> <span class="nav-text">lambda捕获与返回（10.3.3，P349）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数绑定（10-3-4，P354）"><span class="nav-number">3.4.</span> <span class="nav-text">参数绑定（10.3.4，P354）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再探迭代器（10-4）"><span class="nav-number">4.</span> <span class="nav-text">再探迭代器（10.4）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#插入迭代器（10-4-1，P358）"><span class="nav-number">4.1.</span> <span class="nav-text">插入迭代器（10.4.1，P358）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iostream迭代器"><span class="nav-number">4.2.</span> <span class="nav-text">iostream迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#istream-iterator操作"><span class="nav-number">4.2.1.</span> <span class="nav-text">istream_iterator操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ostream-iterator操作"><span class="nav-number">4.2.2.</span> <span class="nav-text">ostream_iterator操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向迭代器（10-4-3，P363）"><span class="nav-number">4.3.</span> <span class="nav-text">反向迭代器（10.4.3，P363）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型算法结构（10-5）"><span class="nav-number">5.</span> <span class="nav-text">泛型算法结构（10.5）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代器类别"><span class="nav-number">5.1.</span> <span class="nav-text">迭代器类别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法形参模式"><span class="nav-number">5.2.</span> <span class="nav-text">算法形参模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法命名规范"><span class="nav-number">5.3.</span> <span class="nav-text">算法命名规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特定容器算法（10-6）"><span class="nav-number">6.</span> <span class="nav-text">特定容器算法（10.6）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#list和forward-list成员函数版本的算法"><span class="nav-number">6.1.</span> <span class="nav-text">list和forward_list成员函数版本的算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list和forward-list的splice成员函数的参数"><span class="nav-number">6.2.</span> <span class="nav-text">list和forward_list的splice成员函数的参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -1057,7 +1095,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      144.5k
+      145.1k
     </span>
   
 </div>
