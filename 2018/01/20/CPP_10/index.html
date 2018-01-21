@@ -108,18 +108,18 @@
 
 
 
-<meta name="description" content="顺序容器只定义了很少的操作：在多数情况下，我们可以添加和删除元素、访问首尾元素、确定容器是否为空以及获得指向首元素或者尾元素之后位置的迭代器。">
+<meta name="description" content="标准库并没有给给个容器添加大量功能，而是提供了一组算法，这些算法大多数都独立于任何特定的容器。这些算法是通用的(generic，或称泛型的)：可以用于不同类型的容器或者元素。算法通过在迭代器上进行操作来实现类型无关。 算法不直接改变所操作序列的大小。它们会将一个元素从一个位置拷贝到另一个位置，但不会直接添加或删除元素。虽然算法不能向序列添加元素，但是插入迭代器可以做到。">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ Primer学习笔记：(十)泛型算法">
 <meta property="og:url" content="http://wangwlj.com/2018/01/20/CPP_10/index.html">
 <meta property="og:site_name" content="wangwlj&#39;s Blog">
-<meta property="og:description" content="顺序容器只定义了很少的操作：在多数情况下，我们可以添加和删除元素、访问首尾元素、确定容器是否为空以及获得指向首元素或者尾元素之后位置的迭代器。">
+<meta property="og:description" content="标准库并没有给给个容器添加大量功能，而是提供了一组算法，这些算法大多数都独立于任何特定的容器。这些算法是通用的(generic，或称泛型的)：可以用于不同类型的容器或者元素。算法通过在迭代器上进行操作来实现类型无关。 算法不直接改变所操作序列的大小。它们会将一个元素从一个位置拷贝到另一个位置，但不会直接添加或删除元素。虽然算法不能向序列添加元素，但是插入迭代器可以做到。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-21T11:30:26.057Z">
+<meta property="og:updated_time" content="2018-01-21T11:47:10.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ Primer学习笔记：(十)泛型算法">
-<meta name="twitter:description" content="顺序容器只定义了很少的操作：在多数情况下，我们可以添加和删除元素、访问首尾元素、确定容器是否为空以及获得指向首元素或者尾元素之后位置的迭代器。">
+<meta name="twitter:description" content="标准库并没有给给个容器添加大量功能，而是提供了一组算法，这些算法大多数都独立于任何特定的容器。这些算法是通用的(generic，或称泛型的)：可以用于不同类型的容器或者元素。算法通过在迭代器上进行操作来实现类型无关。 算法不直接改变所操作序列的大小。它们会将一个元素从一个位置拷贝到另一个位置，但不会直接添加或删除元素。虽然算法不能向序列添加元素，但是插入迭代器可以做到。">
 
 
 
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,208
+                  3,434
                 </span>
               
 
@@ -469,9 +469,12 @@
       
 
       
-        <p>顺序容器只定义了很少的操作：在多数情况下，我们可以添加和删除元素、访问首尾元素、确定容器是否为空以及获得指向首元素或者尾元素之后位置的迭代器。</p>
+        <p>标准库并没有给给个容器添加大量功能，而是提供了一组算法，这些算法大多数都独立于任何特定的容器。这些算法是通用的(<code>generic</code>，或称泛型的)：可以用于不同类型的容器或者元素。算法通过在迭代器上进行操作来实现类型无关。</p>
+<p>算法不直接改变所操作序列的大小。它们会将一个元素从一个位置拷贝到另一个位置，但不会直接添加或删除元素。<br>虽然算法不能向序列添加元素，但是插入迭代器可以做到。</p>
 <a id="more"></a>
-<h2 id="概述（10-1，P336）"><a href="#概述（10-1，P336）" class="headerlink" title="概述（10.1，P336）"></a>概述（10.1，P336）</h2><p>大多数算法都定义在头文件<code>algorithm</code>中。标准库还在文件<code>numeric</code>中定义了一组数值泛型算法。</p>
+<h2 id="概述（10-1，P336）"><a href="#概述（10-1，P336）" class="headerlink" title="概述（10.1，P336）"></a>概述（10.1，P336）</h2><p>顺序容器只定义了很少的操作：在多数情况下，我们可以添加和删除元素、访问首尾元素、确定容器是否为空以及获得指向首元素或者尾元素之后位置的迭代器。</p>
+<p>标准库定义了大约100个类型无关的对序列进行操作的算法。序列可以是标准库类型中的元素、一个内置数组或者是（例如）通过读写一个流来生成的。</p>
+<p>大多数算法都定义在头文件<code>algorithm</code>中。标准库还在文件<code>numeric</code>中定义了一组数值泛型算法。</p>
 <h2 id="初识泛型算法（10-2，P338）"><a href="#初识泛型算法（10-2，P338）" class="headerlink" title="初识泛型算法（10.2，P338）"></a>初识泛型算法（10.2，P338）</h2><p><code>accumulate</code>：定义在头文件<code>numeric</code>中。作用是对范围求和。</p>
 <p><code>euqal</code>：定义在头文件<code>algorithm</code>中。作用是判断给定两个区间是否相等。假定第二个序列至少与第一个序列一样长。</p>
 <p><code>fill</code>：定义在头文件algorithm中。作用是对给定区间全部赋予某值。</p>
@@ -718,8 +721,8 @@
 </table>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
 <li>C++ Primer 中文第五版</li>
-<li><a href="http://blog.csdn.net/sunhero2010/article/details/49800101" target="_blank" rel="external">C++primer第五版第九章学习笔记</a></li>
-<li><a href="http://blog.csdn.net/libin1105/article/details/48676235" target="_blank" rel="external">《C++primer(第五版)》学习之路-第九章：顺序容器</a></li>
+<li><a href="http://blog.csdn.net/sunhero2010/article/details/49803965" target="_blank" rel="external">C++primer第五版第十章学习笔记</a></li>
+<li><a href="http://blog.csdn.net/libin1105/article/details/48706281" target="_blank" rel="external">《C++primer(第五版)》学习之路-第十章：泛型算法</a></li>
 </ol>
 
       
@@ -1095,7 +1098,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      145.1k
+      145.3k
     </span>
   
 </div>

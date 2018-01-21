@@ -637,7 +637,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,208
+                  3,434
                 </span>
               
 
@@ -663,7 +663,8 @@
 
       
         
-          <p>顺序容器只定义了很少的操作：在多数情况下，我们可以添加和删除元素、访问首尾元素、确定容器是否为空以及获得指向首元素或者尾元素之后位置的迭代器。</p>
+          <p>标准库并没有给给个容器添加大量功能，而是提供了一组算法，这些算法大多数都独立于任何特定的容器。这些算法是通用的(<code>generic</code>，或称泛型的)：可以用于不同类型的容器或者元素。算法通过在迭代器上进行操作来实现类型无关。</p>
+<p>算法不直接改变所操作序列的大小。它们会将一个元素从一个位置拷贝到另一个位置，但不会直接添加或删除元素。<br>虽然算法不能向序列添加元素，但是插入迭代器可以做到。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/20/CPP_10/#more" rel="contents">
@@ -2400,7 +2401,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      145.1k
+      145.3k
     </span>
   
 </div>
