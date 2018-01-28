@@ -28,26 +28,6 @@
     </item>
     
     <item>
-      <title>算法导论详解(9) 第十一章 散列表</title>
-      <link>http://wangwlj.com/2018/01/27/algorithm_tutorial_chapter_11/</link>
-      <guid>http://wangwlj.com/2018/01/27/algorithm_tutorial_chapter_11/</guid>
-      <pubDate>Sat, 27 Jan 2018 09:11:56 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;直接寻址表(direct-address table)缺点：如果全域U很大，分配直接寻址表T也不太现实；另一方面，实际存储的关键字集合&lt;code&gt;K&lt;/code&gt;相对于&lt;code&gt;U&lt;/code&gt;来说可能很小，导致浪费空间。&lt;/p&gt;
-&lt;h2 id=&quot;散列表综述&quot;&gt;&lt;a hr
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>直接寻址表(direct-address table)缺点：如果全域U很大，分配直接寻址表T也不太现实；另一方面，实际存储的关键字集合<code>K</code>相对于<code>U</code>来说可能很小，导致浪费空间。</p><h2 id="散列表综述"><a href="#散列表综述" class="headerlink" title="散列表综述"></a>散列表综述</h2><p>散列表（<code>hash table</code>，也叫哈希表），支持<code>INSERT</code>、<code>SEARCH</code>、<code>DELETE</code>操作。</p><p>散列表可以使得在表小的情况下仍能够保存数据，并且能够在常数时间<code>O(1)</code>内完成查询。为什么是常数时间呢？因为我们不需要比较，不需要遍历查找，只要计算出地址，有待查询的值那么就找到了；没有，那么表中就不存在。</p><p>把关键字<code>k</code>映射到槽<code>h(k)</code>上的过程称为散列。<code>h</code>表示散列函数(<code>hash function</code>)，由关键字k计算出槽(<code>slot</code>)的位置。</p><p>多个关键字映射到同一个数组下标位置(槽)称为碰撞（或冲突，<code>collision</code>）。</p><p>好的散列函数应使每个关键字都等可能地散列到m个槽位中。</p><h3 id="链接法解决冲突"><a href="#链接法解决冲突" class="headerlink" title="链接法解决冲突"></a>链接法解决冲突</h3>]]></content:encoded>
-      
-      <comments>http://wangwlj.com/2018/01/27/algorithm_tutorial_chapter_11/#disqus_thread</comments>
-    </item>
-    
-    <item>
       <title>算法导论详解(7)之第八章 线性排序算法</title>
       <link>http://wangwlj.com/2018/01/27/algorithm_tutorial_chapter_8/</link>
       <guid>http://wangwlj.com/2018/01/27/algorithm_tutorial_chapter_8/</guid>
@@ -190,6 +170,25 @@
       <content:encoded><![CDATA[<p>leetcode链接：<a href="https://leetcode.com/problems/power-of-four/description/" target="_blank" rel="external">342. Power of Four</a></p><blockquote><p>Given an integer (signed 32 bits), write a function to check whether it is a power of 4.</p></blockquote><a id="more"></a><blockquote><p>Example:<br>Given num = 16, return true. Given num = 5, return false.</p><p>Follow up: Could you solve it without loops/recursion?</p></blockquote><p>判断一个数是不是4的幂。还是使用二进制。<br>在判断2的幂的基础上添加条件。<br>如：<code>16(10000)</code>是，<code>8(1000)</code>不是；可以与<code>0x55(01010101)</code>取并集即可。(即判断1的位数是不是在奇数位)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    bool isPowerOfFour(int n) &#123;</div><div class="line">        return n&gt;0 &amp;&amp; ((n &amp; (n-1)) == 0) &amp;&amp; (n &amp; 0x55555555);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p><p>另一种思路的解法为：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> n&gt;<span class="number">0</span> &amp;&amp; ((n &amp; (n<span class="number">-1</span>)) == <span class="number">0</span>) &amp;&amp; (（(n<span class="number">-1</span>) %<span class="number">3</span> == <span class="number">0</span>);</div></pre></td></tr></table></figure></p><p>先直觉上检验一下，发现的确是这样：$4 -1 = 3,16 - 1 = 15, 64 -1 = 63$，都是3的倍数。因此$(4^n - 1) % 3 == 0$是成立的。</p><p>下面给出简短证明：<br>$$4^n -1 = 2^{2n}-1 = (2^n+1)(2^n-1)$$<br>我们知道：$2^n+1$、$2^n$与$2^n-1$是三个连续数，其中必有一个为3的倍数，而且$2^n$必然不是3的倍数，因此，$2^n+1$与$2^n-1$中必有一个为3的倍数。也就是$4^n -1$必为3的倍数。</p><p>同类题：</p><ol><li><a href="https://leetcode.com/problems/power-of-two/description/" target="_blank" rel="external">231. Power of Two</a></li><li><a href="https://leetcode.com/problems/power-of-three/description/" target="_blank" rel="external">326. Power of Three</a></li><li><a href="https://leetcode.com/problems/power-of-four/description/" target="_blank" rel="external">342. Power of Four</a></li></ol>]]></content:encoded>
       
       <comments>http://wangwlj.com/2018/01/13/leetcode_342_power_of_4/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>判断int是否为2的幂—— Leetcode(231)</title>
+      <link>http://wangwlj.com/2018/01/13/leetcode_231_power_of_2/</link>
+      <guid>http://wangwlj.com/2018/01/13/leetcode_231_power_of_2/</guid>
+      <pubDate>Sat, 13 Jan 2018 13:26:24 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;leetcode链接：&lt;a href=&quot;https://leetcode.com/problems/power-of-two/description/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;231. Power of Two&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given an integer, write a function to determine if it is a power of two.&lt;/p&gt;
+&lt;/blockquote&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>leetcode链接：<a href="https://leetcode.com/problems/power-of-two/description/" target="_blank" rel="external">231. Power of Two</a></p><blockquote><p>Given an integer, write a function to determine if it is a power of two.</p></blockquote><a id="more"></a><p>出错样例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Input: -16 Expected: false // 就是没有考虑负数。</div></pre></td></tr></table></figure></p><p>C++实现：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfTwo</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        <span class="keyword">while</span>(n != <span class="number">2</span> &amp;&amp; n &gt; <span class="number">2</span>)&#123;</div><div class="line"></div><div class="line">            <span class="keyword">if</span>(n%<span class="number">2</span> != <span class="number">0</span>)</div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                n /= <span class="number">2</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure><p>上述一个常规的做法：连续除。</p><p>此外，我们考虑到2的幂的二进制只有最高位为1，其余都为0，此时利用这个特点可以写出如下的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    bool isPowerOfTwo(int n) &#123;</div><div class="line">        if(n &lt;= 0)</div><div class="line">             return false;</div><div class="line">        return (n &amp;(n-1) )== 0;</div><div class="line">        //或者一句话表示，如下：</div><div class="line">        //return n&gt;0 &amp;&amp; (n &amp;(n-1) )== 0;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p><blockquote><p><code>n &amp; (n-1)==0</code> 会被当作：<code>n &amp; ((n-1)==0)</code>，故需要加上括号写为：<code>(n &amp;(n-1) )== 0</code>。</p></blockquote><p>例如：8的二进制<code>1000</code>,7的二进制<code>0111</code>，取并集为0。</p><p>同类题：</p><ol><li><a href="https://leetcode.com/problems/power-of-two/description/" target="_blank" rel="external">231. Power of Two</a></li><li><a href="https://leetcode.com/problems/power-of-three/description/" target="_blank" rel="external">326. Power of Three</a></li><li><a href="https://leetcode.com/problems/power-of-four/description/" target="_blank" rel="external">342. Power of Four</a></li></ol>]]></content:encoded>
+      
+      <comments>http://wangwlj.com/2018/01/13/leetcode_231_power_of_2/#disqus_thread</comments>
     </item>
     
   </channel>
