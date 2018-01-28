@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wangwlj.com/2018/01/27/algorithm_tutorial_chapter_11/</loc>
+    
+    <lastmod>2018-01-28T09:40:24.118Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2017/09/08/blog_setup/</loc>
+    
+    <lastmod>2018-01-28T09:10:17.633Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2017/10/08/mathjax_basic/</loc>
+    
+    <lastmod>2018-01-28T09:08:22.233Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/01/27/algorithm_tutorial_chapter_8/</loc>
+    
+    <lastmod>2018-01-28T08:22:14.630Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/01/27/algorithm_tutorial_chapter_10/</loc>
+    
+    <lastmod>2018-01-27T09:44:27.744Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/01/26/python_linkedlist/</loc>
+    
+    <lastmod>2018-01-27T09:38:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/01/20/CPP_10/</loc>
+    
+    <lastmod>2018-01-27T09:22:06.561Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wangwlj.com/2017/12/28/tensorflow_base/</loc>
     
     <lastmod>2018-01-26T15:46:01.021Z</lastmod>
@@ -61,13 +110,6 @@
     <loc>http://wangwlj.com/2017/09/21/opencv_SaveVideo/</loc>
     
     <lastmod>2018-01-26T15:42:39.515Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangwlj.com/2017/10/08/mathjax_basic/</loc>
-    
-    <lastmod>2018-01-26T15:41:59.855Z</lastmod>
     
   </url>
   
@@ -170,13 +212,6 @@
   </url>
   
   <url>
-    <loc>http://wangwlj.com/2018/01/20/CPP_10/</loc>
-    
-    <lastmod>2018-01-26T15:35:23.265Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wangwlj.com/2018/01/18/CPP_09/</loc>
     
     <lastmod>2018-01-26T15:35:15.569Z</lastmod>
@@ -194,13 +229,6 @@
     <loc>http://wangwlj.com/2017/09/12/BP_derivation/</loc>
     
     <lastmod>2018-01-26T15:33:48.197Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangwlj.com/2017/09/08/blog_setup/</loc>
-    
-    <lastmod>2018-01-26T15:33:22.878Z</lastmod>
     
   </url>
   
@@ -247,14 +275,14 @@
   </url>
   
   <url>
-    <loc>http://wangwlj.com/2018/01/11/algorithm_tutorial_charpter_7/</loc>
+    <loc>http://wangwlj.com/2018/01/11/algorithm_tutorial_chapter_7/</loc>
     
     <lastmod>2018-01-26T15:29:38.375Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wangwlj.com/2018/01/09/algorithm_tutorial_charpter_6/</loc>
+    <loc>http://wangwlj.com/2018/01/09/algorithm_tutorial_chapter_6/</loc>
     
     <lastmod>2018-01-26T15:29:31.675Z</lastmod>
     
@@ -320,6 +348,13 @@
     <loc>http://wangwlj.com/2017/12/29/python_tricks/</loc>
     
     <lastmod>2018-01-26T15:18:22.482Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/game1/index.html</loc>
+    
+    <lastmod>2018-01-25T02:08:55.825Z</lastmod>
     
   </url>
   
