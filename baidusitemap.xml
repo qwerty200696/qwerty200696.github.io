@@ -6,6 +6,7 @@
     
     
     
+    
   <url>
     <loc>http://wangwlj.com/2017/09/08/blog_setup/</loc>
     <lastmod>2018-01-28T09:10:17.633Z</lastmod>
@@ -14,11 +15,11 @@
         <title>Hexo+GitHub博客搭建实战</title>
         <pubTime>2017-09-08T04:00:25.000Z</pubTime>
         
+        <tag>GitHub</tag>
+         
         <tag>Hexo</tag>
          
         <tag>博客</tag>
-         
-        <tag>GitHub</tag>
          
          
            
@@ -344,9 +345,9 @@
         
         <tag>博客</tag>
          
-        <tag>hexo</tag>
-         
         <tag>MathJax</tag>
+         
+        <tag>hexo</tag>
          
          
            
@@ -726,11 +727,11 @@
         <title>Hexo搭建的GitHub博客之优化</title>
         <pubTime>2017-09-09T02:27:20.000Z</pubTime>
         
+        <tag>GitHub</tag>
+         
         <tag>Hexo</tag>
          
         <tag>博客</tag>
-         
-        <tag>GitHub</tag>
          
          
            
@@ -1090,7 +1091,6 @@
     </data>
     </url>
 
-    
     
     
     

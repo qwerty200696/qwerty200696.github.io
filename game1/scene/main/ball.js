@@ -26,4 +26,9 @@ var Ball = function(game){ //球
         o.speedY *= -1
     }
     o.hasPoint = function(x, y) {
-        var xIn = (x >= o.x) && (x <= o.x="" +="" o.w)="" var="" yin="(y">= o.y) && y </=>
+        var xIn = (x >= o.x) && (x < o.x + o.w || x == o.x + o.w)
+        var yIn = (y >= o.y) && (y < (o.y + o.h) || y == o.y + o.h) 
+        return (xIn && yIn)
+    }
+    return o;
+}

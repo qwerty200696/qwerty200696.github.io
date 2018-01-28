@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wangwlj.com/game1/index.html</loc>
+    
+    <lastmod>2018-01-28T13:20:49.800Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wangwlj.com/2017/09/08/blog_setup/</loc>
     
     <lastmod>2018-01-28T09:10:17.633Z</lastmod>
@@ -341,13 +348,6 @@
     <loc>http://wangwlj.com/2017/12/29/python_tricks/</loc>
     
     <lastmod>2018-01-26T15:18:22.482Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangwlj.com/game1/index.html</loc>
-    
-    <lastmod>2018-01-25T02:08:55.825Z</lastmod>
     
   </url>
   
