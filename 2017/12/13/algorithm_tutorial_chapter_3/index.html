@@ -111,19 +111,19 @@
 <meta name="description" content="本文是《算法导论》第三章：函数的增长的学习笔记。没有涉及到具体的算法。主要内容有：  五种渐近记号的表示 常用的函数与标记">
 <meta name="keywords" content="Algorithm,算法导论,函数渐近">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法导论详解(2) 第三章函数的增长">
+<meta property="og:title" content="算法导论详解(2) 第三章 函数的增长">
 <meta property="og:url" content="http://wangwlj.com/2017/12/13/algorithm_tutorial_chapter_3/index.html">
 <meta property="og:site_name" content="wangwlj&#39;s Blog">
 <meta property="og:description" content="本文是《算法导论》第三章：函数的增长的学习笔记。没有涉及到具体的算法。主要内容有：  五种渐近记号的表示 常用的函数与标记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://wangwlj.com/2017/12/13/algorithm_tutorial_chapter_3/algorithm_chap_3_1.png">
-<meta property="og:image" content="http://wangwlj.com/2017/12/13/algorithm_tutorial_chapter_3/algorithm_chap_3_2.png">
-<meta property="og:image" content="http://wangwlj.com/2017/12/13/algorithm_tutorial_chapter_3/algorithm_chap_3_3.png">
-<meta property="og:updated_time" content="2018-01-26T15:29:08.343Z">
+<meta property="og:image" content="http://ws3.sinaimg.cn/large/c38a0784ly1fnz09knlnbj20l407vgmp.jpg">
+<meta property="og:image" content="http://ws3.sinaimg.cn/large/c38a0784ly1fnz0arjrhhj20fk06uabg.jpg">
+<meta property="og:image" content="http://ws3.sinaimg.cn/large/c38a0784ly1fnz0b29ajej20f503fq3f.jpg">
+<meta property="og:updated_time" content="2018-01-30T15:11:58.913Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法导论详解(2) 第三章函数的增长">
+<meta name="twitter:title" content="算法导论详解(2) 第三章 函数的增长">
 <meta name="twitter:description" content="本文是《算法导论》第三章：函数的增长的学习笔记。没有涉及到具体的算法。主要内容有：  五种渐近记号的表示 常用的函数与标记">
-<meta name="twitter:image" content="http://wangwlj.com/2017/12/13/algorithm_tutorial_chapter_3/algorithm_chap_3_1.png">
+<meta name="twitter:image" content="http://ws3.sinaimg.cn/large/c38a0784ly1fnz09knlnbj20l407vgmp.jpg">
 
 
 
@@ -160,7 +160,7 @@
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>算法导论详解(2) 第三章函数的增长 | wangwlj's Blog</title>
+  <title>算法导论详解(2) 第三章 函数的增长 | wangwlj's Blog</title>
   
 
 
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">算法导论详解(2) 第三章函数的增长</h1>
+          <h1 class="post-title" itemprop="name headline">算法导论详解(2) 第三章 函数的增长</h1>
         
 
         <div class="post-meta">
@@ -423,7 +423,7 @@
 
           
           
-             <span id="/2017/12/13/algorithm_tutorial_chapter_3/" class="leancloud_visitors" data-flag-title="算法导论详解(2) 第三章函数的增长">
+             <span id="/2017/12/13/algorithm_tutorial_chapter_3/" class="leancloud_visitors" data-flag-title="算法导论详解(2) 第三章 函数的增长">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -479,7 +479,7 @@
 <li>常用的函数与标记</li>
 </ul>
 <a id="more"></a>
-<h2 id="3-1-渐近记号"><a href="#3-1-渐近记号" class="headerlink" title="3.1 渐近记号"></a>3.1 渐近记号</h2><p>$\Theta、 \text{O}和\Omega $三种记号的图示：<br><img src="/2017/12/13/algorithm_tutorial_chapter_3/algorithm_chap_3_1.png" alt="1"></p>
+<h2 id="3-1-渐近记号"><a href="#3-1-渐近记号" class="headerlink" title="3.1 渐近记号"></a>3.1 渐近记号</h2><p>$\Theta、 \text{O}和\Omega $三种记号的图示：<br><img src="http://ws3.sinaimg.cn/large/c38a0784ly1fnz09knlnbj20l407vgmp.jpg" alt="image"></p>
 <h3 id="先看第一幅图-a-——-Theta-记号"><a href="#先看第一幅图-a-——-Theta-记号" class="headerlink" title="先看第一幅图(a)——$\Theta$记号"></a>先看第一幅图(a)——$\Theta$记号</h3><p>若存在正常量$c_1,c_2,n_0$，使得对所有$n\geqslant n_0$，有$0\leqslant c_1g(n)\leqslant f(n) \leqslant c_2g(n)$，则$f(n)$属于集合$\Theta(g(n))$，<br>可以记为$f(n)\in \Theta(g(n))$，我们通常用$f(n)=\Theta(g(n))$表达相同的概念。</p>
 <p>上述公式的含义：函数f(n)能“夹入”$c_1g(n)$和$c_2g(n)$之间。换句话说，对所有的$n\geqslant n_0$，函数$f(n)$在一个常量因子内等于$g(n)$，我们称$g(n)$是$f(n)$的一个渐近紧确界(asymptotically tight bound)。</p>
 <p>实例：可以用上述的形式化定义来证明：$\frac{1}{2}n^2-3n =\Theta(n^2)$，以及$6n^3 \neq \Theta(n^2)$。</p>
@@ -508,7 +508,7 @@
 <h3 id="omega-记号"><a href="#omega-记号" class="headerlink" title="$\omega$记号"></a>$\omega$记号</h3><p>非渐近紧确下界。</p>
 <p>$\omega (g(n))={f(n)：$对任意正常量$c&gt;0$，存在正常量$n_0&gt;0$，使得对所有$n\geqslant n_0$，有$0\leqslant cg(n) &lt;  f(n) }$。</p>
 <p>$$\lim_{n\rightarrow \infty} \frac{f(n)}{g(n)} = \infty $$</p>
-<h3 id="渐近运算的运算性质"><a href="#渐近运算的运算性质" class="headerlink" title="渐近运算的运算性质"></a>渐近运算的运算性质</h3><p>传递性、自反性、对称性与转置对称性：<br><img src="/2017/12/13/algorithm_tutorial_chapter_3/algorithm_chap_3_2.png" alt="2"><br><img src="/2017/12/13/algorithm_tutorial_chapter_3/algorithm_chap_3_3.png" alt="3"><br>而且：两个函数f和g的渐近比较关系可与实数a与b之间的比较做类比： </p>
+<h3 id="渐近运算的运算性质"><a href="#渐近运算的运算性质" class="headerlink" title="渐近运算的运算性质"></a>渐近运算的运算性质</h3><p>传递性、自反性、对称性与转置对称性：<br><img src="http://ws3.sinaimg.cn/large/c38a0784ly1fnz0arjrhhj20fk06uabg.jpg" alt="image"><br><img src="http://ws3.sinaimg.cn/large/c38a0784ly1fnz0b29ajej20f503fq3f.jpg" alt="image"><br>而且：两个函数f和g的渐近比较关系可与实数a与b之间的比较做类比： </p>
 <ul>
 <li>f(n)=O(g(n)) 类似于a&lt;= b </li>
 <li>f(n)=Ω(g(n)) 类似于a&gt;= b </li>
@@ -597,7 +597,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://wangwlj.com/2017/12/13/algorithm_tutorial_chapter_3/" title="算法导论详解(2) 第三章函数的增长">http://wangwlj.com/2017/12/13/algorithm_tutorial_chapter_3/</a>
+    <a href="http://wangwlj.com/2017/12/13/algorithm_tutorial_chapter_3/" title="算法导论详解(2) 第三章 函数的增长">http://wangwlj.com/2017/12/13/algorithm_tutorial_chapter_3/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -641,8 +641,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/12/algorithm_tutolrial_chapter_2/" rel="next" title="算法导论详解(1) 第二章算法基础">
-                <i class="fa fa-chevron-left"></i> 算法导论详解(1) 第二章算法基础
+              <a href="/2017/12/12/algorithm_tutolrial_chapter_2/" rel="next" title="算法导论详解(1) 第二章 算法基础">
+                <i class="fa fa-chevron-left"></i> 算法导论详解(1) 第二章 算法基础
               </a>
             
           </div>
@@ -761,7 +761,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -772,7 +772,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -783,7 +783,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">61</span>
+                <span class="site-state-item-count">63</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -912,7 +912,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      148.5k
+      151.4k
     </span>
   
 </div>

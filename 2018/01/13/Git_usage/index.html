@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="wangwlj&#39;s Blog">
 <meta property="og:description" content="Git简介下面是摘自官网的一段话：  Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.  简而言之，Git是一个优秀的分布式版本管理软件。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-13T07:05:12.004Z">
+<meta property="og:updated_time" content="2018-01-30T15:10:22.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git入门使用指南">
 <meta name="twitter:description" content="Git简介下面是摘自官网的一段话：  Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.  简而言之，Git是一个优秀的分布式版本管理软件。">
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,478
+                  2,600
                 </span>
               
 
@@ -542,7 +542,11 @@
 <p>关于<code>--squash</code> 参数的举例可参考<a href="http://blog.csdn.net/rockrockwu/article/details/33740711" target="_blank" rel="external">这篇文章</a>。</p>
 <h3 id="d-删除分支"><a href="#d-删除分支" class="headerlink" title="-d 删除分支"></a>-d 删除分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -d branchNeedToMerge</div></pre></td></tr></table></figure>
 <h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><h3 id="Remotes"><a href="#Remotes" class="headerlink" title="Remotes"></a>Remotes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin &lt;server&gt;</div></pre></td></tr></table></figure>
-<p><code>&lt;server&gt;</code>是远程服务器的地址、目的地的url。<br>如果输错了或者忘记了也不要紧，可以输入如下命令重新设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote set-url origin &lt;new-server&gt;</div></pre></td></tr></table></figure></p>
+<p><code>&lt;server&gt;</code>是远程服务器的地址、目的地的url。</p>
+<blockquote>
+<p>小技巧：仓库地址的格式写为：<code>https://用户名:密码@github.com/用户名/xxx.git</code>，可以免去每次都输入用户名以及密码的麻烦！！（最好在个人电脑中这样使用，因为每次push都会显示用户名密码。）</p>
+</blockquote>
+<p>如果输错了或者忘记了也不要紧，可以输入如下命令重新设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git remote set-url origin &lt;new-server&gt;</div><div class="line"></div><div class="line">上述对应的是第一种用法：git remote set-url [--push] &lt;名称&gt; &lt;新的地址&gt; [&lt;旧的地址&gt;]</div><div class="line">此外还有：git remote set-url --add &lt;名称&gt; &lt;新的地址&gt;</div><div class="line">以及：git remote set-url --delete &lt;名称&gt; &lt;地址&gt;</div></pre></td></tr></table></figure></p>
 <p>查看远程的地址有哪些：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote -v</div></pre></td></tr></table></figure></p>
 <p>最后删除远端地址：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote rm origin</div></pre></td></tr></table></figure></p>
 <h3 id="fetch-pull-push"><a href="#fetch-pull-push" class="headerlink" title="fetch/pull/push"></a>fetch/pull/push</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git fetch origin</div><div class="line">git pull origin</div><div class="line">git push origin</div></pre></td></tr></table></figure>
@@ -783,7 +787,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -794,7 +798,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -805,7 +809,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">61</span>
+                <span class="site-state-item-count">63</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -934,7 +938,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      148.5k
+      151.4k
     </span>
   
 </div>

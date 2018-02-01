@@ -117,7 +117,7 @@
 <meta property="og:description" content="本章介绍几种基本的结构：栈、队列、链表和有根树。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fnva4kd9a0j20k50j5wjm.jpg">
-<meta property="og:updated_time" content="2018-01-27T09:44:27.744Z">
+<meta property="og:updated_time" content="2018-01-30T14:45:43.280Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法导论详解(8) 第十章 基本数据结构">
 <meta name="twitter:description" content="本章介绍几种基本的结构：栈、队列、链表和有根树。">
@@ -475,12 +475,12 @@
 <a id="more"></a>
 <h2 id="栈和队列（10-1，P129）"><a href="#栈和队列（10-1，P129）" class="headerlink" title="栈和队列（10.1，P129）"></a>栈和队列（10.1，P129）</h2><p>栈和队列都是动态集合。</p>
 <h3 id="栈stack"><a href="#栈stack" class="headerlink" title="栈stack"></a>栈stack</h3><p><strong>概念定义</strong>：栈采用<strong><font color="FA1C1C">先进后出</font></strong>策略（LIFO）。基本操作是<strong>压入（PUSH）</strong>和<strong>弹出（POP）</strong>。如果<code>s.top=0</code>，表示栈空，如果试图对空栈进行<code>POP</code>操作会发生下溢（<code>underflow</code>）。如果<code>s.top&gt;n</code>,表示栈满，如果进行<code>PUSH</code>操作会发生上溢（<code>overflow</code>）。</p>
-<p>栈的Python实现代码链接：<a href="https://github.com/qwerty200696/Introduction_to_Algorihtms/blob/master/stack_my.py" target="_blank" rel="external">Introduction_to_Algorihtms/stack_my.py</a></p>
-<h3 id="队列queue"><a href="#队列queue" class="headerlink" title="队列queue"></a>队列queue</h3><p><strong>概念定义</strong>：队列采用<strong><font color="FA1C1C">先进先出</font></strong>策略（FIFO）。基本操作是<strong>出队（enqueue）</strong>和<strong>出队（dequeue）</strong>。如果<code>head=tail</code>，表示队列为空，如果试图对空队列进行<code>enqueue</code>操作会发生下溢（<code>underflow</code>）。如果<code>head=tail+1</code>,表示队列满，如果进行<code>dequeue</code>操作会发生上溢（<code>overflow</code>）。</p>
-<p>队列的Python实现：<a href="https://github.com/qwerty200696/Introduction_to_Algorihtms/blob/master/queue_my.py" target="_blank" rel="external">Introduction_to_Algorihtms/queue_my.py</a></p>
+<p>栈的Python实现代码链接：<a href="https://github.com/qwerty200696/Introduction_to_Algorithms/blob/master/Part_3/Chap_10/stack.py" target="_blank" rel="external">Introduction_to_Algorihtms/stack_my.py</a></p>
+<h3 id="队列queue"><a href="#队列queue" class="headerlink" title="队列queue"></a>队列queue</h3><p><strong>概念定义</strong>：队列采用<strong><font color="FA1C1C">先进先出</font></strong>策略（FIFO）。基本操作是<strong>入队（enqueue）</strong>和<strong>出队（dequeue）</strong>。如果<code>head=tail</code>，表示队列为空，如果试图对空队列进行<code>enqueue</code>操作会发生下溢（<code>underflow</code>）。如果<code>head=tail+1</code>,表示队列满，如果进行<code>dequeue</code>操作会发生上溢（<code>overflow</code>）。</p>
+<p>队列的Python实现：<a href="https://github.com/qwerty200696/Introduction_to_Algorithms/blob/master/Part_3/Chap_10/queue.py" target="_blank" rel="external">Introduction_to_Algorihtms/queue_my.py</a></p>
 <h2 id="链表（10-2，P131）"><a href="#链表（10-2，P131）" class="headerlink" title="链表（10.2，P131）"></a>链表（10.2，P131）</h2><p>链表是一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的。链表由一系列结点（链表中每一个元素称为结点）组成，结点可以在运行时动态生成。</p>
 <p>双向链表(<code>doubly linked list</code>)的每个结点包括两个部分：一个是存储数据元素的数据域，另一个是存储下一个(前一个)结点地址的指针域。 </p>
-<p>未排序双向链表的Python实现代码：<a href="https://github.com/qwerty200696/Introduction_to_Algorihtms/blob/master/list_my.py" target="_blank" rel="external">Introduction_to_Algorihtms/list_my.py</a></p>
+<p>未排序双向链表的Python实现代码：<a href="https://github.com/qwerty200696/Introduction_to_Algorithms/blob/master/Part_3/Chap_10/list.py" target="_blank" rel="external">Introduction_to_Algorihtms/list_my.py</a></p>
 <h2 id="指针和对象的实现（10-3，P134）"><a href="#指针和对象的实现（10-3，P134）" class="headerlink" title="指针和对象的实现（10.3，P134）"></a>指针和对象的实现（10.3，P134）</h2><p>当有些语言不支持指针和对象数据类型时，我们可以用数组和数组下标构造对象和指针。这种链表称为<a href="http://baike.baidu.com/link?url=GFeesiUYKbcXr0Q4vPTOK518GTn6z4DnzuBNxiplK80cT9bzyAVcqpX8G9Huw8yC" target="_blank" rel="external">静态链表</a>。</p>
 <h3 id="对象的多数组表示"><a href="#对象的多数组表示" class="headerlink" title="对象的多数组表示"></a>对象的多数组表示</h3><p>用三个数组<code>next</code> <code>key</code> <code>prev</code> 分别表示链表的后继/数据/前驱。<br>多数组表示只能表示同构对象（所有对象有相同的属性）。而单数组表示可以表示异构对象（比如对象具有不同的长度）。</p>
 <h3 id="对象的单数组表示"><a href="#对象的单数组表示" class="headerlink" title="对象的单数组表示"></a>对象的单数组表示</h3><p>用一个数组即可表示双链表，这种表示法比较灵活，因为它允许不同长度的对象存储于同一数组中。一般地我们考虑的数据结构多是由同构的元素构成，因此采用对象的多数组表示法足够满足我们的需求。</p>
@@ -598,8 +598,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/27/algorithm_tutorial_chapter_8/" rel="next" title="算法导论详解(7)之第八章 线性排序算法">
-                <i class="fa fa-chevron-left"></i> 算法导论详解(7)之第八章 线性排序算法
+              <a href="/2018/01/27/algorithm_tutorial_chapter_8/" rel="next" title="算法导论详解(7) 第八章 线性排序算法">
+                <i class="fa fa-chevron-left"></i> 算法导论详解(7) 第八章 线性排序算法
               </a>
             
           </div>
@@ -607,6 +607,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/30/algorithm_tutorial_chapter_11/" rel="prev" title="算法导论详解(9) 第十一章 散列表">
+                算法导论详解(9) 第十一章 散列表 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -714,7 +718,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -725,7 +729,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -736,7 +740,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">61</span>
+                <span class="site-state-item-count">63</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -865,7 +869,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      148.5k
+      151.4k
     </span>
   
 </div>
