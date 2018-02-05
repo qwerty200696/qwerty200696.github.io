@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="wangwlj&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ws1.sinaimg.cn/mw690/c38a0784ly1fnxit86pfwj211y0lc7of.jpg">
-<meta property="og:updated_time" content="2018-01-30T14:43:41.082Z">
+<meta property="og:updated_time" content="2018-02-02T01:34:51.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法导论详解(9) 第十一章 散列表">
 <meta name="twitter:image" content="http://ws1.sinaimg.cn/mw690/c38a0784ly1fnxit86pfwj211y0lc7of.jpg">
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,616
+                  2,615
                 </span>
               
 
@@ -482,7 +482,7 @@
 <blockquote>
 <p>在简单均匀散列的假设下，对于用链接法解决冲突的散列表，一次不成功查找的平均时间为$\Theta(1+\alpha)$，一次成功查找所需的平均时间也为$\Theta(1+\alpha)$</p>
 </blockquote>
-<p>当散列表的槽数与表中元素个数成正比，则有$n= \text{O}(m)$，查找需要常数时间$n= \text{O}(m)$。当链表为双向链表时，插入和删除的最坏情况也是$n= \text{O}(1)$。</p>
+<p>当散列表的槽数与表中元素个数成正比，则有$n= \text{O}(m)$，查找需要常数时间$\text{O}(1)$。当链表为双向链表时，插入和删除的最坏情况也是$\text{O}(1)$。</p>
 <h2 id="Hash函数（11-3，P147）"><a href="#Hash函数（11-3，P147）" class="headerlink" title="Hash函数（11.3，P147）"></a>Hash函数（11.3，P147）</h2><p>我们如何设计一个好的Hash函数（哈希函数，散列函数）？本节介绍了三种设计哈希函数的方法：除法散列、乘法散列和全域散列。</p>
 <h3 id="好的哈希函数的特点"><a href="#好的哈希函数的特点" class="headerlink" title="好的哈希函数的特点"></a>好的哈希函数的特点</h3><p>这里有两个要点：</p>
 <p>一个好的哈希函数应该能够将关键字均匀的分配到哈希表T中；</p>
@@ -490,7 +490,7 @@
 <h3 id="除法散列法"><a href="#除法散列法" class="headerlink" title="除法散列法"></a>除法散列法</h3><p>定义<code>hash</code>函数为 $h(k) = k \;\text{mod}\; m$</p>
 <p><code>m</code>取值的原则就是<code>m</code>选为质数且不能太接近<code>2</code>或者<code>10</code>的幂次。</p>
 <p>原因：键值的低位可能具有某种分布规律，如果选择<code>2</code>或者<code>10</code>的幂次容易出现冲突。比如$2^r$，关键字只会考虑二进制的低<code>r</code>位；十进制类似。</p>
-<h3 id="乘法散列法"><a href="#乘法散列法" class="headerlink" title="乘法散列法"></a>乘法散列法</h3><p>乘法散列法：公式为：$h(k) = m(kA\; \text{mod}\; 1) $</p>
+<h3 id="乘法散列法"><a href="#乘法散列法" class="headerlink" title="乘法散列法"></a>乘法散列法</h3><p>乘法散列法的公式为：$h(k) = m(kA\; \text{mod}\; 1) $</p>
 <p>其中，$0&lt;A&lt;1$。</p>
 <p>一般的实现方法如下：假设计算机字长是<code>w</code>位，限制A是形如$A =\frac {s}{2^w}$的分数，整数<code>s</code>取值范围为$0&lt; s &lt;2^w $。用整数$s=A\cdot 2^w$乘上<code>k</code>，其结果是2w位的值$r_1 2^w + r_0 $</p>
 <p>A的取值理想情况为$ A \approx \sqrt 5-1 = 0.6180339887\cdots $。（这不就是黄金分割率么……）根据A的取值计算s的值。</p>
@@ -906,7 +906,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      151.4k
+      151.3k
     </span>
   
 </div>

@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wangwlj.com/2017/09/09/blog-opti/</loc>
+    
+    <lastmod>2018-02-05T14:41:39.364Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2017/09/08/blog_setup/</loc>
+    
+    <lastmod>2018-02-03T15:04:22.289Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2017/10/05/batch_basic_usage/</loc>
+    
+    <lastmod>2018-02-02T05:43:58.735Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/01/30/algorithm_tutorial_chapter_11/</loc>
+    
+    <lastmod>2018-02-02T01:34:51.419Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wangwlj.com/2018/02/01/photo_total_lunar_eclipse/</loc>
     
     <lastmod>2018-02-01T15:29:32.288Z</lastmod>
@@ -65,23 +93,9 @@
   </url>
   
   <url>
-    <loc>http://wangwlj.com/2018/01/30/algorithm_tutorial_chapter_11/</loc>
-    
-    <lastmod>2018-01-30T14:43:41.082Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wangwlj.com/game1/index.html</loc>
     
     <lastmod>2018-01-28T13:20:49.800Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangwlj.com/2017/09/08/blog_setup/</loc>
-    
-    <lastmod>2018-01-28T09:10:17.633Z</lastmod>
     
   </url>
   
@@ -296,13 +310,6 @@
   </url>
   
   <url>
-    <loc>http://wangwlj.com/2017/09/09/blog-opti/</loc>
-    
-    <lastmod>2018-01-26T15:32:58.987Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wangwlj.com/2017/12/18/blog_comment/</loc>
     
     <lastmod>2018-01-26T15:32:06.618Z</lastmod>
@@ -320,13 +327,6 @@
     <loc>http://wangwlj.com/2017/10/10/batch_string_process/</loc>
     
     <lastmod>2018-01-26T15:31:18.785Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangwlj.com/2017/10/05/batch_basic_usage/</loc>
-    
-    <lastmod>2018-01-26T15:30:54.637Z</lastmod>
     
   </url>
   
