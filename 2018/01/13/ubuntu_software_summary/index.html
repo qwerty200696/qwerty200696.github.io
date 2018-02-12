@@ -497,9 +497,9 @@
 <p>笔者不是一开始就改的，所以导致换目录名后出现了一系列问题。一开始就换会比较好。</p>
 <h3 id="Updating"><a href="#Updating" class="headerlink" title="Updating"></a>Updating</h3><h2 id="安装必备软件"><a href="#安装必备软件" class="headerlink" title="安装必备软件"></a>安装必备软件</h2><p>在对Ubuntu换源之后，就可以开始安装一些必备而的软件了。Ubuntu下软件的安装都不难，可以根据需求选择安装相应的软件。</p>
 <h3 id="1-搜狗输入法"><a href="#1-搜狗输入法" class="headerlink" title="1. 搜狗输入法"></a>1. 搜狗输入法</h3><p>输入法必备，放在第一个吧。</p>
-<h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><p>官网下载linux版本的dev包：<a href="http://pinyin.sogou.com/linux/" target="_blank" rel="external">pinyin.sogou.com/linux</a><br>进入下载目录，在终端执行安装<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> sudo dpkg  -i   sogoupinyin_2.2.0.0102_amd64.deb</div></pre></td></tr></table></figure></p>
+<h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><p>官网下载linux版本的dev包：<a href="http://pinyin.sogou.com/linux/" target="_blank" rel="external">pinyin.sogou.com/linux</a><br>进入下载目录，在终端执行安装<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> sudo dpkg  -i   sogoupinyin_2.2.0.0102_amd64.deb</span></div></pre></td></tr></table></figure></p>
 <p>安装过程会出现 依赖关系问题（未安装成功，依赖库不全），不要担心，接着执行下面的命令就可以了：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span>sudo apt-get install -f</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash">sudo apt-get install -f</span></div></pre></td></tr></table></figure>
 <p>等待完成后，搜狗拼音输入法就安装好了。</p>
 <blockquote>
 <p>上述两条命令都是常用命令，需要记住。</p>
