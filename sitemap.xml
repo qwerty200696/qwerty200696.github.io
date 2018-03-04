@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://wangwlj.com/2019/02/28/network_02_network_layer/</loc>
+    <loc>http://wangwlj.com/2018/03/01/network_03_transmission_layer/</loc>
     
-    <lastmod>2018-03-04T14:09:48.960Z</lastmod>
+    <lastmod>2018-03-04T14:15:50.705Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/02/28/network_02_network_layer/</loc>
+    
+    <lastmod>2018-03-04T14:15:30.877Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>http://wangwlj.com/2018/02/27/network_01_overview/</loc>
     
     <lastmod>2018-03-04T14:08:14.599Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangwlj.com/2019/03/01/network_03_transmission_layer/</loc>
-    
-    <lastmod>2018-03-04T14:05:50.902Z</lastmod>
     
   </url>
   

@@ -90,7 +90,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Network," />
 
 
 
@@ -108,16 +108,21 @@
 
 
 
-<meta name="description" content="所谓王者，必卓然特立，争当人杰。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wangwlj&#39;s Blog">
-<meta property="og:url" content="http://wangwlj.com/archives/page/4/index.html">
+<meta name="keywords" content="Network">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络学习笔记：(三)传输层">
+<meta property="og:url" content="http://wangwlj.com/2018/03/01/network_03_transmission_layer/index.html">
 <meta property="og:site_name" content="wangwlj&#39;s Blog">
-<meta property="og:description" content="所谓王者，必卓然特立，争当人杰。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fp14w75zxvj22tc1vk4i9.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/large/c38a0784gy1fow7l7mao9j20mv0bkdk3.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/large/c38a0784gy1fowfjl3fezj20n10e8jvp.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fp143et6n4j20n20e343x.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fp1471ygbuj20mo0fmtg2.jpg">
+<meta property="og:updated_time" content="2018-03-04T14:15:50.705Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wangwlj&#39;s Blog">
-<meta name="twitter:description" content="所谓王者，必卓然特立，争当人杰。">
+<meta name="twitter:title" content="计算机网络学习笔记：(三)传输层">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c38a0784ly1fp14w75zxvj22tc1vk4i9.jpg">
 
 
 
@@ -147,14 +152,14 @@
 
 
 
-  <link rel="canonical" href="http://wangwlj.com/archives/page/4/"/>
+  <link rel="canonical" href="http://wangwlj.com/2018/03/01/network_03_transmission_layer/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>归档 | wangwlj's Blog</title>
+  <title>计算机网络学习笔记：(三)传输层 | wangwlj's Blog</title>
   
 
 
@@ -192,7 +197,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-archive">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	
 	<a href="https://github.com/qwerty200696"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
@@ -332,410 +337,417 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2018/03/01/network_03_transmission_layer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwlj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangwlj's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h1 class="post-title" itemprop="name headline">计算机网络学习笔记：(三)传输层</h1>
+        
+
+        <div class="post-meta">
           
-        好! 目前共计 70 篇日志。 继续努力。
-      </span>
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-01T22:34:38+08:00">
+                2018-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index">
+                    <span itemprop="name">Network</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+	  
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/01/network_03_transmission_layer/" class="leancloud_visitors" data-flag-title="计算机网络学习笔记：(三)传输层">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,755
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
-        
-        
-        
+      
+        <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fp14w75zxvj22tc1vk4i9.jpg" alt=""><br><a id="more"></a></p>
+<p>本文是<a href="https://www.bilibili.com/video/av9876107/" target="_blank" rel="external">计算机网络课程</a>传输层部分的笔记。</p>
+<h3 id="传输层两个协议简介"><a href="#传输层两个协议简介" class="headerlink" title="传输层两个协议简介"></a>传输层两个协议简介</h3><p>传输层有两个协议：TCP和UDP。</p>
+<p>TCP：传输控制协议(Transmission Control Protocol)。文件分段传输，需要建立会话，可靠传输；流量控制功能</p>
+<p>UDP：用户数据报协议(User Data Protocol) 一个数据包就能够完成数据通信，不分段；不需要建立会话，不需要流量控制；不可靠传输。</p>
+<p>查看会话：<code>netstat -n</code><br>查看是哪个进程创建的会话：<code>netstat -nb</code></p>
+<p>举例场景：<br>DNS域名解析：使用UDP协议；<br>QQ聊天：聊天记录 使用UDP协议；<br>QQ传文件：TCP协议；<br>发送邮件：可能很大需要分段，因此TCP协议；<br>FTP下载文件：TCP<br>屏幕广播 多播：UDP</p>
+<h3 id="传输层协议和应用层协议之间的关系"><a href="#传输层协议和应用层协议之间的关系" class="headerlink" title="传输层协议和应用层协议之间的关系"></a>传输层协议和应用层协议之间的关系</h3><p>http = tcp + 80<br>https = tcp +443<br>rdp = tcp +3389<br>ftp = tcp + 21<br>访问共享文件夹=tcp + 445<br>SMTP【发送】 = TCP + 25<br>POP3【接收】 = TCP + 110<br>Telnet = TCP + 23<br>SQL  = TCP +1433<br>DNS = UDP +53</p>
+<h3 id="服务和应用层协议之间的关系"><a href="#服务和应用层协议之间的关系" class="headerlink" title="服务和应用层协议之间的关系"></a>服务和应用层协议之间的关系</h3><p>服务是由端口决定的。<br>服务是启动状态才侦听端口。<br>网卡是大门，网卡设置安全，只允许80端口【Web服务】。只允许特定服务的端口。</p>
+<p>服务使用TCP或者UDP的端口侦听客户端请求。</p>
+<p>客户端使用IP地址定位服务器，使用目标端口定位服务。<br>可以在服务器网卡上设置只开放必要的端口，实现服务器的网络安全。</p>
+<h4 id="如何在Windows上安装服务"><a href="#如何在Windows上安装服务" class="headerlink" title="如何在Windows上安装服务"></a>如何在Windows上安装服务</h4><p>自带Telnet远程登录。远程桌面服务。<br>DNS服务<br>Web服务<br>SMTP服务<br>POP3服务</p>
+<h4 id="如何查看服务侦听的端口"><a href="#如何查看服务侦听的端口" class="headerlink" title="如何查看服务侦听的端口"></a>如何查看服务侦听的端口</h4><p><code>netstat -an</code>查看服务器上侦听的窗口。<br><code>netstat -n</code>查看建立的会话<br><code>netstat -nb</code>查看建立会话的进程<br><code>telnet 192.168.80.100 3389</code> 测试远程计算机某个端口是否打开。</p>
+<h4 id="如何更改服务使用的默认端口"><a href="#如何更改服务使用的默认端口" class="headerlink" title="如何更改服务使用的默认端口"></a>如何更改服务使用的默认端口</h4><p>  迷惑入侵者，使系统更加安全。</p>
+<h4 id="如何设置Windows网络安全"><a href="#如何设置Windows网络安全" class="headerlink" title="如何设置Windows网络安全"></a>如何设置Windows网络安全</h4><p>只开特定服务端口：本地连接属性——TCP/IP协议属性——高级——选项——属性</p>
+<h3 id="传输层功能和端口范围"><a href="#传输层功能和端口范围" class="headerlink" title="传输层功能和端口范围"></a>传输层功能和端口范围</h3><p>传输层功能：<br>为相互通信的应用程序/应用进程提供了端到端的逻辑通信。（网络层是为主机之间提供了逻辑通信）。<br>传输层要对收到的报文进行差错校验。<br>传输层提供面向连接和无连接的服务。</p>
+<p>传输层端口：16位端口号进行标志，标志本计算机应用层中的各进程。端口号只具有本地意义，本地不冲突即可。</p>
+<p>熟知端口：数值一般为0-1023<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">FTP：21</div><div class="line">TELNET：23</div><div class="line">SMTP：25</div><div class="line">DNS：53</div><div class="line">HTTP：80</div><div class="line">Https：443</div><div class="line">RDP：3389</div></pre></td></tr></table></figure></p>
+<p>登记端口号：数值为1024~49151<br>客户端口号：数值为49152-65535</p>
+<h3 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h3><p>UDP的主要特点：<br>UDP是无连接的，即发送数据之前不需要建立连接。<br>UDP使用尽最大努力交付，即不保证可靠交付，同时也不使用拥塞控制。<br>UDP面向报文，没有拥塞控制，很适合多媒体通信的要求。<br>UDP支持一对一、一对多、多对一和多对多的交互通信。<br>UDP的首部开销小，只有8个字节。<br><img src="http://wx1.sinaimg.cn/large/c38a0784gy1fow7l7mao9j20mv0bkdk3.jpg" alt="image"></p>
+<h3 id="传输控制协议TCP概述"><a href="#传输控制协议TCP概述" class="headerlink" title="传输控制协议TCP概述"></a>传输控制协议TCP概述</h3><p>TCP是面向连接的传输层协议。TCP把连接作为最基本的抽象。</p>
+<p>TCP提供可靠交付的服务。</p>
+<p>TCP提供全双工通信。</p>
+<p>面向字节流。8bit = 1byte</p>
+<p>每一条TCP连接只能有两个端点(endpoint)，每一条TCP连接只能是点对点的(一对一)。<strong>TCP连接的端点叫做<font color="FC0000">套接字(socket)</font></strong>。端口号拼接到IP地址即构成了套接字。<br>套接字 socket = (IP地址：端口号)</p>
+<p>每一条TCP连接唯一地被通信两端的两个端点（即两个套接字）所确定。即：<br>TCP连接::={socket1, socket2}<br>      = {(IP1:port1),(IP2:port2)}</p>
+<h4 id="TCP如何实现可靠传输"><a href="#TCP如何实现可靠传输" class="headerlink" title="TCP如何实现可靠传输"></a>TCP如何实现可靠传输</h4><p>可靠传输的工作原理————停止等待协议</p>
+<p>使用上述的确认和重传机制，我们就可以在不可靠的传输网络上实现可靠的通信。</p>
+<p>这种可靠传输协议常称为自动重传请求(<code>Automatic Repeat reQuest</code>)。</p>
+<p><code>ARQ</code>表明重传的请求是自动进行的。接收方不需要请求发送方重传某个出错的分组。</p>
+<p>停止等待协议优点是简单，缺点是信道利用率太低。</p>
+<p>流水线传输：发送方可以连续发送多个分组，不必每发完一个分组就停顿下来等待对方的确认。由于信道上一直有数据不间断地传送，这种传输方式可获得很高的利用率。</p>
+<p>连续ARQ协议：发送方维持发送窗口（发送窗口是5），<font color="FC0000">滑动窗口。</font></p>
+<p>累积确认。</p>
+<h4 id="TCP如何实现流量控制"><a href="#TCP如何实现流量控制" class="headerlink" title="TCP如何实现流量控制"></a>TCP如何实现流量控制</h4><p>接收端告诉发送端接收窗口有多大来实现流量控制。</p>
+<h4 id="TCP协议如何避免网络拥塞"><a href="#TCP协议如何避免网络拥塞" class="headerlink" title="TCP协议如何避免网络拥塞"></a>TCP协议如何避免网络拥塞</h4><p>暂无</p>
+<h3 id="TCP报文段的首部格式"><a href="#TCP报文段的首部格式" class="headerlink" title="TCP报文段的首部格式"></a>TCP报文段的首部格式</h3><p><img src="http://wx1.sinaimg.cn/large/c38a0784gy1fowfjl3fezj20n10e8jvp.jpg" alt="image"><br>首部字节一般是固定部分的20个字节，还有长度可变的选项。</p>
+<table>
+<thead>
+<tr>
+<th>TCP报文段首部</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>源端口</td>
+<td></td>
+</tr>
+<tr>
+<td>目标端口</td>
+<td></td>
+</tr>
+<tr>
+<td>序号</td>
+<td>第一个字节是整个文章的第几个字节。</td>
+</tr>
+<tr>
+<td>确认号</td>
+<td>收到数据包后，让继续发的号</td>
+</tr>
+<tr>
+<td>数据偏移</td>
+<td>占4位；记录第多少个字节是数据。十进制最大为15，代表最大15x4=60个字节。</td>
+</tr>
+<tr>
+<td>URG</td>
+<td>设为1时代表紧急，发送端不排队，提前传走。</td>
+</tr>
+<tr>
+<td>ACK</td>
+<td>确认号</td>
+</tr>
+<tr>
+<td>PSH</td>
+<td>push，设为1代表接收端不排队，直接交给应用程序</td>
+</tr>
+<tr>
+<td>RST</td>
+<td>reset，表明TCP会话出现严重错误，需要重新连接。</td>
+</tr>
+<tr>
+<td>SYN</td>
+<td>同步，SYN攻击：伪造不存在的IP地址。land攻击：源地址和目的地址同一个。</td>
+</tr>
+<tr>
+<td>FIN</td>
+<td>数据传完了，最后释放连接。</td>
+</tr>
+<tr>
+<td>窗口</td>
+<td>假设客户端接收缓存为65535字节，服务器就设置发送缓存65535字节(不能超过)，反向同样也需要协商</td>
+</tr>
+<tr>
+<td>检验和</td>
+<td></td>
+</tr>
+<tr>
+<td>紧急指针</td>
+<td>URG=1时才起作用。指明紧急数据结束的位置。</td>
+</tr>
+<tr>
+<td>选项(长度可变)</td>
+<td>可以规定最大数据报的长度MSS，是否支持选择性确认SACK，时间戳</td>
+</tr>
+<tr>
+<td>填充</td>
+<td>凑够四个字节整数倍</td>
+</tr>
+</tbody>
+</table>
+<p>三个建立会话的数据包。MSS=1460数据包最大字节</p>
+<h3 id="TCP如何实现可靠传输-1"><a href="#TCP如何实现可靠传输-1" class="headerlink" title="TCP如何实现可靠传输"></a>TCP如何实现可靠传输</h3><p>1.以字节为单位的滑动窗口技术</p>
+<p>发送窗口由接收窗口大小来决定的。</p>
+<h3 id="超时重传时间的选择"><a href="#超时重传时间的选择" class="headerlink" title="超时重传时间的选择"></a>超时重传时间的选择</h3><p>$$新的RTTs = (1-\alpha)\times (旧的RTTs) + \alpha \times (新的RTT样本)$$</p>
+<p>RFC2988推荐的$\alpha$值为1/8。</p>
+<h3 id="TCP的传输连接管理"><a href="#TCP的传输连接管理" class="headerlink" title="TCP的传输连接管理"></a>TCP的传输连接管理</h3><p>传输连接有三个阶段，即：连接建立、数据传送和连接释放。</p>
+<h4 id="三次握手建立TCP连接"><a href="#三次握手建立TCP连接" class="headerlink" title="三次握手建立TCP连接"></a>三次握手建立TCP连接</h4><p><code>SYN=1，ACK=0，seq=x</code><br><code>SYN=1，ACK=1，seq=y，ack=x+1</code><br><code>ACK=1，seq=x+1，ack=y+1</code></p>
+<p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fp143et6n4j20n20e343x.jpg" alt=""></p>
+<h4 id="连接释放"><a href="#连接释放" class="headerlink" title="连接释放"></a>连接释放</h4><p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fp1471ygbuj20mo0fmtg2.jpg" alt=""></p>
 
-        
+      
+    </div>
+    
+    
+    
+
+	
+	
+	  <div>
+		
+<div style="text-align:center;color:#ccc;font-size:14px;">
+------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+
+	  </div>
+	
+	
+	
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wangwlj 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="wangwlj 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    wangwlj
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://wangwlj.com/2018/03/01/network_03_transmission_layer/" title="计算机网络学习笔记：(三)传输层">http://wangwlj.com/2018/03/01/network_03_transmission_layer/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+	
+
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
+            <a href="/tags/Network/" rel="tag"><i class="fa fa-tag"></i> Network</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
           </div>
         
-        
 
         
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/29/practical_tricks/" itemprop="url">
-              
-                <span itemprop="name">Windows下的部分小技巧整理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-29T13:33:25+08:00"
-              content="2017-12-29" >
-          12-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/28/network_02_network_layer/" rel="next" title="计算机网络学习笔记：(二)网络层">
+                <i class="fa fa-chevron-left"></i> 计算机网络学习笔记：(二)网络层
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/29/python_tricks/" itemprop="url">
-              
-                <span itemprop="name">Python中的部分tricks整理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-29T11:38:07+08:00"
-              content="2017-12-29" >
-          12-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/28/TensorFlow_speech_commands/" itemprop="url">
-              
-                <span itemprop="name">基于TensorFlow的简单语音识别</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-28T22:24:03+08:00"
-              content="2017-12-28" >
-          12-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/28/tensorflow_base/" itemprop="url">
-              
-                <span itemprop="name">TensorFlow基础篇与搭建深层神经网络</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-28T22:24:03+08:00"
-              content="2017-12-28" >
-          12-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/27/CPP_VS2015_noPDB/" itemprop="url">
-              
-                <span itemprop="name">VS2015 设置调试时不加载符号</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-27T21:53:16+08:00"
-              content="2017-12-27" >
-          12-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/26/ML_taiwan_01/" itemprop="url">
-              
-                <span itemprop="name">机器学习技法笔记01：最佳分类超平面</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-26T10:24:06+08:00"
-              content="2017-12-26" >
-          12-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/25/CPP_01_02/" itemprop="url">
-              
-                <span itemprop="name">C++ Primer学习笔记：(一/二)从基本类型开始</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-25T10:31:35+08:00"
-              content="2017-12-25" >
-          12-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/21/ps_white2transparent/" itemprop="url">
-              
-                <span itemprop="name">Photoshop白色背景图片转换为透明背景</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-21T21:45:58+08:00"
-              content="2017-12-21" >
-          12-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/19/blog_domain_register/" itemprop="url">
-              
-                <span itemprop="name">万网域名注册、域名解析与备案流程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-19T12:17:15+08:00"
-              content="2017-12-19" >
-          12-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/18/blog_comment/" itemprop="url">
-              
-                <span itemprop="name">Hexo博客优化之实现来必力评论功能</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-18T20:11:50+08:00"
-              content="2017-12-18" >
-          12-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="extend next" rel="next" href="/archives/page/5/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -743,6 +755,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjUyMi85MDgz"></div>
+    
+  </div>
+
 
         </div>
         
@@ -763,8 +781,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -880,6 +907,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#传输层两个协议简介"><span class="nav-number">1.</span> <span class="nav-text">传输层两个协议简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输层协议和应用层协议之间的关系"><span class="nav-number">2.</span> <span class="nav-text">传输层协议和应用层协议之间的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务和应用层协议之间的关系"><span class="nav-number">3.</span> <span class="nav-text">服务和应用层协议之间的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#如何在Windows上安装服务"><span class="nav-number">3.1.</span> <span class="nav-text">如何在Windows上安装服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何查看服务侦听的端口"><span class="nav-number">3.2.</span> <span class="nav-text">如何查看服务侦听的端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何更改服务使用的默认端口"><span class="nav-number">3.3.</span> <span class="nav-text">如何更改服务使用的默认端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何设置Windows网络安全"><span class="nav-number">3.4.</span> <span class="nav-text">如何设置Windows网络安全</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输层功能和端口范围"><span class="nav-number">4.</span> <span class="nav-text">传输层功能和端口范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP协议"><span class="nav-number">5.</span> <span class="nav-text">UDP协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输控制协议TCP概述"><span class="nav-number">6.</span> <span class="nav-text">传输控制协议TCP概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP如何实现可靠传输"><span class="nav-number">6.1.</span> <span class="nav-text">TCP如何实现可靠传输</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP如何实现流量控制"><span class="nav-number">6.2.</span> <span class="nav-text">TCP如何实现流量控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP协议如何避免网络拥塞"><span class="nav-number">6.3.</span> <span class="nav-text">TCP协议如何避免网络拥塞</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP报文段的首部格式"><span class="nav-number">7.</span> <span class="nav-text">TCP报文段的首部格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP如何实现可靠传输-1"><span class="nav-number">8.</span> <span class="nav-text">TCP如何实现可靠传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#超时重传时间的选择"><span class="nav-number">9.</span> <span class="nav-text">超时重传时间的选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP的传输连接管理"><span class="nav-number">10.</span> <span class="nav-text">TCP的传输连接管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手建立TCP连接"><span class="nav-number">10.1.</span> <span class="nav-text">三次握手建立TCP连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接释放"><span class="nav-number">10.2.</span> <span class="nav-text">连接释放</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1032,6 +1075,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -1060,6 +1107,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1519,6 +1577,23 @@
 
 
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 8596,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
   
