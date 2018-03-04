@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wangwlj.com/2019/02/28/network_02_network_layer/</loc>
+    
+    <lastmod>2018-03-04T14:09:48.960Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/02/27/network_01_overview/</loc>
+    
+    <lastmod>2018-03-04T14:08:14.599Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2019/03/01/network_03_transmission_layer/</loc>
+    
+    <lastmod>2018-03-04T14:05:50.902Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2017/09/22/review_of_MathModel/</loc>
+    
+    <lastmod>2018-02-27T02:19:58.353Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wangwlj.com/2018/02/26/CPP_11/</loc>
     
     <lastmod>2018-02-26T15:04:16.479Z</lastmod>
@@ -341,13 +369,6 @@
     <loc>http://wangwlj.com/2017/10/10/batch_string_process/</loc>
     
     <lastmod>2018-01-26T15:31:18.785Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangwlj.com/2017/09/22/review_of_MathModel/</loc>
-    
-    <lastmod>2018-01-26T15:27:52.765Z</lastmod>
     
   </url>
   
