@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://wangwlj.com/2018/03/04/ML_chap08_EnsembleLearning/</loc>
+    <lastmod>2018-03-04T14:57:45.529Z</lastmod>
+    <data>
+        <display>
+        <title>西瓜书《机器学习》学习笔记(3)：集成学习</title>
+        <pubTime>2018-03-04T13:31:09.000Z</pubTime>
+        
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://wangwlj.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/03/04/ML_chap9_clustering/</loc>
+    <lastmod>2018-03-04T14:57:36.109Z</lastmod>
+    <data>
+        <display>
+        <title>西瓜书《机器学习》学习笔记(4)：聚类</title>
+        <pubTime>2018-03-04T14:11:19.000Z</pubTime>
+        
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://wangwlj.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wangwlj.com/2018/03/01/network_03_transmission_layer/</loc>
     <lastmod>2018-03-04T14:15:50.705Z</lastmod>
     <data>
@@ -128,11 +168,11 @@
         <title>Hexo搭建的GitHub博客之优化</title>
         <pubTime>2017-09-09T02:27:20.000Z</pubTime>
         
-        <tag>GitHub</tag>
-         
         <tag>Hexo</tag>
          
         <tag>博客</tag>
+         
+        <tag>GitHub</tag>
          
          
            
@@ -152,11 +192,11 @@
         <title>Hexo+GitHub博客搭建实战</title>
         <pubTime>2017-09-08T04:00:25.000Z</pubTime>
         
-        <tag>GitHub</tag>
-         
         <tag>Hexo</tag>
          
         <tag>博客</tag>
+         
+        <tag>GitHub</tag>
          
          
            
