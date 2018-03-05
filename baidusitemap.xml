@@ -4,12 +4,182 @@
 
     
   <url>
-    <loc>http://wangwlj.com/2018/03/04/ML_chap08_EnsembleLearning/</loc>
-    <lastmod>2018-03-04T14:57:45.529Z</lastmod>
+    <loc>http://wangwlj.com/2018/03/05/coding_dye_problem/</loc>
+    <lastmod>2018-03-05T14:55:06.635Z</lastmod>
     <data>
         <display>
-        <title>西瓜书《机器学习》学习笔记(3)：集成学习</title>
-        <pubTime>2018-03-04T13:31:09.000Z</pubTime>
+        <title>编程题：扇形染色问题</title>
+        <pubTime>2018-03-05T09:05:26.000Z</pubTime>
+        
+        <tag>Coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="Coding" url="http://wangwlj.com/categories/Coding/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/03/05/coding_offer03_findInArray/</loc>
+    <lastmod>2018-03-05T12:36:59.333Z</lastmod>
+    <data>
+        <display>
+        <title>剑指offer面试题：二维数组中的查找</title>
+        <pubTime>2018-03-05T10:05:26.000Z</pubTime>
+        
+        <tag>Coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="Coding" url="http://wangwlj.com/categories/Coding/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/03/05/coding_offer06_reconstractBinaryTree/</loc>
+    <lastmod>2018-03-05T12:35:53.912Z</lastmod>
+    <data>
+        <display>
+        <title>剑指offer面试题：重建二叉树</title>
+        <pubTime>2018-03-05T12:35:44.000Z</pubTime>
+        
+        <tag>Coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="Coding" url="http://wangwlj.com/categories/Coding/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/08/Leetcode_9/</loc>
+    <lastmod>2018-03-05T10:22:11.091Z</lastmod>
+    <data>
+        <display>
+        <title>判断回文数（三种解法）—— Leetcode(9)</title>
+        <pubTime>2018-01-08T07:32:05.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
+         
+         
+           
+             
+              <breadCrumb title="Coding" url="http://wangwlj.com/categories/Coding/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/13/leetcode_342_power_of_4/</loc>
+    <lastmod>2018-03-05T10:22:01.319Z</lastmod>
+    <data>
+        <display>
+        <title>判断int是否为4的幂—— Leetcode(342)</title>
+        <pubTime>2018-01-13T13:41:51.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
+         
+         
+           
+             
+              <breadCrumb title="Coding" url="http://wangwlj.com/categories/Coding/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/13/leetcode_326_power_of_3/</loc>
+    <lastmod>2018-03-05T10:21:54.775Z</lastmod>
+    <data>
+        <display>
+        <title>判断int是否为3的幂—— Leetcode(326)</title>
+        <pubTime>2018-01-13T14:15:13.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
+         
+         
+           
+             
+              <breadCrumb title="Coding" url="http://wangwlj.com/categories/Coding/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/13/leetcode_231_power_of_2/</loc>
+    <lastmod>2018-03-05T10:21:46.707Z</lastmod>
+    <data>
+        <display>
+        <title>判断int是否为2的幂—— Leetcode(231)</title>
+        <pubTime>2018-01-13T13:26:24.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
+         
+         
+           
+             
+              <breadCrumb title="Coding" url="http://wangwlj.com/categories/Coding/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/01/09/leetcode_8/</loc>
+    <lastmod>2018-03-05T10:21:39.835Z</lastmod>
+    <data>
+        <display>
+        <title>动手实现atoi函数—— Leetcode(8)</title>
+        <pubTime>2018-01-09T07:32:05.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
+         
+         
+           
+             
+              <breadCrumb title="Coding" url="http://wangwlj.com/categories/Coding/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/03/04/ML_chap9_clustering/</loc>
+    <lastmod>2018-03-05T06:11:36.003Z</lastmod>
+    <data>
+        <display>
+        <title>西瓜书《机器学习》学习笔记(4)：聚类</title>
+        <pubTime>2018-03-04T14:11:19.000Z</pubTime>
         
         <tag>Machine Learning</tag>
          
@@ -24,12 +194,12 @@
 
     
   <url>
-    <loc>http://wangwlj.com/2018/03/04/ML_chap9_clustering/</loc>
-    <lastmod>2018-03-04T14:57:36.109Z</lastmod>
+    <loc>http://wangwlj.com/2018/03/04/ML_chap08_EnsembleLearning/</loc>
+    <lastmod>2018-03-04T14:57:45.529Z</lastmod>
     <data>
         <display>
-        <title>西瓜书《机器学习》学习笔记(4)：聚类</title>
-        <pubTime>2018-03-04T14:11:19.000Z</pubTime>
+        <title>西瓜书《机器学习》学习笔记(3)：集成学习</title>
+        <pubTime>2018-03-04T13:31:09.000Z</pubTime>
         
         <tag>Machine Learning</tag>
          
@@ -1308,72 +1478,6 @@
     
     
   <url>
-    <loc>http://wangwlj.com/2018/01/13/leetcode_231_power_of_2/</loc>
-    <lastmod>2018-01-16T14:28:01.047Z</lastmod>
-    <data>
-        <display>
-        <title>判断int是否为2的幂—— Leetcode(231)</title>
-        <pubTime>2018-01-13T13:26:24.000Z</pubTime>
-        
-        <tag>Algorithm</tag>
-         
-        <tag>Leetcode</tag>
-         
-         
-           
-             
-              <breadCrumb title="Leetcode" url="http://wangwlj.com/categories/Leetcode/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wangwlj.com/2018/01/13/leetcode_326_power_of_3/</loc>
-    <lastmod>2018-01-13T14:23:59.282Z</lastmod>
-    <data>
-        <display>
-        <title>判断int是否为3的幂—— Leetcode(326)</title>
-        <pubTime>2018-01-13T14:15:13.000Z</pubTime>
-        
-        <tag>Algorithm</tag>
-         
-        <tag>Leetcode</tag>
-         
-         
-           
-             
-              <breadCrumb title="Leetcode" url="http://wangwlj.com/categories/Leetcode/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wangwlj.com/2018/01/13/leetcode_342_power_of_4/</loc>
-    <lastmod>2018-01-13T14:23:25.906Z</lastmod>
-    <data>
-        <display>
-        <title>判断int是否为4的幂—— Leetcode(342)</title>
-        <pubTime>2018-01-13T13:41:51.000Z</pubTime>
-        
-        <tag>Algorithm</tag>
-         
-        <tag>Leetcode</tag>
-         
-         
-           
-             
-              <breadCrumb title="Leetcode" url="http://wangwlj.com/categories/Leetcode/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://wangwlj.com/2017/09/21/opencv_contrib/</loc>
     <lastmod>2018-01-13T12:34:25.224Z</lastmod>
     <data>
@@ -1407,54 +1511,6 @@
            
              
               <breadCrumb title="Ubuntu" url="http://wangwlj.com/categories/Ubuntu/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wangwlj.com/2018/01/09/leetcode_8/</loc>
-    <lastmod>2018-01-09T10:03:23.085Z</lastmod>
-    <data>
-        <display>
-        <title>动手实现atoi函数—— Leetcode(8)</title>
-        <pubTime>2018-01-09T07:32:05.000Z</pubTime>
-        
-        <tag>Algorithm</tag>
-         
-        <tag>Leetcode</tag>
-         
-        <tag>atoi</tag>
-         
-         
-           
-             
-              <breadCrumb title="Leetcode" url="http://wangwlj.com/categories/Leetcode/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wangwlj.com/2018/01/08/Leetcode_9/</loc>
-    <lastmod>2018-01-09T08:58:52.550Z</lastmod>
-    <data>
-        <display>
-        <title>判断回文数（三种解法）—— Leetcode(9)</title>
-        <pubTime>2018-01-08T07:32:05.000Z</pubTime>
-        
-        <tag>Algorithm</tag>
-         
-        <tag>Leetcode</tag>
-         
-        <tag>回文数</tag>
-         
-         
-           
-             
-              <breadCrumb title="Leetcode" url="http://wangwlj.com/categories/Leetcode/"/>
           
         </display>
     </data>

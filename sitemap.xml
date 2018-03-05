@@ -2,16 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://wangwlj.com/2018/03/04/ML_chap08_EnsembleLearning/</loc>
+    <loc>http://wangwlj.com/2018/03/05/coding_dye_problem/</loc>
     
-    <lastmod>2018-03-04T14:57:45.529Z</lastmod>
+    <lastmod>2018-03-05T14:55:06.635Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/03/05/coding_offer03_findInArray/</loc>
+    
+    <lastmod>2018-03-05T12:36:59.333Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/03/05/coding_offer06_reconstractBinaryTree/</loc>
+    
+    <lastmod>2018-03-05T12:35:53.912Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/01/08/Leetcode_9/</loc>
+    
+    <lastmod>2018-03-05T10:22:11.091Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/01/13/leetcode_342_power_of_4/</loc>
+    
+    <lastmod>2018-03-05T10:22:01.319Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/01/13/leetcode_326_power_of_3/</loc>
+    
+    <lastmod>2018-03-05T10:21:54.775Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/01/13/leetcode_231_power_of_2/</loc>
+    
+    <lastmod>2018-03-05T10:21:46.707Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/01/09/leetcode_8/</loc>
+    
+    <lastmod>2018-03-05T10:21:39.835Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://wangwlj.com/2018/03/04/ML_chap9_clustering/</loc>
     
-    <lastmod>2018-03-04T14:57:36.109Z</lastmod>
+    <lastmod>2018-03-05T06:11:36.003Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangwlj.com/2018/03/04/ML_chap08_EnsembleLearning/</loc>
+    
+    <lastmod>2018-03-04T14:57:45.529Z</lastmod>
     
   </url>
   
@@ -429,27 +485,6 @@
   </url>
   
   <url>
-    <loc>http://wangwlj.com/2018/01/13/leetcode_231_power_of_2/</loc>
-    
-    <lastmod>2018-01-16T14:28:01.047Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangwlj.com/2018/01/13/leetcode_326_power_of_3/</loc>
-    
-    <lastmod>2018-01-13T14:23:59.282Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangwlj.com/2018/01/13/leetcode_342_power_of_4/</loc>
-    
-    <lastmod>2018-01-13T14:23:25.906Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wangwlj.com/2017/09/21/opencv_contrib/</loc>
     
     <lastmod>2018-01-13T12:34:25.224Z</lastmod>
@@ -460,20 +495,6 @@
     <loc>http://wangwlj.com/2018/01/13/ubuntu_software_summary/</loc>
     
     <lastmod>2018-01-13T06:31:16.143Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangwlj.com/2018/01/09/leetcode_8/</loc>
-    
-    <lastmod>2018-01-09T10:03:23.085Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangwlj.com/2018/01/08/Leetcode_9/</loc>
-    
-    <lastmod>2018-01-09T08:58:52.550Z</lastmod>
     
   </url>
   

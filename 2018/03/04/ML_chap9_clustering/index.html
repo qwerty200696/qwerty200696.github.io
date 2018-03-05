@@ -120,7 +120,7 @@
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-7f1c9f632d8917ce72c768505e5051da_hd.jpg">
 <meta property="og:image" content="https://pic2.zhimg.com/80/v2-a95209fc8754b1e3817e93373ca0d34d_hd.jpg">
 <meta property="og:image" content="https://pic3.zhimg.com/80/v2-ca901ec516d4e0c24978c3e39939f3f7_hd.jpg">
-<meta property="og:updated_time" content="2018-03-04T14:57:36.109Z">
+<meta property="og:updated_time" content="2018-03-05T06:11:36.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="西瓜书《机器学习》学习笔记(4)：聚类">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/c38a0784ly1fp1640ztrgj23t12mgnpd.jpg">
@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,220
+                  1,229
                 </span>
               
 
@@ -499,18 +499,18 @@
 <li>DB指数（Davies-Bouldin Index，简称DBI）</li>
 <li>Dunn指数（Dunn Index，简称DI）</li>
 </ul>
-<h2 id="（三）距离计算"><a href="#（三）距离计算" class="headerlink" title="（三）距离计算"></a>（三）距离计算</h2><p>给定样本xi=（xi1，xi2；…；xin），与xj=（xj1；xj2；…；xjn），最常用的是”闵可夫斯基距离“（<code>Minkowski distance</code>），</p>
+<h2 id="（三）距离计算"><a href="#（三）距离计算" class="headerlink" title="（三）距离计算"></a>（三）距离计算</h2><p>给定样本$x_i=(x_{i1}, x_{i2},\cdots ,x_{in})$，与$x_j=(x_{j1}, x_{j2},\cdots,x_{jn})$，最常用的是”闵可夫斯基距离“（<code>Minkowski distance</code>），</p>
 <p><img src="https://pic2.zhimg.com/80/v2-092b54a83787c5132a649ccd90883f47_hd.jpg" alt=""></p>
 <p>p=2时，闵可夫斯基距离即欧氏距离（<code>Euclidean distance</code>），</p>
 <p><img src="https://pic2.zhimg.com/80/v2-d7b50004e720a04337e22e2fdb1bdc1a_hd.jpg" alt=""></p>
 <p>p=1时，闵可夫斯基距离即曼哈顿距离（<code>Manhattan distance</code>），<br><img src="https://pic4.zhimg.com/80/v2-7f1c9f632d8917ce72c768505e5051da_hd.jpg" alt=""></p>
 <p>上面的距离计算式都是事先定义好的，但在不少现实任务中，有必要基于数据样本来确定合适的距离计算式，这可通过”距离度量学习“（<code>distance metric learning</code>）来实现。</p>
 <h2 id="（四）原型聚类"><a href="#（四）原型聚类" class="headerlink" title="（四）原型聚类"></a>（四）原型聚类</h2><p>原型聚类亦称”基于原型的聚类“（<code>prototype-based clustering</code>），此类算法假设聚类结构能通过一组原型刻画，在现实聚类任务中极为常用。通常情形下，算法先对原型进行初始化，然后对原型进行迭代更新求解。采用不同的原型表示、不同的求解方式，将产生不同的算法。</p>
-<h3 id="1-k均值算法"><a href="#1-k均值算法" class="headerlink" title="1. k均值算法"></a>1. k均值算法</h3><p>给定样本集D={x1，x2，…，xm}，”k均值“（k-means）算法针对聚类所得簇划分C={C1，C2，…，Ck}最小化平方误差，<br><img src="https://pic2.zhimg.com/80/v2-a95209fc8754b1e3817e93373ca0d34d_hd.jpg" alt=""></p>
-<p>其中，<br><img src="https://pic3.zhimg.com/80/v2-ca901ec516d4e0c24978c3e39939f3f7_hd.jpg" alt=""></p>
-<p>x是簇Ci的均值向量。直观来看，上面式子在一定程度上刻画了簇内样本围绕簇均值向量的紧密程度，E值越小则簇内样本相似度越高。</p>
+<h3 id="1-k均值算法"><a href="#1-k均值算法" class="headerlink" title="1. k均值算法"></a>1. k均值算法</h3><p>给定样本集$D={x_1，x_2，…，x_m}$，”k均值“（<code>k-means</code>）算法针对聚类所得簇划分$C={C_1，C_2，…，C_k}$最小化平方误差：<br><img src="https://pic2.zhimg.com/80/v2-a95209fc8754b1e3817e93373ca0d34d_hd.jpg" alt=""></p>
+<p>其中:<br><img src="https://pic3.zhimg.com/80/v2-ca901ec516d4e0c24978c3e39939f3f7_hd.jpg" alt=""></p>
+<p>x是簇$C_i$的均值向量。直观来看，上面式子在一定程度上刻画了簇内样本围绕簇均值向量的紧密程度，E值越小则簇内样本相似度越高。</p>
 <h3 id="2-学习向量量化"><a href="#2-学习向量量化" class="headerlink" title="2. 学习向量量化"></a>2. 学习向量量化</h3><p>与k均值算法类似，“学习向量量化”（<code>Learning Vector Quantization</code>，简称<code>LVQ</code>）也是试图找到一组原型向量来刻画聚类结构，但与一般的聚类算法不同的是，LVQ假设数据样本带有类别标记，学习过程用样本的这些监督信息来辅助聚类。</p>
-<h3 id="3-高斯混合聚类"><a href="#3-高斯混合聚类" class="headerlink" title="3. 高斯混合聚类"></a>3. 高斯混合聚类</h3><p>与k均值、LVQ用原型向量来刻画聚类结构不同，高斯混合（<code>Mixture-of-Gaussian</code>）聚类采用概率模型来表达聚类原型。</p>
+<h3 id="3-高斯混合聚类"><a href="#3-高斯混合聚类" class="headerlink" title="3. 高斯混合聚类"></a>3. 高斯混合聚类</h3><p>与k均值、<code>LVQ</code>用原型向量来刻画聚类结构不同，高斯混合（<code>Mixture-of-Gaussian</code>）聚类采用概率模型来表达聚类原型。</p>
 <h2 id="（五）密度聚类"><a href="#（五）密度聚类" class="headerlink" title="（五）密度聚类"></a>（五）密度聚类</h2><p>密度聚类亦称“基于密度的聚类”（<code>density-based clustering</code>），此类算法假设聚类结构能通过样本分布的紧密程度确定。通常情况下，密度聚类算法从样本密度的角度来考察样本之间的可连接性，并基于可连接样本不断扩展聚类簇以获得最终的聚类结果。<br><code>DBSCAN</code>是一种著名的密度聚类算法。</p>
 <h2 id="（六）层次聚类"><a href="#（六）层次聚类" class="headerlink" title="（六）层次聚类"></a>（六）层次聚类</h2><p>层次聚类（<code>hierarchical clustering</code>）试图在不同层次对数据集进行划分，从而形成树形的聚类结构。数据集的划分可采用“自底向上”的聚合策略，也可采用“自顶向下”的分拆策略。<br><code>AGNES</code>是一种采用自底向上聚合策略的层次聚类算法。</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
@@ -628,6 +628,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/03/05/coding_dye_problem/" rel="prev" title="编程题：扇形染色问题">
+                编程题：扇形染色问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -734,7 +738,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -756,7 +760,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">64</span>
+                <span class="site-state-item-count">63</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -885,7 +889,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      163.2k
+      164.6k
     </span>
   
 </div>
