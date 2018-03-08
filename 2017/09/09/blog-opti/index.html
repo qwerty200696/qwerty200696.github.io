@@ -90,7 +90,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo,博客,GitHub," />
+  <meta name="keywords" content="GitHub,Hexo,博客," />
 
 
 
@@ -109,7 +109,7 @@
 
 
 <meta name="description" content="本篇教程基于NexT主题的博客配置，实现更换主题、评论、打赏等36项功能，接下来根据这些功能进行分点描述，附上个人博客以供比对参考：个人博客链接。">
-<meta name="keywords" content="Hexo,博客,GitHub">
+<meta name="keywords" content="GitHub,Hexo,博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo搭建的GitHub博客之优化">
 <meta property="og:url" content="http://wangwlj.com/2017/09/09/blog-opti/index.html">
@@ -721,7 +721,7 @@
 <h1 id="文章加密访问"><a href="#文章加密访问" class="headerlink" title="文章加密访问"></a>文章加密访问</h1><p><strong>实现方法</strong></p>
 <p>打开<code>themes-&gt;next-&gt;layout-&gt;_partials-&gt;head.swig</code>文件,在以下位置插入这样一段代码：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8czy6aiuj20u00n2q6m.jpg" alt="文章加密访问"></p>
-<p>代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">    (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></div><div class="line"><span class="javascript">        <span class="keyword">if</span>(<span class="string">'&#123;&#123; page.password &#125;&#125;'</span>)&#123;</span></div><div class="line"><span class="javascript">            <span class="keyword">if</span> (prompt(<span class="string">'请输入文章密码'</span>) !== <span class="string">'&#123;&#123; page.password &#125;&#125;'</span>)&#123;</span></div><div class="line"><span class="javascript">                alert(<span class="string">'密码错误！'</span>);</span></div><div class="line"><span class="undefined">                history.back();</span></div><div class="line"><span class="undefined">            &#125;</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">    &#125;)();</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">    (function()&#123;</span></div><div class="line"><span class="undefined">        if('&#123;&#123; page.password &#125;&#125;')&#123;</span></div><div class="line"><span class="undefined">            if (prompt('请输入文章密码') !== '&#123;&#123; page.password &#125;&#125;')&#123;</span></div><div class="line"><span class="undefined">                alert('密码错误！');</span></div><div class="line"><span class="undefined">                history.back();</span></div><div class="line"><span class="undefined">            &#125;</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">    &#125;)();</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>然后在文章上写成类似这样：</p>
 <p><img src="http://ww1.sinaimg.cn/large/c38a0784ly1fn8d0be2a3j20k00c60tn.jpg" alt="文章加密访问"></p>
 <p><strong>实现效果图</strong></p>
@@ -884,11 +884,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
+          
             <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
           
             <a href="/tags/博客/" rel="tag"><i class="fa fa-tag"></i> 博客</a>
-          
-            <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
           
         </div>
       
@@ -1031,7 +1031,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">79</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1182,7 +1182,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      164.6k
+      168.4k
     </span>
   
 </div>
