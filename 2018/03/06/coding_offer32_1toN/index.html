@@ -110,15 +110,15 @@
 
 <meta name="keywords" content="Coding">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指offer面试题：用两个栈实现队列">
-<meta property="og:url" content="http://wangwlj.com/2018/03/06/coding_offer07_stack2queue/index.html">
+<meta property="og:title" content="剑指offer面试题：从1到n整数中1出现的次数">
+<meta property="og:url" content="http://wangwlj.com/2018/03/06/coding_offer32_1toN/index.html">
 <meta property="og:site_name" content="wangwlj&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/c38a0784ly1fp3cq46xhdj23v92ky4qs.jpg">
-<meta property="og:updated_time" content="2018-03-08T03:23:38.876Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/c38a0784ly1fp5bof1excj23eb1wsnpd.jpg">
+<meta property="og:updated_time" content="2018-03-16T14:38:08.839Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="剑指offer面试题：用两个栈实现队列">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/c38a0784ly1fp3cq46xhdj23v92ky4qs.jpg">
+<meta name="twitter:title" content="剑指offer面试题：从1到n整数中1出现的次数">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/c38a0784ly1fp5bof1excj23eb1wsnpd.jpg">
 
 
 
@@ -148,14 +148,14 @@
 
 
 
-  <link rel="canonical" href="http://wangwlj.com/2018/03/06/coding_offer07_stack2queue/"/>
+  <link rel="canonical" href="http://wangwlj.com/2018/03/06/coding_offer32_1toN/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>剑指offer面试题：用两个栈实现队列 | wangwlj's Blog</title>
+  <title>剑指offer面试题：从1到n整数中1出现的次数 | wangwlj's Blog</title>
   
 
 
@@ -347,7 +347,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2018/03/06/coding_offer07_stack2queue/">
+    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2018/03/06/coding_offer32_1toN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wangwlj">
@@ -364,7 +364,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">剑指offer面试题：用两个栈实现队列</h1>
+          <h1 class="post-title" itemprop="name headline">剑指offer面试题：从1到n整数中1出现的次数</h1>
         
 
         <div class="post-meta">
@@ -377,7 +377,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-06T10:57:44+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-06T14:06:03+08:00">
                 2018-03-06
               </time>
             
@@ -418,7 +418,7 @@
 
           
           
-             <span id="/2018/03/06/coding_offer07_stack2queue/" class="leancloud_visitors" data-flag-title="剑指offer面试题：用两个栈实现队列">
+             <span id="/2018/03/06/coding_offer32_1toN/" class="leancloud_visitors" data-flag-title="剑指offer面试题：从1到n整数中1出现的次数">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  508
+                  1,270
                 </span>
               
 
@@ -468,16 +468,69 @@
       
 
       
-        <p><img src="http://ww1.sinaimg.cn/mw690/c38a0784ly1fp3cq46xhdj23v92ky4qs.jpg" alt=""><br><a id="more"></a></p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>用两个栈来实现一个队列，完成队列的<code>Push</code>和<code>Pop</code>操作。 队列中的元素为<code>int</code>类型。</p>
-<p>C++版本的初始代码为：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> node)</span> </span>&#123;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; stack1;</div><div class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; stack2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><h3 id="用两个栈实现一个队列的功能-要求给出算法和思路"><a href="#用两个栈实现一个队列的功能-要求给出算法和思路" class="headerlink" title="用两个栈实现一个队列的功能?要求给出算法和思路!"></a>用两个栈实现一个队列的功能?要求给出算法和思路!</h3><p>&lt;分析&gt;：</p>
-<p>入队：将元素进栈A<br>出队：判断栈B是否为空，如果为空，则将栈A中所有元素pop，并push进栈B，栈B出栈；如果不为空，栈B直接出栈。</p>
-<p>换个说法：<br>栈A用来作入队列；栈B用来出队列，当栈B为空时，栈A全部出栈到栈B,栈B再出栈（即出队列）。</p>
-<p>本地测试的完整C++程序：【添加了一个打印函数】<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> node)</span> </span>&#123;</div><div class="line">        stack1.push(node);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(stack2.size() &lt;= <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">while</span> (stack1.size() &gt; <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">int</span> data = stack1.top();</div><div class="line">                stack1.pop();</div><div class="line">                stack2.push(data);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(stack2.size() == <span class="number">0</span>)</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"error"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">            <span class="comment">//throw new exception("queue is empty");</span></div><div class="line">        </div><div class="line">        <span class="keyword">int</span> head = stack2.top();</div><div class="line">        stack2.pop();</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> head;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">show_value</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> data;</div><div class="line">        <span class="keyword">while</span> (stack2.size() &gt; <span class="number">0</span>) &#123;</div><div class="line">            data = stack2.top();</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; data &lt;&lt; <span class="string">" "</span>;</div><div class="line">            stack2.pop();</div><div class="line">            stack1.push(data);</div><div class="line">            ++count;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span> (stack1.size() &gt; <span class="number">0</span>) &#123;</div><div class="line">            data = stack1.top();</div><div class="line">            stack1.pop();</div><div class="line">            stack2.push(data);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// stack2中只返回原先就在stack1中的值。</span></div><div class="line">        <span class="keyword">while</span> (stack2.size() &gt; count) &#123;</div><div class="line">            data = stack2.top();</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; data &lt;&lt; <span class="string">" "</span>;</div><div class="line">            stack2.pop();</div><div class="line">            stack1.push(data);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>  (stack2.size() != count )</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"error:"</span> &lt;&lt; stack2.size() &lt;&lt; <span class="string">" != "</span> &lt;&lt; count;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; stack1;</div><div class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; stack2;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    Solution *s = <span class="keyword">new</span> Solution();</div><div class="line">    s-&gt;push(<span class="number">5</span>);</div><div class="line">    s-&gt;push(<span class="number">4</span>);</div><div class="line">    s-&gt;push(<span class="number">3</span>);</div><div class="line">    s-&gt;push(<span class="number">2</span>);</div><div class="line">    s-&gt;pop();</div><div class="line">    s-&gt;push(<span class="number">1</span>);</div><div class="line">    s-&gt;push(<span class="number">0</span>);</div><div class="line">    s-&gt;push(<span class="number">-1</span>);</div><div class="line">    s-&gt;pop();</div><div class="line">    s-&gt;push(<span class="number">-2</span>);</div><div class="line">    <span class="comment">// 打印出队列的值。</span></div><div class="line">    s-&gt;show_value();</div><div class="line">	</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>此外，还可以思考一下：</p>
-<h3 id="用两个队列实现一个栈的功能-要求给出算法和思路"><a href="#用两个队列实现一个栈的功能-要求给出算法和思路" class="headerlink" title="用两个队列实现一个栈的功能?要求给出算法和思路!"></a>用两个队列实现一个栈的功能?要求给出算法和思路!</h3><p>&lt;分析&gt;：</p>
-<p>入栈：将元素进队列A<br>出栈：判断队列A中元素的个数是否为1，如果等于1，则出队列，否则将队列A中的元素   以此出队列并放入队列B，直到队列A中的元素留下一个，然后队列A出队列，再把队列B中的元素出队列依次放入队列A中。</p>
+        <p><img src="http://ww1.sinaimg.cn/mw690/c38a0784ly1fp5bof1excj23eb1wsnpd.jpg" alt=""><br><a id="more"></a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>求出1~13的整数中1出现的次数,并算出100~1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。ACMer希望你们帮帮他,并把问题更加普遍化,可以很快的求出任意非负整数区间中1出现的次数。</p>
+<p>额，题目的意思实际上是求出从1到n整数中1出现的次数。</p>
+<p>链接：<a href="https://www.nowcoder.com/questionTerminal/bd7f978302044eee894445e244c7eee6" target="_blank" rel="external">https://www.nowcoder.com/questionTerminal/bd7f978302044eee894445e244c7eee6</a></p>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>设N = abcde ,其中abcde分别为十进制中各位上的数字。<br>如果要计算百位上1出现的次数，它要受到3方面的影响：百位上的数字，百位以下（低位）的数字，百位以上（高位）的数字。</p>
+<p>① 如果百位上数字为0，百位上可能出现1的次数由更高位决定。比如：12013，则可以知道百位出现1的情况可能是：100~199，1100~1199,2100~2199，，…，11100~11199，一共1200个。可以看出是由更高位数字（12）决定，并且等于更高位数字（12）乘以 当前位数（100）。</p>
+<p>② 如果百位上数字为1，百位上可能出现1的次数不仅受更高位影响还受低位影响。比如：12113，则可以知道百位受高位影响出现的情况是：100~199，1100~1199,2100~2199，，….，11100~11199，一共1200个。和上面情况一样，并且等于更高位数字（12）乘以 当前位数（100）。但同时它还受低位影响，百位出现1的情况是：12100~12113,一共114个，等于低位数字（113）+1。</p>
+<p>③ 如果百位上数字大于1（2~9），则百位上出现1的情况仅由更高位决定，比如12213，则百位出现1的情况是：100~199,1100~1199，2100~2199，…，11100~11199,12100~12199,一共有1300个，并且等于更高位数字+1（12+1）乘以当前位数（100）。</p>
+<blockquote>
+<p>这题没看题解之前真是一脸懵逼，找规律真是不太容易啊。</p>
+</blockquote>
+<p>至此，就可以写代码了，为了加深理解，我再通过表格的形式叙述一下算法流程。以21345为例，列表如下：</p>
+<table>
+<thead>
+<tr>
+<th>i(当前位)</th>
+<th>n/i/10(前面的数)</th>
+<th>n/i%10(当前位的值)</th>
+<th>n%i(后面的数)</th>
+<th>当前位1的个数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1（个位）</td>
+<td>2134</td>
+<td>5</td>
+<td>0</td>
+<td>(2134+1)x1=2135</td>
+</tr>
+<tr>
+<td>10（十位）</td>
+<td>213</td>
+<td>4</td>
+<td>5</td>
+<td>(213+1)x10=2140</td>
+</tr>
+<tr>
+<td>100（百位）</td>
+<td>21</td>
+<td>3</td>
+<td>45</td>
+<td>(21+1)x100=2200</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>2</td>
+<td>1</td>
+<td>345</td>
+<td>2x1000+345+1 = 2346</td>
+</tr>
+<tr>
+<td>10000</td>
+<td>0</td>
+<td>2</td>
+<td>1345</td>
+<td>(0+1)x10000=10000</td>
+</tr>
+</tbody>
+</table>
+<p>综合起来最终结果就是18821.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">NumberOf1Between1AndN_Solution</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;<span class="comment">//1的个数</span></div><div class="line">        <span class="keyword">int</span> i = <span class="number">1</span>;<span class="comment">//当前位</span></div><div class="line">        <span class="keyword">int</span> current = <span class="number">0</span>,after = <span class="number">0</span>,before = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>((n/i)!= <span class="number">0</span>)&#123;           </div><div class="line">            current = (n/i)%<span class="number">10</span>; <span class="comment">//高位数字</span></div><div class="line">            before = n/(i*<span class="number">10</span>); <span class="comment">//当前位数字</span></div><div class="line">            after = n-(n/i)*i; <span class="comment">//低位数字</span></div><div class="line">            <span class="comment">//如果为0,出现1的次数由高位决定,等于高位数字 * 当前位数</span></div><div class="line">            <span class="keyword">if</span> (current == <span class="number">0</span>)</div><div class="line">                count += before*i;</div><div class="line">            <span class="comment">//如果为1,出现1的次数由高位和低位决定,高位*当前位+低位+1</span></div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(current == <span class="number">1</span>)</div><div class="line">                count += before * i + after + <span class="number">1</span>;</div><div class="line">            <span class="comment">//如果大于1,出现1的次数由高位决定,//（高位数字+1）* 当前位数</span></div><div class="line">            <span class="keyword">else</span>&#123;</div><div class="line">                count += (before + <span class="number">1</span>) * i;</div><div class="line">            &#125;    </div><div class="line">            <span class="comment">//前移一位</span></div><div class="line">            i = i*<span class="number">10</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面看懂了之后，再来看这个解法，也很容易。<br>其实思路是一样的，只不过代码更加简洁了。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">NumberOf1Between1AndN_Solution</span><span class="params">(<span class="keyword">int</span> n)</span></span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">    <span class="comment">//主要思路：设定整数点（如1、10、100等等）作为位置点i（对应n的各位、十位、百位等等），分别对每个数位上有多少包含1的点进行分析</span></div><div class="line">    <span class="comment">//根据设定的整数位置，对n进行分割，分为两部分，高位n/i，低位n%i</span></div><div class="line">    <span class="comment">//当i表示百位，且百位对应的数&gt;=2,如n=31456,i=100，则a=314,b=56，此时百位为1的次数有a/10+1=32（最高两位0~31），每一次都包含100个连续的点，即共有(a%10+1)*100个点的百位为1</span></div><div class="line">    <span class="comment">//当i表示百位，且百位对应的数为1，如n=31156,i=100，则a=311,b=56，此时百位对应的就是1，则共有a%10(最高两位0-30)次是包含100个连续点，当最高两位为31（即a=311），本次只对应局部点00~56，共b+1次，所有点加起来共有（a%10*100）+(b+1)，这些点百位对应为1</span></div><div class="line">    <span class="comment">//当i表示百位，且百位对应的数为0,如n=31056,i=100，则a=310,b=56，此时百位为1的次数有a/10=31（最高两位0~30）</span></div><div class="line">    <span class="comment">//综合以上三种情况，当百位对应0或&gt;=2时，有(a+8)/10次包含所有100个点，还有当百位为1(a%10==1)，需要增加局部点b+1</span></div><div class="line">    <span class="comment">//之所以补8，是因为当百位为0，则a/10==(a+8)/10，当百位&gt;=2，补8会产生进位位，效果等同于(a/10+1)</span></div><div class="line">    <span class="keyword">int</span> count=<span class="number">0</span>;</div><div class="line">    <span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i*=<span class="number">10</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">//i表示当前分析的是哪一个数位</span></div><div class="line">        <span class="keyword">int</span> a = n/i,b = n%i;</div><div class="line">        count=count+(a+<span class="number">8</span>)/<span class="number">10</span>*i+(a%<span class="number">10</span>==<span class="number">1</span>)*(b+<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> count;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -539,7 +592,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://wangwlj.com/2018/03/06/coding_offer07_stack2queue/" title="剑指offer面试题：用两个栈实现队列">http://wangwlj.com/2018/03/06/coding_offer07_stack2queue/</a>
+    <a href="http://wangwlj.com/2018/03/06/coding_offer32_1toN/" title="剑指offer面试题：从1到n整数中1出现的次数">http://wangwlj.com/2018/03/06/coding_offer32_1toN/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -579,8 +632,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/05/coding_offer06_reconstractBinaryTree/" rel="next" title="剑指offer面试题：重建二叉树">
-                <i class="fa fa-chevron-left"></i> 剑指offer面试题：重建二叉树
+              <a href="/2018/03/06/coding_offer07_stack2queue/" rel="next" title="剑指offer面试题：用两个栈实现队列">
+                <i class="fa fa-chevron-left"></i> 剑指offer面试题：用两个栈实现队列
               </a>
             
           </div>
@@ -589,8 +642,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/06/coding_offer32_1toN/" rel="prev" title="剑指offer面试题：从1到n整数中1出现的次数">
-                剑指offer面试题：从1到n整数中1出现的次数 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/06/coding_offer08_findMinNumberInRotateArray/" rel="prev" title="剑指offer面试题：旋转数组的最小数字">
+                剑指offer面试题：旋转数组的最小数字 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -807,7 +860,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路分析"><span class="nav-number">2.</span> <span class="nav-text">思路分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用两个栈实现一个队列的功能-要求给出算法和思路"><span class="nav-number">2.1.</span> <span class="nav-text">用两个栈实现一个队列的功能?要求给出算法和思路!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用两个队列实现一个栈的功能-要求给出算法和思路"><span class="nav-number">2.2.</span> <span class="nav-text">用两个队列实现一个栈的功能?要求给出算法和思路!</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目分析"><span class="nav-number">2.</span> <span class="nav-text">题目分析</span></a></li></ol></div>
             
 
           </div>
