@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://wangwlj.com/2018/03/20/algorithm_tutorial_chapter_13/</loc>
+    <lastmod>2018-03-20T14:43:53.781Z</lastmod>
+    <data>
+        <display>
+        <title>算法导论详解(11) 第十三章 红黑树</title>
+        <pubTime>2018-03-20T14:39:47.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+        <tag>算法导论</tag>
+         
+         
+           
+             
+              <breadCrumb title="Algorithm" url="http://wangwlj.com/categories/Algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wangwlj.com/2018/03/06/coding_offer32_1toN/</loc>
     <lastmod>2018-03-16T14:38:08.839Z</lastmod>
     <data>
@@ -497,11 +519,11 @@
         <title>Hexo搭建的GitHub博客之优化</title>
         <pubTime>2017-09-09T02:27:20.000Z</pubTime>
         
+        <tag>GitHub</tag>
+         
         <tag>Hexo</tag>
          
         <tag>博客</tag>
-         
-        <tag>GitHub</tag>
          
          
            
@@ -521,11 +543,11 @@
         <title>Hexo+GitHub博客搭建实战</title>
         <pubTime>2017-09-08T04:00:25.000Z</pubTime>
         
+        <tag>GitHub</tag>
+         
         <tag>Hexo</tag>
          
         <tag>博客</tag>
-         
-        <tag>GitHub</tag>
          
          
            
