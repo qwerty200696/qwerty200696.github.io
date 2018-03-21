@@ -108,14 +108,13 @@
 
 
 
-<meta name="description" content="红黑树简介红黑树，一种二叉查找树，但在每个结点上增加一个存储位表示结点的颜色，可以是Red或Black。 通过对任何一条从根到叶子的路径上各个结点着色方式的限制，红黑树确保没有一条路径会比其他路径长出俩倍，因而是接近平衡的。 红黑树虽然本质上是一棵二叉查找树，但它在二叉查找树的基础上增加了着色和相关的性质使得红黑树相对平衡，从而保证了红黑树的查找、插入、删除的时间复杂度最坏为O(log n)。 在">
 <meta name="keywords" content="Algorithm,算法导论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法导论详解(11) 第十三章 红黑树">
 <meta property="og:url" content="http://wangwlj.com/2018/03/20/algorithm_tutorial_chapter_13/index.html">
 <meta property="og:site_name" content="wangwlj&#39;s Blog">
-<meta property="og:description" content="红黑树简介红黑树，一种二叉查找树，但在每个结点上增加一个存储位表示结点的颜色，可以是Red或Black。 通过对任何一条从根到叶子的路径上各个结点着色方式的限制，红黑树确保没有一条路径会比其他路径长出俩倍，因而是接近平衡的。 红黑树虽然本质上是一棵二叉查找树，但它在二叉查找树的基础上增加了着色和相关的性质使得红黑树相对平衡，从而保证了红黑树的查找、插入、删除的时间复杂度最坏为O(log n)。 在">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/c38a0784ly1fpkhl7oiv3j23vc2kw1l1.jpg">
 <meta property="og:image" content="http://img.my.csdn.net/uploads/201212/12/1355319681_6107.png">
 <meta property="og:image" content="http://img.my.csdn.net/uploads/201012/29/8394323_1293614183gD0H.jpg">
 <meta property="og:image" content="http://7xrlu9.com1.z0.glb.clouddn.com/DataStructure_RB_2.png">
@@ -126,11 +125,10 @@
 <meta property="og:image" content="http://7xrlu9.com1.z0.glb.clouddn.com/DataStructure_RB_7.png">
 <meta property="og:image" content="http://7xrlu9.com1.z0.glb.clouddn.com/DataStructure_RB_8.png">
 <meta property="og:image" content="http://7xrlu9.com1.z0.glb.clouddn.com/DataStructure_RB_9.png">
-<meta property="og:updated_time" content="2018-03-20T14:43:53.781Z">
+<meta property="og:updated_time" content="2018-03-21T07:48:57.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法导论详解(11) 第十三章 红黑树">
-<meta name="twitter:description" content="红黑树简介红黑树，一种二叉查找树，但在每个结点上增加一个存储位表示结点的颜色，可以是Red或Black。 通过对任何一条从根到叶子的路径上各个结点着色方式的限制，红黑树确保没有一条路径会比其他路径长出俩倍，因而是接近平衡的。 红黑树虽然本质上是一棵二叉查找树，但它在二叉查找树的基础上增加了着色和相关的性质使得红黑树相对平衡，从而保证了红黑树的查找、插入、删除的时间复杂度最坏为O(log n)。 在">
-<meta name="twitter:image" content="http://img.my.csdn.net/uploads/201212/12/1355319681_6107.png">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/c38a0784ly1fpkhl7oiv3j23vc2kw1l1.jpg">
 
 
 
@@ -480,7 +478,8 @@
       
 
       
-        <h3 id="红黑树简介"><a href="#红黑树简介" class="headerlink" title="红黑树简介"></a>红黑树简介</h3><p>红黑树，一种二叉查找树，但在每个结点上增加一个存储位表示结点的颜色，可以是<code>Red</code>或<code>Black</code>。</p>
+        <p><img src="http://ww1.sinaimg.cn/mw690/c38a0784ly1fpkhl7oiv3j23vc2kw1l1.jpg" alt=""><br><a id="more"></a></p>
+<h3 id="红黑树简介"><a href="#红黑树简介" class="headerlink" title="红黑树简介"></a>红黑树简介</h3><p>红黑树，一种二叉查找树，但在每个结点上增加一个存储位表示结点的颜色，可以是<code>Red</code>或<code>Black</code>。</p>
 <p>通过对任何一条从根到叶子的路径上各个结点着色方式的限制，红黑树确保没有一条路径会比其他路径长出俩倍，因而是接近平衡的。</p>
 <p>红黑树虽然本质上是一棵二叉查找树，但它在二叉查找树的基础上增加了着色和相关的性质使得红黑树相对平衡，从而保证了红黑树的查找、插入、删除的时间复杂度最坏为<code>O(log n)</code>。</p>
 <p>在<code>C++ STL</code>中，很多部分(目前包括set, multiset, map, multimap)应用了红黑树的变体(<code>SGI STL</code>中的红黑树有一些变化，这些修改提供了更好的性能，以及对set操作的支持)。</p>
@@ -516,7 +515,7 @@
 <p>（此时P为祖父结点G的左子结点或右子结点都属于情形4，这里仅显示P为G左子的情形）</p>
 <p><code>情形5</code>. <strong>父结点P是红色（祖父结点G一定为黑色），叔父结点U是黑色或缺少，并且新结点N是右孩子</strong>。则针对父结点P进行一次左旋转调换新结点N和P的角色，接着按情形4进行处理。</p>
 <p><img src="http://7xrlu9.com1.z0.glb.clouddn.com/DataStructure_RB_4.png" alt=""></p>
-<h2 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h2><p>首先以二叉查找树的方法找到要删除的结点，如果需要删除的结点有两个非叶子的孩子结点，那么问题可以转化成删除的结点最多有一个非叶子的孩子结点。（对于二叉查找树，在删除带有两个非叶子儿子的结点的时候，要么找到它的前驱（左子树中的最大元素）、要么找到后继（右子树中的最小元素），并把它的值拷贝到要删除的结点中。接着删除前驱（或后继），注意前驱（后继）的非叶子孩子结点数必定少于2。因为拷贝前驱（后继）值时不违反任何性质，所以上面的问题转化成立）。</p>
+<h3 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h3><p>首先以二叉查找树的方法找到要删除的结点，如果需要删除的结点有两个非叶子的孩子结点，那么问题可以转化成删除的结点最多有一个非叶子的孩子结点。（对于二叉查找树，在删除带有两个非叶子儿子的结点的时候，要么找到它的前驱（左子树中的最大元素）、要么找到后继（右子树中的最小元素），并把它的值拷贝到要删除的结点中。接着删除前驱（或后继），注意前驱（后继）的非叶子孩子结点数必定少于2。因为拷贝前驱（后继）值时不违反任何性质，所以上面的问题转化成立）。</p>
 <p>如果被删除的结点没有非叶子的孩子，那么直接删除，然后用一个叶子结点代替它的位置，不用作其它树调整。</p>
 <p>下面只讨论删除的结点只有一个非叶子结点孩子的情况。如果<strong>删除的是一个红色节点</strong>，它的父亲和孩子一定是黑色的，所以我们可以简单的用它的黑色儿子替换它，并不会破坏红黑树的性质。另一种简单情况是在<strong>被删除节点是黑色而它的儿子是红色的时候</strong>。我们重绘它的儿子为黑色，则曾经通过它的所有路径将通过它的黑色儿子，这样可以继续保持性质5。</p>
 <p>需要进一步讨论的是在要<strong>删除的节点和它的儿子二者都是黑色的时候</strong>，这是一种复杂的情况。我们首先把要删除的节点替换为它的儿子。出于方便，称呼这个儿子为N（在新的位置上），称呼它的兄弟（它父亲的另一个儿子）为S。在下面的示意图中，我们使用P称呼N的父亲，S<sub>L</sub> 称呼S的左儿子，S<sub>R</sub> 称呼S的右儿子。</p>
@@ -531,7 +530,7 @@
 <p><img src="http://7xrlu9.com1.z0.glb.clouddn.com/DataStructure_RB_8.png" alt=""></p>
 <p><code>情形6</code>. <strong>S是黑色，S的右儿子是红色</strong>。在N的父亲上做左旋转，这样S成为N的父亲（P）和S的右儿子的父亲。我们接着交换N的父亲和S的颜色，并使S的右儿子为黑色。子树在它的根上的仍是同样的颜色，所以性质3没有被违反。但是，N现在增加了一个黑色祖先：要么N的父亲变成黑色，要么它是黑色而S被增加为一个黑色祖父。</p>
 <p><img src="http://7xrlu9.com1.z0.glb.clouddn.com/DataStructure_RB_9.png" alt=""></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
 <li>算法导论</li>
 <li><a href="https://zh.wikipedia.org/wiki/%E7%BA%A2%E9%BB%91%E6%A0%91" target="_blank" rel="external">红黑树</a></li>
 <li><a href="http://blog.csdn.net/v_july_v/article/details/6105630" target="_blank" rel="external">教你初步了解红黑树</a></li>
@@ -649,6 +648,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/03/21/ML_chap05_SVM/" rel="prev" title="西瓜书《机器学习》学习笔记(6)：支持向量机">
+                西瓜书《机器学习》学习笔记(6)：支持向量机 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -755,7 +758,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">83</span>
+                <span class="site-state-item-count">85</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -863,7 +866,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#红黑树简介"><span class="nav-number">1.</span> <span class="nav-text">红黑树简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#红黑树的性质"><span class="nav-number">2.</span> <span class="nav-text">红黑树的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转操作"><span class="nav-number">3.</span> <span class="nav-text">旋转操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入操作"><span class="nav-number">4.</span> <span class="nav-text">插入操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除操作"><span class="nav-number"></span> <span class="nav-text">删除操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number"></span> <span class="nav-text">参考</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#红黑树简介"><span class="nav-number">1.</span> <span class="nav-text">红黑树简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#红黑树的性质"><span class="nav-number">2.</span> <span class="nav-text">红黑树的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转操作"><span class="nav-number">3.</span> <span class="nav-text">旋转操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入操作"><span class="nav-number">4.</span> <span class="nav-text">插入操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除操作"><span class="nav-number">5.</span> <span class="nav-text">删除操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -906,7 +909,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      180.6k
+      188.5k
     </span>
   
 </div>

@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://wangwlj.com/2018/03/20/algorithm_tutorial_chapter_13/</loc>
-    <lastmod>2018-03-20T14:43:53.781Z</lastmod>
+    <lastmod>2018-03-21T07:48:57.038Z</lastmod>
     <data>
         <display>
         <title>算法导论详解(11) 第十三章 红黑树</title>
@@ -19,6 +19,66 @@
            
              
               <breadCrumb title="Algorithm" url="http://wangwlj.com/categories/Algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/03/21/network_top_ten_questions/</loc>
+    <lastmod>2018-03-21T07:47:34.570Z</lastmod>
+    <data>
+        <display>
+        <title>计算机网络常考面试题十则</title>
+        <pubTime>2018-03-21T07:43:38.000Z</pubTime>
+        
+        <tag>Network</tag>
+         
+         
+           
+             
+              <breadCrumb title="Basic Knowledge" url="http://wangwlj.com/categories/Basic-Knowledge/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/03/21/ML_chap05_SVM/</loc>
+    <lastmod>2018-03-21T07:35:38.006Z</lastmod>
+    <data>
+        <display>
+        <title>西瓜书《机器学习》学习笔记(6)：支持向量机</title>
+        <pubTime>2018-03-21T07:18:43.000Z</pubTime>
+        
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://wangwlj.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wangwlj.com/2018/03/05/coding_dye_problem/</loc>
+    <lastmod>2018-03-21T06:25:42.794Z</lastmod>
+    <data>
+        <display>
+        <title>编程题：扇形染色问题</title>
+        <pubTime>2018-03-05T09:05:26.000Z</pubTime>
+        
+        <tag>Coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="Coding" url="http://wangwlj.com/categories/Coding/"/>
           
         </display>
     </data>
@@ -231,26 +291,6 @@
         <display>
         <title>剑指offer面试题：用两个栈实现队列</title>
         <pubTime>2018-03-06T02:57:44.000Z</pubTime>
-        
-        <tag>Coding</tag>
-         
-         
-           
-             
-              <breadCrumb title="Coding" url="http://wangwlj.com/categories/Coding/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wangwlj.com/2018/03/05/coding_dye_problem/</loc>
-    <lastmod>2018-03-05T14:55:06.635Z</lastmod>
-    <data>
-        <display>
-        <title>编程题：扇形染色问题</title>
-        <pubTime>2018-03-05T09:05:26.000Z</pubTime>
         
         <tag>Coding</tag>
          
@@ -519,11 +559,11 @@
         <title>Hexo搭建的GitHub博客之优化</title>
         <pubTime>2017-09-09T02:27:20.000Z</pubTime>
         
-        <tag>GitHub</tag>
-         
         <tag>Hexo</tag>
          
         <tag>博客</tag>
+         
+        <tag>GitHub</tag>
          
          
            
@@ -543,11 +583,11 @@
         <title>Hexo+GitHub博客搭建实战</title>
         <pubTime>2017-09-08T04:00:25.000Z</pubTime>
         
-        <tag>GitHub</tag>
-         
         <tag>Hexo</tag>
          
         <tag>博客</tag>
+         
+        <tag>GitHub</tag>
          
          
            
@@ -1095,9 +1135,9 @@
         
         <tag>博客</tag>
          
-        <tag>hexo</tag>
-         
         <tag>MathJax</tag>
+         
+        <tag>hexo</tag>
          
          
            
