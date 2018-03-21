@@ -90,7 +90,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Coding," />
+  <meta name="keywords" content="Machine Learning," />
 
 
 
@@ -108,17 +108,40 @@
 
 
 
-<meta name="keywords" content="Coding">
+<meta name="keywords" content="Machine Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指offer面试题：从1到n整数中1出现的次数">
-<meta property="og:url" content="http://wangwlj.com/2018/03/06/coding_offer32_1toN/index.html">
+<meta property="og:title" content="西瓜书《机器学习》学习笔记(6)：支持向量机">
+<meta property="og:url" content="http://wangwlj.com/2018/03/21/ML_chap06_SVM/index.html">
 <meta property="og:site_name" content="wangwlj&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/c38a0784ly1fp5bof1excj23eb1wsnpd.jpg">
-<meta property="og:updated_time" content="2018-03-16T14:38:08.839Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/c38a0784ly1fpki32ijh9j22i11j3b2a.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-b6fd30d13c9610b0d3132583d772d5e2_hd.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-27b1659e54c81f36d2aaea441c4bc2b4_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-e44b0a728937fcbca160465a9e09e3e4_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-0ea1e9f3df4cbc850f0d1656d601c66e_hd.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-69bf195d9a376de72a35210277b09c78_hd.jpg">
+<meta property="og:image" content="http://img.my.csdn.net/uploads/201210/25/1351141837_7366.jpg">
+<meta property="og:image" content="http://img.my.csdn.net/uploads/201210/25/1351141994_1802.jpg">
+<meta property="og:image" content="http://img.blog.csdn.net/20131107201248921">
+<meta property="og:image" content="http://blog.pluskid.org/wp-content/uploads/2010/09/geometric_margin.png">
+<meta property="og:image" content="http://my.csdn.net/uploads/201206/08/1339126493_9056.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-643f95da23c6aa1ce2d33b805b3e5414_hd.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-d80e34d10ba584975f794e9bc446a4d8_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-9194db15450e52e4b268347d6e67602d_hd.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-d22760adc2a6b7a55c62a5535eee3c75_hd.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-3e3056f58ab3c4e0da15ab60f18f3177_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-2869718b92b66097d343baa2685e3253_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-56d9af18edeeb0afe5a90ff500d004ea_hd.jpg">
+<meta property="og:image" content="http://img.blog.csdn.net/20131121105410546">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-c02493f75ee95eff65757a0d18d7eb66_hd.jpg">
+<meta property="og:image" content="http://img.my.csdn.net/uploads/201304/03/1364959415_3450.jpg">
+<meta property="og:image" content="http://img.my.csdn.net/uploads/201304/03/1364959452_3595.jpg">
+<meta property="og:image" content="http://img.my.csdn.net/uploads/201304/03/1364959576_9747.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-8fc8c44fd7324b04cc2a66ade0f5fe75_hd.jpg">
+<meta property="og:updated_time" content="2018-03-21T08:06:41.805Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="剑指offer面试题：从1到n整数中1出现的次数">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/c38a0784ly1fp5bof1excj23eb1wsnpd.jpg">
+<meta name="twitter:title" content="西瓜书《机器学习》学习笔记(6)：支持向量机">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/c38a0784ly1fpki32ijh9j22i11j3b2a.jpg">
 
 
 
@@ -148,14 +171,14 @@
 
 
 
-  <link rel="canonical" href="http://wangwlj.com/2018/03/06/coding_offer32_1toN/"/>
+  <link rel="canonical" href="http://wangwlj.com/2018/03/21/ML_chap06_SVM/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title>剑指offer面试题：从1到n整数中1出现的次数 | wangwlj's Blog</title>
+  <title>西瓜书《机器学习》学习笔记(6)：支持向量机 | wangwlj's Blog</title>
   
 
 
@@ -347,7 +370,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2018/03/06/coding_offer32_1toN/">
+    <link itemprop="mainEntityOfPage" href="http://wangwlj.com/2018/03/21/ML_chap06_SVM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wangwlj">
@@ -364,7 +387,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">剑指offer面试题：从1到n整数中1出现的次数</h1>
+          <h1 class="post-title" itemprop="name headline">西瓜书《机器学习》学习笔记(6)：支持向量机</h1>
         
 
         <div class="post-meta">
@@ -377,8 +400,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-06T14:06:03+08:00">
-                2018-03-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T15:18:43+08:00">
+                2018-03-21
               </time>
             
 
@@ -400,8 +423,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Coding/" itemprop="url" rel="index">
-                    <span itemprop="name">Coding</span>
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
                   </a>
                 </span>
 
@@ -418,7 +441,7 @@
 
           
           
-             <span id="/2018/03/06/coding_offer32_1toN/" class="leancloud_visitors" data-flag-title="剑指offer面试题：从1到n整数中1出现的次数">
+             <span id="/2018/03/21/ML_chap06_SVM/" class="leancloud_visitors" data-flag-title="西瓜书《机器学习》学习笔记(6)：支持向量机">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -443,7 +466,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,270
+                  3,140
                 </span>
               
 
@@ -468,69 +491,108 @@
       
 
       
-        <p><img src="http://ww1.sinaimg.cn/mw690/c38a0784ly1fp5bof1excj23eb1wsnpd.jpg" alt=""><br><a id="more"></a></p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>求出1~13的整数中1出现的次数,并算出100~1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。ACMer希望你们帮帮他,并把问题更加普遍化,可以很快的求出任意非负整数区间中1出现的次数。</p>
-<p>额，题目的意思实际上是求出从1到n整数中1出现的次数。</p>
-<p>链接：<a href="https://www.nowcoder.com/questionTerminal/bd7f978302044eee894445e244c7eee6" target="_blank" rel="external">https://www.nowcoder.com/questionTerminal/bd7f978302044eee894445e244c7eee6</a></p>
-<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>设N = abcde ,其中abcde分别为十进制中各位上的数字。<br>如果要计算百位上1出现的次数，它要受到3方面的影响：百位上的数字，百位以下（低位）的数字，百位以上（高位）的数字。</p>
-<p>① 如果百位上数字为0，百位上可能出现1的次数由更高位决定。比如：12013，则可以知道百位出现1的情况可能是：100~199，1100~1199,2100~2199，，…，11100~11199，一共1200个。可以看出是由更高位数字（12）决定，并且等于更高位数字（12）乘以 当前位数（100）。</p>
-<p>② 如果百位上数字为1，百位上可能出现1的次数不仅受更高位影响还受低位影响。比如：12113，则可以知道百位受高位影响出现的情况是：100~199，1100~1199,2100~2199，，….，11100~11199，一共1200个。和上面情况一样，并且等于更高位数字（12）乘以 当前位数（100）。但同时它还受低位影响，百位出现1的情况是：12100~12113,一共114个，等于低位数字（113）+1。</p>
-<p>③ 如果百位上数字大于1（2~9），则百位上出现1的情况仅由更高位决定，比如12213，则百位出现1的情况是：100~199,1100~1199，2100~2199，…，11100~11199,12100~12199,一共有1300个，并且等于更高位数字+1（12+1）乘以当前位数（100）。</p>
+        <p><img src="http://ww1.sinaimg.cn/mw690/c38a0784ly1fpki32ijh9j22i11j3b2a.jpg" alt=""><br><a id="more"></a></p>
+<h2 id="章节目录"><a href="#章节目录" class="headerlink" title="章节目录"></a>章节目录</h2><ul>
+<li>间隔与支持向量</li>
+<li>对偶问题</li>
+<li>核函数</li>
+<li>软间隔与正则化</li>
+<li>支持向量回归</li>
+<li>核方法</li>
+</ul>
+<p>支持向量机，因其英文名为<code>support vector machine</code>，故一般简称<code>SVM</code>，通俗来讲，它是一种二类分类模型，其基本模型定义为特征空间上的间隔最大的线性分类器，其学习策略便是间隔最大化，最终可转化为一个凸二次规划问题的求解。</p>
+<h2 id="（一）间隔与支持向量"><a href="#（一）间隔与支持向量" class="headerlink" title="（一）间隔与支持向量"></a>（一）间隔与支持向量</h2><p>给定训练样本D={(x1, y1), (x2, y2), …,(xm, ym)}, yi∈{-1, +1}，分类学习最基本的想法就是基于训练集D在样本空间找到一个划分超平面：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-b6fd30d13c9610b0d3132583d772d5e2_hd.jpg" alt=""></p>
+<p>在样本空间中，划分超平面可通过如下线性方程来描述，</p>
+<p><img src="https://pic2.zhimg.com/80/v2-27b1659e54c81f36d2aaea441c4bc2b4_hd.jpg" alt=""></p>
+<p>假设超平面（w，b）能将训练样本正确分类，即对于(xi, yi)∈D，令，</p>
+<p><img src="https://pic4.zhimg.com/80/v2-e44b0a728937fcbca160465a9e09e3e4_hd.jpg" alt=""></p>
+<p><img src="https://pic4.zhimg.com/80/v2-0ea1e9f3df4cbc850f0d1656d601c66e_hd.jpg" alt=""></p>
+<p>距离超平面最近的这几个训练样本点称为“支持向量”（support vector），两个异类支持向量到超平面的距离之和为，<br><img src="https://pic2.zhimg.com/80/v2-69bf195d9a376de72a35210277b09c78_hd.jpg" alt=""></p>
+<p>称为“间隔”（<code>margin</code>）。<br>找到“最大间隔”（<code>maximum margin</code>）的划分超平面，就是支持向量机（<code>Support Vector Machine</code>，简称<code>SVM</code>）的基本型。</p>
+<p>目标函数：</p>
+<p><img src="http://img.my.csdn.net/uploads/201210/25/1351141837_7366.jpg" alt="7"></p>
+<p>由于求$||w||^{-1}$的最大值相当于求$||w||^2$的最小值，所以上述目标函数等价于（w由分母变成分子，从而也有原来的max问题变为min问题，很明显，两者问题等价）：</p>
+<p><img src="http://img.my.csdn.net/uploads/201210/25/1351141994_1802.jpg" alt="8"></p>
+<p>因为现在的目标函数是二次的，约束条件是线性的，所以它是一个凸二次规划问题。</p>
+<h3 id="补充：函数间隔与几何间隔"><a href="#补充：函数间隔与几何间隔" class="headerlink" title="补充：函数间隔与几何间隔"></a>补充：函数间隔与几何间隔</h3><p>在超平面<code>w*x+b=0</code>确定的情况下，<code>|w*x+b|</code>能够表示点x到距离超平面的远近，而<strong><font color="0CAA00">通过观察<code>w*x+b</code>的符号与类标记y的符号是否一致可判断分类是否正确</font></strong>，所以，可以用<code>(y*(w*x+b))</code>的正负性来判定或表示分类的正确性。于此，我们便引出了函数间隔（<code>functional margin</code>）的概念。</p>
+<p>定义函数间隔为：<br><img src="http://img.blog.csdn.net/20131107201248921" alt="1"></p>
+<p>而超平面<code>(w，b)</code>关于T中所有样本点<code>(xi，yi)</code>的函数间隔最小值（其中，x是特征，y是结果标签，i表示第i个样本），便为超平面<code>(w, b)</code>关于训练数据集T的函数间隔：<br>$$\hat\gamma= \text{min} \hat\gamma_i\;  (i=1，…n)$$</p>
+<p>但这样定义的函数间隔有问题，即如果成比例的改变w和b（如将它们改成2w和2b），则函数间隔的值<code>f(x)</code>却变成了原来的2倍（虽然此时超平面没有改变），所以只有函数间隔还远远不够。</p>
+<p>事实上，我们可以对法向量w加些约束条件，从而引出真正定义点到超平面的距离–几何间隔（<code>geometrical margin</code>）的概念。</p>
+<p>假定对于一个点<code>x</code> ，令其垂直投影到超平面上的对应点为 $x_0$ ，$w$ 是垂直于超平面的一个向量，为样本x到超平面的距离，如下图所示：</p>
+<p><img src="http://blog.pluskid.org/wp-content/uploads/2010/09/geometric_margin.png" alt="2"></p>
+<p>根据平面几何知识，有:<br>$$x=x_0 +\gamma \frac w{||w||} $$</p>
+<p>其中<code>||w||</code>为w的二阶范数（范数是一个类似于模的表示长度的概念），$\frac w{||w||}$是单位向量（一个向量除以它的模称之为单位向量）。</p>
+<p>又由于$w_0$是超平面上的点，满足$w^Tx+b=0 $  ，代入超平面的方程，可得$w^Tx_0+b=0 $ ，即$w^Tx_0=-b $ 。</p>
+<p>随即让此式$x=x_0 +\gamma \frac w{||w||} $的两边同时乘以$w^T$，再根据$w^Tx_0=-b $和$w^Tw=||w||^2$，即可算出：<br>$$\gamma = \frac {$w^Tx+b}{||w||} = \frac {f(x)}{||w||} $$</p>
+<p>为了得到$\gamma$的绝对值，令$\gamma$乘上对应的类别<code>y</code>，即可得出几何间隔（用$\hat\gamma$表示）的定义：</p>
+<p>$$\hat\gamma = y \gamma = \frac {\hat\gamma}{||w||} $$</p>
+<p>从上述函数间隔和几何间隔的定义可以看出：几何间隔就是函数间隔除以<code>||w||</code>，而且函数间隔<code>y*(wx+b) = y*f(x)</code>实际上就是<code>|f(x)|</code>，只是人为定义的一个间隔度量，而几何间隔<code>|f(x)|/||w||</code>才是直观上的点到超平面的距离。</p>
+<h2 id="（二）对偶问题"><a href="#（二）对偶问题" class="headerlink" title="（二）对偶问题"></a>（二）对偶问题</h2><p>我们对<code>SVM</code>基本型求解是一个凸二次规划（<code>convex quadratic programming</code>）问题，能直接用现成的优化计算包求解，但我们可以有更高效的办法。即对SVM的基本型使用拉格朗日算子法得到其“对偶问题”（<code>dual problem</code>）。</p>
+<p>支持向量机的一个重要性质：训练完成后，大部分的训练样本都不需要保留，最终模型仅与支持向量有关。</p>
+<h3 id="KKT条件"><a href="#KKT条件" class="headerlink" title="KKT条件"></a>KKT条件</h3><p>一般地，一个最优化数学模型能够表示成下列标准形式：<br><img src="http://my.csdn.net/uploads/201206/08/1339126493_9056.jpg" alt="9"></p>
+<p>其中，f(x)是需要最小化的函数，h(x)是等式约束，g(x)是不等式约束，p和q分别为等式约束和不等式约束的数量。</p>
+<p>同时，得明白以下两点： </p>
+<ul>
+<li><p>凸优化的概念：$\mathcal{X} \subset \mathbb{R}^n$ 为一凸集， $f:\mathcal{X}\to \mathbb{R}$ 为一凸函数。凸优化就是要找出一点 $x^\ast \in \mathcal{X}$ ，使得每一 $x \in \mathcal{X} $满足$ f(x^\ast)\le f(x)$ 。</p>
+</li>
+<li><p>KKT条件的意义：它是一个非线性规划（<code>Nonlinear Programming</code>）问题能有最优化解法的必要和充分条件。</p>
+</li>
+</ul>
+<p>经过论证，我们这里的问题是满足 KKT 条件的（首先已经满足Slater条件，再者f和gi也都是可微的，即L对w和b都可导），因此现在我们便转化为求解第二个问题。</p>
+<p>也就是说，原始问题通过满足KKT条件，已经转化成了对偶问题。而求解这个对偶学习问题，分为3个步骤：首先要让L(w，b，a) 关于 w 和 b 最小化，然后求对的极大，最后利用SMO算法求解对偶问题中的拉格朗日乘子。</p>
+<h2 id="（三）核函数"><a href="#（三）核函数" class="headerlink" title="（三）核函数"></a>（三）核函数</h2><p>在现实任务中，原始样本空间内也许并不存在一个能正确划分两类样本的超平面。<br>对这样的问题，可以<strong>将样本从原始空间映射到一个更高维的特征空间，使得样本在这个特征空间内线性可分</strong>。如下图：<br><img src="https://pic2.zhimg.com/80/v2-643f95da23c6aa1ce2d33b805b3e5414_hd.jpg" alt=""></p>
+<p>幸运的是，如果原始空间是有限维，即属性数有限，那么一定存在一个高维特征空间使样本可分。<br>令Φ(x)表示将x映射后的特征向量，于是，在特征空间中划分超平面所对应的模型可表示为，</p>
+<p><img src="https://pic1.zhimg.com/80/v2-d80e34d10ba584975f794e9bc446a4d8_hd.jpg" alt=""></p>
+<p>其对偶问题是，</p>
+<p><img src="https://pic4.zhimg.com/80/v2-9194db15450e52e4b268347d6e67602d_hd.jpg" alt=""><br><img src="https://pic2.zhimg.com/80/v2-d22760adc2a6b7a55c62a5535eee3c75_hd.jpg" alt=""></p>
+<p>求解设计到计算，<br><img src="https://pic3.zhimg.com/80/v2-3e3056f58ab3c4e0da15ab60f18f3177_hd.jpg" alt=""></p>
+<p>，这是样本xi与xj映射到特征空间之后的内积。由于特征空间的维数可能很高，甚至可能到无穷维，因此直接计算通常是困难的。为了避开这个障碍，可以假设这样一个函数:</p>
+<p><img src="https://pic4.zhimg.com/80/v2-2869718b92b66097d343baa2685e3253_hd.jpg" alt=""></p>
+<p>即xi与xj在特征空间的内积等于他们原始样本空间通过函数<code>k(. , .)</code>计算的结果。有了这样的函数，我们就不必直接计算高维甚至无穷维特征空间中的内积。这里的函数k(. , .)就是“核函数”（<code>kernel function</code>）。</p>
+<p>“核函数选择”是支持向量机的最大变数。常用的核函数有:</p>
+<p><img src="https://pic4.zhimg.com/80/v2-56d9af18edeeb0afe5a90ff500d004ea_hd.jpg" alt=""><br>此外，还可以通过函数的组合得到。</p>
 <blockquote>
-<p>这题没看题解之前真是一脸懵逼，找规律真是不太容易啊。</p>
+<p>核函数的选择是支持向量机的最大变数。这方面有一些基本的经验。如文本分类通常采用线性核，情况不明时可先尝试高斯核。</p>
 </blockquote>
-<p>至此，就可以写代码了，为了加深理解，我再通过表格的形式叙述一下算法流程。以21345为例，列表如下：</p>
-<table>
-<thead>
-<tr>
-<th>i(当前位)</th>
-<th>n/i/10(前面的数)</th>
-<th>n/i%10(当前位的值)</th>
-<th>n%i(后面的数)</th>
-<th>当前位1的个数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1（个位）</td>
-<td>2134</td>
-<td>5</td>
-<td>0</td>
-<td>(2134+1)x1=2135</td>
-</tr>
-<tr>
-<td>10（十位）</td>
-<td>213</td>
-<td>4</td>
-<td>5</td>
-<td>(213+1)x10=2140</td>
-</tr>
-<tr>
-<td>100（百位）</td>
-<td>21</td>
-<td>3</td>
-<td>45</td>
-<td>(21+1)x100=2200</td>
-</tr>
-<tr>
-<td>1000</td>
-<td>2</td>
-<td>1</td>
-<td>345</td>
-<td>2x1000+345+1 = 2346</td>
-</tr>
-<tr>
-<td>10000</td>
-<td>0</td>
-<td>2</td>
-<td>1345</td>
-<td>(0+1)x10000=10000</td>
-</tr>
-</tbody>
-</table>
-<p>综合起来最终结果就是18821.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">NumberOf1Between1AndN_Solution</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;<span class="comment">//1的个数</span></div><div class="line">        <span class="keyword">int</span> i = <span class="number">1</span>;<span class="comment">//当前位</span></div><div class="line">        <span class="keyword">int</span> current = <span class="number">0</span>,after = <span class="number">0</span>,before = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>((n/i)!= <span class="number">0</span>)&#123;           </div><div class="line">            current = (n/i)%<span class="number">10</span>; <span class="comment">//高位数字</span></div><div class="line">            before = n/(i*<span class="number">10</span>); <span class="comment">//当前位数字</span></div><div class="line">            after = n-(n/i)*i; <span class="comment">//低位数字</span></div><div class="line">            <span class="comment">//如果为0,出现1的次数由高位决定,等于高位数字 * 当前位数</span></div><div class="line">            <span class="keyword">if</span> (current == <span class="number">0</span>)</div><div class="line">                count += before*i;</div><div class="line">            <span class="comment">//如果为1,出现1的次数由高位和低位决定,高位*当前位+低位+1</span></div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(current == <span class="number">1</span>)</div><div class="line">                count += before * i + after + <span class="number">1</span>;</div><div class="line">            <span class="comment">//如果大于1,出现1的次数由高位决定,//（高位数字+1）* 当前位数</span></div><div class="line">            <span class="keyword">else</span>&#123;</div><div class="line">                count += (before + <span class="number">1</span>) * i;</div><div class="line">            &#125;    </div><div class="line">            <span class="comment">//前移一位</span></div><div class="line">            i = i*<span class="number">10</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面看懂了之后，再来看这个解法，也很容易。<br>其实思路是一样的，只不过代码更加简洁了。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">NumberOf1Between1AndN_Solution</span><span class="params">(<span class="keyword">int</span> n)</span></span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">    <span class="comment">//主要思路：设定整数点（如1、10、100等等）作为位置点i（对应n的各位、十位、百位等等），分别对每个数位上有多少包含1的点进行分析</span></div><div class="line">    <span class="comment">//根据设定的整数位置，对n进行分割，分为两部分，高位n/i，低位n%i</span></div><div class="line">    <span class="comment">//当i表示百位，且百位对应的数&gt;=2,如n=31456,i=100，则a=314,b=56，此时百位为1的次数有a/10+1=32（最高两位0~31），每一次都包含100个连续的点，即共有(a%10+1)*100个点的百位为1</span></div><div class="line">    <span class="comment">//当i表示百位，且百位对应的数为1，如n=31156,i=100，则a=311,b=56，此时百位对应的就是1，则共有a%10(最高两位0-30)次是包含100个连续点，当最高两位为31（即a=311），本次只对应局部点00~56，共b+1次，所有点加起来共有（a%10*100）+(b+1)，这些点百位对应为1</span></div><div class="line">    <span class="comment">//当i表示百位，且百位对应的数为0,如n=31056,i=100，则a=310,b=56，此时百位为1的次数有a/10=31（最高两位0~30）</span></div><div class="line">    <span class="comment">//综合以上三种情况，当百位对应0或&gt;=2时，有(a+8)/10次包含所有100个点，还有当百位为1(a%10==1)，需要增加局部点b+1</span></div><div class="line">    <span class="comment">//之所以补8，是因为当百位为0，则a/10==(a+8)/10，当百位&gt;=2，补8会产生进位位，效果等同于(a/10+1)</span></div><div class="line">    <span class="keyword">int</span> count=<span class="number">0</span>;</div><div class="line">    <span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i*=<span class="number">10</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">//i表示当前分析的是哪一个数位</span></div><div class="line">        <span class="keyword">int</span> a = n/i,b = n%i;</div><div class="line">        count=count+(a+<span class="number">8</span>)/<span class="number">10</span>*i+(a%<span class="number">10</span>==<span class="number">1</span>)*(b+<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> count;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h3 id="补充：核函数的本质"><a href="#补充：核函数的本质" class="headerlink" title="补充：核函数的本质"></a>补充：核函数的本质</h3><p>简要概括下，即以下三点：</p>
+<ul>
+<li>实际中，我们会经常遇到线性不可分的样例，此时，我们的常用做法是把样例特征映射到高维空间中去(映射到高维空间后，相关特征便被分开了，也就达到了分类的目的)；</li>
+<li>但进一步，如果凡是遇到线性不可分的样例，一律映射到高维空间，那么这个维度大小是会高到可怕的(如19维乃至无穷维的例子)。那咋办呢？</li>
+<li>此时，核函数就隆重登场了，核函数的价值在于它虽然也是将特征进行从低维到高维的转换，但核函数绝就绝在它事先在低维上进行计算，而将实质上的分类效果表现在了高维上，也就<strong>避免了直接在高维空间中的复杂计算</strong>。</li>
+</ul>
+<p>举例说明下核函数解决非线性问题的直观效果$ ^{<a href="http://img.blog.csdn.net/20131121105410546" target="_blank" rel="external">3</a>}$。</p>
+<p>假设现在你是一个农场主，圈养了一批羊群，但为预防狼群袭击羊群，你需要搭建一个篱笆来把羊群围起来。但是篱笆应该建在哪里呢？你很可能需要依据牛群和狼群的位置建立一个“分类器”，比较下图这几种不同的分类器，我们可以看到SVM完成了一个很完美的解决方案。</p>
+<p><img src="http://img.blog.csdn.net/20131121105410546" alt="3"></p>
+<h2 id="（四）软间隔与正则化"><a href="#（四）软间隔与正则化" class="headerlink" title="（四）软间隔与正则化"></a>（四）软间隔与正则化</h2><p>在前面的讨论中，我们一直假定训练样本在训练空间或特征空间中是线性可分的，即存在一个超平面将不同类的样本完全划分开。然而，在现实任务中往往很难确定合适的核函数使得训练样本在特征空间中线性可分。</p>
+<p>缓解该问题的一个办法是允许支持向量机在一些样本上出错。为此引入了“软间隔”（<code>soft margin</code>）的概念，如下图所示：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-c02493f75ee95eff65757a0d18d7eb66_hd.jpg" alt=""></p>
+<p>具体来说，前面介绍的支持向量机形式是要求所有样本均满足约束，即所有样本必须划分正确，这称为“硬间隔”（<code>hard margin</code>），而<strong>软间隔则是允许这样的样本不满足约束</strong>。</p>
+<p>原来的约束条件为：</p>
+<p><img src="http://img.my.csdn.net/uploads/201304/03/1364959415_3450.jpg" alt="4"></p>
+<p>现在考虑到outlier（偏离正常位置很远的数据点）问题，约束条件变成了：</p>
+<p><img src="http://img.my.csdn.net/uploads/201304/03/1364959452_3595.jpg" alt="5"></p>
+<p>其中$\xi_i \geq 0$ 称为松弛变量 (<code>slack variable</code>) ，对应数据点$x_i$允许偏离的 <code>functional margin</code> 的量。</p>
+<p>所以，我们在原来的目标函数$\text{min} \frac 12 ||w||^2 $后面加上一项，使得这些$\xi_i $的总和也要最小：</p>
+<p>$$\text{min} \frac 12 ||w||^2+ C \sum^{n}_{i=1} \xi_i $$</p>
+<p>其中C是一个参数，用于控制目标函数中两项（“寻找 margin 最大的超平面”和“保证数据点偏差量最小”）之间的权重。</p>
+<p>完整的目标函数为：<br><img src="http://img.my.csdn.net/uploads/201304/03/1364959576_9747.jpg" alt="6"></p>
+<p>三种常用的替代损失函数(<code>surrogate loss</code>)：</p>
+<ul>
+<li>hinge损失: $l_{hinge}(z) = max(1, 1-z)$</li>
+<li>指数损失(exponential loss)：$l_{exp}(z) = exp(-z)$</li>
+<li>对率损失(logistic losss)：$l_{log}(z) = log(1+exp(-z))$</li>
+</ul>
+<p>至此可以做个小结，不准确的说，SVM它本质上即是一个分类方法，用<code>w^T+b</code>定义分类函数，于是求w、b，为寻最大间隔，引出<code>1/2||w||^2</code>，继而引入拉格朗日因子，化为对拉格朗日乘子a的求解（求解过程中会涉及到一系列最优化或凸二次规划等问题），如此，求w.b与求a等价，而a的求解可以用一种快速学习算法SMO，至于核函数，是为处理非线性情况，若直接映射到高维计算恐维度爆炸，故在低维计算，等效高维表现。</p>
+<h2 id="（五）支持向量回归"><a href="#（五）支持向量回归" class="headerlink" title="（五）支持向量回归"></a>（五）支持向量回归</h2><p>对样本（x，y），传统回归模型通常直接基于模型输出f(x)与真实输出y之间的差别来计算损失，当切仅当f(x)与y完全相同时，损失才为零。于此不同，支持向量回归（Support Vector Regression，简称SVR）假设我们能容忍f(x)与y之间最多有ε的偏差，即仅当f(x)与y之间的差别绝对值大于ε时才计算损失。如下图所示，</p>
+<p><img src="https://pic1.zhimg.com/80/v2-8fc8c44fd7324b04cc2a66ade0f5fe75_hd.jpg" alt=""></p>
+<h2 id="（六）核方法"><a href="#（六）核方法" class="headerlink" title="（六）核方法"></a>（六）核方法</h2><p>根据“表示定理”，对于一般的损失函数和正则化项（不要求是凸函数），优化问题的最优解都可表示为核函数的线性组合。这显示出核函数的巨大威力。<br>人们发展出一系列基于核函数的学习方法，统称为“核方法”（<code>kernel methods</code>）。最常见的，是通过“核化”（即引入核函数）来将线性学习器拓展为非线性学习器。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li>西瓜书《机器学习》</li>
+<li><a href="https://zhuanlan.zhihu.com/p/33488981" target="_blank" rel="external">《机器学习》笔记-支持向量机（6）</a></li>
+<li><a href="http://blog.csdn.net/v_july_v/article/details/7624837" target="_blank" rel="external">支持向量机通俗导论（理解SVM的三层境界）【很详细，推荐阅读】</a></li>
+</ul>
 
       
     </div>
@@ -592,7 +654,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://wangwlj.com/2018/03/06/coding_offer32_1toN/" title="剑指offer面试题：从1到n整数中1出现的次数">http://wangwlj.com/2018/03/06/coding_offer32_1toN/</a>
+    <a href="http://wangwlj.com/2018/03/21/ML_chap06_SVM/" title="西瓜书《机器学习》学习笔记(6)：支持向量机">http://wangwlj.com/2018/03/21/ML_chap06_SVM/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -609,7 +671,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Coding/" rel="tag"><i class="fa fa-tag"></i> Coding</a>
+            <a href="/tags/Machine-Learning/" rel="tag"><i class="fa fa-tag"></i> Machine Learning</a>
           
         </div>
       
@@ -632,8 +694,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/06/coding_offer07_stack2queue/" rel="next" title="剑指offer面试题：用两个栈实现队列">
-                <i class="fa fa-chevron-left"></i> 剑指offer面试题：用两个栈实现队列
+              <a href="/2018/03/20/algorithm_tutorial_chapter_13/" rel="next" title="算法导论详解(11) 第十三章 红黑树">
+                <i class="fa fa-chevron-left"></i> 算法导论详解(11) 第十三章 红黑树
               </a>
             
           </div>
@@ -642,8 +704,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/06/coding_offer09_Fibonacci/" rel="prev" title="剑指offer面试题：斐波那契数列">
-                剑指offer面试题：斐波那契数列 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/21/network_top_ten_questions/" rel="prev" title="计算机网络常考面试题十则">
+                计算机网络常考面试题十则 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -860,7 +922,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目分析"><span class="nav-number">2.</span> <span class="nav-text">题目分析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#章节目录"><span class="nav-number">1.</span> <span class="nav-text">章节目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（一）间隔与支持向量"><span class="nav-number">2.</span> <span class="nav-text">（一）间隔与支持向量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#补充：函数间隔与几何间隔"><span class="nav-number">2.1.</span> <span class="nav-text">补充：函数间隔与几何间隔</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（二）对偶问题"><span class="nav-number">3.</span> <span class="nav-text">（二）对偶问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#KKT条件"><span class="nav-number">3.1.</span> <span class="nav-text">KKT条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（三）核函数"><span class="nav-number">4.</span> <span class="nav-text">（三）核函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#补充：核函数的本质"><span class="nav-number">4.1.</span> <span class="nav-text">补充：核函数的本质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（四）软间隔与正则化"><span class="nav-number">5.</span> <span class="nav-text">（四）软间隔与正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（五）支持向量回归"><span class="nav-number">6.</span> <span class="nav-text">（五）支持向量回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（六）核方法"><span class="nav-number">7.</span> <span class="nav-text">（六）核方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>

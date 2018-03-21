@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://wangwlj.com/2018/03/21/ML_chap06_SVM/</loc>
+    <lastmod>2018-03-21T08:06:41.805Z</lastmod>
+    <data>
+        <display>
+        <title>西瓜书《机器学习》学习笔记(6)：支持向量机</title>
+        <pubTime>2018-03-21T07:18:43.000Z</pubTime>
+        
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Machine Learning" url="http://wangwlj.com/categories/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wangwlj.com/2018/03/20/algorithm_tutorial_chapter_13/</loc>
     <lastmod>2018-03-21T07:48:57.038Z</lastmod>
     <data>
@@ -39,26 +59,6 @@
            
              
               <breadCrumb title="Basic Knowledge" url="http://wangwlj.com/categories/Basic-Knowledge/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wangwlj.com/2018/03/21/ML_chap05_SVM/</loc>
-    <lastmod>2018-03-21T07:35:38.006Z</lastmod>
-    <data>
-        <display>
-        <title>西瓜书《机器学习》学习笔记(6)：支持向量机</title>
-        <pubTime>2018-03-21T07:18:43.000Z</pubTime>
-        
-        <tag>Machine Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="Machine Learning" url="http://wangwlj.com/categories/Machine-Learning/"/>
           
         </display>
     </data>
@@ -1135,9 +1135,9 @@
         
         <tag>博客</tag>
          
-        <tag>MathJax</tag>
-         
         <tag>hexo</tag>
+         
+        <tag>MathJax</tag>
          
          
            
