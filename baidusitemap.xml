@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://wangwlj.com/2018/01/13/ubuntu_software_summary/</loc>
+    <lastmod>2018-09-11T08:52:10.820Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu下必备软件及安装总结</title>
+        <pubTime>2018-01-13T05:51:37.000Z</pubTime>
+        
+        <tag>Ubuntu</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ubuntu" url="http://wangwlj.com/categories/Ubuntu/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wangwlj.com/2018/04/05/leetcode_46_permutation/</loc>
     <lastmod>2018-04-05T08:55:33.318Z</lastmod>
     <data>
@@ -599,11 +619,11 @@
         <title>Hexo搭建的GitHub博客之优化</title>
         <pubTime>2017-09-09T02:27:20.000Z</pubTime>
         
+        <tag>GitHub</tag>
+         
         <tag>Hexo</tag>
          
         <tag>博客</tag>
-         
-        <tag>GitHub</tag>
          
          
            
@@ -623,11 +643,11 @@
         <title>Hexo+GitHub博客搭建实战</title>
         <pubTime>2017-09-08T04:00:25.000Z</pubTime>
         
+        <tag>GitHub</tag>
+         
         <tag>Hexo</tag>
          
         <tag>博客</tag>
-         
-        <tag>GitHub</tag>
          
          
            
@@ -1752,26 +1772,6 @@
            
              
               <breadCrumb title="C++" url="http://wangwlj.com/categories/C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wangwlj.com/2018/01/13/ubuntu_software_summary/</loc>
-    <lastmod>2018-01-13T06:31:16.143Z</lastmod>
-    <data>
-        <display>
-        <title>ubuntu下必备软件及安装总结</title>
-        <pubTime>2018-01-13T05:51:37.000Z</pubTime>
-        
-        <tag>Ubuntu</tag>
-         
-         
-           
-             
-              <breadCrumb title="Ubuntu" url="http://wangwlj.com/categories/Ubuntu/"/>
           
         </display>
     </data>
